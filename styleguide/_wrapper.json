@@ -1,0 +1,13 @@
+{
+  "_wrapper" : false,
+  "_template" : "/PreviewPage.hbs",
+
+  "title": "Bex Training Preview Page",
+  "extraScripts": {
+    "_include": "/_group/ExtraScripts.json"
+  },
+
+  "main": {
+      "_delegate": true
+  }
+}
