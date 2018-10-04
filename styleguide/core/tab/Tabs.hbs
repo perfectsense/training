@@ -1,0 +1,33 @@
+{{#block "Tabs"}}
+    <div class="{{blockName}}" data-widget="Tabs">
+
+        {{#element "title"}}
+            <h3 class="{{elementName}}">{{this}}</h3>
+        {{/element}}
+
+        <!-- This creates the row of tabs for navigation -->
+        {{#element "tabs"}}
+            <ul class="{{elementName}}">
+                {{#each this}}
+                    <li>
+                        <a class="{{blockName}}-tab" href="#{{id}}" data-tab>{{label}}</a>
+                    </li>
+                {{/each}}
+            </ul>
+        {{/element}}
+
+        {{#element "content" noWith=true}}
+            <div class="{{elementName}}">
+                {{#each tabs}}
+                    <div class="{{blockName}}-panel" id="{{id}}" data-tab-panel>
+                        {{#element "title"}}
+                            <div class="{{elementName}}">{{this}}</div>
+                        {{/element}}
+                        {{this}}
+                    </div>
+                {{/each}}
+            </div>
+        {{/element}}
+
+    </div>
+{{/block}}

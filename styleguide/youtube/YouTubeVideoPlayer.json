@@ -1,0 +1,9 @@
+{
+    "_template": "YouTubeVideoPlayer.hbs",
+    "playerId": "1",
+    "videoTitle": "{{words([2,6])}}",
+    "videoId": "NYvM6j56IBk",
+    "autoplay": false,
+    "muted": true,
+    "seekSeconds": 10
+}

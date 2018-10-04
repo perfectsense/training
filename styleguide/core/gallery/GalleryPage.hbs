@@ -1,0 +1,46 @@
+{{#block "GalleryPage" override="../page/CreativeWorkPage.hbs"}}
+    {{#element "mainContent" noWith="true"}}
+        <section class="{{elementName}}" itemscope itemtype="https://schema.org/ImageGallery">
+
+            {{#element "intro" noWith=true}}
+                <div class="{{elementName}}">
+                    {{element "headline"}}
+                    {{element "subHeadline"}}
+
+                    {{element "byline"}}
+                    {{element "contributors"}}
+
+                    {{element "dateExpired"}}
+                    {{element "datePublished"}}
+                    {{element "dateModified"}}
+                </div>
+            {{/element}}
+
+            {{#element "galleryBody"}}
+                <div class="{{elementName}}">{{this}}</div>
+            {{/element}}
+
+            {{#element "slides"}}
+                <ul class="{{elementName}}">
+                    {{~#each this~}}
+                        <li class="{{elementName}}-slide">{{~this~}}</li>
+                    {{~/each~}}
+                </ul>
+            {{/element}}
+
+            <!--{{#element "endCard"}}
+                <div class="{{elementName}}">
+                    {{~this~}}
+                </div>
+            {{/element}}-->
+
+            {{#element "pagination" noWith=true}}
+                <div class="{{elementName}}">
+                    {{#each pagination}}
+                        {{~this~}}
+                    {{/each}}
+                </div>
+            {{/element}}
+        </section>
+    {{/element}}
+{{/block}}

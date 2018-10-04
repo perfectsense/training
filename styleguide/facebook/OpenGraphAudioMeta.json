@@ -1,0 +1,6 @@
+{
+    "_template": "OpenGraphAudioMeta.hbs",
+    "url": "http://url.to.audio.mp4",
+    "secureUrl": "https://url.to.audio.mp4",
+    "mimeType": "audio/mp4"
+}

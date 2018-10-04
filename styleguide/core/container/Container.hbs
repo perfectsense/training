@@ -1,0 +1,23 @@
+{{#block "Container"}}
+    <div class="{{blockName}}">
+        {{#element "title"}}
+            <div class="{{elementName}}">
+                {{this}}
+            </div>
+        {{/element}}
+
+        {{#element "description"}}
+            <div class="{{elementName}}">
+                {{this}}
+            </div>
+        {{/element}}
+
+        {{#element "rows"}}
+            <ul class="{{elementName}}">
+                {{#each this}}
+                    <li class="{{elementName}}-item">{{this}}</li>
+                {{/each}}
+            </ul>
+        {{/element}}
+    </div>
+{{/block}}

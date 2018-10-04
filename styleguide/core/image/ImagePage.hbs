@@ -1,0 +1,55 @@
+{{#block "ImagePage" override="../page/MediaObjectPage.hbs"}}
+
+    {{#element "mainContent" noWith=true}}
+        <div class="{{elementName}}" itemprop="mainEntity" itemscope itemtype="http://schema.org/ImageObject">
+
+            {{element "headline"}}
+            {{element "subHeadline"}}
+            {{element "byline"}}
+            {{element "contributors"}}
+            {{element "dateExpired"}}
+            {{element "datePublished"}}
+            {{element "dateModified"}}
+            {{element "media"}}
+
+            {{#element "mediaProperties" noWith=true}}
+                <aside class="{{elementName}}">
+                    {{element "bitrate"}}
+                    {{#element "caption"}}
+                        <div class="{{elementName}}">
+                            <h4 class="{{elementName}}-heading">Caption</h4>
+                            <div class="{{elementName}}-body" itemprop="caption">{{this}}</div>
+                        </div>
+                    {{/element}}
+                    {{element "collections"}}
+                    {{#element "credit"}}
+                        <div class="{{elementName}}">
+                            <h4 class="{{elementName}}-heading">Credit</h4>
+                            <div class="{{elementName}}-body">{{this}}</div>
+                        </div>
+                    {{/element}}
+                    {{element "dimensions"}}
+                    {{element "fileFormat"}}
+                    {{element "fileSize"}}
+                    {{element "fileUrl"}}
+                    {{element "embedUrl"}}
+                    {{element "source"}}
+
+                    {{#element "colors"}}
+                        <div class="{{elementName}}">
+                            <h4 class="{{elementName}}-heading">Colors</h4>
+                            <ul class="{{elementName}}-body">
+                                {{#each this}}
+                                    <li class="{{elementName}}-item">
+                                        <span class="{{elementName}}-item-swatch" style="background-columnOneColor: {{this}}"></span>
+                                        <span class="{{elementName}}-item-label">{{this}}</span>
+                                    </li>
+                                {{/each}}
+                            </ul>
+                        </div>
+                    {{/element}}
+                </aside>
+            {{/element}}
+        </div>
+    {{/element}}
+{{/block}}

@@ -1,15 +1,242 @@
 {
-  "sources": [
-    {
-      "source": "/node_modules/brightspot-express/styleguide",
-      "hidden": true
-    }
-  ],
+  "sources": [],
   "javaPackage": "bex.training.view",
   "pom": "frontend/pom.xml",
-  "vars": {},
   "fields": {},
   "styles": {},
-  "imageSizes": {},
-  "imageSizeContexts": {}
+  "vars": {
+    "exampleSiteUrl": "http://www.perfectsensedigital.com/"
+  },
+  "imageSizes": {
+    "tiny": {
+      "width": 50,
+      "height": 50,
+      "srcsetDescriptors": [
+        "2x"
+      ]
+    },
+    "small": {
+      "width": 300,
+      "height": 200,
+      "srcsetDescriptors": [
+        "2x"
+      ]
+    },
+    "large": {
+      "width": 1000,
+      "height": 500,
+      "srcsetDescriptors": [
+        "2x"
+      ]
+    },
+    "socialSharing": {
+      "width": 1200,
+      "height": 1200
+    },
+    "twitterSharing": {
+      "width": 1200,
+      "height": 675
+    }
+  },
+  "imageSizeContexts": {
+    "/auth/navigation/AuthenticatedNavigationItem.hbs": {
+      "avatar": "tiny"
+    },
+    "/community/commenting/Comment.hbs": {
+      "authorImage": "tiny"
+    },
+    "/user/profile/UserPublicProfilePage.hbs": {
+      "userImage": "small"
+    },
+    "/corporate/press-release/PressRelease.hbs": {
+      "authorImage": "tiny"
+    },
+    "/core/article/ArticlePage.hbs": {
+      "authorImage": "tiny"
+    },
+    "/core/gallery/GalleryPage.hbs": {
+      "authorImage": "tiny"
+    },
+    "/media/PodcastEpisodePage.hbs": {
+      "podcastImage": {
+        "/core/image/Image.hbs": {
+          "image": "tiny"
+        }
+      }
+    },
+    "/core/background/Background.hbs": {
+      "cssValue": "large"
+    },
+    "/core/image/Image.hbs": {
+      "image": "small",
+      "narrowImage": "small"
+    },
+    "/core/figure/Figure.hbs": {
+      "image": "small"
+    },
+    "/core/page/*Page.hbs": {
+      "authorImage": "tiny"
+    },
+    "/core/form/page/FormPage.hbs": {
+      "authorImage": "tiny"
+    },
+    "/core/image/ImagePage.hbs": {
+      "authorImage": "tiny",
+      "media": {
+        "/core/image/Image.hbs": {
+          "image": "large"
+        }
+      }
+    },
+    "/core/page/PageLogo.hbs": {
+      "image": "small"
+    },
+    "/core/video/VideoPage.hbs": {
+      "authorImage": "tiny"
+    },
+    "/core/video/LiveWheelPage.hbs": {
+      "authorImage": "tiny"
+    },
+    "/dam/request/AssetRequestTableRow.hbs": {
+      "asset": {
+        "/core/image/Image.hbs": {
+          "image": "small"
+        }
+      }
+    },
+    "/dam/document/DigitalDocumentPage.hbs": {
+      "authorImage": "tiny"
+    },
+    "/dam/spreadsheet/SpreadsheetDigitalDocumentPage.hbs": {
+      "authorImage": "tiny"
+    },
+    "/dam/presentation/PresentationDigitalDocumentPage.hbs": {
+      "authorImage": "tiny"
+    },
+    "/media/FranchisePage.hbs": {
+      "authorImage": "tiny"
+    },
+    "/media/ShowPage.hbs": {
+      "authorImage": "tiny"
+    },
+    "/media/SeasonPage.hbs": {
+      "authorImage": "tiny"
+    },
+    "/media/EpisodePage.hbs": {
+      "authorImage": "tiny"
+    },
+    "/media/SpecialPage.hbs": {
+      "authorImage": "tiny"
+    },
+    "/media/ClipPage.hbs": {
+      "authorImage": "tiny"
+    },
+    "/core/video/HTML5VideoPlayer.hbs": {
+      "poster": "small"
+    },
+    "/blog/BlogPage.hbs" : {
+      "leadImage": "small"
+    },
+    "/blog/blogpost/BlogPostPage.hbs" : {
+      "authorImage": "tiny",
+      "contributorImage": "tiny"
+    },
+    "/jwplayer/JWVideoPlayer.hbs": {
+      "image": "small"
+    },
+    "/core/quote/Quote.hbs": {
+      "image": "tiny"
+    },
+    "/facebook/OpenGraphImageMeta.hbs": {
+      "image":"socialSharing"
+    },
+    "/twitter/card/TwitterCard.hbs": {
+      "image":"twitterSharing"
+    },
+    "/twitter/card/TwitterSummaryLargeImageCard.hbs": {
+      "image":"twitterSharing"
+    },
+    "/twitter/card/TwitterSummaryCard.hbs": {
+      "image":"twitterSharing"
+    },
+    "/twitter/card/TwitterPlayerCard.hbs": {
+      "image":"twitterSharing"
+    },
+    "/core/image/Image.native.hbs": {
+      "image": "small",
+      "narrowImage": "small"
+    },
+    "/community/commenting/Comment.amp.hbs": {
+      "authorImageSrc": "tiny"
+    },
+    "/corporate/press-release/PressRelease.amp.hbs": {
+      "authorImage": "tiny"
+    },
+    "/core/article/ArticlePage.amp.hbs": {
+      "authorImage": "tiny"
+    },
+    "/core/carousel/Carousel.amp.hbs": {
+      "image": "small"
+    },
+    "/core/gallery/GalleryPage.amp.hbs": {
+      "authorImage": "tiny",
+      "image": "small"
+    },
+    "/core/background/Background.amp.hbs": {
+      "cssValue": "large"
+    },
+    "/core/image/Image.amp.hbs": {
+      "image": "small",
+      "narrowImage": "small"
+    },
+    "/core/figure/Figure.amp.hbs": {
+      "image": "small"
+    },
+    "/core/page/CreativeWorkPage.amp.hbs": {
+      "authorImage": "tiny"
+    },
+    "/core/page/PageLogo.amp.hbs": {
+      "image": "small"
+    },
+    "/core/video/VideoPage.amp.hbs": {
+      "authorImage": "tiny"
+    },
+    "/media/FranchisePage.amp.hbs": {
+      "authorImage": "tiny"
+    },
+    "/media/ShowPage.amp.hbs": {
+      "authorImage": "tiny"
+    },
+    "/media/SeasonPage.amp.hbs": {
+      "authorImage": "tiny"
+    },
+    "/media/EpisodePage.amp.hbs": {
+      "authorImage": "tiny"
+    },
+    "/media/SpecialPage.amp.hbs": {
+      "authorImage": "tiny"
+    },
+    "/media/ClipPage.amp.hbs": {
+      "authorImage": "tiny"
+    },
+    "/core/video/HTML5VideoPlayer.amp.hbs": {
+      "poster": "small"
+    },
+    "/blog/BlogPage.amp.hbs": {
+      "leadImage": "small"
+    },
+    "/blog/blogpost/BlogPostPage.amp.hbs": {
+      "authorImage": "tiny",
+      "contributorImage": "tiny"
+    },
+    "/jwplayer/JWVideoPlayer.amp.hbs": {
+      "image": "small"
+    },
+    "/quiz/QuizPage.hbs": {
+      "authorImage": "tiny"
+    },
+    "/core/quote/Quote.amp.hbs": {
+      "image": "tiny"
+    }
+  }
 }

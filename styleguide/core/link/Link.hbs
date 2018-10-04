@@ -1,0 +1,7 @@
+{{~#block "Link"~}}
+    {{~#if href~}}
+        <a class="{{blockName}}" href="{{href}}"{{#with target}} target="{{this}}"{{/with}}>{{body}}</a>
+    {{~^~}}
+        <span class="{{blockName}}">{{body}}</span>
+    {{~/if~}}
+{{~/block~}}

@@ -1,0 +1,35 @@
+{{#block "List"}}
+    <div class="{{blockName}}"{{extraAttributes}}>
+        {{#element "title"}}
+            <div class="{{elementName}}">{{this}}</div>
+        {{/element}}
+
+        {{#element "description"}}
+            <div class="{{elementName}}">{{this}}</div>
+        {{/element}}
+
+        {{#element "items"}}
+            <ul class="{{elementName}}">
+                {{#each this}}
+                    <li class="{{elementName}}-item">{{this}}</li>
+                {{/each}}
+            </ul>
+        {{/element}}
+
+        {{#element "cta" noWith=true}}
+            {{#if ctaUrl}}
+                <div class="{{elementName}}">
+                    {{include "../link/Link.hbs" href=ctaUrl target=ctaTarget body=(format "ctaText")}}
+                </div>
+            {{/if}}
+        {{/element}}
+
+        {{#element "pagination" noWith=true}}
+            <div class="{{elementName}}">
+                {{#each pagination}}
+                    {{this}}
+                {{/each}}
+            </div>
+        {{/element}}
+    </div>
+{{/block}}

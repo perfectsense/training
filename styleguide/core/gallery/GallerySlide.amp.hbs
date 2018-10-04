@@ -1,0 +1,33 @@
+{{#block "GallerySlide"}}
+    <div class="{{blockName}}" itemprop="image" itemtype="http://schema.org/ImageObject" {{extraAttributes}}>
+        {{#element "media" noWith=true}}
+            <div class="{{elementName}}">
+                <div class="{{elementName}}Container">
+                    {{#element "mediaContent"}}
+                        <div class="{{elementName}}">{{this}}</div>
+                    {{/element}}
+                </div>
+            </div>
+        {{/element}}
+
+        {{#element "info" noWith=true}}
+            <div class="{{elementName}}">
+                {{#element "infoTitle" noWith=true}}
+                    <div class="{{elementName}}" {{#element "infoTitleShort"}}data-shorttext="{{this}}"{{/element}} itemprop="name">
+                        <span>{{infoTitle}}</span>
+                    </div>
+                {{/element}}
+
+                {{#element "infoDescription" noWith=true}}
+                    <div class="{{elementName}}" {{#element "infoDescriptionShort"}}data-shorttext="{{this}}"{{/element}} itemprop="description">
+                        <span>{{infoDescription}}</span>
+                    </div>
+                {{/element}}
+
+                {{#element "infoAttribution"}}
+                    <div class="{{elementName}}">{{this}}</div>
+                {{/element}}
+            </div>
+        {{/element}}
+    </div>
+{{/block}}

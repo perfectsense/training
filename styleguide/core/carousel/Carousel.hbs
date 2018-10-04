@@ -1,0 +1,18 @@
+{{#block "Carousel"}}
+    <div class="{{blockName}}"{{extraAttributes}} {{#if startSlide}}data-bsp-carousel-options='{"autoStart":false}'{{else}}data-carousel-started="true"{{/if}}>
+
+        {{#element "title"}}
+            <div class="{{elementName}}">{{this}}</div>
+        {{/element}}
+
+        {{#element "slides" noWith=true}}
+            <div class="{{elementName}}">
+                {{#each slides}}
+                    <div class="{{elementName}}-slide">
+                        {{this}}
+                    </div>
+                {{/each}}
+            </div>
+        {{/element}}
+    </div>
+{{/block}}

@@ -1,0 +1,56 @@
+[
+    {
+        "_include": "/core/promo/Promo.json"
+    },
+    {
+        "_include": "/core/figure/Figure.json"
+    },
+    {
+        "_include": "/core/list/_SimpleList.json"
+    },
+    {
+        "_include": "/core/carousel/Carousel.json"
+    },
+    {
+        "_include": "/core/tab/Tabs.json"
+    },
+    {
+        "_include": "/core/freeform/Freeform.json"
+    },
+    {
+        "_include": "/adsense/GoogleAdsenseAdModule.json"
+    },
+    {
+        "_include": "/dfp/GoogleDfpAdModule.json"
+    },
+    {
+        "_include": "/core/video/HTML5VideoEnhancement.json"
+    },
+    {
+        "_include": "/mpx/MPXVideoEnhancement.json"
+    },
+    {
+        "_include": "/kaltura/KalturaVideoEnhancement.json"
+    },
+    {
+        "_include": "/youtube/YouTubeVideoEnhancement.json"
+    },
+    {
+        "_include": "/core/module/EmptyModuleType.json"
+    },
+    {
+        "_include": "/core/search/SearchModule.json"
+    },
+    {
+        "_include": "/core/text/RichTextModule.json"
+    },
+    {
+        "_include": "/core/form/Form.json"
+    },
+    {
+        "_include": "/corporate/stock/StockTicker.json"
+    },
+    {
+        "_include": "/core/quote/Quote.json"
+    }
+]

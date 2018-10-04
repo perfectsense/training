@@ -1,0 +1,29 @@
+{{#block "Banner"}}
+    <div class="{{blockName}}">
+        <div class="{{blockName}}-wrapper">
+            <div class="{{blockName}}-content">
+                {{#blockBody}}
+                    {{#element "title"}}
+                        <div class="{{elementName}}">{{this}}</div>
+                    {{/element}}
+
+                    {{#element "link" noWith=true}}
+                        <div class="{{elementName}}">
+                            {{#if linkHref}}
+                            <a class="{{elementName}}-link" href="{{linkHref}}">
+                                {{~linkBody~}}
+                            </a>
+                            {{else}}
+                                {{~linkBody~}}
+                            {{/if}}
+                        </div>
+                    {{/element}}
+
+                    {{#element "close" noWith=true}}
+                        <button for="{{blockName}}-toggle" class="{{elementName}}" data-toggle-trigger="banner">{{closeText}}</button>
+                    {{/element}}
+                {{/blockBody}}
+            </div>
+        </div>
+    </div>
+{{/block}}

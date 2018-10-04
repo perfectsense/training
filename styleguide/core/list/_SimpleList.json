@@ -1,0 +1,10 @@
+{
+    "_template": "List.hbs",
+    "title": "{{words}}",
+    "items": [
+        {
+            "_include": "/core/freeform/Freeform.json",
+            "_repeat": [3, 6]
+        }
+    ]
+}

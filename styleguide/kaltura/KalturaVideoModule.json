@@ -1,0 +1,15 @@
+{
+    "_template": "/core/video/VideoModule.hbs",
+    "title": "Kaltura Video Module",
+    "player": {
+        "_include": "/kaltura/KalturaVideoPlayer.json"
+    },
+    "playlist": [
+        {
+            "_include": "/core/video/PlaylistItem.json",
+            "_repeat": 3
+        }
+    ],
+    "ctaUrl": "#",
+    "ctaTarget": "_self"
+}

@@ -1,0 +1,15 @@
+{{#block "SearchModule"}}
+    {{#element "search" noWith=true}}
+        {{#if searchAction}}
+            <form class="{{elementName}}" action="{{searchAction}}" novalidate="" autocomplete="off">
+                {{#element "searchInput" noWith=true}}
+                    <input type="text" class="{{elementName}}" placeholder="{{placeholder}}" name="q">
+                {{/element}}
+
+                {{#element "searchButton" noWith=true}}
+                    <button type="submit" class="{{elementName}}">Search</button>
+                {{/element}}
+            </form>
+        {{/if}}
+    {{/element}}
+{{/block}}

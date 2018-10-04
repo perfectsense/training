@@ -1,0 +1,7 @@
+{
+    "_template" : "ModuleType.hbs",
+    "content" : {
+        "_include" : "../freeform/Freeform.json"
+    }
+}
+

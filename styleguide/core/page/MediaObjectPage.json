@@ -1,0 +1,26 @@
+{
+    "_wrapper": false,
+    "_include": "/core/page/CreativeWorkPage.json",
+    "_template": "MediaObjectPage.hbs",
+    "bitrate": "1.4 Gbit/s",
+    "duration": "24 minutes",
+    "embedUrl": "https://mdn-samples.mozilla.org/snippets/html/iframe-simple-contents.html",
+    "fileFormat": "jpeg",
+    "fileSize": "1.2GB",
+    "fileUrl": "http://cdn.perfectsense.psdweb.psdops.com/6d/5d/efd1da434d6abd8b1b08b8b29c4c/brightspot-logo-183.png",
+    "media": {
+        "_include": "/_group/Medias.json",
+        "_key": 0
+    },
+    "playerType": "Kaltura",
+    "height": "900",
+    "status": "pending",
+    "width": "1600",
+    "collections": [
+        {
+            "_include": "/core/link/Link.json",
+            "_repeat": 1
+        }
+    ],
+    "timedContentTimeStamp": "{{number([0,50])}}"
+}

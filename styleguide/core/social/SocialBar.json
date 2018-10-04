@@ -1,0 +1,48 @@
+{
+    "_template": "SocialBar.hbs",
+    "items": [
+        {
+            "_include": "/core/social/SocialLink.json",
+            "href": "https://www.facebook.com/perfectsensedigital/",
+            "socialService": "facebook",
+            "body": "perfectsensedigital"
+        },
+        {
+            "_include": "/core/social/SocialLink.json",
+            "href": "https://twitter.com/perfectsensedig",
+            "socialService": "twitter",
+            "body": "perfectsensedig"
+        },
+        {
+            "_include": "/core/social/SocialLink.json",
+            "href": "https://www.linkedin.com/company/perfect-sense-digital",
+            "socialService": "linkedin",
+            "body": "perfect-sense-digital"
+        },
+        {
+            "_include": "/core/social/SocialLink.json",
+            "href": "https://plus.google.com/+PerfectSenseDigital",
+            "socialService": "googleplus",
+            "body": "PerfectSenseDigital"
+        },
+        {
+            "_include": "/core/social/SocialLink.json",
+            "href": "https://www.instagram.com/perfectsense/",
+            "socialService": "instagram",
+            "body": "perfectsense"
+        },
+        {
+            "_include": "/core/social/SocialLink.json",
+            "href": "https://www.pinterest.com/perfectsense/",
+            "socialService": "pinterest",
+            "body": "perfectsense"
+        },
+        {
+            "_include": "/core/social/SocialLink.json",
+            "href": "https://www.tumblr.com/blog/perfectsense",
+            "socialService": "tumblr",
+            "body": "perfectsense"
+            
+        }
+    ]
+}

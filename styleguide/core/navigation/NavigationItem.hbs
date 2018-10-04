@@ -1,0 +1,22 @@
+{{#block "NavigationItem"}}
+    <div class="{{blockName}}" {{extraAttributes}}>
+        {{#element "text" noWith=true}}
+            <div class="{{elementName}}">
+                {{#if href}}
+                    <a class="{{elementName}}-link" href="{{href}}"{{#with target}} target="{{this}}"{{/with}}{{extraAttributes}}>{{~text~}}</a>
+                {{else}}
+                    {{~text~}}
+                {{/if}}
+            </div>
+        {{/element}}
+        {{#if items}}
+            <ul class="{{blockName}}-items">
+                {{#element "items"}}
+                    {{#each this}}
+                        <li class="{{elementName}}-item" {{#if this.isCurrent}}data-active{{/if}}>{{~this~}}</li>
+                    {{/each}}
+                {{/element}}
+            </ul>
+        {{/if}}
+    </div>
+{{/block}}

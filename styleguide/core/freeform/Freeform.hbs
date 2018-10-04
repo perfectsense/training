@@ -1,0 +1,15 @@
+{{#block "Freeform"}}
+    <div class="{{blockName}}">
+        {{#element "link"}}
+            {{include "../link/Link.hbs" href=../link target=../target}}
+        {{/element}}
+
+        {{#element "items"}}
+            <div class="{{elementName}}">
+                {{#each this}}
+                    <div class="{{elementName}}-item">{{this}}</div>
+                {{/each}}
+            </div>
+        {{/element}}
+    </div>
+{{/block}}

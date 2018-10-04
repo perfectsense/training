@@ -1,0 +1,80 @@
+{{#block "PlaylistItem"}}
+    <div class="{{blockName}}"{{extraAttributes}}>
+        {{#element "media"}}
+            <div class="{{elementName}}">
+                {{include "../link/Link.hbs" href=../url target=../target body=this}}
+            </div>
+        {{/element}}
+
+        {{#element "info" noWith=true}}
+            {{#element "category"}}
+                <div class="{{elementName}}">
+                    {{include "../link/Link.hbs" href=../categoryUrl target=../target body=this}}
+                </div>
+            {{/element}}
+
+            {{#element "type"}}
+                <div class="{{elementName}}">{{this}}</div>
+            {{/element}}
+
+            {{#element "duration"}}
+                <div class="{{elementName}}">{{this}}</div>
+            {{/element}}
+
+            {{#element "date"}}
+                <div class="{{elementName}}">{{this}}</div>
+            {{/element}}
+
+            {{#element "title"}}
+                <div class="{{elementName}}">
+                    {{include "../link/Link.hbs" href=../url target=../target body=this}}
+                </div>
+            {{/element}}
+
+            {{#element "description"}}
+                <div class="{{elementName}}">{{this}}</div>
+            {{/element}}
+
+            {{#element "companions"}}
+                <h4 class="{{elementName}}-heading">Companion Content</h4>
+                <div class="{{elementName}}">{{this}}</div>
+            {{/element}}
+
+            {{#element "status"}}
+                <div class="{{elementName}}">{{this}}</div>
+            {{/element}}
+
+            {{#element "author" noWith=true}}
+                <div class="{{elementName}}">
+                    {{#element "authorImage"}}
+                        <div class="{{elementName}}">
+                            {{include "../link/Link.hbs" href=../authorUrl target=../target body=this}}
+                        </div>
+                    {{/element}}
+
+                    {{#element "authorName"}}
+                        <div class="{{elementName}}">
+                            {{include "../link/Link.hbs" href=../authorUrl target=../target body=this}}
+                        </div>
+                    {{/element}}
+                </div>
+            {{/element}}
+
+            {{#element "button"}}
+                <div class="{{elementName}}">
+                    {{include "../link/Link.hbs" href=../url target=../target body=this}}
+                </div>
+            {{/element}}
+
+            {{#element "actions"}}
+                <div class="{{elementName}}">
+                    {{this}}
+                </div>
+            {{/element}}
+
+            {{#element "social"}}
+                <div class="{{elementName}}">{{this}}</div>
+            {{/element}}
+        {{/element}}
+    </div>
+{{/block}}

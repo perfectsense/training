@@ -1,0 +1,87 @@
+{{#block "CreativeWorkPage" override="ContentPage.hbs"}}
+    {{#element "datePublished" noWith=true}}
+        <div class="{{elementName}}">{{datePublished}}</div>
+        {{#with datePublishedISO}}
+            <meta itemprop="datePublished" content="{{this}}">
+        {{/with}}
+    {{/element}}
+
+    {{#element "dateModified" noWith=true}}
+        <div class="{{elementName}}">{{dateModified}}</div>
+        {{#with dateModifiedISO}}
+            <meta itemprop="dateModified" content="{{this}}">
+        {{/with}}
+    {{/element}}
+
+    {{#element "dateExpired"}}
+        <div class="{{elementName}}">{{dateExpired}}</div>
+        {{#with dateExpiredISO}}
+            <meta itemprop="expires" content="{{this}}">
+        {{/with}}
+    {{/element}}
+
+    {{#element "headline"}}
+        <h1 class="{{elementName}}" itemprop="headline">{{this}}</h1>
+    {{/element}}
+
+    {{#element "subHeadline"}}
+        <div class="{{elementName}}" itemprop="alternativeHeadline">{{this}}</div>
+    {{/element}}
+
+    {{#element "byline" noWith=true}}
+        <div class="{{elementName}}" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            {{#element "authorImage"}}
+                <div class="{{elementName}}" itemprop="image">
+                    {{#with ../authorUrl}}<a href="{{this}}">{{/with}}
+                    <img alt="" src="{{src}}"
+                        {{~#with srcset}} srcset="{{this}}"{{/with~}}
+                        {{~#with width}} width="{{this}}"{{/with~}}
+                        {{~#with height}} height="{{this}}"{{/with~}}
+                    >
+                    {{#with ../authorUrl}}</a>{{/with}}
+                </div>
+            {{/element}}
+
+            {{#element "authorTexts" noWith=true}}
+                <div class="{{elementName}}">
+                    {{#element "authorName"}}
+                        <div class="{{elementName}}" itemprop="name">
+                            {{#with ../authorUrl}}<a href="{{this}}">{{/with}}
+                            {{this}}
+                            {{#with ../authorUrl}}</a>{{/with}}
+                        </div>
+                    {{/element}}
+
+                    {{#element "authorBiography"}}
+                        <div class="{{elementName}}">{{this}}</div>
+                    {{/element}}
+                </div>
+            {{/element}}
+        </div>
+    {{/element}}
+
+    {{#element "contributors"}}
+        <div class="{{elementName}}">
+            <h2 class="{{elementName}}-heading">Contributors</h2>
+            <div class="{{elementName}}-body">
+                {{~#each this~}}
+                    {{~this~}}
+                    {{~#unless @last}}, {{/unless~}}
+                {{~/each~}}
+            </div>
+        </div>
+    {{/element}}
+
+    {{#element "people"}}
+        {{#each this}}
+            {{this}}
+        {{/each}}
+    {{/element}}
+
+    {{#element "source"}}
+        <div class="{{elementName}}">
+            <h4 class="{{elementName}}-heading">Source</h4>
+            <div class="{{elementName}}-body" itemprop="sourceOrganization">{{this}}</div>
+        </div>
+    {{/element}}
+{{/block}}
