@@ -20,9 +20,9 @@
             <div class="{{elementName}}">
                 {{#each tabs}}
                     <div class="{{blockName}}-panel" id="{{id}}" data-tab-panel>
-                        {{#element "title"}}
-                            <div class="{{elementName}}">{{this}}</div>
-                        {{/element}}
+                        {{#with title}}
+                            <div class="{{blockName}}-title">{{this}}</div>
+                        {{/with}}
                         {{this}}
                     </div>
                 {{/each}}

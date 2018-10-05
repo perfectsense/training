@@ -62,7 +62,7 @@
 
     {{#element "contributors"}}
         <div class="{{elementName}}">
-            <h2 class="{{elementName}}-heading">Contributors</h2>
+            <h2 class="{{elementName}}-heading">{{format "contributorsHeading"}}</h2>
             <div class="{{elementName}}-body">
                 {{~#each this~}}
                     {{~this~}}
@@ -80,7 +80,7 @@
 
     {{#element "source"}}
         <div class="{{elementName}}">
-            <h4 class="{{elementName}}-heading">Source</h4>
+            <h4 class="{{elementName}}-heading">{{format "sourceHeading"}}</h4>
             <div class="{{elementName}}-body" itemprop="sourceOrganization">{{this}}</div>
         </div>
     {{/element}}

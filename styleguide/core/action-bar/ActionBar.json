@@ -2,11 +2,5 @@
     "_template" : "ActionBar.hbs",
     "items": {
         "_include": "/_group/ActionBarItems.json"
-    },
-    "nativeShareUrl": "http://brightspot.com",
-    "nativeShareTitle": "This is the title",
-    "nativeShareDescription": "{{words(5)}}",
-    "nativeShareImage": {
-        "_include": "/core/image/Image.json"
     }
 }

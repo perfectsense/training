@@ -1,0 +1,18 @@
+{{! Required Elements }}
+{{#block "Image"}}
+    <meta property="og:image" content="{{{image.src}}}">
+{{! Optional Elements }}
+    {{! triple handlebars temporary workaround for improper encoding}}
+    <meta property="og:image:url" content="{{{image.src}}}">
+    {{#with image.srcsecure}}
+    <meta property="og:image:secure_url" content="{{{this}}}">
+    {{/with}}
+    <meta property="og:image:width" content="{{image.width}}">
+    <meta property="og:image:height" content="{{image.height}}">
+    {{~#with mimeType}}
+    <meta property="og:image:type" content="{{this}}">
+    {{/with}}
+    {{~#with alt}}
+    <meta property="og:image:alt" content="{{this}}">
+    {{/with}}
+{{/block}}

@@ -20,7 +20,7 @@
                     {{element "bitrate"}}
                     {{#element "caption"}}
                         <div class="{{elementName}}">
-                            <h4 class="{{elementName}}-heading">Caption</h4>
+                            <h4 class="{{elementName}}-heading">{{format "captionHeading"}}</h4>
                             <div class="{{elementName}}-body" itemprop="caption">{{this}}</div>
                         </div>
                     {{/element}}
@@ -39,7 +39,7 @@
             {{#element "playlist"}}
                 <aside class="{{elementName}}">
                     {{#element "playlistTitle" noWith=true}}
-                        <h2 class="{{elementName}}">Playlist</h2>
+                        <h2 class="{{elementName}}">{{format "playlistHeading"}}</h2>
                     {{/element}}
 
                     {{#element "playlistBody" noWith=true}}

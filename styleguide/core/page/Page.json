@@ -126,14 +126,6 @@
 
     "contentId": "a123",
 
-    "ampIntegrations": {
-        "_include": "/_group/AmpIntegrations.json"
-    },
-
-    "ampAnalytics": {
-        "_include": "/_group/AmpAnalytics.json"
-    },
-
     "actions": {
         "_include": "/core/action-bar/ActionBar.json"
     }

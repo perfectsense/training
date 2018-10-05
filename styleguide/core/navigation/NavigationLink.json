@@ -4,8 +4,6 @@
     "target": "_self",
     "text": "{{words(1)}}",
     "contentId": "a123",
-    "contentType": "Video",
-    "contentSubtype": "KalturaVideo",
     "iconUrl": "",
     "status": "2",
     "count": 3

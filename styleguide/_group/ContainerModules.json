@@ -15,9 +15,6 @@
         "_include": "/core/tab/Tabs.json"
     },
     {
-        "_include": "/core/freeform/Freeform.json"
-    },
-    {
         "_include": "/adsense/GoogleAdsenseAdModule.json"
     },
     {
@@ -43,12 +40,6 @@
     },
     {
         "_include": "/core/text/RichTextModule.json"
-    },
-    {
-        "_include": "/core/form/Form.json"
-    },
-    {
-        "_include": "/corporate/stock/StockTicker.json"
     },
     {
         "_include": "/core/quote/Quote.json"

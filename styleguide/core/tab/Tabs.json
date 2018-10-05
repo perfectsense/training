@@ -13,14 +13,6 @@
         {
             "_include": "TabItem.json",
             "label": "{{words (1,2)}}",
-            "id": "dog",
-            "content": {
-                "_include": "/core/freeform/Freeform.json"
-            }
-        },
-        {
-            "_include": "TabItem.json",
-            "label": "{{words (1,2)}}",
             "id": "3",
             "content": {
                 "_include": "/core/text/RichTextModule.json"

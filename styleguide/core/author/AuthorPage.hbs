@@ -1,0 +1,42 @@
+{{#block "AuthorPage" override="../page/ContentPage.hbs"}}
+    {{#element "mainContent" noWith="true"}}
+        <div class="{{elementName}}" itemscope itemtype="http://schema.org/Person"{{extraAttributes}}>
+
+            {{#element "name"}}
+                <h1 class="{{elementName}}" itemprop="name">{{this}}</h1>
+            {{/element}}
+
+            {{#element "affiliation"}}
+                <h2 class="{{elementName}}" itemprop="affiliation">{{this}}</h2>
+            {{/element}}
+
+            {{#element "jobTitle"}}
+                <div class="{{elementName}}" itemprop="jobTitle">{{this}}</div>
+            {{/element}}
+
+            {{#element "image"}}
+                <div class="{{elementName}}" itemprop="image">{{this}}</div>
+            {{/element}}
+
+            {{#element "shortBiography"}}
+                <div class="{{elementName}}">{{this}}</div>
+            {{/element}}
+
+            {{#element "fullBiography"}}
+                <div class="{{elementName}}" itemprop="description">{{this}}</div>
+            {{/element}}
+
+            {{#element "links"}}
+                <ul class="{{elementName}}">
+                    {{#each this}}
+                        <li class="{{elementName}}-item">{{this}}</li>
+                    {{/each}}
+                </ul>
+            {{/element}}
+
+            {{#element "authorSocialLinks"}}
+                <div class="{{elementName}}">{{this}}</div>
+            {{/element}}
+        </div>
+    {{/element}}
+{{/block}}

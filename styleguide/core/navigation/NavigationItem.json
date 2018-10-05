@@ -17,7 +17,5 @@
         }
     ],
     "contentId": "a123",
-    "contentType": "Video",
-    "contentSubtype": "KalturaVideo",
     "iconUrl": "http://example.com/url/to/icon"
 }

@@ -1,0 +1,8 @@
+[
+    {
+        "_include": "/core/article/RichTextArticleBody.json"
+    },
+    {
+        "_include": "/core/article/ListArticleBody.json"
+    }
+]

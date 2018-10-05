@@ -1,0 +1,29 @@
+{{#block "VideoLead"}}
+    <div class="{{blockName}}">
+
+        {{#element "info" noWith=true}}
+            {{#element "category"}}
+                    <div class="{{elementName}}">
+                        {{include "../link/Link.hbs" href=../categoryUrl target=../target body=this}}
+                    </div>
+            {{/element}}
+
+            {{#element "duration"}}
+                <div class="{{elementName}}">{{this}}</div>
+            {{/element}}
+        {{/element}}
+
+        {{#element "headline"}}
+            <div class="{{elementName}}">{{this}}</div>
+        {{/element}}
+
+        {{#element "subHeadline"}}
+            <div class="{{elementName}}">{{this}}</div>
+        {{/element}}
+
+        {{#element "player"}}
+            <div class="{{elementName}}">{{this}}</div>
+        {{/element}}
+
+    </div>
+{{/block}}

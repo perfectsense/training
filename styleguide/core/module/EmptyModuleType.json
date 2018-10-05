@@ -1,7 +1,7 @@
 {
     "_template" : "ModuleType.hbs",
     "content" : {
-        "_include" : "../freeform/Freeform.json"
+        "_include" : "../promo/Promo.json"
     }
 }
 

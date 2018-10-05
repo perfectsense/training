@@ -1,0 +1,33 @@
+{
+    "imageSizes": {
+        "tiny": {
+            "width": 50,
+            "height": 50,
+            "srcsetDescriptors": [
+                "2x"
+            ]
+        },
+        "small": {
+            "width": 300,
+            "height": 200,
+            "srcsetDescriptors": [
+                "2x"
+            ]
+        },
+        "large": {
+            "width": 1000,
+            "height": 500,
+            "srcsetDescriptors": [
+                "2x"
+            ]
+        },
+        "socialSharing": {
+            "width": 1200,
+            "height": 1200
+        },
+        "twitterSharing": {
+            "width": 1200,
+            "height": 675
+        }
+    }
+}

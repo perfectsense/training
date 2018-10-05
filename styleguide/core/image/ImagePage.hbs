@@ -17,14 +17,14 @@
                     {{element "bitrate"}}
                     {{#element "caption"}}
                         <div class="{{elementName}}">
-                            <h4 class="{{elementName}}-heading">Caption</h4>
+                            <h4 class="{{elementName}}-heading">{{format "captionHeading"}}</h4>
                             <div class="{{elementName}}-body" itemprop="caption">{{this}}</div>
                         </div>
                     {{/element}}
                     {{element "collections"}}
                     {{#element "credit"}}
                         <div class="{{elementName}}">
-                            <h4 class="{{elementName}}-heading">Credit</h4>
+                            <h4 class="{{elementName}}-heading">{{format "creditHeading"}}</h4>
                             <div class="{{elementName}}-body">{{this}}</div>
                         </div>
                     {{/element}}
@@ -37,11 +37,11 @@
 
                     {{#element "colors"}}
                         <div class="{{elementName}}">
-                            <h4 class="{{elementName}}-heading">Colors</h4>
+                            <h4 class="{{elementName}}-heading">{{format "colorsHeading"}}</h4>
                             <ul class="{{elementName}}-body">
                                 {{#each this}}
                                     <li class="{{elementName}}-item">
-                                        <span class="{{elementName}}-item-swatch" style="background-columnOneColor: {{this}}"></span>
+                                        <span class="{{elementName}}-item-swatch" style="background-color: {{this}}"></span>
                                         <span class="{{elementName}}-item-label">{{this}}</span>
                                     </li>
                                 {{/each}}

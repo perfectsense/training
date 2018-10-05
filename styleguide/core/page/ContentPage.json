@@ -22,10 +22,6 @@
         }
     ],
 
-    "comments": {
-        "_include": "/_group/Comments.json"
-    },
-
     "countries": [
         {
             "_include": "/core/link/Link.json",
