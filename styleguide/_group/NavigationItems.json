@@ -1,0 +1,29 @@
+[
+    {
+        "_template": "/core/navigation/NavigationItem.hbs",
+        "text": "Home",
+        "target": "_self",
+        "href": "{{var('exampleSiteUrl')}}",
+        "isCurrent": true
+    },
+    {
+        "_include": "/core/navigation/NavigationItem.json",
+        "_repeat": [1, 3]
+    },
+    {
+        "_template": "/core/navigation/NavigationItem.hbs",
+        "href": "{{var('exampleSiteUrl')}}",
+        "target": "_self",
+        "text": "{{words(1, 3)}}"
+    },
+    {
+        "_include": "/core/navigation/NavigationItem.json",
+        "_repeat": [1, 3]
+    },
+    {
+        "_template": "/core/social/SocialLink.hbs",
+        "href": "",
+        "body": "Facebook",
+        "socialService": "facebook"
+    }
+]

@@ -1,0 +1,12 @@
+{
+    "_wrapper": false,
+    "_include": "/core/video/VideoPage.json",
+    "permalink": "/jwplayer/playlist/JWVideo-02.html",
+    "player": {
+        "_include": "../JWVideoPlayer.json",
+        "videoUrl": "https://archive.org/download/WildlifeSampleVideo/Wildlife.mp4",
+        "muted": true,
+        "autoplay": false,
+        "seekSeconds": 0
+    }
+}

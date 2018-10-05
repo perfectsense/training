@@ -1,0 +1,9 @@
+{
+    "_template":"HTML5AudioPlayer.hbs",
+    "sources":[
+        {
+            "src":"path/to/audiofile.mp3",
+            "type":"audio/mpeg"
+        }
+    ]
+}

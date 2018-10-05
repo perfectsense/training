@@ -1,0 +1,28 @@
+{{#block "MPXVideoPlayer"}}
+    <div
+         class="{{blockName}}"
+         data-video-player
+         data-player-id="{{playerId}}"
+         data-video-id="{{videoId}}"
+         data-video-title="{{videoTitle}}"
+        {{~#if hlsUrl}} data-hls-url="{{hlsUrl}}"{{~/if~}}
+        {{~#if seekSeconds}} data-seek-seconds="{{seekSeconds}}"{{~/if~}}
+        {{~#if muted}} data-muted{{/if~}}
+        {{~#if autoplay}} data-autoplay{{/if~}}
+        {{~#if liveVideo}} data-live-video{{~/if~}}
+    >
+        {{#blockBody}}
+            {{#element "screen" noWith=true}}
+                <div class="{{elementName}}" data-aspect-ratio="{{#if aspectRatio}}{{aspectRatio}}{{else}}4x3{{/if}}">
+                    <iframe id="{{blockName}}-{{playerId}}" src="{{{src}}}/embed?form=html"
+                            allowfullscreen
+                            frameborder="0">
+                    </iframe>
+                    {{#element "card"}}
+                        <div class="{{elementName}}" data-card>{{this}}</div>
+                    {{/element}}
+                </div>
+            {{/element}}
+        {{/blockBody}}
+    </div>
+{{/block}}

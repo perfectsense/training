@@ -1,0 +1,11 @@
+{{#block "FooterColumns"}}
+    <div class="{{blockName}}">
+        {{#element "columns"}}
+            <ul class="{{elementName}}">
+                {{#each this}}
+                    <li class="{{elementName}}-item">{{this}}</li>
+                {{/each}}
+            </ul>
+        {{/element}}
+    </div>
+{{/block}}

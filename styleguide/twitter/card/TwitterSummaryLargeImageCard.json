@@ -1,0 +1,13 @@
+{
+    "_template": "TwitterSummaryLargeImageCard.hbs",
+    "site": "brightspotcms",
+    "siteId": "358165108",
+    "creator": "brightspotcms",
+    "creatorId": "358165108",
+    "description": "{{words(20)}}",
+    "title": "{{words(10)}}",
+    "image": {
+        "_image": true
+    },
+    "imageAlt": "brightspot logo"
+}

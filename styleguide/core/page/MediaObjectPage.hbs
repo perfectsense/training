@@ -1,0 +1,92 @@
+{{#block "MediaObjectPage" override="CreativeWorkPage.hbs"}}
+
+    {{#element "media"}}
+        <div class="{{elementName}}">{{this}}</div>
+    {{/element}}
+
+    {{#element "mediaProperties" noWith=true}}
+        <aside class="{{elementName}}">
+
+            {{#element "bitrate"}}
+                <div class="{{elementName}}">
+                    <h4 class="{{elementName}}-heading">{{format "bitrateHeading"}}</h4>
+                    <div class="{{elementName}}-body" itemprop="bitrate">{{this}}</div>
+                </div>
+            {{/element}}
+
+            {{#element "dimensions" noWith=true}}
+                <div class="{{elementName}}">
+                    <h4 class="{{elementName}}-heading">{{format "dimensionsHeading"}}</h4>
+                    <div class="{{elementName}}-body">
+                        {{~#element "width"}}
+                            <span class="{{elementName}}-width" itemprop="width">{{this}}</span>
+                        {{/element~}}
+                            x
+                        {{~#element "height"}}
+                            <span class="{{elementName}}-height" itemprop="height">{{this}}</span>
+                        {{/element~}}
+                    </div>
+                </div>
+            {{/element}}
+
+            {{#element "collections" }}
+                <div class="{{elementName}}">
+                    <h4 class="{{elementName}}-heading">{{format "collectionsHeading"}}</h4>
+                    <div class="{{elementName}}-body">
+                        {{~#each this~}}
+                            {{~this~}}
+                            {{~#unless @last}}, {{/unless~}}
+                        {{~/each~}}
+                    </div>
+                </div>
+            {{/element}}
+
+            {{#element "duration"}}
+                <div class="{{elementName}}">
+                    <h4 class="{{elementName}}-heading">{{format "durationHeading"}}</h4>
+                    <div class="{{elementName}}-body" itemprop="duration">{{this}}</div>
+                </div>
+            {{/element}}
+
+            {{#element "embedUrl"}}
+                <div class="{{elementName}}">
+                    <h4 class="{{elementName}}-heading">{{format "embedUrlHeading"}}</h4>
+                    <div class="{{elementName}}-body" itemprop="embedUrl">{{this}}</div>
+                </div>
+            {{/element}}
+
+            {{#element "fileFormat"}}
+                <div class="{{elementName}}">
+                    <h4 class="{{elementName}}-heading">{{format "fileformatHeading"}}</h4>
+                    <div class="{{elementName}}-body" itemprop="encodingFormat">{{this}}</div>
+                </div>
+            {{/element}}
+
+            {{#element "fileSize"}}
+                <div class="{{elementName}}">
+                    <h4 class="{{elementName}}-heading">{{format "fileSizeHeading"}}</h4>
+                    <div class="{{elementName}}-body" itemprop="contentSize">{{this}}</div>
+                </div>
+            {{/element}}
+
+            {{#element "fileUrl"}}
+                <div class="{{elementName}}">
+                    <h4 class="{{elementName}}-heading">{{format "fileUrlHeading"}}</h4>
+                    <div class="{{elementName}}-body" itemprop="contentUrl">{{this}}</div>
+                </div>
+            {{/element}}
+
+            {{#element "playerType"}}
+                <div class="{{elementName}}">
+                    <h4 class="{{elementName}}-heading">{{format "playerTypeHeading"}}</h4>
+                    <div class="{{elementName}}-body" itemprop="playerType">{{this}}</div>
+                </div>
+            {{/element}}
+
+            {{#element "status"}}
+                <div class="{{elementName}}">{{this}}</div>
+            {{/element}}
+
+        </aside>
+    {{/element}}
+{{/block}}

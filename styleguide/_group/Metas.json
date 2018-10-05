@@ -1,0 +1,31 @@
+[
+    {
+        "_include": "/core/page/SeoRobotsMeta.json"
+    },
+    {
+        "_include": "/facebook/OpenGraphMeta.json"
+    },
+    {
+        "_template": "/facebook/FacebookMetas.hbs",
+        "appId": "12345678",
+        "adminIds": [
+            "12344567",
+            "23445634",
+            "32458987"
+        ],
+        "pagesId": "1234567890123456",
+        "profileId": "09786i7834"
+    },
+    {
+        "_include": "/twitter/card/TwitterAppCard.json"
+    },
+    {
+        "_include": "/twitter/card/TwitterPlayerCard.json"
+    },
+    {
+        "_include": "/twitter/card/TwitterSummaryCard.json"
+    },
+    {
+        "_include": "/twitter/card/TwitterSummaryLargeImageCard.json"
+    }
+]

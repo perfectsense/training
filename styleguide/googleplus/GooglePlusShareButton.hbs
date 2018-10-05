@@ -1,0 +1,10 @@
+{{#block "GooglePlusShareButton"}}
+    {{#element "link" noWith=true}}
+        <a class="{{blockName}}" href="https://plus.google.com/share?
+                {{~#with url}}url={{this}}{{~/with~}}"
+           target="_blank"
+        >
+            {{body}}
+        </a>
+    {{/element}}
+{{/block}}

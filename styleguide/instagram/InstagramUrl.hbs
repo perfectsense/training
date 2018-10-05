@@ -1,0 +1,8 @@
+{{#block "InstagramUrl"}}
+    <div class="{{blockName}}">
+        {{#element "postUrl"}}
+            <iframe src="{{this}}" frameborder="0" scrolling="no"  style="max-width:658px; width:calc(100% - 2px);"></iframe>
+            <script async defer src="//platform.instagram.com/en_US/embeds.js"></script>
+        {{/element}}
+    </div>
+{{/block}}

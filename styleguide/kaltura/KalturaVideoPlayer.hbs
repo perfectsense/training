@@ -1,0 +1,25 @@
+{{#block "KalturaVideoPlayer"}}
+    <div
+         class="{{blockName}}"
+         data-video-player
+         data-player-id="{{playerId}}"
+         data-ui-conf-id="{{uiConfId}}"
+         data-video-id="{{videoId}}"
+         data-video-title="{{videoTitle}}"
+         data-partner-id="{{partnerId}}"
+         data-entry-id="{{entryId}}"
+        {{~#if seekSeconds}} data-seek-seconds="{{seekSeconds}}"{{~/if~}}
+        {{~#if muted}} data-muted{{~/if~}}
+        {{~#if autoplay}} data-autoplay{{~/if~}}
+        {{~#if liveVideo}} data-live-video{{~/if~}}
+        {{~#each extraAttributes}} {{this}}{{~/each~}}
+    >
+
+            {{#element "screen" noWith=true}}
+                <div class="{{elementName}}" id="{{elementName}}-{{playerId}}"
+                     data-aspect-ratio="{{#if aspectRatio}}{{aspectRatio}}{{else}}4x3{{/if}}">
+                    <div id="{{blockName}}-{{playerId}}"></div>
+                </div>
+            {{/element}}
+    </div>
+{{/block}}

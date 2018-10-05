@@ -1,0 +1,61 @@
+{{#block "ContentPage" override="Page.hbs"}}
+    {{#element "main" noWith=true}}
+        <main class="{{elementName}}">
+            {{#element "breadcrumbs"}}
+                <div class="{{elementName}}">{{this}}</div>
+            {{/element}}
+
+            {{#element "mainContent"}}
+                <div class="{{elementName}}">{{this}}</div>
+            {{/element}}
+
+            {{#element "tags"}}
+                <div class="{{elementName}}">
+                    <h2 class="{{elementName}}-heading">{{format "tagsHeading"}}</h2>
+                    <div class="{{elementName}}-body">{{this}}</div>
+                </div>
+            {{/element}}
+
+            {{#element "countries"}}
+                <div class="{{elementName}}">
+                    <h2 class="{{elementName}}-heading">{{format "countriesHeading"}}</h2>
+                    <div class="{{elementName}}-body">{{this}}</div>
+                </div>
+            {{/element}}
+
+            {{#element "brands"}}
+                <div class="{{elementName}}">
+                    <h2 class="{{elementName}}-heading">{{format "brandsHeading"}}</h2>
+                    <div class="{{elementName}}-body">{{this}}</div>
+                </div>
+            {{/element}}
+
+            {{#element "products"}}
+                <div class="{{elementName}}">
+                    <h2 class="{{elementName}}-heading">{{format "productsHeading"}}</h2>
+                    <div class="{{elementName}}-body">{{this}}</div>
+                </div>
+            {{/element}}
+
+            {{#element "topics"}}
+                <div class="{{elementName}}">
+                    <h2 class="{{elementName}}-heading">{{format "topicsHeading"}}</h2>
+                    <div class="{{elementName}}-body">{{this}}</div>
+                </div>
+            {{/element}}
+
+            {{#element "actions"}}
+                <div class="{{elementName}}">
+                    <h2 class="{{elementName}}-heading">{{format "actionsHeading"}}</h2>
+                    <div class="{{elementName}}-body">{{this}}</div>
+                </div>
+            {{/element}}
+
+            {{#element "comments"}}
+                <div class="{{elementName}}">
+                    {{this}}
+                </div>
+            {{/element}}
+        </main>
+    {{/element}}
+{{/block}}

@@ -1,0 +1,25 @@
+{{#block "JWVideoPlayer"}}
+    <div
+         class="{{blockName}}"
+         data-video-player
+         data-player-id="{{playerId}}"
+         data-video-id="{{videoId}}"
+         data-video-title="{{videoTitle}}"
+         data-video-url="{{videoUrl}}"
+         data-image-url="{{image.url}}"
+        {{~#if seekSeconds}} data-seek-seconds="{{seekSeconds}}"{{~/if~}}
+        {{~#if muted}} data-muted{{~/if~}}
+        {{~#if autoplay}} data-autoplay{{~/if~}}
+        {{~#if liveVideo}} data-live-video{{~/if~}}
+        {{~#each extraAttributes}} {{this}}{{~/each~}}
+    >
+
+        {{#blockBody}}
+            {{#element "screen" noWith=true}}
+                <div class="{{elementName}}" id="{{elementName}}-{{playerId}}">
+                    <div id="{{blockName}}-{{playerId}}"></div>
+                </div>
+            {{/element}}
+        {{/blockBody}}
+    </div>
+{{/block}}

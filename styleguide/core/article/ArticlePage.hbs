@@ -1,0 +1,26 @@
+{{#block "ArticlePage" override="../page/CreativeWorkPage.hbs"}}
+    {{#element "mainContent" noWith="true"}}
+        <article class="{{elementName}}" itemprop="mainEntity" itemscope itemtype="http://schema.org/Article">
+            {{element "headline"}}
+            {{element "subHeadline"}}
+            {{element "byline"}}
+            {{element "contributors"}}
+            {{element "people"}}
+            {{element "dateExpired"}}
+            {{element "datePublished"}}
+            {{element "dateModified"}}
+
+            {{#element "lead"}}
+                <div class="{{elementName}}">{{this}}</div>
+            {{/element}}
+
+            {{#element "articleBody"}}
+                <div class="{{elementName}}" itemprop="articleBody">{{this}}</div>
+            {{/element}}
+
+            {{#element "updatesCorrections"}}
+                <div class="{{elementName}}" itemprop="articleBody">{{this}}</div>
+            {{/element}}
+        </article>
+    {{/element}}
+{{/block}}

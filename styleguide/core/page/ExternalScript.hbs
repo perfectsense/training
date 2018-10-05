@@ -1,0 +1,7 @@
+{{#if src~}}
+    <script src="{{src}}"
+        {{~#with async}} async{{/with~}}
+        {{~#with defer}} defer{{/with~}}
+        {{~extraAttributes~}}
+    ></script>
+{{~/if}}

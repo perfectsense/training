@@ -1,0 +1,11 @@
+{{#block "ListArticleBody"}}
+    <div class="{{blockName}}">
+        {{#element "items"}}
+            <ol class="{{elementName}}" itemscope itemtype="http://schema.org/ItemList">
+                {{#each this}}
+                    <li class="{{elementName}}-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">{{this}}</li>
+                {{/each}}
+            </ol>
+        {{/element}}
+    </div>
+{{/block}}

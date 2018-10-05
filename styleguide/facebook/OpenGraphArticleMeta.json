@@ -1,0 +1,12 @@
+{
+    "_template": "OpenGraphArticleMeta.hbs",
+    "authorUrls": [
+        "http://link.to.author1",
+        "http://link.to.author2"
+    ],
+    "publishedTime": "dateTime",
+    "modifiedTime": "dateTime",
+    "expirationTime": "dateTime",
+    "section": "Technology",
+    "tags": ["Elon Musk", "Tesla", "Solar City"]
+}

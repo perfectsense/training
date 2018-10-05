@@ -1,0 +1,21 @@
+{{#block "TwitterWidgetsWebpageProperties"}}
+    {{#element "borderColor"}}
+        <meta name="twitter:widgets:border-color" content="{{this}}">
+    {{/element}}
+
+    {{#if csp}}
+        <meta name="twitter:widgets:csp" content="on">
+    {{/if}}
+
+    {{#if dnt}}
+        <meta name="twitter:dnt" content="on">
+    {{/if}}
+
+    {{#element "linkColor"}}
+        <meta name="twitter:widgets:link-color" content="{{this}}">
+    {{/element}}
+
+    {{#element "theme"}}
+        <meta name="twitter:widgets:theme" content="{{this}}">
+    {{/element}}
+{{/block}}

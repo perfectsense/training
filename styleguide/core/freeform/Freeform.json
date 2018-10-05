@@ -1,0 +1,19 @@
+{
+    "_template": "Freeform.hbs",
+    "link": "#",
+    "target": "_self",
+    "items": [
+        {
+            "_include": "FreeformText.json"
+        },
+        {
+            "_include": "FreeformText.json"
+        },
+        {
+            "_include": "FreeformText.json"
+        },
+        {
+            "_include": "FreeformButton.json"
+        }
+    ]
+}

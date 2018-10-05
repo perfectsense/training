@@ -1,0 +1,7 @@
+{
+    "_template" : "ModuleType.hbs",
+    "content" : {
+        "_include" : "/_group/Modules.json",
+        "_random" : true
+    }
+}

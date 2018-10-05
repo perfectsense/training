@@ -1,0 +1,60 @@
+{{#block "VideoPage" override="../page/MediaObjectPage.hbs"}}
+    {{#element "mainContent" noWith="true"}}
+        <article class="{{elementName}}" itemprop="mainEntity" itemscope itemtype="https://schema.org/VideoObject">
+
+            {{element "headline"}}
+            {{element "subHeadline"}}
+            {{element "breadcrumbs"}}
+            {{element "byline"}}
+            {{element "contributors"}}
+            {{element "dateExpired"}}
+            {{element "datePublished"}}
+            {{element "dateModified"}}
+
+            {{#element "player"}}
+                <div class="{{elementName}}">{{this}}</div>
+            {{/element}}
+
+            {{#element "mediaProperties" noWith=true}}
+                <aside class="{{elementName}}">
+                    {{element "bitrate"}}
+                    {{#element "caption"}}
+                        <div class="{{elementName}}">
+                            <h4 class="{{elementName}}-heading">{{format "captionHeading"}}</h4>
+                            <div class="{{elementName}}-body" itemprop="caption">{{this}}</div>
+                        </div>
+                    {{/element}}
+                    {{element "dimensions"}}
+                    {{element "duration"}}
+                    {{element "embedUrl"}}
+                    {{element "fileFormat"}}
+                    {{element "fileSize"}}
+                    {{element "fileUrl"}}
+                    {{element "playerType"}}
+                    {{element "source"}}
+                    {{element "status"}}
+                </aside>
+            {{/element}}
+
+            {{#element "playlist"}}
+                <aside class="{{elementName}}">
+                    {{#element "playlistTitle" noWith=true}}
+                        <h2 class="{{elementName}}">{{format "playlistHeading"}}</h2>
+                    {{/element}}
+
+                    {{#element "playlistBody" noWith=true}}
+                        <div class="{{elementName}}">{{this}}</div>
+                    {{/element}}
+                </aside>
+            {{/element}}
+
+            {{#element "pagination" noWith=true}}
+                <div class="{{elementName}}">
+                    {{#each pagination}}
+                        {{~this~}}
+                    {{/each}}
+                </div>
+            {{/element}}
+        </article>
+    {{/element}}
+{{/block}}

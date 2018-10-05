@@ -1,0 +1,19 @@
+{
+    "_template": "MPXVideoPlayer.hbs",
+    "playerId": "1",
+    "videoTitle": "{{words([2,6])}}",
+    "videoId": "yh5o5S5hrJ4c",
+    "src": "//player.theplatform.com/p/1X3jUC/yh5o5S5hrJ4c",
+    "hlsUrl": "//link.theplatform.com/s/1X3jUC/E5BWsOHBPO9y",
+    "aspectRatio": "16x9",
+    "muted": true,
+    "autoplay": false,
+    "seekSeconds": 10,
+    "liveVideo": false,
+    "card": {
+        "_template": "/core/promo/Promo.hbs",
+        "title": "The Air Up There",
+        "description": "{{sentences([1,2])}}",
+        "url": "#"
+    }
+}

@@ -1,0 +1,15 @@
+{{#block "SearchFilter"}}
+    <div class="{{blockName}}">
+        {{#element "heading"}}
+            <h3 class="{{elementName}}">{{this}}</h3>
+        {{/element}}
+
+        {{#element "items"}}
+            <ul class="{{elementName}}">
+                {{#each this}}
+                    <li>{{this}}</li>
+                {{/each}}
+            </ul>
+        {{/element}}
+    </div>
+{{/block}}

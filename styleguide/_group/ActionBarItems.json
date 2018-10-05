@@ -1,0 +1,29 @@
+[
+    {
+        "_include": "/tumblr/TumblrShareButton.json"
+    },
+    {
+        "_include": "/facebook/FacebookShareButton.json"
+    },
+    {
+        "_include": "/twitter/intent/TwitterTweetButton.json"
+    },
+    {
+        "_include": "/googleplus/GooglePlusShareButton.json"
+    },
+    {
+        "_include": "/core/link/MailToLink.json"
+    },
+    {
+        "_include": "/core/link/PrintLink.json"
+    },
+    {
+        "_include": "/pinterest/PinterestShareButton.json"
+    },
+    {
+        "_include": "/linkedin/LinkedInShareButton.json"
+    },
+    {
+        "_include": "/core/link/Link.json"
+    }
+]

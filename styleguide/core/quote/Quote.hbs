@@ -1,0 +1,15 @@
+{{#block "Quote"}}
+    <div class="{{blockName}}" {{extraAttributes}}>
+        <blockquote>
+            {{~#element "quote" noWith=true~}}
+                {{~quote~}}
+            {{~/element~}}
+        </blockquote>
+        {{#element "attribution"}}
+            <div class="{{elementName}}">{{this}}</div>
+        {{/element}}
+        {{#element "image"}}
+            <div class="{{elementName}}" itemprop="image">{{this}}</div>
+        {{/element}}
+    </div>
+{{/block}}

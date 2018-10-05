@@ -1,0 +1,10 @@
+{
+    "imageSizeContexts": {
+        "/core/page/*Page.hbs": {
+            "authorImage": "tiny"
+        },
+        "/core/page/PageLogo.hbs": {
+            "image": "small"
+        }
+    }
+}
