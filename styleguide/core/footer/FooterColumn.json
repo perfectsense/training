@@ -1,0 +1,8 @@
+{
+    "_template": "FooterColumn.hbs",
+
+    "items": {
+        "_include": "/_group/FooterColumnTypes.json",
+        "_random": true
+    }
+}
