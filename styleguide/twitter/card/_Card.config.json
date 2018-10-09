@@ -1,0 +1,16 @@
+{
+    "imageSizeContexts": {
+        "/twitter/card/TwitterCard.hbs": {
+            "image": "twitterSharing"
+        },
+        "/twitter/card/TwitterSummaryLargeImageCard.hbs": {
+            "image": "twitterSharing"
+        },
+        "/twitter/card/TwitterSummaryCard.hbs": {
+            "image": "twitterSharing"
+        },
+        "/twitter/card/TwitterPlayerCard.hbs": {
+            "image": "twitterSharing"
+        }
+    }
+}

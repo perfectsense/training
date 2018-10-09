@@ -1,0 +1,283 @@
+body {
+    font-family: var(--fontFamily);
+}
+
+// Text Styles from: https://zpl.io/2pxPg6o
+.ArticleHeadline() {
+    color: @color-primaryText;
+    font-size: 30px;
+    font-weight: normal;
+    line-height: 1.28;
+    text-align: center;
+    max-width: 80%;
+
+    @media @mq-viewport-md {
+        font-size: 42px;
+        letter-spacing: 0.3px;
+        max-width: 620px;
+    }
+
+    @media @mq-viewport-lg {
+        font-size: 48px;
+        line-height: 1.25;
+        max-width: 800px;
+    }
+
+    [data-mood-bold] & {
+        font-weight: 900;
+        letter-spacing: normal;
+    }
+}
+
+.PageTitle() {
+    color: @color-primaryText;
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    line-height: 1.25;
+
+    @media @mq-viewport-md {
+        font-size: 30px;
+        letter-spacing: 4px;
+    };
+
+    @media @mq-viewport-lg {
+        font-size: 36px;
+        letter-spacing: 5px;
+    }
+
+    [data-mood-bold] & {
+        font-weight: 900;
+        text-transform: none;
+        font-size: 36px;
+        letter-spacing: normal;
+
+        @media @mq-viewport-md {
+            font-size: 60px;
+        }
+
+        @media @mq-viewport-lg {
+            font-size: 72px;
+        }
+    }
+}
+
+.PromoHeadlineText-large() {
+    color: @color-primaryText;
+    font-size: 20px;
+    line-height: 1.11;
+
+    @media @mq-viewport-md {
+        font-size: 30px;
+    }
+
+    @media @mq-viewport-lg {
+        font-size: 36px;
+    }
+
+    [data-mood-bold] & {
+        font-weight: 900;
+        line-height: 1.2;
+        letter-spacing: normal;
+
+        @media @mq-viewport-lg {
+            font-size: 30px;
+        }
+    }
+}
+
+.PromoHeadlineText() {
+    color: @color-primaryText;
+    font-size: 20px;
+    line-height: 1.25;
+
+    @media @mq-viewport-md {
+        font-size: 24px;
+    }
+
+    [data-mood-bold] & {
+        font-weight: 900;
+        line-height: 1.33;
+        font-size: 18px;
+        letter-spacing: normal;
+
+        @media @mq-viewport-md {
+            font-size: 21px;
+        }
+    }
+}
+
+.Subhead() {
+    color: @color-primaryText;
+    font-size: 14px;
+    letter-spacing: 1.5px;
+    line-height: 1.86;
+    text-transform: uppercase;
+    font-weight: 900;
+
+    @media @mq-viewport-md {
+        font-size: 18px;
+        letter-spacing: 2px;
+        line-height: 1.44;
+    }
+}
+
+.Subhead-small() {
+    color: @color-primaryText;
+    font-size: 14px;
+    font-weight: 900;
+    letter-spacing: 2px;
+    line-height: 1.62;
+    text-transform: uppercase;
+
+    @media @mq-viewport-md {
+        font-size: 16px;
+    }
+
+    [data-mood-bold] & {
+        font-size: 24px;
+        text-transform: none;
+        letter-spacing: normal;
+        line-height: 1.2;
+
+        @media @mq-viewport-lg {
+            font-size: 30px;
+        }
+    }
+}
+
+.ListItem-large() {
+    color: @color-primaryText;
+    font-size: 21px;
+    line-height: 1.33;
+}
+
+.ListItem-standard() {
+    color: @color-primaryText;
+    font-size: 18px;
+    line-height: 1.33;
+}
+
+.ListItem-small-bold() {
+    color: @color-primaryText;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 1.38;
+
+    @media @mq-viewport-md {
+        font-size: 16px;
+    }
+}
+
+.ListItem-small-light() {
+    color: @color-primaryText;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 1.38;
+
+    @media @mq-viewport-md {
+        font-size: 16px;
+    }
+}
+
+.IntroText() {
+    color: @color-primaryText;
+    font-size: 22px;
+    font-weight: 300;
+    line-height: 1.36;
+}
+
+.DescriptionText() {
+    .IntroText;
+    max-width: 800px;
+    text-align: center;
+    margin: 0 auto;
+    color: @color-secondaryText;
+    font-size: 18px;
+
+    @media @mq-viewport-md {
+        font-size: 22px;
+    };
+}
+
+.BodyText() {
+    color: @color-primaryText;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 24px;
+
+    @media @mq-viewport-md {
+        font-size: 18px;
+        line-height: 1.67;
+    }
+}
+
+.BylineText() {
+    color: @color-primaryText;
+    font-size: 13px;
+    font-weight: 300;
+    letter-spacing: 1px;
+    line-height: 12px;
+    text-transform: uppercase;
+}
+
+.PromoBodyText() {
+    color: @color-primaryText;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 1.29;
+
+    @media @mq-viewport-lg {
+        font-size: 16px;
+        font-weight: 300;
+        line-height: 1.38;
+    }
+}
+
+.CaptionText() {
+    color: @color-primaryText;
+    font-size: 13px;
+    font-weight: 300;
+    line-height: 1.4;
+
+    @media @mq-viewport-md {
+        font-size: 15px;
+        font-weight: 300;
+        line-height: 1.47;
+    }
+}
+
+.FormText() {
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 1.47;
+  color: @color-primaryText;
+}
+
+.PhotoCreditText() {
+    color: @color-primaryText;
+    font-size: 12px;
+    font-weight: 300;
+    line-height: 19px;
+}
+
+.Label(@color: @color-primaryText;) {
+    color: @color;
+    font-weight: bold;
+    font-size: 10px;
+    letter-spacing: 1px;
+    line-height: 1.25;
+
+    @media @mq-viewport-md {
+        font-size: 12px;
+    }
+}
+
+//Search module placeholder text
+.Placeholder() {
+  font-size: 16px;
+  font-weight: normal;
+  line-height: 1.56;
+  letter-spacing: 0.6px;
+}
