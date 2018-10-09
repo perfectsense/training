@@ -1,0 +1,53 @@
+{{~#block "AuthorPage" override="_SourceAuthorPage.hbs"~}}
+
+    {{#element "main" noWith=true}}
+        {{#if aside}}
+        <div class="{{blockName}}-wrapper">
+        {{/if}}
+            <main class="{{elementName}}" data-statusBar-headline="{{name}}">
+                <hr class="mood-bgcolor"></hr>
+                {{#element "mainContent" noWith="true"}}
+                    <article class="{{elementName}}" itemprop="mainEntity" itemscope itemtype="http://schema.org/Article">
+                        {{element "name"}}
+
+                        {{element "affiliation"}}
+
+                        {{#element "jobTitle"}}
+                            <div class="{{elementName}}" itemprop="jobTitle">{{format "jobTitlePrefix"}} <span>{{this}}</span></div>
+                        {{/element}}
+
+                        {{element "authorSocialLinks"}}
+                        {{element "image"}}
+
+                        <div class="{{blockName}}-articleBody mood-color">
+                            {{element "fullBiography"}}
+
+                            {{#element "careerHighlight"}}
+                                <div class="{{elementName}}">
+                                    <h3 class="mood-color">{{format "careerHighlightsHeading"}}</h3>
+                                    {{this}}
+                                </div>
+                            {{/element}}
+                        </div>
+                    </article>
+                {{/element}}
+            </main>
+        {{#unless aside}}
+        </div>
+        {{/unless}}
+    {{/element}}
+
+    {{#element "aside"}}
+        <aside class="{{elementName}}">
+            <div class="{{elementName}}-content" data-sticky-aside>
+                {{#each this}}
+                    {{render this
+                        [/core/list/List.hbs]="/core/list/ListOrderedSticky.hbs"
+                    }}
+                {{/each}}
+            </div>
+        </aside>
+    </div>
+    {{/element}}
+
+{{/block}}

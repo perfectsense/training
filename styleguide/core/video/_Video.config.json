@@ -3,9 +3,6 @@
         "/core/video/VideoPage.hbs": {
             "authorImage": "tiny"
         },
-        "/core/video/LiveWheelPage.hbs": {
-            "authorImage": "tiny"
-        },
         "/core/video/HTML5VideoPlayer.hbs": {
             "poster": "small"
         }

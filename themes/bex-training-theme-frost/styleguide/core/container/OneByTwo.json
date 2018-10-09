@@ -1,0 +1,28 @@
+{
+    "_include": "/core/container/Container.json",
+    "_template": "OneByTwo.hbs",
+    "noTopAlignment": true,
+    "rows": [
+        {
+            "_include": "/core/container/Row.json",
+
+            "columns": [
+                {
+                    "_include": "/core/container/TwoColumnContainer.json",
+
+                    "columnOne": [
+                        {
+                            "_include": "/core/list/ListLarge.json"
+                        }
+                    ],
+
+                    "columnTwo": [
+                        {
+                            "_include": "/core/promo/PromoImageOnTop-large.json"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

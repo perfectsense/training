@@ -1,0 +1,23 @@
+{
+    "_include": "/core/list/List.json",
+    "_template": "/core/list/ListChevron.hbs",
+
+    "media": {
+        "_template": "/core/image/Image.hbs",
+        "image": {
+            "_image": true,
+            "src": "/styleguide/media/revolution.png"
+        }
+    },
+
+    "title": "List Chevron Title",
+
+    "description": "{{words(20)}}",
+
+    "items": [
+        {
+            "_include": "/core/promo/PromoTextItem.json",
+            "_repeat": 10
+        }
+    ]
+}

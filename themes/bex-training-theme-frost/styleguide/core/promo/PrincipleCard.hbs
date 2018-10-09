@@ -1,0 +1,37 @@
+{{#block "PrincipleCard" extend="Promo.hbs"}}
+    <div class="{{blockName}}" ontouchstart="this.classList.toggle('hover');">
+        <div class="flipper">
+            <img class="invisible-image" width="{{this.media.[0].image.width}}" height="{{this.media.[0].image.height}}"
+                 src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+            <div class="{{blockName}}-front {{#if dogEar}}dog-ear{{/if}}">
+                <div class="{{blockName}}-info">
+                    {{#element "media"}}
+                        <div class="{{blockName}}-media">
+                            <img class="Image" alt="{{alt}}" src="{{this.[0].image.src}}"
+                                {{~#with this.[0].image.width}} width="{{this}}"{{/with~}}
+                                {{~#with this.[0].image.height}} height="{{this}}"{{/with~}}
+                                {{~#with this.[0].image.srcset}} srcset="{{this}}"{{/with~}}
+                                    >
+                        </div>
+                    {{/element}}
+                    {{element "title"}}
+                    {{element "description"}}
+                </div>
+            </div>
+            <div class="{{blockName}}-back">
+                <div class="{{blockName}}-info">
+                    {{#element "quote"}}
+                        <div class="{{elementName}}">
+                            {{~this~}}
+                        </div>
+                    {{/element}}
+                    {{#element "attribution"}}
+                        <div class="{{elementName}}">
+                            {{this}}
+                        </div>
+                    {{/element}}
+                </div>
+            </div>
+        </div>
+    </div>
+{{/block}}

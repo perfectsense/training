@@ -1,0 +1,21 @@
+{{#block "PromoStory" extend="/core/promo/Promo.hbs"}}
+     <div class="{{blockName}}"{{extraAttributes}}
+        {{#if hideDate}}data-hide-date{{/if}}
+        data-info-color={{#if infoColor}}{{infoColor}}{{else}}white{{/if}}
+        {{#if backgroundImageAndColor}}style="background:{{backgroundImageAndColor.cssValue}}"{{/if}}
+        {{#if hideButton}}data-hide-button{{/if}}>
+
+        {{element "category"}}
+        {{element "title"}}
+        {{element "description"}}
+        {{element "date"}}
+
+        <div class="{{blockName}}-button">
+            {{#if buttonText}}
+                {{include "/core/link/SolidButton.hbs" href=url target=target body=buttonText}}
+            {{else}}
+                {{include "/core/link/SolidButton.hbs" href=url target=target body=(format "buttonText")}}
+            {{/if}}
+        </div>
+     </div>
+{{/block}}

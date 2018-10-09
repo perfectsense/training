@@ -1,0 +1,44 @@
+{{#block "PromoFullWidth" extend="/core/promo/Promo.hbs"}}
+    <div class="{{blockName}}"{{extraAttributes}}
+        {{#if partialGradient}} data-partial-gradient="true"{{/if}}
+        {{#if outlineInfo}}data-outline-info{{/if}}
+        {{#with horizontalAlignment}} data-horizontal-alignment="{{this}}"{{/with}}
+        {{#if titleSize}}data-title-size="{{titleSize}}"{{/if}}
+        {{#if hideButton}}data-hide-button{{/if}}
+        {{#if alternateStyle}}data-alternate-style{{/if}}>
+        <div class="{{blockName}}-overlay"></div>
+
+        {{#element "media"}}
+            <div class="{{elementName}}">
+                {{~#if ../mobileMedia~}}
+                    <picture>
+                        <source width="{{this.[0].image.width}}" height="{{this.[0].image.height}}" media="(min-width: 768px)" srcset="{{this.[0].image.srcset}}">
+                        <source width="{{../mobileMedia.image.width}}" height="{{../mobileMedia.image.height}}" srcset="{{../mobileMedia.image.srcset}}">
+                        <img width="{{this.[0].image.width}}" height="{{this.[0].image.height}}" class="Image" src="{{this.[0].image.src}}">
+                    </picture>
+                {{~^~}}
+                    {{this}}
+                {{/if}}
+            </div>
+        {{/element}}
+
+        {{#element "info" noWith=true}}
+            <div class="{{elementName}}">
+                {{element "title"}}
+                {{element "description"}}
+
+                {{#if url}}
+                  {{#element "button" noWith=true}}
+                      <div class="{{elementName}}">
+                          {{#if buttonText}}
+                              {{include "/core/link/Link.hbs" href=url target=target body=buttonText}}
+                          {{else}}
+                              {{include "/core/link/Link.hbs" href=url target=target body=(format "PromoFullWidthButton")}}
+                          {{/if}}
+                      </div>
+                  {{/element}}
+                {{/if}}
+            </div>
+        {{/element}}
+    </div>
+{{/block}}

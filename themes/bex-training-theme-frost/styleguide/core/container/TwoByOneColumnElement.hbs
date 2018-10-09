@@ -1,0 +1,22 @@
+{{#block "TwoColumnContainer" extend="/core/container/TwoColumnContainer.hbs"}}
+    <div class="{{blockName}}">
+        {{#element "columnOne"}}
+            <div class="{{elementName}}">
+                {{#each this}}
+                    {{render this
+                        [/core/promo/Promo.hbs]="/core/promo/PromoImageOnTop-large.hbs"
+                    }}
+                {{/each}}
+            </div>
+        {{/element}}
+        {{#element "columnTwo"}}
+            <div class="{{elementName}}">
+                {{#each this}}
+                {{render this
+                    [/core/list/List.hbs]="/core/list/ListHorizontalRule.hbs"
+                }}
+                {{/each}}
+            </div>
+        {{/element}}
+    </div>
+{{/block}}

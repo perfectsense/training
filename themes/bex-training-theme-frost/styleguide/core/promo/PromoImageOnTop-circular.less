@@ -1,0 +1,53 @@
+.PromoImageOnTop-circular {
+    margin: 0 5px;
+    padding-bottom: 50px;
+    background-color: transparent;
+
+    @media @mq-viewport-md {
+        margin: 0;
+    }
+
+    &-media {
+        margin-bottom: 12px;
+
+        img {
+            display: block;
+            width: 120px;
+            height: auto;
+            border-radius: 50%;
+            margin: 0 auto;
+            max-width: 80px;
+
+            @media @mq-viewport-md {
+                max-width: none;
+            }
+        }
+    }
+
+    &-title {
+        text-align: center;
+
+        a {
+            .Subhead-small();
+            font-size: 12px;
+            letter-spacing: 1.5px;
+            text-decoration: none;
+
+            &:hover {
+                text-decoration: none;
+                color: @color-primary;
+            }
+
+            @media @mq-viewport-md {
+                font-size: 14px;
+            }
+        }
+    }
+
+    &-description {
+        .PromoBodyText();
+        color: @color-primaryText;
+        text-align: center;
+        text-decoration: none;
+    }
+}

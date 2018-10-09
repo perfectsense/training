@@ -1,0 +1,15 @@
+{
+    "_template": "/core/carousel/CarouselSlide.hbs",
+    "_hidden": true,
+
+    "mediaContent": {
+        "_template": "/core/image/Image.hbs",
+        "image": {
+            "_image": true
+        }
+    },
+
+    "infoTitle": "{{words(8,12)}}",
+    "infoDescription": "A slide description with {{html('<a href=\"#\">linked</a>')}} {{html('<b>BOLD</b>')}} text.",
+    "infoAttribution": "Photo by: {{name()}}"
+}

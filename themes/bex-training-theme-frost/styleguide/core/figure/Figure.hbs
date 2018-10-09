@@ -1,0 +1,19 @@
+{{#block "Figure" extend="_SourceFigure.hbs"}}
+    <figure class="{{blockName}} mood-color" itemscope itemtype="http://schema.org/ImageObject">
+        {{#element "container" noWith=true}}
+            <img src="{{image.src}}" alt="{{alt}}"
+                {{~#with image.srcset}} srcset="{{this}}"{{/with~}}
+                {{~#with image.width}} width="{{this}}"{{/with~}}
+                {{~#with image.height}} height="{{this}}"{{/with~}} />
+
+        {{/element}}
+
+        {{#element "caption"}}
+            <figcaption class="{{elementName}}" itemprop="caption">{{this}}</figcaption>
+        {{/element}}
+
+        {{#element "credit"}}
+            <div class="{{elementName}}" itemprop="author">{{format "creditText" credit=this}}</div>
+        {{/element}}
+    </figure>
+{{/block}}

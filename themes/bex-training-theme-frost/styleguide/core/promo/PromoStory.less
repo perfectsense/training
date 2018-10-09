@@ -1,0 +1,93 @@
+.PromoStory {
+    &:extend(.Promo all);
+    background: @color-true-blue;
+    padding: @module-spacing-sm;
+    text-align: var(--horizontalAlignment);
+    max-width: 820px;
+
+    [data-mood-bold] & {
+        &-title {
+            font-size: 24px;
+            padding-bottom: 20px;
+
+            @media @mq-viewport-md {
+                font-size: 30px;
+            }
+        }
+    }
+
+    [data-promo-module-alignment='left'] & {
+        text-align: left;
+        padding: 40px;
+    }
+
+    a,
+    &-description,
+    &-title .Link,
+    &-date {
+        [data-info-color='white'] & {
+            color: white;
+        }
+
+        [data-info-color='black'] & {
+            color: black;
+        }
+
+        [data-info-color='default'] & {
+            color: @color-primaryText;
+        }
+    }
+
+    &-button {
+        .Button-Pulse;
+
+        a {
+            display: inline-block;
+        }
+
+        [data-hide-button] & {
+            display: none;
+        }
+
+        [data-promo-module-alignment='left'] & {
+            margin-top: 20px;
+
+            .SolidButton {
+                display: inline-flex;
+            }
+        }
+    }
+
+    &-date {
+        margin-bottom: @module-spacing-20;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &:before {
+            content: '';
+            width: 42px;
+            height: 42px;
+            background-size: 42px 42px;
+            background-repeat: no-repeat;
+            display: inline-block;
+            padding-right: 10px;
+
+            [data-info-color='white'] & {
+                background-image: url('/styleguide/media/time-icon-white.svg');
+            }
+
+            [data-info-color='black'] & {
+                background-image: url('/styleguide/media/time-icon-black.svg');
+            }
+
+            [data-info-color='default'] & {
+                background-image: url('/styleguide/media/time-icon-default.svg');
+            }
+        }
+
+        [data-hide-date] & {
+            display: none;
+        }
+    }
+}

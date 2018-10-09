@@ -1,0 +1,98 @@
+.ListSmall {
+    .InverseList;
+    .BoxShadow;
+    background-color: @color-white;
+    text-align: center;
+    padding-bottom: 60px;
+    width: 100%;
+    .ColorPalette;
+    --color: @color-white;
+
+    &[data-horizontal-align='left'] {
+        text-align: left;
+
+        hr {
+            margin-left: 0;
+        }
+    }
+
+    &[data-horizontal-align='right'] {
+        text-align: right;
+
+        hr {
+            margin-right: 0;
+        }
+    }
+
+    &-heading {
+        background-color: @color-white;
+        padding: 30px 30px 30px 30px;
+
+        @media @mq-viewport-md {
+            padding: 60px 30px 20px;
+        }
+    }
+
+    &-media {
+        margin-bottom: 15px;
+
+        img {
+            height: 20px;
+            width: 30px;
+            margin: 0 auto;
+        }
+    }
+
+    &-title {
+        .Subhead-small;
+    }
+
+    &-description {
+        .ListItem-small-light;
+        margin-top: 15px;
+    }
+
+    &-items {
+        list-style: none;
+        margin: 0px;
+        padding: 0px 30px 0 30px;
+
+        &-item {
+            margin-bottom: 0;
+
+            a {
+              [data-inverse-colors] & {
+                color: @color-white;
+              }
+
+              [data-mood-bold] & {
+                  font-weight: bold;
+              }
+            }
+        }
+
+        &-hr {
+            background-color: @color-primary;
+            border: 0;
+            height: 3px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            width: 40px;
+        }
+
+        &-hr:first-child {
+            margin-top: 0;
+        }
+
+    }
+
+    &-cta {
+        padding-top: 50px;
+
+        [data-horizontal-align='left'] & {
+            > div {
+                display: inline-block;
+            }
+        }
+    }
+}

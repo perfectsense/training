@@ -1,0 +1,205 @@
+.PromoImageOnSide {
+    &:extend(.Promo all);
+    padding: 40px 20px;
+    position: relative;
+    text-align: center;
+
+    &-content {
+        height: 100%;
+        max-width: 1180px;
+        margin: 0 auto;
+    }
+
+    &-author {
+        font-size: 11px;
+        letter-spacing: 1px;
+        margin-bottom: @module-spacing-20;
+        text-transform: uppercase;
+
+        [data-hide-author][data-hide-date] & {
+            margin-bottom: 0;
+        }
+    }
+
+    &-authorName {
+        [data-hide-author] & {
+            display: none;
+        }
+    }
+
+    &-date {
+        [data-hide-date] & {
+            display: none;
+        }
+
+        &:before {
+            content: ', ';
+
+            [data-hide-author] & {
+                content: '';
+            }
+        }
+    }
+
+    &-description b {
+        display: block;
+
+        &:before {
+            content: url('/styleguide/media/oval-3.svg');
+            padding-right: 8px;
+        }
+    }
+
+
+    &-media {
+        margin: 0 0 @module-spacing-20 0;
+
+        @media @mq-viewport-md {
+            margin: 0;
+        }
+
+        img {
+            display: block;
+            height: auto;
+            max-width: 100%;
+        }
+    }
+
+    &-title {
+        font-size: 24px;
+        line-height: 1.17;
+        margin-bottom: @module-spacing-15;
+
+        a {
+            font-size: 24px;
+        }
+
+        [data-mood-bold] & {
+            font-weight: 900;
+        }
+    }
+
+    &-button {
+        margin-top: 30px;
+
+        [data-button-style] & a {
+            margin-left: 0;
+        }
+
+        [data-button-style='transparent'] & {
+            &:extend(.TransparentButton all);
+
+            a {
+                background-color: transparent;
+                padding: 14px 20px;
+
+                &[href$='.pdf'] {
+                    &:before {
+                        content: '';
+                        width: 14px;
+                        height: 14px;
+                        background-size: 14px 14px;
+                        background-repeat: no-repeat;
+                        display: inline-block;
+                        background-image: url('/styleguide/media/icon-external-link-copy.svg');
+                        padding-right: 10px;
+                    }
+                }
+            }
+        }
+
+        [data-button-style='default'] & {
+            &:extend(.SolidButton all);
+
+            a[href$='.pdf'] {
+                &:before {
+                    content: '';
+                    width: 14px;
+                    height: 14px;
+                    background-size: 14px 14px;
+                    background-repeat: no-repeat;
+                    display: inline-block;
+                    background-image: url('/styleguide/media/icon-external-link-copy-white.svg');
+                    padding-right: 10px;
+                }
+            }
+        }
+    }
+
+    &-info {
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+    }
+
+    @media @mq-viewport-md {
+        padding: 40px;
+
+        &-content {
+            display: flex;
+        }
+
+        &-info {
+            justify-content: center;
+            padding: 0 0 0 40px;
+
+            [data-horizontal-align='left'] & {
+                padding: 0 40px 0 0;
+            }
+        }
+
+        &-media {
+            height: 100%;
+            width: 50%;
+            flex-shrink: 0;
+
+            [data-horizontal-align='left'] & {
+                order: 2;
+            }
+        }
+
+        &-title {
+            font-size: 30px;
+
+            a {
+                font-size: 30px;
+            }
+        }
+    }
+
+    @media @mq-viewport-lg {
+        padding: 100px 40px;
+
+        &-author {
+            font-size: 13px;
+        }
+
+        &-description {
+            display: block;
+        }
+
+        &-info {
+            padding: 0 0 0 60px;
+
+            [data-horizontal-align='left'] & {
+                padding: 0 60px 0 0;
+            }
+        }
+
+        &-title {
+            font-size: 36px;
+
+            a {
+                font-size: 36px;
+            }
+
+            [data-mood-bold] & {
+                font-size: 30px;
+
+                a {
+                    font-size: 30px;
+                }
+            }
+        }
+    }
+}

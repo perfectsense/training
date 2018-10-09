@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="107px" height="108px" viewBox="0 0 107 108" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>Triangle</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <polygon id="path-1" points="75.176259 224.910759 63.1079137 232.421182 63.1079137 217.400337"></polygon>
+        <filter x="-671.2%" y="-539.3%" width="1442.4%" height="1178.5%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="0" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="27" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.187641531 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="SO-Homepage---Erin" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="SO-Homepage-v14" transform="translate(-533.000000, -1633.000000)">
+            <g id="Group-8-Copy" transform="translate(0.000000, 601.000000)">
+                <g id="promo-copy-4" transform="translate(520.000000, 861.000000)">
+                    <g id="Bitmap">
+                        <g id="Triangle">
+                            <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                            <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-1"></use>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

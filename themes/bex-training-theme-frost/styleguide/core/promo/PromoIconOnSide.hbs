@@ -1,0 +1,14 @@
+{{#block "PromoIconOnSide" extend="Promo.hbs"}}
+<div class="{{blockName}}{{#with aesthetic}} {{this}}{{/with}}"{{extraAttributes}}>
+      {{element "media"}}
+
+        {{#element "info" noWith=true}}
+            <div class="{{elementName}}">
+
+                {{element "title"}}
+
+                {{element "description"}}
+            </div>
+        {{/element}}
+    </div>
+{{/block}}

@@ -1,0 +1,26 @@
+.PromoTextItem {
+    text-decoration: none;
+
+    &-title,
+    a {
+      [data-mood-bold] & {
+        font-weight: 700;
+      }
+
+      @media @mq-viewport-md {
+          font-size: 18px;
+          line-height: 1.33;
+          text-decoration: none;
+          color: @color-primaryText;
+      }
+
+      [data-inverse-colors] & {
+        color: @color-white;
+      }
+
+      &:hover {
+          text-decoration: none;
+          color: @color-primary;
+      }
+    }
+}

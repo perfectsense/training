@@ -1,0 +1,148 @@
+.FullWidthTabs {
+  position: relative;
+
+  &-title-panel {
+      display: block;
+      width: 100%;
+      padding: 0 20px 15px 10px;
+      margin-bottom: 10px;
+      position: relative;
+      box-sizing: border-box;
+      font-size: 16px;
+      line-height: 1.5;
+
+      @media @mq-viewport-md {
+          margin-bottom: 40px;
+      }
+
+      @media @mq-viewport-lg {
+          display: none;
+      }
+  }
+
+  &-title-panel::after {
+      content: '+';
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 20px;
+      padding-bottom: 15px;
+      font-weight: 200;
+
+      @media @mq-viewport-lg {
+          display: none;
+      }
+  }
+
+  &-title-panel[data-expanded]::after {
+      content: '-';
+      color: @color-primary;
+      font-size: 30px;
+  }
+
+  &-title-panel:hover,
+  &-title-panel[data-active='true'] {
+      color: @color-primary;
+  }
+
+  &-title-panel[data-active='true'] {
+      .active-state;
+  }
+
+  &-title-panel:not([data-expanded]) {
+      color: @color-primaryText;
+      font-weight: normal;
+  }
+
+  &-tabWrapper {
+    background-color: #ebedf0;
+  }
+
+  &-tabs {
+    display: none;
+    max-width: 1240px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+
+    @media @mq-viewport-md {
+        margin-bottom: 80px;
+    }
+
+    @media @mq-viewport-lg {
+        display: flex;
+        justify-content: center;
+        list-style: none;
+        position: relative;
+        padding: 0 8%;
+        margin-bottom: 100px;
+
+        li {
+            position: relative;
+
+            .FullWidthTabs-tab {
+                padding: 19px 20px 17px;
+                text-align: center;
+                display: inline-block;
+                font-size: 16px;
+                line-height: 1.5;
+                position: relative;
+                color: @color-primaryText;
+
+                &:hover,
+                &[data-active='true'] {
+                    color: @color-primary;
+                }
+
+                &[data-active='true'] {
+                    font-weight: 700;
+                    .active-state;
+                }
+            }
+
+            &:hover,
+            &[data-active] {
+                cursor: pointer;
+            }
+        }
+
+        @media @mq-viewport-lg {
+            padding: 0 21%;
+        }
+    }
+
+  }
+
+  &-panel {
+      display: none;
+      margin-bottom: 20px;
+      padding: 0 20px 15px 10px;
+
+      &[data-visible = 'true'] {
+          display: block;
+      }
+
+      &:not([data-expanded]) {
+          display: none;
+      }
+
+      @media @mq-viewport-lg {
+          margin-bottom: 0;
+          padding: 0 12%;
+
+          &[data-visible = 'true'] {
+              display: block;
+          }
+      }
+
+      @media @mq-viewport-xl {
+          padding: 0;
+      }
+  }
+
+  &-content {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+}

@@ -1,0 +1,8 @@
+{{! Images are lazyloaded by default, to opt-out use an img tag in your template. }}
+{{#block "Image" extend="_SourceImage.hbs"}}
+    <img class="{{blockName}} lazyload" alt="{{alt}}" data-src="{{image.src}}"
+        {{~#with image.srcset}} data-srcset="{{this}}"{{/with~}}
+        {{~#with image.width}} width="{{this}}"{{/with~}}
+        {{~#with image.height}} height="{{this}}"{{/with~}}
+    >
+{{/block}}

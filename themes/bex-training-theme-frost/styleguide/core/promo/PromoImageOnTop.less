@@ -1,0 +1,121 @@
+.PromoImageOnTop {
+    &:extend(.Promo all);
+    background-color: @color-white;
+    .BoxShadow;
+
+    &-media {
+        position: relative;
+
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    &-title {
+        margin-bottom: 10px;
+    }
+
+    &-duration {
+      .BylineText;
+      display: none;
+      margin-top: 10px;
+
+      &[data-type='video'],
+      &[data-type='Video'] {
+          display: block;
+      }
+
+      [data-hide-duration] & {
+        display: none;
+      }
+    }
+
+    &-authorContent {
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        [data-hide-date][data-hide-author] & {
+            display: none;
+        }
+
+        [data-promo-module-alignment='left'] & {
+            justify-content: left;
+        }
+    }
+
+    &-authorInfo {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        font-size: 11px;
+        line-height: 1.45;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+
+        [data-hide-author] & {
+            padding-left: 0px;
+        }
+    }
+
+    &-authorImage {
+        padding-right: 10px;
+
+        img {
+            max-height: 40px;
+            max-width: 40px;
+            border-radius: 50%;
+        }
+
+        [data-hide-author] & {
+            display: none;
+        }
+    }
+
+    &-author {
+        display: inline-flex;
+
+        [data-hide-author] & {
+            display: none;
+        }
+    }
+
+    &-info {
+        text-align: var(--horizontalAlignment);
+        padding: @module-spacing-sm;
+
+        @media @mq-viewport-md {
+            padding: @module-spacing-md;
+        }
+
+        [data-promo-module-alignment='left'] & {
+            text-align: left;
+        }
+    }
+
+    &-date {
+        [data-hide-date] & {
+            display: none;
+        }
+    }
+
+    &-author {
+      [data-hide-author] & {
+        display: none;
+      }
+    }
+
+    &-description {
+        [data-hide-description] & {
+            display: none;
+        }
+    }
+
+    &-category {
+        [data-hide-category] & {
+            display: none;
+        }
+    }
+}

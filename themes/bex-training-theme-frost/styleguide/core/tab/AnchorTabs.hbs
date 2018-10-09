@@ -1,0 +1,22 @@
+{{#block "AnchorTabs" extend="/core/tab/Tabs.hbs" }}
+    <div class="{{blockName}}" data-widget="anchortabs">
+
+        <!-- This creates the row of tabs for navigation -->
+        <div class="{{blockName}}-tabWrapper">
+          {{element "tabs"}}
+        </div>
+
+        {{#element "content" noWith=true}}
+            <div class="{{elementName}}">
+                {{#each tabs}}
+                    {{#element "title"}}
+                        <a class="{{elementName}}-panel" href="#{{../id}}" data-tab>{{this}}</a>
+                    {{/element}}
+                    <div class="{{blockName}}-panel" id="{{id}}" data-tab-panel>
+                        {{this}}
+                    </div>
+                {{/each}}
+            </div>
+        {{/element}}
+    </div>
+{{/block}}

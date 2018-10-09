@@ -1,0 +1,238 @@
+{
+  "_include": "_SourceGalleryPage.json",
+  "_template": "/core/gallery/GalleryPage.hbs",
+
+  "headline": "Tour Our Office",
+  "subHeadline": null,
+  "galleryBody": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec in egestas quam. Maecenas bibendum hendrerit justo in interdum. Morbi eget ex ut augue.",
+  "sectionNavigation": {
+      "_template": "/core/navigation/Navigation.hbs",
+      "items": [
+          {
+              "_template": "/core/navigation/NavigationItem.hbs",
+              "text": "Careers",
+              "target": "_self",
+              "href": "#",
+              "isCurrent": true
+          }
+      ]
+  },
+  "slides": [
+    {
+      "_include": "/core/gallery/_GallerySlide.json",
+      "media": {
+        "_template": "/core/image/Image.hbs",
+        "image": {
+          "_image": true,
+            "src": "/styleguide/media/rectangle.png"
+        }
+      },
+      "infoDescription": "The photo description or caption suscipit, nibh ac luctus ultrices, odio ligula pulvinar est, vitae vulputate lacus elit et ex. Lorem ipsum dolor sit amet.",
+      "infoAttribution": "Photo Credit"
+    },
+    {
+      "_include": "/core/gallery/_GallerySlide.json",
+      "mediaContent": {
+        "_template": "/core/image/Image.hbs",
+        "image": {
+          "_image": true,
+            "src": "/styleguide/media/rectangle-copy-5.png"
+        }
+      },
+      "infoDescription": "The photo description or caption suscipit, nibh ac luctus ultrices, odio ligula pulvinar est, vitae vulputate lacus elit et ex. Lorem ipsum dolor sit amet.",
+      "infoAttribution": "Photo Credit"
+    },
+    {
+      "_include": "/core/gallery/_GallerySlide.json",
+      "mediaContent": {
+        "_template": "/core/image/Image.hbs",
+        "image": {
+          "_image": true,
+            "src": "/styleguide/media/rectangle-copy.png"
+        }
+      },
+      "infoDescription": "The photo description or caption suscipit, nibh ac luctus ultrices, odio ligula pulvinar est, vitae vulputate lacus elit et ex. Lorem ipsum dolor sit amet.",
+      "infoAttribution": "Photo Credit"
+    },
+    {
+      "_include": "/core/gallery/_GallerySlide.json",
+      "mediaContent": {
+        "_template": "/core/image/Image.hbs",
+        "image": {
+          "_image": true,
+            "src": "/styleguide/media/rectangle-copy-7.png"
+        }
+      },
+      "infoDescription": "The photo description or caption suscipit, nibh ac luctus ultrices, odio ligula pulvinar est, vitae vulputate lacus elit et ex. Lorem ipsum dolor sit amet.",
+      "infoAttribution": "Photo Credit"
+    },
+    {
+      "_include": "/core/gallery/_GallerySlide.json",
+      "mediaContent": {
+        "_template": "/core/image/Image.hbs",
+        "image": {
+          "_image": true,
+            "src": "/styleguide/media/rectangle-copy-6.png"
+        }
+      },
+      "infoDescription": "The photo description or caption suscipit, nibh ac luctus ultrices, odio ligula pulvinar est, vitae vulputate lacus elit et ex. Lorem ipsum dolor sit amet.",
+      "infoAttribution": "Photo Credit"
+    },
+    {
+      "_include": "/core/gallery/_GallerySlide.json",
+      "mediaContent": {
+        "_template": "/core/image/Image.hbs",
+        "image": {
+          "_image": true,
+            "src": "/styleguide/media/rectangle-copy-2.png"
+        }
+      },
+      "infoDescription": "The photo description or caption suscipit, nibh ac luctus ultrices, odio ligula pulvinar est, vitae vulputate lacus elit et ex. Lorem ipsum dolor sit amet.",
+      "infoAttribution": "Photo Credit"
+    },
+    {
+      "_include": "/core/gallery/_GallerySlide.json",
+      "mediaContent": {
+        "_template": "/core/image/Image.hbs",
+        "image": {
+          "_image": true,
+            "src": "/styleguide/media/rectangle-copy-3.png"
+        }
+      },
+      "infoDescription": "The photo description or caption suscipit, nibh ac luctus ultrices, odio ligula pulvinar est, vitae vulputate lacus elit et ex. Lorem ipsum dolor sit amet.",
+      "infoAttribution": "Photo Credit"
+    },
+    {
+      "_include": "/core/gallery/_GallerySlide.json",
+      "mediaContent": {
+        "_template": "/core/image/Image.hbs",
+        "image": {
+          "_image": true,
+            "src": "/styleguide/media/rectangle-copy-4.png"
+        }
+      },
+      "infoDescription": "The photo description or caption suscipit, nibh ac luctus ultrices, odio ligula pulvinar est, vitae vulputate lacus elit et ex. Lorem ipsum dolor sit amet.",
+      "infoAttribution": "Photo Credit"
+    },
+    {
+      "_include": "/core/gallery/_GallerySlide.json",
+      "mediaContent": {
+        "_template": "/core/image/Image.hbs",
+        "image": {
+          "_image": true,
+            "src": "/styleguide/media/rectangle-copy-8.png"
+        }
+      },
+      "infoDescription": "The photo description or caption suscipit, nibh ac luctus ultrices, odio ligula pulvinar est, vitae vulputate lacus elit et ex. Lorem ipsum dolor sit amet.",
+      "infoAttribution": "Photo Credit"
+    }
+  ],
+  "aside": "",
+  "below": "",
+    "actions": {
+        "_include": "/core/action-bar/ActionBar.json"
+    },
+    "navigation": {
+        "_include": "/core/navigation/Navigation.json"
+    },
+    "footerLogo": {
+        "_template": "/core/page/PageLogo.hbs",
+        "image": {
+            "_image": true,
+            "src": "/styleguide/media/ps-copy-2.svg"
+        },
+        "href": "#",
+        "alt": "Frost Theme Logo",
+        "target": "_blank"
+    },
+    "footerNavigation": {
+        "_include": "/core/navigation/Navigation.json"
+    },
+    "footerContent": [
+        {
+            "_include": "/core/footer/FooterColumns.json",
+            "columns": [
+                {
+                    "_include": "/core/footer/FooterColumn.json",
+                    "items": {
+                        "_include": "/core/page/PageLogo.json",
+                        "image": {
+                            "_image": true,
+                            "src": "/styleguide/media/ps-copy-2.svg"
+                        },
+                        "href": "#",
+                        "alt": "Frost Theme Logo",
+                        "target": "_blank"
+                    }
+                },
+                {
+                    "_include": "/core/footer/FooterColumn.json",
+                    "items": {
+                        "_include": "/core/quote/Quote.json",
+                        "quote": "“It always seems impossible until it's done.”",
+                        "attribution": "Nelson Mandela"
+                    }
+                }
+
+            ]
+        },
+        {
+            "_include": "/core/footer/FooterColumns.json",
+            "columns": [
+                {
+                    "_include": "/core/footer/FooterColumn.json",
+                    "items": {
+                        "_include": "/core/navigation/Navigation.json"
+                    }
+                },
+                {
+                    "_include": "/core/footer/FooterColumn.json",
+                    "items": {
+                        "_include": "/core/list/ListFooter.json",
+                        "title": "Contact",
+                        "items": [
+                            {
+                                "_include": "/core/text/RichTextModule.json",
+                                "items": [
+                                    "Perfect Sense, 12120 Sunset Hills Road, 6th Floor, Reston, VA 20190, p: (703) 956-5850   f: (571) 446-2445"
+                                ]
+                            }
+                        ]
+                    }
+                }
+
+            ]
+        }
+    ],
+    "social": {
+        "_include": "/core/social/SocialBar.json",
+        "title": "Follow Us",
+        "items": [
+            {
+                "_include": "/core/social/SocialLink.json",
+                "href": "https://www.facebook.com/perfectsensedigital/",
+                "socialService": "facebook",
+                "body": "perfectsensedigital"
+            },
+            {
+                "_include": "/core/social/SocialLink.json",
+                "href": "https://twitter.com/perfectsensedig",
+                "socialService": "twitter",
+                "body": "perfectsensedig"
+            },
+            {
+                "_include": "/core/social/SocialLink.json",
+                "href": "https://www.instagram.com/perfectsense/",
+                "socialService": "instagram",
+                "body": "perfectsense"
+            },
+            {
+                "_include": "/core/social/SocialLink.json",
+                "href": "https://www.linkedin.com/company/perfect-sense-digital",
+                "socialService": "linkedin",
+                "body": "perfect-sense-digital"
+            }
+        ]
+    },
+    "disclaimer": "© 2018 Perfect Sense.  Site designed by our talented design team and powered by our Brightspot publishing platform.  Privacy Policy"
+}

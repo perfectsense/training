@@ -1,0 +1,78 @@
+.ListGrid {
+    &:extend(.List all);
+    // See the ReadMe for details on grid implementation.
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    &-items {
+        position: relative;
+        margin: 0 auto;
+        width: 100%;
+        max-width: var(--maxPageWidth);
+
+        img {
+            width: 100%;
+            height: auto;
+            display: inline-block;
+        }
+
+        @media @mq-viewport-md {
+            width: var(--pageWidth);
+        }
+
+        &-item {
+            margin-bottom: var(--gridGutters);
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+}
+
+.ListGrid-items {
+    @supports (display: grid) {
+        display: grid;
+        grid-gap: var(--gridGutters);
+        .generate-column-templates(5);
+    }
+
+    .ListGrid[data-full-width] & {
+        width: 100%;
+    }
+
+    &-item {
+        .generate-columns(5);
+
+        @supports (display: grid) {
+            margin-bottom: 0;
+        }
+    }
+}
+
+.generate-columns(@n, @i: 1) when (@i =< @n) {
+
+    @media @mq-viewport-md {
+        .ListGrid[data-column-count='@{i}'] & {
+            .msFauxGrid(@i);
+        }
+    }
+
+  .generate-columns(@n, (@i + 1));
+}
+
+.generate-column-templates(@n, @i: 1) when (@i =< @n) {
+    // TODO(teckels): Modify lesshint rules to accept fr units
+    // https://perfectsense.atlassian.net/browse/BSP-5734
+
+    @media @mq-viewport-lg {
+        .ListGrid[data-column-count='@{i}'] & {
+            @supports (display: grid) {
+                grid-template-columns: repeat(@i, 1fr); // lesshint propertyUnits: false
+            }
+        }
+    }
+
+  .generate-column-templates(@n, (@i + 1));
+}

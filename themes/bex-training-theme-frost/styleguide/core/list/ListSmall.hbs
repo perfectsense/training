@@ -1,0 +1,35 @@
+{{#block "ListSmall" extend="/core/list/List.hbs"}}
+    <div class="{{blockName}}"{{extraAttributes}}
+    {{#if backgroundColor}}style="--color:var(--{{backgroundColor}})"{{/if}}
+    {{#if inverseColors}}data-inverse-colors {{/if}}
+    {{#with horizontalAlignment}} data-horizontal-align="{{this}}"{{/with}}>
+        {{#element "heading" noWith="true"}}
+            <div class="{{elementName}}">
+                {{#element "media"}}
+                    <div class="{{elementName}}">
+                        {{this}}
+                    </div>
+                {{/element}}
+
+                {{element "title"}}
+
+                {{element "description"}}
+            </div>
+        {{/element}}
+
+        {{#element "items"}}
+            <ul class="{{elementName}}">
+                {{#each this}}
+                    <hr class="{{elementName}}-hr">
+                    <li class="{{elementName}}-item">
+                        {{render this
+                            [/core/promo/Promo.hbs]="/core/promo/PromoTextItem.hbs"
+                        }}
+                    </li>
+                {{/each}}
+            </ul>
+        {{/element}}
+
+        {{element "cta"}}
+    </div>
+{{/block}}

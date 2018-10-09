@@ -1,0 +1,132 @@
+.Navigation {
+    width: 100%;
+    background-color: var(--headerBackgroundColor);
+    left: 0;
+    top: var(--headerHeight);
+    position: absolute;
+    white-space: nowrap;
+    padding-top: 110px;
+    display: none;
+    height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding-bottom: 50px;
+
+    [data-mobile-left-align-nav] & {
+      text-align: left;
+      padding-top: var(--headerHeight);
+      margin-top: 20px;
+      padding-left: 40px;
+
+      @media @mq-viewport-lg {
+        padding: 0;
+        text-align: unset;
+        margin-top: 0;
+      }
+    }
+
+    @media @mq-viewport-lg {
+        height: 100%;
+        overflow-y: unset;
+        overflow-x: unset;
+        padding-bottom: 0;
+    }
+
+    &-items {
+      list-style: none;
+      margin: 0 auto;
+      padding: 0 0 36px 0;
+
+      .UnauthenticatedNavigationItem {
+          &-items {
+              &-item {
+                  display: inline-block;
+                  line-height: 17.8px;
+
+                  [data-mood-bold] & {
+                    font-size: 14px;
+                    font-weight: 400;
+
+                    &:hover {
+                        color: @color-primary;
+                    }
+                  }
+
+                  @media @mq-viewport-lg {
+                    display: flex;
+                    align-items: center;
+                  }
+
+                  a {
+                    .BylineText;
+                    text-transform: uppercase;
+                    color: var(--headerTextColor);
+                    letter-spacing: 2px;
+                  }
+
+                  &:last-child {
+                      @media @mq-viewport-lg {
+                        padding-right: 20px;
+                      }
+
+                      &:before {
+                          content: '/';
+                          color: var(--headerTextColor);
+                          padding: 0 5px;
+                      }
+                  }
+              }
+          }
+      }
+
+      &-item {
+          margin-bottom: 30px;
+      }
+
+      &-hr {
+        background-color: @color-primary;
+        border: 0;
+        height: 3px;
+        margin-bottom: 30px;
+        margin-top: 0;
+        width: 40px;
+
+        [data-mobile-left-align-nav] & {
+          display: none;
+        }
+      }
+    }
+
+    @media @mq-viewport-lg {
+        text-align: right;
+        position: fixed;
+        padding-top: 0;
+        top: 0;
+        left: 0;
+        position: relative;
+
+        &-items {
+          display: inline-flex;
+          padding: 0;
+
+          &-item {
+              margin-bottom: 0;
+              display: flex;
+              align-items: center;
+          }
+
+          &-hr {
+              display: none;
+
+              [data--mobile-left-align-nav] & {
+                display: none;
+              }
+          }
+        }
+
+        [data-navigation-alignment='left'] & {
+            text-align: left;
+            margin-left: 40px;
+        }
+    }
+}

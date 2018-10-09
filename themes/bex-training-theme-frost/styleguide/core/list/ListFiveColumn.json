@@ -1,0 +1,9 @@
+{
+    "_template": "ListFiveColumn.hbs",
+    "items": [
+      {
+        "_include": "/core/promo/PromoImageOnTop.json",
+        "_repeat": 9
+      }
+    ]
+}

@@ -1,0 +1,13 @@
+{{#block "CarouselSlide" extend="/core/gallery/GallerySlide.hbs"}}
+    <div class="{{blockName}}" itemprop="image" itemtype="http://schema.org/ImageObject" {{extraAttributes}}>
+        {{element "media"}}
+
+        {{#element "info" noWith=true}}
+            <div class="{{elementName}}">
+                {{element "infoTitle"}}
+                {{element "infoDescription"}}
+                {{element "infoAttribution"}}
+            </div>
+        {{/element}}
+    </div>
+{{/block}}

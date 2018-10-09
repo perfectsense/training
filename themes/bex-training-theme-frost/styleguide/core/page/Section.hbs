@@ -1,0 +1,23 @@
+{{#block "Section" override="/core/page/Page.hbs"}}
+     {{#element "main" noWith=true}}
+          <main class="{{elementName}}">
+              {{element "pageLeadInfo"}}
+              {{#with main}}
+                {{#each this}}
+                    {{render this
+                        [/core/list/List.hbs]=(cycle
+                            "/core/list/ListMasonry.hbs"
+                            "/core/list/LargeCarousel.hbs"
+                            "/core/list/ListFourColumn.hbs"
+                        )
+                    }}
+                {{/each}}
+              {{/with}}
+          </main>
+          {{#if pageLead}}
+            {{#element "sectionNavigation"}}{{/element}}
+          {{/if}}
+
+      {{/element}}
+
+{{/block}}

@@ -1,0 +1,14 @@
+{{#block "FacebookShareButton" extend="_SourceFacebookShareButton.hbs"}}
+    {{#element "link" noWith=true}}
+        <a class="{{blockName}}"
+        href="https://www.facebook.com/dialog/share?
+        {{~#with facebookAppId~}}app_id={{this}}{{/with}}
+        {{~#with display~}}&display={{this}}{{/with}}
+        {{~#with shareHref~}}&href={{this}}{{/with}}
+        {{~#with redirectUri~}}&redirect_uri={{this}}{{/with}}"
+        target="_blank"
+    >
+        <svg class="facebook-icon"><use xlink:href="#icon-facebook"/></svg>
+    </a>
+    {{/element}}
+{{/block}}
