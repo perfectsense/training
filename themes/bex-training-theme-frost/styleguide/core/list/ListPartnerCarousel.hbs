@@ -1,0 +1,19 @@
+{{#block "ListPartnerCarousel" extend="/core/list/List.hbs"}}
+    <div class="{{blockName}}"{{extraAttributes}}
+    {{#if displayHorizontalRule}} data-horizontal-rule='true'{{/if}}
+    {{#if backgroundColor}}style="--color:var(--{{backgroundColor}})"{{/if}}>
+        {{element "title"}}
+
+        {{#element "items"}}
+            <ul class="{{elementName}}">
+                {{#each this}}
+                    <li class="{{elementName}}-item">
+                        {{render this
+                            [/core/promo/Promo.hbs]="/core/promo/PromoPartner.hbs"
+                        }}
+                    </li>
+                {{/each}}
+            </ul>
+        {{/element}}
+    </div>
+{{/block}}

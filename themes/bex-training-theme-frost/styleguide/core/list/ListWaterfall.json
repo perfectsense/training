@@ -1,0 +1,49 @@
+{
+  "_template": "/core/list/ListWaterfall.hbs",
+
+  "items": [
+    {
+      "_include": "/core/promo/PromoImageOnTop.json",
+      "title": "{{words([3,6])}}",
+      "description": "{{words([10,25])}}"
+    },
+    {
+      "_include": "/core/promo/PromoImageOnTop.json",
+      "title": "{{words([3,6])}}",
+      "description": "{{words([10,25])}}"
+    },
+    {
+      "_include": "/core/promo/PromoImageOnTop.json",
+      "title": "{{words([3,6])}}",
+      "description": "{{words([10,25])}}"
+    },
+    {
+      "_include": "/core/promo/PromoImageOnTop.json",
+      "title": "{{words([3,6])}}",
+      "category": "Sustainability",
+      "description": "{{words([10,25])}}",
+      "media": null
+    },
+    {
+      "_include": "/core/promo/PromoImageOnTop.json",
+      "title": "{{words([3,6])}}",
+      "category": "Music and Video",
+      "description": "{{words([10,25])}}"
+    },
+    {
+      "_include": "/core/promo/PromoImageOnTop.json",
+      "title": "{{words([3,6])}}",
+      "description": "{{words([10,25])}}"
+    },
+    {
+      "_include": "/core/promo/PromoImageOnTop.json",
+      "title": "{{words([3,6])}}",
+      "description": "{{words([10,25])}}"
+    },
+    {
+      "_include": "/core/promo/PromoImageOnTop.json",
+      "title": "{{words([3,6])}}",
+      "description": "{{words([10,25])}}"
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+.PromoContent {
+    &:extend(.Promo all);
+
+    &[style] {
+        padding: @module-spacing-sm;
+    }
+
+    &-media {
+        margin-bottom: @module-spacing-20;
+        max-width: 400px;
+
+        img {
+            height: auto;
+            margin: 0;
+            max-width: 100%;
+        }
+    }
+
+    &-title {
+        .PromoHeadlineText;
+        font-size: 24px;
+        line-height: 1.17;
+        margin-bottom: @module-spacing-15;
+    }
+
+    &-description {
+        .PromoBodyText;
+        text-align: left;
+    }
+
+    @media @mq-viewport-md {
+        padding: @module-spacing-md;
+
+        &[style] {
+            padding: @module-spacing-md;
+        }
+
+        &-description {
+            width: 100%;
+        }
+
+        &-info {
+            display: flex;
+        }
+
+        &-media {
+            flex-shrink: 0;
+            margin-bottom: 0;
+            margin-right: @module-spacing-20;
+            max-width: 200px;
+            width: 40%;
+        }
+
+    }
+
+    @media @mq-viewport-lg {
+        padding: @module-spacing-lg;
+
+        &[style] {
+            padding: @module-spacing-lg;
+        }
+    }
+
+    &-author {
+        margin-bottom: 20px;
+    }
+}

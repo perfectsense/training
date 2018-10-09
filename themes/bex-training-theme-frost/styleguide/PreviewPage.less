@@ -1,0 +1,67 @@
+// Styleguide preview frame styles go here
+.PreviewPage {
+    &-body {
+        background: @color-white;
+
+        .ListSmall {
+            max-width: 400px;
+        }
+
+        .ListBulleted, .ListLarge, .ListMedium {
+            max-width: 400px;
+        }
+    }
+
+    &-main {
+        .PromoImageOnTop {
+            margin: 0px auto;
+            box-shadow: @shadow;
+            max-width: 400px;
+        }
+
+        .PromoImageOnTop-large {
+            max-width: 800px;
+            width: 100%;
+        }
+
+        .PromoImageOnTop-circular {
+            margin: 30px;
+            width: 210px;
+        }
+
+        .PromoImageFlip,
+        .PromoImageFlip-small {
+            width: 87.5%;
+
+            @media @mq-viewport-md {
+                width: 29.9%;
+            }
+
+            @media @mq-viewport-lg {
+                width: 29.3%;
+            }
+
+            @media @mq-viewport-xl {
+                width: 27.78%;
+            }
+        }
+
+        .Carousel {
+            width: 800px;
+        }
+
+        .PromoContent {
+            max-width: 840px;
+        }
+
+        .PrincipleCard,
+        .PromoImage,
+        .PromoNews,
+        .PromoStory,
+        .VideoPromo,
+        .QuoteCard,
+        .FormStayInTouch {
+            max-width: 400px;
+        }
+    }
+}

@@ -1,0 +1,21 @@
+.ListLeadHero {
+    padding-bottom: @module-spacing-20;
+
+    @media @mq-viewport-md {
+        &-cta {
+            .SolidButton {
+                a {
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+
+    @media @mq-viewport-lg {
+        padding-bottom: @module-spacing-60;
+
+        &-cta {
+            margin: @module-spacing-40 0 0 32.258%;
+        }
+    }
+}

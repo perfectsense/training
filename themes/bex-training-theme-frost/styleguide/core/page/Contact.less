@@ -1,0 +1,42 @@
+.Contact {
+    &:extend(.Page all);
+
+    .OneByTwo {
+        .Contain;
+        position: relative;
+        z-index: 1;
+
+        .TwoColumnContainer {
+            .RichTextModule {
+                padding: 0 60px 60px 60px;
+                text-align: left;
+                .BodyText;
+
+                @media @mq-viewport-md {
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+
+
+    .Form-buttons {
+        button {
+            padding: 19px 21px;
+        }
+    }
+
+    @media @mq-viewport-md {
+      [data-negative-margin='extra'] {
+        .PromoImage {
+            margin-top: -180px;
+        }
+      }
+
+      [data-negative-margin='default'] {
+        .PromoImage {
+            margin-top: -80px;
+        }
+      }
+    }
+}

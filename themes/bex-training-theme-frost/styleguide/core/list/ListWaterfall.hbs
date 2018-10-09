@@ -1,0 +1,17 @@
+{{#block "ListWaterfall" extend="/core/list/List.hbs"}}
+    <div class="{{blockName}}"{{extraAttributes}}>
+        {{#element "items"}}
+            <div class="{{elementName}}">
+                <div class="grid-sizer"></div>
+                <div class="gutter-sizer"></div>
+                {{#each this}}
+                    <div class="grid-item">
+                        {{render this
+                            [/core/promo/Promo.hbs]="/core/promo/PromoImageOnTop.hbs"
+                        }}
+                    </div>
+                {{/each}}
+            </div>
+        {{/element}}
+    </div>
+{{/block}}

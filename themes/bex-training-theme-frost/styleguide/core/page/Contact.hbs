@@ -1,0 +1,19 @@
+{{#block "Contact" override="/core/page/Page.hbs"}}
+     {{#element "main" noWith=true}}
+          <main class="{{elementName}}">
+              {{element "pageHeading"}}
+              {{element "pageSubHeading"}}
+              {{#with main}}
+                {{#each this}}
+                {{render this
+                    [/core/container/Container.hbs]="/core/container/OneByTwo.hbs"
+                    [/core/promo/Promo.hbs]=(cycle
+                        "/core/promo/PromoImage.hbs"
+                    )
+                }}
+                {{/each}}
+              {{/with}}
+          </main>
+      {{/element}}
+
+{{/block}}

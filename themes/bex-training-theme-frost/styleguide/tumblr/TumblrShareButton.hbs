@@ -1,0 +1,10 @@
+{{#block "TumblrShareButton" extend="_SourceTumblrShareButton.hbs"}}
+    {{#element "link" noWith=true}}
+        <a class="{{blockName}}" href="https://www.tumblr.com/widgets/share/tool?
+            {{~#with url}}canonicalUrl={{this}}{{~/with~}}"
+           target="_blank"
+        >
+        <svg class="tumblr-icon"><use xlink:href="#icon-tumblr"/></svg>
+        </a>
+    {{/element}}
+{{/block}}

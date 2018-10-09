@@ -1,0 +1,29 @@
+.plyr__control { //lesshint selectorNaming: false
+  border-radius: 50%;
+  border: 2px solid @color-white;
+  background-color: rgba(0, 0, 0, 0.4);
+
+  &:hover {
+      background-color: rgba(0, 0, 0, 0.4);
+  }
+}
+
+.plyr__controls { //lesshint selectorNaming: false
+  .plyr__control { //lesshint selectorNaming: false
+    &[data-plyr='play'] {
+      svg {
+          padding-left: 3px;
+      }
+    }
+
+    &:hover {
+        background-color: rgba(0, 0, 0, 0.4);
+    }
+  }
+}
+
+.plyr__volume { //lesshint selectorNaming: false
+    input[type='range'] {
+      color: unset;
+    }
+}

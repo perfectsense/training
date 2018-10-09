@@ -1,0 +1,30 @@
+{{#block "List" extend="_SourceList.hbs"}}
+    <div class="{{blockName}}"{{extraAttributes}}
+    {{#if noTopPadding}}data-nopaddingtop{{/if}}>
+        {{element "title"}}
+
+        {{element "description"}}
+
+        {{element "items"}}
+
+        {{#element "cta" noWith=true}}
+            {{#if ctaUrl}}
+                <div class="{{elementName}}">
+                    {{#if ctaText}}
+                        {{include "/core/link/SolidButton.hbs" href=ctaUrl target=ctaTarget body=ctaText}}
+                    {{else}}
+                        {{include "/core/link/SolidButton.hbs" href=ctaUrl target=ctaTarget body=(format "ctaText")}}
+                    {{/if}}
+                </div>
+            {{/if}}
+        {{/element}}
+
+        {{#element "pagination" noWith=true}}
+            <div class="{{elementName}}">
+                {{~#each pagination~}}
+                    {{this}}
+                {{~/each~}}
+            </div>
+        {{/element}}
+    </div>
+{{/block}}

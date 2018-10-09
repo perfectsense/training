@@ -1,0 +1,13 @@
+{
+    "_template": "ListFourColumn.hbs",
+    "title": "{{words(3)}}",
+    "description": "{{words(10)}}",
+    "fullWidth": false,
+    "partialGradient": true,
+    "items": [
+      {
+        "_include": "/core/promo/PromoImageOnTop.json",
+        "_repeat": 9
+      }
+    ]
+  }

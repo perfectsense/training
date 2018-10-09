@@ -1,0 +1,18 @@
+{{#block "ListFooter" extend="/core/list/List.hbs"}}
+    <div class="{{blockName}}">
+        {{#element "title"}}
+            <div class="{{elementName}}">{{this}}</div>
+        {{/element}}
+        {{#element "items"}}
+            <ul class="{{elementName}}">
+                {{#each this}}
+                    <li class="{{elementName}}-item">
+                        {{render this
+                            [/core/promo/Promo.hbs]="/core/promo/PromoTextItem.hbs"
+                        }}
+                    </li>
+                {{/each}}
+            </ul>
+        {{/element}}
+    </div>
+{{/block}}

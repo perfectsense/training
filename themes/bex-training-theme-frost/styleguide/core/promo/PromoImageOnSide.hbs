@@ -1,0 +1,34 @@
+{{#block "PromoImageOnSide" extend="/core/promo/Promo.hbs"}}
+    <div class="{{blockName}}{{#with aesthetic}} {{this}}{{/with}}"{{extraAttributes}}
+        {{#if backgroundColor}}style="--color:var(--{{backgroundColor}})"{{/if}}
+        {{#with horizontalAlignment}} data-horizontal-align="{{this}}"{{/with}}
+        data-button-style={{#if buttonStyle}}{{buttonStyle}}{{else}}default{{/if}}
+        {{#if hideCategory}}data-hide-category{{/if}}
+        {{#if hideAuthor}}data-hide-author{{/if}}
+        {{#if hideDate}}data-hide-date{{/if}}>
+
+        <div class="{{blockName}}-content">
+            {{element "media"}}
+
+            {{#element "info" noWith=true}}
+                <div class="{{elementName}}">
+                    {{element "title"}}
+
+                    {{element "description"}}
+
+                    {{#if url}}
+                      {{#element "button" noWith=true}}
+                          <div class="{{elementName}}">
+                              {{#if buttonText}}
+                                  {{include "/core/link/Link.hbs" href=url target=target body=buttonText}}
+                              {{else}}
+                                  {{include "/core/link/Link.hbs" href=url target=target body=(format "PromoImageOnSideButton")}}
+                              {{/if}}
+                          </div>
+                      {{/element}}
+                    {{/if}}
+                </div>
+            {{/element}}
+        </div>
+    </div>
+{{/block}}

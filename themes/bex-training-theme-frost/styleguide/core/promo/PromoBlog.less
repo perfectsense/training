@@ -1,0 +1,61 @@
+.PromoBlog {
+    padding-bottom: @module-spacing-40;
+
+    &-info-button {
+        font-size: 18px;
+        font-weight: 300;
+    }
+
+    &-byline {
+        display: flex;
+        font-size: 13px;
+        font-weight: 300;
+        letter-spacing: 1px;
+        margin-bottom: @module-spacing-20;
+        text-transform: uppercase;
+    }
+
+    &-description {
+        font-size: 18px;
+        font-weight: 300;
+        line-height: 1.67;
+        margin-bottom: @module-spacing-20;
+    }
+
+    &-media {
+        margin-bottom: @module-spacing-20;
+
+        img {
+            display: block;
+            height: auto;
+            margin: 0;
+            max-width: 100%;
+        }
+    }
+
+    &-title {
+        font-size: 24px;
+        line-height: 1.11;
+        margin-bottom: @module-spacing-20;
+
+        a {
+            color: @color-black;
+
+            &:hover {
+                color: @color-primary;
+            }
+        }
+    }
+
+    @media @mq-viewport-md {
+        padding-bottom: @module-spacing-80;
+
+        &-media {
+            margin-bottom: @module-spacing-30;
+        }
+
+        &-title {
+            font-size: 36px;
+        }
+    }
+}

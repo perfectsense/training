@@ -1,0 +1,46 @@
+{{#block "PromoTextOverlayLarge-Contact" extend="Promo.hbs"}}
+    <div class="{{blockName}}{{#with aesthetic}} {{this}}{{/with}}" {{#unless media}}data-no-background{{/unless}}
+      data-info-color="{{#if infoColor}}{{infoColor}}{{else}}default{{/if}}">
+    {{#element "media"}}
+        <div class="{{elementName}}">
+            {{~#if ../mobileMedia~}}
+                <picture>
+                    <source width="{{this.[0].image.width}}" height="{{this.[0].image.height}}" media="(min-width: 768px)" srcset="{{this.[0].image.srcset}}">
+                    <source width="{{../mobileMedia.image.width}}" height="{{../mobileMedia.image.height}}" srcset="{{../mobileMedia.image.srcset}}">
+                    <img width="{{this.[0].image.width}}" height="{{this.[0].image.height}}" class="Image lazyload" src="{{this.[0].image.src}}">
+                </picture>
+            {{~^~}}
+                <img class="Image" alt="{{alt}}" src="{{this.[0].image.src}}"
+                    {{~#with this.[0].image.srcset}} srcset="{{this}}"{{/with~}}
+                    {{~#with this.[0].image.width}} width="{{this}}"{{/with~}}
+                    {{~#with this.[0].image.height}} height="{{this}}"{{/with~}} />
+            {{~/if~}}
+        </div>
+    {{/element}}
+    {{#element "info" noWith=true}}
+        <div class="{{elementName}}"
+            data-horizontal-align="{{#if horizontalAlignment}}{{horizontalAlignment}}{{else}}left{{/if}}">
+
+            <div class="{{blockName}}-info-content">
+                {{element "description"}}
+
+                {{#element "title"}}
+                <div class="{{elementName}}">
+                    <a href="tel:+{{this}}">{{this}}</a>
+                </div>
+                {{/element}}
+
+                {{#if url}}
+                    <div class="{{elementName}}-button">
+                        {{#if buttonText}}
+                            {{include "/core/link/SolidButton.hbs" href=url target=target body=buttonText contentId=linkId}}
+                        {{else}}
+                            {{include "/core/link/SolidButton.hbs" href=url target=target body="learn more" contentId=linkId}}
+                        {{/if}}
+                    </div>
+                {{/if}}
+            </div>
+        </div>
+    {{/element}}
+    </div>
+{{/block}}

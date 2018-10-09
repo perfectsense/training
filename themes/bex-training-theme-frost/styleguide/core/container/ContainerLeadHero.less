@@ -1,0 +1,71 @@
+.ContainerLeadHero {
+    &:extend(.OneByTwo all);
+
+    padding: 0 20px;
+
+    // using px to match designs and because the grid gutter stuff doesn't
+    // quite make sense in Variables.less
+
+    .TwoColumnContainer {
+        align-items: flex-start;
+        margin-top: 20px;
+
+        &-columnOne {
+            order: 1;
+            margin: 0 0 20px;
+
+            > * {
+                margin-bottom: 20px;
+            }
+        }
+
+        &-columnTwo {
+            order: 2;
+
+            .PromoImageOnTop {
+                display: none;
+                margin-bottom: 20px;
+            }
+
+            .PromoImageOnTop-large {
+                display: block;
+            }
+        }
+    }
+
+    @media @mq-viewport-md {
+        .TwoColumnContainer {
+            &-columnTwo {
+                .PromoImageOnTop {
+                    display: block;
+                }
+            }
+        }
+    }
+
+    @media @mq-viewport-lg {
+        .TwoColumnContainer {
+            &-columnOne {
+                margin-top: -120px;
+            }
+
+            &-columnTwo {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+
+                .PromoImageOnTop {
+                    flex-shrink: 0;
+                    margin-bottom: 0;
+                    width: ~'calc(50% - 10px)';
+                }
+
+                .PromoImageOnTop-large {
+                    flex-shrink: 0;
+                    margin-bottom: 20px;
+                    width: 100%;
+                }
+            }
+        }
+    }
+}

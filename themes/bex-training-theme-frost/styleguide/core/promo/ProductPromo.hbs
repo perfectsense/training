@@ -1,0 +1,26 @@
+{{#block "ProductPromo" extend="/core/promo/Promo.hbs"}}
+
+  <div class="{{blockName}}" {{#if backgroundColor}}style="--color:var(--{{backgroundColor}})"{{/if}}>
+    <div class="{{blockName}}-content">
+      {{#element "info" noWith=true}}
+          <div class="{{elementName}}">
+              {{element "title"}}
+              {{element "description"}}
+
+              {{#if url}}
+                <div class="{{blockName}}-button">
+                    {{#if ../buttonText}}
+                        {{include "/core/link/Link.hbs" href=../url target=../target body=../buttonText contentId=../linkId}}
+                    {{else}}
+                        {{include "/core/link/Link.hbs" href=../url target=../target body="continue reading" contentId=../linkId}}
+                    {{/if}}
+                </div>
+            {{/if}}
+          </div>
+      {{/element}}
+
+      {{element "media"}}
+    </div>
+  </div>
+
+{{/block}}

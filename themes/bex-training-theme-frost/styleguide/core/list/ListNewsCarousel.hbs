@@ -1,0 +1,19 @@
+{{#block "ListNewsCarousel" extend="/core/list/List.hbs"}}
+    <div class="{{blockName}}"{{extraAttributes}}
+        {{#if backgroundColor}}style="--color:var(--{{backgroundColor}})"{{/if}}>
+        {{element "title"}}
+        {{element "description"}}
+
+        {{#element "items"}}
+            <div class="{{elementName}}">
+                {{#each this}}
+                    <div class="{{elementName}}-item">
+                        {{render this [/core/promo/Promo.hbs]="/core/promo/PromoNews.hbs"}}
+                    </div>
+                {{/each}}
+            </div>
+        {{/element}}
+
+        {{element "cta"}}
+    </div>
+{{/block}}

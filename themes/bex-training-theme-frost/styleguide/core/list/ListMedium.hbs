@@ -1,0 +1,14 @@
+{{#block "ListMedium" override="ListSmall.hbs"}}
+    {{#element "heading" noWith="true"}}
+        <div class="{{elementName}}">
+            {{element "media"}}
+
+            {{element "title"}}
+
+            {{element "description"}}
+
+        </div>
+    {{/element}}
+
+    {{element "items"}}
+{{/block}}

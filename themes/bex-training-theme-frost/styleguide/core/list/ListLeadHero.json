@@ -1,0 +1,51 @@
+{
+    "_template": "/core/list/ListLeadHero.hbs",
+    "backgroundColor": "#dddddd",
+
+    "items": [
+        {
+            "_include": "/core/list/ListLeadCarousel.json"
+        },
+        {
+            "_template": "/core/container/ContainerLeadHero.hbs",
+
+            "rows": [
+                {
+                    "_include": "/core/container/Row.json",
+                    "_template": "/core/container/ContainerLeadHeroRow.hbs",
+
+                    "columns": [
+                        {
+                            "_include": "/core/container/TwoColumnContainer.json",
+                            "_template": "/core/container/ContainerLeadHeroTwoColumn.hbs",
+
+                            "columnOne": [
+                                {
+                                    "_include": "/core/list/ListChevron.json"
+                                },
+                                {
+                                    "_include": "/core/promo/PromoStory.json"
+                                }
+                            ],
+
+                            "columnTwo": [
+                                {
+                                    "_include": "/core/promo/PromoImageOnTop-large.json"
+                                },
+                                {
+                                    "_include": "/core/promo/PromoImageOnTop.json"
+                                },
+                                {
+                                    "_include": "/core/promo/PromoImageOnTop.json"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+
+    "ctaUrl": "#",
+    "ctaText": "Upload and Share Video, Photo or Story"
+}

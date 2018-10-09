@@ -1,0 +1,21 @@
+{{#block "PromoIconOnTopList" extend="ListGrid.hbs"}}
+<div class="{{blockName}}" data-column-count="{{#with columnCount}}{{this}}{{else}}3{{/with}}"
+    {{extraAttributes}}
+    {{#if backgroundColor}}style="--color:var(--{{backgroundColor}})"{{/if}}
+    {{#if alternateStyle}}data-alternateStyle{{/if}}>
+
+    {{element "title"}}
+
+    {{element "description"}}
+
+    {{#element "items"}}
+        <div class="{{elementName}}">
+              {{#each this}}
+                  <div class="{{elementName}}-item">
+                      {{render this [/core/promo/Promo.hbs]="/core/promo/PromoIconOnTop.hbs"}}
+                  </div>
+              {{/each}}
+        </div>
+    {{/element}}
+</div>
+{{/block}}

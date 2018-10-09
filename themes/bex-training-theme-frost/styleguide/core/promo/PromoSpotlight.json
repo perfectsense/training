@@ -1,0 +1,6 @@
+{
+    "_include": "/core/promo/PromoContent.json",
+    "_template": "/core/promo/PromoSpotlight.hbs",
+
+    "backgroundColor": "#f9f9f9"
+}

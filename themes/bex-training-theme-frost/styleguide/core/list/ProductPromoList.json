@@ -1,0 +1,12 @@
+{
+  "_template": "ProductPromoList.hbs",
+  "title": "Module title Goes Here",
+  "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec in egestas quam. Maecenas bibendum hendrerit justo in interdum.",
+  "items": [
+    {
+      "_include": "/core/promo/ProductPromo.json",
+      "_repeat": "3"
+    }
+  ],
+  "reverseOrder": true
+}

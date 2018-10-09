@@ -1,0 +1,43 @@
+.SearchModule {
+    background-color: @color-gray-light;
+    height: 307px;
+    display: flex;
+    justify-content: center;
+    background-size: cover;
+    background-position: center center;
+
+    &-search {
+        position: relative;
+        margin: 0 20px;
+        width: 100%;
+        align-items: center;
+        display: flex;
+        max-width: 613px;
+    }
+
+    &-searchButton {
+        border: 0;
+        position: absolute;
+        right: 21px;
+        top: 47%;
+
+        &:before {
+          content: url('/styleguide/media/search.svg');
+          position: absolute;
+          right: 0px;
+        }
+
+        svg {
+            width: 24px;
+            height: 24px;
+        }
+    }
+
+    input {
+        .Placeholder;
+        height: 65px;
+        padding-left: 21px;
+        color: @color-primaryText;
+        width: 100%;
+    }
+}

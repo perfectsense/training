@@ -1,0 +1,32 @@
+{{#block "VideoLead" extend="_SourceVideoLead.hbs"}}
+    <div class="{{blockName}}" data-embeddedvideo-container>
+        {{~#if videoPoster~}}
+            {{#element "poster" noWith=true}}
+            <div class="{{elementName}}">
+                <div class="{{elementName}}-content">
+                    <div class="{{elementName}}-image">
+                        {{~#if videoPosterMobile~}}
+                            <picture>
+                                <source width="{{videoPoster.image.width}}" height="{{videoPoster.image.height}}" media="(min-width: 768px)" srcset="{{videoPoster.image.srcset}}">
+                                <source width="{{videoPosterMobile.image.width}}" height="{{videoPosterMobile.image.height}}" srcset="{{videoPosterMobile.image.srcset}}">
+                                <img width="{{videoPoster.image.width}}" height="{{videoPoster.image.height}}" class="Image" src="{{videoPoster.image.src}}">
+                            </picture>
+                        {{~^~}}
+                            {{videoPoster}}
+                        {{/if}}
+                    </div>
+
+                    <div class="{{elementName}}-info">
+                        {{element "headline"}}
+                        {{element "subHeadline"}}
+                        <button class="{{blockName}}-play"><span>Play Video</span></button>
+                    </div>
+                </div>
+                {{element "player"}}
+            </div>
+            {{/element}}
+        {{~^~}}
+            {{element "player"}}
+        {{~/if~}}
+    </div>
+{{/block}}

@@ -1,0 +1,51 @@
+{{#block "ListColumnGridStack" extend="/core/list/List.hbs"}}
+    <div class="{{blockName}}"{{extraAttributes}}
+        {{#if backgroundColor}}style="--color:var(--{{backgroundColor}})"{{/if}}
+        {{#if hideDuration}} data-hide-duration {{/if}}
+        {{#if hideAuthor}} data-hide-author {{/if}}
+        {{#if noTopPadding}}data-nopaddingtop{{/if}}>
+
+          <div class="{{blockName}}-content">
+
+            {{#element "title"}}
+                <h3 class="{{elementName}}">{{this}}</h3>
+            {{/element}}
+
+            {{element "description"}}
+
+            {{#element "items"}}
+                <div class="{{elementName}}">
+                    <div class="{{elementName}}-small">
+                        {{#each this}}
+                            {{#if @first}}
+                                {{#if ../../promoType}}
+                                    {{render this
+                                        [/core/promo/Promo.hbs]=../../promoType
+                                    }}
+                                {{else}}
+                                    {{render this
+                                        [/core/promo/Promo.hbs]="/core/promo/PromoImageOnTop-2x1.hbs"
+                                    }}
+                                {{/if}}
+                            {{/if}}
+                        {{/each}}
+                    </div>
+                    <div class="{{elementName}}-large">
+                      {{#each this}}
+                          {{#unless @first}}
+                              <div class="{{elementName}}-item">
+                                  {{render this
+                                      [/core/promo/Promo.hbs]="/core/promo/PromoCategoryTitle.hbs"
+                                  }}
+                              </div>
+                          {{/unless}}
+                      {{/each}}
+                    </div>
+                </div>
+            {{/element}}
+
+            {{element "cta"}}
+
+        </div>
+    </div>
+{{/block}}

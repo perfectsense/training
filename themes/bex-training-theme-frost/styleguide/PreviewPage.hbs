@@ -1,0 +1,10 @@
+{{#block "PreviewPage" override="_SourcePreviewPage.hbs"}}
+    {{#element "body" noWith=true}}
+        <body class="{{elementName}}"{{~#each extraBodyAttributes}} {{this}}{{~/each~}}
+         {{#if hidePromoDropShadow}} data-hide-promo-dropshadow{{/if}}
+         {{#if promoModuleAlignment}} data-promo-module-alignment="{{promoModuleAlignment}}"{{/if}}
+          data-mood-bold>
+            {{element "main"}}
+        </body>
+    {{/element}}
+{{/block}}

@@ -1,0 +1,102 @@
+{{#block "SearchResultsPage" override="_SourceSearchResultsPage.hbs"}}
+    {{#element "main" noWith=true}}
+        <section class="{{blockName}}-lead">
+            {{element "pageHeading"}}
+            
+            {{#element "form" noWith=true}}
+                <form class="{{elementName}}">
+                    {{#element "formInput" noWith=true}}
+                        <input type="text" class="{{elementName}}" name="q" value="{{query}}">
+                    {{/element}}
+
+                    {{#element "formButton" noWith=true}}
+                        <button type="submit" class="{{elementName}}">
+                            <svg class="search-icon"><use xlink:href="#search-icon"/></svg>
+                        </button>
+                    {{/element}}
+                </form>
+            {{/element}}
+        </section>
+        <main class="{{elementName}}"{{#unless results}} data-no-results{{/unless}}>
+            <section class="{{blockName}}-content">
+                {{#if results}}
+                    <div class="{{blockName}}-results-heading">
+                        {{element "count"}}
+
+                        {{#element "sorts"}}
+                            <div class="SearchControl-sorts">
+                                <span class="SearchControl-sorts-heading">{{format "SortByLabel"}}</span>
+                                {{#each this}}
+                                    {{#if selected}}
+                                        <psd-toggler
+                                                class="SearchControl-sorts-first"
+                                                aria-role="button"
+                                                aria-label="{{format "SortByLabel"}}"
+                                                toggle-trigger="searchSort">{{this.label}}&nbsp;&nbsp;<svg><use xlink:href="#icon-greater-than"/></svg>
+                                        </psd-toggler>
+                                    {{/if}}
+                                {{/each}}
+
+                                <div class="SearchControl-sorts-items" data-toggle-item="searchSort">
+                                    {{#each this}}
+                                        {{#unless selected}}
+                                            {{this}}
+                                        {{/unless}}
+                                    {{/each}}
+                                </div>
+                            </div>
+                        {{/element}}
+                    </div>
+
+                    {{#element "spotlights"}}
+                        <ul class="{{elementName}}">
+                            {{#each this}}
+                                <li>
+                                    {{render this [/core/promo/Promo.hbs]="/core/promo/PromoSpotlight.hbs"}}
+                                </li>
+                            {{/each}}
+                        </ul>
+                    {{/element}}
+
+                    {{#element "results"}}
+                        <ul class="{{elementName}}">
+                            {{#each this}}
+                                <li>
+                                    {{render this [/core/promo/Promo.hbs]="/core/promo/PromoContent.hbs"}}
+                                </li>
+                            {{/each}}
+                        </ul>
+                    {{/element}}
+                {{else}}
+                    {{element "noResults"}}
+                {{/if}}
+
+                {{#if results}}
+                    {{#element "pagination" noWith=true}}
+                        <ul class="{{elementName}}">
+                            {{#element "previousPage"}}
+                                <li class="{{elementName}}"><a href="{{this}}" rel="prev"><svg class="{{elementName}}-icon"><use xlink:href="#icon-greater-than"/></svg> Previous</a></li>
+                            {{/element}}
+
+                            {{#element "nextPage"}}
+                                <li class="{{elementName}}"><a href="{{this}}" rel="next">Next <svg class="{{elementName}}-icon"><use xlink:href="#icon-greater-than"/></svg></a></li>
+                            {{/element}}
+                        </ul>
+                    {{/element}}
+                {{/if}}
+            </section>
+            {{#if results}}
+                <aside class="{{blockName}}-aside">
+                    <div class="{{blockName}}-filters-heading">
+                        {{format 'FiltersHeading'}}
+                        <hr />
+                    </div>
+                    {{element "filters"}}
+                </aside>
+            {{/if}}
+        </main>
+    {{/element}}
+
+    {{!-- prevent rendering the following elements --}}
+    {{#element "aside"}}{{/element}}
+{{/block}}

@@ -1,0 +1,10 @@
+{
+    "_template": "PromoIconOnSideList.hbs",
+    "title": "What Makes Us Different",
+    "items": [
+      {
+        "_include": "/core/promo/PromoIconOnSide.json",
+        "_repeat": 10
+      }
+    ]
+}

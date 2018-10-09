@@ -1,0 +1,32 @@
+{{#block "PromoImageFlip" extend="Promo.hbs"}}
+    <div class="{{blockName}}" ontouchstart="this.classList.toggle('hover');">
+        <div class="flipper">
+            <img class="invisible-image" width="{{this.media.[0].image.width}}" height="{{this.media.[0].image.height}}"
+                 src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+            <div class="{{blockName}}-front {{#if dogEar}}dog-ear{{/if}}">
+                {{#element "media"}}
+                    <div class="{{elementName}}">
+                        {{this}}
+                    </div>
+                {{/element}}
+            </div>
+
+            <div class="{{blockName}}-back">
+                {{#element "info" noWith=true}}
+                    <div class="{{elementName}}">
+                        {{element "title"}}
+                        <hr>
+                        {{element "description"}}
+                        <div class="{{elementName}}-button">
+                            {{#if buttonText}}
+                                {{include "/core/link/SolidButton.hbs" href=url target=target body=buttonText contentId=linkId}}
+                            {{else}}
+                                {{include "/core/link/SolidButton.hbs" href=url target=target body="learn more" contentId=linkId}}
+                            {{/if}}
+                        </div>
+                    </div>
+                {{/element}}
+            </div>
+        </div>
+    </div>
+{{/block}}

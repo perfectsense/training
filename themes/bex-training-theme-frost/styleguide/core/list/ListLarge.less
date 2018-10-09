@@ -1,0 +1,87 @@
+.ListLarge {
+    &:extend(.ListSmall all);
+
+    &-heading {
+        background-color: #f2f1ef;
+        padding: 40px 30px;
+    }
+
+    &-media {
+        img {
+            height: 24px;
+            width: 36px;
+        }
+    }
+
+    &-title {
+        margin-top: 10px;
+        .Subhead();
+        letter-spacing: normal;
+    }
+
+    &-description {
+        margin: 20px 30px 0 30px;
+    }
+
+    &-items {
+        .ListItem-standard();
+        padding: 40px 30px 20px;
+
+        &-hr {
+            margin-bottom: 20px;
+        }
+
+        .PromoTextItem-title {
+            font-size: 21px;
+        }
+    }
+
+    @media @mq-viewport-md {
+        &-title {
+            margin-top: 20px;
+        }
+
+        &-description {
+            margin: 20px 40px 0 40px;
+        }
+
+        &-items {
+            padding: 50px 60px 0 60px;
+        }
+    }
+
+    @media @mq-viewport-lg {
+        &-heading {
+            padding: 60px 40px 40px;
+        }
+
+        &-description {
+            margin: 40px 60px 0 60px;
+        }
+
+        &-items {
+            &-hr {
+                margin-top: 30px;
+                margin-bottom: 30px;
+            }
+        }
+    }
+
+    @media @mq-viewport-xl {
+        &-heading {
+            padding: 50px 59px;
+        }
+
+        &-title {
+            letter-spacing: 2px;
+        }
+
+        &-items {
+            .ListItem-large();
+
+            &-item {
+                margin-bottom: 30px;
+            }
+        }
+    }
+}

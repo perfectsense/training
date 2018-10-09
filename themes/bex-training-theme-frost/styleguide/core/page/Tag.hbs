@@ -1,0 +1,12 @@
+{{#block "Tag" override="/core/page/Page.hbs"}}
+    {{#element "main" noWith=true}}
+        <main class="{{elementName}}"{{#if backgroundColor}}style="--color:var(--{{backgroundColor}})"{{/if}}>
+            {{element "pageLeadInfo"}}
+            {{#with main}}
+                {{#each this}}
+                    {{render this [/core/list/List.hbs]="/core/list/ListMasonry.hbs"}}
+                {{/each}}
+            {{/with}}
+        </main>
+    {{/element}}
+{{/block}}

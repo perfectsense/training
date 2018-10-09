@@ -1,0 +1,28 @@
+{
+    "_template": "/core/promo/PromoContent.hbs",
+    "media": {
+      "_template": "/core/image/Image.hbs",
+      "image": {
+        "_image": true
+      }
+    },
+
+    "authorName": "{{words(2)}}",
+    "url": "#",
+    "linkId": "12345",
+    "target": "_self",
+    "category": "Mission",
+    "categoryUrl": "#",
+    "categoryId": "12345",
+    "type": "{{words([ 1, 3 ])}}",
+    "title": "{{words([ 5, 8 ])}}",
+    "date": "December 11, 2016",
+    "description": "{{words([ 10, 20 ])}}",
+    "button": "{{words(1)}}",
+    "actions": {
+      "_include": "/core/action-bar/ActionBar.json"
+    },
+    "social": {
+      "_include": "/core/social/SocialBar.json"
+    }
+  }

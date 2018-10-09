@@ -1,0 +1,11 @@
+{
+    "_template": "ListThreeColumn.hbs",
+    "title": "{{words(5)}}",
+    "description": "{{words(25)}}",
+    "items": [
+      {
+        "_include": "/core/promo/PromoImageOnTop.json",
+        "_repeat": "5"
+      }
+    ]
+  }

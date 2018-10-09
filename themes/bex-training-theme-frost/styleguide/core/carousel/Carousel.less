@@ -1,0 +1,114 @@
+.Carousel {
+    background-color: @color-gray-light;
+    overflow: hidden;
+    width: 100%;
+    height: auto;
+    padding: 0 0 20px 0;
+
+    &-slide {
+        display: none;
+        width: 100%;
+
+        &:first-of-type {
+            display: block;
+        }
+
+        .flickity-enabled & {
+            display: block;
+        }
+
+        .CarouselSlide {
+            &-info {
+                margin: 20px 20px 0 20px;
+            }
+
+            &-infoTitle {
+                .CaptionText();
+                margin-bottom: 10px;
+                display: none;
+            }
+
+            &-infoAttribution {
+                .PhotoCreditText();
+                margin: 10px 0;
+            }
+
+            &-infoDescription {
+                .CaptionText;
+                margin: 0 0 10px;
+            }
+
+            &-media {
+                img {
+                    width: 100%;
+                    height: auto;
+                }
+            }
+
+            .Image {
+                transition: opacity 0.3s;
+                opacity: 0;
+            }
+
+            .Image.flickity-lazyloaded,
+            .Image.flickity-lazyerror {
+                opacity: 1;
+            }
+
+            @media @mq-viewport-md {
+                &-info {
+                    margin: 30px 30px 0 30px;
+                }
+            }
+        }
+    }
+
+    .flickity-prev-next-button {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        background: transparent;
+        border: 1px solid red;
+        padding: 8px;
+        // vertical align is for IE11
+        vertical-align: middle;
+
+        .next {
+            margin: 0 20px 0 0;
+        }
+
+        &:hover {
+            background: @color-primary;
+
+            svg {
+                fill: @color-white;
+            }
+        }
+
+        svg {
+            width: 100%;
+            display: block;
+            fill: @color-primary;
+        }
+    }
+
+    .flickity-prev-next-button.previous {
+        margin: 0 0 0 20px;
+
+        @media @mq-viewport-md {
+            margin: 0 0 0 30px;
+        }
+    }
+
+    .flickity-prev-next-button.next {
+        margin: 0 20px 0 0;
+    }
+
+    .flickity-counter {
+        .CaptionText();
+        margin: 0 10px 0;
+        display: inline-block;
+        color: @color-gray;
+    }
+
+}

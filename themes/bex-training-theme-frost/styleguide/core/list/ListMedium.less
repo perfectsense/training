@@ -1,0 +1,19 @@
+.ListMedium {
+    &:extend(.ListSmall all);
+
+    &-heading {
+        padding: 30px 30px 15px 30px;
+
+        @media @mq-viewport-md {
+            padding: 60px 60px 30px;
+        }
+    }
+
+    &-items {
+        padding: 0px 30px 30px 30px;
+
+        @media @mq-viewport-md {
+            padding: 0px 60px 60px;
+        }
+    }
+}

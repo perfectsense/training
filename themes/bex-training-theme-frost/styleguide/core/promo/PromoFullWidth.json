@@ -1,0 +1,25 @@
+{
+    "_include": "/core/promo/Promo.json",
+    "_template": "/core/promo/PromoFullWidth.hbs",
+
+    "media": {
+        "_template": "/core/image/Image.hbs",
+
+        "image": {
+          "_image": true,
+          "src": "/styleguide/media/promofullwidth.jpg"
+        }
+    },
+
+    "mobileMedia": {
+        "_template": "/core/image/Image.hbs",
+
+        "image": {
+          "_image": true,
+          "src": "/styleguide/media/promofullwidth-mobile.jpg"
+        }
+    },
+
+    "title": "{{words([2,5])}}",
+    "outlineInfo": true
+}

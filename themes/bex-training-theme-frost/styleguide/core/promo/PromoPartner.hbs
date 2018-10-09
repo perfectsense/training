@@ -1,0 +1,12 @@
+{{#block "PromoPartner" extend="/core/promo/Promo.hbs"}}
+  <div class="{{blockName}}"{{extraAttributes}}>
+    {{element "media"}}
+
+    {{#element "info" noWith=true}}
+        <div class="{{elementName}}">
+            <hr />
+            {{element "title"}}
+        </div>
+    {{/element}}
+  </div>
+{{/block}}

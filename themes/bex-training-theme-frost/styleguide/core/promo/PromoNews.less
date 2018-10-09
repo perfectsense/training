@@ -1,0 +1,77 @@
+.PromoNews {
+    &:extend(.Promo all);
+
+    background: @color-white;
+    height: 400px;
+    margin: 0 @module-spacing-20;
+    padding: @module-spacing-40 @module-spacing-20;
+    position: relative;
+    width: 100%;
+
+    &-border {
+        background: @color-primary;
+        height: 15px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+    }
+
+    &-content {
+        max-height: 260px;
+        overflow: hidden;
+    }
+
+    &-description {
+        margin-bottom: @module-spacing-20;
+    }
+
+    &-sharedBy {
+        color: @color-gray;
+        font-size: 12px;
+    }
+
+    &-source {
+        font-size: 14px;
+        letter-spacing: 0.6px;
+        margin-bottom: @module-spacing-20;
+
+        &-name {
+            color: @color-primary;
+            margin-left: 5px;
+        }
+    }
+
+    &-title {
+        font-size: 20px;
+        line-height: 1.2;
+        margin-bottom: @module-spacing-20;
+
+        [data-mood-bold] & {
+            font-weight: 900;
+        }
+    }
+
+    @media @mq-viewport-md {
+        height: 510px;
+        padding-top: @module-spacing-60;
+        margin: 0 @module-spacing-10;
+
+        &-border {
+            height: 22px;
+        }
+
+        &-content {
+            max-height: 356px;
+        }
+
+        &-description {
+            margin-bottom: @module-spacing-30;
+        }
+
+        &-title {
+            font-size: 26px;
+            margin-bottom: @module-spacing-30;
+        }
+    }
+}

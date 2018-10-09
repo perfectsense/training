@@ -17,13 +17,6 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>bex-training-theme-default</module>
+        <module>bex-training-theme-frost</module>
     </modules>
-
-    <dependencies>
-        <dependency>
-            <groupId>com.psddev</groupId>
-            <artifactId>express-themes-core</artifactId>
-        </dependency>
-    </dependencies>
 </project>

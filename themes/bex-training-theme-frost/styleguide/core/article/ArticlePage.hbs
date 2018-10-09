@@ -1,0 +1,74 @@
+{{~#block "ArticlePage" override="_SourceArticlePage.hbs"~}}
+    {{#element "main" noWith=true}}
+    <div class="ScrollableContentContainer">
+        {{#element "pageInfo" noWith="true"}}
+            <div class="{{elementName}}"{{#unless lead}} data-nolead{{/unless}}{{#with background}} style="background:{{this}}"{{/with}}{{#if whiteHeading}} data-white-color{{/if}}>
+                {{#if sectionNavigation}}
+                    <div class="{{blockName}}-sectionNavigation">
+                        {{sectionNavigation}}
+                    </div>
+                {{/if}}
+                {{element "headline"}}
+                {{element "subHeadline"}}
+                {{#element "byline" noWith="true"}}
+                    {{#if authorName}}
+                        <h3 class="{{elementName}}"><span>{{format "bylineText" name=authorName}},</span> <span>{{datePublished}}</span></h3>
+                    {{/if}}
+                {{/element}}
+
+                {{#element "actions"}}
+                    <div class="{{elementName}}">
+                        {{this}}
+                    </div>
+                {{/element}}
+            </div>
+        {{/element}}
+
+        <main class="{{elementName}}" {{#unless lead}}data-noLead{{/unless}}>
+            {{#element "mainContent" noWith="true"}}
+                <article class="{{elementName}}" itemprop="mainEntity" itemscope itemtype="http://schema.org/Article">
+                    {{element "lead"}}
+                    {{element "articleBody"}}
+                    {{element "updatesCorrections"}}
+                    {{element "tags"}}
+
+                    {{#if authorName}}
+                        {{#element "aboutContributor" noWith="true"}}
+                            <div class="{{elementName}}" itemprop="author" itemscope itemtype="http://schema.org/Person">
+                                {{element "authorImage"}}
+                                {{#element "authorTexts" noWith=true}}
+                                    <div class="{{elementName}}">
+                                        <h3>{{format "aboutContributorHeading"}}</h3>
+                                        {{#element "authorName"}}
+                                            <div class="{{elementName}}" itemprop="name">
+                                                {{this}}
+                                            </div>
+                                        {{/element}}
+                                        {{#element "authorBiography"}}
+                                            <hr>
+                                            <div class="{{elementName}}">{{this}}</div>
+                                        {{/element}}
+                                    </div>
+                                {{/element}}
+                            </div>
+                        {{/element}}
+                    {{/if}}
+                </article>
+            {{/element}}
+            {{#element "aside"}}
+                <aside class="{{elementName}}">
+                    {{#each this}}
+                        {{render this [/core/list/List.hbs]="/core/list/ListSmall.hbs"}}
+                    {{/each}}
+                </aside>
+            {{/element}}
+        </main>
+        {{!-- Making sure these don't show up in places we do not want even if they sneak into the json --}}
+      </div>
+        {{#element "breadcrumbs"}}{{/element}}
+        {{#element "comments"}}{{/element}}
+        {{#element "countries"}}{{/element}}
+        {{#element "brands"}}{{/element}}
+        {{#element "products"}}{{/element}}
+    {{/element}}
+{{~/block~}}
