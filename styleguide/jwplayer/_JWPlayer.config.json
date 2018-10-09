@@ -1,0 +1,10 @@
+{
+    "imageSizeContexts": {
+        "/jwplayer/JWVideoPlayer.hbs": {
+            "image": "small"
+        },
+        "/jwplayer/JWVideoPlayer.amp.hbs": {
+            "image": "small"
+        }
+    }
+}

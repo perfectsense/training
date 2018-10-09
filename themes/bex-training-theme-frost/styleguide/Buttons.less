@@ -1,0 +1,28 @@
+.Button {
+  border-radius: 4px;
+  display: inline-flex;
+  font-size: 13px;
+  font-weight: 300;
+  line-height: 12px;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  [data-mood-bold] & {
+    font-size: 14px;
+    font-weight: 700;
+  }
+
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+.Button--primary {
+  .Button;
+  color: #fff;
+  border: 0 solid var(--primaryColor);
+  background-color: var(--primaryColor);
+}

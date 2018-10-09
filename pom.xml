@@ -44,4 +44,12 @@
             </snapshots>
         </pluginRepository>
     </pluginRepositories>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.psddev</groupId>
+            <artifactId>express-theme-frost</artifactId>
+            <version>3.3.3175-xc567e2</version>
+        </dependency>
+    </dependencies>
 </project>
