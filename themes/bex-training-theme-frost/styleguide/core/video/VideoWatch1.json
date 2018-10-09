@@ -1,0 +1,41 @@
+{
+    "displayName": "Video1 - Example",
+    "_include": "/core/video/VideoPage.json",
+    "_template": "VideoPage.hbs",
+    "headline": "MPX Title - {{words([4,8])}}",
+    "subHeadline": "Video Watch1 Description - Nulla facilisi. Pellentesque maximus ut sem condimentum sollicitudin. Cras rutrum magna libero, eget maximus felis tempor a.",
+
+    "tags": [
+        {
+            "_include": "/core/link/Link.json",
+            "_repeat": 1
+        }
+    ],
+
+    "player" : {
+      "_include": "/youtube/YouTubeVideoPlayer.json",
+      "videoId": "841VcS9IxDc"
+    },
+    "below": {
+      "_include": "/core/list/ListThreeColumn.json"
+    },
+    "actions": {
+        "_template": "/core/action-bar/ActionBar.hbs",
+        "items": [
+            {
+                "_include": "/twitter/intent/TwitterTweetButton.json"
+            },
+            {
+                "_include": "/googleplus/GooglePlusShareButton.json"
+            },
+            {
+                "_include": "/pinterest/PinterestShareButton.json"
+            },
+            {
+                "_include": "/linkedin/LinkedInShareButton.json"
+            }
+        ]
+    },
+
+    "aside" : null
+}

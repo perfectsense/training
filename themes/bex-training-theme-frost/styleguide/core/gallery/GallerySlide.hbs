@@ -1,0 +1,26 @@
+{{#block "GallerySlide" extend="_SourceGallerySlide.hbs"}}
+    <div class="{{blockName}}" itemprop="image" itemtype="http://schema.org/ImageObject" {{extraAttributes}}>
+        {{#element "media" noWith=true}}
+            <div class="{{elementName}}">
+                {{#element "mediaContent"}}
+                <div class="{{elementName}}">
+                    <img class="{{blockName}}" alt="{{alt}}"
+                        data-flickity-lazyload-src={{this.[0].image.src}}
+                       {{~#with this.[0].image.srcset}} data-flickity-lazyload-srcset={{this.[0].image.srcset}}{{/with}}
+                    >
+                </div>
+            {{/element}}
+            </div>
+        {{/element}}
+
+        {{#element "info" noWith=true}}
+            <div class="{{elementName}}">
+                {{element "infoTitle"}}
+
+                {{element "infoDescription"}}
+
+                {{element "infoAttribution"}}
+            </div>
+        {{/element}}
+    </div>
+{{/block}}

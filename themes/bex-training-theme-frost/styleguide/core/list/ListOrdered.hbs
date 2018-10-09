@@ -1,0 +1,22 @@
+{{#block "ListOrdered" extend="/core/list/List.hbs"}}
+    <div class="{{blockName}}"{{extraAttributes}}>
+        {{#element "title"}}
+            <header class="{{elementName}} mood-color">{{this}}</header>
+        {{/element}}
+
+        {{#element "items"}}
+            <ol class="{{elementName}}">
+                {{#each this}}
+                    <li class="{{elementName}}-item">
+                        <span class="number mood-color"></span>
+                        {{render this
+                            [/core/promo/Promo.hbs]="/core/promo/PromoTextItem.hbs"
+                        }}
+                    </li>
+                {{/each}}
+            </ol>
+        {{/element}}
+
+        {{element "cta"}}
+    </div>
+{{/block}}

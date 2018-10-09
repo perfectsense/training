@@ -1,0 +1,11 @@
+{
+    "_template": "TagList.hbs",
+    "title": "Topics",
+    "items": [
+        {
+            "_include": "/core/promo/PromoTextItem.json",
+            "_repeat": "5"
+        }
+    ],
+    "alternateTagStyle": true
+}

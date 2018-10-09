@@ -1,0 +1,14 @@
+{
+    "_include": "Promo.json",
+    "_template": "PromoImageOnTop-circular.hbs",
+    "media": {
+        "_template": "/core/image/Image.hbs",
+        "image": {
+            "_image": true,
+            "src": "/styleguide/media/david.png"
+        }
+    },
+    "mobileMedia": null,
+    "title": "David Gang",
+    "description": "CEO & Co-founder"
+}

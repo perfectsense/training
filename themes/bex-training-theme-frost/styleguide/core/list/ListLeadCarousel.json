@@ -1,0 +1,11 @@
+{
+    "_include": "/core/list/List.json",
+    "_template": "/core/list/ListLeadCarousel.hbs",
+
+    "items": [
+        {
+            "_include": "/core/promo/PromoFullWidth.json",
+            "_repeat": 5
+        }
+    ]
+}

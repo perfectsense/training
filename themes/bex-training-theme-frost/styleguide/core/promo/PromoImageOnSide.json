@@ -1,0 +1,12 @@
+{
+    "_include": "/core/promo/Promo.json",
+    "_template": "PromoImageOnSide.hbs",
+    "backgroundColor": "#f4f3f2",
+    "media": {
+        "_template": "/core/image/Image.hbs",
+        "image": {
+            "_image": true,
+            "src": "/styleguide/media/promo-on-side.png"
+        }
+    }
+}

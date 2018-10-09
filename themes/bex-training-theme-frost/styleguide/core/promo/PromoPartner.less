@@ -1,0 +1,51 @@
+.PromoPartner {
+    background: @color-white;
+    padding: @module-spacing-sm;
+    height: 280px;
+    margin: 0 @module-spacing-20;
+    max-width: 350px;
+    width: 100%;
+
+    hr {
+        border: 0;
+        border-bottom: 2px solid @color-primary;
+        height: 0px;
+        display: none;
+        width: 10%;
+
+        [data-horizontal-rule='true'] & {
+            display: block;
+        }
+    }
+
+    &-media {
+        margin-bottom: @module-spacing-15;
+        text-align: center;
+
+        img {
+            height: auto;
+            margin: 0 auto;
+            max-width: 100%;
+        }
+    }
+
+    &-title {
+        font-size: 18px;
+        text-align: center;
+
+        a {
+            color: @color-black;
+
+            &:hover {
+                color: @color-primary;
+            }
+        }
+    }
+
+    @media @mq-viewport-md {
+        height: 295px;
+        margin: 0 @module-spacing-10;
+        max-width: none;
+        padding: @module-spacing-md;
+    }
+}

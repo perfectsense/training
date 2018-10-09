@@ -1,0 +1,152 @@
+.Playlist {
+    position: absolute;
+    z-index: 3;
+    background: transparent;
+
+    &-title {
+      .ListItem-standard;
+      position: relative;
+      cursor: pointer;
+      width: 100%;
+      min-height: 60px;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-weight: 900;
+
+      @media @mq-viewport-lg {
+        min-height: 96px;
+      }
+
+      &:after {
+          content: url('/styleguide/media/triangle.svg');
+          position: absolute;
+          right: 42px;
+          top: 16px;
+          width: 10px;
+      }
+    }
+
+    &[data-is-open] {
+        width: auto;
+
+        .Playlist-content {
+            padding: 0;
+        }
+    }
+
+    &-body {
+        width: 100%;
+        overflow: auto;
+    }
+}
+
+
+
+.Playlist--attachedOnRight() {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: auto;
+    width: 0;
+    position: absolute;
+    animation: none;
+
+    &[data-is-open] {
+        top: 0;
+        z-index: 3;
+
+        .Playlist-content {
+            transform: translateX(0);
+        }
+    }
+
+    [data-video-min] & {
+      opacity: 0;
+    }
+
+    [data-breakingnews-is-open] &,
+    [data-subscription-past-due-banner-is-open] & {
+        top: 75px;
+    }
+
+    &-title {
+      pointer-events: none;
+
+      &:after {
+          display: none;
+      }
+    }
+
+    &-content {
+        display: flex;
+        flex-direction: column;
+        min-width: 360px;
+        width: 100%;
+        height: 100%;
+        padding: 0 20px;
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: 3;
+        overflow: hidden;
+        font-size: 15px;
+        transform: translateX(330px);
+        transition-property: transform;
+        transition: 500ms cubic-bezier(0.165, 0.84, 0.44, 1) 0ms;
+        box-shadow: 0 1px 20px 0 rgba(0, 0, 0, 0.15);
+    }
+
+    &-title {
+      border-top: 0;
+
+      &:after {
+          display: none;
+      }
+    }
+}
+
+.Playlist--attachedOnBottom() {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+
+    // initial position is at the bottom of the screen since JS will do the intro animation
+    &[data-is-open] {
+        top: 100vh;
+        z-index: 8;
+    }
+
+    &-content {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        min-width: 100%;
+        top: auto;
+        right: auto;
+        height: 100%;
+        background: @color-gray-light;
+    }
+
+    &-title {
+      box-sizing: content-box;
+    }
+}
+
+
+@media @mq-viewport-sm {
+  .Playlist {
+        .Playlist--attachedOnBottom();
+    }
+}
+
+@media @mq-viewport-lg {
+  .Playlist {
+        .Playlist--attachedOnRight();
+    }
+}

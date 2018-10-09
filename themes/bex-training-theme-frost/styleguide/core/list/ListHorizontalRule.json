@@ -1,0 +1,18 @@
+{
+    "_template": "ListHorizontalRule.hbs",
+    "title": "Recent Case Studies",
+    "media": {
+        "_template": "/core/image/Image.hbs",
+        "image": {
+            "_image": true,
+            "src": "/styleguide/media/ps.svg"
+        }
+    },
+    "description": "{{words(25)}}",
+    "items": [
+        {
+            "_include": "/core/promo/PromoTextItem.json",
+            "_repeat": "5"
+        }
+    ]
+}

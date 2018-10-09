@@ -1,0 +1,15 @@
+{
+    "_include": "/core/promo/Promo.json",
+    "_template": "VideoPromo.hbs",
+    "category": "Mission",
+    "duration": "4:13",
+    "media": {
+       "_template": "/core/image/Image.hbs",
+       "image": {
+         "_image": true,
+         "src": "/styleguide/media/beachrocks.png"
+       }
+     },
+    "title": "Building Bikes in Puerto Rico",
+     "type": "video"
+}

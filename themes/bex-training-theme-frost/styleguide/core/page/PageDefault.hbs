@@ -1,0 +1,22 @@
+{{#block "PageDefault" override="/core/page/Page.hbs"}}
+    {{#element "main" noWith=true}}
+        <main class="{{elementName}}"{{#if backgroundColor}}style="--color:var(--{{backgroundColor}})"{{/if}}>
+            {{element "pageLeadInfo"}}
+            {{#with main}}
+                <div class="{{blockName}}-mainContent">
+                    {{#each this}}
+                        {{render this
+                            [/core/list/List.hbs]=(cycle
+                                "/core/list/ListGrid.hbs"
+                                "/core/list/ListFourColumnNarrow.hbs"
+                                "/core/list/ListGrid.hbs"
+                            )
+                            [/core/promo/Promo.hbs]="/core/promo/PromoTextOverlay.hbs"
+                        }}
+                    {{/each}}
+                </div>
+            {{/with}}
+        </main>
+    {{/element}}
+
+{{/block}}

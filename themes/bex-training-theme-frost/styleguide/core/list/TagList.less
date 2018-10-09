@@ -1,0 +1,49 @@
+.TagList {
+  &:extend(.List all);
+  background-color: @color-solitude;
+
+  aside & {
+     padding: 40px;
+
+     &-title {
+        text-align: left;
+     }
+
+     &-description {
+        text-align: left;
+     }
+
+     &-items {
+        padding-top: 20px;
+        justify-content: normal;
+     }
+  }
+
+    &-items {
+        display: flex;
+        flex-wrap: wrap;
+        list-style: none;
+        margin: 0 auto;
+        padding-left: 0;
+        justify-content: center;
+        max-width: 1240px;
+
+        &-item {
+            .Button-Pulse;
+            margin: 0 @module-spacing-10 @module-spacing-10 0;
+
+            .PromoTextItem a,
+            .PromoTextItem-title a,
+            a {
+              .PhotoCreditText;
+              display: inline-block;
+              padding: 7px 13px;
+              color: @color-primary;
+              text-transform: uppercase;
+              font-weight: bold;
+              border: 1px solid @color-border;
+              background: @color-white;
+            }
+        }
+    }
+}

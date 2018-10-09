@@ -1,0 +1,14 @@
+{
+  "_include": "/core/list/List.json",
+  "_template": "/core/list/ListFooter.hbs",
+  "title": "Link List Title",
+  "items": [
+    {
+      "_include": "/core/promo/PromoTextItem.json",
+      "_repeat": 5,
+      "title" : "{{words(3)}}"
+    }
+  ],
+  "description": null,
+  "pagination": null
+}

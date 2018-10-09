@@ -1,0 +1,49 @@
+[
+    {
+        "_template": "/core/article/RichTextArticleBody.hbs",
+        "body": [
+            "<p>Despite sharing the court with superstars like Apolo Ohno, Dikembe Mutombo, Dale Moss, and Drew Baldwin, the star of the Special Olympics Unified Floorball game quickly proved to be the young man in goal who nobody knew before the match began. As the teams took to the court, Kydon Mena, a goalie from Special Olympics Gibraltar made his way to the front of the net with assistance from his teammate, Apolo Ohno. Mena, who lives with cerebral palsy, is unable to walk on his own. In floorball, however, goalies play on their knees, which turns Mena’s disability into a unique advantage. As the match progressed, Mena made save after save, leaving his teammates and the fans watching awed by his courage, determination, and skill. Mena’s memorable performance was one of many during the Unified Sports Experiences at the 2017 Special Olympics World Winter Games in Austria.<p>For the third straight World Games, a team of employees from Perfect Sense coordinated the Unified Sports Experiences, a series of exhibition competitions that pair Special Olympics athletes with foreign dignitaries, celebrities, professional athletes, and other honored guests as teammates. Unified Sports Experiences aim to change perceptions and create greater understanding by inspiring communities not only to play unified, but also to live unified.",
+            {
+                "_include": "/core/enhancement/Enhancement.json",
+                "item": {
+                    "_include": "/core/link/Link.json",
+                    "body": "This is an enhanced link."
+                },
+                "inline": true
+            },
+            "Despite sharing the court with superstars like Apolo Ohno, Dikembe Mutombo, Dale Moss, and Drew Baldwin, the star of the Special Olympics Unified Floorball game quickly proved to be the young man in goal who nobody knew before the match began. As the teams took to the court, Kydon Mena, a goalie from Special Olympics Gibraltar made his way to the front of the net with assistance from his teammate, Apolo Ohno.</p>",
+            {
+                "_include": "/core/enhancement/Enhancement.json",
+                "item": {
+                    "_include":"/core/quote/QuoteCard.json",
+                    "quote": "“I was inspired every single moment. This event reminded me that with perseverance, we can all accomplish outstanding feats.”",
+                    "attribution": "Omavi Walker",
+                    "horizontalAlignment": "right"
+                }
+            },
+            "<p>Mena, who lives with cerebral palsy, is unable to walk on his own. In floorball, however, goalies play on their knees, which turns Mena’s disability into a unique advantage. As the match progressed, Mena made save after save, leaving his teammates and the fans watching awed by his courage, determination, and skill. Mena’s memorable performance was one of many during the Unified Sports Experiences at the 2017 Special Olympics World Winter Games in Austria.<p>For the third straight World Games, a team of employees from Perfect Sense coordinated the Unified Sports Experiences, a series of exhibition competitions that pair Special Olympics athletes with foreign dignitaries, celebrities, professional athletes, and other honored guests as teammates. Unified Sports Experiences aim to change perceptions and create greater understanding by inspiring communities not only to play unified, but also to live unified.",
+            {
+                "_include": "/core/enhancement/Enhancement.json",
+                "item": {
+                    "_include": "/core/carousel/Carousel.json"
+                }
+            },
+            "<p>For the Special Olympics athletes, the opportunity to Play Unified alongside superstars such as Michelle Kwan, Donna de Varona, Tim Shriver, and Hannah Teter, among others was a once-in-a-lifetime opportunity. The experience, however, was even more memorable for the celebrity participants who took to the slopes, the courts, and the ice rink as teammates.",
+            {
+                "_include": "/core/enhancement/Enhancement.json",
+                "item": {
+                    "_include": "/youtube/YouTubeVideoEnhancement.json",
+                    "title": "The video title or description goes here suscipit, nibh ac luctus ultrices, odio ligula pulvinar est, vitae vulputate lacus elit et ex. Lorem ipsum dolor sit amet."
+                }
+            },
+            "<p>In between their exhausting days volunteering, Perfect Sense employees also found time to explore the sites around Austria. The team in Graz trekked up nearly 300 steps to the top of Schlossberg to take in a panoramic view of the city and visited the Eggenberg Palace, while the volunteers in Schladming spent their free day skiing down the Dachstein Glacier and eating at an Arnold Schwarzenegger themed restaurant.",
+            {
+                "_include": "/core/enhancement/Enhancement.json",
+                "item": {
+                    "_include": "/twitter/TweetEmbed.json"
+                }
+            },
+            "<p>Since 2011, when Unified Sports Experiences debuted at the World Summer Games in Athens, Perfect Sense has helped lead the way in supporting these game-changing opportunities. Learn more about how you can join the Unified Generation at <a href='http://www.playunified.org'>PlayUnified.org</a>."
+        ]
+    }
+]

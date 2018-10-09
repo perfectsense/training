@@ -1,0 +1,6 @@
+{
+    "_include": "Promo.json",
+    "_template": "MetricsPromo.hbs",
+    "title": "NoVa",
+    "description": "Lives Impacted"
+}

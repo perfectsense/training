@@ -1,0 +1,8 @@
+{
+    "_include": "/core/promo/Promo.json",
+    "_template": "/core/promo/PromoStory.hbs",
+
+    "buttonText": "{{words(3)}}",
+    "backgroundImageAndColor": "purple",
+    "date": "{{date}}"
+}

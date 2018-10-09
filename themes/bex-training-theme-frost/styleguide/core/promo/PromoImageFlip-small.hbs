@@ -1,0 +1,37 @@
+{{#block "PromoImageFlip-small" extend="Promo.hbs"}}
+    <div class="{{blockName}}" ontouchstart="this.classList.toggle('hover');">
+        <div class="flipper">
+            <img class="invisible-image" width="{{this.media.[0].image.width}}" height="{{this.media.[0].image.height}}"
+                 src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+            <div class="{{blockName}}-front {{#if dogEar}}dog-ear{{/if}}">
+                <div class="{{blockName}}-info">
+                    {{element "title"}}
+                    {{element "description"}}
+                    {{#element "media"}}
+                        <img class="Image" alt="{{alt}}" src="{{this.[0].image.src}}"
+                            {{~#with this.[0].image.width}} width="{{this}}"{{/with~}}
+                            {{~#with this.[0].image.height}} height="{{this}}"{{/with~}}
+                            {{~#with this.[0].image.srcset}} srcset="{{this}}"{{/with~}}
+                        >
+                    {{/element}}
+                </div>
+            </div>
+            <div class="{{blockName}}-back">
+                <div class="{{blockName}}-info">
+                    {{#if backText}}
+                        <div class="{{blockName}}-backText">
+                            {{backText}}
+                        </div>
+                    {{/if}}
+                    <div class="{{blockName}}-button">
+                        {{#if buttonText}}
+                            {{include "/core/link/SolidButton.hbs" href=url target=target body=buttonText contentId=linkId}}
+                        {{else}}
+                            {{include "/core/link/SolidButton.hbs" href=url target=target body="learn more" contentId=linkId}}
+                        {{/if}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{{/block}}

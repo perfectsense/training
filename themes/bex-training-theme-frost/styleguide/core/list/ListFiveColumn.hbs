@@ -1,0 +1,30 @@
+{{#block "ListFiveColumn" extend="ListGrid.hbs"}}
+    <div class="{{blockName}}" data-column-count="5"
+        {{#if fullWidth}}data-full-width{{/if}}
+        {{extraAttributes}}
+        {{#if background}}style="background-image: url({{background.image.src}})"{{/if}}
+        {{#if backgroundColor}}style="background-color:var(--{{backgroundColor}})"{{/if}}
+        {{#if noTopPadding}}data-nopaddingtop{{/if}}
+        {{#if partialGradient}}data-gradient="partial"{{/if}}>
+
+        {{element "title"}}
+
+        {{element "description"}}
+
+        {{#element "items"}}
+            <div class="{{elementName}}">
+                {{#partition this size=5}}
+                  {{#each this}}
+                      <div class="{{elementName}}-item">
+                          {{render this [/core/promo/Promo.hbs]="/core/promo/PromoImageOnTop.hbs"}}
+                      </div>
+                  {{/each}}
+                {{/partition}}
+            </div>
+        {{/element}}
+
+        {{element "cta"}}
+
+        {{element "pagination"}}
+    </div>
+{{/block}}

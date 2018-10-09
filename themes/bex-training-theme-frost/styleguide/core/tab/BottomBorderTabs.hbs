@@ -1,0 +1,21 @@
+{{#block "BottomBorderTabs" extend="/core/tab/Tabs.hbs" }}
+    <div class="{{blockName}}" data-widget="Tabs">
+
+        {{element "title"}}
+        <!-- This creates the row of tabs for navigation -->
+        {{element "tabs"}}
+
+        {{#element "content" noWith=true}}
+            <div class="{{elementName}}">
+                {{#each tabs}}
+                    {{#element "title"}}
+                        <a class="{{elementName}}-panel" href="#{{../id}}" data-tab>{{this}}</a>
+                    {{/element}}
+                    <div class="{{blockName}}-panel" id="{{id}}" data-tab-panel>
+                         {{render this [/core/tab/TabItem.hbs]="/core/tab/BottomBorderTabItem.hbs"}}
+                    </div>
+                {{/each}}
+            </div>
+        {{/element}}
+    </div>
+{{/block}}

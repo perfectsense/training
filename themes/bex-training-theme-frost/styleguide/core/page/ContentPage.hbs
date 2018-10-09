@@ -1,0 +1,19 @@
+{{#block "ContentPage" override="_SourceContentPage.hbs"}}
+    {{#element "companionScreen" noWith=true}}
+        <div class="CompanionScreen">
+            <div class="CompanionScreen-controls">
+                <div class="CompanionScreen-controls-expandButton"><svg class="left-arrow"><use xlink:href="#left-arrow"/></svg><span>EXPAND</span></div>
+                <div class="CompanionScreen-controls-closeButton"><span>CLOSE</span><svg class="close-x"><use xlink:href="#close-x"/></svg></div>
+            </div>
+            <section class="CompanionScreen-content"></section>
+        </div>
+    {{/element}}
+
+    {{#element "companionToaster" noWith=true}}
+      <div class="CompanionToaster">
+          <div class="CompanionToaster-titlebar">{{format "companionToasterTitle"}} <i class="CompanionToaster-close"></i></div>
+          <div class="CompanionToaster-progress"></div>
+          <div class="CompanionToaster-content"></div>
+      </div>
+    {{/element}}
+{{/block}}

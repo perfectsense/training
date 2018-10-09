@@ -1,0 +1,19 @@
+{{#block "ListBulleted" override="/core/list/List.hbs"}}
+    {{element "title"}}
+
+    {{element "description"}}
+
+    {{#element "items"}}
+        <ul class="{{elementName}}">
+            {{#each this}}
+                <li class="{{elementName}}-item">
+                    {{render this
+                        [/core/promo/Promo.hbs]="/core/promo/PromoTextItem.hbs"
+                    }}
+                </li>
+            {{/each}}
+        </ul>
+    {{/element}}
+
+    {{element "cta"}}
+{{/block}}

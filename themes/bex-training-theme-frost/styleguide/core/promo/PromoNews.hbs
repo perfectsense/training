@@ -1,0 +1,15 @@
+{{#block "PromoNews" extend="/core/promo/Promo.hbs"}}
+    <div class="{{blockName}}"{{extraAttributes}}>
+        <div class="{{blockName}}-border" style="background-color: {{#if borderColor}}{{borderColor}}{{else}}gray{{/if}}"></div>
+        <div class="{{blockName}}-source">{{~#with sourceText~}}<span class="{{blockName}}-source-from">{{~this~}}</span>{{~/with~}} {{~#with sourceName~}}<span class="{{blockName}}-source-name">{{~include "/core/link/Link.hbs" href=../url target=../target body=this contentId=../linkId~}}</span>{{~/with~}}</div>
+
+        <div class="{{blockName}}-content">
+            {{element "title"}}
+            {{element "description"}}
+        </div>
+
+        {{#with sharedBy}}
+            <div class="{{blockName}}-sharedBy">{{this}}</div>
+        {{/with}}
+    </div>
+{{/block}}

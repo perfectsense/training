@@ -1,0 +1,150 @@
+.GalleryPage {
+    &:extend(.Page all);
+
+    main {
+        text-align: center;
+        margin: 0 auto;
+        padding: 0 20px 20px 20px;
+
+        .Navigation {
+            // category is actually a section nav, which is a nav
+            // have to override base navigation styles
+            height: auto;
+            padding: 0;
+            position: relative;
+
+            .Navigation-items-item {
+                margin: 0;
+            }
+        }
+    }
+
+    &-contentWrapper {
+        padding: @module-spacing-20 0 0 0;
+    }
+
+    &-headline {
+        .ArticleHeadline;
+        max-width: 800px;
+        margin: 0 auto 20px;
+        text-align: center;
+    }
+
+    &-subHeadline {
+        .Subhead-small;
+        margin-bottom: 20px;
+    }
+
+    &-galleryBody {
+        .DescriptionText;
+        max-width: 800px;
+        margin: 0 auto @module-spacing-40;
+        color: @color-gray;
+        text-align: center;
+        line-height: 1.36;
+    }
+
+    &-actions {
+        margin: 20px auto 36px;
+    }
+
+    .ListMasonry {
+        padding: 0;
+        width: 100%;
+
+        &-items {
+            width: 100%; // create the slider
+
+            &:after {
+                content: 'flickity';
+                display: none;
+            }
+        }
+    }
+
+    &-slides {
+        position: relative;
+        width: 100%;
+        max-width: 1280px;
+        margin: 0 auto;
+
+        .CarouselSlide {
+            max-width: 1280px;
+            margin: 0 auto;
+
+            img {
+                cursor: default;
+                height: auto;
+                max-height: 520px;
+                max-width: 1280px;
+                width: 100%;
+            }
+
+            &-info {
+                background: @color-gray;
+                padding: @module-spacing-20;
+
+                .pagination-status {
+                    display: none;
+                }
+            }
+
+            &-infoTitle {
+                display: none;
+            }
+
+            &-infoDescription {
+                .CaptionText;
+                color: white;
+                margin: 0 0 @module-spacing-10 0;
+                text-align: left;
+            }
+
+            &-infoAttribution {
+                .PhotoCreditText;
+                color: white;
+                text-align: left;
+            }
+        }
+    }
+}
+
+@media @mq-viewport-md {
+    .GalleryPage {
+        main {
+            padding: 0 50px 40px 50px;
+        }
+
+        &-contentWrapper {
+            padding: @module-spacing-40 0 0 0;
+        }
+
+        &-galleryBody {
+            margin: 0 auto @module-spacing-80;
+        }
+    }
+}
+
+@media @mq-viewport-lg {
+    .GalleryPage {
+        main {
+            padding: 0 42px 40px 42px;
+        }
+
+        &-actions {
+            margin: 30px auto 55px;
+        }
+
+        &-slides {
+            .CarouselSlide {
+                img {
+                    cursor: pointer;
+                }
+
+                &-info {
+                    display: none;
+                }
+            }
+        }
+    }
+}

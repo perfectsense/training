@@ -1,0 +1,9 @@
+{{#block "QuoteCard" extend="/core/quote/Quote.hbs"}}
+    <div class="{{blockName}}" {{#if backgroundColor}}style="background-color:var(--{{backgroundColor}})"{{/if}} 
+        {{#if horizontalAlignment}}data-align-{{horizontalAlignment}}{{else}}data-align-center{{/if}} {{extraAttributes}}>
+        <blockquote {{#if textColor}}style="color:{{textColor}}"{{/if}}>
+            {{element "quote"}}
+        </blockquote>
+        {{element "attribution"}}
+    </div>
+{{/block}}

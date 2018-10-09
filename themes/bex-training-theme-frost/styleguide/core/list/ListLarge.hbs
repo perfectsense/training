@@ -1,0 +1,26 @@
+{{#block "ListLarge" override="ListMedium.hbs"}}
+    {{#element "heading" noWith="true"}}
+        <div class="{{elementName}}">
+            {{element "media"}}
+
+            {{element "title"}}
+        </div>
+
+        {{element "description"}}
+    {{/element}}
+
+    {{#element "items"}}
+        <ul class="{{elementName}}">
+            {{#each this}}
+                {{#unless @first}}
+                    <hr class="{{elementName}}-hr">
+                {{/unless}}
+                <li class="{{elementName}}-item">
+                    {{render this
+                        [/core/promo/Promo.hbs]="/core/promo/PromoTextItem.hbs"
+                    }}
+                </li>
+            {{/each}}
+        </ul>
+    {{/element}}
+{{/block}}

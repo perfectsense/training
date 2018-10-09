@@ -1,0 +1,11 @@
+{{#block "Carousel" extend="_SourceCarousel.hbs"}}
+    <div class="{{blockName}}">
+        {{#each slides}}
+        <div class="{{blockName}}-slide {{#if @last}}last-slide{{/if}}">
+                {{render this
+                         [/core/gallery/GallerySlide.hbs]="/core/carousel/CarouselSlide.hbs"
+                }}
+            </div>
+        {{/each}}
+    </div>
+{{/block}}

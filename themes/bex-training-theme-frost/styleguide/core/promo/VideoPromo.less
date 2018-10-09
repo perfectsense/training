@@ -1,0 +1,53 @@
+.VideoPromo {
+  &:extend(.Promo all);
+  max-width: 800px;
+  box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.05);
+  background-color: @color-white;
+  min-height: 336px;
+
+  [data-promo-module-alignment='left'] & {
+      text-align: left;
+  }
+
+  &-info {
+      padding: 30px;
+  }
+
+  [data-promo-module-alignment='left'] & {
+     text-align: left;
+  }
+
+  &-media {
+    position: relative;
+    min-height: 170px;
+    max-height: 170px;
+    overflow: hidden;
+
+    img {
+        width: 100%;
+        height: auto;
+    }
+  }
+
+  &-title {
+      padding-bottom: 10px;
+
+      a {
+          .PromoHeadlineText;
+      }
+  }
+
+  &-description {
+      .PromoBodyText;
+  }
+
+  &-duration {
+    .BylineText;
+    display: none;
+
+    &[data-type='video'],
+    &[data-type='Video'] {
+        display: block;
+    }
+  }
+}

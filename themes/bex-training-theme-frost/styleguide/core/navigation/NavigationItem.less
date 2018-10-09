@@ -1,0 +1,215 @@
+.NavigationItem {
+    &[data-button-style] {
+      position: fixed;
+      right: 20px;
+      top: 22px;
+
+      [data-show-hat] & {
+         @media @mq-viewport-lg {
+            top: 7%;
+         }
+      }
+
+      @media @mq-viewport-lg {
+        position: unset;
+        right: unset;
+        top: unset;
+      }
+    }
+
+    &[data-mobile-only] {
+        @media @mq-viewport-lg {
+            display: none;
+        }
+    }
+
+    // Warning: Not pretty
+    @media @mq-viewport-sm-only {
+        &-text-link {
+            &[data-mobile-text] {
+                visibility: hidden;
+
+                &:before {
+                    .Button--primary;
+                    content: attr(data-mobile-text);
+                    visibility: visible;
+                }
+
+                [data-button-style] & {
+                    visibility: hidden;
+                }
+            }
+        }
+    }
+
+    &-text,
+    &-text-link {
+      .BylineText;
+      text-transform: uppercase;
+      color: var(--headerTextColor);
+      text-align: center;
+      text-decoration: none;
+      letter-spacing: 2px;
+      line-height: 17.8px;
+
+      [data-mobile-left-align-nav] & {
+        text-align: left;
+      }
+
+      [data-mood-bold] & {
+        font-size: 14px;
+        font-weight: 400;
+
+        &:hover {
+            color: @color-primary;
+        }
+      }
+
+      [data-button-style] & {
+        height: 56px;
+        display: flex;
+        align-items: center;
+        visibility: visible;
+        border-radius: 4px;
+        letter-spacing: 0.5px;
+        max-width: 100px;
+        white-space: pre-line;
+
+        @media @mq-viewport-lg {
+          max-width: unset;
+        }
+      }
+
+      [data-button-style='default'] & {
+        .SolidButton;
+
+        &:hover {
+          color: @color-white;
+        }
+      }
+
+      [data-button-style='transparent'] & {
+        &:extend(.TransparentButton all);
+
+        &:hover {
+          color: @color-primary;
+        }
+      }
+
+        &:hover {
+            text-decoration: none;
+            color: @color-taupe;
+        }
+
+        .icon-dropdown {
+          margin-left: 5px;
+        }
+    }
+
+    &-text {
+        [data-dropdown-icon] & {
+            position: relative;
+            display: inline-flex;
+            cursor: pointer;
+
+            @media @mq-viewport-lg {
+                padding-right: 15px;
+            }
+        }
+    }
+
+    &-items {
+        list-style: none;
+        text-align: center;
+        min-width: 150px;
+        padding: 10px;
+        display: none;
+
+        @media @mq-viewport-lg {
+            text-align: left;
+            background-color: var(--headerBackgroundColor);
+            position: absolute;
+        }
+
+        [data-dropdown-icon]:hover & {
+            display: block;
+        }
+
+        &-item {
+            .SocialLink {
+                &[target='_blank'] {
+                  &::after {
+                    display: none;
+                  }
+                }
+            }
+
+            .NavigationLink {
+                .PromoBodyText;
+                font-size: 14px;
+                line-height: 1.71;
+                color: var(--headerTextColor);
+                text-decoration: none;
+
+                &:hover {
+                    color: @color-primary;
+                }
+            }
+
+            a {
+                &[target='_blank'] {
+                    &:after {
+                        content: '';
+                        display: inline-block;
+                        margin-left: 10px;
+                        height: 14px;
+                        width: 14px;
+                        background-image: url('/styleguide/media/icon-external-link.svg');
+                        background-size: cover;
+                    }
+                }
+            }
+        }
+
+        &[data-toggle-in-navitem='true'] {
+            display: block;
+        }
+    }
+
+    @media @mq-viewport-lg {
+        margin-right: 44px;
+
+        &-text,
+        &-text-link {
+            text-align: left;
+            display: flex;
+        }
+
+        &-items {
+            &-item {
+                .NavigationLink {
+                    .PromoBodyText;
+                    font-size: 14px;
+                    line-height: 1.71;
+                    color: @color-secondary3;
+                }
+            }
+        }
+
+    }
+}
+
+// Display Sub-Navigation Horizontally
+[data-subnav-inline] .NavigationItem-items-item {
+    display: inline-block;
+}
+
+[data-hide-external-link-icon] .NavigationItem-items-item {
+  a {
+    &[target='_blank'] {
+        &:after {
+            display: none;
+        }
+    }
+  }
+}

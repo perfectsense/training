@@ -1,0 +1,15 @@
+{{#block "PinterestShareButton" extend="_SourcePinterestShareButton.hbs"}}
+    {{#if url}}
+        {{#element "link" noWith=true}}
+            <a class="{{blockName}}"
+               href="https://pinterest.com/pin/create/bookmarklet/?
+                {{~#with url}}url={{this}}{{~/with~}}
+                {{~#with description}}&description={{this}}{{~/with~}}
+                {{~#with media}}&media={{this}}{{~/with~}}"
+               target="_blank"
+            >
+            <svg class="pinterest-icon"><use xlink:href="#icon-pinterest"/></svg>
+            </a>
+        {{/element}}
+    {{/if}}
+{{/block}}

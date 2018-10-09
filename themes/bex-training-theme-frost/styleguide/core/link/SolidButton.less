@@ -1,0 +1,20 @@
+.SolidButton {
+    display: flex;
+
+    .Button-Pulse;
+
+    a {
+        &[target='_blank'] {
+            &:after {
+                content: '';
+                float: right;
+                display: block;
+                margin-left: 10px;
+                height: 14px;
+                width: 14px;
+                background-image: url('/styleguide/media/icon-external-link@3x.png');
+                background-size: cover;
+            }
+        }
+    }
+}

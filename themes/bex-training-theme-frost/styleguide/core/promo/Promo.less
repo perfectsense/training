@@ -1,0 +1,128 @@
+.Promo {
+    &:extend(.ColorPalette all);
+    position: relative;
+
+    &-info {
+        text-align: var(--horizontalAlignment);
+
+        [data-promo-module-alignment='left'] & {
+            text-align: left;
+        }
+    }
+
+    &-title {
+        .PromoHeadlineText;
+
+        a {
+            .PromoHeadlineText;
+            text-decoration: none;
+            color: @color-primaryText;
+
+            &:hover {
+                text-decoration: none;
+                color: @color-primary;
+            }
+        }
+    }
+
+    &-category {
+        font-size: 10px;
+        letter-spacing: 1px;
+        margin-bottom: 10px;
+        text-transform: uppercase;
+
+        @media @mq-viewport-md {
+            font-size: 12px;
+        }
+
+        a {
+            .Label(@color-primary);
+            text-decoration: none;
+
+            &:hover {
+                text-decoration: none;
+            }
+        }
+    }
+
+    &-description {
+        .PromoBodyText;
+
+        @media @mq-viewport-md {
+            font-size: 16px;
+        }
+    }
+
+    &-authorName {
+        font-size: 12px;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        color: @color-secondaryText;
+    }
+
+    &-date {
+        color: @color-secondaryText;
+    }
+
+    &-type {
+      position: absolute;
+      display: none;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      border: 2px solid @color-white;
+      background-color: rgba(0, 0, 0, 0.4);
+      cursor: pointer;
+      pointer-events: none;
+
+        &[data-type='video'],
+        &[data-type='Video'] {
+          display: block;
+
+           &:before {
+              content: url('/styleguide/media/video-type.svg');
+              position: absolute;
+              top: -25px;
+              left: -25px;
+            }
+        }
+    }
+}
+
+.PromoImage {
+    img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+}
+
+.dog-ear {
+     clip-path: polygon(92% 0, 100% 7%, 100% 100%, 0 100%, 0 0);
+
+     &:before {
+        content: '';
+        position: absolute;
+        top: 0%;
+        right: 0%;
+        width: 0px;
+        height: 0px;
+        border-bottom: 27px solid @color-white;
+        border-right: 30px solid transparent;
+        box-shadow: -2px 1px 13px rgba(0, 0, 0, 0.3);
+    }
+
+    &:after {
+      content: '';
+      position: absolute;
+      top: 0%;
+      right: 0%;
+      width: 0px;
+      height: 0px;
+      border-top: 30px solid transparent;
+      border-left: 30px solid transparent;
+    }
+}

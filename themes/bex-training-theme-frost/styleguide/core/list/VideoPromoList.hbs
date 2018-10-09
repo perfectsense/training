@@ -1,0 +1,23 @@
+{{#block "VideoPromoList" extend="ListGrid.hbs"}}
+    <div class="{{blockName}}" data-column-count="3"
+        {{#if fullWidth}}data-full-width{{/if}}
+        {{extraAttributes}}
+        {{#if backgroundColor}}style="--color:var(--{{backgroundColor}})"{{/if}}
+        {{#if noTopPadding}}data-nopaddingtop{{/if}}
+        {{#if partialGradient}}data-gradient="partial"{{/if}}>
+
+        {{element "title"}}
+
+        {{#element "items"}}
+            <div class="{{elementName}}">
+                {{#partition this size=3}}
+                  {{#each this}}
+                      <div class="{{elementName}}-item">
+                          {{render this [/core/promo/Promo.hbs]="/core/promo/VideoPromo.hbs"}}
+                      </div>
+                  {{/each}}
+                {{/partition}}
+            </div>
+        {{/element}}
+    </div>
+{{/block}}

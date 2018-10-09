@@ -1,0 +1,10 @@
+{
+    "_template": "VideoPromoList.hbs",
+    "title": "Module title Goes Here",
+    "items": [
+      {
+        "_include": "/core/promo/VideoPromo.json",
+        "_repeat": "3"
+      }
+    ]
+  }

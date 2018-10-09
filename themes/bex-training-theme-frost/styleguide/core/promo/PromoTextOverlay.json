@@ -1,0 +1,23 @@
+{
+    "_include": "Promo.json",
+    "_template": "PromoTextOverlay.hbs",
+    "media": {
+        "_template": "/core/image/Image.hbs",
+        "image": {
+            "_image": true,
+            "src": "/styleguide/media/brightspot-logo.png"
+        }
+    },
+    "title": null,
+    "description": "Deliver the digital experiences you want and your customers expect.",
+    "horizontalAlignment": "center",
+    "verticalAlignment": "middle",
+    "background": {
+        "_template": "/core/image/Image.hbs",
+        "image": {
+            "_image": true,
+            "src": "/styleguide/media/brightspotHighway@3x.png"
+        }
+    },
+    "buttonText": "Custom Button Text"
+}

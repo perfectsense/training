@@ -1,0 +1,28 @@
+{{#block "ListGrid" extend="/core/list/List.hbs"}}
+    <div class="{{blockName}}" data-column-count="{{#with columnCount}}{{this}}{{else}}2{{/with}}"
+        {{#if fullWidth}}data-full-width{{/if}}
+        {{extraAttributes}}
+        {{#if background}}style="background-image: url({{background.image.src}})"{{/if}}
+        {{#if backgroundColor}}style="--color:var(--{{backgroundColor}})"{{/if}}
+        {{#if noTopPadding}}data-nopaddingtop{{/if}}
+        {{#if partialGradient}}data-gradient="partial"{{/if}}>
+
+        {{element "title"}}
+
+        {{element "description"}}
+
+        {{#element "items"}}
+            <div class="{{elementName}}">
+                {{#each this}}
+                    <div class="{{elementName}}-item">
+                        {{render this [/core/promo/Promo.hbs]="/core/promo/PromoImageOnTop.hbs"}}
+                    </div>
+                {{/each}}
+            </div>
+        {{/element}}
+
+        {{element "cta"}}
+
+        {{element "pagination"}}
+    </div>
+{{/block}}
