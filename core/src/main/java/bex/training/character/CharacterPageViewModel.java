@@ -9,10 +9,7 @@ import com.psddev.styleguide.training.character.CharacterPageView;
 import com.psddev.styleguide.training.character.CharacterPageViewBiographyField;
 import com.psddev.styleguide.training.character.CharacterPageViewImageField;
 
-import java.util.function.Function;
-
-public class CharacterPageViewModel extends AbstractContentPageViewModel<Character> implements CharacterPageView,
-                                                PageEntryView {
+public class CharacterPageViewModel extends AbstractContentPageViewModel<Character> implements CharacterPageView, PageEntryView {
 
     // Character Page Support.
 
@@ -33,11 +30,11 @@ public class CharacterPageViewModel extends AbstractContentPageViewModel<Charact
      * string field. The model data will need processing to properly represent HTML and {@link com.psddev.styleguide.core.enhancement.EnhancementView}s
      * that may be present from the RTE on the field.
      *
-     * The method {@link RichTextUtils#buildHtml(Database, String, Function)} is used here and requires the following parameters:
+     * The method {@link RichTextUtils#buildHtml(Database, String, java.util.function.Function)} is used here and requires the following parameters:
      *
      * 1.) A {@link Database} (If you are not sure what to pass here, just send it the default Database as shown below).
      * 2.) The model data input.
-     * 3.) A {@link Function} that takes in a View class and a string that will be invoked to create the final Views.
+     * 3.) A {@link java.util.function.Function} that takes in a View class and a string that will be invoked to create the final Views.
      *
      * @return The processed Views representing the {@link Character}'s full biography including HTML and enhancements.
      */

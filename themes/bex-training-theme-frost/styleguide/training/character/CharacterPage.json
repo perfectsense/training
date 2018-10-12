@@ -1,0 +1,15 @@
+{
+  "_include": "/training/character/CharacterPage.json",
+
+  "alterEgo": "Captain America",
+
+  "biography": {
+    "_include": "/_group/RichText.json"
+  },
+
+  "image": {
+    "_include": "/core/image/Image.json"
+  },
+
+  "name": "Steve Rodgers"
+}
