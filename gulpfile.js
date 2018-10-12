@@ -26,7 +26,7 @@ gulp.task(styleguide.task.js(), (done) => {
       'jquery': 'node_modules/jquery/dist/jquery.js',
       'pluginRegistry': 'node_modules/brightspot-express/styleguide/core/PluginRegistry.js',
       'banner': 'node_modules/brightspot-express/styleguide/core/banner/Banner.js',
-      'core-utils': 'node_modules/brightspot-express/styleguide/core/Utils.js',
+      'core-utils': 'styleguide/core/Utils.js',
       'vex': 'node_modules/vex-js/js/vex.js',
 
       'jWVideoPlayer': 'node_modules/brightspot-express/styleguide/jwplayer/JWVideoPlayer.js',
@@ -35,7 +35,10 @@ gulp.task(styleguide.task.js(), (done) => {
       'videoPlayer': 'node_modules/brightspot-express/styleguide/core/video/VideoPlayer.js',
 
       'plugin-babel': 'node_modules/systemjs-plugin-babel/plugin-babel.js',
-      'systemjs-babel-build': 'node_modules/systemjs-plugin-babel/systemjs-babel-browser.js'
+      'systemjs-babel-build': 'node_modules/systemjs-plugin-babel/systemjs-babel-browser.js',
+      'videoPlayer': 'styleguide/core/video/VideoPlayer.js',
+      'videoAnalytics': 'styleguide/core/video/VideoAnalytics.js',
+      'videoPlaylistItem': 'styleguide/core/video/VideoPlaylistItem.js'
     },
     transpiler: 'plugin-babel'
   })
