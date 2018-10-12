@@ -1,0 +1,7 @@
+import './Function.Name.js'
+import './Promise.js'
+import './setImmediate.js'
+import './picture.js'
+import './Object.assign.js'
+import './Array.from.js'
+import './Array.find.js'
