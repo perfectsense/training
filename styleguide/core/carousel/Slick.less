@@ -1,0 +1,161 @@
+/**
+ * Instead of making a slick dependency and trying to pull in their CSS
+ * just including the slick CSS as importable LESS here
+ */
+
+.slick-slider {
+    position: relative;
+    display: block;
+    box-sizing: border-box;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+    -webkit-touch-callout: none;
+    -khtml-user-select: none;
+    -ms-touch-action: pan-y;
+        touch-action: pan-y;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.slick-list {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+.slick-list:focus {
+    outline: none;
+}
+
+.slick-list.dragging {
+    cursor: hand;
+}
+
+.slick-slider .slick-track,
+.slick-slider .slick-list {
+    -webkit-transform: translate3d(0, 0, 0);
+       -moz-transform: translate3d(0, 0, 0);
+        -ms-transform: translate3d(0, 0, 0);
+         -o-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+}
+
+.slick-track {
+    position: relative;
+    top: 0;
+    left: 0;
+    display: block;
+}
+
+.slick-track:before,
+.slick-track:after {
+    display: table;
+    content: '';
+}
+
+.slick-track:after {
+    clear: both;
+}
+
+.slick-loading .slick-track {
+    visibility: hidden;
+}
+
+.slick-slide {
+    display: none;
+    float: left;
+
+    height: 100%;
+    min-height: 1px;
+}
+
+[dir='rtl'] .slick-slide {
+    float: right;
+}
+
+.slick-slide img {
+    display: block;
+}
+
+.slick-slide.slick-loading img {
+    display: none;
+}
+
+.slick-slide.dragging img {
+    pointer-events: none;
+}
+
+.slick-initialized .slick-slide {
+    display: block;
+}
+
+.slick-loading .slick-slide {
+    visibility: hidden;
+}
+
+.slick-vertical .slick-slide {
+    display: block;
+    height: auto;
+    border: 1px solid transparent;
+}
+
+.slick-arrow.slick-hidden {
+    display: none;
+}
+
+.slick-arrow {
+  cursor: pointer;
+  bottom: 0;
+  top: 0;
+  margin: auto;
+  width: 30px;
+  height: 30px;
+  border: 0;
+  border-radius: 50%;
+  background-color: rgba(170, 170, 170, 0.75);
+  position: absolute;
+
+  &.slick-prev {
+    left: 10px;
+  }
+
+  &.slick-next {
+    right: 10px;
+  }
+}
+
+.slick-dots {
+  position: absolute;
+  top: 20px;
+  margin: 0 auto;
+  padding: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  list-style: none;
+  text-align: center;
+
+  li {
+    width: 70px;
+    height: 5px;
+    background: rgba(211, 211, 211, 0.8);
+    position: relative;
+    display: inline-block;
+    margin: 0 2.5px;
+    padding: 0;
+    cursor: pointer;
+
+    &:hover {
+      opacity: 0.6;
+    }
+
+    button,
+    button:before {
+      color: transparent;
+      opacity: 0;
+    }
+  }
+}
