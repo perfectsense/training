@@ -1,0 +1,26 @@
+{
+  "_include": "/core/page/ContentPage.json",
+  "_template": "MoviePage.hbs",
+
+  "name": "Avengers",
+  "cover": {
+    "_include": "/core/image/Image.json"
+  },
+
+  "summary": {
+    "_include": "/_group/RichText.json"
+  },
+  "plot": {
+    "_include": "/_group/RichText.json"
+  },
+
+  "phase": {
+    "_include": "/core/link/Link.json"
+  },
+
+  "featuredCharacters": [
+    {
+      "_include": "/core/promo/Promo.json"
+    }
+  ]
+}

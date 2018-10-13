@@ -1,6 +1,7 @@
 package bex.training.movie;
 
 import bex.training.release.Releasable;
+import bex.training.character.Character;
 import brightspot.core.image.ImageOption;
 import brightspot.core.link.Linkable;
 import brightspot.core.permalink.AutoPermalink;

@@ -48,7 +48,6 @@ public abstract class Character extends Content implements AutoPermalink,
     private String firstName;
 
     @Indexed
-    @Required
     private String lastName;
 
     @ToolUi.ReadOnly

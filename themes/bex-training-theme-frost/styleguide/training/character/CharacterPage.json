@@ -1,5 +1,5 @@
 {
-  "_include": "/training/character/CharacterPage.json",
+  "_include": "_SourceCharacterPage.json",
 
   "alterEgo": "Captain America",
 
