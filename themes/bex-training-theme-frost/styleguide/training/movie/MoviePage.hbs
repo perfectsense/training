@@ -23,11 +23,9 @@
             {{/element}}
 
             {{#element "featuredCharacters"}}
-                <ul class="{{elementName}}">
-                    {{#each this}}
-                        <li class="{{elementName}}-item">{{this}}</li>
-                    {{/each}}
-                </ul>
+                <div class="{{elementName}}">
+                    {{render this [/core/list/List.hbs]="/core/list/ListFourColumn.hbs"}}
+                </div>
             {{/element}}
 
         </div>

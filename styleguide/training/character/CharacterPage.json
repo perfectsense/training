@@ -12,5 +12,9 @@
     "_include": "/core/image/Image.json"
   },
 
-  "name": "Steve Rodgers"
+  "name": "Steve Rodgers",
+
+  "featuredMovies": {
+    "_include": "/core/list/List.json"
+  }
 }

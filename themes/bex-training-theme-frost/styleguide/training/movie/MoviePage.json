@@ -17,9 +17,7 @@
     "_include": "/core/link/Link.json"
   },
 
-  "featuredCharacters": [
-    {
-      "_include": "/core/promo/Promo.json"
-    }
-  ]
+  "featuredCharacters": {
+    "_include": "/core/list/List.json"
+  }
 }

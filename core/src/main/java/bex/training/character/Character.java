@@ -15,6 +15,7 @@ import brightspot.core.tool.SmallRichTextToolbar;
 import com.psddev.cms.db.Content;
 import com.psddev.cms.db.Seo;
 import com.psddev.cms.db.ToolUi;
+import com.psddev.dari.db.Recordable;
 import com.psddev.dari.util.ObjectUtils;
 import com.psddev.dari.util.StringUtils;
 
@@ -30,6 +31,7 @@ import java.util.stream.Collectors;
 @Seo.DescriptionFields("getSeoDescription")
 @Seo.KeywordsFields("getSeoKeywords")
 @ToolUi.Main
+@Recordable.PreviewField("image/image/file")
 public abstract class Character extends Content implements AutoPermalink,
                                                            Linkable,
                                                            PromotableWithOverrides,

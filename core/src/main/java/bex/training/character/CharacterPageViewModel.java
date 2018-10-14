@@ -7,6 +7,7 @@ import com.psddev.dari.db.Database;
 import com.psddev.dari.util.StringUtils;
 import com.psddev.styleguide.training.character.CharacterPageView;
 import com.psddev.styleguide.training.character.CharacterPageViewBiographyField;
+import com.psddev.styleguide.training.character.CharacterPageViewFeaturedMoviesField;
 import com.psddev.styleguide.training.character.CharacterPageViewImageField;
 
 public class CharacterPageViewModel extends AbstractContentPageViewModel<Character> implements CharacterPageView, PageEntryView {
@@ -45,6 +46,11 @@ public class CharacterPageViewModel extends AbstractContentPageViewModel<Charact
                     s -> createView(CharacterPageViewBiographyField.class, s));
         }
 
+        return null;
+    }
+
+    @Override
+    public Iterable<? extends CharacterPageViewFeaturedMoviesField> getFeaturedMovies() {
         return null;
     }
 
