@@ -36,8 +36,9 @@ public class MoviePageViewModel extends AbstractContentPageViewModel<Movie> impl
         if (!ObjectUtils.isBlank(model.getFeaturedCharacters())) {
 
             ListView.Builder builder = new ListView.Builder();
+            builder.title("Featured Characters");
+
             for (Character character : model.getFeaturedCharacters()) {
-                builder.title("Featured Characters");
                 builder.addToItems(createView(ListViewItemsField.class, character));
             }
 

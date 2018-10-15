@@ -2,24 +2,36 @@
     {{#element "mainContent" noWith="true"}}
         <div class="{{elementName}}" itemscope itemtype="http://schema.org/Person"{{extraAttributes}}>
 
-            {{#element "name"}}
-                <h1 class="{{elementName}}" itemprop="name">{{this}}</h1>
+            {{#element "card" noWith="true"}}
+                <div class="{{elementName}}">
+
+                    {{#element "image"}}
+                        <div class="{{elementName}}" itemprop="image">{{this}}</div>
+                    {{/element}}
+
+                    <div class="{{elementName}}-data">
+
+                        {{#element "name"}}
+                            <h1 class="{{elementName}}" itemprop="name">{{this}}</h1>
+                        {{/element}}
+
+                        {{#element "alterEgo"}}
+                            <div class="{{elementName}}">{{this}}</div>
+                        {{/element}}
+
+                    </div>
+                </div>
             {{/element}}
 
-            {{#element "alterEgo"}}
-                <div class="{{elementName}}">{{this}}</div>
-            {{/element}}
-
-            {{#element "image"}}
-                <div class="{{elementName}}" itemprop="image">{{this}}</div>
-            {{/element}}
 
             {{#element "biography"}}
                 <div class="{{elementName}}" itemprop="description">{{this}}</div>
             {{/element}}
 
             {{#element "featuredMovies"}}
-                <div class="{{elementName}}">{{this}}</div>
+                <div class="{{elementName}}">
+                    {{render this [/core/list/List.hbs]="/core/list/ListFourColumn.hbs"}}
+                </div>
             {{/element}}
 
         </div>
