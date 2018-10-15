@@ -1,8 +1,7 @@
 {
   "sources": [
     {
-      "source": "/node_modules/bex-training/styleguide",
-      "hiddenExamples": true
+      "source": "/node_modules/bex-training/styleguide"
     }
   ],
   "themeFields": {
@@ -1587,6 +1586,16 @@
       "srcsetDescriptors": [
         "2x"
       ]
+    },
+    "moviePromoSmall": {
+      "maximumWidth": 300,
+      "previewWidth": 300,
+      "previewHeight": 600,
+      "srcsetDescriptors": [
+        "2x",
+        "3x"
+      ],
+      "format": "jpg"
     }
   },
   "imageSizeContexts": {
@@ -1912,6 +1921,13 @@
       "videoPosterMobile": {
         "/core/{figure/Figure,image/Image}.hbs": {
           "image": "portrait-400-446"
+        }
+      }
+    },
+    "/training/movie/MoviePage.hbs": {
+      "cover": {
+        "/core/{figure/Figure,image/Image}.hbs": {
+          "image": "moviePromoSmall"
         }
       }
     }

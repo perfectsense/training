@@ -2,24 +2,43 @@
     {{#element "mainContent" noWith="true"}}
         <div class="{{elementName}}" itemscope itemtype="http://schema.org/Person"{{extraAttributes}}>
 
-            {{#element "name"}}
-                <h1 class="{{elementName}}" itemprop="name">{{this}}</h1>
-            {{/element}}
+            {{#element "info" noWith="true"}}
+                <div class="{{elementName}}">
+                    <div class="{{elementName}}-card">
 
-            {{#element "cover"}}
-                <div class="{{elementName}}" itemprop="image">{{this}}</div>
-            {{/element}}
+                        {{#element "cover"}}
+                            <div class="{{elementName}}" itemprop="image">{{this}}</div>
+                        {{/element}}
 
-            {{#element "summary"}}
-                <div class="{{elementName}}">{{this}}</div>
-            {{/element}}
+                        <div class="{{elementName}}-data">
+                            {{#element "name"}}
+                                <h1 class="{{elementName}}" itemprop="name">{{this}}</h1>
+                            {{/element}}
 
-            {{#element "plot"}}
-                <div class="{{elementName}}" itemprop="description">{{this}}</div>
-            {{/element}}
+                            {{#element "phase"}}
+                                <div class="{{elementName}}">{{this}}</div>
+                            {{/element}}
 
-            {{#element "phase"}}
-                <div class="{{elementName}}">{{this}}</div>
+                            {{#element "releaseDate"}}
+                                <div class="{{elementName}}">{{this}}</div>
+                            {{/element}}
+
+                            {{#element "summary"}}
+                                <div class="{{elementName}}">{{this}}</div>
+                            {{/element}}
+                        </div>
+                    </div>
+
+                    <hr>
+
+                    {{#element "plot"}}
+                        <h2 class="{{elementName}}-header">Plot</h2>
+                        <div class="{{elementName}}" itemprop="description">{{this}}</div>
+                    {{/element}}
+
+                    <hr>
+
+                </div>
             {{/element}}
 
             {{#element "featuredCharacters"}}

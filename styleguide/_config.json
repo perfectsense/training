@@ -2,8 +2,6 @@
   "sources": [],
   "javaPackage": "bex.training.view",
   "pom": "frontend/pom.xml",
-  "hiddenExamples": true,
-  "visibleExamples": "/examples/**/*",
   "vars": {
     "exampleSiteUrl": "http://www.perfectsensedigital.com/"
   },

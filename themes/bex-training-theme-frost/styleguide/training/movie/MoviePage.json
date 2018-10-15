@@ -2,6 +2,9 @@
   "_include": "_SourceMoviePage.json",
 
   "name": "Avengers",
+  "phase": "Phase 1",
+  "releaseDate": "April 11, 2012",
+
   "cover": {
     "_include": "/core/image/Image.json"
   },
@@ -11,10 +14,6 @@
   },
   "plot": {
     "_include": "/_group/RichText.json"
-  },
-
-  "phase": {
-    "_include": "/core/link/Link.json"
   },
 
   "featuredCharacters": {

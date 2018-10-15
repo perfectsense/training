@@ -2,6 +2,7 @@ package bex.training.movie;
 
 import bex.training.character.Character;
 import brightspot.core.page.AbstractContentPageViewModel;
+import brightspot.core.section.Section;
 import brightspot.core.tool.RichTextUtils;
 import com.psddev.cms.view.PageEntryView;
 import com.psddev.dari.db.Database;
@@ -12,13 +13,16 @@ import com.psddev.styleguide.core.list.ListViewItemsField;
 import com.psddev.styleguide.training.movie.MoviePageView;
 import com.psddev.styleguide.training.movie.MoviePageViewCoverField;
 import com.psddev.styleguide.training.movie.MoviePageViewFeaturedCharactersField;
-import com.psddev.styleguide.training.movie.MoviePageViewPhaseField;
 import com.psddev.styleguide.training.movie.MoviePageViewPlotField;
 import com.psddev.styleguide.training.movie.MoviePageViewSummaryField;
 
+import java.text.SimpleDateFormat;
 import java.util.Collections;
+import java.util.Optional;
 
 public class MoviePageViewModel extends AbstractContentPageViewModel<Movie> implements MoviePageView, PageEntryView {
+
+    private static final SimpleDateFormat RELEASE_DATE_FORMAT = new SimpleDateFormat("MMMM dd, yyyy");
 
     // Movie Page Support.
 
@@ -49,8 +53,10 @@ public class MoviePageViewModel extends AbstractContentPageViewModel<Movie> impl
     }
 
     @Override
-    public Iterable<? extends MoviePageViewPhaseField> getPhase() {
-        return createViews(MoviePageViewPhaseField.class, model.getPhase());
+    public CharSequence getPhase() {
+        return Optional.ofNullable(model.getPhase())
+                .map(Section::getDisplayName)
+                .orElse(null);
     }
 
     @Override
@@ -61,6 +67,11 @@ public class MoviePageViewModel extends AbstractContentPageViewModel<Movie> impl
         }
 
         return null;
+    }
+
+    @Override
+    public CharSequence getReleaseDate() {
+        return RELEASE_DATE_FORMAT.format(model.getReleaseDate());
     }
 
     @Override

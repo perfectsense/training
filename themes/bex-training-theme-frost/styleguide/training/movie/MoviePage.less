@@ -1,3 +1,39 @@
 .MoviePage {
   &:extend(.Page all);
+
+  &-mainContent {
+    padding-top: 50px;
+  }
+
+  &-name {
+    .PageTitle
+  }
+
+  &-info {
+    width: var(--pageWidth);
+    max-width: var(--maxPageWidth);
+    margin: 0 auto;
+
+    &-card {
+      display: flex;
+      flex-direction: row;
+      margin-bottom: 50px;
+    }
+
+    &-data {
+      padding-left: 50px;
+      max-width: 800px;
+    }
+  }
+
+  &-plot {
+
+    margin-bottom: 50px;
+
+    &-header {
+      .Subhead;
+
+      margin-top: 50px;
+    }
+  }
 }
