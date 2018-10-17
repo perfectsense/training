@@ -1,116 +1,118 @@
-# bex-training
-Bex Training project repository
+# Brightspot Express Training
 
-# New Project Checklist
+So you want to learn how to develop on Brightspot Express? Look no further!
 
-- [ ] Verify Java dependencies in `core/pom.xml`, `frontend/pom.xml`, and `site/pom.xml`.
-- [ ] Verify JavaScript dependencies in `package.json`
-- [ ] Verify Theme setup (and possibly generate additional themes) in `themes/`. Instructions are in the [Themes Readme](themes/README.md)
-- [ ] Verify project builds.
-- [ ] Update `README.md`.
-- [ ] Commit changes to git.
+This project gives you everything you will need to get going with learning how to do front-end and back-end development on
+Brightspot Express. It includes a bare-bones 4.0 archetype project and all of the core Styleguide templates to use as reference
+to help you take your own web publishing needs from concept to creation.
 
-# Building for the first time
-1.  Run `yarn cache clean && yarn`
-2.  Run `mvn clean -Plibrary verify`
+## Prerequisites
 
-# Contributing
+- VirtualBox: `5.0.10`
+- Vagrant: `1.8.1`
+- Maven: `3.5.2`
 
-* Make sure that the JIRA issue exists that describes the new
-  feature, improvement or the bug you're going to work on.
-* Make sure that the JIRA issue is assigned to yourself and that the status is
-  set to *Dev*. You should also verify that *Issue Type* is correct; *Summary*
-  is clear and concise; and *Description* contains the requirements or steps
-  to reproduce.
-* Branch off of `develop` unless told otherwise.
-* All branch names should be prefixed with `feature/` or `bug/` and named descriptively with the bug/feature number
-  attached at the front. (e.g. `feature/XY-12-New-Feature-Item`).
-* Each commit messages should be brief, descriptive, and grammatically correct
-  with proper capitalization and appropriate punctuations.
-* Once development is complete, create a pull request with the JIRA issue key
-  and a brief description as the title. Attach the feature/bug number at the front of the title to make clear
-  what it is associated to. (e.g. "XY-21: Feature NPE When Image is Null")
-* Make sure the PR has a label associated to it - e.g. Bug/Feature - as well as a milestone<sup>1</sup>
+## Prepping The Local Project
 
-1: The reason for this is to when looking back at all the PR's that went in to a given release you can clearly see
-how many features/bugs were fixed as well as easily filter by Sprint/release schedule.
+On a Mac (Windows instructions coming soon), open the `Terminal` app. Change your working directory to a location where you want the project code to
+live. For this example, we will use `~/Documents`.
 
-# Java Class Name & Organization Rules
+```bash
+cd ~/Documents
+```
 
-* Create a package per content type and name it `bex.training.<plugin>.<type>` (e.g. `bex.training.core.group`).
-* This package should contain all classes related to that type (e.g. view model classes).
-* Imports should be grouped first by java/javax then other non-static imports and finally static imports. Alphabetically within the group.
+Clone the GitHub project into your `~/Documents` folder using the following command:
 
-If you are using IntelliJ you can auto arrange imports in the order described above with the following settings:
-![Import Order](https://cloud.githubusercontent.com/assets/1299507/25505623/a45fccd2-2b70-11e7-9bf4-5ab531da4cc6.png)
+```bash
+git clone git@github.com:perfectsense/training.git
+```
 
-# Front end
+Change your directory to the project:
 
-This project uses [Brightspot Express](https://github.com/perfectsense/brightspot-express). See that repository for more documentation.
+```bash
+cd training
+```
 
-To get started with the styleguide server (allows front end dev without Tomcat & Brightspot installed):
+## Building The Project For The First Time
 
-1.  Run `yarn cache clean && yarn`
-2.  Run `gulp styleguide`
+Brightspot projects use Maven for dependency management and build configurations. To the build the project for the first time:
 
-All commands run in project root.
+```bash
+mvn clean install
+```
 
-The styleguide will then be accessible at [http://localhost:3000](http://localhost:3000).
+## Setting Up The Environment
 
-# Development and Release Process
+Included with the project is the Brightspot Training `Vagrantfile` at the root of the project. This file contains all of the configuration needed to running the Brightspot Training CMS
+out of the box with pre-published data for the example Marvel Cinematic Universe site.
 
-# Brightspot Environments
+Before booting up the vagrant box, you should clear your box cache to ensure you are importing the most up-to-date Brightspot Training box:
 
-Environment | URL                                                                                    | Branch    | Source
------------ | ---------------------------------------------------------------------------------------| --------- | --------------------
-QA          | TBD                                                                                    | `develop` | travis, automatic
-Prod        | TBD                                                                                    | `master`  | beam deployment
+```bash
+rm -rf ~/.vagrant.d/boxes/brightspot-training
+```
 
-* [JIRA](https://perfectsense.atlassian.net/browse/)
+Now, boot up the vagrant:
 
-# Development Branches
+```bash
+vagrant up
+```
 
-Branch Name   | Purpose
-------------- | ----------------------------------
-`develop`     | Latest stable development codebase
-`feature/{x}` | Feature-specific changes
+When you boot up the vagrant box, it will attempt to mount the current directory the `Vagrantfile` is 
+located in to the directory `/vagrant` within the environment. This will allow the user to symlink the compiled site `*.war` file 
+to Tomcat's `webapps` folder to allow for automatic deployment each time a build completes.
 
-# Pull Requests
+To do this, you will first want to SSH into the training environment. From the same folder as your `Vagrantfile`, run this command:
 
-All commits (outside of the /ops/ directory) are committed to a
-`feature/{x}` branch off of `develop`. When the feature is complete,
-submit a pull request back to `develop`.
+```bash
+vagrant ssh
+```
 
-Be sure to include any ticket number(s) in the title of the pull request,
-and *always* delete the `feature/{x}` branch after merging the pull request.
+You will now be logged in as the root user within the training vagrant. If you are not, log in as the root user:
 
-# Release and Hotfix Branches
+```bash
+sudo -i
+```
 
-Branch Name   | Purpose
-------------- | ----------------------------------
-`master`      | Stable current production codebase
-`hotfix/{x}`  | Production hotfix
+Stop the Brightspot service beofre setting up the webapps:
 
-# Release Process
+```bash
+sv stop brightspot
+```
 
-When development for the current release is complete, merge `develop` into
-`master`. This starts a build in
-[Travis](https://travis-ci.com/perfectsense/bex-training). Take note
-of the build number and update the deployment buildNumber in
-[prod.yml](ops/beam/prod.yml).
+You will now need to actually symlink the `*.war` file into the Tomcat's webapps directory:
 
-`beam up`, commit this change directly to `master`, and tag this commit with
-`v{#}` where `{#}` is a [Semantic Version Number](http://semver.org/).
+```bash
+ln -s /vagrant/site/target/bex-training-site-1.0.0-SNAPSHOT.war /servers/brightspot/webapps/ROOT.war
+```
 
-Merge `master` into `develop` after the release.
+Start the Brightspot service back up:
 
-No other changes are merged into `master` until the next release.
+```bash
+sv start brightspot
+```
 
-# Hotfixes
+During development, you may want to keep yourself SSH'd into the training environment with logs open for debugging. You can tail the
+Catalina logs and leave them open in the window:
 
-Any unscheduled releases (hotfixes) are branched off of `master`
-with a branch name like `hotfix/{x}`, then create a pull request to merge
-back into `master`.
+```bash
+tail -f /servers/brightspot/logs/catalina.out
+```
 
-Delete the `hotfix/{x}` branch after merging the pull request, then follow
-the release process above.
+## Contributing
+
+Please refer to [Building The Training Vagrant](docs/BUILDING.md) on instructions and information on how to contribute
+to the training project.
+
+## Credits
+
+Written and Published by [Mark Conigliaro](https://github.com/markconigliaro1) (Software Engineer at Perfect Sense Digital)
+
+Brightspot Platform and Frost theme written and developed by Perfect Sense Digital
+
+
+
+
+
+
+
