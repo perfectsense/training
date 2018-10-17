@@ -1,0 +1,31 @@
+.MetricsThreeColumnList {
+    &:extend(.ListGrid all);
+    .InverseList;
+    background-color: @color-secondary1;
+
+    &-items {
+      padding: 0;
+
+      &-item {
+        display: inline-block;
+        width: ~'calc(100% - 13.333px)';
+        margin: 0 5px 20px;
+
+        @media @mq-viewport-md {
+            width: ~'calc(50% - 13.333px)';
+            margin: 0 5px 0px 5px;
+        }
+
+        @media @mq-viewport-lg {
+            width: ~'calc(33.333% - 13.333px)';
+
+            [data-add-border] & {
+              &:nth-child(3n+2) {
+                border-left: 1px solid @color-white;
+                border-right: 1px solid @color-white;
+              }
+            }
+        }
+      }
+  }
+}

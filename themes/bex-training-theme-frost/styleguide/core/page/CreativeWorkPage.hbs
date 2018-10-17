@@ -1,0 +1,85 @@
+{{#block "CreativeWorkPage" override="_SourceCreativeWorkPage.hbs"}}
+
+    {{#element "byline" noWith=true}}
+        <div class="{{elementName}}" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <div class="{{elementName}}-content">
+                {{#with authorName}}
+                    <div class="{{blockName}}-authorName" itemprop="name">
+                        By {{#with ../authorUrl}}<a href="{{this}}">{{/with}}
+                        {{this}}
+                        {{#with ../authorUrl}}</a>{{/with}}
+                    </div>
+                {{/with}}
+                {{#with contributors}}
+                    {{~#each this~}}
+                        <span>,</span>{{~this~}}
+                    {{~/each~}}
+                {{/with}}
+            </div>
+        </div>
+    {{/element}}
+
+    {{#element "datePublished" noWith=true}}
+        <div class="{{elementName}}">{{#if authorName}}on{{/if}} {{datePublished}}</div>
+        {{#with datePublishedISO}}
+            <meta itemprop="datePublished" content="{{this}}">
+        {{/with}}
+    {{/element}}
+
+    {{#element "actionsTop"}}
+        <div class="{{blockName}}-actions">{{this}}</div>
+    {{/element}}
+
+    {{#element "tags"}}
+        <div class="{{elementName}}">
+            <div class="{{blockName}}-tags-body">{{this}}</div>
+        </div>
+    {{/element}}
+
+    {{#element "aboutContributor" noWith="true"}}
+        <div class="{{elementName}}" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            {{element "authorImage"}}
+            {{#element "authorTexts" noWith=true}}
+                <div class="{{elementName}}">
+                    <h3>About the Contributor</h3>
+                    {{#element "authorName"}}
+                        <div class="{{elementName}}" itemprop="name">
+                            {{this}}
+                        </div>
+                    {{/element}}
+                    {{#with authorBiography}}
+                        <hr>
+                        <div class="{{blockName}}-authorBiography">{{this}}</div>
+                    {{/with}}
+                </div>
+            {{/element}}
+        </div>
+    {{/element}}
+
+    {{#element "aboutAuthor" noWith=true}}
+        {{#if authorBiography}}
+            {{#unless contributors}}
+                <div class="{{elementName}}" itemprop="author" itemscope itemtype="http://schema.org/Person">
+                    <div class="{{elementName}}-heading">{{format "authorBiographyHeading"}}</div>
+
+                    {{element "authorImage"}}
+
+                    {{#with authorBiography}}
+                        <div class="{{blockName}}-authorBiography">{{this}}</div>
+                    {{/with}}
+                </div>
+            {{/unless}}
+        {{/if}}
+    {{/element}}
+
+    {{#element "aside"}}
+        <aside class="{{elementName}}">
+            {{#each this}}
+                {{render this
+                    [/core/list/List.hbs]="/core/list/ListOrderedSticky.hbs"
+                }}
+            {{/each}}
+        </aside>
+    </div>
+    {{/element}}
+{{/block}}

@@ -1,0 +1,43 @@
+{{#block "HTML5VideoPlayer"}}
+    <div
+         class="{{blockName}}"
+         data-video-player
+         data-video-id="{{videoId}}"
+         data-video-title="{{videoTitle}}"
+        {{~#if muted}} data-muted{{/if~}}
+        {{~#if autoplay}} data-autoplay{{/if~}}
+        {{~#each extraAttributes}} {{this}}{{~/each~}}
+    >
+        {{#blockBody}}
+            {{#element "screen" noWith=true}}
+                <div class="{{elementName}}" data-aspect-ratio="{{#if aspectRatio}}{{aspectRatio}}{{else}}4x3{{/if}}">
+                    {{#element "video"  noWith=true}}
+                        <video id="{{blockName}}-{{playerId}}" class="{{elementName}}"
+                            {{!--
+                                this puts a transparent pixel in place for the placeholder attr and then uses a background image
+                                technique: https://iandevlin.com/html5/poster/
+                            --}}
+                            {{#with poster}}poster="{{this.src}}" {{/with}}
+                               preload="{{#if preloadNone}}none{{/if}}{{#if preloadMetaData}}metadata{{/if}}"
+                            {{#if autoplay}}autoplay {{/if}}
+                            controls
+                            {{#if loop}}loop{{/if}}
+                            {{#if muted}}muted{{/if}}
+                            {{#if height}}height="{{height}}" {{/if}}
+                            {{#if width}}width="{{width}}" {{/if}}
+                            {{extraAttributes}}>
+                            {{#element "sources"}}
+                                {{#each this}}
+                                    {{this}}
+                                {{/each}}
+                            {{/element}}
+                        </video>
+                    {{/element}}
+                    {{#element "card"}}
+                        <div class="{{elementName}}" data-card>{{this}}</div>
+                    {{/element}}
+                </div>
+            {{/element}}
+        {{/blockBody}}
+    </div>
+{{/block}}

@@ -1,0 +1,52 @@
+.FullQuote {
+    padding: 0px 50px;
+
+    blockquote {
+        .IntroText;
+        color: @color-taupe;
+        font-weight: 300;
+        line-height: 1.23;
+        text-transform: none;
+        letter-spacing: normal;
+        margin: 0;
+        font-size: 21px;
+        -webkit-font-smoothing: antialiased;
+        text-align: center;
+        quotes: '"' '"';
+
+        &:before {
+            content: open-quote;
+            margin-right: 2px;
+        }
+
+        &:after {
+            content: close-quote;
+            margin-left: 2px;
+        }
+
+        @media @mq-viewport-md {
+            font-size: 26px;
+            text-align: left;
+        }
+    }
+
+    &-attribution {
+        font-size: 12px;
+        color: @color-taupe;
+        font-weight: 300;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        text-align: center;
+        margin-top: 20px;
+
+        &:before {
+            content: '- ';
+            color: @color-taupe;
+        }
+
+        @media @mq-viewport-md {
+            text-align: left;
+        }
+    }
+
+}

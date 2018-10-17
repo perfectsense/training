@@ -1,0 +1,155 @@
+{{#block "Page"}}
+    <!DOCTYPE html>
+    <html class="{{blockName}}" lang="{{#with language}}{{this}}{{else}}en{{/with}}" itemscope itemtype="http://schema.org/WebPage">
+          {{~#element "head" noWith=true~}}
+              <head>
+                  {{~#element "charset" noWith=true~}}
+                      <meta charset="{{#with charset}}{{this}}{{else}}UTF-8{{/with}}">
+                  {{~/element~}}
+
+                  {{~#element "styles" noWith=true~}}
+                      <link rel="stylesheet" href="{{cdn '/styleguide/All.min.css'}}">
+                  {{~/element~}}
+
+                  {{~#element "extraStyles"}}{{this}}{{/element~}}
+
+                  {{~#element "viewport" noWith=true~}}
+                      <meta name="viewport" content="{{#with viewport}}{{this}}{{else}}width=device-width, initial-scale=1{{/with}}">
+                  {{~/element~}}
+
+                  {{~#element "title"}}<title>{{this}}</title>{{/element~}}
+                  {{~#element "description"}}<meta name="description" content="{{this}}">{{/element~}}
+                  {{~#element "keywords"}}<meta name="keywords" content="{{this}}">{{/element~}}
+                  {{~#element "canonicalLink"}}<link rel="canonical" href="{{this}}">{{/element~}}
+                  {{~#element "contentId"}}<meta name="brightspot.contentId" content="{{this}}">{{/element~}}
+                  {{~#element "meta"}}{{this}}{{/element~}}
+                  {{~#element "favicons"}}{{this}}{{/element}}
+                  {{~#element "manifestLink"}}<link rel="manifest" href="{{this}}">{{/element}}
+                  {{~#element "feedLink"}}{{this}}{{/element~}}
+
+                  {{~#element "jsonLinkedData"}}
+                      <script type="application/ld+json">{{this}}</script>
+                  {{/element~}}
+
+                  {{! ampLink from brightspot.amp - Provided by ViewModelOverlays }}
+                  {{~#element "ampLink"}}<link rel="amphtml" href="{{{this}}}">{{/element}}
+
+                  {{! Brightspot Meta Tags - Provided by ViewModelOverlays }}
+                  {{~#element "brightspotMeta" noWith=true}}
+                      {{! CacheControlViewModelOverlay }}
+                      <meta name="brightspot.cached" content="{{#with isCached}}{{this}}{{else}}false{{/with}}">
+                  {{/element}}
+
+                  {{~#element "scripts" noWith=true}}
+                      <script src="{{cdn '/styleguide/All.min.js'}}" async></script>
+                  {{~/element~}}
+
+                  {{~#element "extraScripts"}}{{this}}{{/element~}}
+              </head>
+          {{~/element~}}
+
+          {{#element "body" noWith=true}}
+              <body class="{{elementName}}"{{~#each extraBodyAttributes}} {{this}}{{~/each~}}>
+                  {{#element "header" noWith=true}}
+                      <header class="{{elementName}}" itemscope itemtype="http://schema.org/WPHeader">
+                          {{#element "hat"}}
+                              <div class="{{elementName}}">{{this}}</div>
+                          {{/element}}
+
+                          {{#element "logo"}}
+                              <div class="{{elementName}}">{{this}}</div>
+                          {{/element}}
+
+                          {{#element "navigation"}}
+                              <div class="{{elementName}}">{{this}}</div>
+                          {{/element}}
+
+                          {{#element "social"}}
+                              <div class="{{elementName}}">{{this}}</div>
+                          {{/element}}
+
+                          {{#element "search" noWith=true}}
+                              {{#if searchAction}}
+                                  <form class="{{elementName}}" action="{{searchAction}}" novalidate="" autocomplete="off">
+                                      {{#element "searchInput" noWith=true}}
+                                          <input type="text" class="{{elementName}}" name="q">
+                                      {{/element}}
+
+                                      {{#element "searchButton" noWith=true}}
+                                          <button type="submit" class="{{elementName}}">{{format "searchButtonLabel"}}</button>
+                                      {{/element}}
+                                  </form>
+                              {{/if}}
+                          {{/element}}
+                      </header>
+                  {{/element}}
+
+                  {{#element "banner"}}
+                    <div class="{{elementName}}">{{~this~}}</div>
+                  {{/element}}
+
+                  {{#element "sectionNavigation"}}
+                      <div class="{{elementName}}">{{this}}</div>
+                  {{/element}}
+
+                  {{#element "packageNavigation"}}
+                      <div class="{{elementName}}">{{this}}</div>
+                  {{/element}}
+
+                  {{#element "above"}}
+                      <div class="{{elementName}}">{{this}}</div>
+                  {{/element}}
+
+                  {{#element "main" noWith=true}}
+                      <main class="{{elementName}}">
+                          {{#element "pageHeading"}}
+                              <h1 class="{{elementName}}">{{this}}</h1>
+                          {{/element}}
+                          {{#element "pageSubHeading"}}
+                              <div class="{{elementName}}">{{this}}</div>
+                          {{/element}}
+                          {{#element "pageLead"}}
+                              <div class="{{elementName}}">{{this}}</div>
+                          {{/element}}
+                          {{#with main}}{{this}}{{/with}}
+                          {{#element "actions"}}
+                              <div class="{{elementName}}">
+                                  <h2 class="{{elementName}}-heading">{{format "actionsHeading"}}</h2>
+                                  <div class="{{elementName}}-body">{{this}}</div>
+                              </div>
+                          {{/element}}
+                      </main>
+                  {{/element}}
+
+                  {{#element "aside"}}
+                      <aside class="{{elementName}}">{{this}}</aside>
+                  {{/element}}
+
+                  {{#element "below"}}
+                      <div class="{{elementName}}">{{this}}</div>
+                  {{/element}}
+
+                  {{#element "footer" noWith=true}}
+                      <footer class="{{elementName}}" itemscope itemtype="https://schema.org/WPFooter">
+
+                          {{#element "footerLogo"}}
+                            <div class="{{elementName}}">{{this}}</div>
+                          {{/element}}
+                          {{#element "footerNavigation"}}
+                              <div class="{{elementName}}">{{this}}</div>
+                          {{/element}}
+                          {{#element "footerContent"}}
+                              <div class="{{elementName}}">{{this}}</div>
+                          {{/element}}
+                          {{element "social"}}
+
+                          {{#element "disclaimer"}}
+                              <div class="{{elementName}}">{{this}}</div>
+                          {{/element}}
+                      </footer>
+                  {{/element}}
+                  {{~#element "extraBodyItems"}}{{this}}{{/element~}}
+              </body>
+          {{/element}}
+    </html>
+{{/block}}

@@ -1,0 +1,32 @@
+{{#block "ListMasonry" extend="/core/list/List.hbs"}}
+    <div class="{{blockName}}"{{extraAttributes}}
+        {{#if backgroundColor}}style="--color:var(--{{backgroundColor}})"{{/if}}
+        {{#if noTopPadding}}data-nopaddingtop{{/if}}>
+
+        {{element "title"}}
+
+        {{element "description"}}
+
+        {{#element "items"}}
+            <div class="{{elementName}}">
+                <div class="grid-sizer"></div>
+                <div class="gutter-sizer"></div>
+                {{#each this}}
+                    <div class="grid-item {{#if ../../doubleWideFirstElement}}{{#if @first}}grid-item--width2{{/if}}{{/if}}">
+                        {{render this [/core/promo/Promo.hbs]="/core/promo/PromoImageOnTop.hbs"}}
+                    </div>
+                {{/each}}
+            </div>
+        {{/element}}
+
+        {{element "cta"}}
+
+        {{#element "pagination"}}
+            <div class="{{elementName}}">
+                {{#each this}}
+                    {{this}}
+                {{/each}}
+            </div>
+        {{/element}}
+    </div>
+{{/block}}

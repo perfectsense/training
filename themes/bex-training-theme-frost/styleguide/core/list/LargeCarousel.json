@@ -1,0 +1,69 @@
+{
+  "_template": "LargeCarousel.hbs",
+  "items": [
+    {
+      "_include": "/core/promo/PromoTextOverlay-large.json",
+      "backgroud": "",
+      "title": "Sites we’ve built for love or fun",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec in egestas quam. Maecenas bibendum hendrerit justo in interdum.",
+      "horizontalAlignment": "center",
+      "verticalAlignment": "middle",
+      "media": {
+          "_template": "/core/image/Image.hbs",
+          "image": {
+              "_image": true,
+              "src": "/styleguide/media/carousel-photo.png"
+          }
+      },
+      "button": null
+    },
+    {
+      "_include": "/core/promo/PromoTextOverlay-large.json",
+      "background": "",
+      "title": "Sites we’ve built for love or fun",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec in egestas quam. Maecenas bibendum hendrerit justo in interdum.",
+      "horizontalAlignment": "center",
+      "verticalAlignment": "middle",
+      "media": {
+          "_template": "/core/image/Image.hbs",
+          "image": {
+              "_image": true,
+              "src": "/styleguide/media/carousel-photo.png"
+          }
+      },
+      "button": null
+    },
+    {
+      "_include": "/core/promo/PromoTextOverlay-large.json",
+      "background": "",
+      "title": "Sites we’ve built for love or fun",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec in egestas quam. Maecenas bibendum hendrerit justo in interdum.",
+      "horizontalAlignment": "center",
+      "verticalAlignment": "middle",
+      "media": {
+          "_template": "/core/image/Image.hbs",
+          "image": {
+              "_image": true,
+              "src": "/styleguide/media/carousel-photo.png"
+          }
+      },
+      "button": null
+    },
+    {
+      "_include": "/core/promo/PromoTextOverlay-large.json",
+      "background": "",
+      "title": "Sites we’ve built for love or fun",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec in egestas quam. Maecenas bibendum hendrerit justo in interdum.",
+      "horizontalAlignment": "center",
+      "verticalAlignment": "middle",
+      "media": {
+          "_template": "/core/image/Image.hbs",
+          "image": {
+              "_image": true,
+              "src": "/styleguide/media/carousel-photo.png"
+          }
+      },
+      "button": null
+    }
+  ]
+}

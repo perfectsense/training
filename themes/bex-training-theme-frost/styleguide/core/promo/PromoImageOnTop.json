@@ -1,0 +1,22 @@
+{
+    "_include": "/core/promo/Promo.json",
+    "_template": "PromoImageOnTop.hbs",
+    "title": "Building Bikes in Puerto Rico",
+    "description": "Perfect Sense employees travel to Puerto Rico to help the island recover from Hurricane Maria.",
+    "duration": "4:13",
+    "datePublished": "{{date}}",
+    "authorImage": {
+      "_template": "/core/image/Image.hbs",
+      "image": {
+        "_image": true,
+        "src": "/styleguide/media/parker.png"
+      }
+    },
+    "media": {
+      "_template": "/core/image/Image.hbs",
+      "image": {
+        "_image": true,
+          "src": "/styleguide/media/promo-01.png"
+      }
+    }
+}

@@ -1,0 +1,7 @@
+{
+    "_include": "/core/link/Link.json",
+    "_template": "TransparentButton.hbs",
+    "_hidden": true,
+
+    "body": "Next"
+}

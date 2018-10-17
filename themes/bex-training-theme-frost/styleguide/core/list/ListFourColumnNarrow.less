@@ -1,0 +1,71 @@
+.ListFourColumnNarrow {
+    &:extend(.List all);
+
+    &-row {
+        width: 100%;
+    }
+
+    &-items {
+        display: flex;
+        justify-content: center;
+        min-height: 40px;
+        max-width: 840px;
+        flex-wrap: wrap;
+        margin: 0 auto;
+
+        &-item {
+             margin-bottom: 20px;
+             min-height: 40px;
+             text-align: center;
+             width: 48%;
+             display: inline-flex;
+             justify-content: center;
+
+            .PromoImage img,
+            img {
+                @media @mq-viewport-sm {
+                    width: 100%;
+                }
+
+                @media @mq-viewport-md {
+                    width: auto;
+                }
+            }
+        }
+    }
+
+    @media @mq-viewport-md {
+
+        &-row {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        &-items {
+
+            &-item {
+                max-width: 160px;
+                margin: 0 15px 50px 15px;
+            }
+        }
+
+        &-cta {
+            margin-top: 25px;
+        }
+    }
+
+    @media @mq-viewport-lg {
+
+        &-items {
+            &-item {
+                max-width: 215px;
+                margin: 0 20px 50px 20px;
+            }
+        }
+
+        &-cta {
+            margin-top: 50px;
+        }
+    }
+}

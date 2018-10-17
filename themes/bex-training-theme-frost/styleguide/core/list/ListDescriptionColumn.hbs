@@ -1,0 +1,34 @@
+{{#block "ListDescriptionColumn" extend="/core/list/List.hbs"}}
+    <div class="{{blockName}}"
+    {{#if backgroundColor}}style="--color:var(--{{backgroundColor}})"{{/if}}
+    {{#if hideDuration}} data-hide-duration {{/if}}
+    {{#if hideAuthor}} data-hide-author {{/if}}
+    {{#if hideDescription}}data-hide-description {{/if}}
+    {{#if leftAlignTitle}}data-left-align-title{{/if}}
+    {{#if noTopPadding}}data-nopaddingtop{{/if}}>
+
+        <div class="{{blockName}}-content">
+
+          {{element "title"}}
+
+          <div class="{{blockName}}-info">
+
+              {{element "description"}}
+
+              {{#element "items"}}
+                  <div class="{{elementName}}">
+                        {{#each this}}
+                        <div class="{{elementName}}-item">
+                          {{#if ../../promoType}}
+                                  {{render this [/core/promo/Promo.hbs]= ../../promoType}}
+                                {{else}}
+                                  {{render this [/core/promo/Promo.hbs]= "/core/promo/PromoImageOnTop-2x1.hbs"}}
+                              {{/if}}
+                            </div>
+                          {{/each}}
+                  </div>
+              {{/element}}
+          </div>
+        </div>
+    </div>
+{{/block}}

@@ -1,0 +1,8 @@
+{
+    "_template": "OpenGraphVideoMeta.hbs",
+    "url": "http://url.to.video.mp4",
+    "secureUrl": "https://url.to.video.mp4",
+    "mimeType": "video/mp4",
+    "width": "{{number([300, 400])}}",
+    "height": "{{number([300, 400])}}"
+}

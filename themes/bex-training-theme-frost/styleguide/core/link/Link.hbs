@@ -1,0 +1,7 @@
+{{~#block "Link" extend="_SourceLink.hbs"~}}
+    {{~#if href~}}
+        <a class="{{blockName}}{{#with extraClasses}} {{this}}{{/with}}" href="{{href}}"{{#with target}} target="{{this}}"{{/with}}>{{body}}</a>
+    {{~^~}}
+        <span class="{{blockName}}{{#with extraClasses}} {{this}}{{/with}}">{{body}}</span>
+    {{~/if~}}
+{{~/block~}}

@@ -1,0 +1,6 @@
+{
+  "_include": "ListOrdered.json",
+  "_template": "/core/list/ListOrderedSticky.hbs",
+
+  "description": "September 7, 2017"
+}

@@ -1,0 +1,24 @@
+{{#block "PageHome" override="/core/page/Page.hbs"}}
+     {{#element "main" noWith=true}}
+          <main class="{{elementName}}">
+              {{#element "pageLead"}}
+                  <div class="{{elementName}}">
+                      {{#each this}}{{render this}}{{/each}}
+                  </div>
+              {{/element}}
+              {{element "pageHeading"}}
+              {{#with main}}
+                {{#each this}}
+                    {{render this
+                        [/core/container/Container.hbs]="/core/container/OneByTwo.hbs"
+                        [/core/list/List.hbs]=(cycle
+                            "/core/list/ListThreeColumn.hbs"
+                            "/core/list/ListMasonry.hbs"
+                        )
+                    }}
+                {{/each}}
+              {{/with}}
+          </main>
+      {{/element}}
+
+{{/block}}

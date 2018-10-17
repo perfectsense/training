@@ -1,0 +1,5 @@
+{
+    "_include": "/core/quote/Quote.json",
+    "_template": "FullQuote.hbs",
+    "_hidden": true
+}

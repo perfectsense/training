@@ -1,0 +1,15 @@
+[
+    {
+        "_template": "/core/navigation/NavigationItem.hbs",
+        "text": "About us",
+        "target": "_self",
+        "href": "#",
+        "isCurrent": true
+    },
+    {
+        "_template": "/core/navigation/NavigationItem.hbs",
+        "text": "Careers",
+        "target": "_self",
+        "href": "#"
+    }
+]

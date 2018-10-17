@@ -1,0 +1,213 @@
+body.lightbox-enabled {
+  overflow: hidden;
+}
+
+.flickity-enabled:focus .flickity-viewport {
+  outline: 0;
+}
+
+.GalleryPage-lightbox {
+    background: rgba(45, 54, 63, 0.82);
+    height: 100vh;
+    visibility: visible;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: 1009;
+
+    .close-button {
+      border: 0;
+      background: transparent url('/styleguide/media/close-x.svg') no-repeat;
+      background-size: 30px;
+      height: 30px;
+      width: 30px;
+      color: #aab7b8;
+      font-size: 18px;
+      font-weight: normal;
+      position: absolute;
+      right: 20px;
+      text-indent: -60px;
+      top: 20px;
+      z-index: 1;
+      padding: 10px 10px 0 -1px;
+    }
+
+  .LightboxSlides {
+      overflow: hidden;
+
+      padding: 0;
+      max-width: 1200px;
+      margin: 0 auto;
+      column-count: 1;
+      column-gap: 10px;
+      position: relative;
+      top: 50%;
+      transform: translateY(-50%);
+
+      &:focus {
+          outline: 0;
+      }
+
+      .next,
+      .previous {
+          background-color: transparent;
+          background-size: 100%;
+          border: 0;
+          fill: #ffffff;
+          height: 60px;
+          position: absolute;
+          text-indent: -5000px;
+          top: 45%;
+          width: 60px;
+          z-index: 1;
+          display: none;
+
+          &:disabled {
+              cursor: default;
+              opacity: 0.3;
+          }
+      }
+
+      .next {
+          background-image: url('/styleguide/media/arrow-large-right.svg');
+          right: 0;
+
+          &:hover {
+              background-image: url('/styleguide/media/arrow-large-right-hover.svg');
+          }
+      }
+
+      .previous {
+          background-image: url('/styleguide/media/arrow-large-left.svg');
+
+          &:hover {
+              background-image: url('/styleguide/media/arrow-large-left-hover.svg');
+          }
+      }
+
+      .pagination-status {
+          display: none;
+      }
+
+      &-slide {
+          display: flex;
+          height: 100vh;
+          padding: 58px 30px;
+          width: 100%;
+
+           img {
+               width: 100%;
+               height: auto;
+               max-height: 520px;
+               max-width: 1024px;
+
+               @media @mq-viewport-md {
+                   width: auto;
+               }
+           }
+
+           &:first-child {
+              margin: 0;
+           }
+      }
+
+      .pagination-status {
+        .CaptionText;
+        display: block;
+        position: absolute;
+        right: 0;
+        text-align: end;
+        width: 90px;
+        padding-right: 30px;
+      }
+  }
+
+  .LightboxSlides-slide {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .object-fit-fallback {
+        height: ~'calc(96.5vh - 91px)';
+        max-height: none;
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+        background-size: cover;
+
+        img {
+            display: none;
+        }
+      }
+
+      .CarouselSlide {
+        display: flex;
+        flex-direction: column;
+        max-height: 850px;
+        position: relative;
+        max-width: 1024px;
+        width: 100%;
+
+        @supports (object-fit: fill) {
+            width: auto;
+        }
+      }
+
+      .CarouselSlide-info {
+        max-width: 1024px;
+        background-color: var(--secondaryColor1);
+        padding: 25px 30px 20px 30px;
+        bottom: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        position: relative;
+        margin-top: -3px;
+
+        @media @mq-viewport-md {
+            padding-bottom: 30px;
+        }
+      }
+
+      .CarouselSlide-infoAttribution {
+          .PhotoCreditText;
+          padding-top: 9px;
+      }
+
+      .CarouselSlide-infoTitle {
+        display: none;
+      }
+
+      .CarouselSlide-infoDescription {
+          .CaptionText;
+          width: 64%;
+          margin-right: 30px;
+
+          @media @mq-viewport-md {
+              width: 85%;
+          }
+      }
+
+      .CarouselSlide-media {
+        height: 100%;
+        width: 100%;
+        position: relative;
+        background-color: rgba(0, 0, 0, 0.7);
+      }
+    }
+
+    @media @mq-viewport-lg {
+        .close-button {
+            top: 30px;
+            right: 30px;
+        }
+
+        .LightboxSlides {
+            .next,
+            .previous {
+                display: block;
+            }
+        }
+    }
+}

@@ -1,0 +1,15 @@
+{{#block "ListLeadHero" extend="/core/list/List.hbs"}}
+    <div class="{{blockName}}"{{extraAttributes}}
+    {{#if backgroundColor}}style="--color:var(--{{backgroundColor}})"{{/if}}>
+        {{#with items}}
+            {{#each this}}
+                {{render this
+                    [/core/list/List.hbs]="/core/list/ListLeadCarousel.hbs"
+                    [/core/container/Container.hbs]="/core/container/ContainerLeadHero.hbs"
+                }}
+            {{/each}}
+        {{/with}}
+
+        {{element "cta"}}
+    </div>
+{{/block}}

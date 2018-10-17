@@ -1,15 +1,11 @@
 {
-  "sources": [
-    {
-      "source": "/node_modules/brightspot-express/styleguide",
-      "hidden": true
-    }
-  ],
+  "sources": [],
   "javaPackage": "bex.training.view",
   "pom": "frontend/pom.xml",
-  "vars": {},
-  "fields": {},
-  "styles": {},
-  "imageSizes": {},
-  "imageSizeContexts": {}
+  "vars": {
+    "exampleSiteUrl": "http://www.perfectsensedigital.com/"
+  },
+  "includes": [
+    "**/*.config.json"
+  ]
 }

@@ -1,0 +1,171 @@
+.BottomBorderTabs {
+    position: relative;
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 80px 20px;
+
+    &-title {
+        .Subhead;
+        text-align: center;
+        margin-bottom: 40px;
+        padding: 0 40px;
+
+        @media @mq-viewport-md {
+            padding: 0 100px;
+        }
+    }
+
+    &-title,
+    &-title-panel {
+        text-transform: uppercase;
+    }
+
+    &-title-panel {
+        display: block;
+        width: 100%;
+        padding: 0 20px 15px 10px;
+        border-bottom: rgba(191, 181, 174, 0.25) 2px solid;
+        margin-bottom: 10px;
+        position: relative;
+        box-sizing: border-box;
+        font-size: 13px;
+        line-height: 14px;
+
+        @media @mq-viewport-md {
+            margin-bottom: 40px;
+        }
+
+        @media @mq-viewport-lg {
+            display: none;
+        }
+    }
+
+    &-title-panel::after {
+        content: '+';
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 20px;
+        padding-bottom: 15px;
+        font-weight: 200;
+
+        @media @mq-viewport-lg {
+            display: none;
+        }
+    }
+
+    &-title-panel[data-expanded]::after {
+        content: '-';
+        color: @color-primary;
+        font-size: 30px;
+    }
+
+    &-title-panel:hover,
+    &-title-panel[data-active='true'] {
+        .hover-state;
+    }
+
+    &-title-panel[data-active='true'] {
+        .active-state;
+    }
+
+    &-title-panel:not([data-expanded]) {
+        color: @color-primary;
+        font-weight: normal;
+    }
+
+    &-tabs {
+        display: none;
+
+        @media @mq-viewport-lg {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            position: relative;
+            padding: 0 8%;
+            margin-bottom: 40px;
+
+            &::after {
+                content: '';
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                height: 1px;
+                width: 100%;
+                border-bottom: rgba(191, 181, 174, 0.25) 2px solid;
+            }
+
+            li {
+                position: relative;
+
+                &:hover::after,
+                &[data-active='true']::after {
+                    content: '';
+                    height: 1px;
+                    width: 100%;
+                    position: absolute;
+                    left: 0;
+                    bottom: -1px;
+                    border-bottom: @color-primary 4px solid;
+                }
+
+                .BottomBorderTabs-tab {
+                    padding: 0 60px 24px;
+                    text-align: center;
+                    display: inline-block;
+                    text-transform: uppercase;
+                    font-size: 13px;
+                    line-height: 14px;
+                    letter-spacing: 2px;
+                    position: relative;
+
+                    &:hover,
+                    &[data-active='true'] {
+                        .hover-state;
+                    }
+
+                    &[data-active='true'] {
+                        .active-state;
+                    }
+                }
+
+                &:hover,
+                &[data-active] {
+                    cursor: pointer;
+                }
+            }
+
+            @media @mq-viewport-lg {
+                padding: 0 21%;
+            }
+        }
+
+    }
+
+    &-panel {
+        display: none;
+        margin-bottom: 20px;
+
+        &[data-visible = 'true'] {
+            display: block;
+        }
+
+        &:not([data-expanded]) {
+            display: none;
+        }
+
+        @media @mq-viewport-lg {
+            margin-bottom: 0;
+            padding: 0 12%;
+
+            &[data-visible = 'true'] {
+                display: block;
+            }
+        }
+
+        @media @mq-viewport-xl {
+            padding: 0 19%;
+        }
+    }
+}

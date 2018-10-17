@@ -1,0 +1,85 @@
+{{#block "VideoPage" override="_SourceVideoPage.hbs"}}
+    {{#element "below"}}{{/element}}
+
+    {{#element "main" noWith=true}}
+        {{element "companionScreen"}}
+        {{element "companionToaster"}}
+
+          <div class="{{blockName}}" {{#if playlist}}data-playlist-open{{/if}}
+          {{#if videoPlayerHighlight}}data-player-highlight{{/if}}>
+              <div class="ScrollableContentContainer">
+                  <article id="VideoMain-{{contentId}}" class="{{elementName}} Test class" itemprop="mainEntity" itemscope
+                            {{#if permalink}}data-permalink="{{permalink}}"{{/if}}
+                            data-embeddedvideo-container
+                            {{extraAttributes}}>
+
+                        {{#if videoPlayerHighlight}}
+                            {{element "player"}}
+                            <section class="{{blockName}}-content" data-is-visible>
+                                {{#if sectionNavigation}}
+                                    <div class="{{blockName}}-sectionNavigation">
+                                        {{sectionNavigation}}
+                                    </div>
+                                {{/if}}
+
+                                {{element "headline"}}
+
+                                {{#if actions}}
+                                    <div class="{{blockName}}-actions">
+                                        {{actions}}
+                                    </div>
+                                {{/if}}
+                        {{else}}
+                            <section class="{{blockName}}-content" data-is-visible>
+
+                              {{#if sectionNavigation}}
+                                  <div class="{{blockName}}-sectionNavigation">
+                                      {{sectionNavigation}}
+                                  </div>
+                              {{/if}}
+
+                              {{element "headline"}}
+
+                              {{#if actions}}
+                                  <div class="{{blockName}}-actions">
+                                      {{actions}}
+                                  </div>
+                              {{/if}}
+
+                              {{element "player"}}
+                        {{/if}}
+
+                              {{element "subHeadline"}}
+
+                              {{element "tags"}}
+                        </section>
+
+                      {{#if below}}
+                          <div class="{{blockName}}-below">
+                            {{#each below}}
+                                {{render this [/core/list/List.hbs]="/core/list/VideoPromoList.hbs"}}
+                            {{/each}}
+                          </div>
+                      {{/if}}
+                  </article>
+              </div>
+          </div>
+          {{#element "playlist"}}
+            <div class="Playlist" data-is-open>
+                <div class="Playlist-content">
+                    {{#element "playlistTitle" noWith=true}}
+                      <div class="Playlist-title" data-active="">{{format "playlistTitle"}}</div>
+                    {{/element}}
+
+                    {{#element "playlistBody" noWith=true}}
+                        <div class="Playlist-body">
+                            {{#each this}}
+                                {{this}}
+                            {{/each}}
+                        </div>
+                    {{/element}}
+                </div>
+            </div>
+          {{/element}}
+    {{/element}}
+{{/block}}

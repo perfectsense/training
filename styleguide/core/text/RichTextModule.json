@@ -1,0 +1,13 @@
+{
+    "_template": "RichTextModule.hbs",
+    "items": [
+        "{{paragraphs([ 2, 5 ])}}",
+        {
+            "_template": "../enhancement/Enhancement.hbs",
+            "item": {
+                "_include": "../figure/Figure.json"
+            }
+        },
+        "{{paragraphs([ 2, 5 ])}}"
+    ]
+}

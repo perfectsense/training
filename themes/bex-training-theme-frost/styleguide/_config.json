@@ -1,0 +1,1935 @@
+{
+  "sources": [
+    {
+      "source": "/node_modules/bex-training/styleguide"
+    }
+  ],
+  "themeFields": {
+    "boldMood": {
+      "type": "boolean",
+      "cms.ui.cluster": "Mood",
+      "cms.ui.noteHtml": "Switch theme to bold typography mood"
+    },
+    "primaryColor": {
+      "type": "color",
+      "cms.ui.cluster": "Colors",
+      "cms.ui.placeholder": "#22b8e1"
+    },
+    "primaryTextColor": {
+      "type": "color",
+      "cms.ui.note": "Primary Text Color",
+      "displayName": "Primary Color 2",
+      "cms.ui.placeholder": "#333333"
+    },
+    "secondaryTextColor": {
+      "type": "color",
+      "cms.ui.note": "Secondary Text Color",
+      "displayName": "Primary Color 3",
+      "cms.ui.placeholder": "#5e5e5e"
+    },
+    "secondaryColor1": {
+      "type": "color",
+      "displayName": "Secondary Color 1",
+      "cms.ui.note": "Page accent color - (ie - Article Page background accent)",
+      "cms.ui.placeholder": "#717171"
+    },
+    "secondaryColor2": {
+      "type": "color",
+      "displayName": "Secondary Color 2",
+      "cms.ui.placeholder": "#323232"
+    },
+    "secondaryColor3": {
+      "type": "color",
+      "displayName": "Secondary Color 3",
+      "cms.ui.placeholder": "#9b9b9b"
+    },
+    "secondaryColor4": {
+      "type": "color",
+      "displayName": "Secondary Color 4",
+      "cms.ui.placeholder": "#f5f5f5"
+    },
+    "secondaryColor5": {
+      "type": "color",
+      "displayName": "Secondary Color 5",
+      "cms.ui.placeholder": "#9d9d9d"
+    },
+    "fontFamily": {
+      "type": "text",
+      "cms.ui.dropDown": true,
+      "cms.ui.note": "Default: Roboto",
+      "cms.ui.cluster": "Typography",
+      "values": [
+        {
+          "label": "Roboto",
+          "value": "Roboto"
+        },
+        {
+          "label": "Ubuntu",
+          "value": "Ubuntu"
+        },
+        {
+          "label": "Spectral",
+          "value": "Spectral"
+        },
+        {
+          "label": "Montserrat",
+          "value": "Montserrat"
+        },
+        {
+          "label": "Open Sans",
+          "value": "Open Sans"
+        },
+        {
+          "label": "Lato",
+          "value": "Lato"
+        },
+        {
+          "label": "Cormorant",
+          "value": "Cormorant"
+        }
+      ]
+    },
+    "headerBackgroundColor": {
+      "type": "color",
+      "cms.ui.note": "Default color is #000000",
+      "cms.ui.cluster": "Header"
+    },
+    "headerTextColor": {
+      "type": "color",
+      "cms.ui.note": "Default color is #FFFFFF",
+      "cms.ui.cluster": "Header"
+    },
+    "headerHeight": {
+      "type": "text",
+      "cms.ui.dropDown": true,
+      "cms.ui.note": "Set the height of the header (Defaults to 50px)",
+      "cms.ui.cluster": "Header",
+      "values": [
+        {
+          "label": "50 px",
+          "value": "50px"
+        },
+        {
+          "label": "80 px",
+          "value": "80px"
+        },
+        {
+          "label": "100 px",
+          "value": "100px"
+        }
+      ]
+    },
+    "mobileLeftAlignNavigation": {
+      "type": "boolean",
+      "cms.ui.note": "Sets the mobile navigation to left align"
+    },
+    "footerbackgroundColor": {
+      "type": "color",
+      "cms.ui.note": "Default color is #000000",
+      "cms.ui.cluster": "Footer"
+    },
+    "footerTextColor": {
+      "type": "color",
+      "cms.ui.note": "Default color is #FFFFFF"
+    },
+    "hideExternalLinkIcon": {
+      "type": "boolean",
+      "cms.ui.note": "Hide the external link icon"
+    },
+    "navigationAlignment": {
+      "type": "text",
+      "displayName": "Navigation Alignment",
+      "cms.ui.dropDown": true,
+      "cms.ui.note": "Default: Right",
+      "cms.ui.cluster": "Header",
+      "values": [
+        {
+          "label": "left",
+          "value": "left"
+        },
+        {
+          "label": "right",
+          "value": "right"
+        }
+      ]
+    },
+    "gridGutters": {
+      "displayName": "Grid Gutter Spacing",
+      "type": "text",
+      "cms.ui.cluster": "Spacing",
+      "cms.ui.noteHtml": "This controls the spacing in grid items.",
+      "cms.ui.placeholder": "20px"
+    },
+    "modulePadding": {
+      "displayName": "Module Padding",
+      "type": "text",
+      "cms.ui.noteHtml": "This controls the module padding of modules.",
+      "cms.ui.placeholder": "60px"
+    },
+    "pageWidth": {
+      "displayName": "Page Width Percentage",
+      "type": "text",
+      "cms.ui.noteHtml": "This controls the overall page width in percentage.",
+      "cms.ui.placeholder": "86.11%"
+    },
+    "maxPageWidth": {
+      "displayName": "Maximum Page Width",
+      "type": "text",
+      "cms.ui.noteHtml": "The maximum width of the page content.",
+      "cms.ui.placeholder": "1240px"
+    },
+    "promoModuleAlignment": {
+      "type": "text",
+      "displayName": "Promo Module Alignment",
+      "cms.ui.dropDown": true,
+      "cms.ui.note": "Align Standard Promo Text; Default: Center",
+      "cms.ui.cluster": "Modules",
+      "values": [
+        {
+          "label": "left",
+          "value": "left"
+        },
+        {
+          "label": "center",
+          "value": "center"
+        }
+      ]
+    },
+    "hidePromoDropShadow": {
+      "type": "boolean",
+      "cms.ui.noteHtml": "Hide the drop shadow on promos"
+    },
+    "videoPlayerHighlight": {
+      "type": "boolean",
+      "cms.ui.note": "Set videoPlayer above title on Video Page"
+    }
+  },
+  "fields": {
+    "attribution": {
+      "type": "text"
+    },
+    "addBorder": {
+      "type": "boolean",
+      "cms.ui.note": "Add border in between promos"
+    },
+    "alternateStyle": {
+      "type": "boolean",
+      "cms.ui.note": "Set to change the style"
+    },
+    "background": {
+      "type": "record",
+      "groups": "brightspot.core.image.imageOption"
+    },
+    "backgroundColor": {
+      "type": "text",
+      "cms.ui.dropDown": true,
+      "cms.ui.note": "Color Palette",
+      "values": [
+        {
+          "label": "Primary Color",
+          "value": "primaryColor"
+        },
+        {
+          "label": "Primary Color 2",
+          "value": "primaryTextColor"
+        },
+        {
+          "label": "Primary Color 3",
+          "value": "secondaryTextColor"
+        },
+        {
+          "label": "Secondary Color 1",
+          "value": "secondaryColor1"
+        },
+        {
+          "label": "Secondary Color 2",
+          "value": "secondaryColor2"
+        },
+        {
+          "label": "Secondary Color 3",
+          "value": "secondaryColor3"
+        },
+        {
+          "label": "Secondary Color 4",
+          "value": "secondaryColor4"
+        },
+        {
+          "label": "Secondary Color 5",
+          "value": "secondaryColor5"
+        },
+        {
+          "label": "Black",
+          "value": "black"
+        },
+        {
+          "label": "White",
+          "value": "white"
+        },
+        {
+          "label": "Grey",
+          "value": "grey"
+        }
+      ]
+    },
+    "backgroundImageAndColor": {
+      "type": "record",
+      "groups": "brightspot.core.background.Background"
+    },
+    "backText": {
+      "type": "text",
+      "cms.ui.note": "Set the text on the back of the card."
+    },
+    "buttonText": {
+      "type": "text"
+    },
+    "buttonStyle": {
+      "type": "text",
+      "cms.ui.dropDown": true,
+      "cms.ui.note": "Select the button color style",
+      "values": [
+        {
+          "label": "Default - Solid",
+          "value": "default"
+        },
+        {
+          "label": "Transparent",
+          "value": "transparent"
+        }
+      ]
+    },
+    "columnCount": {
+      "type": "text",
+      "displayName": "Number of columns",
+      "cms.ui.dropDown": true,
+      "cms.ui.note": "Set Number of Columns",
+      "values": [
+        {
+          "label": "1",
+          "value": "1"
+        },
+        {
+          "label": "2",
+          "value": "2"
+        },
+        {
+          "label": "3",
+          "value": "3"
+        },
+        {
+          "label": "4",
+          "value": "4"
+        },
+        {
+          "label": "5",
+          "value": "5"
+        },
+        {
+          "label": "6",
+          "value": "6"
+        }
+      ]
+    },
+    "ctaText": {
+      "type": "text",
+      "displayName": "Call To Action Text"
+    },
+    "displayHorizontalRule": {
+      "type": "boolean",
+      "displayName": "Display horizontal rule in each Promo?"
+    },
+    "displaySubNavigationHorizontally": {
+      "type": "boolean",
+      "displayName": "Display Sub-Navigation Horizontally?"
+    },
+    "dogEar": {
+      "type": "boolean",
+      "cms.ui.note": "Add flip indicator to card"
+    },
+    "doubleWideFirstElement": {
+      "type": "boolean",
+      "cms.ui.note": "Set to true to make the first element two columns wide"
+    },
+    "fullWidth": {
+      "type": "boolean",
+      "cms.ui.note": "Set to true to make the module the full width of the screen."
+    },
+    "hideAuthor": {
+      "type": "boolean",
+      "cms.ui.note": "Hide the author on promo"
+    },
+    "hideButton": {
+      "type": "boolean",
+      "cms.ui.note": "Hide the button on promo"
+    },
+    "hideCategory": {
+      "type": "boolean",
+      "cms.ui.note": "Hide the category on promo"
+    },
+    "mobileText": {
+      "type": "text"
+    },
+    "hideDate": {
+      "type": "boolean",
+      "cms.ui.note": "Hide the date on promo"
+    },
+    "hideDescription": {
+      "type": "boolean",
+      "cms.ui.note": "Hide the description on promo"
+    },
+    "hideDuration": {
+      "type": "boolean",
+      "cms.ui.note": "Hide the duration on promo"
+    },
+    "hideHeaderHat": {
+      "type": "boolean",
+      "cms.ui.note": "Hide the Header and Hat"
+    },
+    "mobileOnly": {
+      "type": "boolean",
+      "displayName": "Check to display only on mobile."
+    },
+    "hidePromoBackgroundColor": {
+      "type": "boolean",
+      "cms.ui.note": "Hide the background color on the promo."
+    },
+    "horizontalAlignment": {
+      "type": "text",
+      "cms.ui.dropDown": true,
+      "cms.ui.note": "Set horizontal alignment of text and button",
+      "values": [
+        {
+          "label": "Center",
+          "value": "center"
+        },
+        {
+          "label": "Left",
+          "value": "left"
+        },
+        {
+          "label": "Right",
+          "value": "right"
+        }
+      ]
+    },
+    "inlineSubheading": {
+      "type": "text",
+      "cms.ui.dropDown": true,
+      "cms.ui.note": "Set page subheading underneath page heading",
+      "values": [
+        {
+          "label": "with Lead",
+          "value": "lead"
+        },
+        {
+          "label": "without Lead",
+          "value": "nolead"
+        }
+      ]
+    },
+    "inverseColors": {
+      "type": "boolean",
+      "cms.ui.note": "Invert color styling to white for dark backgrounds"
+    },
+    "leftAlignTitle": {
+      "type": "boolean",
+      "cms.ui.note": "Left align title of module (default: center)"
+    },
+    "media": {
+      "type": "record",
+      "groups": "brightspot.core.image.imageOption"
+    },
+    "mobileMedia": {
+      "type": "record",
+      "groups": "brightspot.core.image.imageOption"
+    },
+    "negativeMargin": {
+      "type": "text",
+      "cms.ui.dropDown": true,
+      "cms.ui.note": "Select the negative margin",
+      "values": [
+        {
+          "label": "Default (-80px)",
+          "value": "default"
+        },
+        {
+          "label": "Extra",
+          "value": "extra"
+        }
+      ]
+    },
+    "noTopPadding": {
+      "type": "boolean",
+      "cms.ui.note": "Remove top padding on module"
+    },
+    "noTopAlignment": {
+      "type": "boolean",
+      "cms.ui.note": "Remove top alignment on module"
+    },
+    "outlineInfo": {
+      "type": "boolean",
+      "cms.ui.note": "Add a border around the text"
+    },
+    "partialGradient": {
+      "type": "boolean",
+      "cms.ui.note": "Set background color to partial gradient"
+    },
+    "promoColor": {
+      "type": "boolean",
+      "cms.ui.note": "Defaults the promo text to white"
+    },
+    "promoType": {
+      "type": "text",
+      "cms.ui.dropDown": true,
+      "cms.ui.note": "Select the type of the Promo",
+      "values": [
+        {
+          "label": "Promo Image on Top - 2x1",
+          "value": "/core/promo/PromoImageOnTop-2x1.hbs"
+        },
+        {
+          "label": "Story Promo",
+          "value": "/core/promo/PromoStory.hbs"
+        },
+        {
+          "label": "Promo Image on Top",
+          "value": "/core/promo/PromoImageOnTop.hbs"
+        }
+      ]
+    },
+    "quote": {
+      "type": "text"
+    },
+    "reverseOrder": {
+      "type": "boolean",
+      "cms.ui.note": "Reverse the promo order to have images on top in mobile views"
+    },
+    "textColor": {
+      "type": "color"
+    },
+    "infoColor": {
+      "type": "text",
+      "cms.ui.dropdown": true,
+      "cms.ui.note": "Set color of title and description text",
+      "values": [
+        {
+          "label": "Primary Text Color",
+          "value": "default"
+        },
+        {
+          "label": "Black",
+          "value": "black"
+        },
+        {
+          "label": "White",
+          "value": "white"
+        }
+      ]
+    },
+    "titleSize": {
+      "type": "text",
+      "cms.ui.dropDown": true,
+      "cms.ui.note": "Set title size",
+      "values": [
+        {
+          "label": "Default - 46",
+          "value": "default"
+        },
+        {
+          "label": "Large - 80",
+          "value": "large"
+        }
+      ]
+    },
+    "verticalAlignment": {
+      "type": "text",
+      "cms.ui.dropDown": true,
+      "cms.ui.note": "Set vertical alignment of text and button",
+      "values": [
+        {
+          "label": "Middle",
+          "value": "middle"
+        },
+        {
+          "label": "Top",
+          "value": "top"
+        },
+        {
+          "label": "Bottom",
+          "value": "bottom"
+        }
+      ]
+    },
+    "videoPoster": {
+      "type": "record",
+      "groups": "brightspot.core.image.imageOption"
+    },
+    "videoPosterMobile": {
+      "type": "record",
+      "groups": "brightspot.core.image.imageOption"
+    }
+  },
+  "styles": {
+    "/core/container/Container.hbs": {
+      "width": 800,
+      "height": 500,
+      "scale": 0.2,
+      "example": "/core/container/Container.json",
+      "templates": [
+        {
+          "displayName": "1x2 Container",
+          "template": "/core/container/OneByTwo.hbs",
+          "example": "/core/container/OneByTwo.json",
+          "fields": [
+            "backgroundColor",
+            "verticalAlignment",
+            "noTopPadding"
+          ]
+        },
+        {
+          "displayName": "2x1 Container",
+          "template": "/core/container/TwoByOne.hbs",
+          "example": "/core/container/TwoByOne.json",
+          "fields": [
+            "backgroundColor",
+            "verticalAlignment",
+            "noTopPadding"
+          ]
+        },
+        {
+          "displayName": "Lead Hero Container",
+          "hidden": true,
+          "template": "/core/container/ContainerLeadHero.hbs"
+        }
+      ]
+    },
+    "/core/container/Row.hbs": {
+      "width": 800,
+      "height": 500,
+      "scale": 0.2,
+      "example": "/core/container/Row.json",
+      "templates": [
+        {
+          "displayName": "Regular Row",
+          "hidden": true,
+          "template": "/core/container/Row.hbs"
+        },
+        {
+          "displayName": "Lead Hero Row",
+          "hidden": true,
+          "template": "/core/container/ContainerLeadHeroRow.hbs"
+        }
+      ]
+    },
+    "/core/container/TwoColumnContainer.hbs": {
+      "width": 800,
+      "height": 500,
+      "scale": 0.2,
+      "example": "/core/container/TwoColumnContainer.json",
+      "templates": [
+        {
+          "displayName": "Regular Two Column Container",
+          "hidden": true,
+          "template": "/core/container/TwoColumnContainer.hbs"
+        },
+        {
+          "displayName": "Lead Hero Row",
+          "hidden": true,
+          "template": "/core/container/ContainerLeadHeroTwoColumn.hbs"
+        }
+      ]
+    },
+    "/core/gallery/GallerySlide.hbs": {
+      "width": 800,
+      "height": 500,
+      "scale": 0.2,
+      "example": "/core/gallery/_GallerySlide.json",
+      "templates": [
+        {
+          "displayName": "Carousel Slide",
+          "template": "/core/carousel/CarouselSlide.hbs",
+          "example": "/core/carousel/CarouselSlide.json"
+        }
+      ]
+    },
+    "/core/search/SearchModule.hbs": {
+      "width": 800,
+      "height": 500,
+      "scale": 0.2,
+      "example": "/core/search/SearchModule.json",
+      "templates": [
+        {
+          "displayName": "Search Module",
+          "template": "/core/search/SearchModule.hbs",
+          "example": "/core/search/SearchModule.json",
+          "fields": [
+            "background"
+          ]
+        }
+      ]
+    },
+    "/core/list/List.hbs": {
+      "width": 800,
+      "height": 500,
+      "scale": 0.2,
+      "example": "/core/list/List.json",
+      "fields": [
+        "ctaText"
+      ],
+      "templates": [
+        {
+          "displayName": "List Three Column",
+          "template": "/core/list/ListThreeColumn.hbs",
+          "example": "/core/list/ListThreeColumn.json",
+          "fields": [
+            "backgroundColor",
+            "background",
+            "noTopPadding",
+            "partialGradient",
+            "fullWidth"
+          ]
+        },
+        {
+          "displayName": "List Four Column",
+          "template": "/core/list/ListFourColumn.hbs",
+          "example": "/core/list/ListFourColumn.json",
+          "fields": [
+            "backgroundColor",
+            "background",
+            "noTopPadding",
+            "partialGradient",
+            "fullWidth"
+          ]
+        },
+        {
+          "displayName": "List Five Column",
+          "template": "/core/list/ListFiveColumn.hbs",
+          "example": "/core/list/ListFiveColumn.json",
+          "fields": [
+            "backgroundColor",
+            "background",
+            "noTopPadding",
+            "partialGradient",
+            "fullWidth"
+          ]
+        },
+        {
+          "displayName": "List Two Column",
+          "template": "/core/list/ListGrid.hbs",
+          "example": "/core/list/ListGrid.json",
+          "fields": [
+            "backgroundColor",
+            "background",
+            "noTopPadding",
+            "partialGradient",
+            "columnCount",
+            "fullWidth"
+          ]
+        },
+        {
+          "displayName": "Four Column List (Narrow)",
+          "template": "/core/list/ListFourColumnNarrow.hbs",
+          "example": "/core/list/ListFourColumnNarrow.json",
+          "fields": [
+            "backgroundColor",
+            "noTopPadding",
+            "partialGradient"
+          ]
+        },
+        {
+          "displayName": "Masonry List",
+          "template": "/core/list/ListMasonry.hbs",
+          "example": "/core/list/ListMasonry.json",
+          "fields": [
+            "doubleWideFirstElement",
+            "backgroundColor"
+          ]
+        },
+        {
+          "displayName": "List Description Column",
+          "template": "/core/list/ListDescriptionColumn.hbs",
+          "example": "/core/list/ListDescriptionColumn.json",
+          "fields": [
+            "promoType",
+            "backgroundColor",
+            "hideDuration",
+            "hideAuthor",
+            "hideDescription",
+            "leftAlignTitle",
+            "noTopPadding"
+          ]
+        },
+        {
+          "displayName": "Promo Overlay Carousel",
+          "template": "/core/list/LargeCarousel.hbs",
+          "example": "/core/list/LargeCarousel.json"
+        },
+        {
+          "displayName": "Product Promo List",
+          "template": "/core/list/ProductPromoList.hbs",
+          "example": "/core/list/ProductPromoList.json",
+          "fields": [
+            "reverseOrder",
+            "noTopPadding"
+          ]
+        },
+        {
+          "displayName": "List Column Grid Stack",
+          "template": "/core/list/ListColumnGridStack.hbs",
+          "example": "/core/list/ListColumnGridStack.json",
+          "fields": [
+            "promoType",
+            "hideAuthor",
+            "hideDuration",
+            "backgroundColor",
+            "noTopPadding"
+          ]
+        },
+        {
+          "displayName": "Metrics Three Column List",
+          "template": "/core/list/MetricsThreeColumnList.hbs",
+          "example": "/core/list/MetricsThreeColumnList.json",
+          "fields": [
+            "backgroundImageAndColor",
+            "inverseColors",
+            "hidePromoBackgroundColor",
+            "promoColor",
+            "addBorder"
+          ]
+        },
+        {
+          "displayName": "Tag List",
+          "template": "/core/list/TagList.hbs",
+          "example": "/core/list/TagList.json",
+          "fields": [
+            "backgroundColor"
+          ]
+        },
+        {
+          "displayName": "Waterfall List",
+          "template": "/core/list/ListWaterfall.hbs",
+          "example": "/core/list/ListWaterfall.json"
+        },
+        {
+          "displayName": "Video Promo List",
+          "template": "/core/list/VideoPromoList.hbs",
+          "example": "/core/list/VideoPromoList.json"
+        },
+        {
+          "displayName": "Footer List",
+          "template": "/core/list/ListFooter.hbs",
+          "example": "/core/list/ListFooter.json"
+        },
+        {
+          "displayName": "Bulleted List",
+          "template": "/core/list/ListBulleted.hbs",
+          "example": "/core/list/ListBulleted.json"
+        },
+        {
+          "displayName": "Large List",
+          "template": "/core/list/ListLarge.hbs",
+          "example": "/core/list/ListLarge.json",
+          "fields": [
+            "media"
+          ]
+        },
+        {
+          "displayName": "Medium List",
+          "template": "/core/list/ListMedium.hbs",
+          "example": "/core/list/ListMedium.json",
+          "fields": [
+            "media",
+            "backgroundColor",
+            "inverseColors",
+            "horizontalAlignment"
+          ]
+        },
+        {
+          "displayName": "List Horizontal Rule",
+          "template": "/core/list/ListHorizontalRule.hbs",
+          "example": "/core/list/ListHorizontalRule.json",
+          "fields": [
+            "media",
+            "backgroundColor",
+            "inverseColors",
+            "horizontalAlignment"
+          ]
+        },
+        {
+          "displayName": "Small List",
+          "template": "/core/list/ListSmall.hbs",
+          "example": "/core/list/ListSmall.json",
+          "fields": [
+            "media",
+            "backgroundColor",
+            "inverseColors",
+            "horizontalAlignment"
+          ]
+        },
+        {
+          "displayName": "Ordered List",
+          "template": "/core/list/ListOrdered.hbs",
+          "example": "/core/list/ListOrdered.json"
+        },
+        {
+          "displayName": "Sticky Ordered List",
+          "template": "/core/list/ListOrderedSticky.hbs",
+          "example": "/core/list/ListOrderedSticky.json"
+        },
+        {
+          "displayName": "Lead Carousel",
+          "template": "/core/list/ListLeadCarousel.hbs",
+          "example": "/core/list/ListLeadCarousel.json"
+        },
+        {
+          "displayName": "List with Chevrons",
+          "template": "/core/list/ListChevron.hbs",
+          "example": "/core/list/ListChevron.json",
+          "fields": [
+            "media"
+          ]
+        },
+        {
+          "displayName": "Promo Icon On Top List",
+          "template": "/core/list/PromoIconOnTopList.hbs",
+          "example": "/core/list/PromoIconOnTopList.json",
+          "fields": [
+            "backgroundColor",
+            "columnCount",
+            "alternateStyle"
+          ]
+        },
+        {
+          "displayName": "Promo Icon On Side List",
+          "template": "/core/list/PromoIconOnSideList.hbs",
+          "example": "/core/list/PromoIconOnSideList.json",
+          "fields": [
+            "backgroundColor",
+            "columnCount"
+          ]
+        },
+        {
+          "displayName": "Partners Carousel",
+          "template": "/core/list/ListPartnerCarousel.hbs",
+          "example": "/core/list/ListPartnerCarousel.json",
+          "fields": [
+            "backgroundColor",
+            "displayHorizontalRule"
+          ]
+        },
+        {
+          "displayName": "List News Carousel",
+          "template": "/core/list/ListNewsCarousel.hbs",
+          "example": "/core/list/ListNewsCarousel.json",
+          "fields": [
+            "backgroundColor"
+          ]
+        },
+        {
+          "displayName": "List Lead Hero",
+          "template": "/core/list/ListLeadHero.hbs",
+          "example": "/core/list/ListLeadHero.json",
+          "fields": [
+            "backgroundColor"
+          ]
+        }
+      ]
+    },
+    "/core/link/Link.hbs": {
+      "example": "/core/link/Link.json",
+      "width": 600,
+      "height": 300,
+      "scale": 0.25,
+      "templates": [
+        {
+          "displayName": "Inline Link",
+          "template": "/core/link/Link.hbs",
+          "example": "/core/link/Link.json"
+        },
+        {
+          "displayName": "Solid Button",
+          "template": "/core/link/SolidButton.hbs",
+          "example": "/core/link/SolidButton.json"
+        },
+        {
+          "displayName": "Transparent Button",
+          "template": "/core/link/TransparentButton.hbs",
+          "example": "/core/link/TransparentButton.json"
+        }
+      ]
+    },
+    "/core/navigation/NavigationItem.hbs": {
+      "width": 800,
+      "height": 500,
+      "scale": 0.2,
+      "example": "/core/navigation/NavigationItem.json",
+      "fields": [
+        "displaySubNavigationHorizontally",
+        "buttonStyle",
+        "mobileOnly",
+        "mobileText"
+      ]
+    },
+    "/core/page/Page.hbs": {
+      "width": 800,
+      "height": 500,
+      "scale": 0.2,
+      "example": "/core/page/Page.json",
+      "fields": [
+        "inlineSubheading",
+        "hideHeaderHat"
+      ],
+      "templates": [
+        {
+          "displayName": "Page - Default",
+          "template": "/core/page/PageDefault.hbs",
+          "example": "/core/page/PageDefault.json",
+          "fields": [
+            "backgroundColor"
+          ]
+        },
+        {
+          "displayName": "Section",
+          "template": "/core/page/Section.hbs",
+          "example": "/core/page/Section.json"
+        },
+        {
+          "displayName": "Tag",
+          "template": "/core/page/Tag.hbs",
+          "example": "/core/page/Tag.json",
+          "fields": [
+            "backgroundColor"
+          ]
+        },
+        {
+          "displayName": "Home Page",
+          "template": "/core/page/PageHome.hbs",
+          "example": "/core/page/PageHome.json"
+        },
+        {
+          "displayName": "Contact Page",
+          "template": "/core/page/Contact.hbs",
+          "example": "/core/page/Contact.json",
+          "fields": [
+            "negativeMargin"
+          ]
+        }
+      ]
+    },
+    "/core/promo/Promo.hbs": {
+      "width": 800,
+      "height": 500,
+      "scale": 0.2,
+      "example": "/core/promo/Promo.json",
+      "templates": [
+        {
+          "displayName": "Promo Image on Top - Default",
+          "template": "/core/promo/PromoImageOnTop.hbs",
+          "example": "/core/promo/PromoImageOnTop.json",
+          "fields": [
+            "mobileMedia",
+            "hideDescription",
+            "hideAuthor",
+            "hideDate",
+            "hideCategory"
+          ]
+        },
+        {
+          "displayName": "Promo Image on Top - Large",
+          "template": "/core/promo/PromoImageOnTop-large.hbs",
+          "example": "/core/promo/PromoImageOnTop-large.json",
+          "fields": [
+            "hideDescription",
+            "hideAuthor",
+            "hideDate",
+            "hideCategory"
+          ]
+        },
+        {
+          "displayName": "Promo Image on Top - Circular",
+          "template": "/core/promo/PromoImageOnTop-circular.hbs",
+          "example": "/core/promo/PromoImageOnTop-circular.json"
+        },
+        {
+          "displayName": "Promo Image on Top - 2x1",
+          "template": "/core/promo/PromoImageOnTop-2x1.hbs",
+          "example": "/core/promo/PromoImageOnTop-2x1.json"
+        },
+        {
+          "displayName": "Promo Image on Side",
+          "template": "/core/promo/PromoImageOnSide.hbs",
+          "example": "/core/promo/PromoImageOnSide.json",
+          "fields": [
+            "backgroundColor",
+            "horizontalAlignment",
+            "buttonText",
+            "buttonStyle"
+          ]
+        },
+        {
+          "displayName": "Promo Image",
+          "template": "/core/promo/PromoImage.hbs",
+          "example": "/core/promo/PromoImage.json",
+          "fields": [
+            "mobileMedia"
+          ]
+        },
+        {
+          "displayName": "Product Promo",
+          "template": "/core/promo/ProductPromo.hbs",
+          "example": "/core/promo/ProductPromo.json",
+          "fields": [
+            "backgroundColor",
+            "buttonText"
+          ]
+        },
+        {
+          "displayName": "Promo Image Flip",
+          "template": "/core/promo/PromoImageFlip.hbs",
+          "example": "/core/promo/PromoImageFlip.json",
+          "fields": [
+            "buttonText",
+            "dogEar"
+          ]
+        },
+        {
+          "displayName": "Promo Image Flip - Small front",
+          "template": "/core/promo/PromoImageFlip-small.hbs",
+          "example": "/core/promo/PromoImageFlip-small.json",
+          "fields": [
+            "backText",
+            "buttonText",
+            "dogEar"
+          ]
+        },
+        {
+          "displayName": "Promo Icon On Top",
+          "template": "/core/promo/PromoIconOnTop.hbs",
+          "example": "/core/promo/PromoIconOnTop.json"
+        },
+        {
+          "displayName": "Promo Icon On Side",
+          "template": "/core/promo/PromoIconOnSide.hbs",
+          "example": "/core/promo/PromoIconOnSide.json"
+        },
+        {
+          "displayName": "Promo Content",
+          "hidden": true,
+          "template": "/core/promo/PromoContent.hbs",
+          "example": "/core/promo/PromoContent.json",
+          "fields": [
+            "backgroundColor"
+          ]
+        },
+        {
+          "displayName": "Blog Promo",
+          "template": "/core/promo/PromoBlog.hbs",
+          "example": "/core/promo/PromoBlog.json"
+        },
+        {
+          "displayName": "Promo Spotlight",
+          "template": "/core/promo/PromoSpotlight.hbs",
+          "example": "/core/promo/PromoSpotlight.json",
+          "fields": [
+            "backgroundColor"
+          ]
+        },
+        {
+          "displayName": "Metrics Promo",
+          "template": "/core/promo/MetricsPromo.hbs",
+          "example": "/core/promo/MetricsPromo.json"
+        },
+        {
+          "hidden": true,
+          "displayName": "Promo Category Title",
+          "template": "/core/promo/PromoCategoryTitle.hbs",
+          "example": "/core/promo/PromoCategoryTitle.json"
+        },
+        {
+          "displayName": "Video Promo",
+          "template": "/core/promo/VideoPromo.hbs",
+          "example": "/core/promo/VideoPromo.json"
+        },
+        {
+          "hidden": true,
+          "displayName": "Promo Text Item",
+          "template": "/core/promo/PromoTextItem.hbs",
+          "example": "/core/promo/PromoTextItem.json"
+        },
+        {
+          "displayName": "Principle Card",
+          "template": "/core/promo/PrincipleCard.hbs",
+          "example": "/core/promo/PrincipleCard.json",
+          "fields": [
+            "quote",
+            "attribution",
+            "dogEar"
+          ]
+        },
+        {
+          "displayName": "Promo Text Overlay on Image",
+          "template": "/core/promo/PromoTextOverlay.hbs",
+          "example": "/core/promo/PromoTextOverlay.json",
+          "fields": [
+            "background",
+            "horizontalAlignment",
+            "verticalAlignment",
+            "textColor",
+            "buttonText"
+          ]
+        },
+        {
+          "displayName": "Promo Text Overlay on Image - Large",
+          "template": "/core/promo/PromoTextOverlay-large.hbs",
+          "example": "/core/promo/PromoTextOverlay-large.json",
+          "fields": [
+            "mobileMedia",
+            "background",
+            "horizontalAlignment",
+            "verticalAlignment",
+            "buttonText"
+          ]
+        },
+        {
+          "displayName": "Contact Overlay on Image - Large",
+          "template": "/core/promo/PromoTextOverlayLarge-Contact.hbs",
+          "example": "/core/promo/PromoTextOverlayLarge-Contact.json",
+          "fields": [
+            "mobileMedia",
+            "horizontalAlignment",
+            "infoColor",
+            "buttonText"
+          ]
+        },
+        {
+          "displayName": "Promo Full Width",
+          "template": "/core/promo/PromoFullWidth.hbs",
+          "example": "/core/promo/PromoFullWidth.json",
+          "fields": [
+            "titleSize",
+            "buttonText",
+            "hideButton",
+            "mobileMedia",
+            "horizontalAlignment",
+            "partialGradient",
+            "outlineInfo",
+            "alternateStyle"
+          ]
+        },
+        {
+          "displayName": "PromoPartner",
+          "hidden": true,
+          "template": "/core/promo/PromoPartner.hbs",
+          "example": "/core/promo/PromoPartner.json"
+        },
+        {
+          "displayName": "Promo News",
+          "template": "/core/promo/PromoNews.hbs",
+          "example": "/core/promo/PromoNews.json",
+          "fields": {
+            "borderColor": {
+              "type": "color",
+              "cms.ui.note": "Set the color of the border on top"
+            },
+            "sourceText": {
+              "type": "text",
+              "cms.ui.note": "Source Text (ex: From)"
+            },
+            "sourceName": {
+              "type": "text",
+              "cms.ui.note": "Name of Source"
+            },
+            "sharedBy": {
+              "type": "text",
+              "cms.ui.note": "Shared by text"
+            }
+          }
+        },
+        {
+          "displayName": "Promo Story",
+          "template": "/core/promo/PromoStory.hbs",
+          "example": "/core/promo/PromoStory.json",
+          "fields": [
+            "buttonText",
+            "backgroundImageAndColor",
+            "infoColor",
+            "hideDate",
+            "hideButton"
+          ]
+        }
+      ]
+    },
+    "/core/quote/Quote.hbs": {
+      "example": "/core/quote/Quote.json",
+      "width": 600,
+      "height": 300,
+      "scale": 0.25,
+      "templates": [
+        {
+          "displayName": "Full Width Quote",
+          "template": "/core/quote/FullQuote.hbs",
+          "example": "/core/quote/FullQuote.json",
+          "fields": [
+            "textColor"
+          ]
+        },
+        {
+          "displayName": "Quote Card",
+          "template": "/core/quote/QuoteCard.hbs",
+          "example": "/core/quote/QuoteCard.json",
+          "fields": [
+            "backgroundColor",
+            "textColor",
+            "horizontalAlignment"
+          ]
+        }
+      ]
+    },
+    "/core/tab/Tabs.hbs": {
+      "width": 800,
+      "height": 500,
+      "scale": 0.2,
+      "example": "/core/tab/Tabs.json",
+      "templates": [
+        {
+          "displayName": "Bottom Border Tabs",
+          "example": "/core/tab/BottomBorderTabs.json",
+          "template": "/core/tab/BottomBorderTabs.hbs"
+        },
+        {
+          "displayName": "Full Width Tabs",
+          "example": "/core/tab/FullWidthTabs.json",
+          "template": "/core/tab/FullWidthTabs.hbs"
+        },
+        {
+          "displayName": "Anchor Tabs",
+          "example": "/core/tab/AnchorTabs.json",
+          "template": "/core/tab/AnchorTabs.hbs"
+        }
+      ]
+    },
+    "/core/tab/TabItem.hbs": {
+      "width": 800,
+      "height": 500,
+      "scale": 0.2,
+      "example": "/core/tab/TabItem.json",
+      "templates": [
+        {
+          "example": "/core/tab/TabItem.json",
+          "template": "/core/tab/TabItem.hbs"
+        },
+        {
+          "example": "/core/tab/BottomBorderTabItem.json",
+          "template": "/core/tab/BottomBorderTabItem.hbs"
+        }
+      ]
+    },
+    "/core/article/ArticlePage.hbs": {
+      "example": "/core/article/ArticlePage.json",
+      "width": 600,
+      "height": 300,
+      "scale": 0.25,
+      "fields": {
+        "background": {
+          "type": "record",
+          "groups": "brightspot.core.background.Background",
+          "cms.ui.note": "Choose a background image (or color) for the article heading"
+        },
+        "whiteHeading": {
+          "type": "boolean",
+          "cms.ui.note": "Should the article heading color be white?"
+        }
+      },
+      "templates": [
+        {
+          "displayName": "Article",
+          "template": "/core/article/ArticlePage.hbs",
+          "example": "/core/article/ArticlePage.json"
+        }
+      ]
+    },
+    "/core/page/PageHeaderTextHat.hbs": {
+      "width": 800,
+      "height": 500,
+      "scale": 0.2,
+      "example": "/core/page/PageHeaderTextHat.json",
+      "templates": [
+        {
+          "displayName": "Page Hat",
+          "template": "/core/page/PageHeaderTextHat.hbs",
+          "example": "/core/page/PageHeaderTextHat.json",
+          "fields": [
+            "backgroundColor",
+            "inverseColors"
+          ]
+        }
+      ]
+    },
+    "/core/video/VideoLead.hbs": {
+      "example": "/core/video/VideoLead.json",
+      "width": 600,
+      "height": 300,
+      "scale": 0.25,
+      "fields": [
+        "videoPoster",
+        "videoPosterMobile"
+      ]
+    }
+  },
+  "imageSizes": {
+    "square": {
+      "width": 767,
+      "height": 767,
+      "srcsetDescriptors": [
+        "2x",
+        "3x"
+      ],
+      "format": "jpg"
+    },
+    "tallLede": {
+      "width": 1440,
+      "height": 720,
+      "srcsetDescriptors": [
+        "2x",
+        "3x"
+      ],
+      "format": "jpg"
+    },
+    "mediumLede": {
+      "width": 1440,
+      "previewHeight": 480,
+      "srcsetDescriptors": [
+        "2x",
+        "3x"
+      ]
+    },
+    "shortLede": {
+      "width": 1440,
+      "height": 362,
+      "srcsetDescriptors": [
+        "2x",
+        "3x"
+      ],
+      "format": "jpg"
+    },
+    "listMedia": {
+      "width": 36,
+      "height": 24,
+      "srcsetDescriptors": [
+        "2x",
+        "3x"
+      ]
+    },
+    "flexMedia": {
+      "maximumWidth": 1440,
+      "previewWidth": 1440,
+      "previewHeight": 480,
+      "srcsetDescriptors": [
+        "2x",
+        "3x"
+      ],
+      "format": "jpg"
+    },
+    "smallflexMedia": {
+      "maximumWidth": 800,
+      "previewWidth": 800,
+      "previewHeight": 300,
+      "srcsetDescriptors": [
+        "2x",
+        "3x"
+      ]
+    },
+    "squareMedium": {
+      "width": 400,
+      "height": 400,
+      "srcsetDescriptors": [
+        "2x",
+        "3x"
+      ],
+      "format": "jpg"
+    },
+    "large": {
+      "width": 820,
+      "previewHeight": 460,
+      "srcsetDescriptors": [
+        "2x",
+        "3x"
+      ],
+      "format": "jpg"
+    },
+    "xlarge": {
+      "width": 1280,
+      "previewHeight": 720,
+      "srcsetDescriptors": [
+        "2x",
+        "3x"
+      ],
+      "format": "jpg"
+    },
+    "pageLogo": {
+      "previewWidth": 140,
+      "previewHeight": 34,
+      "maximumHeight": 34,
+      "srcsetDescriptors": [
+        "2x",
+        "3x"
+      ]
+    },
+    "mediumRectangle": {
+      "width": 345,
+      "height": 68,
+      "srcsetDescriptors": [
+        "2x",
+        "3x"
+      ]
+    },
+    "brandLogo": {
+      "previewWidth": 280,
+      "previewHeight": 80,
+      "srcsetDescriptors": [
+        "2x",
+        "3x"
+      ]
+    },
+    "promo-content": {
+      "width": 400,
+      "height": 300,
+      "srcsetDescriptors": [
+        "2x",
+        "3x"
+      ],
+      "format": "jpg"
+    },
+    "promo-image-on-side": {
+      "width": 620,
+      "previewHeight": 465,
+      "srcsetDescriptors": [
+        "2x"
+      ],
+      "format": "jpg"
+    },
+    "promo-small-square": {
+      "width": 120,
+      "height": 120,
+      "srcsetDescriptors": [
+        "2x",
+        "3x"
+      ]
+    },
+    "promo-small-rectangle": {
+      "width": 140,
+      "height": 100,
+      "srcsetDescriptors": [
+        "2x",
+        "3x"
+      ],
+      "format": "jpg"
+    },
+    "carouselEnhancement": {
+      "width": 800,
+      "height": 450,
+      "srcsetDescriptors": [
+        "2x",
+        "3x"
+      ],
+      "format": "jpg"
+    },
+    "promoFullWidth": {
+      "width": 1440,
+      "height": 640,
+      "srcsetDescriptors": [
+        "2x",
+        "3x"
+      ],
+      "format": "jpg"
+    },
+    "partner-logo": {
+      "width": 170,
+      "previewHeight": 100,
+      "srcsetDescriptors": [
+        "2x",
+        "3x"
+      ]
+    },
+    "portrait-400-446": {
+      "width": 400,
+      "height": 446,
+      "srcsetDescriptors": [
+        "2x"
+      ],
+      "format": "jpg"
+    },
+    "videoPromo": {
+      "width": 610,
+      "height": 343,
+      "srcsetDescriptors": [
+        "2x"
+      ],
+      "format": "jpg"
+    },
+    "iconPromoTop": {
+      "previewWidth": 230,
+      "previewHeight": 90,
+      "maximumHeight": 90
+    },
+    "iconPromoSide": {
+      "width": 45,
+      "height": 45
+    },
+    "promo-2x1": {
+      "width": 400,
+      "height": 225,
+      "format": "jpg"
+    },
+    "product-promo": {
+      "width": 900,
+      "previewHeight": 602,
+      "srcsetDescriptors": [
+        "2x"
+      ]
+    },
+    "moviePromoSmall": {
+      "maximumWidth": 300,
+      "previewWidth": 300,
+      "previewHeight": 600,
+      "srcsetDescriptors": [
+        "2x",
+        "3x"
+      ],
+      "format": "jpg"
+    }
+  },
+  "imageSizeContexts": {
+    "/core/promo/Promo.hbs": {
+      "authorImage": {
+        "/core/image/Image.hbs": {
+          "image": "promo-small-square"
+        }
+      },
+      "media": {
+        "/core/{figure/Figure,image/Image}.hbs": {
+          "image": "smallflexMedia"
+        }
+      },
+      "mobileMedia": {
+        "/core/{figure/Figure,image/Image}.hbs": {
+          "image": "smallflexMedia"
+        }
+      }
+    },
+    "/core/article/ArticlePage.hbs": {
+      "authorImage": "promo-small-square",
+      "lead": {
+        "/core/{figure/Figure,image/Image}.hbs": {
+          "image": "flexMedia"
+        }
+      },
+      "image": {
+        "/core/{figure/Figure,image/Image}.hbs": {
+          "image": "flexMedia"
+        }
+      },
+      "/core/background/Background.hbs": {
+        "cssValue": "mediumLede"
+      }
+    },
+    "/core/video/*.hbs": {
+      "authorImage": "promo-small-square",
+      "poster": "flexMedia"
+    },
+    "/core/carousel/Carousel.hbs": {
+      "/core/gallery/GallerySlide.hbs": {
+        "mediaContent": {
+          "/core/{figure/Figure,image/Image}.hbs": {
+            "image": "carouselEnhancement"
+          }
+        }
+      }
+    },
+    "/core/figure/Figure.hbs": {
+      "image": "mediumLede"
+    },
+    "/core/footer/FooterColumns.hbs": {
+      "/core/page/PageLogo.hbs": {
+        "image": "pageLogo"
+      }
+    },
+    "/core/gallery/GallerySlide.hbs": {
+      "/core/image/Image.hbs": {
+        "image": "xlarge"
+      }
+    },
+    "/core/page/PageLogo.hbs": {
+      "image": "pageLogo"
+    },
+    "/core/list/ListChevron.hbs": {
+      "media": {
+        "/core/{figure/Figure,image/Image}.hbs": {
+          "image": "mediumRectangle"
+        }
+      }
+    },
+    "/core/list/LargeCarousel.hbs": {
+      "/core/promo/PromoTextOverlay-large.hbs": {
+        "media": {
+          "/core/{figure/Figure,image/Image}.hbs": {
+            "image": "tallLede"
+          }
+        }
+      }
+    },
+    "/core/list/ListFourColumnNarrow.hbs": {
+      "/core/promo/PromoImage.hbs": {
+        "media": {
+          "/core/{figure/Figure,image/Image}.hbs": {
+            "image": "smallflexMedia"
+          }
+        }
+      }
+    },
+    "/core/list/ListMasonry.hbs": {
+      "/core/promo/PromoImageOnTop.hbs": {
+        "media": {
+          "/core/{figure/Figure,image/Image}.hbs": {
+            "image": "smallflexMedia"
+          }
+        }
+      }
+    },
+    "/core/list/ListSmall.hbs": {
+      "media": {
+        "/core/{figure/Figure,image/Image}.hbs": {
+          "image": "listMedia"
+        }
+      }
+    },
+    "/core/list/ListFiveColumn.hbs": {
+      "media": {
+        "/core/{figure/Figure,image/Image}.hbs": {
+          "image": "promo-small-rectangle"
+        }
+      }
+    },
+    "/core/page/PageHome.hbs": {
+      "pageLead": {
+        "/core/promo/PromoImage.hbs": {
+          "/core/{figure/Figure,image/Image}.hbs": {
+            "image": "tallLede"
+          },
+          "mobileMedia": {
+            "/core/{figure/Figure,image/Image}.hbs": {
+              "image": "flexMedia"
+            }
+          }
+        }
+      }
+    },
+    "/core/page/PageDefault.hbs": {
+      "pageLead": {
+        "/core/{figure/Figure,image/Image}.hbs": {
+          "image": "mediumLede"
+        },
+        "mobileMedia": {
+          "/core/{figure/Figure,image/Image}.hbs": {
+            "image": "flexMedia"
+          }
+        }
+      }
+    },
+    "/core/page/Section.hbs": {
+      "pageLead": {
+        "/core/{figure/Figure,image/Image}.hbs": {
+          "image": "mediumLede"
+        },
+        "mobileMedia": {
+          "/core/{figure/Figure,image/Image}.hbs": {
+            "image": "flexMedia"
+          }
+        }
+      }
+    },
+    "/core/page/Tag.hbs": {
+      "pageLead": {
+        "/core/{figure/Figure,image/Image}.hbs": {
+          "image": "mediumLede"
+        },
+        "mobileMedia": {
+          "/core/{figure/Figure,image/Image}.hbs": {
+            "image": "flexMedia"
+          }
+        }
+      }
+    },
+    "/core/promo/PrincipleCard.hbs": {
+      "media": {
+        "/core/{figure/Figure,image/Image}.hbs": {
+          "image": "promo-small-square"
+        }
+      }
+    },
+    "/core/promo/ProductPromo.hbs": {
+      "media": {
+        "/core/{figure/Figure,image/Image}.hbs": {
+          "image": "product-promo"
+        }
+      }
+    },
+    "/core/promo/PromoFullWidth.hbs": {
+      "media": {
+        "/core/{figure/Figure,image/Image}.hbs": {
+          "image": "promoFullWidth"
+        }
+      },
+      "mobileMedia": {
+        "/core/{figure/Figure,image/Image}.hbs": {
+          "image": "portrait-400-446"
+        }
+      }
+    },
+    "/core/promo/PromoContent.hbs": {
+      "media": {
+        "/core/{figure/Figure,image/Image}.hbs": {
+          "image": "promo-content"
+        }
+      }
+    },
+    "/core/promo/PromoSpotlight.hbs": {
+      "media": {
+        "/core/{figure/Figure,image/Image}.hbs": {
+          "image": "promo-content"
+        }
+      }
+    },
+    "/core/promo/PromoImage.hbs": {
+      "media": {
+        "/core/{figure/Figure,image/Image}.hbs": {
+          "image": "flexMedia"
+        }
+      },
+      "mobileMedia": {
+        "/core/{figure/Figure,image/Image}.hbs": {
+          "image": "flexMedia"
+        }
+      }
+    },
+    "/core/promo/PromoImageOnTop-2x1.hbs": {
+      "media": {
+        "/core/{figure/Figure,image/Image}.hbs": {
+          "image": "promo-2x1"
+        }
+      }
+    },
+    "/core/promo/PromoImageOnSide.hbs": {
+      "media": {
+        "/core/{figure/Figure,image/Image}.hbs": {
+          "image": "promo-image-on-side"
+        }
+      }
+    },
+    "/core/promo/PromoImageOnTop-large.hbs": {
+      "media": {
+        "/core/{figure/Figure,image/Image}.hbs": {
+          "image": "large"
+        }
+      }
+    },
+    "/core/promo/VideoPromo.hbs": {
+      "media": {
+        "/core/{figure/Figure,image/Image}.hbs": {
+          "image": "videoPromo"
+        }
+      }
+    },
+    "/core/promo/PromoImageFlip-small.hbs": {
+      "media": {
+        "/core/{figure/Figure,image/Image}.hbs": {
+          "image": "brandLogo"
+        }
+      }
+    },
+    "/core/promo/PromoImageFlip.hbs": {
+      "media": {
+        "/core/{figure/Figure,image/Image}.hbs": {
+          "image": "squareMedium"
+        }
+      }
+    },
+    "/core/promo/PromoImageOnTop-circular.hbs": {
+      "media": {
+        "/core/{figure/Figure,image/Image}.hbs": {
+          "image": "promo-small-square"
+        }
+      }
+    },
+    "/core/promo/PromoTextOverlay.hbs": {
+      "background": {
+        "/core/{figure/Figure,image/Image}.hbs": {
+          "image": "square"
+        }
+      },
+      "media": {
+        "/core/image/Image.hbs": {
+          "image": "brandLogo"
+        }
+      }
+    },
+    "/core/promo/PromoTextOverlay-large.hbs": {
+      "media": {
+        "/core/{figure/Figure,image/Image}.hbs": {
+          "image": "shortLede"
+        }
+      }
+    },
+    "/core/promo/PromoTextOverlayLarge-Contact.hbs": {
+      "media": {
+        "/core/{figure/Figure,image/Image}.hbs": {
+          "image": "shortLede"
+        }
+      },
+      "mobileMedia": {
+        "/core/{figure/Figure,image/Image}.hbs": {
+          "image": "square"
+        }
+      }
+    },
+    "/core/promo/PromoPartner.hbs": {
+      "media": {
+        "/core/{figure/Figure,image/Image}.hbs": {
+          "image": "partner-logo"
+        }
+      }
+    },
+    "/core/promo/PromoIconOnTop.hbs": {
+      "media": {
+        "/core/{figure/Figure,image/Image}.hbs": {
+          "image": "iconPromoTop"
+        }
+      }
+    },
+    "/core/promo/PromoIconOnSide.hbs": {
+      "media": {
+        "/core/{figure/Figure,image/Image}.hbs": {
+          "image": "iconPromoSide"
+        }
+      }
+    },
+    "/core/video/VideoLead.hbs": {
+      "videoPoster": {
+        "/core/{figure/Figure,image/Image}.hbs": {
+          "image": "promoFullWidth"
+        }
+      },
+      "videoPosterMobile": {
+        "/core/{figure/Figure,image/Image}.hbs": {
+          "image": "portrait-400-446"
+        }
+      }
+    },
+    "/training/movie/MoviePage.hbs": {
+      "cover": {
+        "/core/{figure/Figure,image/Image}.hbs": {
+          "image": "moviePromoSmall"
+        }
+      }
+    }
+  }
+}

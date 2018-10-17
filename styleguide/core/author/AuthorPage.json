@@ -1,0 +1,28 @@
+{
+    "_wrapper": false,
+    "_include": "/core/page/ContentPage.json",
+    "_template": "AuthorPage.hbs",
+    "name": "{{name}}",
+    "firstName": "{{words(1)}}",
+    "lastName": "{{words(1)}}",
+    "jobTitle": "VP",
+    "email": "VP@acme.com",
+    "affiliation": "ACME, inc.",
+    "image": {
+        "_include": "/core/image/Image.json"
+    },
+    "shortBiography": "{{sentences(3)}}",
+    "fullBiography": {
+        "_include": "/_group/RichText.json",
+        "_random": true
+    },
+    "links": [
+        {
+            "_include": "/core/link/Link.json",
+            "_repeat": [3, 5]
+        }
+    ],
+    "authorSocialLinks": {
+        "_include": "/core/social/SocialBar.json"
+    }
+}

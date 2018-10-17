@@ -51,7 +51,7 @@
 
         <dependency>
             <groupId>com.bex-training</groupId>
-            <artifactId>bex-training-theme-default</artifactId>
+            <artifactId>bex-training-theme-frost</artifactId>
             <version>${project.version}</version>
             <type>jar</type>
         </dependency>

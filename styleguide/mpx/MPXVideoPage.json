@@ -1,0 +1,9 @@
+{
+    "_wrapper": false,
+    "_include": "/core/video/VideoPage.json",
+    "player": {
+        "_include": "MPXVideoPlayer.json",
+        "hlsUrl": "//link.theplatform.com/s/1X3jUC/E5BWsOHBPO9y",
+        "seekSeconds": 10
+    }
+}

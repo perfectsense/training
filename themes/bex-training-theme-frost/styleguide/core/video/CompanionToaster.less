@@ -1,0 +1,56 @@
+.CompanionToaster {
+    display: none;
+    width: 360px;
+    position: absolute;
+    background-color: @color-white;
+    top: 20px;
+    right: 380px;
+    z-index: 2;
+
+    &[data-block] {
+        display: block;
+        transform: translateX(300px);
+    }
+
+    &-titlebar {
+        font-size: 10px;
+        font-weight: 500;
+        line-height: 1.4;
+        color: @color-white;
+        padding: 8px 10px;
+        opacity: 0.9;
+        background-color: @color-dark-gray;
+        height: 30px;
+    }
+
+    &-close {
+      right: 10px;
+      position: absolute;
+      width: 14px;
+      height: 18px;
+      cursor: pointer;
+    }
+
+    &-progress {
+        height: 2px;
+        background-color: @color-primary;
+    }
+
+    &-content {
+      padding: 10px;
+
+      .CompanionContentItem {
+        padding: 0;
+      }
+    }
+
+    &[data-animate] {
+      animation: 1s ease-out 1 PopToast forwards;
+    }
+
+    &-value {
+        height: 2px;
+        background-color: #757574;
+        width: 1px;
+    }
+}

@@ -1,0 +1,14 @@
+{{#block "CompanionContentItem" extend="_SourceCompanionContentItem.hbs"}}
+    <div class="{{blockName}}" data-media-type="{{type}}" data-ajax-url="{{url}}" data-timestamp-seconds="{{timeStamp}}">
+        {{element "media"}}
+
+        {{#element "info" noWith=true}}
+            <div class="{{elementName}}">
+
+                {{element "title"}}
+
+                {{element "duration"}}
+            </div>
+        {{/element}}
+    </div>
+{{/block}}

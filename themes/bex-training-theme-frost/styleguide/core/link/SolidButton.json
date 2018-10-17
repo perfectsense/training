@@ -1,0 +1,8 @@
+{
+    "_include": "/core/link/Link.json",
+    "_template": "SolidButton.hbs",
+    "_hidden": true,
+
+    "body": "Learn More",
+    "target": "_blank"
+}

@@ -1,0 +1,73 @@
+{
+    "_wrapper": false,
+    "_include": "SearchResultsPage-noResults.json",
+    "_template": "SearchResultsPage.hbs",
+
+    "filters": [
+        {
+            "_template": "SearchFilter.hbs",
+            "heading": "Type",
+            "items": [
+                { "_template": "SearchControl.hbs", "url": "#", "label": "All", "selected": true },
+                { "_template": "SearchControl.hbs", "url": "#", "label": "Articles", "count": 1234 },
+                { "_template": "SearchControl.hbs", "url": "#", "label": "Photos", "count": 567 },
+                { "_template": "SearchControl.hbs", "url": "#", "label": "Videos", "count": 89 }
+            ]
+        },
+        {
+            "_template": "SearchFilter.hbs",
+            "heading": "Date",
+            "items": [
+                { "_template": "SearchControl.hbs", "url": "#", "label": "Any Time", "selected": true },
+                { "_template": "SearchControl.hbs", "url": "#", "label": "Past Hour", "count": 12 },
+                { "_template": "SearchControl.hbs", "url": "#", "label": "Past Day", "count": 34 },
+                { "_template": "SearchControl.hbs", "url": "#", "label": "Past Month", "count": 56 },
+                { "_template": "SearchControl.hbs", "url": "#", "label": "Past Year", "count": 789 }
+            ]
+        }
+    ],
+
+    "count": 123456,
+    "viewUrl": "?v=",
+
+    "sorts": [
+        { "_template": "SearchControl.hbs", "url": "#", "label": "Relevant", "selected": true, "parameterValue": "relevant" },
+        { "_template": "SearchControl.hbs", "url": "#", "label": "Newest", "parameterValue": "newest" },
+        { "_template": "SearchControl.hbs", "url": "#", "label": "Oldest", "parameterValue": "oldest" }
+    ],
+    "spotlights": [
+        {
+            "_include": "../promo/Promo.json",
+            "_repeat": 3
+        }
+    ],
+    "results": [
+        {
+            "_include": "../promo/Promo.json",
+            "_repeat": 12
+        },
+        {
+            "_template": "/core/promo/Promo.hbs",
+            "date": "{{date}}",
+            "duration": "{{number([3, 10])}} min",
+            "url": "#",
+            "target": "_self",
+            "category": "{{words([ 1, 3 ])}}",
+            "categoryUrl": "#",
+            "type": "{{words([ 1, 3 ])}}",
+            "title": "{{words}}",
+            "description": "{{words}}"
+        },
+        {
+            "_include": "../promo/Promo.json",
+            "_repeat": 4
+        }
+    ],
+    "actions": {
+        "_include": "../action-bar/ActionBar.json"
+    },
+    "previousPage" : "#",
+    "pageNumber": 1,
+    "pageCount": 123,
+    "nextPage" : "#"
+}

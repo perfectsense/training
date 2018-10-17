@@ -1,0 +1,7 @@
+[
+    "{{paragraphs([ 2, 5 ])}}",
+    {
+        "_include": "/core/enhancement/Enhancement.json"
+    },
+    "{{paragraphs([ 2, 5 ])}}"
+]

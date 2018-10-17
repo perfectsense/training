@@ -1,0 +1,28 @@
+{{#block "PromoContent" extend="/core/promo/Promo.hbs"}}
+    <div class="{{blockName}}"{{extraAttributes}}
+    {{#if backgroundColor}}style="--color:var(--{{backgroundColor}})"{{/if}}>
+        {{element "category"}}
+
+        {{element "title"}}
+
+        {{#element "authorName"}}
+            <div class="{{blockName}}-author">
+                {{~format "AuthorBy"~}}
+                {{~#if ../authorUrl~}}
+                    {{~include "/core/link/Link.hbs" href=../authorUrl target=../target body=this~}}
+                {{else}}
+                    {{~this~}}
+                {{~/if~}}
+                ,&nbsp;{{~#with ../date~}}{{~this~}}{{~/with~}}
+            </div>
+        {{/element}}
+
+        {{#element "info" noWith=true}}
+        <div class="{{elementName}}">
+            {{element "media"}}
+
+            {{element "description"}}
+        </div>
+        {{/element}}
+    </div>
+{{/block}}

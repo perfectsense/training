@@ -1,0 +1,5 @@
+{
+    "_include": "../link/Link.json",
+    "_template": "FreeformButton.hbs",
+    "body": "{{words([ 2, 4 ])}}"
+}

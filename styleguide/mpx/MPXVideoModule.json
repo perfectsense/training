@@ -1,0 +1,15 @@
+{
+    "_template": "/core/video/VideoModule.hbs",
+    "title": "MPX Video Module",
+    "player": {
+        "_include": "/mpx/MPXVideoPlayer.json"
+    },
+    "playlist": [
+        {
+            "_include": "/core/video/PlaylistItem.json",
+            "_repeat": 3
+        }
+    ],
+    "ctaUrl": "#",
+    "ctaTarget": "_self"
+}

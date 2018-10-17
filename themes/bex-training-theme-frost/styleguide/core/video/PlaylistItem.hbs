@@ -1,0 +1,28 @@
+{{#block "PlaylistItem" extend="_SourcePlaylistItem.hbs"}}
+    <div class="{{blockName}}" data-ajax-url="{{url}}" {{#unless media}}data-noMedia{{/unless}} {{#if type}}data-type={{type}}{{/if}}>
+        <div class="{{blockName}}-lead">
+            {{#element "media"}}
+                <div class="{{elementName}}">
+                    {{this}}
+                    {{#if "../type"}}
+                        <span class="{{blockName}}-type" data-type={{../type}}></span>
+                    {{/if}}
+                    {{#if "../status"}}
+                      <span class="PlaylistItem-status">{{../status}}</span>
+                    {{/if}}
+                </div>
+            {{/element}}
+
+            {{#element "info" noWith=true}}
+                <div class="{{elementName}}">
+                  {{element "title"}}
+
+                  {{element "duration"}}
+                </div>
+            {{/element}}
+
+        </div>
+
+        {{element "companions"}}
+    </div>
+{{/block}}

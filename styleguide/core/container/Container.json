@@ -1,0 +1,11 @@
+{
+    "_template": "Container.hbs",
+    "title": "{{words(3)}}",
+    "description": "{{words}}",
+    "rows": [
+        {
+            "_include": "/core/container/Row.json",
+            "_repeat": [1, 2]
+        }
+    ]
+}

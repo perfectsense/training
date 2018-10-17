@@ -1,0 +1,15 @@
+{{#block "ContainerLeadHero" extend="/core/container/Container.hbs"}}
+    <div class="{{blockName}}">
+        {{#element "rows"}}
+            <ul class="{{elementName}}">
+                {{#each this}}
+                    <li class="{{elementName}}-item">
+                        {{render this
+                            [/core/container/Row.hbs]="/core/container/ContainerLeadHeroRow.hbs"
+                        }}
+                    </li>
+                {{/each}}
+            </ul>
+        {{/element}}
+    </div>
+{{/block}}

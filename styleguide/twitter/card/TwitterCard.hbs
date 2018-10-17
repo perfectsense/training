@@ -1,0 +1,72 @@
+{{#block "TwitterCard"}}
+    {{~#element "appCountry"}}
+    <meta name="twitter:app:country" content="{{this}}"/>
+    {{/element}}
+    {{~#element "creator"}}
+    <meta name="twitter:creator" content="@{{this}}"/>
+    {{/element}}
+    {{~#element "creatorId"}}
+    <meta name="twitter:creator:id" content="{{this}}"/>
+    {{/element}}
+    {{~#element "description"}}
+    <meta name="twitter:description" content="{{this}}"/>
+    {{/element}}
+    {{~#element "googlePlayAppName"}}
+    <meta name="twitter:app:name:googleplay" content="{{this}}"/>
+    {{/element}}
+    {{~#element "googlePlayAppId"}}
+    <meta name="twitter:app:id:googleplay" content="{{this}}"/>
+    {{/element}}
+    {{~#element "googlePlayAppUrl"}}
+    <meta name="twitter:app:url:googleplay" content="{{this}}"/>
+    {{/element}}
+    {{~#element "image"}}
+    {{! triple braces. temporary workaround for improper encoding}}
+    <meta name="twitter:image" content="{{{this.src}}}"/>
+    {{/element}}
+    {{~#element "imageAlt"}}
+    <meta name="twitter:image:alt" content="{{this}}"/>
+    {{/element}}
+    {{~#element "ipadAppName"}}
+    <meta name="twitter:app:name:ipad" content="{{this}}"/>
+    {{/element}}
+    {{~#element "ipadAppId"}}
+    <meta name="twitter:app:id:ipad" content="{{this}}"/>
+    {{/element}}
+    {{~#element "ipadAppUrl"}}
+    <meta name="twitter:app:url:ipad" content="{{this}}"/>
+    {{/element}}
+    {{~#element "iphoneAppName"}}
+    <meta name="twitter:app:name:iphone" content="{{this}}"/>
+    {{/element}}
+    {{~#element "iphoneAppId"}}
+    <meta name="twitter:app:id:iphone" content="{{this}}"/>
+    {{/element}}
+    {{~#element "iphoneAppUrl"}}
+    <meta name="twitter:app:url:iphone" content="{{this}}"/>
+    {{/element}}
+    {{~#element "player"}}
+    <meta name="twitter:player" content="{{this}}"/>
+    {{/element}}
+    {{~#element "playerHeight"}}
+    <meta name="twitter:player:height" content="{{this}}"/>
+    {{/element}}
+    {{~#element "playerStream"}}
+    <meta name="twitter:player:stream" content="{{this}}"/>
+    {{/element}}
+    {{~#element "playerStreamContentType"}}
+    <meta name="twitter:player:stream:content_type" content="{{this}}"/>
+    {{/element}}
+    {{~#element "playerWidth"}}
+    <meta name="twitter:player:width" content="{{this}}"/>
+    {{/element}}
+    {{~#element "site"}}
+    <meta name="twitter:site" content="@{{this}}"/>
+    {{/element}}
+    {{~#element "siteId"}}
+    <meta name="twitter:site:id" content="{{this}}"/>
+    {{/element}}
+    {{~#element "title"}}
+    <meta name="twitter:title" content="{{this}}"/>
+    {{/element}}
+{{/block}}

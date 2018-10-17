@@ -1,0 +1,55 @@
+{
+  "_include": "_SourcePlaylistItem.json",
+  "_template": "PlaylistItem.hbs",
+  "media": {
+     "_template": "/core/image/Image.hbs",
+     "image": {
+       "_image": true,
+       "src": "/styleguide/media/rectangle-copy-2.png"
+     }
+   },
+  "status": null,
+  "url": "../video/VideoWatch2.html",
+  "categoryUrl": "#",
+  "type": "Video",
+  "title": "Title Goes Here Lorem Ipsum Dolor Sit Amet Consectetur",
+  "companions": [
+    {
+      "_include": "CompanionContentItem.json",
+        "type": "video",
+        "url": "/core/video/VideoPage.html",
+        "timeStamp": "2"
+    },
+    {
+      "_include": "CompanionContentItem.json",
+        "type": "article",
+        "url": "/examples/Article.html",
+        "timeStamp": "6"
+    },
+    {
+      "_include": "CompanionContentItem.json",
+        "type": "gallery",
+        "url": "/examples/Gallery.html"
+    },
+    {
+      "_include": "CompanionContentItem.json",
+        "type": "video",
+        "url": "/core/video/VideoWatch2.html"
+    },
+    {
+        "_include": "CompanionContentItem.json",
+        "type": "video",
+        "url": "/core/video/VideoPage.html"
+    },
+    {
+      "_include": "CompanionContentItem.json",
+        "type": "article",
+        "url": "/examples/Article.html"
+    },
+    {
+      "_include": "CompanionContentItem.json",
+        "type": "gallery",
+        "url": "/examples/Gallery.html"
+    }
+  ]
+}

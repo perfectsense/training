@@ -1,0 +1,16 @@
+{{#block "SocialBar"}}
+    <div class="{{blockName}}">
+
+        {{#element "heading" noWith=true}}
+            <h2 class="{{elementName}}">{{format "headingText"}}</h2>
+        {{/element}}
+
+        {{#element "items"}}
+            <ul class="{{elementName}}">
+                {{#each this}}
+                    <li class="{{elementName}}-item">{{this}}</li>
+                {{/each}}
+            </ul>
+        {{/element}}
+    </div>
+{{/block}}

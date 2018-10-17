@@ -1,0 +1,13 @@
+{
+    "_include": "/core/promo/Promo.json",
+    "_template": "/core/promo/PromoBlog.hbs",
+
+    "media": {
+        "_template": "/core/image/Image.hbs",
+        "image": {
+            "_image": true,
+            "src": "/styleguide/media/building-bikes.png"
+        }
+    },
+    "category": "Mission"
+}

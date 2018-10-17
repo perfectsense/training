@@ -1,0 +1,12 @@
+{{#block "Container" extend="_SourceContainer.hbs"}}
+    <div class="{{blockName}}"
+    {{#if backgroundColor}}style="--color:var(--{{backgroundColor}})"{{/if}}
+    {{#if verticalAlignment}}data-vertical-align="{{verticalAlignment}}"{{/if}}
+    {{#if noTopPadding}}data-nopaddingtop{{/if}}>
+        {{element "title"}}
+
+        {{element "description"}}
+
+        {{element "rows"}}
+    </div>
+{{/block}}

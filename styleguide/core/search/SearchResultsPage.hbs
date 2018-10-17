@@ -1,0 +1,100 @@
+{{#block "SearchResultsPage" override="../page/Page.hbs" }}
+    {{#element "main" noWith=true}}
+        <section class="{{blockName}}">
+            {{#element "form" noWith=true}}
+                <form class="{{elementName}}">
+                    {{#element "formInput" noWith=true}}
+                        <input type="text" class="{{elementName}}" name="q" value="{{query}}">
+                    {{/element}}
+
+                    {{#element "formButton" noWith=true}}
+                        <button type="submit" class="{{elementName}}">{{format "submitButtonLabel"}}</button>
+                    {{/element}}
+                </form>
+            {{/element}}
+
+            {{#if results}}
+                {{#element "filters"}}
+                    <div class="{{elementName}}">{{this}}</div>
+                {{/element}}
+
+                {{#element "found" noWith=true}}
+                    <div class="{{elementName}}" data-view="{{view}}">
+                        {{#element "count" noWith=true}}
+                            {{#if query}}
+                                <div class="{{elementName}}">found count - {{{format "foundCountText" resultsCount=count searchQuery=query}}}</div>
+                            {{else}}
+                                <div class="{{elementName}}">{{{format "noQueryFoundCountText" resultsCount=count}}}</div>
+                            {{/if}}
+                        {{/element}}
+
+                        {{#element "views" noWith=true}}
+                            <ul class="{{elementName}}">
+                                <li class="{{elementName}}-list"><a href="{{viewUrl}}">{{format "listViewText"}}</a></li>
+                                <li class="{{elementName}}-grid"><a href="{{viewUrl}}grid">{{format "gridViewText"}}</a></li>
+                            </ul>
+                        {{/element}}
+
+                        {{#element "sorts"}}
+                            <ul class="{{elementName}}">
+                                {{#each this}}
+                                    <li>{{this}}</li>
+                                {{/each}}
+                            </ul>
+                        {{/element}}
+
+                        {{#element "actions"}}
+                            <div class="{{elementName}}">
+                                {{this}}
+                            </div>
+                        {{/element}}
+
+                        {{#element "spotlights"}}
+                            <ul class="{{elementName}}">
+                                {{#each this}}
+                                    <li>
+                                        {{this}}
+                                    </li>
+                                {{/each}}
+                            </ul>
+                        {{/element}}
+
+                        {{#element "results"}}
+                            <ul class="{{elementName}}">
+                                {{#each this}}
+                                    <li>
+                                        {{this}}
+                                    </li>
+                                {{/each}}
+                            </ul>
+                        {{/element}}
+
+                        {{#element "pagination" noWith=true}}
+                            <ul class="{{elementName}}">
+                                {{#element "previousPage"}}
+                                    <li class="{{elementName}}"><a href="{{this}}" rel="prev">{{format "previousText"}}</a></li>
+                                {{/element}}
+
+                                {{#element "pageCounts" noWith=true}}
+                                    <li class="{{elementName}}">{{format "pageCounts" number=pageNumber count=pageCount}}</li>
+                                {{/element}}
+
+                                {{#element "nextPage"}}
+                                    <li class="{{elementName}}"><a href="{{this}}" rel="next">{{format "nextText"}}</a></li>
+                                {{/element}}
+                            </ul>
+                        {{/element}}
+                    </div>
+                {{/element}}
+            {{else}}
+                {{#element "noResults" noWith=true}}
+                    {{#if query}}
+                        <div class="{{elementName}}">{{{format "noResultsText" searchQuery=query}}}</div>
+                    {{else}}
+                        <div class="{{elementName}}">{{format "noQueryText"}}</div>
+                    {{/if}}
+                {{/element}}
+            {{/if}}
+        </section>
+    {{/element}}
+{{/block}}

@@ -1,0 +1,10 @@
+{
+  "_template": "Image.hbs",
+  "alt": "{{words}}",
+  "image": {
+    "_image": true
+  },
+  "narrowImage": {
+    "_image": true
+  }
+}

@@ -1,0 +1,16 @@
+{
+    "_include": "PromoImageFlip.json",
+    "_template": "PromoImageFlip-small.hbs",
+    "title": "Brand Storytelling",
+    "media": {
+        "_template": "/core/image/Image.hbs",
+        "image": {
+            "_image": true,
+            "src": "/styleguide/media/us-news-logo.png"
+        }
+    },
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec in egestas quam. Maecenas bibendum hendrerit justo in interdum. Morbi eget ex ut augue condimentum. Lorem ipsum dolor sit.",
+    "backText":"Learn more about Asset Managment in the Scripps Case Study",
+    "button": null,
+    "dogEar": true
+}

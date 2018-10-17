@@ -1,0 +1,27 @@
+{
+    "_template": "OpenGraphMeta.hbs",
+    "title": "{{words(5)}}",
+    "url": "http://brightspot.com",
+    "description": "{{words([5, 15])}}",
+    "determiner": "auto",
+    "locale": "en_US",
+    "localeAlternates": [
+        "es_ES",
+        "fr_FR"
+    ],
+    "siteName": "Brightspot",
+    "type": {
+        "_include": "OpenGraphTypes.json",
+        "_key": 0
+    },
+    "images": [
+        {
+            "_template": "OpenGraphImageMeta.hbs",
+            "image": {
+                "_image": true
+            },
+            "mimeType": "image/png",
+            "alt": "{{words([5,10])}}"
+        }
+    ]
+}

@@ -1,0 +1,27 @@
+{{#block "CharacterPage" override="/core/page/ContentPage.hbs"}}
+    {{#element "mainContent" noWith="true"}}
+        <div class="{{elementName}}" itemscope itemtype="http://schema.org/Person"{{extraAttributes}}>
+
+            {{#element "name"}}
+                <h1 class="{{elementName}}" itemprop="name">{{this}}</h1>
+            {{/element}}
+
+            {{#element "alterEgo"}}
+                <div class="{{elementName}}">{{this}}</div>
+            {{/element}}
+
+            {{#element "image"}}
+                <div class="{{elementName}}" itemprop="image">{{this}}</div>
+            {{/element}}
+
+            {{#element "biography"}}
+                <div class="{{elementName}}" itemprop="description">{{this}}</div>
+            {{/element}}
+
+            {{#element "featuredMovies"}}
+                <div class="{{elementName}}">{{this}}</div>
+            {{/element}}
+
+        </div>
+    {{/element}}
+{{/block}}

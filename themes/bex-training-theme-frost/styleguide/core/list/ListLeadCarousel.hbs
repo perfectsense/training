@@ -1,0 +1,13 @@
+{{#block "ListLeadCarousel" extend="/core/list/List.hbs"}}
+    <div class="{{blockName}}"{{extraAttributes}}>
+        {{#element "items"}}
+            <div class="{{elementName}}">
+                {{#each this}}
+                    <div class="{{elementName}}-item">
+                        {{render this [/core/promo/Promo.hbs]="/core/promo/PromoFullWidth.hbs"}}
+                    </div>
+                {{/each}}
+            </div>
+        {{/element}}
+    </div>
+{{/block}}

@@ -1,0 +1,13 @@
+{{#block "TwoByOne" override="/core/container/Container.hbs"}}
+    {{#element "rows"}}
+        <ul class="{{elementName}}">
+          {{#each this}}
+              <li class="{{elementName}}-item">
+                  {{render this
+                      [/core/container/Row.hbs]="/core/container/TwoByOneRowElement.hbs"
+                  }}
+              </li>
+          {{/each}}
+        </ul>
+    {{/element}}
+{{/block}}

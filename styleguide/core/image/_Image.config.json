@@ -1,0 +1,16 @@
+{
+    "imageSizeContexts": {
+        "/core/image/Image.hbs": {
+            "image": "small",
+            "narrowImage": "small"
+        },
+        "/core/image/ImagePage.hbs": {
+            "authorImage": "tiny",
+            "media": {
+                "/core/image/Image.hbs": {
+                    "image": "large"
+                }
+            }
+        }
+    }
+}

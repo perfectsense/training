@@ -1,0 +1,110 @@
+.AuthenticatedNavigationItem {
+    @media @mq-viewport-lg {
+        padding-right: 20px;
+    }
+
+    a {
+        .BylineText;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: var(--headerTextColor);
+        text-decoration: none;
+        text-align: center;
+
+        &:hover {
+            color: @color-taupe;
+        }
+
+        @media @mq-viewport-lg {
+            font-size: 11px;
+            color: var(--headerTextColor);
+            text-align: left;
+            letter-spacing: 1.5px;
+
+            &:hover {
+                color: @color-primary;
+            }
+        }
+
+
+    }
+
+    &-text {
+        .BylineText;
+        cursor: pointer;
+        position: relative;
+        text-transform: uppercase;
+        color: var(--headerTextColor);
+        letter-spacing: 2px;
+        display: none;
+        line-height: 17.8px;
+
+        @media @mq-viewport-lg {
+          padding-right: 15px;
+          display: block;
+        }
+    }
+
+    &-items {
+      list-style: none;
+      padding-left: 0;
+
+      @media @mq-viewport-lg {
+        display: none;
+        padding: 30px;
+        border-top: 0;
+        max-height: 195px;
+        position: absolute;
+        top: 54px;
+        overflow-x: hidden;
+        overflow-y: auto;
+        background-color: var(--headerBackgroundColor);
+      }
+
+      &-hr {
+        background-color: @color-primary;
+        border: 0;
+        height: 3px;
+        margin-bottom: 30px;
+        margin-top: 0;
+        width: 40px;
+
+        @media @mq-viewport-lg {
+            display: none;
+        }
+      }
+
+      &-item {
+        padding-bottom: 30px;
+        display: none;
+
+        &:first-child,
+        &:last-child {
+            display: block;
+        }
+
+        &:nth-child(2) + .AuthenticatedNavigationItem-items-hr {
+          display: none;
+        }
+
+        @media @mq-viewport-lg {
+            display: block;
+            padding-bottom: 15px;
+        }
+
+        &:last-child {
+            padding-bottom: 0;
+        }
+      }
+
+      a {
+          display: block;
+      }
+
+      &[data-toggle-in-authNav='true'] {
+          @media @mq-viewport-lg {
+            display: block;
+          }
+      }
+  }
+}

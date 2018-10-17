@@ -1,0 +1,12 @@
+{
+    "_wrapper": false,
+    "_include": "/core/video/VideoPage.json",
+    "permalink": "/jwplayer/playlist/JWVideo-01.html",
+    "player": {
+        "_include": "../JWVideoPlayer.json",
+        "videoUrl": "http://www.w3schools.com/html/mov_bbb.mp4",
+        "muted": true,
+        "autoplay": false,
+        "seekSeconds": 0
+    }
+}

@@ -1,0 +1,11 @@
+{{~#block "Enhancement"~}}
+    {{~#element "item"~}}
+        {{~#if ../inline~}}
+            <span class="{{blockName}}"><span class="{{elementName}}">{{this}}</span></span>
+        {{~else~}}
+            <div class="{{blockName}}">
+                <div class="{{elementName}}">{{this}}</div>
+            </div>
+        {{~/if~}}
+    {{~/element~}}
+{{~/block~}}

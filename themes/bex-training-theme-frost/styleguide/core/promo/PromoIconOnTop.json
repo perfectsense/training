@@ -1,0 +1,12 @@
+{
+    "_template": "PromoIconOnTop.hbs",
+    "title": "Brightspot CMS",
+    "media": {
+      "_template": "/core/image/Image.hbs",
+      "image": {
+        "_image": true,
+          "src": "/styleguide/media/iconTop.png"
+      }
+    },
+    "description": "Our content management system lets editors create, publish, and deliver great digital experiences."
+}

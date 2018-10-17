@@ -1,0 +1,18 @@
+{
+    "_template": "ListLarge.hbs",
+    "media": {
+        "_template": "/core/image/Image.hbs",
+        "image": {
+            "_image": true,
+            "src": "/styleguide/media/ps.svg"
+        }
+    },
+    "title": "{{words(5)}}",
+    "description": "{{words(25)}}",
+    "items": [
+        {
+            "_include": "/core/promo/PromoTextItem.json",
+            "_repeat": "5"
+        }
+    ]
+}

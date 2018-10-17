@@ -1,0 +1,14 @@
+{
+    "_wrapper": false,
+    "_include": "/core/video/VideoPage.json",
+    "permalink": "/kaltura/playlist/KalturaVideo-03.html",
+    "player": {
+        "_include": "../KalturaVideoPlayer.json",
+        "playerId": "39207762",
+        "partnerId": "2270521",
+        "entryId": "1_wcjdg1ox",
+        "aspectRatio": "16x9",
+        "muted": true,
+        "seekSeconds": 0
+    }
+}

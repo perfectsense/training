@@ -1,0 +1,23 @@
+{{#block "VideoModule"}}
+    <div class="{{blockName}}">
+        {{#element "title"}}
+            <div class="{{elementName}}">{{this}}</div>
+        {{/element}}
+        {{#element "actions"}}
+            <div class="{{elementName}}">{{this}}</div>
+        {{/element}}
+        {{#element "player"}}
+            <div class="{{elementName}}">{{this}}</div>
+        {{/element}}
+        {{#element "playlist"}}
+            <div class="{{elementName}}">{{this}}</div>
+        {{/element}}
+        {{#element "cta" noWith=true}}
+            {{#if ctaUrl}}
+                <div class="{{elementName}}">
+                    {{include "../link/Link.hbs" href=ctaUrl target=ctaTarget body=(format "ctaText")}}
+                </div>
+            {{/if}}
+        {{/element}}
+    </div>
+{{/block}}
