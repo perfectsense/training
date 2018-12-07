@@ -1,0 +1,13 @@
+{
+  "_template": "VideoLead.hbs",
+  "headline": "{{words([2,5])}}",
+  "subHeadline": "{{html('<a href=#>linked subheadline</a>')}}",
+  "player": {
+    "_include": "/_group/Videos.json",
+    "_random": true
+  },
+  "category": "{{words([ 1, 3 ])}}",
+  "categoryUrl": "#",
+  "duration": "{{number([3, 10])}} min",
+  "_hidden": true
+}

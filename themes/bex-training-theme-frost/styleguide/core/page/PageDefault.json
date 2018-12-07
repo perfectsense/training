@@ -1,67 +1,64 @@
 {
-    "_include": "Page.json",
-    "_template": "PageDefault.hbs",
-
-    "title": "About Us",
-    "pageLead": {
-        "_include": "/core/image/Image.json",
-        "image": {
-            "_image": true,
-            "src": "/styleguide/media/about-us-lede.png"
+  "_include": "Page.json",
+  "_template": "/core/page/Page.hbs",
+  "title": "About Us",
+  "pageLead": {
+    "_include": "/core/image/Image.json",
+    "image": {
+      "_image": true,
+      "src": "/styleguide/media/about-us-lede.png"
+    }
+  },
+  "inlineSubheading": true,
+  "main": [
+    {
+      "_include": "/core/list/ListThreeColumn.json",
+      "title": "Our Philosophy",
+      "description": "Our core philosophy infuses everything we do at Perfect Sense and boils down to three clear principles.",
+      "items": [
+        {
+          "_include": "/core/promo/PrincipleCard.json",
+          "_repeat": 3
         }
+      ]
     },
-    "inlineSubheading": true,
-    "main": [
+    {
+      "_include": "/core/list/ListFourColumnNarrow.json",
+      "backgroundColor": "#f0efed"
+    },
+    {
+      "_include": "/core/list/ListFourColumn.json",
+      "title": "Our Leadership Team",
+      "description": "Lorem ipsum dolor sit amet consectetur adipiscing elit.",
+      "items": [
         {
-            "_include": "/core/list/ListThreeColumn.json",
-
-            "title": "Our Philosophy",
-            "description": "Our core philosophy infuses everything we do at Perfect Sense and boils down to three clear principles.",
-            "items": [
-                {
-                    "_include": "/core/promo/PrincipleCard.json",
-                    "_repeat": 3
-                }
-            ]
-        },
-        {
-            "_include": "/core/list/ListFourColumnNarrow.json",
-            "backgroundColor": "#f0efed"
-        },
-        {
-            "_include": "/core/list/ListFourColumn.json",
-
-            "title": "Our Leadership Team",
-            "description": "Lorem ipsum dolor sit amet consectetur adipiscing elit.",
-            "items": [
-                {
-                    "_include": "/core/promo/PromoImageOnTop-circular.json",
-                    "_repeat": 11
-                }
-            ]
-        },
-        {
-            "_include": "/core/promo/PromoTextOverlay-large.json"
-        },
-        {
-          "_include": "/core/list/MetricsThreeColumnList.json"
-        },
-        {
-            "_include": "/core/list/ListFourColumn.json",
-
-            "title": "Related Videos",
-            "items": [
-                {
-                    "_include": "/core/promo/VideoPromo.json",
-                    "_repeat": 4
-                }
-            ]
+          "_include": "/core/promo/PromoImageOnTop-circular.json",
+          "_repeat": 11
         }
-    ],
-
-    "above": null,
-    "aside": null,
-    "banner": null,
-    "below": null,
-    "pageHeading": "About Us"
+      ]
+    },
+    {
+      "_include": "/core/promo/PromoTextOverlay-large.json"
+    },
+    {
+      "_include": "/core/list/MetricsThreeColumnList.json"
+    },
+    {
+      "_include": "/core/list/ListFourColumn.json",
+      "title": "Related Videos",
+      "items": [
+        {
+          "_include": "/core/promo/VideoPromo.json",
+          "_repeat": 4
+        }
+      ]
+    }
+  ],
+  "above": null,
+  "aside": null,
+  "banner": null,
+  "below": null,
+  "pageHeading": "About Us",
+  "_styledTemplate": "/core/page/PageDefault.hbs",
+  "_hidden": false
 }

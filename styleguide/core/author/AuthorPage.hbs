@@ -1,42 +1,138 @@
-{{#block "AuthorPage" override="../page/ContentPage.hbs"}}
-    {{#element "mainContent" noWith="true"}}
-        <div class="{{elementName}}" itemscope itemtype="http://schema.org/Person"{{extraAttributes}}>
-
-            {{#element "name"}}
-                <h1 class="{{elementName}}" itemprop="name">{{this}}</h1>
-            {{/element}}
-
-            {{#element "affiliation"}}
-                <h2 class="{{elementName}}" itemprop="affiliation">{{this}}</h2>
-            {{/element}}
-
-            {{#element "jobTitle"}}
-                <div class="{{elementName}}" itemprop="jobTitle">{{this}}</div>
-            {{/element}}
-
-            {{#element "image"}}
-                <div class="{{elementName}}" itemprop="image">{{this}}</div>
-            {{/element}}
-
-            {{#element "shortBiography"}}
-                <div class="{{elementName}}">{{this}}</div>
-            {{/element}}
-
-            {{#element "fullBiography"}}
-                <div class="{{elementName}}" itemprop="description">{{this}}</div>
-            {{/element}}
-
-            {{#element "links"}}
-                <ul class="{{elementName}}">
-                    {{#each this}}
-                        <li class="{{elementName}}-item">{{this}}</li>
-                    {{/each}}
-                </ul>
-            {{/element}}
-
-            {{#element "authorSocialLinks"}}
-                <div class="{{elementName}}">{{this}}</div>
-            {{/element}}
-        </div>
-    {{/element}}
-{{/block}}
+<!DOCTYPE html>
+<html class="AuthorPage" lang="{{#with language}}{{this}}{{else}}en{{/with}}" itemscope itemtype="http://schema.org/WebPage">
+    {{include "/core/page/Page-head.hbs" this}}
+    <body class="AuthorPage-body"{{~#each extraBodyAttributes}} {{this}}{{~/each~}}>
+        <header class="AuthorPage-header" itemscope itemtype="http://schema.org/WPHeader">
+            {{#with hat}}
+                <div class="AuthorPage-hat">{{this}}</div>
+            {{/with}}
+            {{#with logo}}
+                <div class="AuthorPage-logo">{{this}}</div>
+            {{/with}}
+            {{#with navigation}}
+                <div class="AuthorPage-navigation">{{this}}</div>
+            {{/with}}
+            {{#with social}}
+                <div class="AuthorPage-social">{{this}}</div>
+            {{/with}}
+            {{#if searchAction}}
+                <form class="AuthorPage-search" action="{{searchAction}}" novalidate="" autocomplete="off">
+                    <input type="text" class="AuthorPage-searchInput" name="q">
+                    <button type="submit" class="AuthorPage-searchButton">{{format "/core/page/Page" "searchButtonLabel"}}</button>
+                </form>
+            {{/if}}
+        </header>
+        {{#with banner}}
+            <div class="AuthorPage-banner">{{~this~}}</div>
+        {{/with}}
+        {{#with sectionNavigation}}
+            <div class="AuthorPage-sectionNavigation">{{this}}</div>
+        {{/with}}
+        {{#with packageNavigation}}
+            <div class="AuthorPage-packageNavigation">{{this}}</div>
+        {{/with}}
+        {{#with above}}
+            <div class="AuthorPage-above">{{this}}</div>
+        {{/with}}
+        <main class="AuthorPage-main">
+            {{#with breadcrumbs}}
+                <div class="AuthorPage-breadcrumbs">{{this}}</div>
+            {{/with}}
+            <div class="AuthorPage-mainContent" itemscope itemtype="http://schema.org/Person"{{extraAttributes}}>
+                {{#with name}}
+                    <h1 class="AuthorPage-name" itemprop="name">{{this}}</h1>
+                {{/with}}
+                {{#with affiliation}}
+                    <h2 class="AuthorPage-affiliation" itemprop="affiliation">{{this}}</h2>
+                {{/with}}
+                {{#with jobTitle}}
+                    <div class="AuthorPage-jobTitle" itemprop="jobTitle">{{this}}</div>
+                {{/with}}
+                {{#with image}}
+                    <div class="AuthorPage-image" itemprop="image">{{this}}</div>
+                {{/with}}
+                {{#with shortBiography}}
+                    <div class="AuthorPage-shortBiography">{{this}}</div>
+                {{/with}}
+                {{#with fullBiography}}
+                    <div class="AuthorPage-fullBiography" itemprop="description">{{this}}</div>
+                {{/with}}
+                {{#with links}}
+                    <ul class="AuthorPage-links">
+                        {{#each this}}
+                            <li class="AuthorPage-links-item">{{this}}</li>
+                        {{/each}}
+                    </ul>
+                {{/with}}
+                {{#with authorSocialLinks}}
+                    <div class="AuthorPage-authorSocialLinks">{{this}}</div>
+                {{/with}}
+            </div>
+            {{#with tags}}
+                <div class="AuthorPage-tags">
+                    <h2 class="AuthorPage-tags-heading">{{format "/core/page/ContentPage" "tagsHeading"}}</h2>
+                    <div class="AuthorPage-tags-body">{{this}}</div>
+                </div>
+            {{/with}}
+            {{#with countries}}
+                <div class="AuthorPage-countries">
+                    <h2 class="AuthorPage-countries-heading">{{format "/core/page/ContentPage" "countriesHeading"}}</h2>
+                    <div class="AuthorPage-countries-body">{{this}}</div>
+                </div>
+            {{/with}}
+            {{#with brands}}
+                <div class="AuthorPage-brands">
+                    <h2 class="AuthorPage-brands-heading">{{format "/core/page/ContentPage" "brandsHeading"}}</h2>
+                    <div class="AuthorPage-brands-body">{{this}}</div>
+                </div>
+            {{/with}}
+            {{#with products}}
+                <div class="AuthorPage-products">
+                    <h2 class="AuthorPage-products-heading">{{format "/core/page/ContentPage" "productsHeading"}}</h2>
+                    <div class="AuthorPage-products-body">{{this}}</div>
+                </div>
+            {{/with}}
+            {{#with topics}}
+                <div class="AuthorPage-topics">
+                    <h2 class="AuthorPage-topics-heading">{{format "/core/page/ContentPage" "topicsHeading"}}</h2>
+                    <div class="AuthorPage-topics-body">{{this}}</div>
+                </div>
+            {{/with}}
+            {{#with actions}}
+                <div class="AuthorPage-actions">
+                    <h2 class="AuthorPage-actions-heading">{{format "/core/page/ContentPage" "actionsHeading"}}</h2>
+                    <div class="AuthorPage-actions-body">{{this}}</div>
+                </div>
+            {{/with}}
+            {{#with comments}}
+                <div class="AuthorPage-comments">
+                    {{this}}
+                </div>
+            {{/with}}
+        </main>
+        {{#with aside}}
+            <aside class="AuthorPage-aside">{{this}}</aside>
+        {{/with}}
+        {{#with below}}
+            <div class="AuthorPage-below">{{this}}</div>
+        {{/with}}
+        <footer class="AuthorPage-footer" itemscope itemtype="https://schema.org/WPFooter">
+            {{#with footerLogo}}
+                <div class="AuthorPage-footerLogo">{{this}}</div>
+            {{/with}}
+            {{#with footerNavigation}}
+                <div class="AuthorPage-footerNavigation">{{this}}</div>
+            {{/with}}
+            {{#with footerContent}}
+                <div class="AuthorPage-footerContent">{{this}}</div>
+            {{/with}}
+            {{#with social}}
+                <div class="AuthorPage-social">{{this}}</div>
+            {{/with}}
+            {{#with disclaimer}}
+                <div class="AuthorPage-disclaimer">{{this}}</div>
+            {{/with}}
+        </footer>
+        {{include "/core/page/Page-extraBodyItems.hbs" this}}
+    </body>
+</html>

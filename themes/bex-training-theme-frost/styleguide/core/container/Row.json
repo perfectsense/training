@@ -1,0 +1,9 @@
+{
+  "_template": "/core/container/Row.hbs",
+  "columns": {
+    "_include": "/_group/ContainerColumnOptions.json",
+    "_key": 0
+  },
+  "_styledTemplate": "/core/container/Row.hbs",
+  "_hidden": false
+}

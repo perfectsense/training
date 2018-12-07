@@ -1,11 +1,12 @@
 {
-    "_template": "TwoColumnContainer.hbs",
-    "columnOne": {
-        "_include": "/_group/ContainerModules.json",
-        "_random": true
-    },
-    "columnTwo": {
-        "_include": "/_group/ContainerModules.json",
-        "_random": true
-    }
+  "_template": "TwoColumnContainer.hbs",
+  "columnOne": {
+    "_include": "/_group/ContainerModules.json",
+    "_random": true
+  },
+  "columnTwo": {
+    "_include": "/_group/ContainerModules.json",
+    "_random": true
+  },
+  "_hidden": false
 }

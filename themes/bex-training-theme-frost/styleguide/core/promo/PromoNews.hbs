@@ -1,15 +1,17 @@
-{{#block "PromoNews" extend="/core/promo/Promo.hbs"}}
-    <div class="{{blockName}}"{{extraAttributes}}>
-        <div class="{{blockName}}-border" style="background-color: {{#if borderColor}}{{borderColor}}{{else}}gray{{/if}}"></div>
-        <div class="{{blockName}}-source">{{~#with sourceText~}}<span class="{{blockName}}-source-from">{{~this~}}</span>{{~/with~}} {{~#with sourceName~}}<span class="{{blockName}}-source-name">{{~include "/core/link/Link.hbs" href=../url target=../target body=this contentId=../linkId~}}</span>{{~/with~}}</div>
-
-        <div class="{{blockName}}-content">
-            {{element "title"}}
-            {{element "description"}}
-        </div>
-
-        {{#with sharedBy}}
-            <div class="{{blockName}}-sharedBy">{{this}}</div>
+<div class="PromoNews"{{extraAttributes}}>
+    <div class="PromoNews-border" style="background-color: {{#if borderColor}}{{borderColor}}{{else}}gray{{/if}}"></div>
+    <div class="PromoNews-source">{{~#with sourceText~}}<span class="PromoNews-source-from">{{~this~}}</span>{{~/with~}} {{~#with sourceName~}}<span class="PromoNews-source-name">{{~include "/core/link/Link.hbs" href=../url target=../target body=this contentId=../linkId~}}</span>{{~/with~}}</div>
+    <div class="PromoNews-content">
+        {{#with title}}
+            <div class="PromoNews-title">
+                {{include "../link/Link.hbs" href=../url target=../target body=this}}
+            </div>
+        {{/with}}
+        {{#with description}}
+            <div class="PromoNews-description">{{this}}</div>
         {{/with}}
     </div>
-{{/block}}
+    {{#with sharedBy}}
+        <div class="PromoNews-sharedBy">{{this}}</div>
+    {{/with}}
+</div>

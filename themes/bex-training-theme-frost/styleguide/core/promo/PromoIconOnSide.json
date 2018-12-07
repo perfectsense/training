@@ -1,12 +1,14 @@
 {
-    "_template": "PromoIconOnSide.hbs",
-    "media": {
-      "_template": "/core/image/Image.hbs",
-      "image": {
-        "_image": true,
-          "src": "/styleguide/media/happy.png"
-      }
-    },
-    "title": "Brightspot CMS",
-    "description": "Our content management system lets editors create, publish, and deliver great digital experiences."
+  "_template": "/core/promo/Promo.hbs",
+  "media": {
+    "_template": "/core/image/Image.hbs",
+    "image": {
+      "_image": true,
+      "src": "/styleguide/media/happy.png"
+    }
+  },
+  "title": "Brightspot CMS",
+  "description": "Our content management system lets editors create, publish, and deliver great digital experiences.",
+  "_styledTemplate": "/core/promo/PromoIconOnSide.hbs",
+  "_hidden": false
 }

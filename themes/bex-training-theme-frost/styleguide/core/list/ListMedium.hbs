@@ -1,14 +1,37 @@
-{{#block "ListMedium" override="ListSmall.hbs"}}
-    {{#element "heading" noWith="true"}}
-        <div class="{{elementName}}">
-            {{element "media"}}
-
-            {{element "title"}}
-
-            {{element "description"}}
-
+<div class="ListMedium"{{extraAttributes}}
+    {{#if backgroundColor}}style="--color:var(--{{backgroundColor}})"{{/if}}
+    {{#if inverseColors}}data-inverse-colors {{/if}}
+    {{#with horizontalAlignment}} data-horizontal-align="{{this}}"{{/with}}>
+    <div class="ListMedium-heading">
+        {{#with media}}
+            <div class="ListMedium-media">
+                {{this}}
+            </div>
+        {{/with}}
+        {{#with title}}
+            <div class="ListMedium-title">{{this}}</div>
+        {{/with}}
+        {{#with description}}
+            <div class="ListMedium-description">{{this}}</div>
+        {{/with}}
+    </div>
+    {{#with items}}
+        <ul class="ListMedium-items">
+            {{#each this}}
+                <hr class="ListMedium-items-hr">
+                <li class="ListMedium-items-item">
+                    {{render this [/core/promo/Promo.hbs]="/core/promo/PromoTextItem.hbs"}}
+                </li>
+            {{/each}}
+        </ul>
+    {{/with}}
+    {{#if ctaUrl}}
+        <div class="ListMedium-cta">
+            {{#if ctaText}}
+                {{include "/core/link/SolidButton.hbs" href=ctaUrl target=ctaTarget body=ctaText}}
+            {{else}}
+                {{include "/core/link/SolidButton.hbs" href=ctaUrl target=ctaTarget body=(format "/core/list/List" "ctaText")}}
+            {{/if}}
         </div>
-    {{/element}}
-
-    {{element "items"}}
-{{/block}}
+    {{/if}}
+</div>

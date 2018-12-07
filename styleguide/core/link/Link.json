@@ -1,7 +1,8 @@
 {
-    "_template": "Link.hbs",
-    "href": "#",
-    "target": "_self",
-    "body": "{{words(3)}}",
-    "contentId": "a123"
+  "_template": "Link.hbs",
+  "href": "#",
+  "target": "_self",
+  "body": "{{words(3)}}",
+  "contentId": "a123",
+  "_hidden": false
 }

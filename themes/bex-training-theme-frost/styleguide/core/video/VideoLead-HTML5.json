@@ -1,7 +1,7 @@
 {
-    "_include": "/core/video/VideoLead.json",
-
-    "player": {
-        "_include": "/core/video/HTML5VideoPlayer.json"
-    }
+  "_include": "/core/video/VideoLead.json",
+  "player": {
+    "_include": "/core/video/HTML5VideoPlayer.json"
+  },
+  "_hidden": false
 }

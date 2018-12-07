@@ -1,41 +1,40 @@
 {
-    "_wrapper": false,
-    "_include": "/core/page/MediaObjectPage.json",
-    "_template": "VideoPage.hbs",
-
-    "headline": "{{words([2,5])}}",
-    "subHeadline": "{{html('<a href=#>caption credit name</a>')}}",
-
-    "player": {
-        "_include": "HTML5VideoPlayer.json"
+  "_wrapper": false,
+  "_include": "/core/page/MediaObjectPage.json",
+  "_template": "VideoPage.hbs",
+  "headline": "{{words([2,5])}}",
+  "subHeadline": "{{html('<a href=#>caption credit name</a>')}}",
+  "player": {
+    "_include": "HTML5VideoPlayer.json"
+  },
+  "playlist": [
+    {
+      "_include": "/core/video/PlaylistItem.json",
+      "_repeat": 3
+    }
+  ],
+  "media": {
+    "_template": "/core/image/Image.hbs",
+    "image": {
+      "_image": true
+    }
+  },
+  "caption": "{{sentences(3)}}",
+  "contentId": "a1234",
+  "actions": {
+    "_include": "/core/action-bar/ActionBar.json"
+  },
+  "pagination": [
+    {
+      "_template": "../link/Link.hbs",
+      "href": "#page=1",
+      "body": "1"
     },
-    "playlist": [
-        {
-            "_include": "/core/video/PlaylistItem.json",
-            "_repeat": 3
-        }
-    ],
-    "media": {
-        "_template": "/core/image/Image.hbs",
-        "image": {
-            "_image": true
-        }
-    },
-    "caption": "{{sentences(3)}}",
-    "contentId": "a1234",
-    "actions": {
-        "_include": "/core/action-bar/ActionBar.json"
-    },
-    "pagination": [
-        {
-            "_template": "../link/Link.hbs",
-            "href": "#page=1",
-            "body": "1"
-        },
-        {
-            "_template": "../link/Link.hbs",
-            "href": "#page=2",
-            "body": "2"
-        }
-    ]
+    {
+      "_template": "../link/Link.hbs",
+      "href": "#page=2",
+      "body": "2"
+    }
+  ],
+  "_hidden": false
 }

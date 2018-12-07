@@ -1,23 +1,89 @@
-{{#block "Section" override="/core/page/Page.hbs"}}
-     {{#element "main" noWith=true}}
-          <main class="{{elementName}}">
-              {{element "pageLeadInfo"}}
-              {{#with main}}
+<!DOCTYPE html>
+<html class="Section" lang="{{#with language}}{{this}}{{else}}en{{/with}}" itemscope itemtype="http://schema.org/WebPage">
+    {{include "/core/page/Page-head.hbs" this}}
+    <body class="Section-body" {{~#each extraBodyAttributes}} {{this}} {{~/each~}}
+        {{#if hidePromoDropShadow}} data-hide-promo-dropshadow{{/if}}
+        {{#if promoModuleAlignment}} data-promo-module-alignment="{{promoModuleAlignment}}"{{/if}}
+        {{#if boldMood}} data-mood-bold{{/if}}
+        {{#if inlineSubheading}} data-subheading-inline="{{inlineSubheading}}"{{/if}}
+        {{#if hideExternalLinkIcon}}data-hide-external-link-icon{{/if}}
+        {{#if hat}}data-show-hat{{/if}}
+        {{#if hideHeaderHat}}data-hide-header-hat{{/if}}
+    >
+    {{include "/core/page/Page-icons.hbs" this}}
+    {{#with hat}}
+        <div class="Section-hat">{{this}}</div>
+    {{/with}}
+    <header class="Section-header" data-with-toggle-menu itemscope itemtype="http://schema.org/WPHeader"
+        {{#if mobileLeftAlignNavigation}}data-mobile-left-align-nav{{/if}}>
+        <div class="Section-header-contentWrapper">
+            {{#with logo}}
+                <div class="Section-logo">
+                    {{this}}
+                </div>
+            {{/with}}
+            {{#with navigation}}
+                <psd-toggler
+                    class="Section-navigation-menuToggle"
+                    aria-role="button"
+                    aria-label="Menu"
+                    aria-controls="navigation"
+                    toggle-trigger="navigation">
+                    <svg class="burger-menu"><use xlink:href="#burger-menu"/></svg>
+                    <svg class="close-x"><use xlink:href="#close-x"/></svg>
+                </psd-toggler>
+                <div class="Section-navigation" data-main-navigation data-toggle-item="navigation"{{#if ../navigationAlignment}}data-navigation-alignment="{{../navigationAlignment}}"{{/if}}>
+                    {{this}}
+                </div>
+            {{/with}}
+            {{#if searchAction}}
+                <form class="Header-search" action="{{searchAction}}" novalidate="" autocomplete="off" data-header-search>
+                    <input type="text" class="Section-searchInput" name="q" placeholder="{{format "/core/page/Page" "placeholderLabel"}}">
+                    {{include "/core/page/Page-searchButton.hbs" this}}
+                </form>
+            {{/if}}
+        </div>
+    </header>
+    <div class="Section-contentWrapper"
+        data-negative-margin={{#if negativeMargin}}"{{negativeMargin}}"{{else}}default{{/if}}>
+        {{include "/core/page/Page-sectionNavigation.hbs" this}}
+        {{#with above}}
+            <div class="Section-above">{{this}}</div>
+        {{/with}}
+        <main class="Section-main">
+            {{#if pageLead}}
+                <div class="Section-pageLead" data-page-lead{{#if inlineSubheading}} data-subheading-lead{{/if}}>
+                    <div class="Section-heading">
+                        {{pageHeading}}
+                        {{#with pageSubHeading}}
+                            <div class="Section-pageSubHeading">{{this}}</div>
+                        {{/with}}
+                    </div>
+                    {{pageLead}}
+                </div>
+            {{else}}
+                {{#with pageHeading}}
+                    <h1 class="Section-pageHeading">{{this}}</h1>
+                {{/with}}
+            {{/if}}
+            {{#with pageSubHeading}}
+                <div class="Section-pageSubHeading">{{this}}</div>
+            {{/with}}
+            {{#with main}}
                 {{#each this}}
-                    {{render this
-                        [/core/list/List.hbs]=(cycle
-                            "/core/list/ListMasonry.hbs"
-                            "/core/list/LargeCarousel.hbs"
-                            "/core/list/ListFourColumn.hbs"
-                        )
-                    }}
+                    {{render this [/core/list/List.hbs]=(cycle "/core/list/ListMasonry.hbs" "/core/list/LargeCarousel.hbs" "/core/list/ListFourColumn.hbs")}}
                 {{/each}}
-              {{/with}}
-          </main>
-          {{#if pageLead}}
-            {{#element "sectionNavigation"}}{{/element}}
-          {{/if}}
-
-      {{/element}}
-
-{{/block}}
+            {{/with}}
+        </main>
+        {{#if pageLead}}
+            {{include "/core/page/Page-sectionNavigation.hbs" this}}
+        {{/if}}
+        {{#with below}}
+            <div class="Section-below">{{this}}</div>
+        {{/with}}
+    </div>
+    {{include "/core/page/Page-footer.hbs" this}}
+    {{include "/core/page/Page-SearchOverlay.hbs" this}}
+    {{include "/core/page/Page-extraBodyItems.hbs" this}}
+</body>
+</html>

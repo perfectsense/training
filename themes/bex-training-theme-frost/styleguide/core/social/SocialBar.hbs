@@ -1,11 +1,9 @@
-{{#block "SocialBar" extend="_SourceSocialBar.hbs" }}
-    <div class="{{blockName}}">
-        {{#element "items"}}
-            <ul class="{{elementName}}">
-                {{#each this}}
-                    <li class="{{elementName}}-item">{{this}}</li>
-                {{/each}}
-            </ul>
-        {{/element}}
-    </div>
-{{/block}}
+<div class="SocialBar">
+    {{#with items}}
+        <ul class="SocialBar-items">
+            {{#each this}}
+                <li class="SocialBar-items-item">{{this}}</li>
+            {{/each}}
+        </ul>
+    {{/with}}
+</div>

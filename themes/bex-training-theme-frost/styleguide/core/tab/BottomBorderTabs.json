@@ -1,33 +1,35 @@
 {
-    "_template": "BottomBorderTabs.hbs",
-    "title": "Our Business",
-    "tabs": [
-        {
-            "_include": "BottomBorderTabItem.json",
-            "label": "Media Publishing",
-            "title": "Media Publishing",
-            "id": "cat",
-            "content": {
-                "_include": "/core/promo/Promo.json"
-            }
-        },
-        {
-            "_include": "BottomBorderTabItem.json",
-            "label": "B2B",
-            "title": "B2B",
-            "id": "3",
-            "content": {
-                "_include": "/core/text/RichTextModule.json"
-            }
-        },
-        {
-            "_include": "BottomBorderTabItem.json",
-            "label": "Sports & Entertainment",
-            "title": "Sports & Entertainment",
-            "id": "4",
-            "content": {
-                "_include": "/core/text/RichTextModule.json"
-            }
-        }
-    ]
+  "_template": "/core/tab/Tabs.hbs",
+  "title": "Our Business",
+  "tabs": [
+    {
+      "_include": "BottomBorderTabItem.json",
+      "label": "Media Publishing",
+      "title": "Media Publishing",
+      "id": "cat",
+      "content": {
+        "_include": "/core/promo/Promo.json"
+      }
+    },
+    {
+      "_include": "BottomBorderTabItem.json",
+      "label": "B2B",
+      "title": "B2B",
+      "id": "3",
+      "content": {
+        "_include": "/core/text/RichTextModule.json"
+      }
+    },
+    {
+      "_include": "BottomBorderTabItem.json",
+      "label": "Sports & Entertainment",
+      "title": "Sports & Entertainment",
+      "id": "4",
+      "content": {
+        "_include": "/core/text/RichTextModule.json"
+      }
+    }
+  ],
+  "_styledTemplate": "/core/tab/BottomBorderTabs.hbs",
+  "_hidden": false
 }

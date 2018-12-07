@@ -1,22 +1,24 @@
-{{#block "ListOrdered" extend="/core/list/List.hbs"}}
-    <div class="{{blockName}}"{{extraAttributes}}>
-        {{#element "title"}}
-            <header class="{{elementName}} mood-color">{{this}}</header>
-        {{/element}}
-
-        {{#element "items"}}
-            <ol class="{{elementName}}">
-                {{#each this}}
-                    <li class="{{elementName}}-item">
-                        <span class="number mood-color"></span>
-                        {{render this
-                            [/core/promo/Promo.hbs]="/core/promo/PromoTextItem.hbs"
-                        }}
-                    </li>
-                {{/each}}
-            </ol>
-        {{/element}}
-
-        {{element "cta"}}
-    </div>
-{{/block}}
+<div class="ListOrdered"{{extraAttributes}}>
+    {{#with title}}
+        <header class="ListOrdered-title mood-color">{{this}}</header>
+    {{/with}}
+    {{#with items}}
+        <ol class="ListOrdered-items">
+            {{#each this}}
+                <li class="ListOrdered-items-item">
+                    <span class="number mood-color"></span>
+                    {{render this [/core/promo/Promo.hbs]="/core/promo/PromoTextItem.hbs"}}
+                </li>
+            {{/each}}
+        </ol>
+    {{/with}}
+    {{#if ctaUrl}}
+        <div class="ListOrdered-cta">
+            {{#if ctaText}}
+                {{include "/core/link/SolidButton.hbs" href=ctaUrl target=ctaTarget body=ctaText}}
+            {{else}}
+                {{include "/core/link/SolidButton.hbs" href=ctaUrl target=ctaTarget body=(format "/core/list/List" "ctaText")}}
+            {{/if}}
+        </div>
+    {{/if}}
+</div>

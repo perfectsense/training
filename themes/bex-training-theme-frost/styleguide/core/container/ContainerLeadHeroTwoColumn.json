@@ -1,0 +1,13 @@
+{
+  "_template": "/core/container/TwoColumnContainer.hbs",
+  "columnOne": {
+    "_include": "/_group/ContainerModules.json",
+    "_random": true
+  },
+  "columnTwo": {
+    "_include": "/_group/ContainerModules.json",
+    "_random": true
+  },
+  "_styledTemplate": "/core/container/ContainerLeadHeroTwoColumn.hbs",
+  "_hidden": true
+}

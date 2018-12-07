@@ -1,9 +1,8 @@
 {
-  "_template": "PromoTextItem.hbs",
+  "_template": "/core/promo/Promo.hbs",
   "url": "#",
   "target": "_self",
   "title": "{{words([3,10])}}",
-
   "button": null,
   "category": null,
   "categoryUrl": null,
@@ -14,5 +13,7 @@
   "duration": null,
   "contentId": null,
   "actions": null,
-  "social": null
+  "social": null,
+  "_styledTemplate": "/core/promo/PromoTextItem.hbs",
+  "_hidden": false
 }

@@ -1,0 +1,7 @@
+{
+  "_wrapper": false,
+  "_include": "/core/page/Page.json",
+  "_template": "SearchResultsPage.hbs",
+  "main": null,
+  "_hidden": true
+}

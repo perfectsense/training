@@ -1,13 +1,15 @@
 {
-    "_template": "MetricsThreeColumnList.hbs",
-    "title": "Module title Goes Here",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec in egestas quam. Maecenas bibendum hendrerit justo in interdum.",
-    "items": [
-      {
-        "_include": "/core/promo/MetricsPromo.json",
-        "_repeat": "12"
-      }
-    ],
-    "addBorder": true,
-    "hidePromoBackgroundColor": true
-  }
+  "_template": "/core/list/List.hbs",
+  "title": "Module title Goes Here",
+  "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec in egestas quam. Maecenas bibendum hendrerit justo in interdum.",
+  "items": [
+    {
+      "_include": "/core/promo/MetricsPromo.json",
+      "_repeat": "12"
+    }
+  ],
+  "addBorder": true,
+  "hidePromoBackgroundColor": true,
+  "_styledTemplate": "/core/list/MetricsThreeColumnList.hbs",
+  "_hidden": false
+}

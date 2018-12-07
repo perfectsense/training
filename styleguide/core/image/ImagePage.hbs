@@ -1,55 +1,255 @@
-{{#block "ImagePage" override="../page/MediaObjectPage.hbs"}}
-
-    {{#element "mainContent" noWith=true}}
-        <div class="{{elementName}}" itemprop="mainEntity" itemscope itemtype="http://schema.org/ImageObject">
-
-            {{element "headline"}}
-            {{element "subHeadline"}}
-            {{element "byline"}}
-            {{element "contributors"}}
-            {{element "dateExpired"}}
-            {{element "datePublished"}}
-            {{element "dateModified"}}
-            {{element "media"}}
-
-            {{#element "mediaProperties" noWith=true}}
-                <aside class="{{elementName}}">
-                    {{element "bitrate"}}
-                    {{#element "caption"}}
-                        <div class="{{elementName}}">
-                            <h4 class="{{elementName}}-heading">{{format "captionHeading"}}</h4>
-                            <div class="{{elementName}}-body" itemprop="caption">{{this}}</div>
+<!DOCTYPE html>
+<html class="ImagePage" lang="{{#with language}}{{this}}{{else}}en{{/with}}" itemscope itemtype="http://schema.org/WebPage">
+    {{include "/core/page/Page-head.hbs" this}}
+    <body class="ImagePage-body"{{~#each extraBodyAttributes}} {{this}}{{~/each~}}>
+        <header class="ImagePage-header" itemscope itemtype="http://schema.org/WPHeader">
+            {{#with hat}}
+                <div class="ImagePage-hat">{{this}}</div>
+            {{/with}}
+            {{#with logo}}
+                <div class="ImagePage-logo">{{this}}</div>
+            {{/with}}
+            {{#with navigation}}
+                <div class="ImagePage-navigation">{{this}}</div>
+            {{/with}}
+            {{#with social}}
+                <div class="ImagePage-social">{{this}}</div>
+            {{/with}}
+            {{#if searchAction}}
+                <form class="ImagePage-search" action="{{searchAction}}" novalidate="" autocomplete="off">
+                    <input type="text" class="ImagePage-searchInput" name="q">
+                    <button type="submit" class="ImagePage-searchButton">{{format "/core/page/Page" "searchButtonLabel"}}</button>
+                </form>
+            {{/if}}
+        </header>
+        {{#with banner}}
+            <div class="ImagePage-banner">{{~this~}}</div>
+        {{/with}}
+        {{#with sectionNavigation}}
+            <div class="ImagePage-sectionNavigation">{{this}}</div>
+        {{/with}}
+        {{#with packageNavigation}}
+            <div class="ImagePage-packageNavigation">{{this}}</div>
+        {{/with}}
+        {{#with above}}
+            <div class="ImagePage-above">{{this}}</div>
+        {{/with}}
+        <main class="ImagePage-main">
+            {{#with breadcrumbs}}
+                <div class="ImagePage-breadcrumbs">{{this}}</div>
+            {{/with}}
+            <div class="ImagePage-mainContent" itemprop="mainEntity" itemscope itemtype="http://schema.org/ImageObject">
+                {{#with headline}}
+                    <h1 class="ImagePage-headline" itemprop="headline">{{this}}</h1>
+                {{/with}}
+                {{#with subHeadline}}
+                    <div class="ImagePage-subHeadline" itemprop="alternativeHeadline">{{this}}</div>
+                {{/with}}
+                <div class="ImagePage-byline" itemprop="author" itemscope itemtype="http://schema.org/Person">
+                    {{#with authorImage}}
+                        <div class="ImagePage-authorImage" itemprop="image">
+                            {{#with ../authorUrl}}<a href="{{this}}">{{/with}}
+                            <img alt="" src="{{src}}"
+                            {{~#with srcset}} srcset="{{this}}"{{/with~}}
+                            {{~#with width}} width="{{this}}"{{/with~}}
+                            {{~#with height}} height="{{this}}"{{/with~}}
+                        >
+                        {{#with ../authorUrl}}</a>{{/with}}
+                    </div>
+                {{/with}}
+                <div class="ImagePage-authorTexts">
+                    {{#with authorName}}
+                        <div class="ImagePage-authorName" itemprop="name">
+                            {{#with ../authorUrl}}<a href="{{this}}">{{/with}}
+                            {{this}}
+                            {{#with ../authorUrl}}</a>{{/with}}
                         </div>
-                    {{/element}}
-                    {{element "collections"}}
-                    {{#element "credit"}}
-                        <div class="{{elementName}}">
-                            <h4 class="{{elementName}}-heading">{{format "creditHeading"}}</h4>
-                            <div class="{{elementName}}-body">{{this}}</div>
+                    {{/with}}
+                    {{#with authorBiography}}
+                        <div class="ImagePage-authorBiography">{{this}}</div>
+                    {{/with}}
+                </div>
+            </div>
+            {{#with contributors}}
+                <div class="ImagePage-contributors">
+                    <h2 class="ImagePage-contributors-heading">{{format "/core/page/CreativeWorkPage" "contributorsHeading"}}</h2>
+                    <div class="ImagePage-contributors-body">
+                        {{~#each this~}}
+                            {{~this~}}
+                            {{~#unless @last}}, {{/unless~}}
+                        {{~/each~}}
+                    </div>
+                </div>
+            {{/with}}
+            {{#with dateExpired}}
+                <div class="ImagePage-dateExpired">{{dateExpired}}</div>
+                {{#with dateExpiredISO}}
+                    <meta itemprop="expires" content="{{this}}">
+                {{/with}}
+            {{/with}}
+            <div class="ImagePage-datePublished">{{datePublished}}</div>
+            {{#with datePublishedISO}}
+                <meta itemprop="datePublished" content="{{this}}">
+            {{/with}}
+            <div class="ImagePage-dateModified">{{dateModified}}</div>
+            {{#with dateModifiedISO}}
+                <meta itemprop="dateModified" content="{{this}}">
+            {{/with}}
+            {{#with media}}
+                <div class="ImagePage-media">{{this}}</div>
+            {{/with}}
+            <aside class="ImagePage-mediaProperties">
+                {{#with bitrate}}
+                    <div class="ImagePage-bitrate">
+                        <h4 class="ImagePage-bitrate-heading">{{format "/core/page/MediaObjectPage" "bitrateHeading"}}</h4>
+                        <div class="ImagePage-bitrate-body" itemprop="bitrate">{{this}}</div>
+                    </div>
+                {{/with}}
+                {{#with caption}}
+                    <div class="ImagePage-caption">
+                        <h4 class="ImagePage-caption-heading">{{format "/core/image/ImagePage" "captionHeading"}}</h4>
+                        <div class="ImagePage-caption-body" itemprop="caption">{{this}}</div>
+                    </div>
+                {{/with}}
+                {{#with collections}}
+                    <div class="ImagePage-collections">
+                        <h4 class="ImagePage-collections-heading">{{format "/core/page/MediaObjectPage" "collectionsHeading"}}</h4>
+                        <div class="ImagePage-collections-body">
+                            {{~#each this~}}
+                                {{~this~}}
+                                {{~#unless @last}}, {{/unless~}}
+                            {{~/each~}}
                         </div>
-                    {{/element}}
-                    {{element "dimensions"}}
-                    {{element "fileFormat"}}
-                    {{element "fileSize"}}
-                    {{element "fileUrl"}}
-                    {{element "embedUrl"}}
-                    {{element "source"}}
-
-                    {{#element "colors"}}
-                        <div class="{{elementName}}">
-                            <h4 class="{{elementName}}-heading">{{format "colorsHeading"}}</h4>
-                            <ul class="{{elementName}}-body">
-                                {{#each this}}
-                                    <li class="{{elementName}}-item">
-                                        <span class="{{elementName}}-item-swatch" style="background-color: {{this}}"></span>
-                                        <span class="{{elementName}}-item-label">{{this}}</span>
-                                    </li>
-                                {{/each}}
-                            </ul>
-                        </div>
-                    {{/element}}
-                </aside>
-            {{/element}}
+                    </div>
+                {{/with}}
+                {{#with credit}}
+                    <div class="ImagePage-credit">
+                        <h4 class="ImagePage-credit-heading">{{format "/core/image/ImagePage" "creditHeading"}}</h4>
+                        <div class="ImagePage-credit-body">{{this}}</div>
+                    </div>
+                {{/with}}
+                <div class="ImagePage-dimensions">
+                    <h4 class="ImagePage-dimensions-heading">{{format "/core/page/MediaObjectPage" "dimensionsHeading"}}</h4>
+                    <div class="ImagePage-dimensions-body">
+                        {{~#with width}}
+                            <span class="ImagePage-width-width" itemprop="width">{{this}}</span>
+                        {{/with~}}
+                        x
+                        {{~#with height}}
+                            <span class="ImagePage-height-height" itemprop="height">{{this}}</span>
+                        {{/with~}}
+                    </div>
+                </div>
+                {{#with fileFormat}}
+                    <div class="ImagePage-fileFormat">
+                        <h4 class="ImagePage-fileFormat-heading">{{format "/core/page/MediaObjectPage" "fileformatHeading"}}</h4>
+                        <div class="ImagePage-fileFormat-body" itemprop="encodingFormat">{{this}}</div>
+                    </div>
+                {{/with}}
+                {{#with fileSize}}
+                    <div class="ImagePage-fileSize">
+                        <h4 class="ImagePage-fileSize-heading">{{format "/core/page/MediaObjectPage" "fileSizeHeading"}}</h4>
+                        <div class="ImagePage-fileSize-body" itemprop="contentSize">{{this}}</div>
+                    </div>
+                {{/with}}
+                {{#with fileUrl}}
+                    <div class="ImagePage-fileUrl">
+                        <h4 class="ImagePage-fileUrl-heading">{{format "/core/page/MediaObjectPage" "fileUrlHeading"}}</h4>
+                        <div class="ImagePage-fileUrl-body" itemprop="contentUrl">{{this}}</div>
+                    </div>
+                {{/with}}
+                {{#with embedUrl}}
+                    <div class="ImagePage-embedUrl">
+                        <h4 class="ImagePage-embedUrl-heading">{{format "/core/page/MediaObjectPage" "embedUrlHeading"}}</h4>
+                        <div class="ImagePage-embedUrl-body" itemprop="embedUrl">{{this}}</div>
+                    </div>
+                {{/with}}
+                {{#with source}}
+                    <div class="ImagePage-source">
+                        <h4 class="ImagePage-source-heading">{{format "/core/page/CreativeWorkPage" "sourceHeading"}}</h4>
+                        <div class="ImagePage-source-body" itemprop="sourceOrganization">{{this}}</div>
+                    </div>
+                {{/with}}
+                {{#with colors}}
+                    <div class="ImagePage-colors">
+                        <h4 class="ImagePage-colors-heading">{{format "/core/image/ImagePage" "colorsHeading"}}</h4>
+                        <ul class="ImagePage-colors-body">
+                            {{#each this}}
+                                <li class="ImagePage-colors-item">
+                                    <span class="ImagePage-colors-item-swatch" style="background-color: {{this}}"></span>
+                                    <span class="ImagePage-colors-item-label">{{this}}</span>
+                                </li>
+                            {{/each}}
+                        </ul>
+                    </div>
+                {{/with}}
+            </aside>
         </div>
-    {{/element}}
-{{/block}}
+        {{#with tags}}
+            <div class="ImagePage-tags">
+                <h2 class="ImagePage-tags-heading">{{format "/core/page/ContentPage" "tagsHeading"}}</h2>
+                <div class="ImagePage-tags-body">{{this}}</div>
+            </div>
+        {{/with}}
+        {{#with countries}}
+            <div class="ImagePage-countries">
+                <h2 class="ImagePage-countries-heading">{{format "/core/page/ContentPage" "countriesHeading"}}</h2>
+                <div class="ImagePage-countries-body">{{this}}</div>
+            </div>
+        {{/with}}
+        {{#with brands}}
+            <div class="ImagePage-brands">
+                <h2 class="ImagePage-brands-heading">{{format "/core/page/ContentPage" "brandsHeading"}}</h2>
+                <div class="ImagePage-brands-body">{{this}}</div>
+            </div>
+        {{/with}}
+        {{#with products}}
+            <div class="ImagePage-products">
+                <h2 class="ImagePage-products-heading">{{format "/core/page/ContentPage" "productsHeading"}}</h2>
+                <div class="ImagePage-products-body">{{this}}</div>
+            </div>
+        {{/with}}
+        {{#with topics}}
+            <div class="ImagePage-topics">
+                <h2 class="ImagePage-topics-heading">{{format "/core/page/ContentPage" "topicsHeading"}}</h2>
+                <div class="ImagePage-topics-body">{{this}}</div>
+            </div>
+        {{/with}}
+        {{#with actions}}
+            <div class="ImagePage-actions">
+                <h2 class="ImagePage-actions-heading">{{format "/core/page/ContentPage" "actionsHeading"}}</h2>
+                <div class="ImagePage-actions-body">{{this}}</div>
+            </div>
+        {{/with}}
+        {{#with comments}}
+            <div class="ImagePage-comments">
+                {{this}}
+            </div>
+        {{/with}}
+    </main>
+    {{#with aside}}
+        <aside class="ImagePage-aside">{{this}}</aside>
+    {{/with}}
+    {{#with below}}
+        <div class="ImagePage-below">{{this}}</div>
+    {{/with}}
+    <footer class="ImagePage-footer" itemscope itemtype="https://schema.org/WPFooter">
+        {{#with footerLogo}}
+            <div class="ImagePage-footerLogo">{{this}}</div>
+        {{/with}}
+        {{#with footerNavigation}}
+            <div class="ImagePage-footerNavigation">{{this}}</div>
+        {{/with}}
+        {{#with footerContent}}
+            <div class="ImagePage-footerContent">{{this}}</div>
+        {{/with}}
+        {{#with social}}
+            <div class="ImagePage-social">{{this}}</div>
+        {{/with}}
+        {{#with disclaimer}}
+            <div class="ImagePage-disclaimer">{{this}}</div>
+        {{/with}}
+    </footer>
+    {{include "/core/page/Page-extraBodyItems.hbs" this}}
+</body>
+</html>

@@ -1,6 +1,8 @@
 {
-    "_include": "Promo.json",
-    "_template": "MetricsPromo.hbs",
-    "title": "NoVa",
-    "description": "Lives Impacted"
+  "_include": "Promo.json",
+  "_template": "/core/promo/Promo.hbs",
+  "title": "NoVa",
+  "description": "Lives Impacted",
+  "_styledTemplate": "/core/promo/MetricsPromo.hbs",
+  "_hidden": false
 }

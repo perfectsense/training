@@ -1,5 +1,6 @@
 {
   "_template": "SearchModule.hbs",
   "searchAction": "#",
-  "placeholder": "What are you looking for today?"
+  "placeholder": "What are you looking for today?",
+  "_hidden": false
 }

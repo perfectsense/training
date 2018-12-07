@@ -1,35 +1,25 @@
-{{#block "List"}}
-    <div class="{{blockName}}"{{extraAttributes}}>
-        {{#element "title"}}
-            <div class="{{elementName}}">{{this}}</div>
-        {{/element}}
-
-        {{#element "description"}}
-            <div class="{{elementName}}">{{this}}</div>
-        {{/element}}
-
-        {{#element "items"}}
-            <ul class="{{elementName}}">
-                {{#each this}}
-                    <li class="{{elementName}}-item">{{this}}</li>
-                {{/each}}
-            </ul>
-        {{/element}}
-
-        {{#element "cta" noWith=true}}
-            {{#if ctaUrl}}
-                <div class="{{elementName}}">
-                    {{include "../link/Link.hbs" href=ctaUrl target=ctaTarget body=(format "ctaText")}}
-                </div>
-            {{/if}}
-        {{/element}}
-
-        {{#element "pagination" noWith=true}}
-            <div class="{{elementName}}">
-                {{#each pagination}}
-                    {{this}}
-                {{/each}}
-            </div>
-        {{/element}}
+<div class="List"{{extraAttributes}}>
+    {{#with title}}
+        <div class="List-title">{{this}}</div>
+    {{/with}}
+    {{#with description}}
+        <div class="List-description">{{this}}</div>
+    {{/with}}
+    {{#with items}}
+        <ul class="List-items">
+            {{#each this}}
+                <li class="List-items-item">{{this}}</li>
+            {{/each}}
+        </ul>
+    {{/with}}
+    {{#if ctaUrl}}
+        <div class="List-cta">
+            {{include "../link/Link.hbs" href=ctaUrl target=ctaTarget body=(format "/core/list/List" "ctaText")}}
+        </div>
+    {{/if}}
+    <div class="List-pagination">
+        {{#each pagination}}
+            {{this}}
+        {{/each}}
     </div>
-{{/block}}
+</div>

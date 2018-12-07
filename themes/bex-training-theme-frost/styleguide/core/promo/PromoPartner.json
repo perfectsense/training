@@ -1,12 +1,13 @@
 {
-    "_include": "/core/promo/Promo.json",
-    "_template": "/core/promo/PromoPartner.hbs",
-
-    "media": {
-        "_template": "/core/image/Image.hbs",
-        "image": {
-            "_image": true,
-            "src": "/styleguide/media/partner-logo.png"
-        }
+  "_include": "/core/promo/Promo.json",
+  "_template": "/core/promo/Promo.hbs",
+  "media": {
+    "_template": "/core/image/Image.hbs",
+    "image": {
+      "_image": true,
+      "src": "/styleguide/media/partner-logo.png"
     }
+  },
+  "_styledTemplate": "/core/promo/PromoPartner.hbs",
+  "_hidden": false
 }

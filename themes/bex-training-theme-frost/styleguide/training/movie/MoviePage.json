@@ -1,22 +1,19 @@
 {
-  "_include": "_SourceMoviePage.json",
-
+  "_include": "_Source.bex-training.MoviePage.json",
   "name": "Avengers",
   "phase": "Phase 1",
   "releaseDate": "April 11, 2012",
-
   "cover": {
     "_include": "/core/image/Image.json"
   },
-
   "summary": {
     "_include": "/_group/RichText.json"
   },
   "plot": {
     "_include": "/_group/RichText.json"
   },
-
   "featuredCharacters": {
     "_include": "/core/list/List.json"
-  }
+  },
+  "_hidden": false
 }

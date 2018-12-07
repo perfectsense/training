@@ -1,13 +1,11 @@
-{{#block "LargeCarousel" extend="/core/list/List.hbs"}}
-<div class="{{blockName}}"{{extraAttributes}}>
-    {{#element "items"}}
-        <div class="{{elementName}}">
+<div class="LargeCarousel"{{extraAttributes}}>
+    {{#with items}}
+        <div class="LargeCarousel-items">
             {{#each this}}
-                <div class="{{elementName}}-item">
+                <div class="LargeCarousel-items-item">
                     {{render this [/core/promo/Promo.hbs]="/core/promo/PromoTextOverlay-large.hbs"}}
                 </div>
             {{/each}}
         </div>
-    {{/element}}
+    {{/with}}
 </div>
-{{/block}}

@@ -1,14 +1,16 @@
-{{#block "ProductPromo" extend="/core/promo/Promo.hbs"}}
-
-  <div class="{{blockName}}" {{#if backgroundColor}}style="--color:var(--{{backgroundColor}})"{{/if}}>
-    <div class="{{blockName}}-content">
-      {{#element "info" noWith=true}}
-          <div class="{{elementName}}">
-              {{element "title"}}
-              {{element "description"}}
-
-              {{#if url}}
-                <div class="{{blockName}}-button">
+<div class="ProductPromo" {{#if backgroundColor}}style="--color:var(--{{backgroundColor}})"{{/if}}>
+    <div class="ProductPromo-content">
+        <div class="ProductPromo-info">
+            {{#with title}}
+                <div class="ProductPromo-title">
+                    {{include "../link/Link.hbs" href=../url target=../target body=this}}
+                </div>
+            {{/with}}
+            {{#with description}}
+                <div class="ProductPromo-description">{{this}}</div>
+            {{/with}}
+            {{#if url}}
+                <div class="ProductPromo-button">
                     {{#if ../buttonText}}
                         {{include "/core/link/Link.hbs" href=../url target=../target body=../buttonText contentId=../linkId}}
                     {{else}}
@@ -16,11 +18,29 @@
                     {{/if}}
                 </div>
             {{/if}}
-          </div>
-      {{/element}}
-
-      {{element "media"}}
-    </div>
-  </div>
-
-{{/block}}
+        </div>
+        {{#with media}}
+            <div class="ProductPromo-media">
+                {{~#if ../url~}}
+                    <a class="Link" href="{{../url}}"{{#with ../target}} target="{{this}}"{{/with}}>
+                    {{~/if~}}
+                    {{~#if ../mobileMedia~}}
+                        <picture>
+                            <source width="{{this.[0].image.width}}" height="{{this.[0].image.height}}" media="(min-width: 768px)" srcset="{{this.[0].image.srcset}}">
+                            <source width="{{../mobileMedia.image.width}}" height="{{../mobileMedia.image.height}}" srcset="{{../mobileMedia.image.srcset}}">
+                            <img class="Image" src="{{this.[0].image.src}}">
+                        </picture>
+                    {{~else~}}
+                        <img class="Image" alt="{{alt}}" src="{{this.[0].image.src}}"
+                        {{~#with this.[0].image.width}} width="{{this}}"{{/with~}}
+                        {{~#with this.[0].image.height}} height="{{this}}"{{/with~}}
+                        {{~#with this.[0].image.srcset}} srcset="{{this}}"{{/with~}}
+                    >
+                {{~/if~}}
+                {{~#if ../url~}}
+                </a>
+            {{~/if~}}
+        </div>
+    {{/with}}
+</div>
+</div>

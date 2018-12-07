@@ -1,11 +1,8 @@
-{{#block "TabItem"}}
-    <div class="{{blockName}}">
-        {{#element "title"}}
-            <div class="{{elementName}}">{{this}}</div>
-        {{/element}}
-
-        {{#element "content"}}
-            <div class="{{elementName}}">{{this}}</div>
-        {{/element}}
-    </div>
-{{/block}}
+<div class="TabItem">
+    {{#with title}}
+        <div class="TabItem-title">{{this}}</div>
+    {{/with}}
+    {{#with content}}
+        <div class="TabItem-content">{{this}}</div>
+    {{/with}}
+</div>

@@ -1,19 +1,10 @@
-{{#block "SearchModule" extend="_SourceSearchModule.hbs"}}
-  <div class="{{blockName}}"
-        {{#with background}}
-         style="background-image: url('{{this.image.src}}');"
-        {{/with}}>
-
-    {{#element "search" noWith=true}}
-        {{#if searchAction}}
-            <form class="{{elementName}}" action="{{searchAction}}" novalidate="" autocomplete="off">
-                {{element "searchInput"}}
-
-                {{#element "searchButton" noWith=true}}
-                    <button type="submit" class="{{elementName}}"></button>
-                {{/element}}
-
-            </form>
-        {{/if}}
-    {{/element}}
-{{/block}}
+<div class="SearchModule"
+    {{#with background}}
+        style="background-image: url('{{this.image.src}}');"
+    {{/with}}>
+    {{#if searchAction}}
+        <form class="SearchModule-search" action="{{searchAction}}" novalidate="" autocomplete="off">
+            <input type="text" class="SearchModule-searchInput" placeholder="{{placeholder}}" name="q">
+            <button type="submit" class="SearchModule-searchButton"></button>
+        </form>
+    {{/if}}

@@ -1,29 +1,21 @@
-{{#block "Banner" extend="_SourceBanner.hbs"}}
-    <div class="{{blockName}}" {{#if backgroundColor}}style="background:{{backgroundColor}}"{{/if}}>
-        <div class="{{blockName}}-wrapper">
-            <div class="{{blockName}}-content">
-                {{#blockBody}}
-                    {{#element "title"}}
-                        <div class="{{elementName}}">{{this}}</div>
-                    {{/element}}
-
-                    {{#element "link" noWith=true}}
-                        <div class="{{elementName}}">
-                            {{#if linkHref}}
-                                <a class="{{elementName}}-link" href="{{linkHref}}">
-                                {{~linkBody~}}
-                            </a>
-                            {{else}}
-                                {{~linkBody~}}
-                            {{/if}}
-                        </div>
-                    {{/element}}
-
-                    {{#element "close" noWith=true}}
-                        <button for="{{blockName}}-toggle" class="{{elementName}}" data-toggle-trigger="banner">{{closeText}}</button>
-                    {{/element}}
-                {{/blockBody}}
-            </div>
+<div class="Banner" {{#if backgroundColor}}style="background:{{backgroundColor}}"{{/if}}>
+    <div class="Banner-wrapper">
+        <div class="Banner-content">
+            {{#blockBody}}
+                {{#with title}}
+                    <div class="Banner-title">{{this}}</div>
+                {{/with}}
+                <div class="Banner-link">
+                    {{#if linkHref}}
+                        <a class="Banner-link-link" href="{{linkHref}}">
+                            {{~linkBody~}}
+                        </a>
+                    {{else}}
+                        {{~linkBody~}}
+                    {{/if}}
+                </div>
+                <button for="Banner-toggle" class="Banner-close" data-toggle-trigger="banner">{{closeText}}</button>
+            {{/blockBody}}
         </div>
     </div>
-{{/block}}
+</div>

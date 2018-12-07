@@ -1,21 +1,24 @@
 {
-    "_template": "ListBulleted.hbs",
-    "title": "Our Team Dines together every day",
-    "description": "Menu for Week of January 2, 2018",
-    "items": [
-        {
-            "_include": "/core/promo/PromoTextItem.json",
-            "_repeat": "5"
-        },
-        {
-            "_template": "/core/promo/PromoTextItem.hbs",
-            "title": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor."
-        },
-        {
-            "_template": "/core/text/RichTextModule.hbs",
-            "items": [
-                "{{words(12)}}"
-            ]
-        }
-    ]
+  "_template": "/core/list/List.hbs",
+  "title": "Our Team Dines together every day",
+  "description": "Menu for Week of January 2, 2018",
+  "items": [
+    {
+      "_include": "/core/promo/PromoTextItem.json",
+      "_repeat": "5"
+    },
+    {
+      "_template": "/core/promo/Promo.hbs",
+      "title": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.",
+      "_styledTemplate": "/core/promo/PromoTextItem.hbs"
+    },
+    {
+      "_template": "/core/text/RichTextModule.hbs",
+      "items": [
+        "{{words(12)}}"
+      ]
+    }
+  ],
+  "_styledTemplate": "/core/list/ListBulleted.hbs",
+  "_hidden": false
 }

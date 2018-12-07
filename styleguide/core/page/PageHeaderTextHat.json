@@ -1,4 +1,5 @@
 {
-    "_template": "PageHeaderTextHat.hbs",
-    "text": "{{words}}"
+  "_template": "PageHeaderTextHat.hbs",
+  "text": "{{words}}",
+  "_hidden": false
 }

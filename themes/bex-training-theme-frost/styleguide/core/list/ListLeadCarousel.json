@@ -1,11 +1,12 @@
 {
-    "_include": "/core/list/List.json",
-    "_template": "/core/list/ListLeadCarousel.hbs",
-
-    "items": [
-        {
-            "_include": "/core/promo/PromoFullWidth.json",
-            "_repeat": 5
-        }
-    ]
+  "_include": "/core/list/List.json",
+  "_template": "/core/list/List.hbs",
+  "items": [
+    {
+      "_include": "/core/promo/PromoFullWidth.json",
+      "_repeat": 5
+    }
+  ],
+  "_styledTemplate": "/core/list/ListLeadCarousel.hbs",
+  "_hidden": false
 }

@@ -1,10 +1,6 @@
-{{#block "TumblrShareButton"}}
-    {{#element "link" noWith=true}}
-        <a class="{{blockName}}" href="https://www.tumblr.com/widgets/share/tool?
-            {{~#with url}}canonicalUrl={{this}}{{~/with~}}"
-           target="_blank"
-        >
-            {{body}}
-        </a>
-    {{/element}}
-{{/block}}
+<a class="TumblrShareButton" href="https://www.tumblr.com/widgets/share/tool?
+    {{~#with url}}canonicalUrl={{this}}{{~/with~}}"
+    target="_blank"
+>
+{{body}}
+</a>

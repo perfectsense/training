@@ -1,11 +1,7 @@
-{{#block "Row" extend="/core/container/Row.hbs"}}
-    {{#element "columns"}}
-        <div class="{{blockName}}">
-            {{#each this}}
-                {{render this
-                            [/core/container/TwoColumnContainer.hbs]="/core/container/ContainerLeadHeroTwoColumn.hbs"
-                        }}
-            {{/each}}
-        </div>
-    {{/element}}
-{{/block}}
+{{#with columns}}
+    <div class="Row">
+        {{#each this}}
+            {{render this [/core/container/TwoColumnContainer.hbs]="/core/container/ContainerLeadHeroTwoColumn.hbs"}}
+        {{/each}}
+    </div>
+{{/with}}

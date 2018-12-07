@@ -1,13 +1,11 @@
-{{#block "ListLeadCarousel" extend="/core/list/List.hbs"}}
-    <div class="{{blockName}}"{{extraAttributes}}>
-        {{#element "items"}}
-            <div class="{{elementName}}">
-                {{#each this}}
-                    <div class="{{elementName}}-item">
-                        {{render this [/core/promo/Promo.hbs]="/core/promo/PromoFullWidth.hbs"}}
-                    </div>
-                {{/each}}
-            </div>
-        {{/element}}
-    </div>
-{{/block}}
+<div class="ListLeadCarousel"{{extraAttributes}}>
+    {{#with items}}
+        <div class="ListLeadCarousel-items">
+            {{#each this}}
+                <div class="ListLeadCarousel-items-item">
+                    {{render this [/core/promo/Promo.hbs]="/core/promo/PromoFullWidth.hbs"}}
+                </div>
+            {{/each}}
+        </div>
+    {{/with}}
+</div>

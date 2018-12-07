@@ -1,5 +1,5 @@
 [
   {
-      "_include": "/core/quote/Quote.json"
+    "_include": "/core/quote/Quote.json"
   }
 ]

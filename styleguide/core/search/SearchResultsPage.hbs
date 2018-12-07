@@ -1,100 +1,129 @@
-{{#block "SearchResultsPage" override="../page/Page.hbs" }}
-    {{#element "main" noWith=true}}
-        <section class="{{blockName}}">
-            {{#element "form" noWith=true}}
-                <form class="{{elementName}}">
-                    {{#element "formInput" noWith=true}}
-                        <input type="text" class="{{elementName}}" name="q" value="{{query}}">
-                    {{/element}}
-
-                    {{#element "formButton" noWith=true}}
-                        <button type="submit" class="{{elementName}}">{{format "submitButtonLabel"}}</button>
-                    {{/element}}
+<!DOCTYPE html>
+<html class="SearchResultsPage" lang="{{#with language}}{{this}}{{else}}en{{/with}}" itemscope itemtype="http://schema.org/WebPage">
+    {{include "/core/page/Page-head.hbs" this}}
+    <body class="SearchResultsPage-body"{{~#each extraBodyAttributes}} {{this}}{{~/each~}}>
+        <header class="SearchResultsPage-header" itemscope itemtype="http://schema.org/WPHeader">
+            {{#with hat}}
+                <div class="SearchResultsPage-hat">{{this}}</div>
+            {{/with}}
+            {{#with logo}}
+                <div class="SearchResultsPage-logo">{{this}}</div>
+            {{/with}}
+            {{#with navigation}}
+                <div class="SearchResultsPage-navigation">{{this}}</div>
+            {{/with}}
+            {{#with social}}
+                <div class="SearchResultsPage-social">{{this}}</div>
+            {{/with}}
+            {{#if searchAction}}
+                <form class="SearchResultsPage-search" action="{{searchAction}}" novalidate="" autocomplete="off">
+                    <input type="text" class="SearchResultsPage-searchInput" name="q">
+                    <button type="submit" class="SearchResultsPage-searchButton">{{format "/core/page/Page" "searchButtonLabel"}}</button>
                 </form>
-            {{/element}}
-
+            {{/if}}
+        </header>
+        {{#with banner}}
+            <div class="SearchResultsPage-banner">{{~this~}}</div>
+        {{/with}}
+        {{#with sectionNavigation}}
+            <div class="SearchResultsPage-sectionNavigation">{{this}}</div>
+        {{/with}}
+        {{#with packageNavigation}}
+            <div class="SearchResultsPage-packageNavigation">{{this}}</div>
+        {{/with}}
+        {{#with above}}
+            <div class="SearchResultsPage-above">{{this}}</div>
+        {{/with}}
+        <section class="SearchResultsPage">
+            <form class="SearchResultsPage-form">
+                <input type="text" class="SearchResultsPage-formInput" name="q" value="{{query}}">
+                <button type="submit" class="SearchResultsPage-formButton">{{format "/core/search/SearchResultsPage" "submitButtonLabel"}}</button>
+            </form>
             {{#if results}}
-                {{#element "filters"}}
-                    <div class="{{elementName}}">{{this}}</div>
-                {{/element}}
-
-                {{#element "found" noWith=true}}
-                    <div class="{{elementName}}" data-view="{{view}}">
-                        {{#element "count" noWith=true}}
-                            {{#if query}}
-                                <div class="{{elementName}}">found count - {{{format "foundCountText" resultsCount=count searchQuery=query}}}</div>
-                            {{else}}
-                                <div class="{{elementName}}">{{{format "noQueryFoundCountText" resultsCount=count}}}</div>
-                            {{/if}}
-                        {{/element}}
-
-                        {{#element "views" noWith=true}}
-                            <ul class="{{elementName}}">
-                                <li class="{{elementName}}-list"><a href="{{viewUrl}}">{{format "listViewText"}}</a></li>
-                                <li class="{{elementName}}-grid"><a href="{{viewUrl}}grid">{{format "gridViewText"}}</a></li>
-                            </ul>
-                        {{/element}}
-
-                        {{#element "sorts"}}
-                            <ul class="{{elementName}}">
-                                {{#each this}}
-                                    <li>{{this}}</li>
-                                {{/each}}
-                            </ul>
-                        {{/element}}
-
-                        {{#element "actions"}}
-                            <div class="{{elementName}}">
-                                {{this}}
-                            </div>
-                        {{/element}}
-
-                        {{#element "spotlights"}}
-                            <ul class="{{elementName}}">
-                                {{#each this}}
-                                    <li>
-                                        {{this}}
-                                    </li>
-                                {{/each}}
-                            </ul>
-                        {{/element}}
-
-                        {{#element "results"}}
-                            <ul class="{{elementName}}">
-                                {{#each this}}
-                                    <li>
-                                        {{this}}
-                                    </li>
-                                {{/each}}
-                            </ul>
-                        {{/element}}
-
-                        {{#element "pagination" noWith=true}}
-                            <ul class="{{elementName}}">
-                                {{#element "previousPage"}}
-                                    <li class="{{elementName}}"><a href="{{this}}" rel="prev">{{format "previousText"}}</a></li>
-                                {{/element}}
-
-                                {{#element "pageCounts" noWith=true}}
-                                    <li class="{{elementName}}">{{format "pageCounts" number=pageNumber count=pageCount}}</li>
-                                {{/element}}
-
-                                {{#element "nextPage"}}
-                                    <li class="{{elementName}}"><a href="{{this}}" rel="next">{{format "nextText"}}</a></li>
-                                {{/element}}
-                            </ul>
-                        {{/element}}
-                    </div>
-                {{/element}}
-            {{else}}
-                {{#element "noResults" noWith=true}}
+                {{#with filters}}
+                    <div class="SearchResultsPage-filters">{{this}}</div>
+                {{/with}}
+                <div class="SearchResultsPage-found" data-view="{{view}}">
                     {{#if query}}
-                        <div class="{{elementName}}">{{{format "noResultsText" searchQuery=query}}}</div>
+                        <div class="SearchResultsPage-count">found count - {{format "/core/search/SearchResultsPage" "foundCountText" resultsCount=count searchQuery=query}}</div>
                     {{else}}
-                        <div class="{{elementName}}">{{format "noQueryText"}}</div>
+                        <div class="SearchResultsPage-count">{{format "/core/search/SearchResultsPage" "noQueryFoundCountText" resultsCount=count}}</div>
                     {{/if}}
-                {{/element}}
+                    <ul class="SearchResultsPage-views">
+                        <li class="SearchResultsPage-views-list"><a href="{{viewUrl}}">{{format "/core/search/SearchResultsPage" "listViewText"}}</a></li>
+                        <li class="SearchResultsPage-views-grid"><a href="{{viewUrl}}grid">{{format "/core/search/SearchResultsPage" "gridViewText"}}</a></li>
+                    </ul>
+                    {{#with sorts}}
+                        <ul class="SearchResultsPage-sorts">
+                            {{#each this}}
+                                <li>{{this}}</li>
+                            {{/each}}
+                        </ul>
+                    {{/with}}
+                    {{#with actions}}
+                        <div class="SearchResultsPage-actions">
+                            {{this}}
+                        </div>
+                    {{/with}}
+                    {{#with spotlights}}
+                        <ul class="SearchResultsPage-spotlights">
+                            {{#each this}}
+                                <li>
+                                    {{this}}
+                                </li>
+                            {{/each}}
+                        </ul>
+                    {{/with}}
+                    {{#with results}}
+                        <ul class="SearchResultsPage-results">
+                            {{#each this}}
+                                <li>
+                                    {{this}}
+                                </li>
+                            {{/each}}
+                        </ul>
+                    {{/with}}
+                    <ul class="SearchResultsPage-pagination">
+                        {{#with previousPage}}
+                            <li class="SearchResultsPage-previousPage"><a href="{{this}}" rel="prev">{{format "/core/search/SearchResultsPage" "previousText"}}</a></li>
+                        {{/with}}
+                        <li class="SearchResultsPage-pageCounts">{{format "/core/search/SearchResultsPage" "pageCounts" number=pageNumber count=pageCount}}</li>
+                        {{#with nextPage}}
+                            <li class="SearchResultsPage-nextPage"><a href="{{this}}" rel="next">{{format "/core/search/SearchResultsPage" "nextText"}}</a></li>
+                        {{/with}}
+                    </ul>
+                </div>
+            {{else}}
+                {{#if query}}
+                    <div class="SearchResultsPage-noResults">{{format "/core/search/SearchResultsPage" "noResultsText" searchQuery=query}}</div>
+                {{else}}
+                    <div class="SearchResultsPage-noResults">{{format "/core/search/SearchResultsPage" "noQueryText"}}</div>
+                {{/if}}
             {{/if}}
         </section>
-    {{/element}}
-{{/block}}
+        {{#with aside}}
+            <aside class="SearchResultsPage-aside">{{this}}</aside>
+        {{/with}}
+        {{#with below}}
+            <div class="SearchResultsPage-below">{{this}}</div>
+        {{/with}}
+        <footer class="SearchResultsPage-footer" itemscope itemtype="https://schema.org/WPFooter">
+            {{#with footerLogo}}
+                <div class="SearchResultsPage-footerLogo">{{this}}</div>
+            {{/with}}
+            {{#with footerNavigation}}
+                <div class="SearchResultsPage-footerNavigation">{{this}}</div>
+            {{/with}}
+            {{#with footerContent}}
+                <div class="SearchResultsPage-footerContent">{{this}}</div>
+            {{/with}}
+            {{#with social}}
+                <div class="SearchResultsPage-social">{{this}}</div>
+            {{/with}}
+            {{#with disclaimer}}
+                <div class="SearchResultsPage-disclaimer">{{this}}</div>
+            {{/with}}
+        </footer>
+        {{include "/core/page/Page-extraBodyItems.hbs" this}}
+    </body>
+</html>

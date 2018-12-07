@@ -1,0 +1,9 @@
+{
+  "_template": "/core/link/Link.hbs",
+  "href": "#",
+  "target": "_self",
+  "body": "{{words(3)}}",
+  "contentId": "a123",
+  "_styledTemplate": "/core/link/Link.hbs",
+  "_hidden": false
+}

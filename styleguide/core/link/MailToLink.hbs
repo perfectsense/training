@@ -1,10 +1,8 @@
-{{~#block "MailToLink"~}}
-    <a class="{{blockName}}" href="mailto:{{email}}?
+<a class="MailToLink" href="mailto:{{email}}?
     {{~#with cc}}cc={{this}}&{{~/with~}}
     {{~#with bcc}}bcc={{this}}&{{~/with~}}
     {{~#with subject}}subject={{this}}&{{~/with~}}
     {{~#with emailBody}}body={{this}}{{~/with~}}
     ">
-        {{~#with linkBody}}{{this}}{{~/with~}}
-    </a>
-{{~/block~}}
+    {{~#with linkBody}}{{this}}{{~/with~}}
+</a>

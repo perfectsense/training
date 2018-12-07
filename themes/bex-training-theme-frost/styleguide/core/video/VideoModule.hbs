@@ -1,13 +1,18 @@
-{{#block "VideoModule" extend="_SourceVideoModule.hbs"}}
-    <div class="{{blockName}}">
-        {{element "title"}}
-
-        <div class="{{blockName}}-body">
-            {{element "player"}}
-
-            {{element "playlist"}}
-        </div>
-
-        {{element "cta"}}
+<div class="VideoModule">
+    {{#with title}}
+        <div class="VideoModule-title">{{this}}</div>
+    {{/with}}
+    <div class="VideoModule-body">
+        {{#with player}}
+            <div class="VideoModule-player">{{this}}</div>
+        {{/with}}
+        {{#with playlist}}
+            <div class="VideoModule-playlist">{{this}}</div>
+        {{/with}}
     </div>
-{{/block}}
+    {{#if ctaUrl}}
+        <div class="VideoModule-cta">
+            {{include "../link/Link.hbs" href=ctaUrl target=ctaTarget body=(format "/core/video/VideoModule" "ctaText")}}
+        </div>
+    {{/if}}
+</div>

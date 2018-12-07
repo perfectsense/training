@@ -1,26 +1,180 @@
-{{#block "ArticlePage" override="../page/CreativeWorkPage.hbs"}}
-    {{#element "mainContent" noWith="true"}}
-        <article class="{{elementName}}" itemprop="mainEntity" itemscope itemtype="http://schema.org/Article">
-            {{element "headline"}}
-            {{element "subHeadline"}}
-            {{element "byline"}}
-            {{element "contributors"}}
-            {{element "people"}}
-            {{element "dateExpired"}}
-            {{element "datePublished"}}
-            {{element "dateModified"}}
-
-            {{#element "lead"}}
-                <div class="{{elementName}}">{{this}}</div>
-            {{/element}}
-
-            {{#element "articleBody"}}
-                <div class="{{elementName}}" itemprop="articleBody">{{this}}</div>
-            {{/element}}
-
-            {{#element "updatesCorrections"}}
-                <div class="{{elementName}}" itemprop="articleBody">{{this}}</div>
-            {{/element}}
+<!DOCTYPE html>
+<html class="ArticlePage" lang="{{#with language}}{{this}}{{else}}en{{/with}}" itemscope itemtype="http://schema.org/WebPage">
+    {{include "/core/page/Page-head.hbs" this}}
+    <body class="ArticlePage-body"{{~#each extraBodyAttributes}} {{this}}{{~/each~}}>
+        <header class="ArticlePage-header" itemscope itemtype="http://schema.org/WPHeader">
+            {{#with hat}}
+                <div class="ArticlePage-hat">{{this}}</div>
+            {{/with}}
+            {{#with logo}}
+                <div class="ArticlePage-logo">{{this}}</div>
+            {{/with}}
+            {{#with navigation}}
+                <div class="ArticlePage-navigation">{{this}}</div>
+            {{/with}}
+            {{#with social}}
+                <div class="ArticlePage-social">{{this}}</div>
+            {{/with}}
+            {{#if searchAction}}
+                <form class="ArticlePage-search" action="{{searchAction}}" novalidate="" autocomplete="off">
+                    <input type="text" class="ArticlePage-searchInput" name="q">
+                    <button type="submit" class="ArticlePage-searchButton">{{format "/core/page/Page" "searchButtonLabel"}}</button>
+                </form>
+            {{/if}}
+        </header>
+        {{#with banner}}
+            <div class="ArticlePage-banner">{{~this~}}</div>
+        {{/with}}
+        {{#with sectionNavigation}}
+            <div class="ArticlePage-sectionNavigation">{{this}}</div>
+        {{/with}}
+        {{#with packageNavigation}}
+            <div class="ArticlePage-packageNavigation">{{this}}</div>
+        {{/with}}
+        {{#with above}}
+            <div class="ArticlePage-above">{{this}}</div>
+        {{/with}}
+        <main class="ArticlePage-main">
+            {{#with breadcrumbs}}
+                <div class="ArticlePage-breadcrumbs">{{this}}</div>
+            {{/with}}
+            <article class="ArticlePage-mainContent" itemprop="mainEntity" itemscope itemtype="http://schema.org/Article">
+                {{#with headline}}
+                    <h1 class="ArticlePage-headline" itemprop="headline">{{this}}</h1>
+                {{/with}}
+                {{#with subHeadline}}
+                    <div class="ArticlePage-subHeadline" itemprop="alternativeHeadline">{{this}}</div>
+                {{/with}}
+                <div class="ArticlePage-byline" itemprop="author" itemscope itemtype="http://schema.org/Person">
+                    {{#with authorImage}}
+                        <div class="ArticlePage-authorImage" itemprop="image">
+                            {{#with ../authorUrl}}<a href="{{this}}">{{/with}}
+                            <img alt="" src="{{src}}"
+                            {{~#with srcset}} srcset="{{this}}"{{/with~}}
+                            {{~#with width}} width="{{this}}"{{/with~}}
+                            {{~#with height}} height="{{this}}"{{/with~}}
+                        >
+                        {{#with ../authorUrl}}</a>{{/with}}
+                    </div>
+                {{/with}}
+                <div class="ArticlePage-authorTexts">
+                    {{#with authorName}}
+                        <div class="ArticlePage-authorName" itemprop="name">
+                            {{#with ../authorUrl}}<a href="{{this}}">{{/with}}
+                            {{this}}
+                            {{#with ../authorUrl}}</a>{{/with}}
+                        </div>
+                    {{/with}}
+                    {{#with authorBiography}}
+                        <div class="ArticlePage-authorBiography">{{this}}</div>
+                    {{/with}}
+                </div>
+            </div>
+            {{#with contributors}}
+                <div class="ArticlePage-contributors">
+                    <h2 class="ArticlePage-contributors-heading">{{format "/core/page/CreativeWorkPage" "contributorsHeading"}}</h2>
+                    <div class="ArticlePage-contributors-body">
+                        {{~#each this~}}
+                            {{~this~}}
+                            {{~#unless @last}}, {{/unless~}}
+                        {{~/each~}}
+                    </div>
+                </div>
+            {{/with}}
+            {{#with people}}
+                {{#each this}}
+                    {{this}}
+                {{/each}}
+            {{/with}}
+            {{#with dateExpired}}
+                <div class="ArticlePage-dateExpired">{{dateExpired}}</div>
+                {{#with dateExpiredISO}}
+                    <meta itemprop="expires" content="{{this}}">
+                {{/with}}
+            {{/with}}
+            <div class="ArticlePage-datePublished">{{datePublished}}</div>
+            {{#with datePublishedISO}}
+                <meta itemprop="datePublished" content="{{this}}">
+            {{/with}}
+            <div class="ArticlePage-dateModified">{{dateModified}}</div>
+            {{#with dateModifiedISO}}
+                <meta itemprop="dateModified" content="{{this}}">
+            {{/with}}
+            {{#with lead}}
+                <div class="ArticlePage-lead">{{this}}</div>
+            {{/with}}
+            {{#with articleBody}}
+                <div class="ArticlePage-articleBody" itemprop="articleBody">{{this}}</div>
+            {{/with}}
+            {{#with updatesCorrections}}
+                <div class="ArticlePage-updatesCorrections" itemprop="articleBody">{{this}}</div>
+            {{/with}}
         </article>
-    {{/element}}
-{{/block}}
+        {{#with tags}}
+            <div class="ArticlePage-tags">
+                <h2 class="ArticlePage-tags-heading">{{format "/core/page/ContentPage" "tagsHeading"}}</h2>
+                <div class="ArticlePage-tags-body">{{this}}</div>
+            </div>
+        {{/with}}
+        {{#with countries}}
+            <div class="ArticlePage-countries">
+                <h2 class="ArticlePage-countries-heading">{{format "/core/page/ContentPage" "countriesHeading"}}</h2>
+                <div class="ArticlePage-countries-body">{{this}}</div>
+            </div>
+        {{/with}}
+        {{#with brands}}
+            <div class="ArticlePage-brands">
+                <h2 class="ArticlePage-brands-heading">{{format "/core/page/ContentPage" "brandsHeading"}}</h2>
+                <div class="ArticlePage-brands-body">{{this}}</div>
+            </div>
+        {{/with}}
+        {{#with products}}
+            <div class="ArticlePage-products">
+                <h2 class="ArticlePage-products-heading">{{format "/core/page/ContentPage" "productsHeading"}}</h2>
+                <div class="ArticlePage-products-body">{{this}}</div>
+            </div>
+        {{/with}}
+        {{#with topics}}
+            <div class="ArticlePage-topics">
+                <h2 class="ArticlePage-topics-heading">{{format "/core/page/ContentPage" "topicsHeading"}}</h2>
+                <div class="ArticlePage-topics-body">{{this}}</div>
+            </div>
+        {{/with}}
+        {{#with actions}}
+            <div class="ArticlePage-actions">
+                <h2 class="ArticlePage-actions-heading">{{format "/core/page/ContentPage" "actionsHeading"}}</h2>
+                <div class="ArticlePage-actions-body">{{this}}</div>
+            </div>
+        {{/with}}
+        {{#with comments}}
+            <div class="ArticlePage-comments">
+                {{this}}
+            </div>
+        {{/with}}
+    </main>
+    {{#with aside}}
+        <aside class="ArticlePage-aside">{{this}}</aside>
+    {{/with}}
+    {{#with below}}
+        <div class="ArticlePage-below">{{this}}</div>
+    {{/with}}
+    <footer class="ArticlePage-footer" itemscope itemtype="https://schema.org/WPFooter">
+        {{#with footerLogo}}
+            <div class="ArticlePage-footerLogo">{{this}}</div>
+        {{/with}}
+        {{#with footerNavigation}}
+            <div class="ArticlePage-footerNavigation">{{this}}</div>
+        {{/with}}
+        {{#with footerContent}}
+            <div class="ArticlePage-footerContent">{{this}}</div>
+        {{/with}}
+        {{#with social}}
+            <div class="ArticlePage-social">{{this}}</div>
+        {{/with}}
+        {{#with disclaimer}}
+            <div class="ArticlePage-disclaimer">{{this}}</div>
+        {{/with}}
+    </footer>
+    {{include "/core/page/Page-extraBodyItems.hbs" this}}
+</body>
+</html>

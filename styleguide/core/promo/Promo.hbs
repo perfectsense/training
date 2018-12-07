@@ -1,75 +1,57 @@
-{{#block "Promo"}}
-    <div class="{{blockName}}"{{extraAttributes}}>
-        {{#element "media"}}
-            <div class="{{elementName}}">
-                {{include "../link/Link.hbs" href=../url target=../target body=this}}
+<div class="Promo"{{extraAttributes}}>
+    {{#with media}}
+        <div class="Promo-media">
+            {{include "../link/Link.hbs" href=../url target=../target body=this}}
+        </div>
+    {{/with}}
+    {{#with category}}
+        <div class="Promo-category">
+            {{include "../link/Link.hbs" href=../categoryUrl target=../target body=this}}
+        </div>
+    {{/with}}
+    {{#with type}}
+        <div class="Promo-type">{{this}}</div>
+    {{/with}}
+    {{#with duration}}
+        <div class="Promo-duration">{{this}}</div>
+    {{/with}}
+    {{#with date}}
+        <div class="Promo-date">{{this}}</div>
+    {{/with}}
+    {{#with title}}
+        <div class="Promo-title">
+            {{include "../link/Link.hbs" href=../url target=../target body=this}}
+        </div>
+    {{/with}}
+    {{#with description}}
+        <div class="Promo-description">{{this}}</div>
+    {{/with}}
+    {{#with status}}
+        <div class="Promo-status">{{this}}</div>
+    {{/with}}
+    <div class="Promo-author">
+        {{#with authorImage}}
+            <div class="Promo-authorImage">
+                {{include "../link/Link.hbs" href=../authorUrl target=../target body=this}}
             </div>
-        {{/element}}
-
-        {{#element "info" noWith=true}}
-            {{#element "category"}}
-                <div class="{{elementName}}">
-                    {{include "../link/Link.hbs" href=../categoryUrl target=../target body=this}}
-                </div>
-            {{/element}}
-
-            {{#element "type"}}
-                <div class="{{elementName}}">{{this}}</div>
-            {{/element}}
-
-            {{#element "duration"}}
-                <div class="{{elementName}}">{{this}}</div>
-            {{/element}}
-
-            {{#element "date"}}
-                <div class="{{elementName}}">{{this}}</div>
-            {{/element}}
-
-            {{#element "title"}}
-                <div class="{{elementName}}">
-                    {{include "../link/Link.hbs" href=../url target=../target body=this}}
-                </div>
-            {{/element}}
-
-            {{#element "description"}}
-                <div class="{{elementName}}">{{this}}</div>
-            {{/element}}
-
-            {{#element "status"}}
-                <div class="{{elementName}}">{{this}}</div>
-            {{/element}}
-
-            {{#element "author" noWith=true}}
-                <div class="{{elementName}}">
-                    {{#element "authorImage"}}
-                        <div class="{{elementName}}">
-                            {{include "../link/Link.hbs" href=../authorUrl target=../target body=this}}
-                        </div>
-                    {{/element}}
-
-                    {{#element "authorName"}}
-                        <div class="{{elementName}}">
-                            {{include "../link/Link.hbs" href=../authorUrl target=../target body=this}}
-                        </div>
-                    {{/element}}
-                </div>
-            {{/element}}
-
-            {{#element "button"}}
-                <div class="{{elementName}}">
-                    {{include "../link/Link.hbs" href=../url target=../target body=this}}
-                </div>
-            {{/element}}
-
-            {{#element "actions"}}
-                <div class="{{elementName}}">
-                    {{this}}
-                </div>
-            {{/element}}
-
-            {{#element "social"}}
-                <div class="{{elementName}}">{{this}}</div>
-            {{/element}}
-        {{/element}}
+        {{/with}}
+        {{#with authorName}}
+            <div class="Promo-authorName">
+                {{include "../link/Link.hbs" href=../authorUrl target=../target body=this}}
+            </div>
+        {{/with}}
     </div>
-{{/block}}
+    {{#with button}}
+        <div class="Promo-button">
+            {{include "../link/Link.hbs" href=../url target=../target body=this}}
+        </div>
+    {{/with}}
+    {{#with actions}}
+        <div class="Promo-actions">
+            {{this}}
+        </div>
+    {{/with}}
+    {{#with social}}
+        <div class="Promo-social">{{this}}</div>
+    {{/with}}
+</div>

@@ -1,12 +1,14 @@
 {
-    "_template": "ListDescriptionColumn.hbs",
-    "title": "Subhead Lorem Ipsum Dolor Sit Amet",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In at gravida risus. Fusce convallis lorem id justo hendrerit lacinia. Aliquam erat volutpat. Donec nec risus viverra, lacinia magna molestie, congue tellus. Nullam egestas ipsum in dui sagittis, at ultrices erat convallis. Morbi rhoncus",
-    "items": [
-      {
-        "_include": "/core/promo/PromoImageOnTop.json",
-        "_repeat": 4
-      }
+  "_template": "/core/list/List.hbs",
+  "title": "Subhead Lorem Ipsum Dolor Sit Amet",
+  "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In at gravida risus. Fusce convallis lorem id justo hendrerit lacinia. Aliquam erat volutpat. Donec nec risus viverra, lacinia magna molestie, congue tellus. Nullam egestas ipsum in dui sagittis, at ultrices erat convallis. Morbi rhoncus",
+  "items": [
+    {
+      "_include": "/core/promo/PromoImageOnTop.json",
+      "_repeat": 4
+    }
   ],
-  "leftAlignTitle": true
+  "leftAlignTitle": true,
+  "_styledTemplate": "/core/list/ListDescriptionColumn.hbs",
+  "_hidden": false
 }

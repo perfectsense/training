@@ -1,13 +1,24 @@
-{{#block "TwoByOne" override="/core/container/Container.hbs"}}
-    {{#element "rows"}}
-        <ul class="{{elementName}}">
-          {{#each this}}
-              <li class="{{elementName}}-item">
-                  {{render this
-                      [/core/container/Row.hbs]="/core/container/TwoByOneRowElement.hbs"
-                  }}
-              </li>
-          {{/each}}
+<div class="TwoByOne"
+    {{#if backgroundColor}}style="--color:var(--{{backgroundColor}})"{{/if}}
+    {{#if verticalAlignment}}data-vertical-align="{{verticalAlignment}}"{{/if}}
+    {{#if noTopPadding}}data-nopaddingtop{{/if}}>
+    {{#with title}}
+        <div class="TwoByOne-title">
+            {{this}}
+        </div>
+    {{/with}}
+    {{#with description}}
+        <div class="TwoByOne-description">
+            {{this}}
+        </div>
+    {{/with}}
+    {{#with rows}}
+        <ul class="TwoByOne-rows">
+            {{#each this}}
+                <li class="TwoByOne-rows-item">
+                    {{render this [/core/container/Row.hbs]="/core/container/TwoByOneRowElement.hbs"}}
+                </li>
+            {{/each}}
         </ul>
-    {{/element}}
-{{/block}}
+    {{/with}}
+</div>

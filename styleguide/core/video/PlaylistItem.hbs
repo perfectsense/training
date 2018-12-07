@@ -1,80 +1,61 @@
-{{#block "PlaylistItem"}}
-    <div class="{{blockName}}"{{extraAttributes}}>
-        {{#element "media"}}
-            <div class="{{elementName}}">
-                {{include "../link/Link.hbs" href=../url target=../target body=this}}
+<div class="PlaylistItem"{{extraAttributes}}>
+    {{#with media}}
+        <div class="PlaylistItem-media">
+            {{include "../link/Link.hbs" href=../url target=../target body=this}}
+        </div>
+    {{/with}}
+    {{#with category}}
+        <div class="PlaylistItem-category">
+            {{include "../link/Link.hbs" href=../categoryUrl target=../target body=this}}
+        </div>
+    {{/with}}
+    {{#with type}}
+        <div class="PlaylistItem-type">{{this}}</div>
+    {{/with}}
+    {{#with duration}}
+        <div class="PlaylistItem-duration">{{this}}</div>
+    {{/with}}
+    {{#with date}}
+        <div class="PlaylistItem-date">{{this}}</div>
+    {{/with}}
+    {{#with title}}
+        <div class="PlaylistItem-title">
+            {{include "../link/Link.hbs" href=../url target=../target body=this}}
+        </div>
+    {{/with}}
+    {{#with description}}
+        <div class="PlaylistItem-description">{{this}}</div>
+    {{/with}}
+    {{#with companions}}
+        <h4 class="PlaylistItem-companions-heading">Companion Content</h4>
+        <div class="PlaylistItem-companions">{{this}}</div>
+    {{/with}}
+    {{#with status}}
+        <div class="PlaylistItem-status">{{this}}</div>
+    {{/with}}
+    <div class="PlaylistItem-author">
+        {{#with authorImage}}
+            <div class="PlaylistItem-authorImage">
+                {{include "../link/Link.hbs" href=../authorUrl target=../target body=this}}
             </div>
-        {{/element}}
-
-        {{#element "info" noWith=true}}
-            {{#element "category"}}
-                <div class="{{elementName}}">
-                    {{include "../link/Link.hbs" href=../categoryUrl target=../target body=this}}
-                </div>
-            {{/element}}
-
-            {{#element "type"}}
-                <div class="{{elementName}}">{{this}}</div>
-            {{/element}}
-
-            {{#element "duration"}}
-                <div class="{{elementName}}">{{this}}</div>
-            {{/element}}
-
-            {{#element "date"}}
-                <div class="{{elementName}}">{{this}}</div>
-            {{/element}}
-
-            {{#element "title"}}
-                <div class="{{elementName}}">
-                    {{include "../link/Link.hbs" href=../url target=../target body=this}}
-                </div>
-            {{/element}}
-
-            {{#element "description"}}
-                <div class="{{elementName}}">{{this}}</div>
-            {{/element}}
-
-            {{#element "companions"}}
-                <h4 class="{{elementName}}-heading">Companion Content</h4>
-                <div class="{{elementName}}">{{this}}</div>
-            {{/element}}
-
-            {{#element "status"}}
-                <div class="{{elementName}}">{{this}}</div>
-            {{/element}}
-
-            {{#element "author" noWith=true}}
-                <div class="{{elementName}}">
-                    {{#element "authorImage"}}
-                        <div class="{{elementName}}">
-                            {{include "../link/Link.hbs" href=../authorUrl target=../target body=this}}
-                        </div>
-                    {{/element}}
-
-                    {{#element "authorName"}}
-                        <div class="{{elementName}}">
-                            {{include "../link/Link.hbs" href=../authorUrl target=../target body=this}}
-                        </div>
-                    {{/element}}
-                </div>
-            {{/element}}
-
-            {{#element "button"}}
-                <div class="{{elementName}}">
-                    {{include "../link/Link.hbs" href=../url target=../target body=this}}
-                </div>
-            {{/element}}
-
-            {{#element "actions"}}
-                <div class="{{elementName}}">
-                    {{this}}
-                </div>
-            {{/element}}
-
-            {{#element "social"}}
-                <div class="{{elementName}}">{{this}}</div>
-            {{/element}}
-        {{/element}}
+        {{/with}}
+        {{#with authorName}}
+            <div class="PlaylistItem-authorName">
+                {{include "../link/Link.hbs" href=../authorUrl target=../target body=this}}
+            </div>
+        {{/with}}
     </div>
-{{/block}}
+    {{#with button}}
+        <div class="PlaylistItem-button">
+            {{include "../link/Link.hbs" href=../url target=../target body=this}}
+        </div>
+    {{/with}}
+    {{#with actions}}
+        <div class="PlaylistItem-actions">
+            {{this}}
+        </div>
+    {{/with}}
+    {{#with social}}
+        <div class="PlaylistItem-social">{{this}}</div>
+    {{/with}}
+</div>

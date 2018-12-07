@@ -1,25 +1,24 @@
 {
-    "_template": "/core/navigation/NavigationItem.hbs",
-    "_hidden": true,
-
-    "text": "{{words(1)}}",
-    "href": "{{var('exampleSiteUrl')}}",
-    "target": "_self",
-    "displaySubNavigationHorizontally": true,
-    "items": [
-        {
-            "_template": "/core/social/SocialLink.hbs",
-            "href": "",
-            "body": "Facebook",
-            "socialService": "facebook"
-        },
-        {
-            "_template": "/core/social/SocialLink.hbs",
-            "href": "",
-            "body": "Twitter",
-            "socialService": "twitter"
-        }
-    ],
-    "contentId": "a123",
-    "iconUrl": "http://example.com/url/to/icon"
+  "_template": "/core/navigation/NavigationItem.hbs",
+  "_hidden": true,
+  "text": "{{words(1)}}",
+  "href": "{{var('exampleSiteUrl')}}",
+  "target": "_self",
+  "displaySubNavigationHorizontally": true,
+  "items": [
+    {
+      "_template": "/core/social/SocialLink.hbs",
+      "href": "",
+      "body": "Facebook",
+      "socialService": "facebook"
+    },
+    {
+      "_template": "/core/social/SocialLink.hbs",
+      "href": "",
+      "body": "Twitter",
+      "socialService": "twitter"
+    }
+  ],
+  "contentId": "a123",
+  "iconUrl": "http://example.com/url/to/icon"
 }

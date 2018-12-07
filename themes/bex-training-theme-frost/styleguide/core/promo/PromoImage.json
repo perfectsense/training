@@ -1,18 +1,20 @@
 {
-    "_include": "Promo.json",
-    "_template": "PromoImage.hbs",
-    "mobileMedia": {
-        "_template": "/core/image/Image.hbs",
-        "image": {
-            "_image": true,
-            "src": "/styleguide/media/promo-bkgd-mobile.png"
-        }
-    },
-    "media": {
-        "_template": "/core/image/Image.hbs",
-        "image": {
-            "_image": true,
-            "src": "/styleguide/media/promo-01.png"
-        }
+  "_include": "Promo.json",
+  "_template": "/core/promo/Promo.hbs",
+  "mobileMedia": {
+    "_template": "/core/image/Image.hbs",
+    "image": {
+      "_image": true,
+      "src": "/styleguide/media/promo-bkgd-mobile.png"
     }
+  },
+  "media": {
+    "_template": "/core/image/Image.hbs",
+    "image": {
+      "_image": true,
+      "src": "/styleguide/media/promo-01.png"
+    }
+  },
+  "_styledTemplate": "/core/promo/PromoImage.hbs",
+  "_hidden": false
 }

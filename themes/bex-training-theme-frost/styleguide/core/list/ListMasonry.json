@@ -1,19 +1,21 @@
 {
-    "_template": "ListMasonry.hbs",
-    "title": "Masonry List",
-    "items": [
-        {
-            "_include": "/core/promo/PromoImageOnTop.json"
-        },
-        {
-            "_include": "ListBulleted.json"
-        },
-        {
-            "_include": "/core/promo/PromoImageOnTop.json",
-            "_repeat": 4
-        },
-        {
-            "_include": "ListBulleted.json"
-        }
-    ]
+  "_template": "/core/list/List.hbs",
+  "title": "Masonry List",
+  "items": [
+    {
+      "_include": "/core/promo/PromoImageOnTop.json"
+    },
+    {
+      "_include": "ListBulleted.json"
+    },
+    {
+      "_include": "/core/promo/PromoImageOnTop.json",
+      "_repeat": 4
+    },
+    {
+      "_include": "ListBulleted.json"
+    }
+  ],
+  "_styledTemplate": "/core/list/ListMasonry.hbs",
+  "_hidden": false
 }

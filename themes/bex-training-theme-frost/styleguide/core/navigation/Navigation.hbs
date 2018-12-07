@@ -1,21 +1,18 @@
-{{#block "Navigation" extend="_SourceNavigation.hbs"}}
-    <nav class="{{blockName}}" itemscope itemtype="http://schema.org/SiteNavigationElement"{{extraAttributes}}>
-        {{#element "label"}}
-            <div class="{{elementName}}">{{this}}</div>
-        {{/element}}
-
-        {{#element "items"}}
-            <ul class="{{elementName}}">
+<nav class="Navigation" itemscope itemtype="http://schema.org/SiteNavigationElement"{{extraAttributes}}>
+    {{#with label}}
+        <div class="Navigation-label">{{this}}</div>
+    {{/with}}
+    {{#with items}}
+        <ul class="Navigation-items">
             {{#each this}}
-            {{#if @first}}
-              <li class="{{elementName}}-item">{{this}}</li>
-            {{/if}}
-            {{#unless @first}}
-              <hr class="{{elementName}}-hr">
-            <li class="{{elementName}}-item">{{this}}</li>
-            {{/unless}}
+                {{#if @first}}
+                    <li class="Navigation-items-item">{{this}}</li>
+                {{/if}}
+                {{#unless @first}}
+                    <hr class="Navigation-items-hr">
+                    <li class="Navigation-items-item">{{this}}</li>
+                {{/unless}}
             {{/each}}
-            </ul>
-        {{/element}}
-    </nav>
-{{/block}}
+        </ul>
+    {{/with}}
+</nav>

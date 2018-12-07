@@ -1,9 +1,9 @@
 {
-    "_template": "/core/video/VideoLead.hbs",
-
-    "headline": "{{words([2,5])}}",
-    "subHeadline": "{{words([15,25])}}",
-    "player": {
-        "_include": "/youtube/YouTubeVideoPlayer.json"
-    }
+  "_template": "/core/video/VideoLead.hbs",
+  "headline": "{{words([2,5])}}",
+  "subHeadline": "{{words([15,25])}}",
+  "player": {
+    "_include": "/youtube/YouTubeVideoPlayer.json"
+  },
+  "_hidden": false
 }

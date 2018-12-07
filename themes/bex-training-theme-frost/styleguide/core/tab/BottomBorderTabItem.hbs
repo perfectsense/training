@@ -1,7 +1,5 @@
-{{#block "BottomBorderTabItem" extend="/core/tab/TabItem.hbs" }}
-    <div class="{{blockName}}">
-        {{#element "content"}}
-            <div class="{{elementName}}">{{this}}</div>
-        {{/element}}
-    </div>
-{{/block}}
+<div class="BottomBorderTabItem">
+    {{#with content}}
+        <div class="BottomBorderTabItem-content">{{this}}</div>
+    {{/with}}
+</div>

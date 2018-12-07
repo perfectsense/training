@@ -1,23 +1,19 @@
-{{#block "Container"}}
-    <div class="{{blockName}}">
-        {{#element "title"}}
-            <div class="{{elementName}}">
-                {{this}}
-            </div>
-        {{/element}}
-
-        {{#element "description"}}
-            <div class="{{elementName}}">
-                {{this}}
-            </div>
-        {{/element}}
-
-        {{#element "rows"}}
-            <ul class="{{elementName}}">
-                {{#each this}}
-                    <li class="{{elementName}}-item">{{this}}</li>
-                {{/each}}
-            </ul>
-        {{/element}}
-    </div>
-{{/block}}
+<div class="Container">
+    {{#with title}}
+        <div class="Container-title">
+            {{this}}
+        </div>
+    {{/with}}
+    {{#with description}}
+        <div class="Container-description">
+            {{this}}
+        </div>
+    {{/with}}
+    {{#with rows}}
+        <ul class="Container-rows">
+            {{#each this}}
+                <li class="Container-rows-item">{{this}}</li>
+            {{/each}}
+        </ul>
+    {{/with}}
+</div>

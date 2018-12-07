@@ -1,56 +1,112 @@
 {
-    "_include": "/core/page/Page.json",
-    "_template": "/core/search/SearchResultsPage.hbs",
-    "_hidden": false,
-
-    "pageHeading": "Search",
-
-
-    "query": "{{words(3)}}",
-    "filters": [
+  "_include": "/core/page/Page.json",
+  "_template": "/core/search/SearchResultsPage.hbs",
+  "_hidden": false,
+  "pageHeading": "Search",
+  "query": "{{words(3)}}",
+  "filters": [
+    {
+      "_template": "/core/search/SearchFilter.hbs",
+      "heading": "Type",
+      "items": [
         {
-            "_template": "/core/search/SearchFilter.hbs",
-            "heading": "Type",
-            "items": [
-                { "_template": "/core/search/SearchControl.hbs", "url": "#", "label": "All", "selected": true },
-                { "_template": "/core/search/SearchControl.hbs", "url": "#", "label": "Articles", "count": 1234 },
-                { "_template": "/core/search/SearchControl.hbs", "url": "#", "label": "Photos", "count": 567 },
-                { "_template": "/core/search/SearchControl.hbs", "url": "#", "label": "Videos", "count": 89 }
-            ]
+          "_template": "/core/search/SearchControl.hbs",
+          "url": "#",
+          "label": "All",
+          "selected": true
         },
         {
-            "_template": "/core/search/SearchFilter.hbs",
-            "heading": "Date",
-            "items": [
-                { "_template": "/core/search/SearchControl.hbs", "url": "#", "label": "Any Time", "selected": true },
-                { "_template": "/core/search/SearchControl.hbs", "url": "#", "label": "Past Hour", "count": 12 },
-                { "_template": "/core/search/SearchControl.hbs", "url": "#", "label": "Past Day", "count": 34 },
-                { "_template": "/core/search/SearchControl.hbs", "url": "#", "label": "Past Month", "count": 56 },
-                { "_template": "/core/search/SearchControl.hbs", "url": "#", "label": "Past Year", "count": 789 }
-            ]
-        }
-    ],
-
-    "count": 123456,
-    "viewUrl": "?v=",
-
-    "sorts": [
-        { "_template": "/core/search/SearchControl.hbs", "url": "#", "label": "Relevant", "parameterValue": "relevant" },
-        { "_template": "/core/search/SearchControl.hbs", "url": "#", "label": "Newest", "parameterValue": "newest", "selected": true},
-        { "_template": "/core/search/SearchControl.hbs", "url": "#", "label": "Oldest", "parameterValue": "oldest" }
-    ],
-    "results": [
+          "_template": "/core/search/SearchControl.hbs",
+          "url": "#",
+          "label": "Articles",
+          "count": 1234
+        },
         {
-            "_include": "/core/promo/PromoContent.json",
-            "_repeat": 7
-        }
-    ],
-    "spotlights": [
+          "_template": "/core/search/SearchControl.hbs",
+          "url": "#",
+          "label": "Photos",
+          "count": 567
+        },
         {
-            "_include": "/core/promo/PromoSpotlight.json"
+          "_template": "/core/search/SearchControl.hbs",
+          "url": "#",
+          "label": "Videos",
+          "count": 89
         }
-    ],
-    "previousPage": "./SearchResultsPage.html?q=waffles&offset=999",
-    "nextPage": "./SearchResultsPage.html?q=waffles&offset=999",
-    "below": null
+      ]
+    },
+    {
+      "_template": "/core/search/SearchFilter.hbs",
+      "heading": "Date",
+      "items": [
+        {
+          "_template": "/core/search/SearchControl.hbs",
+          "url": "#",
+          "label": "Any Time",
+          "selected": true
+        },
+        {
+          "_template": "/core/search/SearchControl.hbs",
+          "url": "#",
+          "label": "Past Hour",
+          "count": 12
+        },
+        {
+          "_template": "/core/search/SearchControl.hbs",
+          "url": "#",
+          "label": "Past Day",
+          "count": 34
+        },
+        {
+          "_template": "/core/search/SearchControl.hbs",
+          "url": "#",
+          "label": "Past Month",
+          "count": 56
+        },
+        {
+          "_template": "/core/search/SearchControl.hbs",
+          "url": "#",
+          "label": "Past Year",
+          "count": 789
+        }
+      ]
+    }
+  ],
+  "count": 123456,
+  "viewUrl": "?v=",
+  "sorts": [
+    {
+      "_template": "/core/search/SearchControl.hbs",
+      "url": "#",
+      "label": "Relevant",
+      "parameterValue": "relevant"
+    },
+    {
+      "_template": "/core/search/SearchControl.hbs",
+      "url": "#",
+      "label": "Newest",
+      "parameterValue": "newest",
+      "selected": true
+    },
+    {
+      "_template": "/core/search/SearchControl.hbs",
+      "url": "#",
+      "label": "Oldest",
+      "parameterValue": "oldest"
+    }
+  ],
+  "results": [
+    {
+      "_include": "/core/promo/PromoContent.json",
+      "_repeat": 7
+    }
+  ],
+  "spotlights": [
+    {
+      "_include": "/core/promo/PromoSpotlight.json"
+    }
+  ],
+  "previousPage": "./SearchResultsPage.html?q=waffles&offset=999",
+  "nextPage": "./SearchResultsPage.html?q=waffles&offset=999",
+  "below": null
 }

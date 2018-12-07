@@ -1,19 +1,14 @@
 {
-  "_include": "_SourceCharacterPage.json",
+  "_include": "_Source.bex-training.CharacterPage.json",
   "_hidden": false,
-
   "alterEgo": "Captain America",
-
   "biography": {
     "_include": "/_group/RichText.json"
   },
-
   "image": {
     "_include": "/core/image/Image.json"
   },
-
   "name": "Steve Rodgers",
-
   "featuredMovies": {
     "_include": "/core/list/List.json"
   }

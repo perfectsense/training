@@ -1,14 +1,17 @@
-{{#block "CompanionContentItem" extend="_SourceCompanionContentItem.hbs"}}
-    <div class="{{blockName}}" data-media-type="{{type}}" data-ajax-url="{{url}}" data-timestamp-seconds="{{timeStamp}}">
-        {{element "media"}}
-
-        {{#element "info" noWith=true}}
-            <div class="{{elementName}}">
-
-                {{element "title"}}
-
-                {{element "duration"}}
+<div class="CompanionContentItem" data-media-type="{{type}}" data-ajax-url="{{url}}" data-timestamp-seconds="{{timeStamp}}">
+    {{#with media}}
+        <div class="CompanionContentItem-media">
+            {{include "../link/Link.hbs" href=../url target=../target body=this}}
+        </div>
+    {{/with}}
+    <div class="CompanionContentItem-info">
+        {{#with title}}
+            <div class="CompanionContentItem-title">
+                {{include "../link/Link.hbs" href=../url target=../target body=this}}
             </div>
-        {{/element}}
+        {{/with}}
+        {{#with duration}}
+            <div class="CompanionContentItem-duration">{{this}}</div>
+        {{/with}}
     </div>
-{{/block}}
+</div>

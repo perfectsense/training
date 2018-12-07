@@ -1,6 +1,6 @@
 {
   "_include": "/core/list/List.json",
-  "_template": "/core/list/ListOrdered.hbs",
+  "_template": "/core/list/List.hbs",
   "title": "Popular today",
   "items": [
     {
@@ -8,7 +8,8 @@
       "_repeat": 5
     }
   ],
-
   "description": null,
-  "pagination": null
+  "pagination": null,
+  "_styledTemplate": "/core/list/ListOrdered.hbs",
+  "_hidden": false
 }

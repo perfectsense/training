@@ -1,106 +1,106 @@
 {
-    "_include": "_SourcePage.json",
-    "_hidden": true,
-    "title": "Frost Theme",
-    "description": "Frost Theme description",
-    "keywords": "Brightspot, Express, Frost theme",
-    "fbPages": "0000111122222",
-    "extraStyles": {
-        "_include": "/_group/ExtraStyles.json"
-    },
-    "alignLeft": true,
-    "searchAction": "/core/search/SearchResultsPage.html",
-    "hat": {
-      "_include": "/core/page/PageHeaderTextHat.json"
-    },
-    "category": {
-      "_include": "/core/link/Link.json",
-      "body": "{{words(2)}}"
-    },
-    "navigation": {
-      "_include": "/core/navigation/Navigation.json"
-    },
-    "headerLinks": [{
+  "_include": "_Source.bex-training.Page.json",
+  "_hidden": true,
+  "title": "Frost Theme",
+  "description": "Frost Theme description",
+  "keywords": "Brightspot, Express, Frost theme",
+  "fbPages": "0000111122222",
+  "extraStyles": {
+    "_include": "/_group/ExtraStyles.json"
+  },
+  "alignLeft": true,
+  "searchAction": "/core/search/SearchResultsPage.html",
+  "hat": {
+    "_include": "/core/page/PageHeaderTextHat.json"
+  },
+  "category": {
+    "_include": "/core/link/Link.json",
+    "body": "{{words(2)}}"
+  },
+  "navigation": {
+    "_include": "/core/navigation/Navigation.json"
+  },
+  "headerLinks": [
+    {
       "_include": "/core/link/Link.json",
       "_repeat": 3
-    }],
-    "logo": {
-      "_include": "/core/page/PageLogo.json"
-    },
-    "pageLead": {
-      "_include": "/_group/Leads.json"
-    },
-    "sectionNavigation": null,
-    "packageNavigation": null,
-    "footerLogo": {
-      "_template": "/core/page/PageLogo.hbs",
-      "image": {
-        "_image": true,
-        "src": "/styleguide/media/ps-copy-2.svg"
-      },
-      "href": "#",
-      "alt": "Frost Theme Logo",
-      "target": "_blank"
-    },
-    "footerNavigation": {
-      "_include": "/core/navigation/Navigation.json"
-    },
-    "footerContent": [
-        {
-          "_include": "/core/footer/FooterColumns.json",
-          "columns": [
-              {
-                "_include": "/core/footer/FooterColumn.json",
-                "items": {
-                    "_include": "/core/page/PageLogo.json",
-                    "image": {
-                        "_image": true,
-                        "src": "/styleguide/media/ps-copy-2.svg"
-                      },
-                      "href": "#",
-                      "alt": "Frost Theme Logo",
-                      "target": "_blank"
-                }
-              },
-              {
-                "_include": "/core/footer/FooterColumn.json",
-                "items": {
-                    "_include": "/core/quote/Quote.json",
-                    "quote": "“It always seems impossible until it's done.”",
-                    "attribution": "Nelson Mandela"
-                }
-              }
-
-            ]
-      },
-      {
-        "_include": "/core/footer/FooterColumns.json",
-        "columns": [
-            {
-              "_include": "/core/footer/FooterColumn.json",
-              "items": {
-                  "_include": "/core/navigation/Navigation.json"
-              }
-            },
-            {
-              "_include": "/core/footer/FooterColumn.json",
-              "items": {
-                  "_include": "/core/list/ListFooter.json",
-                  "title": "Contact",
-                  "items": [
-                    {
-                      "_include": "/core/text/RichTextModule.json",
-                      "items": [
-                          "Perfect Sense, 12120 Sunset Hills Road, 6th Floor, Reston, VA 20190, p: (703) 956-5850   f: (571) 446-2445"
-                      ]
-                    }
-                  ]
-              }
-            }
-
-          ]
     }
-    ],
+  ],
+  "logo": {
+    "_include": "/core/page/PageLogo.json"
+  },
+  "pageLead": {
+    "_include": "/_group/Leads.json"
+  },
+  "sectionNavigation": null,
+  "packageNavigation": null,
+  "footerLogo": {
+    "_template": "/core/page/PageLogo.hbs",
+    "image": {
+      "_image": true,
+      "src": "/styleguide/media/ps-copy-2.svg"
+    },
+    "href": "#",
+    "alt": "Frost Theme Logo",
+    "target": "_blank"
+  },
+  "footerNavigation": {
+    "_include": "/core/navigation/Navigation.json"
+  },
+  "footerContent": [
+    {
+      "_include": "/core/footer/FooterColumns.json",
+      "columns": [
+        {
+          "_include": "/core/footer/FooterColumn.json",
+          "items": {
+            "_include": "/core/page/PageLogo.json",
+            "image": {
+              "_image": true,
+              "src": "/styleguide/media/ps-copy-2.svg"
+            },
+            "href": "#",
+            "alt": "Frost Theme Logo",
+            "target": "_blank"
+          }
+        },
+        {
+          "_include": "/core/footer/FooterColumn.json",
+          "items": {
+            "_include": "/core/quote/Quote.json",
+            "quote": "“It always seems impossible until it's done.”",
+            "attribution": "Nelson Mandela"
+          }
+        }
+      ]
+    },
+    {
+      "_include": "/core/footer/FooterColumns.json",
+      "columns": [
+        {
+          "_include": "/core/footer/FooterColumn.json",
+          "items": {
+            "_include": "/core/navigation/Navigation.json"
+          }
+        },
+        {
+          "_include": "/core/footer/FooterColumn.json",
+          "items": {
+            "_include": "/core/list/ListFooter.json",
+            "title": "Contact",
+            "items": [
+              {
+                "_include": "/core/text/RichTextModule.json",
+                "items": [
+                  "Perfect Sense, 12120 Sunset Hills Road, 6th Floor, Reston, VA 20190, p: (703) 956-5850   f: (571) 446-2445"
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
   "social": {
     "_include": "/core/social/SocialBar.json",
     "title": "Follow Us",
