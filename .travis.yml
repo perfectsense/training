@@ -22,7 +22,6 @@ env:
 
 script:
   - MAVEN_OPTS='-Xmx2048m' mvn -Plibrary verify
-  - git clone https://github.com/perfectsense/travis-s3-deploy.git && travis-s3-deploy/deploy.sh
 
 cache:
   directories:
