@@ -1,7 +1,5 @@
-{{~#block "Image"~}}
-    <img class="{{blockName}}" alt="{{alt}}" src="{{image.src}}"
-        {{~#with image.srcset}} srcset="{{this}}"{{/with~}}
-        {{~#with image.width}} width="{{this}}"{{/with~}}
-        {{~#with image.height}} height="{{this}}"{{/with~}}
-    >
-{{~/block~}}
+<img class="Image" alt="{{alt}}" src="{{image.src}}"
+{{~#with image.srcset}} srcset="{{this}}"{{/with~}}
+{{~#with image.width}} width="{{this}}"{{/with~}}
+{{~#with image.height}} height="{{this}}"{{/with~}}
+>

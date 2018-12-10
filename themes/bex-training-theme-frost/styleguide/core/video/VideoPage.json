@@ -1,117 +1,116 @@
 {
-    "_include": "_SourceVideoPage.json",
-    "_template": "VideoPage.hbs",
-    "headline": "Video Title Lorem Ipsum Dolor Sit Amet Consectetur Adipiscing",
-    "subHeadline": "{{words(100)}}",
-    "tags": [
-        {
-            "_include": "/core/link/Link.json",
-            "_repeat": 1
-        }
-    ],
-    "player" : {
-        "_include": "/youtube/YouTubeVideoPlayer.json"
-
+  "_include": "_Source.bex-training.VideoPage.json",
+  "_template": "VideoPage.hbs",
+  "headline": "Video Title Lorem Ipsum Dolor Sit Amet Consectetur Adipiscing",
+  "subHeadline": "{{words(100)}}",
+  "tags": [
+    {
+      "_include": "/core/link/Link.json",
+      "_repeat": 1
+    }
+  ],
+  "player": {
+    "_include": "/youtube/YouTubeVideoPlayer.json"
+  },
+  "above": null,
+  "banner": null,
+  "below": [
+    {
+      "_include": "/core/list/VideoPromoList.json",
+      "title": "Editor's Picks"
+    }
+  ],
+  "sectionNavigation": {
+    "_template": "/core/navigation/Navigation.hbs",
+    "items": [
+      {
+        "_template": "/core/navigation/NavigationItem.hbs",
+        "text": "Section",
+        "target": "_self",
+        "href": "#",
+        "isCurrent": true
+      }
+    ]
+  },
+  "actions": {
+    "_template": "/core/action-bar/ActionBar.hbs",
+    "items": [
+      {
+        "_include": "/facebook/FacebookShareButton.json"
+      },
+      {
+        "_include": "/twitter/intent/TwitterTweetButton.json"
+      },
+      {
+        "_include": "/googleplus/GooglePlusShareButton.json"
+      },
+      {
+        "_include": "/pinterest/PinterestShareButton.json"
+      },
+      {
+        "_include": "/linkedin/LinkedInShareButton.json"
+      },
+      {
+        "_include": "/core/link/MailToLink.json"
+      }
+    ]
+  },
+  "aside": null,
+  "playlist": [
+    {
+      "_include": "/core/video/PlaylistItem.json",
+      "url": "../video/VideoWatch2.html"
     },
-    "above": null,
-    "banner": null,
-    "below": [
-       {
-          "_include": "/core/list/VideoPromoList.json",
-          "title": "Editor's Picks"
-       }
-    ],
-    "sectionNavigation": {
-      "_template": "/core/navigation/Navigation.hbs",
-      "items": [
-          {
-              "_template": "/core/navigation/NavigationItem.hbs",
-              "text": "Section",
-              "target": "_self",
-              "href": "#",
-              "isCurrent": true
-          }
-      ]
-    },
-    "actions": {
-        "_template": "/core/action-bar/ActionBar.hbs",
-        "items": [
-            {
-                "_include": "/facebook/FacebookShareButton.json"
-            },
-            {
-                "_include": "/twitter/intent/TwitterTweetButton.json"
-            },
-            {
-                "_include": "/googleplus/GooglePlusShareButton.json"
-            },
-            {
-                "_include": "/pinterest/PinterestShareButton.json"
-            },
-            {
-                "_include": "/linkedin/LinkedInShareButton.json"
-            },
-            {
-                "_include": "/core/link/MailToLink.json"
-            }
-        ]
-    },
-
-    "aside": null,
-    "playlist": [
+    {
+      "_include": "/core/video/PlaylistItem.json",
+      "url": "../video/VideoWatch1.html",
+      "companions": [
         {
-            "_include": "/core/video/PlaylistItem.json",
-            "url": "../video/VideoWatch2.html"
+          "_include": "CompanionContentItem.json",
+          "type": "video",
+          "url": "/core/video/VideoPage.html"
         },
         {
-            "_include": "/core/video/PlaylistItem.json",
-            "url": "../video/VideoWatch1.html",
-            "companions": [
-              {
-                "_include": "CompanionContentItem.json",
-                  "type": "video",
-                  "url": "/core/video/VideoPage.html"
-              },
-              {
-                "_include": "CompanionContentItem.json",
-                  "type": "article",
-                  "url": "/article/ArticlePage.html"
-              }
-            ]
-        },
-        {
-            "_include": "/core/video/PlaylistItem.json",
-            "url": "../video/VideoWatch2.html",
-            "companions": [
-              {
-                "_include": "CompanionContentItem.json",
-                  "type": "gallery",
-                  "url": "/core/gallery/GalleryPage.html"
-              }
-            ]
-        },
-        {
-            "_include": "/core/video/PlaylistItem.json",
-            "url": "../video/VideoWatch1.html",
-            "companions": null
-        },
-        {
-            "_include": "/core/video/PlaylistItem.json",
-            "url": "../video/VideoWatch2.html"
-        }
-    ],
-    "companions": [
-        {
-          "_include": "CompanionContentItem.json"
-        },
-        {
-          "_include": "CompanionContentItem.json"
-        },
-        {
-          "_include": "CompanionContentItem.json"
-        },
-        {
-          "_include": "CompanionContentItem.json"
+          "_include": "CompanionContentItem.json",
+          "type": "article",
+          "url": "/article/ArticlePage.html"
         }
       ]
+    },
+    {
+      "_include": "/core/video/PlaylistItem.json",
+      "url": "../video/VideoWatch2.html",
+      "companions": [
+        {
+          "_include": "CompanionContentItem.json",
+          "type": "gallery",
+          "url": "/core/gallery/GalleryPage.html"
+        }
+      ]
+    },
+    {
+      "_include": "/core/video/PlaylistItem.json",
+      "url": "../video/VideoWatch1.html",
+      "companions": null
+    },
+    {
+      "_include": "/core/video/PlaylistItem.json",
+      "url": "../video/VideoWatch2.html"
+    }
+  ],
+  "companions": [
+    {
+      "_include": "CompanionContentItem.json"
+    },
+    {
+      "_include": "CompanionContentItem.json"
+    },
+    {
+      "_include": "CompanionContentItem.json"
+    },
+    {
+      "_include": "CompanionContentItem.json"
+    }
+  ],
+  "_hidden": false
 }

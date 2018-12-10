@@ -1,0 +1,10 @@
+<div class="CarouselSlide-media">
+    {{#with mediaContent}}
+        <div class="CarouselSlide-mediaContent">
+            <img class="CarouselSlide" alt="{{alt}}"
+            data-flickity-lazyload-src={{this.[0].image.src}}
+            {{~#with this.[0].image.srcset}} data-flickity-lazyload-srcset={{this.[0].image.srcset}}{{/with}}
+        >
+    </div>
+{{/with}}
+</div>

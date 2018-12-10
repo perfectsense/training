@@ -1,52 +1,54 @@
 {
-  "_template": "AnchorTabs.hbs",
+  "_template": "/core/tab/Tabs.hbs",
   "title": "Our Business",
   "tabs": [
     {
-        "_include": "TabItem.json",
-        "label": "Team Building",
-        "title": "Team Building",
-        "id": "fox",
-        "content": {
-            "_include": "/core/promo/PromoImageOnSide.json",
-            "backgroundColor": "yellow"
-        }
+      "_include": "TabItem.json",
+      "label": "Team Building",
+      "title": "Team Building",
+      "id": "fox",
+      "content": {
+        "_include": "/core/promo/PromoImageOnSide.json",
+        "backgroundColor": "yellow"
+      }
     },
-      {
-          "_include": "TabItem.json",
-          "label": "Media Publishing",
-          "title": "Media Publishing",
-          "id": "cat",
-          "content": {
-              "_include": "/core/list/ProductPromoList.json"
-          }
-      },
-      {
-          "_include": "TabItem.json",
-          "label": "B2B",
-          "title": "B2B",
-          "id": "3",
-          "content": {
-              "_include": "/core/text/RichTextModule.json"
-          }
-      },
-      {
-          "_include": "TabItem.json",
-          "label": "Sports & Entertainment",
-          "title": "Sports & Entertainment",
-          "id": "4",
-          "content": {
-              "_include": "/core/text/RichTextModule.json"
-          }
-      },
-      {
-        "_include": "TabItem.json",
-        "label": "Research and Technology",
-        "title": "Research and Technology",
-        "id": "5",
-        "content": {
-            "_include": "/core/list/ListThreeColumn.json"
-        }
+    {
+      "_include": "TabItem.json",
+      "label": "Media Publishing",
+      "title": "Media Publishing",
+      "id": "cat",
+      "content": {
+        "_include": "/core/list/ProductPromoList.json"
+      }
+    },
+    {
+      "_include": "TabItem.json",
+      "label": "B2B",
+      "title": "B2B",
+      "id": "3",
+      "content": {
+        "_include": "/core/text/RichTextModule.json"
+      }
+    },
+    {
+      "_include": "TabItem.json",
+      "label": "Sports & Entertainment",
+      "title": "Sports & Entertainment",
+      "id": "4",
+      "content": {
+        "_include": "/core/text/RichTextModule.json"
+      }
+    },
+    {
+      "_include": "TabItem.json",
+      "label": "Research and Technology",
+      "title": "Research and Technology",
+      "id": "5",
+      "content": {
+        "_include": "/core/list/ListThreeColumn.json"
+      }
     }
-  ]
+  ],
+  "_styledTemplate": "/core/tab/AnchorTabs.hbs",
+  "_hidden": false
 }

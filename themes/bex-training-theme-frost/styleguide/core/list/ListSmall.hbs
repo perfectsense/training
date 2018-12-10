@@ -1,35 +1,37 @@
-{{#block "ListSmall" extend="/core/list/List.hbs"}}
-    <div class="{{blockName}}"{{extraAttributes}}
+<div class="ListSmall"{{extraAttributes}}
     {{#if backgroundColor}}style="--color:var(--{{backgroundColor}})"{{/if}}
     {{#if inverseColors}}data-inverse-colors {{/if}}
     {{#with horizontalAlignment}} data-horizontal-align="{{this}}"{{/with}}>
-        {{#element "heading" noWith="true"}}
-            <div class="{{elementName}}">
-                {{#element "media"}}
-                    <div class="{{elementName}}">
-                        {{this}}
-                    </div>
-                {{/element}}
-
-                {{element "title"}}
-
-                {{element "description"}}
+    <div class="ListSmall-heading">
+        {{#with media}}
+            <div class="ListSmall-media">
+                {{this}}
             </div>
-        {{/element}}
-
-        {{#element "items"}}
-            <ul class="{{elementName}}">
-                {{#each this}}
-                    <hr class="{{elementName}}-hr">
-                    <li class="{{elementName}}-item">
-                        {{render this
-                            [/core/promo/Promo.hbs]="/core/promo/PromoTextItem.hbs"
-                        }}
-                    </li>
-                {{/each}}
-            </ul>
-        {{/element}}
-
-        {{element "cta"}}
+        {{/with}}
+        {{#with title}}
+            <div class="ListSmall-title">{{this}}</div>
+        {{/with}}
+        {{#with description}}
+            <div class="ListSmall-description">{{this}}</div>
+        {{/with}}
     </div>
-{{/block}}
+    {{#with items}}
+        <ul class="ListSmall-items">
+            {{#each this}}
+                <hr class="ListSmall-items-hr">
+                <li class="ListSmall-items-item">
+                    {{render this [/core/promo/Promo.hbs]="/core/promo/PromoTextItem.hbs"}}
+                </li>
+            {{/each}}
+        </ul>
+    {{/with}}
+    {{#if ctaUrl}}
+        <div class="ListSmall-cta">
+            {{#if ctaText}}
+                {{include "/core/link/SolidButton.hbs" href=ctaUrl target=ctaTarget body=ctaText}}
+            {{else}}
+                {{include "/core/link/SolidButton.hbs" href=ctaUrl target=ctaTarget body=(format "/core/list/List" "ctaText")}}
+            {{/if}}
+        </div>
+    {{/if}}
+</div>

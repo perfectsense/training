@@ -1,14 +1,16 @@
 {
-    "_include": "Promo.json",
-    "_template": "PromoImageFlip.hbs",
-    "media": {
-        "_template": "/core/image/Image.hbs",
-        "image": {
-            "_image": true,
-            "src": "/styleguide/media/ryan-anderson.png"
-        }
-    },
-    "title": "Ryan Anderson",
-    "description": "Making Perfect Sense since 2012",
-    "buttonText": "Read Bio"
+  "_include": "Promo.json",
+  "_template": "/core/promo/Promo.hbs",
+  "media": {
+    "_template": "/core/image/Image.hbs",
+    "image": {
+      "_image": true,
+      "src": "/styleguide/media/ryan-anderson.png"
+    }
+  },
+  "title": "Ryan Anderson",
+  "description": "Making Perfect Sense since 2012",
+  "buttonText": "Read Bio",
+  "_styledTemplate": "/core/promo/PromoImageFlip.hbs",
+  "_hidden": false
 }

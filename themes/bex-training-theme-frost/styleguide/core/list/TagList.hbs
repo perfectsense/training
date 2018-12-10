@@ -1,17 +1,15 @@
-{{#block "TagList" extend="/core/list/List.hbs"}}
-  <div class="{{blockName}}"
+<div class="TagList"
     {{#if backgroundColor}}style="--color:var(--{{backgroundColor}})"{{/if}}>
-    {{element "title"}}
-    {{#element "items"}}
-        <ul class="{{elementName}}">
+    {{#with title}}
+        <div class="TagList-title">{{this}}</div>
+    {{/with}}
+    {{#with items}}
+        <ul class="TagList-items">
             {{#each this}}
-                <li class="{{elementName}}-item">
-                    {{render this
-                        [/core/promo/Promo.hbs]="/core/promo/PromoTextItem.hbs"
-                    }}
+                <li class="TagList-items-item">
+                    {{render this [/core/promo/Promo.hbs]="/core/promo/PromoTextItem.hbs"}}
                 </li>
             {{/each}}
         </ul>
-    {{/element}}
-  </div>
-{{/block}}
+    {{/with}}
+</div>

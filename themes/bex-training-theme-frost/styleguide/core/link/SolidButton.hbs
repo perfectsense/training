@@ -1,9 +1,7 @@
-{{#block "SolidButton" extend="Link.hbs"}}
-    <div class="{{blockName}}">
-        {{~#if href~}}
-            <a href="{{href}}"{{#with target}} target="{{this}}"{{/with}} data-google-link-analytics="cta" data-ga-category="cta buttons" data-ga-action="click">{{body}}</a>
-        {{~^~}}
-            <span class="{{blockName}}">{{body}}</span>
-        {{~/if~}}
-    </div>
-{{/block}}
+<div class="SolidButton">
+    {{~#if href~}}
+        <a href="{{href}}"{{#with target}} target="{{this}}"{{/with}} data-google-link-analytics="cta" data-ga-category="cta buttons" data-ga-action="click">{{body}}</a>
+    {{~else~}}
+        <span class="SolidButton">{{body}}</span>
+    {{~/if~}}
+</div>

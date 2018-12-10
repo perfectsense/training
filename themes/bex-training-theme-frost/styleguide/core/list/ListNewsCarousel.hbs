@@ -1,19 +1,27 @@
-{{#block "ListNewsCarousel" extend="/core/list/List.hbs"}}
-    <div class="{{blockName}}"{{extraAttributes}}
-        {{#if backgroundColor}}style="--color:var(--{{backgroundColor}})"{{/if}}>
-        {{element "title"}}
-        {{element "description"}}
-
-        {{#element "items"}}
-            <div class="{{elementName}}">
-                {{#each this}}
-                    <div class="{{elementName}}-item">
-                        {{render this [/core/promo/Promo.hbs]="/core/promo/PromoNews.hbs"}}
-                    </div>
-                {{/each}}
-            </div>
-        {{/element}}
-
-        {{element "cta"}}
-    </div>
-{{/block}}
+<div class="ListNewsCarousel"{{extraAttributes}}
+    {{#if backgroundColor}}style="--color:var(--{{backgroundColor}})"{{/if}}>
+    {{#with title}}
+        <div class="ListNewsCarousel-title">{{this}}</div>
+    {{/with}}
+    {{#with description}}
+        <div class="ListNewsCarousel-description">{{this}}</div>
+    {{/with}}
+    {{#with items}}
+        <div class="ListNewsCarousel-items">
+            {{#each this}}
+                <div class="ListNewsCarousel-items-item">
+                    {{render this [/core/promo/Promo.hbs]="/core/promo/PromoNews.hbs"}}
+                </div>
+            {{/each}}
+        </div>
+    {{/with}}
+    {{#if ctaUrl}}
+        <div class="ListNewsCarousel-cta">
+            {{#if ctaText}}
+                {{include "/core/link/SolidButton.hbs" href=ctaUrl target=ctaTarget body=ctaText}}
+            {{else}}
+                {{include "/core/link/SolidButton.hbs" href=ctaUrl target=ctaTarget body=(format "/core/list/List" "ctaText")}}
+            {{/if}}
+        </div>
+    {{/if}}
+</div>

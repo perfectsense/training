@@ -1,10 +1,14 @@
-{{#block "PromoCategoryTitle" extend="Promo.hbs"}}
-  <div class="{{blockName}}">
-    {{#element "info" noWith=true}}
-        <div class="{{elementName}}">
-          {{element "category"}}
-          {{element "title"}}
-        </div>
-    {{/element}}
-  </div>
-{{/block}}
+<div class="PromoCategoryTitle">
+    <div class="PromoCategoryTitle-info">
+        {{#with category}}
+            <div class="PromoCategoryTitle-category">
+                {{include "../link/Link.hbs" href=../categoryUrl target=../target body=this contentId=../categoryId}}
+            </div>
+        {{/with}}
+        {{#with title}}
+            <div class="PromoCategoryTitle-title">
+                {{include "../link/Link.hbs" href=../url target=../target body=this}}
+            </div>
+        {{/with}}
+    </div>
+</div>

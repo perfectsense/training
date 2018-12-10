@@ -1,6 +1,5 @@
 {
   "_template": "/core/video/PlaylistItem.hbs",
-
   "media": {
     "_template": "/core/image/Image.hbs",
     "image": {
@@ -10,10 +9,10 @@
   "authorName": "{{words([ 1, 2 ])}}",
   "authorUrl": "#",
   "authorImage": {
-      "_template": "/core/image/Image.hbs",
-      "image": {
-        "_image": true
-      }
+    "_template": "/core/image/Image.hbs",
+    "image": {
+      "_image": true
+    }
   },
   "date": "{{date}}",
   "duration": "{{number([3, 10])}} min",
@@ -28,7 +27,7 @@
   "button": "{{words(1)}}",
   "contentId": "a123",
   "actions": {
-      "_include": "/core/action-bar/ActionBar.json"
+    "_include": "/core/action-bar/ActionBar.json"
   },
   "social": {
     "_include": "/core/social/SocialBar.json"
@@ -41,5 +40,6 @@
     {
       "_include": "/core/video/CompanionContentItem.json"
     }
-  ]
+  ],
+  "_hidden": false
 }

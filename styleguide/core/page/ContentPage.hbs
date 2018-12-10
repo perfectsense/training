@@ -1,61 +1,111 @@
-{{#block "ContentPage" override="Page.hbs"}}
-    {{#element "main" noWith=true}}
-        <main class="{{elementName}}">
-            {{#element "breadcrumbs"}}
-                <div class="{{elementName}}">{{this}}</div>
-            {{/element}}
-
-            {{#element "mainContent"}}
-                <div class="{{elementName}}">{{this}}</div>
-            {{/element}}
-
-            {{#element "tags"}}
-                <div class="{{elementName}}">
-                    <h2 class="{{elementName}}-heading">{{format "tagsHeading"}}</h2>
-                    <div class="{{elementName}}-body">{{this}}</div>
+<!DOCTYPE html>
+<html class="ContentPage" lang="{{#with language}}{{this}}{{else}}en{{/with}}" itemscope itemtype="http://schema.org/WebPage">
+    {{include "/core/page/Page-head.hbs" this}}
+    <body class="ContentPage-body"{{~#each extraBodyAttributes}} {{this}}{{~/each~}}>
+        <header class="ContentPage-header" itemscope itemtype="http://schema.org/WPHeader">
+            {{#with hat}}
+                <div class="ContentPage-hat">{{this}}</div>
+            {{/with}}
+            {{#with logo}}
+                <div class="ContentPage-logo">{{this}}</div>
+            {{/with}}
+            {{#with navigation}}
+                <div class="ContentPage-navigation">{{this}}</div>
+            {{/with}}
+            {{#with social}}
+                <div class="ContentPage-social">{{this}}</div>
+            {{/with}}
+            {{#if searchAction}}
+                <form class="ContentPage-search" action="{{searchAction}}" novalidate="" autocomplete="off">
+                    <input type="text" class="ContentPage-searchInput" name="q">
+                    <button type="submit" class="ContentPage-searchButton">{{format "/core/page/Page" "searchButtonLabel"}}</button>
+                </form>
+            {{/if}}
+        </header>
+        {{#with banner}}
+            <div class="ContentPage-banner">{{~this~}}</div>
+        {{/with}}
+        {{#with sectionNavigation}}
+            <div class="ContentPage-sectionNavigation">{{this}}</div>
+        {{/with}}
+        {{#with packageNavigation}}
+            <div class="ContentPage-packageNavigation">{{this}}</div>
+        {{/with}}
+        {{#with above}}
+            <div class="ContentPage-above">{{this}}</div>
+        {{/with}}
+        <main class="ContentPage-main">
+            {{#with breadcrumbs}}
+                <div class="ContentPage-breadcrumbs">{{this}}</div>
+            {{/with}}
+            {{#with mainContent}}
+                <div class="ContentPage-mainContent">{{this}}</div>
+            {{/with}}
+            {{#with tags}}
+                <div class="ContentPage-tags">
+                    <h2 class="ContentPage-tags-heading">{{format "/core/page/ContentPage" "tagsHeading"}}</h2>
+                    <div class="ContentPage-tags-body">{{this}}</div>
                 </div>
-            {{/element}}
-
-            {{#element "countries"}}
-                <div class="{{elementName}}">
-                    <h2 class="{{elementName}}-heading">{{format "countriesHeading"}}</h2>
-                    <div class="{{elementName}}-body">{{this}}</div>
+            {{/with}}
+            {{#with countries}}
+                <div class="ContentPage-countries">
+                    <h2 class="ContentPage-countries-heading">{{format "/core/page/ContentPage" "countriesHeading"}}</h2>
+                    <div class="ContentPage-countries-body">{{this}}</div>
                 </div>
-            {{/element}}
-
-            {{#element "brands"}}
-                <div class="{{elementName}}">
-                    <h2 class="{{elementName}}-heading">{{format "brandsHeading"}}</h2>
-                    <div class="{{elementName}}-body">{{this}}</div>
+            {{/with}}
+            {{#with brands}}
+                <div class="ContentPage-brands">
+                    <h2 class="ContentPage-brands-heading">{{format "/core/page/ContentPage" "brandsHeading"}}</h2>
+                    <div class="ContentPage-brands-body">{{this}}</div>
                 </div>
-            {{/element}}
-
-            {{#element "products"}}
-                <div class="{{elementName}}">
-                    <h2 class="{{elementName}}-heading">{{format "productsHeading"}}</h2>
-                    <div class="{{elementName}}-body">{{this}}</div>
+            {{/with}}
+            {{#with products}}
+                <div class="ContentPage-products">
+                    <h2 class="ContentPage-products-heading">{{format "/core/page/ContentPage" "productsHeading"}}</h2>
+                    <div class="ContentPage-products-body">{{this}}</div>
                 </div>
-            {{/element}}
-
-            {{#element "topics"}}
-                <div class="{{elementName}}">
-                    <h2 class="{{elementName}}-heading">{{format "topicsHeading"}}</h2>
-                    <div class="{{elementName}}-body">{{this}}</div>
+            {{/with}}
+            {{#with topics}}
+                <div class="ContentPage-topics">
+                    <h2 class="ContentPage-topics-heading">{{format "/core/page/ContentPage" "topicsHeading"}}</h2>
+                    <div class="ContentPage-topics-body">{{this}}</div>
                 </div>
-            {{/element}}
-
-            {{#element "actions"}}
-                <div class="{{elementName}}">
-                    <h2 class="{{elementName}}-heading">{{format "actionsHeading"}}</h2>
-                    <div class="{{elementName}}-body">{{this}}</div>
+            {{/with}}
+            {{#with actions}}
+                <div class="ContentPage-actions">
+                    <h2 class="ContentPage-actions-heading">{{format "/core/page/ContentPage" "actionsHeading"}}</h2>
+                    <div class="ContentPage-actions-body">{{this}}</div>
                 </div>
-            {{/element}}
-
-            {{#element "comments"}}
-                <div class="{{elementName}}">
+            {{/with}}
+            {{#with comments}}
+                <div class="ContentPage-comments">
                     {{this}}
                 </div>
-            {{/element}}
+            {{/with}}
         </main>
-    {{/element}}
-{{/block}}
+        {{#with aside}}
+            <aside class="ContentPage-aside">{{this}}</aside>
+        {{/with}}
+        {{#with below}}
+            <div class="ContentPage-below">{{this}}</div>
+        {{/with}}
+        <footer class="ContentPage-footer" itemscope itemtype="https://schema.org/WPFooter">
+            {{#with footerLogo}}
+                <div class="ContentPage-footerLogo">{{this}}</div>
+            {{/with}}
+            {{#with footerNavigation}}
+                <div class="ContentPage-footerNavigation">{{this}}</div>
+            {{/with}}
+            {{#with footerContent}}
+                <div class="ContentPage-footerContent">{{this}}</div>
+            {{/with}}
+            {{#with social}}
+                <div class="ContentPage-social">{{this}}</div>
+            {{/with}}
+            {{#with disclaimer}}
+                <div class="ContentPage-disclaimer">{{this}}</div>
+            {{/with}}
+        </footer>
+        {{include "/core/page/Page-extraBodyItems.hbs" this}}
+    </body>
+</html>

@@ -1,30 +1,39 @@
-{{#block "ListFourColumn" extend="ListGrid.hbs"}}
-    <div class="{{blockName}}" data-column-count="4"
-        {{#if fullWidth}}data-full-width{{/if}}
-        {{extraAttributes}}
-        {{#if background}}style="background-image: url({{background.image.src}})"{{/if}}
-        {{#if backgroundColor}}style="--color:var(--{{backgroundColor}})"{{/if}}
-        {{#if noTopPadding}}data-nopaddingtop{{/if}}
-        {{#if partialGradient}}data-gradient="partial"{{/if}}>
-
-        {{element "title"}}
-
-        {{element "description"}}
-
-        {{#element "items"}}
-            <div class="{{elementName}}">
-                {{#partition this size=4}}
-                  {{#each this}}
-                      <div class="{{elementName}}-item">
-                          {{render this [/core/promo/Promo.hbs]="/core/promo/PromoImageOnTop.hbs"}}
-                      </div>
-                  {{/each}}
-                {{/partition}}
-            </div>
-        {{/element}}
-
-        {{element "cta"}}
-
-        {{element "pagination"}}
+<div class="ListFourColumn" data-column-count="4"
+    {{#if fullWidth}}data-full-width{{/if}}
+    {{extraAttributes}}
+    {{#if background}}style="background-image: url({{background.image.src}})"{{/if}}
+    {{#if backgroundColor}}style="--color:var(--{{backgroundColor}})"{{/if}}
+    {{#if noTopPadding}}data-nopaddingtop{{/if}}
+    {{#if partialGradient}}data-gradient="partial"{{/if}}>
+    {{#with title}}
+        <div class="ListFourColumn-title">{{this}}</div>
+    {{/with}}
+    {{#with description}}
+        <div class="ListFourColumn-description">{{this}}</div>
+    {{/with}}
+    {{#with items}}
+        <div class="ListFourColumn-items">
+            {{#partition this size=4}}
+                {{#each this}}
+                    <div class="ListFourColumn-items-item">
+                        {{render this [/core/promo/Promo.hbs]="/core/promo/PromoImageOnTop.hbs"}}
+                    </div>
+                {{/each}}
+            {{/partition}}
+        </div>
+    {{/with}}
+    {{#if ctaUrl}}
+        <div class="ListFourColumn-cta">
+            {{#if ctaText}}
+                {{include "/core/link/SolidButton.hbs" href=ctaUrl target=ctaTarget body=ctaText}}
+            {{else}}
+                {{include "/core/link/SolidButton.hbs" href=ctaUrl target=ctaTarget body=(format "/core/list/List" "ctaText")}}
+            {{/if}}
+        </div>
+    {{/if}}
+    <div class="ListFourColumn-pagination">
+        {{~#each pagination~}}
+            {{this}}
+        {{~/each~}}
     </div>
-{{/block}}
+</div>

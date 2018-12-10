@@ -1,49 +1,52 @@
-{{#block "PromoImageOnTop" extend="Promo.hbs"}}
-<div class="{{blockName}}{{#with aesthetic}} {{this}}{{/with}}"{{extraAttributes}}
+<div class="PromoImageOnTop{{#with aesthetic}} {{this}}{{/with}}"{{extraAttributes}}
     {{#if backgroundColor}}style="--color:var(--{{backgroundColor}})"{{/if}}
     {{#if hideDescription}}data-hide-description{{/if}}
     {{#if hideDate}}data-hide-date{{/if}}
     {{#if hideAuthor}}data-hide-author{{/if}}
     {{#if hideCategory}}data-hide-category{{/if}}
     {{#with horizontalAlignment}} data-horizontal-align="{{this}}"{{/with}}>
-
-      {{#element "media"}}
-          <div class="{{elementName}}">{{include "/core/link/Link.hbs" href=../url target=../target body=this}}
+    {{#with media}}
+        <div class="PromoImageOnTop-media">{{include "/core/link/Link.hbs" href=../url target=../target body=this}}
             {{#if "../type"}}
-                <span class="{{blockName}}-type" data-type={{../type}}></span>
+                <span class="PromoImageOnTop-type" data-type={{../type}}></span>
             {{/if}}
-          </div>
-      {{/element}}
-
-        {{#element "info" noWith=true}}
-            <div class="{{elementName}}">
-                {{element "category"}}
-
-                {{element "title"}}
-
-                {{#if authorName}}
-                    <div class="{{blockName}}-authorContent">
-                        {{element "authorImage"}}
-                        <div class="{{blockName}}-authorInfo">
-                            {{#element "authorName"}}
-                                <div class="{{elementName}}">
-                                    {{~format "AuthorBy"~}}&nbsp;{{include "../link/Link.hbs" href=../authorUrl target=../target body=this}}
-                                </div>
-                            {{/element}}
-                            {{#if date}}
-                                <div class="{{blockName}}-date">{{date}}</div>
-                            {{/if}}
-                        </div>
-                    </div>
-                {{/if}}
-
-                {{element "description"}}
-
-                {{#if duration}}
-                    <span class="{{blockName}}-duration" data-type={{type}}>{{duration}}</span>
-                {{/if}}
-
+        </div>
+    {{/with}}
+    <div class="PromoImageOnTop-info">
+        {{#with category}}
+            <div class="PromoImageOnTop-category">
+                {{include "../link/Link.hbs" href=../categoryUrl target=../target body=this contentId=../categoryId}}
             </div>
-        {{/element}}
+        {{/with}}
+        {{#with title}}
+            <div class="PromoImageOnTop-title">
+                {{include "../link/Link.hbs" href=../url target=../target body=this}}
+            </div>
+        {{/with}}
+        {{#if authorName}}
+            <div class="PromoImageOnTop-authorContent">
+                {{#with authorImage}}
+                    <div class="PromoImageOnTop-authorImage">
+                        {{include "../link/Link.hbs" href=../authorUrl target=../target body=this}}
+                    </div>
+                {{/with}}
+                <div class="PromoImageOnTop-authorInfo">
+                    {{#with authorName}}
+                        <div class="PromoImageOnTop-authorName">
+                            {{format "/core/promo/PromoImageOnTop" "AuthorBy"}}&nbsp;{{include "../link/Link.hbs" href=../authorUrl target=../target body=this}}
+                        </div>
+                    {{/with}}
+                    {{#if date}}
+                        <div class="PromoImageOnTop-date">{{date}}</div>
+                    {{/if}}
+                </div>
+            </div>
+        {{/if}}
+        {{#with description}}
+            <div class="PromoImageOnTop-description">{{this}}</div>
+        {{/with}}
+        {{#if duration}}
+            <span class="PromoImageOnTop-duration" data-type={{type}}>{{duration}}</span>
+        {{/if}}
     </div>
-{{/block}}
+</div>

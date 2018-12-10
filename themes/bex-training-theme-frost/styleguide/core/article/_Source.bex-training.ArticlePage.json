@@ -1,0 +1,16 @@
+{
+  "_wrapper": false,
+  "_hidden": true,
+  "_include": "/core/page/CreativeWorkPage.json",
+  "_template": "/core/article/ArticlePage.hbs",
+  "lead": {
+    "_include": "/_group/Leads.json",
+    "_key": 1
+  },
+  "articleBody": {
+    "_include": "/_group/ArticleBodies.json",
+    "_key": 0
+  },
+  "updatesCorrections": "{{html('This is an <strong>update</strong> to the original story.')}}",
+  "_styledTemplate": "/core/article/ArticlePage.hbs"
+}

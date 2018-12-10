@@ -1,16 +1,18 @@
 {
-    "_include": "PromoImageFlip.json",
-    "_template": "PrincipleCard.hbs",
-    "title": "Always Deliver",
-    "description": "We built our business by earning the respect and trust of our clients to be 100% focused on getting each project done right.",
-    "media": {
-        "_template": "/core/image/Image.hbs",
-        "image": {
-            "_image": true,
-            "src": "/styleguide/media/icon-deliver.png"
-        }
-    },
-    "quote":"PSD helps our team run on all cylinders. It is such a pleasure working with them; they are such smart, organized, and thoughtful people.",
-    "attribution":"DRIA DE BOTTON, VICE PRESIDENT, EMERGING BRANDS, FOOD.COM AND COOKINGCHANNELTV.COM",
-    "button": null
+  "_include": "PromoImageFlip.json",
+  "_template": "/core/promo/Promo.hbs",
+  "title": "Always Deliver",
+  "description": "We built our business by earning the respect and trust of our clients to be 100% focused on getting each project done right.",
+  "media": {
+    "_template": "/core/image/Image.hbs",
+    "image": {
+      "_image": true,
+      "src": "/styleguide/media/icon-deliver.png"
+    }
+  },
+  "quote": "PSD helps our team run on all cylinders. It is such a pleasure working with them; they are such smart, organized, and thoughtful people.",
+  "attribution": "DRIA DE BOTTON, VICE PRESIDENT, EMERGING BRANDS, FOOD.COM AND COOKINGCHANNELTV.COM",
+  "button": null,
+  "_styledTemplate": "/core/promo/PrincipleCard.hbs",
+  "_hidden": false
 }

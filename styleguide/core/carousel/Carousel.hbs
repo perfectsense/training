@@ -1,18 +1,12 @@
-{{#block "Carousel"}}
-    <div class="{{blockName}}">
-
-        {{#element "title"}}
-            <div class="{{elementName}}">{{this}}</div>
-        {{/element}}
-
-        {{#element "slides" noWith=true}}
-            <div class="{{elementName}}">
-                {{#each slides}}
-                    <div class="{{elementName}}-slide">
-                        {{this}}
-                    </div>
-                {{/each}}
+<div class="Carousel">
+    {{#with title}}
+        <div class="Carousel-title">{{this}}</div>
+    {{/with}}
+    <div class="Carousel-slides">
+        {{#each slides}}
+            <div class="Carousel-slides-slide">
+                {{this}}
             </div>
-        {{/element}}
+        {{/each}}
     </div>
-{{/block}}
+</div>

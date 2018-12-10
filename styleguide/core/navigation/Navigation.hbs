@@ -1,15 +1,12 @@
-{{#block "Navigation"}}
-    <nav class="{{blockName}}" itemscope itemtype="http://schema.org/SiteNavigationElement"{{extraAttributes}}>
-        {{#element "label"}}
-            <div class="{{elementName}}">{{this}}</div>
-        {{/element}}
-
-        {{#element "items"}}
-            <ul class="{{elementName}}">
+<nav class="Navigation" itemscope itemtype="http://schema.org/SiteNavigationElement"{{extraAttributes}}>
+    {{#with label}}
+        <div class="Navigation-label">{{this}}</div>
+    {{/with}}
+    {{#with items}}
+        <ul class="Navigation-items">
             {{#each this}}
-              <li class="{{elementName}}-item" {{#if this.isCurrent}}data-current-nav-item{{/if}}>{{this}}</li>
+                <li class="Navigation-items-item" {{#if this.isCurrent}}data-current-nav-item{{/if}}>{{this}}</li>
             {{/each}}
-            </ul>
-        {{/element}}
-    </nav>
-{{/block}}
+        </ul>
+    {{/with}}
+</nav>

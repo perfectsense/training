@@ -1,7 +1,5 @@
-{{#block "PageHeaderTextHat" extend="_SourcePageHeaderTextHat.hbs"}}
-    <div class="{{blockName}}"
+<div class="PageHeaderTextHat"
     {{#if backgroundColor}}style="--color:var(--{{backgroundColor}})"{{/if}}
     {{#if inverseColors}}data-inverse-colors {{/if}}>
-        {{text}}
-    </div>
-{{/block}}
+    {{text}}
+</div>

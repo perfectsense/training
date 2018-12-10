@@ -1,13 +1,12 @@
-{{#block "CarouselSlide" extend="/core/gallery/GallerySlide.hbs"}}
-    <div class="{{blockName}}" itemprop="image" itemtype="http://schema.org/ImageObject" {{extraAttributes}}>
-        {{element "media"}}
-
-        {{#element "info" noWith=true}}
-            <div class="{{elementName}}">
-                {{element "infoTitle"}}
-                {{element "infoDescription"}}
-                {{element "infoAttribution"}}
+<div class="CarouselSlide" itemprop="image" itemtype="http://schema.org/ImageObject" {{extraAttributes}}>
+    {{include "/core/gallery/GallerySlide-media.hbs" this}}
+    <div class="CarouselSlide-info">
+        {{include "/core/gallery/GallerySlide-infoTitle.hbs" this}}
+        {{#with infoDescription}}
+            <div class="CarouselSlide-infoDescription" itemprop="description">
+                {{~this~}}
             </div>
-        {{/element}}
+        {{/with}}
+        {{include "/core/gallery/GallerySlide-infoAttribution.hbs" this}}
     </div>
-{{/block}}
+</div>

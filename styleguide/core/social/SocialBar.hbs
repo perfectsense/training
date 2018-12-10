@@ -1,16 +1,10 @@
-{{#block "SocialBar"}}
-    <div class="{{blockName}}">
-
-        {{#element "heading" noWith=true}}
-            <h2 class="{{elementName}}">{{format "headingText"}}</h2>
-        {{/element}}
-
-        {{#element "items"}}
-            <ul class="{{elementName}}">
-                {{#each this}}
-                    <li class="{{elementName}}-item">{{this}}</li>
-                {{/each}}
-            </ul>
-        {{/element}}
-    </div>
-{{/block}}
+<div class="SocialBar">
+    <h2 class="SocialBar-heading">{{format "/core/social/SocialBar" "headingText"}}</h2>
+    {{#with items}}
+        <ul class="SocialBar-items">
+            {{#each this}}
+                <li class="SocialBar-items-item">{{this}}</li>
+            {{/each}}
+        </ul>
+    {{/with}}
+</div>

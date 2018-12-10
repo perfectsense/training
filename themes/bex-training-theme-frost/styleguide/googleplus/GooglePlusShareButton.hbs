@@ -1,10 +1,6 @@
-{{#block "GooglePlusShareButton" extend="_SourceGooglePlusShareButton.hbs"}}
-    {{#element "link" noWith=true}}
-        <a class="{{blockName}}" href="https://plus.google.com/share?
-                {{~#with url}}url={{this}}{{~/with~}}"
-           target="_blank"
-        >
-            <svg class="googleplus-icon"><use xlink:href="#icon-googleplus"/></svg>
-        </a>
-    {{/element}}
-{{/block}}
+<a class="GooglePlusShareButton" href="https://plus.google.com/share?
+    {{~#with url}}url={{this}}{{~/with~}}"
+    target="_blank"
+>
+<svg class="googleplus-icon"><use xlink:href="#icon-googleplus"/></svg>
+</a>

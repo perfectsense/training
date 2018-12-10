@@ -1,13 +1,13 @@
 {
   "_include": "/core/search/SearchModule.json",
   "_template": "/core/search/SearchModule.hbs",
-  "_hidden": false,
-
+  "_hidden": true,
   "background": {
     "_template": "/core/image/Image.hbs",
     "image": {
       "_image": true,
       "src": "/styleguide/media/home-lede.png"
     }
-  }
+  },
+  "_styledTemplate": "/core/search/SearchModule.hbs"
 }

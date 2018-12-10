@@ -1,6 +1,8 @@
-{{#block "VideoEnhancement" extend="_SourceVideoEnhancement.hbs"}}
-    <span class="{{blockName}}" data-video-disable-history data-embeddedvideo-container>
-        {{element "player"}}
-        {{element "title"}}
-    </span>
-{{/block}}
+<span class="VideoEnhancement" data-video-disable-history data-embeddedvideo-container>
+    {{#with player}}
+        <div class="VideoEnhancement-player">{{this}}</div>
+    {{/with}}
+    {{#with title}}
+        <div class="VideoEnhancement-title">{{this}}</div>
+    {{/with}}
+</span>

@@ -1,29 +1,28 @@
 {
-    "_include": "/core/container/Container.json",
-    "_template": "TwoByOne.hbs",
-    "title": "",
-    "description": "",
-    "rows": [
+  "_include": "/core/container/Container.json",
+  "_template": "/core/container/Container.hbs",
+  "title": "",
+  "description": "",
+  "rows": [
+    {
+      "_include": "/core/container/Row.json",
+      "columns": [
         {
-            "_include": "/core/container/Row.json",
-
-            "columns": [
-                {
-                    "_include": "/core/container/TwoColumnContainer.json",
-
-                    "columnOne": [
-                        {
-                            "_include": "/core/promo/PromoImageOnTop-large.json"
-                        }
-                    ],
-
-                    "columnTwo": [
-                        {
-                            "_include": "/core/list/ListHorizontalRule.json"
-                        }
-                    ]
-                }
-            ]
+          "_include": "/core/container/TwoColumnContainer.json",
+          "columnOne": [
+            {
+              "_include": "/core/promo/PromoImageOnTop-large.json"
+            }
+          ],
+          "columnTwo": [
+            {
+              "_include": "/core/list/ListHorizontalRule.json"
+            }
+          ]
         }
-    ]
+      ]
+    }
+  ],
+  "_styledTemplate": "/core/container/TwoByOne.hbs",
+  "_hidden": false
 }

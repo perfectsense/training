@@ -1,18 +1,15 @@
-{{#block "VimeoVideoPlayer"}}
-    <div
-        class="{{blockName}}"
-        data-video-player
-        data-player-id="{{playerId}}"
-        data-video-id="{{videoId}}"
-        data-video-title="{{videoTitle}}"
-        {{~#if seekSeconds}} data-seek-seconds="{{seekSeconds}}"{{~/if~}}
-        {{~#if muted}} data-muted{{/if~}}
-        {{~#if autoplay}} data-autoplay{{/if~}}
-    >
-
-        <div id="{{blockName}}-{{playerId}}"
-             data-vimeo-id="{{~videoId}}"
-            {{~#with autoplay}}data-vimeo-autoplay="true"{{/with~}}
-        ></div>
-    </div>
-{{/block}}
+<div
+    class="VimeoVideoPlayer"
+    data-video-player
+    data-player-id="{{playerId}}"
+    data-video-id="{{videoId}}"
+    data-video-title="{{videoTitle}}"
+    {{~#if seekSeconds}} data-seek-seconds="{{seekSeconds}}"{{~/if~}}
+    {{~#if muted}} data-muted{{/if~}}
+    {{~#if autoplay}} data-autoplay{{/if~}}
+>
+<div id="VimeoVideoPlayer-{{playerId}}"
+    data-vimeo-id="{{~videoId}}"
+    {{~#with autoplay}}data-vimeo-autoplay="true"{{/with~}}
+></div>
+</div>

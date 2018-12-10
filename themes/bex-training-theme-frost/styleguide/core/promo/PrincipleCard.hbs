@@ -1,37 +1,41 @@
-{{#block "PrincipleCard" extend="Promo.hbs"}}
-    <div class="{{blockName}}" ontouchstart="this.classList.toggle('hover');">
-        <div class="flipper">
-            <img class="invisible-image" width="{{this.media.[0].image.width}}" height="{{this.media.[0].image.height}}"
-                 src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
-            <div class="{{blockName}}-front {{#if dogEar}}dog-ear{{/if}}">
-                <div class="{{blockName}}-info">
-                    {{#element "media"}}
-                        <div class="{{blockName}}-media">
-                            <img class="Image" alt="{{alt}}" src="{{this.[0].image.src}}"
-                                {{~#with this.[0].image.width}} width="{{this}}"{{/with~}}
-                                {{~#with this.[0].image.height}} height="{{this}}"{{/with~}}
-                                {{~#with this.[0].image.srcset}} srcset="{{this}}"{{/with~}}
-                                    >
-                        </div>
-                    {{/element}}
-                    {{element "title"}}
-                    {{element "description"}}
+<div class="PrincipleCard" ontouchstart="this.classList.toggle('hover');">
+    <div class="flipper">
+        <img class="invisible-image" width="{{this.media.[0].image.width}}" height="{{this.media.[0].image.height}}"
+        src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+        <div class="PrincipleCard-front {{#if dogEar}}dog-ear{{/if}}">
+            <div class="PrincipleCard-info">
+                {{#with media}}
+                    <div class="PrincipleCard-media">
+                        <img class="Image" alt="{{alt}}" src="{{this.[0].image.src}}"
+                        {{~#with this.[0].image.width}} width="{{this}}"{{/with~}}
+                        {{~#with this.[0].image.height}} height="{{this}}"{{/with~}}
+                        {{~#with this.[0].image.srcset}} srcset="{{this}}"{{/with~}}
+                    >
                 </div>
-            </div>
-            <div class="{{blockName}}-back">
-                <div class="{{blockName}}-info">
-                    {{#element "quote"}}
-                        <div class="{{elementName}}">
-                            {{~this~}}
-                        </div>
-                    {{/element}}
-                    {{#element "attribution"}}
-                        <div class="{{elementName}}">
-                            {{this}}
-                        </div>
-                    {{/element}}
+            {{/with}}
+            {{#with title}}
+                <div class="PrincipleCard-title">
+                    {{include "../link/Link.hbs" href=../url target=../target body=this}}
                 </div>
-            </div>
+            {{/with}}
+            {{#with description}}
+                <div class="PrincipleCard-description">{{this}}</div>
+            {{/with}}
         </div>
     </div>
-{{/block}}
+    <div class="PrincipleCard-back">
+        <div class="PrincipleCard-info">
+            {{#with quote}}
+                <div class="PrincipleCard-quote">
+                    {{~this~}}
+                </div>
+            {{/with}}
+            {{#with attribution}}
+                <div class="PrincipleCard-attribution">
+                    {{this}}
+                </div>
+            {{/with}}
+        </div>
+    </div>
+</div>
+</div>

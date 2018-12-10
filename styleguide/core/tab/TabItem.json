@@ -1,11 +1,11 @@
 {
   "_template": "TabItem.hbs",
-
   "label": "{{words([1,2])}}",
   "title": "{{words([2,5])}}",
   "id": "{{words(1)}}",
   "content": {
     "_include": "/_group/TabModules.json",
     "_key": 1
-  }
+  },
+  "_hidden": false
 }

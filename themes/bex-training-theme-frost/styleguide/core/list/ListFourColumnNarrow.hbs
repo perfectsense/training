@@ -1,15 +1,41 @@
-{{#block "ListFourColumnNarrow" override="ListGrid.hbs"}}
-    {{#element "items"}}
-        <div class="{{elementName}}">
+<div class="ListFourColumnNarrow" data-column-count="{{#with columnCount}}{{this}}{{else}}2{{/with}}"
+    {{#if fullWidth}}data-full-width{{/if}}
+    {{extraAttributes}}
+    {{#if background}}style="background-image: url({{background.image.src}})"{{/if}}
+    {{#if backgroundColor}}style="--color:var(--{{backgroundColor}})"{{/if}}
+    {{#if noTopPadding}}data-nopaddingtop{{/if}}
+    {{#if partialGradient}}data-gradient="partial"{{/if}}>
+    {{#with title}}
+        <div class="ListFourColumnNarrow-title">{{this}}</div>
+    {{/with}}
+    {{#with description}}
+        <div class="ListFourColumnNarrow-description">{{this}}</div>
+    {{/with}}
+    {{#with items}}
+        <div class="ListFourColumnNarrow-items">
             {{#partition this size=4}}
-                <div class="{{blockName}}-row">
+                <div class="ListFourColumnNarrow-row">
                     {{#each this}}
-                        <div class="{{elementName}}-item">
+                        <div class="ListFourColumnNarrow-items-item">
                             {{render this [/core/promo/Promo.hbs]="/core/promo/PromoImage.hbs"}}
                         </div>
                     {{/each}}
                 </div>
             {{/partition}}
         </div>
-    {{/element}}
-{{/block}}
+    {{/with}}
+    {{#if ctaUrl}}
+        <div class="ListFourColumnNarrow-cta">
+            {{#if ctaText}}
+                {{include "/core/link/SolidButton.hbs" href=ctaUrl target=ctaTarget body=ctaText}}
+            {{else}}
+                {{include "/core/link/SolidButton.hbs" href=ctaUrl target=ctaTarget body=(format "/core/list/List" "ctaText")}}
+            {{/if}}
+        </div>
+    {{/if}}
+    <div class="ListFourColumnNarrow-pagination">
+        {{~#each pagination~}}
+            {{this}}
+        {{~/each~}}
+    </div>
+</div>

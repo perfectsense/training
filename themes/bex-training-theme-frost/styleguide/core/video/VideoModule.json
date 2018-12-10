@@ -1,41 +1,42 @@
 {
-    "_template": "/core/video/VideoModule.hbs",
-    "title": "HTML 5 Video Module",
-    "player": {
-        "_include": "/youtube/YouTubeVideoPlayer.json"
+  "_template": "/core/video/VideoModule.hbs",
+  "title": "HTML 5 Video Module",
+  "player": {
+    "_include": "/youtube/YouTubeVideoPlayer.json"
+  },
+  "playlist": [
+    {
+      "_include": "/core/video/PlaylistItem.json",
+      "url": "../video/VideoWatch2.html",
+      "companions": null
     },
-    "playlist": [
-      {
-          "_include": "/core/video/PlaylistItem.json",
-          "url": "../video/VideoWatch2.html",
-          "companions": null
-      },
-      {
-          "_include": "/core/video/PlaylistItem.json",
-          "url": "../video/VideoWatch2.html",
-          "companions": null
-      },
-      {
-          "_include": "/core/video/PlaylistItem.json",
-          "url": "../video/VideoWatch2.html",
-          "companions": null
-      },
-      {
-          "_include": "/core/video/PlaylistItem.json",
-          "url": "../video/VideoWatch2.html",
-          "companions": null
-      },
-      {
-          "_include": "/core/video/PlaylistItem.json",
-          "url": "../video/VideoWatch2.html",
-          "companions": null
-      },
-      {
-          "_include": "/core/video/PlaylistItem.json",
-          "url": "../video/VideoWatch2.html",
-          "companions": null
-      }
-    ],
-    "ctaUrl": "#",
-    "ctaTarget": "_self"
+    {
+      "_include": "/core/video/PlaylistItem.json",
+      "url": "../video/VideoWatch2.html",
+      "companions": null
+    },
+    {
+      "_include": "/core/video/PlaylistItem.json",
+      "url": "../video/VideoWatch2.html",
+      "companions": null
+    },
+    {
+      "_include": "/core/video/PlaylistItem.json",
+      "url": "../video/VideoWatch2.html",
+      "companions": null
+    },
+    {
+      "_include": "/core/video/PlaylistItem.json",
+      "url": "../video/VideoWatch2.html",
+      "companions": null
+    },
+    {
+      "_include": "/core/video/PlaylistItem.json",
+      "url": "../video/VideoWatch2.html",
+      "companions": null
+    }
+  ],
+  "ctaUrl": "#",
+  "ctaTarget": "_self",
+  "_hidden": false
 }

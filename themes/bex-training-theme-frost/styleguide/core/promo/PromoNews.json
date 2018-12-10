@@ -1,12 +1,12 @@
 {
-    "_template": "/core/promo/PromoNews.hbs",
-
-    "borderColor": "purple",
-    "sourceText": "From",
-    "sourceName": "The Guardian",
-    "sharedBy": "Shared by Jimmy",
-
-    "title": "{{words([15,25])}}",
-    "description": "{{words([25,45])}}",
-    "url": "#"
+  "_template": "/core/promo/Promo.hbs",
+  "borderColor": "purple",
+  "sourceText": "From",
+  "sourceName": "The Guardian",
+  "sharedBy": "Shared by Jimmy",
+  "title": "{{words([15,25])}}",
+  "description": "{{words([25,45])}}",
+  "url": "#",
+  "_styledTemplate": "/core/promo/PromoNews.hbs",
+  "_hidden": false
 }

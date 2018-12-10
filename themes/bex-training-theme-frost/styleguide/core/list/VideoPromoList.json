@@ -1,10 +1,12 @@
 {
-    "_template": "VideoPromoList.hbs",
-    "title": "Module title Goes Here",
-    "items": [
-      {
-        "_include": "/core/promo/VideoPromo.json",
-        "_repeat": "3"
-      }
-    ]
-  }
+  "_template": "/core/list/List.hbs",
+  "title": "Module title Goes Here",
+  "items": [
+    {
+      "_include": "/core/promo/VideoPromo.json",
+      "_repeat": "3"
+    }
+  ],
+  "_styledTemplate": "/core/list/VideoPromoList.hbs",
+  "_hidden": false
+}

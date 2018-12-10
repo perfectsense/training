@@ -1,5 +1,6 @@
 {
-  "_include": "_SourcePageHeaderTextHat.json",
+  "_include": "_Source.bex-training.PageHeaderTextHat.json",
   "inverseColors": true,
-  "backgroundColor": "primaryColor"
+  "backgroundColor": "primaryColor",
+  "_hidden": false
 }

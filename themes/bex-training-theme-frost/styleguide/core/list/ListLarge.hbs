@@ -1,26 +1,39 @@
-{{#block "ListLarge" override="ListMedium.hbs"}}
-    {{#element "heading" noWith="true"}}
-        <div class="{{elementName}}">
-            {{element "media"}}
-
-            {{element "title"}}
-        </div>
-
-        {{element "description"}}
-    {{/element}}
-
-    {{#element "items"}}
-        <ul class="{{elementName}}">
+<div class="ListLarge"{{extraAttributes}}
+    {{#if backgroundColor}}style="--color:var(--{{backgroundColor}})"{{/if}}
+    {{#if inverseColors}}data-inverse-colors {{/if}}
+    {{#with horizontalAlignment}} data-horizontal-align="{{this}}"{{/with}}>
+    <div class="ListLarge-heading">
+        {{#with media}}
+            <div class="ListLarge-media">
+                {{this}}
+            </div>
+        {{/with}}
+        {{#with title}}
+            <div class="ListLarge-title">{{this}}</div>
+        {{/with}}
+    </div>
+    {{#with description}}
+        <div class="ListLarge-description">{{this}}</div>
+    {{/with}}
+    {{#with items}}
+        <ul class="ListLarge-items">
             {{#each this}}
                 {{#unless @first}}
-                    <hr class="{{elementName}}-hr">
+                    <hr class="ListLarge-items-hr">
                 {{/unless}}
-                <li class="{{elementName}}-item">
-                    {{render this
-                        [/core/promo/Promo.hbs]="/core/promo/PromoTextItem.hbs"
-                    }}
+                <li class="ListLarge-items-item">
+                    {{render this [/core/promo/Promo.hbs]="/core/promo/PromoTextItem.hbs"}}
                 </li>
             {{/each}}
         </ul>
-    {{/element}}
-{{/block}}
+    {{/with}}
+    {{#if ctaUrl}}
+        <div class="ListLarge-cta">
+            {{#if ctaText}}
+                {{include "/core/link/SolidButton.hbs" href=ctaUrl target=ctaTarget body=ctaText}}
+            {{else}}
+                {{include "/core/link/SolidButton.hbs" href=ctaUrl target=ctaTarget body=(format "/core/list/List" "ctaText")}}
+            {{/if}}
+        </div>
+    {{/if}}
+</div>

@@ -5,7 +5,105 @@
   "vars": {
     "exampleSiteUrl": "http://www.perfectsensedigital.com/"
   },
-  "includes": [
-    "**/*.config.json"
-  ]
+  "imageSizes": {
+    "tiny": {
+      "width": 50,
+      "height": 50,
+      "srcsetDescriptors": [
+        "2x"
+      ]
+    },
+    "small": {
+      "width": 300,
+      "height": 200,
+      "srcsetDescriptors": [
+        "2x"
+      ]
+    },
+    "large": {
+      "width": 1000,
+      "height": 500,
+      "srcsetDescriptors": [
+        "2x"
+      ]
+    },
+    "socialSharing": {
+      "width": 1200,
+      "height": 1200
+    },
+    "twitterSharing": {
+      "width": 1200,
+      "height": 675
+    }
+  },
+  "imageSizeContexts": {
+    "/core/article/ArticlePage.hbs": {
+      "authorImage": "tiny"
+    },
+    "/core/background/Background.hbs": {
+      "cssValue": "large"
+    },
+    "/core/figure/Figure.hbs": {
+      "image": "small"
+    },
+    "/core/gallery/GalleryPage.hbs": {
+      "authorImage": "tiny"
+    },
+    "/core/image/Image.hbs": {
+      "image": "small",
+      "narrowImage": "small"
+    },
+    "/core/image/ImagePage.hbs": {
+      "authorImage": "tiny",
+      "media": {
+        "/core/image/Image.hbs": {
+          "image": "large"
+        }
+      }
+    },
+    "/core/page/ContentPage.hbs": {
+      "authorImage": "tiny"
+    },
+    "/core/page/CreativeWorkPage.hbs": {
+      "authorImage": "tiny"
+    },
+    "/core/page/MediaObjectPage.hbs": {
+      "authorImage": "tiny"
+    },
+    "/core/page/Page.hbs": {
+      "authorImage": "tiny"
+    },
+    "/core/page/PageLogo.hbs": {
+      "image": "small"
+    },
+    "/core/quote/Quote.hbs": {
+      "image": "tiny"
+    },
+    "/core/video/VideoPage.hbs": {
+      "authorImage": "tiny"
+    },
+    "/core/video/HTML5VideoPlayer.hbs": {
+      "poster": "small"
+    },
+    "/facebook/OpenGraphImageMeta.hbs": {
+      "image": "socialSharing"
+    },
+    "/jwplayer/JWVideoPlayer.hbs": {
+      "image": "small"
+    },
+    "/twitter/card/TwitterCard.hbs": {
+      "image": "twitterSharing"
+    },
+    "/twitter/card/TwitterSummaryLargeImageCard.hbs": {
+      "image": "twitterSharing"
+    },
+    "/twitter/card/TwitterSummaryCard.hbs": {
+      "image": "twitterSharing"
+    },
+    "/twitter/card/TwitterPlayerCard.hbs": {
+      "image": "twitterSharing"
+    }
+  },
+  "styles": {},
+  "_hidden": true
 }

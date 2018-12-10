@@ -1,6 +1,7 @@
 {
-    "_template" : "ActionBar.hbs",
-    "items": {
-        "_include": "/_group/ActionBarItems.json"
-    }
+  "_template": "ActionBar.hbs",
+  "items": {
+    "_include": "/_group/ActionBarItems.json"
+  },
+  "_hidden": false
 }

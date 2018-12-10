@@ -1,10 +1,32 @@
-{{#block "PreviewPage" override="_SourcePreviewPage.hbs"}}
-    {{#element "body" noWith=true}}
-        <body class="{{elementName}}"{{~#each extraBodyAttributes}} {{this}}{{~/each~}}
-         {{#if hidePromoDropShadow}} data-hide-promo-dropshadow{{/if}}
-         {{#if promoModuleAlignment}} data-promo-module-alignment="{{promoModuleAlignment}}"{{/if}}
-          data-mood-bold>
-            {{element "main"}}
-        </body>
-    {{/element}}
-{{/block}}
+<!DOCTYPE html>
+<html class="PreviewPage" lang="{{#with language}}{{this}}{{else}}en{{/with}}" itemscope itemtype="http://schema.org/WebPage">
+    {{include "/core/page/Page-head.hbs" this}}
+    <body class="PreviewPage-body"{{~#each extraBodyAttributes}} {{this}}{{~/each~}}
+        {{#if hidePromoDropShadow}} data-hide-promo-dropshadow{{/if}}
+        {{#if promoModuleAlignment}} data-promo-module-alignment="{{promoModuleAlignment}}"{{/if}}
+        data-mood-bold>
+        <main class="PreviewPage-main"{{#with backgroundColor}} style="background-color:{{this}}"{{/with}}>
+            {{#if pageLead}}
+                <div class="PreviewPage-pageLead" data-page-lead{{#if inlineSubheading}} data-subheading-lead{{/if}}>
+                    <div class="PreviewPage-heading">
+                        {{pageHeading}}
+                        {{#with pageSubHeading}}
+                            <div class="PreviewPage-pageSubHeading">{{this}}</div>
+                        {{/with}}
+                    </div>
+                    {{pageLead}}
+                </div>
+            {{else}}
+                {{#with pageHeading}}
+                    <h1 class="PreviewPage-pageHeading">{{this}}</h1>
+                {{/with}}
+            {{/if}}
+            {{#with pageSubHeading}}
+                <div class="PreviewPage-pageSubHeading">{{this}}</div>
+            {{/with}}
+            {{#with main}}
+                {{this}}
+            {{/with}}
+        </main>
+    </body>
+</html>

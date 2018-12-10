@@ -1,5 +1,5 @@
 {
-  "_template": "LargeCarousel.hbs",
+  "_template": "/core/list/List.hbs",
   "items": [
     {
       "_include": "/core/promo/PromoTextOverlay-large.json",
@@ -9,11 +9,11 @@
       "horizontalAlignment": "center",
       "verticalAlignment": "middle",
       "media": {
-          "_template": "/core/image/Image.hbs",
-          "image": {
-              "_image": true,
-              "src": "/styleguide/media/carousel-photo.png"
-          }
+        "_template": "/core/image/Image.hbs",
+        "image": {
+          "_image": true,
+          "src": "/styleguide/media/carousel-photo.png"
+        }
       },
       "button": null
     },
@@ -25,11 +25,11 @@
       "horizontalAlignment": "center",
       "verticalAlignment": "middle",
       "media": {
-          "_template": "/core/image/Image.hbs",
-          "image": {
-              "_image": true,
-              "src": "/styleguide/media/carousel-photo.png"
-          }
+        "_template": "/core/image/Image.hbs",
+        "image": {
+          "_image": true,
+          "src": "/styleguide/media/carousel-photo.png"
+        }
       },
       "button": null
     },
@@ -41,11 +41,11 @@
       "horizontalAlignment": "center",
       "verticalAlignment": "middle",
       "media": {
-          "_template": "/core/image/Image.hbs",
-          "image": {
-              "_image": true,
-              "src": "/styleguide/media/carousel-photo.png"
-          }
+        "_template": "/core/image/Image.hbs",
+        "image": {
+          "_image": true,
+          "src": "/styleguide/media/carousel-photo.png"
+        }
       },
       "button": null
     },
@@ -57,13 +57,15 @@
       "horizontalAlignment": "center",
       "verticalAlignment": "middle",
       "media": {
-          "_template": "/core/image/Image.hbs",
-          "image": {
-              "_image": true,
-              "src": "/styleguide/media/carousel-photo.png"
-          }
+        "_template": "/core/image/Image.hbs",
+        "image": {
+          "_image": true,
+          "src": "/styleguide/media/carousel-photo.png"
+        }
       },
       "button": null
     }
-  ]
+  ],
+  "_styledTemplate": "/core/list/LargeCarousel.hbs",
+  "_hidden": false
 }

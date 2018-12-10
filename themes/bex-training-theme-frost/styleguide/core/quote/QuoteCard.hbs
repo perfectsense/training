@@ -1,9 +1,9 @@
-{{#block "QuoteCard" extend="/core/quote/Quote.hbs"}}
-    <div class="{{blockName}}" {{#if backgroundColor}}style="background-color:var(--{{backgroundColor}})"{{/if}} 
-        {{#if horizontalAlignment}}data-align-{{horizontalAlignment}}{{else}}data-align-center{{/if}} {{extraAttributes}}>
-        <blockquote {{#if textColor}}style="color:{{textColor}}"{{/if}}>
-            {{element "quote"}}
-        </blockquote>
-        {{element "attribution"}}
-    </div>
-{{/block}}
+<div class="QuoteCard" {{#if backgroundColor}}style="background-color:var(--{{backgroundColor}})"{{/if}}
+    {{#if horizontalAlignment}}data-align-{{horizontalAlignment}}{{else}}data-align-center{{/if}} {{extraAttributes}}>
+    <blockquote {{#if textColor}}style="color:{{textColor}}"{{/if}}>
+        {{include "/core/quote/Quote-quote.hbs" this}}
+    </blockquote>
+    {{#with attribution}}
+        <div class="QuoteCard-attribution" {{#if ../textColor}}style="color:{{../textColor}}"{{/if}}>{{this}}</div>
+    {{/with}}
+</div>

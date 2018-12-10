@@ -1,27 +1,21 @@
-{{#block "Figure"}}
-    <figure class="{{blockName}}" itemscope itemtype="http://schema.org/ImageObject">
-        {{#element "container" noWith=true}}
-            {{#if credit}}
-                <div class="{{elementName}}">
-                    <img src="{{image.src}}" alt="{{alt}}"
-                        {{~#with image.srcset}} srcset="{{this}}"{{/with~}}
-                        {{~#with image.width}} width="{{this}}"{{/with~}}
-                        {{~#with image.height}} height="{{this}}"{{/with~}} />
-
-                    {{~#element "credit"~}}
-                        <div class="{{elementName}}" itemprop="author">{{this}}</div>
-                    {{~/element~}}
-                </div>
-            {{else}}
-                <img src="{{image.src}}" alt="{{alt}}"
-                    {{~#with image.srcset}} srcset="{{this}}"{{/with~}}
-                    {{~#with image.width}} width="{{this}}"{{/with~}}
-                    {{~#with image.height}} height="{{this}}"{{/with~}} />
-            {{/if}}
-        {{/element}}
-
-        {{#element "caption"}}
-            <figcaption class="{{elementName}}" itemprop="caption">{{this}}</figcaption>
-        {{/element}}
-    </figure>
-{{/block}}
+<figure class="Figure" itemscope itemtype="http://schema.org/ImageObject">
+    {{#if credit}}
+        <div class="Figure-container">
+            <img src="{{image.src}}" alt="{{alt}}"
+            {{~#with image.srcset}} srcset="{{this}}"{{/with~}}
+            {{~#with image.width}} width="{{this}}"{{/with~}}
+            {{~#with image.height}} height="{{this}}"{{/with~}} />
+            {{~#with credit~}}
+                <div class="Figure-credit" itemprop="author">{{this}}</div>
+            {{~/with~}}
+        </div>
+    {{else}}
+        <img src="{{image.src}}" alt="{{alt}}"
+        {{~#with image.srcset}} srcset="{{this}}"{{/with~}}
+        {{~#with image.width}} width="{{this}}"{{/with~}}
+        {{~#with image.height}} height="{{this}}"{{/with~}} />
+    {{/if}}
+    {{#with caption}}
+        <figcaption class="Figure-caption" itemprop="caption">{{this}}</figcaption>
+    {{/with}}
+</figure>

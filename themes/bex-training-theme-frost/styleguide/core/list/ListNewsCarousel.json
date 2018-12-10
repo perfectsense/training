@@ -1,19 +1,17 @@
 {
-    "_template": "/core/list/ListNewsCarousel.hbs",
-
-    "backgroundColor": "#e9e9e6",
-
-    "ctaUrl": "#",
-    "ctaText": "{{words(2)}}",
-
-    "title": "{{words([5,10])}}",
-    "description": "{{words([10,20])}}",
-
-    "items": [
-        {
-            "_include": "/core/promo/PromoNews.json",
-            "_hidden": false,
-            "_repeat": 8
-        }
-    ]
+  "_template": "/core/list/List.hbs",
+  "backgroundColor": "#e9e9e6",
+  "ctaUrl": "#",
+  "ctaText": "{{words(2)}}",
+  "title": "{{words([5,10])}}",
+  "description": "{{words([10,20])}}",
+  "items": [
+    {
+      "_include": "/core/promo/PromoNews.json",
+      "_hidden": false,
+      "_repeat": 8
+    }
+  ],
+  "_styledTemplate": "/core/list/ListNewsCarousel.hbs",
+  "_hidden": false
 }

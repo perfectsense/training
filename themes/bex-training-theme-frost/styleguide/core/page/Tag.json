@@ -1,255 +1,234 @@
 {
-    "_include": "/core/page/Page.json",
-    "_template": "Tag.hbs",
-
-    "pageLead": null,
-    "pageHeading": "Careers",
-    "pageSubHeading": "We have developed a way of working that uniquely benefits our partners. It's based on one goal: Make a true difference in a partner's business by delivering a high-quality digital solution on-time, on-target, and on-budget. Our business, and our success, is built on hiring only the best talent. Join us as we continue to build expert teams of product, design, and technology professionals to serve our growing list of partners.",
-    "main": [
+  "_include": "/core/page/Page.json",
+  "_template": "/core/page/Page.hbs",
+  "pageLead": null,
+  "pageHeading": "Careers",
+  "pageSubHeading": "We have developed a way of working that uniquely benefits our partners. It's based on one goal: Make a true difference in a partner's business by delivering a high-quality digital solution on-time, on-target, and on-budget. Our business, and our success, is built on hiring only the best talent. Join us as we continue to build expert teams of product, design, and technology professionals to serve our growing list of partners.",
+  "main": [
+    {
+      "_include": "/core/tab/FullWidthTabs.json",
+      "tabs": [
         {
-            "_include": "/core/tab/FullWidthTabs.json",
-            "tabs": [
-                {
-                    "_include": "/core/tab/BottomBorderTabItem.json",
-                    "label": "Media Publishing",
-                    "title": "Media Publishing",
-                    "id": "cat",
-                    "content": {
-                        "_include": "/core/promo/Promo.json"
-                    }
-                },
-                {
-                    "_include": "/core/tab/BottomBorderTabItem.json",
-                    "label": "B2B",
-                    "title": "B2B",
-                    "id": "3",
-                    "content": {
-                        "_include": "/core/text/RichTextModule.json"
-                    }
-                },
-                {
-                    "_include": "/core/tab/BottomBorderTabItem.json",
-                    "label": "Sports & Entertainment",
-                    "title": "Sports & Entertainment",
-                    "id": "4",
-                    "content": {
-                        "_include": "/core/text/RichTextModule.json"
-                    }
-                }
-            ]
+          "_include": "/core/tab/BottomBorderTabItem.json",
+          "label": "Media Publishing",
+          "title": "Media Publishing",
+          "id": "cat",
+          "content": {
+            "_include": "/core/promo/Promo.json"
+          }
         },
         {
-            "_include": "/core/list/ListMasonry.json",
-
-            "items": [
-                {
-                    "_include": "/core/list/ListMedium.json",
-
-                    "title": "Join Our Talented Team! We’re Seeking:",
-                    "items": [
-                        {
-                            "_include": "/core/promo/PromoTextItem.json",
-
-                            "title": "DevOps Engineer"
-                        },
-                        {
-                            "_include": "/core/promo/PromoTextItem.json",
-
-                            "title": "Platform Quality Assurance Engineer"
-                        },
-                        {
-                            "_include": "/core/promo/PromoTextItem.json",
-
-                            "title": "Product Manager"
-                        },
-                        {
-                            "_include": "/core/promo/PromoTextItem.json",
-
-                            "title": "Senior Front End Engineer"
-                        },
-                        {
-                            "_include": "/core/promo/PromoTextItem.json",
-
-                            "title": "Senior Back End Engineer"
-                        }
-                    ]
-                },
-                {
-                    "_include": "/core/promo/PromoImageFlip.json"
-                },
-                {
-                    "_include": "/core/promo/PromoImageFlip.json",
-
-                    "media": {
-                        "_template": "/core/image/Image.hbs",
-                        "image": {
-                            "_image": true,
-                            "src": "/styleguide/media/minnie-kwag.png"
-                        }
-                    },
-                    "title": "Minnie Kwag"
-                },
-                {
-                    "_include": "/core/promo/PromoImageFlip.json",
-
-                    "media": {
-                        "_template": "/core/image/Image.hbs",
-                        "image": {
-                            "_image": true,
-                            "src": "/styleguide/media/faith.png"
-                        }
-                    },
-                    "title": "Faith Walker"
-                },
-                {
-                    "_include": "/core/promo/PromoImageFlip.json",
-
-                    "media": {
-                        "_template": "/core/image/Image.hbs",
-                        "image": {
-                            "_image": true,
-                            "src": "/styleguide/media/shehar-banu.png"
-                        }
-                    },
-                    "title": "Shehar Banu"
-                },
-                {
-                    "_include": "/core/promo/PromoImageFlip.json",
-
-                    "media": {
-                        "_template": "/core/image/Image.hbs",
-                        "image": {
-                            "_image": true,
-                            "src": "/styleguide/media/ari-ratner.png"
-                        }
-                    },
-                    "title": "Ari Ratner"
-                },
-                {
-                    "_include": "/core/promo/PromoImageFlip.json",
-
-                    "media": {
-                        "_template": "/core/image/Image.hbs",
-                        "image": {
-                            "_image": true,
-                            "src": "/styleguide/media/axel-tarnvik.png"
-                        }
-                    },
-                    "title": "Axel Tarnvik"
-                },
-                {
-                    "_include": "/core/promo/PromoImageFlip.json",
-
-                    "media": {
-                        "_template": "/core/image/Image.hbs",
-                        "image": {
-                            "_image": true,
-                            "src": "/styleguide/media/omavi.png"
-                        }
-                    },
-                    "title": "Omavi Walker"
-                },
-                {
-                    "_include": "/core/promo/PromoImageFlip.json",
-
-                    "media": {
-                        "_template": "/core/image/Image.hbs",
-                        "image": {
-                            "_image": true,
-                            "src": "/styleguide/media/ping-pan.png"
-                        }
-                    },
-                    "title": "Ping Pan"
-                },
-                {
-                    "_include": "/core/list/ListBulleted.json",
-
-                    "title": "Students & Graduates",
-                    "description": "Perfect Sense is a vibrant and exciting place to start a career and develop professionally. Explore current opportunities and launch your career at Perfect Sense. Learn more about the experiences of recent graduates from the following schools who started their careers at Perfect Sense:",
-                    "items": [
-                        {
-                            "_include": "/core/promo/PromoTextItem.json",
-
-                            "title": "University of Virginia"
-                        },
-                        {
-                            "_include": "/core/promo/PromoTextItem.json",
-
-                            "title": "Virginia Tech"
-                        },
-                        {
-                            "_include": "/core/promo/PromoTextItem.json",
-
-                            "title": "Virginia Commonwealth University"
-                        },
-                        {
-                            "_include": "/core/promo/PromoTextItem.json",
-
-                            "title": "University of Maryland"
-                        },
-                        {
-                            "_include": "/core/promo/PromoTextItem.json",
-
-                            "title": "James Madison University"
-                        }
-                    ]
-                },
-                {
-                    "_include": "/core/list/ListBulleted.json",
-
-                    "title": "Competitive Benefits",
-                    "description": null,
-                    "items": [
-                        {
-                            "_template": "/core/text/RichTextModule.hbs",
-                            "items": [
-                                "{{html('<b>Catered Lunches & In-House Barista:</b> Eat lunch every day for free and enjoy lattes and other custom drinks from our full-time barista')}}"
-                            ]
-                        },
-                        {
-                            "_template": "/core/text/RichTextModule.hbs",
-                            "items": [
-                                "{{html('<b>401(k):</b> Start planning your retirement from day 1 with a generous employer match')}}"
-                            ]
-                        },
-                        {
-                            "_template": "/core/text/RichTextModule.hbs",
-                            "items": [
-                                "{{html('<b>Annual Bonus:</b> Work with your manager to set yearly goals that will help you earn up to a 10% annual bonus')}}"
-                            ]
-                        },
-                        {
-                            "_template": "/core/text/RichTextModule.hbs",
-                            "items": [
-                                "{{html('<b>Vacation:</b> Start with 3 weeks of vacation plus paid company holidays')}}"
-                            ]
-                        },
-                        {
-                            "_template": "/core/text/RichTextModule.hbs",
-                            "items": [
-                                "{{html('<b>Health Insurance:</b> Choose from 3 different policies for what best fits your lifestyle')}}"
-                            ]
-                        }
-                    ]
-                }
-            ]
+          "_include": "/core/tab/BottomBorderTabItem.json",
+          "label": "B2B",
+          "title": "B2B",
+          "id": "3",
+          "content": {
+            "_include": "/core/text/RichTextModule.json"
+          }
         },
         {
-            "_include": "/core/promo/PromoTextOverlay-large.json",
-
-            "title": "We Need You",
-            "description": "Your feedback in the company survey helps us track our progress in creating a winning environment at Perfect Sense.",
-            "media": {
-                "_template": "/core/image/Image.hbs",
-                "image": {
-                    "_image": true,
-                    "src": "/styleguide/media/infographic-bkgd.png"
-                }
-            }
+          "_include": "/core/tab/BottomBorderTabItem.json",
+          "label": "Sports & Entertainment",
+          "title": "Sports & Entertainment",
+          "id": "4",
+          "content": {
+            "_include": "/core/text/RichTextModule.json"
+          }
         }
-    ],
-    "above": null,
-    "aside": null,
-    "banner": null,
-    "below": null
+      ]
+    },
+    {
+      "_include": "/core/list/ListMasonry.json",
+      "items": [
+        {
+          "_include": "/core/list/ListMedium.json",
+          "title": "Join Our Talented Team! We’re Seeking:",
+          "items": [
+            {
+              "_include": "/core/promo/PromoTextItem.json",
+              "title": "DevOps Engineer"
+            },
+            {
+              "_include": "/core/promo/PromoTextItem.json",
+              "title": "Platform Quality Assurance Engineer"
+            },
+            {
+              "_include": "/core/promo/PromoTextItem.json",
+              "title": "Product Manager"
+            },
+            {
+              "_include": "/core/promo/PromoTextItem.json",
+              "title": "Senior Front End Engineer"
+            },
+            {
+              "_include": "/core/promo/PromoTextItem.json",
+              "title": "Senior Back End Engineer"
+            }
+          ]
+        },
+        {
+          "_include": "/core/promo/PromoImageFlip.json"
+        },
+        {
+          "_include": "/core/promo/PromoImageFlip.json",
+          "media": {
+            "_template": "/core/image/Image.hbs",
+            "image": {
+              "_image": true,
+              "src": "/styleguide/media/minnie-kwag.png"
+            }
+          },
+          "title": "Minnie Kwag"
+        },
+        {
+          "_include": "/core/promo/PromoImageFlip.json",
+          "media": {
+            "_template": "/core/image/Image.hbs",
+            "image": {
+              "_image": true,
+              "src": "/styleguide/media/faith.png"
+            }
+          },
+          "title": "Faith Walker"
+        },
+        {
+          "_include": "/core/promo/PromoImageFlip.json",
+          "media": {
+            "_template": "/core/image/Image.hbs",
+            "image": {
+              "_image": true,
+              "src": "/styleguide/media/shehar-banu.png"
+            }
+          },
+          "title": "Shehar Banu"
+        },
+        {
+          "_include": "/core/promo/PromoImageFlip.json",
+          "media": {
+            "_template": "/core/image/Image.hbs",
+            "image": {
+              "_image": true,
+              "src": "/styleguide/media/ari-ratner.png"
+            }
+          },
+          "title": "Ari Ratner"
+        },
+        {
+          "_include": "/core/promo/PromoImageFlip.json",
+          "media": {
+            "_template": "/core/image/Image.hbs",
+            "image": {
+              "_image": true,
+              "src": "/styleguide/media/axel-tarnvik.png"
+            }
+          },
+          "title": "Axel Tarnvik"
+        },
+        {
+          "_include": "/core/promo/PromoImageFlip.json",
+          "media": {
+            "_template": "/core/image/Image.hbs",
+            "image": {
+              "_image": true,
+              "src": "/styleguide/media/omavi.png"
+            }
+          },
+          "title": "Omavi Walker"
+        },
+        {
+          "_include": "/core/promo/PromoImageFlip.json",
+          "media": {
+            "_template": "/core/image/Image.hbs",
+            "image": {
+              "_image": true,
+              "src": "/styleguide/media/ping-pan.png"
+            }
+          },
+          "title": "Ping Pan"
+        },
+        {
+          "_include": "/core/list/ListBulleted.json",
+          "title": "Students & Graduates",
+          "description": "Perfect Sense is a vibrant and exciting place to start a career and develop professionally. Explore current opportunities and launch your career at Perfect Sense. Learn more about the experiences of recent graduates from the following schools who started their careers at Perfect Sense:",
+          "items": [
+            {
+              "_include": "/core/promo/PromoTextItem.json",
+              "title": "University of Virginia"
+            },
+            {
+              "_include": "/core/promo/PromoTextItem.json",
+              "title": "Virginia Tech"
+            },
+            {
+              "_include": "/core/promo/PromoTextItem.json",
+              "title": "Virginia Commonwealth University"
+            },
+            {
+              "_include": "/core/promo/PromoTextItem.json",
+              "title": "University of Maryland"
+            },
+            {
+              "_include": "/core/promo/PromoTextItem.json",
+              "title": "James Madison University"
+            }
+          ]
+        },
+        {
+          "_include": "/core/list/ListBulleted.json",
+          "title": "Competitive Benefits",
+          "description": null,
+          "items": [
+            {
+              "_template": "/core/text/RichTextModule.hbs",
+              "items": [
+                "{{html('<b>Catered Lunches & In-House Barista:</b> Eat lunch every day for free and enjoy lattes and other custom drinks from our full-time barista')}}"
+              ]
+            },
+            {
+              "_template": "/core/text/RichTextModule.hbs",
+              "items": [
+                "{{html('<b>401(k):</b> Start planning your retirement from day 1 with a generous employer match')}}"
+              ]
+            },
+            {
+              "_template": "/core/text/RichTextModule.hbs",
+              "items": [
+                "{{html('<b>Annual Bonus:</b> Work with your manager to set yearly goals that will help you earn up to a 10% annual bonus')}}"
+              ]
+            },
+            {
+              "_template": "/core/text/RichTextModule.hbs",
+              "items": [
+                "{{html('<b>Vacation:</b> Start with 3 weeks of vacation plus paid company holidays')}}"
+              ]
+            },
+            {
+              "_template": "/core/text/RichTextModule.hbs",
+              "items": [
+                "{{html('<b>Health Insurance:</b> Choose from 3 different policies for what best fits your lifestyle')}}"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "_include": "/core/promo/PromoTextOverlay-large.json",
+      "title": "We Need You",
+      "description": "Your feedback in the company survey helps us track our progress in creating a winning environment at Perfect Sense.",
+      "media": {
+        "_template": "/core/image/Image.hbs",
+        "image": {
+          "_image": true,
+          "src": "/styleguide/media/infographic-bkgd.png"
+        }
+      }
+    }
+  ],
+  "above": null,
+  "aside": null,
+  "banner": null,
+  "below": null,
+  "_styledTemplate": "/core/page/Tag.hbs",
+  "_hidden": false
 }

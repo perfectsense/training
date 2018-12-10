@@ -1,67 +1,63 @@
 {
-    "_template": "/core/carousel/Carousel.hbs",
-
-    "title": "A Captivating Gallery Title",
-    "slides": [
-        {
-            "_template": "/core/carousel/CarouselSlide.hbs",
-
-            "mediaContent": {
-                "_template": "/core/image/Image.hbs",
-                "image": {
-                    "_image": true,
-                    "src": "/styleguide/media/lede-photo.png"
-                }
-            },
-
-            "infoTitle": "{{words(8,12)}}",
-            "infoDescription": "A slide description with {{html('<a href=\"#\">linked</a>')}} {{html('<b>BOLD</b>')}} text.",
-            "infoAttribution": "Photo by: {{name()}}"
-        },
-        {
-            "_template": "/core/carousel/CarouselSlide.hbs",
-
-            "mediaContent": {
-                "_template": "/core/image/Image.hbs",
-                "image": {
-                    "_image": true,
-                    "src": "/styleguide/media/building-bikes.png"
-                }
-            },
-
-            "infoTitle": "{{words(8,12)}}",
-            "infoDescription": "A slide description with {{html('<a href=\"#\">linked</a>')}} {{html('<b>BOLD</b>')}} text.",
-            "infoAttribution": "Photo by: {{name()}}"
-        },
-        {
-            "_template": "/core/carousel/CarouselSlide.hbs",
-
-            "mediaContent": {
-                "_template": "/core/image/Image.hbs",
-                "image": {
-                    "_image": true,
-                    "src": "/styleguide/media/carousel-photo.png"
-                }
-            },
-
-            "infoTitle": "{{words(8,12)}}",
-            "infoDescription": "A slide description with {{html('<a href=\"#\">linked</a>')}} {{html('<b>BOLD</b>')}} text.",
-            "infoAttribution": "Photo by: {{name()}}"
-        },
-        {
-            "_template": "/core/carousel/CarouselSlide.hbs",
-
-            "mediaContent": {
-                "_template": "/core/image/Image.hbs",
-                "image": {
-                    "_image": true,
-                    "src": "/styleguide/media/tour-our-office.png"
-                }
-            },
-
-            "infoTitle": "{{words(8,12)}}",
-            "infoDescription": "A slide description with {{html('<a href=\"#\">linked</a>')}} {{html('<b>BOLD</b>')}} text.",
-            "infoAttribution": "Photo by: {{name()}}"
+  "_template": "/core/carousel/Carousel.hbs",
+  "title": "A Captivating Gallery Title",
+  "slides": [
+    {
+      "_template": "/core/gallery/GallerySlide.hbs",
+      "mediaContent": {
+        "_template": "/core/image/Image.hbs",
+        "image": {
+          "_image": true,
+          "src": "/styleguide/media/lede-photo.png"
         }
-    ]
+      },
+      "infoTitle": "{{words(8,12)}}",
+      "infoDescription": "A slide description with {{html('<a href=\"#\">linked</a>')}} {{html('<b>BOLD</b>')}} text.",
+      "infoAttribution": "Photo by: {{name()}}",
+      "_styledTemplate": "/core/carousel/CarouselSlide.hbs"
+    },
+    {
+      "_template": "/core/gallery/GallerySlide.hbs",
+      "mediaContent": {
+        "_template": "/core/image/Image.hbs",
+        "image": {
+          "_image": true,
+          "src": "/styleguide/media/building-bikes.png"
+        }
+      },
+      "infoTitle": "{{words(8,12)}}",
+      "infoDescription": "A slide description with {{html('<a href=\"#\">linked</a>')}} {{html('<b>BOLD</b>')}} text.",
+      "infoAttribution": "Photo by: {{name()}}",
+      "_styledTemplate": "/core/carousel/CarouselSlide.hbs"
+    },
+    {
+      "_template": "/core/gallery/GallerySlide.hbs",
+      "mediaContent": {
+        "_template": "/core/image/Image.hbs",
+        "image": {
+          "_image": true,
+          "src": "/styleguide/media/carousel-photo.png"
+        }
+      },
+      "infoTitle": "{{words(8,12)}}",
+      "infoDescription": "A slide description with {{html('<a href=\"#\">linked</a>')}} {{html('<b>BOLD</b>')}} text.",
+      "infoAttribution": "Photo by: {{name()}}",
+      "_styledTemplate": "/core/carousel/CarouselSlide.hbs"
+    },
+    {
+      "_template": "/core/gallery/GallerySlide.hbs",
+      "mediaContent": {
+        "_template": "/core/image/Image.hbs",
+        "image": {
+          "_image": true,
+          "src": "/styleguide/media/tour-our-office.png"
+        }
+      },
+      "infoTitle": "{{words(8,12)}}",
+      "infoDescription": "A slide description with {{html('<a href=\"#\">linked</a>')}} {{html('<b>BOLD</b>')}} text.",
+      "infoAttribution": "Photo by: {{name()}}",
+      "_styledTemplate": "/core/carousel/CarouselSlide.hbs"
+    }
+  ],
+  "_hidden": false
 }

@@ -1,21 +1,19 @@
-{{#block "ProductPromoList" extend="/core/list/List.hbs"}}
-  <div class="{{blockName}}"
+<div class="ProductPromoList"
     {{#if reverseOrder}} data-reverse-order{{/if}}
     {{#if noTopPadding}}data-nopaddingtop{{/if}}>
-        {{element "title"}}
-
-        {{element "description"}}
-
-        {{#element "items"}}
-            <div class="{{elementName}}">
-                {{#each this}}
-                    <div class="{{elementName}}-item">
-                        {{render this
-                            [/core/promo/Promo.hbs]="/core/promo/ProductPromo.hbs"
-                        }}
-                    </div>
-                {{/each}}
-            </div>
-        {{/element}}
-  </div>
-{{/block}}
+    {{#with title}}
+        <div class="ProductPromoList-title">{{this}}</div>
+    {{/with}}
+    {{#with description}}
+        <div class="ProductPromoList-description">{{this}}</div>
+    {{/with}}
+    {{#with items}}
+        <div class="ProductPromoList-items">
+            {{#each this}}
+                <div class="ProductPromoList-items-item">
+                    {{render this [/core/promo/Promo.hbs]="/core/promo/ProductPromo.hbs"}}
+                </div>
+            {{/each}}
+        </div>
+    {{/with}}
+</div>

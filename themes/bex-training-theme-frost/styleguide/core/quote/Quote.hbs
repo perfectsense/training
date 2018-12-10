@@ -1,12 +1,8 @@
-{{#block "Quote" extend="_SourceQuote.hbs"}}
-    <div class="{{blockName}}" {{extraAttributes}}>
-        <blockquote {{#if textColor}}style="color:{{textColor}}"{{/if}}>
-            {{~#element "quote" noWith=true~}}
-                {{~quote~}}
-            {{~/element~}}
-        </blockquote>
-        {{#element "attribution"}}
-            <div class="{{elementName}}" {{#if ../textColor}}style="color:{{../textColor}}"{{/if}}>{{this}}</div>
-        {{/element}}
-    </div>
-{{/block}}
+<div class="Quote" {{extraAttributes}}>
+    <blockquote {{#if textColor}}style="color:{{textColor}}"{{/if}}>
+        {{include "/core/quote/Quote-quote.hbs" this}}
+    </blockquote>
+    {{#with attribution}}
+        <div class="Quote-attribution" {{#if ../textColor}}style="color:{{../textColor}}"{{/if}}>{{this}}</div>
+    {{/with}}
+</div>

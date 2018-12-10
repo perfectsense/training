@@ -1,32 +1,37 @@
-{{#block "ListMasonry" extend="/core/list/List.hbs"}}
-    <div class="{{blockName}}"{{extraAttributes}}
-        {{#if backgroundColor}}style="--color:var(--{{backgroundColor}})"{{/if}}
-        {{#if noTopPadding}}data-nopaddingtop{{/if}}>
-
-        {{element "title"}}
-
-        {{element "description"}}
-
-        {{#element "items"}}
-            <div class="{{elementName}}">
-                <div class="grid-sizer"></div>
-                <div class="gutter-sizer"></div>
-                {{#each this}}
-                    <div class="grid-item {{#if ../../doubleWideFirstElement}}{{#if @first}}grid-item--width2{{/if}}{{/if}}">
-                        {{render this [/core/promo/Promo.hbs]="/core/promo/PromoImageOnTop.hbs"}}
-                    </div>
-                {{/each}}
-            </div>
-        {{/element}}
-
-        {{element "cta"}}
-
-        {{#element "pagination"}}
-            <div class="{{elementName}}">
-                {{#each this}}
-                    {{this}}
-                {{/each}}
-            </div>
-        {{/element}}
-    </div>
-{{/block}}
+<div class="ListMasonry"{{extraAttributes}}
+    {{#if backgroundColor}}style="--color:var(--{{backgroundColor}})"{{/if}}
+    {{#if noTopPadding}}data-nopaddingtop{{/if}}>
+    {{#with title}}
+        <div class="ListMasonry-title">{{this}}</div>
+    {{/with}}
+    {{#with description}}
+        <div class="ListMasonry-description">{{this}}</div>
+    {{/with}}
+    {{#with items}}
+        <div class="ListMasonry-items">
+            <div class="grid-sizer"></div>
+            <div class="gutter-sizer"></div>
+            {{#each this}}
+                <div class="grid-item {{#if ../../doubleWideFirstElement}}{{#if @first}}grid-item--width2{{/if}}{{/if}}">
+                    {{render this [/core/promo/Promo.hbs]="/core/promo/PromoImageOnTop.hbs"}}
+                </div>
+            {{/each}}
+        </div>
+    {{/with}}
+    {{#if ctaUrl}}
+        <div class="ListMasonry-cta">
+            {{#if ctaText}}
+                {{include "/core/link/SolidButton.hbs" href=ctaUrl target=ctaTarget body=ctaText}}
+            {{else}}
+                {{include "/core/link/SolidButton.hbs" href=ctaUrl target=ctaTarget body=(format "/core/list/List" "ctaText")}}
+            {{/if}}
+        </div>
+    {{/if}}
+    {{#with pagination}}
+        <div class="ListMasonry-pagination">
+            {{#each this}}
+                {{this}}
+            {{/each}}
+        </div>
+    {{/with}}
+</div>

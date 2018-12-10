@@ -1,10 +1,12 @@
 {
-    "_template": "PromoIconOnSideList.hbs",
-    "title": "What Makes Us Different",
-    "items": [
-      {
-        "_include": "/core/promo/PromoIconOnSide.json",
-        "_repeat": 10
-      }
-    ]
+  "_template": "/core/list/List.hbs",
+  "title": "What Makes Us Different",
+  "items": [
+    {
+      "_include": "/core/promo/PromoIconOnSide.json",
+      "_repeat": 10
+    }
+  ],
+  "_styledTemplate": "/core/list/PromoIconOnSideList.hbs",
+  "_hidden": false
 }

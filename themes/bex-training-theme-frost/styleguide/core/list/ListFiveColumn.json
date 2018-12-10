@@ -1,9 +1,11 @@
 {
-    "_template": "ListFiveColumn.hbs",
-    "items": [
-      {
-        "_include": "/core/promo/PromoImageOnTop.json",
-        "_repeat": 9
-      }
-    ]
+  "_template": "/core/list/List.hbs",
+  "items": [
+    {
+      "_include": "/core/promo/PromoImageOnTop.json",
+      "_repeat": 9
+    }
+  ],
+  "_styledTemplate": "/core/list/ListFiveColumn.hbs",
+  "_hidden": false
 }

@@ -1,23 +1,25 @@
 {
   "_include": "PromoTextOverlay-large.json",
-  "_template": "PromoTextOverlayLarge-Contact.hbs",
+  "_template": "/core/promo/Promo.hbs",
   "description": "Join some of the top world-class brands using Brightspot",
   "title": "1-877-795-1203",
   "horizontalAlignment": "left",
   "infoColor": "white",
   "mobileMedia": {
-      "_template": "/core/image/Image.hbs",
-      "image": {
-          "_image": true,
-          "src": "/styleguide/media/promo-bkgd-mobile.png"
-      }
+    "_template": "/core/image/Image.hbs",
+    "image": {
+      "_image": true,
+      "src": "/styleguide/media/promo-bkgd-mobile.png"
+    }
   },
   "media": {
-      "_template": "/core/image/Image.hbs",
-      "image": {
-          "_image": true,
-          "src": "/styleguide/media/about-us-lede.png"
-      }
+    "_template": "/core/image/Image.hbs",
+    "image": {
+      "_image": true,
+      "src": "/styleguide/media/about-us-lede.png"
+    }
   },
-  "buttonText": "Custom Button Text"
+  "buttonText": "Custom Button Text",
+  "_styledTemplate": "/core/promo/PromoTextOverlayLarge-Contact.hbs",
+  "_hidden": false
 }

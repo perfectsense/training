@@ -1,474 +1,84 @@
-{{#block "Page" extend="_SourcePage.hbs" }}
-    <!DOCTYPE html>
-    <html class="{{blockName}}" lang="{{#with language}}{{this}}{{else}}en{{/with}}" itemscope itemtype="http://schema.org/WebPage">
-    {{~#element "head" noWith=true~}}
-        <head>
-            <!--This is needed for custom elements to function in browsers that
-                support them natively but that are using es6 code transpiled to es5.
-                This will cause a non-fatal error to show up in the IE11 console.
-                It can be safely ignored. https://github.com/webcomponents/webcomponentsjs/issues/749 -->
-            <script src="{{cdn '/styleguide/util/polyfill/custom-elements-native-shim.js'}}"></script>
-            <script>
-                /**
-                 For the fastest load times https://developers.google.com/speed/docs/insights/BlockingJS
-                 and to prevent any FOUC, as well as prevent any race conditions for browsers that also
-                 rely on the CSS variables polyfill, this is inlined.
-                 **/
-                if (!window.customElements) {
-                    (function(){
-                        'use strict';var h=new function(){};var aa=new Set("annotation-xml color-profile font-face font-face-src font-face-uri font-face-format font-face-name missing-glyph".split(" "));function m(b){var a=aa.has(b);b=/^[a-z][.0-9_a-z]*-[\-.0-9_a-z]*$/.test(b);return!a&&b}function n(b){var a=b.isConnected;if(void 0!==a)return a;for(;b&&!(b.__CE_isImportDocument||b instanceof Document);)b=b.parentNode||(window.ShadowRoot&&b instanceof ShadowRoot?b.host:void 0);return!(!b||!(b.__CE_isImportDocument||b instanceof Document))}
-                        function p(b,a){for(;a&&a!==b&&!a.nextSibling;)a=a.parentNode;return a&&a!==b?a.nextSibling:null}
-                        function t(b,a,c){c=c?c:new Set;for(var d=b;d;){if(d.nodeType===Node.ELEMENT_NODE){var e=d;a(e);var f=e.localName;if("link"===f&&"import"===e.getAttribute("rel")){d=e.import;if(d instanceof Node&&!c.has(d))for(c.add(d),d=d.firstChild;d;d=d.nextSibling)t(d,a,c);d=p(b,e);continue}else if("template"===f){d=p(b,e);continue}if(e=e.__CE_shadowRoot)for(e=e.firstChild;e;e=e.nextSibling)t(e,a,c)}d=d.firstChild?d.firstChild:p(b,d)}}function u(b,a,c){b[a]=c};function v(){this.a=new Map;this.s=new Map;this.f=[];this.b=!1}function ba(b,a,c){b.a.set(a,c);b.s.set(c.constructor,c)}function w(b,a){b.b=!0;b.f.push(a)}function x(b,a){b.b&&t(a,function(a){return y(b,a)})}function y(b,a){if(b.b&&!a.__CE_patched){a.__CE_patched=!0;for(var c=0;c<b.f.length;c++)b.f[c](a)}}function z(b,a){var c=[];t(a,function(b){return c.push(b)});for(a=0;a<c.length;a++){var d=c[a];1===d.__CE_state?b.connectedCallback(d):A(b,d)}}
-                        function B(b,a){var c=[];t(a,function(b){return c.push(b)});for(a=0;a<c.length;a++){var d=c[a];1===d.__CE_state&&b.disconnectedCallback(d)}}
-                        function C(b,a,c){c=c?c:{};var d=c.w||new Set,e=c.i||function(a){return A(b,a)},f=[];t(a,function(a){if("link"===a.localName&&"import"===a.getAttribute("rel")){var c=a.import;c instanceof Node&&(c.__CE_isImportDocument=!0,c.__CE_hasRegistry=!0);c&&"complete"===c.readyState?c.__CE_documentLoadHandled=!0:a.addEventListener("load",function(){var c=a.import;if(!c.__CE_documentLoadHandled){c.__CE_documentLoadHandled=!0;var f=new Set(d);f.delete(c);C(b,c,{w:f,i:e})}})}else f.push(a)},d);if(b.b)for(a=0;a<
-                        f.length;a++)y(b,f[a]);for(a=0;a<f.length;a++)e(f[a])}
-                        function A(b,a){if(void 0===a.__CE_state){var c=a.ownerDocument;if(c.defaultView||c.__CE_isImportDocument&&c.__CE_hasRegistry)if(c=b.a.get(a.localName)){c.constructionStack.push(a);var d=c.constructor;try{try{if(new d!==a)throw Error("The custom element constructor did not produce the element being upgraded.");}finally{c.constructionStack.pop()}}catch(r){throw a.__CE_state=2,r;}a.__CE_state=1;a.__CE_definition=c;if(c.attributeChangedCallback)for(c=c.observedAttributes,d=0;d<c.length;d++){var e=c[d],
-                                f=a.getAttribute(e);null!==f&&b.attributeChangedCallback(a,e,null,f,null)}n(a)&&b.connectedCallback(a)}}}v.prototype.connectedCallback=function(b){var a=b.__CE_definition;a.connectedCallback&&a.connectedCallback.call(b)};v.prototype.disconnectedCallback=function(b){var a=b.__CE_definition;a.disconnectedCallback&&a.disconnectedCallback.call(b)};
-                        v.prototype.attributeChangedCallback=function(b,a,c,d,e){var f=b.__CE_definition;f.attributeChangedCallback&&-1<f.observedAttributes.indexOf(a)&&f.attributeChangedCallback.call(b,a,c,d,e)};function D(b,a){this.c=b;this.a=a;this.b=void 0;C(this.c,this.a);"loading"===this.a.readyState&&(this.b=new MutationObserver(this.f.bind(this)),this.b.observe(this.a,{childList:!0,subtree:!0}))}function E(b){b.b&&b.b.disconnect()}D.prototype.f=function(b){var a=this.a.readyState;"interactive"!==a&&"complete"!==a||E(this);for(a=0;a<b.length;a++)for(var c=b[a].addedNodes,d=0;d<c.length;d++)C(this.c,c[d])};function ca(){var b=this;this.b=this.a=void 0;this.f=new Promise(function(a){b.b=a;b.a&&a(b.a)})}function F(b){if(b.a)throw Error("Already resolved.");b.a=void 0;b.b&&b.b(void 0)};function G(b){this.j=!1;this.c=b;this.o=new Map;this.l=function(b){return b()};this.g=!1;this.m=[];this.u=new D(b,document)}
-                        G.prototype.define=function(b,a){var c=this;if(!(a instanceof Function))throw new TypeError("Custom element constructors must be functions.");if(!m(b))throw new SyntaxError("The element name '"+b+"' is not valid.");if(this.c.a.get(b))throw Error("A custom element with name '"+b+"' has already been defined.");if(this.j)throw Error("A custom element is already being defined.");this.j=!0;var d,e,f,r,k;try{var g=function(b){var a=l[b];if(void 0!==a&&!(a instanceof Function))throw Error("The '"+b+"' callback must be a function.");
-                            return a},l=a.prototype;if(!(l instanceof Object))throw new TypeError("The custom element constructor's prototype is not an object.");d=g("connectedCallback");e=g("disconnectedCallback");f=g("adoptedCallback");r=g("attributeChangedCallback");k=a.observedAttributes||[]}catch(q){return}finally{this.j=!1}a={localName:b,constructor:a,connectedCallback:d,disconnectedCallback:e,adoptedCallback:f,attributeChangedCallback:r,observedAttributes:k,constructionStack:[]};ba(this.c,b,a);this.m.push(a);this.g||
-                        (this.g=!0,this.l(function(){return da(c)}))};G.prototype.i=function(b){C(this.c,b)};function da(b){if(!1!==b.g){b.g=!1;for(var a=b.m,c=[],d=new Map,e=0;e<a.length;e++)d.set(a[e].localName,[]);C(b.c,document,{i:function(a){if(void 0===a.__CE_state){var e=a.localName,f=d.get(e);f?f.push(a):b.c.a.get(e)&&c.push(a)}}});for(e=0;e<c.length;e++)A(b.c,c[e]);for(;0<a.length;){for(var f=a.shift(),e=f.localName,f=d.get(f.localName),r=0;r<f.length;r++)A(b.c,f[r]);(e=b.o.get(e))&&F(e)}}}
-                        G.prototype.get=function(b){if(b=this.c.a.get(b))return b.constructor};G.prototype.whenDefined=function(b){if(!m(b))return Promise.reject(new SyntaxError("'"+b+"' is not a valid custom element name."));var a=this.o.get(b);if(a)return a.f;a=new ca;this.o.set(b,a);this.c.a.get(b)&&!this.m.some(function(a){return a.localName===b})&&F(a);return a.f};G.prototype.v=function(b){E(this.u);var a=this.l;this.l=function(c){return b(function(){return a(c)})}};window.CustomElementRegistry=G;
-                        G.prototype.define=G.prototype.define;G.prototype.upgrade=G.prototype.i;G.prototype.get=G.prototype.get;G.prototype.whenDefined=G.prototype.whenDefined;G.prototype.polyfillWrapFlushCallback=G.prototype.v;var H=window.Document.prototype.createElement,ea=window.Document.prototype.createElementNS,fa=window.Document.prototype.importNode,ga=window.Document.prototype.prepend,ha=window.Document.prototype.append,ia=window.DocumentFragment.prototype.prepend,ja=window.DocumentFragment.prototype.append,I=window.Node.prototype.cloneNode,J=window.Node.prototype.appendChild,K=window.Node.prototype.insertBefore,L=window.Node.prototype.removeChild,M=window.Node.prototype.replaceChild,N=Object.getOwnPropertyDescriptor(window.Node.prototype,
-                                "textContent"),O=window.Element.prototype.attachShadow,P=Object.getOwnPropertyDescriptor(window.Element.prototype,"innerHTML"),Q=window.Element.prototype.getAttribute,R=window.Element.prototype.setAttribute,S=window.Element.prototype.removeAttribute,T=window.Element.prototype.getAttributeNS,U=window.Element.prototype.setAttributeNS,ka=window.Element.prototype.removeAttributeNS,la=window.Element.prototype.insertAdjacentElement,ma=window.Element.prototype.insertAdjacentHTML,na=window.Element.prototype.prepend,
-                                oa=window.Element.prototype.append,V=window.Element.prototype.before,pa=window.Element.prototype.after,qa=window.Element.prototype.replaceWith,ra=window.Element.prototype.remove,sa=window.HTMLElement,W=Object.getOwnPropertyDescriptor(window.HTMLElement.prototype,"innerHTML"),ta=window.HTMLElement.prototype.insertAdjacentElement,ua=window.HTMLElement.prototype.insertAdjacentHTML;function va(){var b=X;window.HTMLElement=function(){function a(){var a=this.constructor,d=b.s.get(a);if(!d)throw Error("The custom element being constructed was not registered with `customElements`.");var e=d.constructionStack;if(!e.length)return e=H.call(document,d.localName),Object.setPrototypeOf(e,a.prototype),e.__CE_state=1,e.__CE_definition=d,y(b,e),e;var d=e.length-1,f=e[d];if(f===h)throw Error("The HTMLElement constructor was either called reentrantly for this constructor or called multiple times.");
-                            e[d]=h;Object.setPrototypeOf(f,a.prototype);y(b,f);return f}a.prototype=sa.prototype;return a}()};function Y(b,a,c){function d(a){return function(c){for(var e=[],d=0;d<arguments.length;++d)e[d-0]=arguments[d];for(var d=[],f=[],l=0;l<e.length;l++){var q=e[l];q instanceof Element&&n(q)&&f.push(q);if(q instanceof DocumentFragment)for(q=q.firstChild;q;q=q.nextSibling)d.push(q);else d.push(q)}a.apply(this,e);for(e=0;e<f.length;e++)B(b,f[e]);if(n(this))for(e=0;e<d.length;e++)f=d[e],f instanceof Element&&z(b,f)}}c.h&&(a.prepend=d(c.h));c.append&&(a.append=d(c.append))};function wa(){var b=X;u(Document.prototype,"createElement",function(a){if(this.__CE_hasRegistry){var c=b.a.get(a);if(c)return new c.constructor}a=H.call(this,a);y(b,a);return a});u(Document.prototype,"importNode",function(a,c){a=fa.call(this,a,c);this.__CE_hasRegistry?C(b,a):x(b,a);return a});u(Document.prototype,"createElementNS",function(a,c){if(this.__CE_hasRegistry&&(null===a||"http://www.w3.org/1999/xhtml"===a)){var d=b.a.get(c);if(d)return new d.constructor}a=ea.call(this,a,c);y(b,a);return a});
-                            Y(b,Document.prototype,{h:ga,append:ha})};function xa(){var b=X;function a(a,d){Object.defineProperty(a,"textContent",{enumerable:d.enumerable,configurable:!0,get:d.get,set:function(a){if(this.nodeType===Node.TEXT_NODE)d.set.call(this,a);else{var e=void 0;if(this.firstChild){var c=this.childNodes,k=c.length;if(0<k&&n(this))for(var e=Array(k),g=0;g<k;g++)e[g]=c[g]}d.set.call(this,a);if(e)for(a=0;a<e.length;a++)B(b,e[a])}}})}u(Node.prototype,"insertBefore",function(a,d){if(a instanceof DocumentFragment){var e=Array.prototype.slice.apply(a.childNodes);
-                            a=K.call(this,a,d);if(n(this))for(d=0;d<e.length;d++)z(b,e[d]);return a}e=n(a);d=K.call(this,a,d);e&&B(b,a);n(this)&&z(b,a);return d});u(Node.prototype,"appendChild",function(a){if(a instanceof DocumentFragment){var c=Array.prototype.slice.apply(a.childNodes);a=J.call(this,a);if(n(this))for(var e=0;e<c.length;e++)z(b,c[e]);return a}c=n(a);e=J.call(this,a);c&&B(b,a);n(this)&&z(b,a);return e});u(Node.prototype,"cloneNode",function(a){a=I.call(this,a);this.ownerDocument.__CE_hasRegistry?C(b,a):x(b,a);
-                            return a});u(Node.prototype,"removeChild",function(a){var c=n(a),e=L.call(this,a);c&&B(b,a);return e});u(Node.prototype,"replaceChild",function(a,d){if(a instanceof DocumentFragment){var e=Array.prototype.slice.apply(a.childNodes);a=M.call(this,a,d);if(n(this))for(B(b,d),d=0;d<e.length;d++)z(b,e[d]);return a}var e=n(a),f=M.call(this,a,d),c=n(this);c&&B(b,d);e&&B(b,a);c&&z(b,a);return f});N&&N.get?a(Node.prototype,N):w(b,function(b){a(b,{enumerable:!0,configurable:!0,get:function(){for(var a=[],b=
-                                    0;b<this.childNodes.length;b++)a.push(this.childNodes[b].textContent);return a.join("")},set:function(a){for(;this.firstChild;)L.call(this,this.firstChild);J.call(this,document.createTextNode(a))}})})};function ya(b){var a=Element.prototype;function c(a){return function(e){for(var c=[],d=0;d<arguments.length;++d)c[d-0]=arguments[d];for(var d=[],k=[],g=0;g<c.length;g++){var l=c[g];l instanceof Element&&n(l)&&k.push(l);if(l instanceof DocumentFragment)for(l=l.firstChild;l;l=l.nextSibling)d.push(l);else d.push(l)}a.apply(this,c);for(c=0;c<k.length;c++)B(b,k[c]);if(n(this))for(c=0;c<d.length;c++)k=d[c],k instanceof Element&&z(b,k)}}V&&(a.before=c(V));V&&(a.after=c(pa));qa&&u(a,"replaceWith",function(a){for(var e=
-                                [],c=0;c<arguments.length;++c)e[c-0]=arguments[c];for(var c=[],d=[],k=0;k<e.length;k++){var g=e[k];g instanceof Element&&n(g)&&d.push(g);if(g instanceof DocumentFragment)for(g=g.firstChild;g;g=g.nextSibling)c.push(g);else c.push(g)}k=n(this);qa.apply(this,e);for(e=0;e<d.length;e++)B(b,d[e]);if(k)for(B(b,this),e=0;e<c.length;e++)d=c[e],d instanceof Element&&z(b,d)});ra&&u(a,"remove",function(){var a=n(this);ra.call(this);a&&B(b,this)})};function za(){var b=X;function a(a,c){Object.defineProperty(a,"innerHTML",{enumerable:c.enumerable,configurable:!0,get:c.get,set:function(a){var e=this,d=void 0;n(this)&&(d=[],t(this,function(a){a!==e&&d.push(a)}));c.set.call(this,a);if(d)for(var f=0;f<d.length;f++){var r=d[f];1===r.__CE_state&&b.disconnectedCallback(r)}this.ownerDocument.__CE_hasRegistry?C(b,this):x(b,this);return a}})}function c(a,c){u(a,"insertAdjacentElement",function(a,e){var d=n(e);a=c.call(this,a,e);d&&B(b,e);n(a)&&z(b,e);
-                            return a})}function d(a,c){function e(a,e){for(var c=[];a!==e;a=a.nextSibling)c.push(a);for(e=0;e<c.length;e++)C(b,c[e])}u(a,"insertAdjacentHTML",function(a,b){a=a.toLowerCase();if("beforebegin"===a){var d=this.previousSibling;c.call(this,a,b);e(d||this.parentNode.firstChild,this)}else if("afterbegin"===a)d=this.firstChild,c.call(this,a,b),e(this.firstChild,d);else if("beforeend"===a)d=this.lastChild,c.call(this,a,b),e(d||this.firstChild,null);else if("afterend"===a)d=this.nextSibling,c.call(this,
-                                a,b),e(this.nextSibling,d);else throw new SyntaxError("The value provided ("+String(a)+") is not one of 'beforebegin', 'afterbegin', 'beforeend', or 'afterend'.");})}O&&u(Element.prototype,"attachShadow",function(a){return this.__CE_shadowRoot=a=O.call(this,a)});P&&P.get?a(Element.prototype,P):W&&W.get?a(HTMLElement.prototype,W):w(b,function(b){a(b,{enumerable:!0,configurable:!0,get:function(){return I.call(this,!0).innerHTML},set:function(a){var b="template"===this.localName,e=b?this.content:this,
-                                    c=H.call(document,this.localName);for(c.innerHTML=a;0<e.childNodes.length;)L.call(e,e.childNodes[0]);for(a=b?c.content:c;0<a.childNodes.length;)J.call(e,a.childNodes[0])}})});u(Element.prototype,"setAttribute",function(a,c){if(1!==this.__CE_state)return R.call(this,a,c);var e=Q.call(this,a);R.call(this,a,c);c=Q.call(this,a);b.attributeChangedCallback(this,a,e,c,null)});u(Element.prototype,"setAttributeNS",function(a,c,d){if(1!==this.__CE_state)return U.call(this,a,c,d);var e=T.call(this,a,c);U.call(this,
-                                a,c,d);d=T.call(this,a,c);b.attributeChangedCallback(this,c,e,d,a)});u(Element.prototype,"removeAttribute",function(a){if(1!==this.__CE_state)return S.call(this,a);var c=Q.call(this,a);S.call(this,a);null!==c&&b.attributeChangedCallback(this,a,c,null,null)});u(Element.prototype,"removeAttributeNS",function(a,c){if(1!==this.__CE_state)return ka.call(this,a,c);var d=T.call(this,a,c);ka.call(this,a,c);var e=T.call(this,a,c);d!==e&&b.attributeChangedCallback(this,c,d,e,a)});ta?c(HTMLElement.prototype,
-                                ta):la?c(Element.prototype,la):console.warn("Custom Elements: `Element#insertAdjacentElement` was not patched.");ua?d(HTMLElement.prototype,ua):ma?d(Element.prototype,ma):console.warn("Custom Elements: `Element#insertAdjacentHTML` was not patched.");Y(b,Element.prototype,{h:na,append:oa});ya(b)};/*
-
-                        Copyright (c) 2016 The Polymer Project Authors. All rights reserved.
-                        This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
-                        The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
-                        The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
-                        Code distributed by Google as part of the polymer project is also
-                        subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
-                        */
-                        var Z=window.customElements;if(!Z||Z.forcePolyfill||"function"!=typeof Z.define||"function"!=typeof Z.get){var X=new v;va();wa();Y(X,DocumentFragment.prototype,{h:ia,append:ja});xa();za();document.__CE_hasRegistry=!0;var customElements=new G(X);Object.defineProperty(window,"customElements",{configurable:!0,enumerable:!0,value:customElements})};
-                    }).call(self);
-
-                    //# sourceMappingURL=custom-elements.min.js.map
-                }
-            </script>
-            <script>
-                var head = document.getElementsByTagName('head')[0];
-                /**
-                 This allows us to load the IE polyfills via feature detection so that they do not load
-                 needlessly in the browsers that don't need them. It also ensures they are loaded
-                 non async so that they load before the rest of our JS.
-                 */
-                if (!window.CSS || !window.CSS.supports || !window.CSS.supports('--fake-var', 0)) {
-                    var script = document.createElement('script');
-                    script.setAttribute('src', "{{cdn '/styleguide/util/IEPolyfills.js'}}");
-                    script.setAttribute('type', 'text/javascript');
-                    script.async = false;
-                    head.appendChild(script);
-                }
-
-                /**
-                 * Importing fonts via CSS slows the browser down. Best practices for mobile
-                 * performance is to load them as rel=preload. The following code allows us
-                 * to do that for browsers that support preload.
-                 * https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/webfont-optimization
-                 * Note: This article mentions that Roboto is a common normal font that might not need preload,
-                 * however Roboto is not a native font for most OSs that we target.
-                 */
-                var link = document.createElement('link');
-                link.setAttribute('href', 'https://fonts.googleapis.com/css?family={{#if fontFamily}}{{fontFamily}}{{else}}Roboto{{/if}}:300,300i,400,400i,700,700i,900,900i');
-                var relList = link.relList;
-
-                if (relList && relList.supports('preload')) {
-                    link.setAttribute('as', 'style');
-                    link.setAttribute('rel', 'preload');
-                    link.setAttribute('onload', 'this.rel="stylesheet"');
-                    link.setAttribute('crossorigin', 'anonymous');
-                } else {
-                    link.setAttribute('rel', 'stylesheet');
-                }
-
-                head.appendChild(link);
-            </script>
-
-            {{~#element "charset" noWith=true~}}
-                <meta charset="{{#with charset}}{{this}}{{else}}UTF-8{{/with}}">
-            {{~/element~}}
-
-            <style>
-                :root {
-                --primaryColor: {{#with primaryColor}}{{this}}{{else}}#ff1e3c{{/with}};
-                --primaryTextColor: {{#with primaryTextColor}}{{this}}{{else}}#2a2a2a{{/with}};
-                --secondaryTextColor: {{#with secondaryTextColor}}{{this}}{{else}}#5e5e5e{{/with}};
-                --secondaryColor1: {{#with secondaryColor1}}{{this}}{{else}}#f4f3f2{{/with}};
-                --secondaryColor2: {{#with secondaryColor2}}{{this}}{{else}}#23c8ff{{/with}};
-                --secondaryColor3: {{#with secondaryColor3}}{{this}}{{else}}#918883{{/with}};
-                --secondaryColor4: {{#with secondaryColor4}}{{this}}{{else}}#202020{{/with}};
-                --secondaryColor5: {{#with secondaryColor5}}{{this}}{{else}}#bfb5ae{{/with}};
-                    --black: #000000;
-                    --white: #ffffff;
-                    --grey: #f0efed;
-
-                --gridGutters: {{#with gridGutters}}{{this}}{{else}}20px{{/with}};
-                --modulePadding: {{#with modulePadding}}{{this}}{{else}}60px{{/with}};
-                --pageWidth: {{#with pageWidth}}{{this}}{{else}}86.11%{{/with}};
-                --maxPageWidth: {{#with maxPageWidth}}{{this}}{{else}}1240px{{/with}};
-
-                --horizontalAlignment: {{#with horizontalAlignment}}{{this}}{{else}}center{{/with}};
-
-                --fontFamily: {{#with fontFamily}}{{this}}{{else}}'Roboto', sans-serif{{/with}};
-
-                --headerBackgroundColor:{{#with headerBackgroundColor}}{{this}}{{else}}#000000{{/with}};
-                --headerTextColor:{{#with headerTextColor}}{{this}}{{else}}#FFFFFF{{/with}};
-                --headerHeight:{{#with headerHeight}}{{this}}{{else}}50px{{/with}};
-
-                --footerbackgroundColor:{{#with footerbackgroundColor}}{{this}}{{else}}#000000{{/with}};
-                --footerTextColor:{{#with footerTextColor}}{{this}}{{else}}#918883{{/with}};
-
-
-                }
-            </style>
-
-            {{~#element "styles" noWith=true~}}
-                <link rel="stylesheet" href="{{cdn '/styleguide/All.min.css'}}">
-            {{~/element~}}
-
-            {{~#element "extraStyles"}}{{this}}{{/element~}}
-
-            {{~#element "viewport" noWith=true~}}
-                <meta name="viewport" content="{{#with viewport}}{{this}}{{else}}width=device-width, initial-scale=1{{/with}}">
-            {{~/element~}}
-
-            {{~#element "title"}}<title>{{this}}</title>{{/element~}}
-            {{~#element "description"}}<meta name="description" content="{{this}}">{{/element~}}
-            {{~#element "keywords"}}<meta name="keywords" content="{{this}}">{{/element~}}
-            {{~#element "canonicalLink"}}<link rel="canonical" href="{{this}}">{{/element~}}
-            {{~#element "contentId"}}<meta name="brightspot.contentId" content="{{this}}">{{/element~}}
-            {{~#element "fbPages"}}<meta property="fb:pages" content="{{this}}">{{/element~}}
-            {{~#element "meta"}}{{this}}{{/element~}}
-            {{~#element "favicons"}}{{this}}{{/element}}
-            {{~#element "manifestLink"}}<link rel="manifest" href="{{this}}">{{/element}}
-
-            <script src="https://npmcdn.com/flickity@2/dist/flickity.pkgd.js"></script>
-
-            {{~#element "scripts" noWith=true}}
-                <script src="{{cdn '/styleguide/All.min.js'}}"></script>
-            {{~/element~}}
-
-            {{~#element "extraScripts"}}{{this}}{{/element~}}
-        </head>
-    {{~/element~}}
-    {{#element "body" noWith=true}}
-        <body class="{{elementName}}" {{~#each extraBodyAttributes}} {{this}} {{~/each~}}
-            {{#if hidePromoDropShadow}} data-hide-promo-dropshadow{{/if}}
-            {{#if promoModuleAlignment}} data-promo-module-alignment="{{promoModuleAlignment}}"{{/if}}
-            {{#if boldMood}} data-mood-bold{{/if}}
-            {{#if inlineSubheading}} data-subheading-inline="{{inlineSubheading}}"{{/if}}
-            {{#if hideExternalLinkIcon}}data-hide-external-link-icon{{/if}}
-            {{#if hat}}data-show-hat{{/if}}
-            {{#if hideHeaderHat}}data-hide-header-hat{{/if}}
-            >
-        {{#element "icons" noWith=true}}
-            <svg xmlns="http://www.w3.org/2000/svg" style="display:none" id="iconsMap">
-                <symbol id="mono-icon-facebook" viewBox="0 0 10 19">
-                    <title>Facebook</title>
-                    <path fill-rule="evenodd" d="M2.707 18.25V10.2H0V7h2.707V4.469c0-1.336.375-2.373 1.125-3.112C4.582.62 5.578.25 6.82.25c1.008 0 1.828.047 2.461.14v2.848H7.594c-.633 0-1.067.14-1.301.422-.188.235-.281.61-.281 1.125V7H9l-.422 3.2H6.012v8.05H2.707z"/>
-                </symbol>
-                <symbol id="mono-icon-googleplus" viewBox="0 0 512 512">
-                    <title>Google Plus</title>
-                    <g>
-                        <path d="M242.1,275.6l-18.2-13.7l-0.1-0.1c-5.8-4.6-10-8.3-10-14.7c0-7,5-11.8,10.9-17.4l0.5-0.4c20-15.2,44.7-34.3,44.7-74.6
-                            c0-26.9-11.9-44.7-23.3-57.7h13L320,64H186.5c-25.3,0-62.7,3.2-94.6,28.6l-0.1,0.3C70,110.9,57,137.4,57,163.5
-                            c0,21.2,8.7,42.2,23.9,57.4c21.4,21.6,48.3,26.1,67.1,26.1c1.5,0,3,0,4.5-0.1c-0.8,3-1.2,6.3-1.2,10.3c0,10.9,3.6,19.3,8.1,26.2
-                            c-24,1.9-58.1,6.5-84.9,22.3C35.1,328.4,32,361.7,32,371.3c0,38.2,35.7,76.8,115.5,76.8c91.6,0,139.5-49.8,139.5-99
-                            C287,312,264.2,293.5,242.1,275.6z M116.7,139.9c0-13.4,3-23.5,9.3-30.9c6.5-7.9,18.2-13.1,29-13.1c19.9,0,32.9,15,40.4,27.6
-                            c9.2,15.5,14.9,36.1,14.9,53.6c0,4.9,0,20-10.2,29.8c-7,6.7-18.7,11.4-28.6,11.4c-20.5,0-33.5-14.7-40.7-27
-                            C120.4,173.5,116.7,153.1,116.7,139.9z M237.8,368c0,27.4-25.2,44.5-65.8,44.5c-48.1,0-80.3-20.6-80.3-51.3
-                            c0-26.1,21.5-36.8,37.8-42.5c18.9-6.1,44.3-7.3,50.1-7.3c3.9,0,6.1,0,8.7,0.2C224.9,336.8,237.8,347.7,237.8,368z"/>
-                        <polygon points="402,142 402,64 368,64 368,142 288,142 288,176 368,176 368,257 402,257 402,176 480,176 480,142 	"/>
-                    </g>
-                </symbol>
-                <symbol id="mono-icon-instagram" viewBox="0 0 17 17">
-                    <title>Instagram</title>
-                    <g>
-                        <path fill-rule="evenodd" d="M8.281 4.207c.727 0 1.4.182 2.022.545a4.055 4.055 0 0 1 1.476 1.477c.364.62.545 1.294.545 2.021 0 .727-.181 1.4-.545 2.021a4.055 4.055 0 0 1-1.476 1.477 3.934 3.934 0 0 1-2.022.545c-.726 0-1.4-.182-2.021-.545a4.055 4.055 0 0 1-1.477-1.477 3.934 3.934 0 0 1-.545-2.021c0-.727.182-1.4.545-2.021A4.055 4.055 0 0 1 6.26 4.752a3.934 3.934 0 0 1 2.021-.545zm0 6.68a2.54 2.54 0 0 0 1.864-.774 2.54 2.54 0 0 0 .773-1.863 2.54 2.54 0 0 0-.773-1.863 2.54 2.54 0 0 0-1.864-.774 2.54 2.54 0 0 0-1.863.774 2.54 2.54 0 0 0-.773 1.863c0 .727.257 1.348.773 1.863a2.54 2.54 0 0 0 1.863.774zM13.45 4.03c-.023.258-.123.48-.299.668a.856.856 0 0 1-.65.281.913.913 0 0 1-.668-.28.913.913 0 0 1-.281-.669c0-.258.094-.48.281-.668a.913.913 0 0 1 .668-.28c.258 0 .48.093.668.28.187.188.281.41.281.668zm2.672.95c.023.656.035 1.746.035 3.269 0 1.523-.017 2.62-.053 3.287-.035.668-.134 1.248-.298 1.74a4.098 4.098 0 0 1-.967 1.53 4.098 4.098 0 0 1-1.53.966c-.492.164-1.072.264-1.74.3-.668.034-1.763.052-3.287.052-1.523 0-2.619-.018-3.287-.053-.668-.035-1.248-.146-1.74-.334a3.747 3.747 0 0 1-1.53-.931 4.098 4.098 0 0 1-.966-1.53c-.164-.492-.264-1.072-.299-1.74C.424 10.87.406 9.773.406 8.25S.424 5.63.46 4.963c.035-.668.135-1.248.299-1.74.21-.586.533-1.096.967-1.53A4.098 4.098 0 0 1 3.254.727c.492-.164 1.072-.264 1.74-.3C5.662.394 6.758.376 8.281.376c1.524 0 2.62.018 3.287.053.668.035 1.248.135 1.74.299a4.098 4.098 0 0 1 2.496 2.496c.165.492.27 1.078.317 1.757zm-1.687 7.91c.14-.399.234-1.032.28-1.899.024-.515.036-1.242.036-2.18V7.689c0-.961-.012-1.688-.035-2.18-.047-.89-.14-1.524-.281-1.899a2.537 2.537 0 0 0-1.512-1.511c-.375-.14-1.008-.235-1.899-.282a51.292 51.292 0 0 0-2.18-.035H7.72c-.938 0-1.664.012-2.18.035-.867.047-1.5.141-1.898.282a2.537 2.537 0 0 0-1.512 1.511c-.14.375-.234 1.008-.281 1.899a51.292 51.292 0 0 0-.036 2.18v1.125c0 .937.012 1.664.036 2.18.047.866.14 1.5.28 1.898.306.726.81 1.23 1.513 1.511.398.141 1.03.235 1.898.282.516.023 1.242.035 2.18.035h1.125c.96 0 1.687-.012 2.18-.035.89-.047 1.523-.141 1.898-.282.726-.304 1.23-.808 1.512-1.511z"/>
-                    </g>
-                </symbol>
-                <symbol id="mono-icon-mailto" viewBox="0 0 512 512">
-                    <title>Mail To</title>
-                    <g>
-                        <path d="M67,148.7c11,5.8,163.8,89.1,169.5,92.1c5.7,3,11.5,4.4,20.5,4.4c9,0,14.8-1.4,20.5-4.4c5.7-3,158.5-86.3,169.5-92.1
-                            c4.1-2.1,11-5.9,12.5-10.2c2.6-7.6-0.2-10.5-11.3-10.5H257H65.8c-11.1,0-13.9,3-11.3,10.5C56,142.9,62.9,146.6,67,148.7z"/>
-                        <path d="M455.7,153.2c-8.2,4.2-81.8,56.6-130.5,88.1l82.2,92.5c2,2,2.9,4.4,1.8,5.6c-1.2,1.1-3.8,0.5-5.9-1.4l-98.6-83.2
-                            c-14.9,9.6-25.4,16.2-27.2,17.2c-7.7,3.9-13.1,4.4-20.5,4.4c-7.4,0-12.8-0.5-20.5-4.4c-1.9-1-12.3-7.6-27.2-17.2l-98.6,83.2
-                            c-2,2-4.7,2.6-5.9,1.4c-1.2-1.1-0.3-3.6,1.7-5.6l82.1-92.5c-48.7-31.5-123.1-83.9-131.3-88.1c-8.8-4.5-9.3,0.8-9.3,4.9
-                            c0,4.1,0,205,0,205c0,9.3,13.7,20.9,23.5,20.9H257h185.5c9.8,0,21.5-11.7,21.5-20.9c0,0,0-201,0-205
-                            C464,153.9,464.6,148.7,455.7,153.2z"/>
-                    </g>
-                </symbol>
-                <symbol id="mono-icon-linkedin" viewBox="0 0 16 17">
-                    <title>LinkedIn</title>
-                    <g fill-rule="evenodd">
-                        <path d="M3.734 16.125H.464V5.613h3.27zM2.117 4.172c-.515 0-.96-.188-1.336-.563A1.825 1.825 0 0 1 .22 2.273c0-.515.187-.96.562-1.335.375-.375.82-.563 1.336-.563.516 0 .961.188 1.336.563.375.375.563.82.563 1.335 0 .516-.188.961-.563 1.336-.375.375-.82.563-1.336.563zM15.969 16.125h-3.27v-5.133c0-.844-.07-1.453-.21-1.828-.259-.633-.762-.95-1.512-.95s-1.278.282-1.582.845c-.235.421-.352 1.043-.352 1.863v5.203H5.809V5.613h3.128v1.442h.036c.234-.469.609-.856 1.125-1.16.562-.375 1.218-.563 1.968-.563 1.524 0 2.59.48 3.2 1.441.468.774.703 1.97.703 3.586v5.766z"/>
-                    </g>
-                </symbol>
-                <symbol id="mono-icon-pinterest" viewBox="0 0 512 512">
-                    <title>Pinterest</title>
-                    <g>
-                        <path d="M256,32C132.3,32,32,132.3,32,256c0,91.7,55.2,170.5,134.1,205.2c-0.6-15.6-0.1-34.4,3.9-51.4
-                            c4.3-18.2,28.8-122.1,28.8-122.1s-7.2-14.3-7.2-35.4c0-33.2,19.2-58,43.2-58c20.4,0,30.2,15.3,30.2,33.6
-                            c0,20.5-13.1,51.1-19.8,79.5c-5.6,23.8,11.9,43.1,35.4,43.1c42.4,0,71-54.5,71-119.1c0-49.1-33.1-85.8-93.2-85.8
-                            c-67.9,0-110.3,50.7-110.3,107.3c0,19.5,5.8,33.3,14.8,43.9c4.1,4.9,4.7,6.9,3.2,12.5c-1.1,4.1-3.5,14-4.6,18
-                            c-1.5,5.7-6.1,7.7-11.2,5.6c-31.3-12.8-45.9-47-45.9-85.6c0-63.6,53.7-139.9,160.1-139.9c85.5,0,141.8,61.9,141.8,128.3
-                            c0,87.9-48.9,153.5-120.9,153.5c-24.2,0-46.9-13.1-54.7-27.9c0,0-13,51.6-15.8,61.6c-4.7,17.3-14,34.5-22.5,48
-                            c20.1,5.9,41.4,9.2,63.5,9.2c123.7,0,224-100.3,224-224C480,132.3,379.7,32,256,32z"/>
-                    </g>
-                </symbol>
-                <symbol id="icon-pinterest" viewBox="0 0 12 12">
-                    <title>Pinterest</title>
-                    <path fill-rule="evenodd" d="M6 0c1.66 0 3.076.585 4.246 1.754C11.416 2.924 12 4.34 12 6c0 1.66-.585 3.076-1.754 4.246C9.076 11.416 7.66 12 6 12c-.607 0-1.179-.08-1.714-.241.321-.572.526-1 .616-1.286l.428-1.66c.268.5.75.75 1.447.75.964 0 1.745-.384 2.344-1.152.598-.768.897-1.75.897-2.947 0-.928-.357-1.736-1.072-2.424-.714-.687-1.625-1.031-2.732-1.031-1.32 0-2.366.388-3.134 1.165-.768.777-1.15 1.638-1.15 2.585 0 1.196.41 1.964 1.231 2.303.16.072.268.018.321-.16 0-.036.014-.116.04-.241a1.34 1.34 0 0 1 .067-.241c.036-.108.01-.215-.08-.322-.268-.321-.402-.714-.402-1.178 0-.786.272-1.46.817-2.023.545-.562 1.255-.843 2.13-.843.785 0 1.401.21 1.848.629.446.42.67.969.67 1.647 0 .893-.18 1.648-.536 2.264-.357.616-.813.924-1.366.924a.985.985 0 0 1-.777-.335c-.197-.223-.26-.495-.188-.817a6.89 6.89 0 0 1 .201-.723c.098-.304.18-.572.241-.804a2.31 2.31 0 0 0 .094-.589.997.997 0 0 0-.214-.643.713.713 0 0 0-.59-.268c-.32 0-.593.148-.816.442-.224.295-.335.665-.335 1.112.004.293.058.583.16.857l.027.107a339.986 339.986 0 0 0-.777 3.268 4.294 4.294 0 0 0-.107 1.366A6.085 6.085 0 0 1 .991 9.295 5.77 5.77 0 0 1 .001 6c0-1.66.584-3.076 1.753-4.246C2.924.584 4.34 0 6 0z"/>
-                </symbol>
-                <symbol id="mono-icon-tumblr" viewBox="0 0 512 512">
-                    <title>Tumblr</title>
-                    <g>
-                        <path d="M321.2,396.3c-11.8,0-22.4-2.8-31.5-8.3c-6.9-4.1-11.5-9.6-14-16.4c-2.6-6.9-3.6-22.3-3.6-46.4V224h96v-64h-96V48h-61.9
-                            c-2.7,21.5-7.5,44.7-14.5,58.6c-7,13.9-14,25.8-25.6,35.7c-11.6,9.9-25.6,17.9-41.9,23.3V224h48v140.4c0,19,2,33.5,5.9,43.5
-                            c4,10,11.1,19.5,21.4,28.4c10.3,8.9,22.8,15.7,37.3,20.5c14.6,4.8,31.4,7.2,50.4,7.2c16.7,0,30.3-1.7,44.7-5.1
-                            c14.4-3.4,30.5-9.3,48.2-17.6v-65.6C363.2,389.4,342.3,396.3,321.2,396.3z"/>
-                    </g>
-                </symbol><svg xmlns="http://www.w3.org/2000/svg" width="19" height="16" viewBox="0 0 19 16">
-                    <path fill="#918883" fill-rule="evenodd" d="M16.48 4.594c.024.094.036.246.036.457 0 1.687-.41 3.316-1.23 4.887-.845 1.664-2.028 2.988-3.552 3.972-1.664 1.102-3.574 1.652-5.73 1.652-2.063 0-3.95-.55-5.66-1.652.258.024.55.035.879.035 1.71 0 3.246-.527 4.605-1.582-.82 0-1.54-.24-2.162-.72a3.671 3.671 0 0 1-1.283-1.811c.234.023.457.035.668.035.328 0 .656-.035.984-.105a3.72 3.72 0 0 1-2.11-1.301 3.54 3.54 0 0 1-.843-2.32v-.07a3.475 3.475 0 0 0 1.652.492A4.095 4.095 0 0 1 1.54 5.227a3.546 3.546 0 0 1-.457-1.776c0-.644.176-1.26.527-1.845a10.18 10.18 0 0 0 3.358 2.742 10.219 10.219 0 0 0 4.236 1.125 5.124 5.124 0 0 1-.07-.844c0-.656.164-1.272.492-1.846a3.613 3.613 0 0 1 1.336-1.353 3.565 3.565 0 0 1 1.828-.492c.54 0 1.037.105 1.494.316.457.21.861.492 1.213.844a7.51 7.51 0 0 0 2.356-.88c-.282.868-.82 1.548-1.618 2.04a7.93 7.93 0 0 0 2.11-.598 8.114 8.114 0 0 1-1.864 1.934z"/>
-                </svg>
-
-                <symbol id="mono-icon-twitter" viewBox="0 0 19 16">
-                    <title>Twitter</title>
-                    <g>
-                        <path fill-rule="evenodd" d="M16.48 4.594c.024.094.036.246.036.457 0 1.687-.41 3.316-1.23 4.887-.845 1.664-2.028 2.988-3.552 3.972-1.664 1.102-3.574 1.652-5.73 1.652-2.063 0-3.95-.55-5.66-1.652.258.024.55.035.879.035 1.71 0 3.246-.527 4.605-1.582-.82 0-1.54-.24-2.162-.72a3.671 3.671 0 0 1-1.283-1.811c.234.023.457.035.668.035.328 0 .656-.035.984-.105a3.72 3.72 0 0 1-2.11-1.301 3.54 3.54 0 0 1-.843-2.32v-.07a3.475 3.475 0 0 0 1.652.492A4.095 4.095 0 0 1 1.54 5.227a3.546 3.546 0 0 1-.457-1.776c0-.644.176-1.26.527-1.845a10.18 10.18 0 0 0 3.358 2.742 10.219 10.219 0 0 0 4.236 1.125 5.124 5.124 0 0 1-.07-.844c0-.656.164-1.272.492-1.846a3.613 3.613 0 0 1 1.336-1.353 3.565 3.565 0 0 1 1.828-.492c.54 0 1.037.105 1.494.316.457.21.861.492 1.213.844a7.51 7.51 0 0 0 2.356-.88c-.282.868-.82 1.548-1.618 2.04a7.93 7.93 0 0 0 2.11-.598 8.114 8.114 0 0 1-1.864 1.934z"/>
-
-                    </g>
-                </symbol>
-                <symbol id="mono-icon-youtube" viewBox="0 0 512 512">
-                    <title>Youtube</title>
-                    <g>
-                        <path fill-rule="evenodd" d="M508.6,148.8c0-45-33.1-81.2-74-81.2C379.2,65,322.7,64,265,64c-3,0-6,0-9,0s-6,0-9,0c-57.6,0-114.2,1-169.6,3.6
-                            c-40.8,0-73.9,36.4-73.9,81.4C1,184.6-0.1,220.2,0,255.8C-0.1,291.4,1,327,3.4,362.7c0,45,33.1,81.5,73.9,81.5
-                            c58.2,2.7,117.9,3.9,178.6,3.8c60.8,0.2,120.3-1,178.6-3.8c40.9,0,74-36.5,74-81.5c2.4-35.7,3.5-71.3,3.4-107
-                            C512.1,220.1,511,184.5,508.6,148.8z M207,353.9V157.4l145,98.2L207,353.9z"/>
-                    </g>
-                </symbol>
-                <symbol id="icon-magnify" viewBox="0 0 512 512">
-                    <title>magnify</title>
-                    <g>
-                        <path d="M337.509,305.372h-17.501l-6.571-5.486c20.791-25.232,33.922-57.054,33.922-93.257
-                            C347.358,127.632,283.896,64,205.135,64C127.452,64,64,127.632,64,206.629s63.452,142.628,142.225,142.628
-                            c35.011,0,67.831-13.167,92.991-34.008l6.561,5.487v17.551L415.18,448L448,415.086L337.509,305.372z M206.225,305.372
-                            c-54.702,0-98.463-43.887-98.463-98.743c0-54.858,43.761-98.742,98.463-98.742c54.7,0,98.462,43.884,98.462,98.742
-                            C304.687,261.485,260.925,305.372,206.225,305.372z"/>
-                    </g>
-                </symbol>
-                <symbol id="burger-menu" viewBox="0 0 20 12">
-                    <title>Burger Menu Icon</title>
-                    <g fill="none" fill-rule="evenodd">
-                        <path d="M0 1h20M0 6h20M0 11h20"/>
-                    </g>
-                </symbol>
-                <symbol id="close-x" width="16" height="15" viewBox="0 0 16 15">
-                    <g fill="none" fill-rule="evenodd">
-                        <path d="M1 0l14.142 14.142M15.142 0L1 14.142"/>
-                    </g>
-                </symbol>
-
-                <!-- <symbol id="close-x" width="14" height="14" viewBox="0 0 14 14">
-                    <g fill="#ED1C24" fill-rule="nonzero">
-                        <path d="M.664 14L14 .664 13.336 0 0 13.336z"/>
-                        <path d="M0 .664L13.336 14l.664-.664L.664 0z"/>
-                    </g>
-                </symbol> -->
-                <symbol id="x-close" width="12" height="13" viewBox="0 0 12 13">
-                    <path fill="#918883" fill-rule="evenodd" d="M11.71 1.852L7.06 6.5l4.65 4.648-1.173 1.172L5.89 7.672 1.24 12.32.07 11.148 4.717 6.5.069 1.852 1.24.68 5.89 5.328 10.537.68z"/>
-
-                </symbol>
-                <symbol id="icon-dropdown" width="11" height="6" viewBox="0 0 11 6">
-                    <title>icon dropdown</title>
-                    <path fill-rule="nonzero" d="M5.249 4.191L9.217.221a.747.747 0 0 1 1.059 0c.29.293.29.768 0 1.062L5.78 5.782a.749.749 0 0 1-1.034.021L.219 1.286A.75.75 0 0 1 0 .755.75.75 0 0 1 1.278.223l3.97 3.968z"/>
-                </symbol>
-                <symbol id="left-arrow" width="6" height="15" viewBox="0 0 6 15">
-                    <path fill="#ED1C24" fill-rule="evenodd" d="M1.32 7.949l4.563-6.147a.452.452 0 0 0-.128-.62l-.233-.154a.438.438 0 0 0-.611.13L.14 7.626a.596.596 0 0 0 0 .645l4.76 6.48a.438.438 0 0 0 .611.13l.233-.154a.452.452 0 0 0 .128-.62L1.32 7.95z"/>
-                </symbol>
-                <symbol id="icon-greater-than" viewBox="0 0 202 342">
-                    <title>greater than</title>
-                    <g>
-                        <polygon points="135 171 0.002 312.077 31 342 202 171 31 0 1.078 29.924"></polygon>
-                    </g>
-                </symbol>
-                <symbol id="icon-quote" viewBox="0 0 35 31">
-                    <title>Quote</title>
-                    <g>
-                        <path fill-rule="evenodd" d="M14.966.972c-2.736 1.368-4.932 3.168-6.588 5.4-1.656 2.232-2.484 4.572-2.484 7.02 0 2.016.81 3.672 2.43 4.968 1.62 1.296 3.906 2.124 6.858 2.484 0 2.952-.612 5.256-1.836 6.912-1.224 1.656-2.88 2.484-4.968 2.484-2.448 0-4.338-1.008-5.67-3.024C1.376 25.2.71 22.356.71 18.684c0-3.744.846-7.236 2.538-10.476C4.94 4.968 7.19 2.592 9.998 1.08 11.222.36 12.302 0 13.238 0c.864 0 1.44.324 1.728.972zm19.224 0c-2.736 1.368-4.932 3.168-6.588 5.4-1.656 2.232-2.484 4.572-2.484 7.02 0 2.016.81 3.672 2.43 4.968 1.62 1.296 3.906 2.124 6.858 2.484 0 2.952-.612 5.256-1.836 6.912-1.224 1.656-2.88 2.484-4.968 2.484-2.448 0-4.338-1.008-5.67-3.024-1.332-2.016-1.998-4.86-1.998-8.532 0-3.744.846-7.236 2.538-10.476 1.692-3.24 3.942-5.616 6.75-7.128C30.446.36 31.526 0 32.462 0c.864 0 1.44.324 1.728.972z"/>
-                    </g>
-                </symbol>
-                <symbol id="icon-download" viewBox="0 0 725.334 725.334">
-                    <g>
-                        <path d="M215.333,374c0,9.385,3.808,17.885,9.951,24.027l113.333,113.332c6.166,6.166,14.666,9.975,24.049,9.975
-                            s17.884-3.809,24.026-9.975l113.334-113.332C506.192,391.885,510,383.385,510,374c0-18.768-15.209-34-34-34
-                            c-9.384,0-17.884,3.808-24.026,9.951l-55.307,55.307V34c0-18.768-15.209-34-34-34c-18.791,0-34,15.232-34,34v371.258
-                            l-55.307-55.285c-6.143-6.165-14.643-9.973-24.027-9.973C230.543,340,215.333,355.232,215.333,374z M623.334,158.667H498.667
-                            c-18.791,0-34,15.232-34,34s15.209,34,34,34h102v430.667h-476V226.667h102c18.791,0,34-15.232,34-34s-15.209-34-34-34H102
-                            c-25.001,0-45.333,20.354-45.333,45.333v476c0,24.979,20.332,45.334,45.333,45.334h521.333c25.001,0,45.333-20.355,45.333-45.334
-                            V204C668.667,179.021,648.335,158.667,623.334,158.667z"/>
-                    </g>
-                </symbol>
-                <symbol id="icon-download" viewBox="0 0 24 24">
-                    <title>Download</title>
-                    <g>
-                        <path stroke-width="1" fill-rule="evenodd" d="M23,16.718 C22.4477153,16.718 22,17.1657153 22,17.718 L22,19.631 C22,20.675 21.119,22 20.13,22 L3.869,22 C2.88,22 2,20.675 2,19.63 L2,17.718 C2,17.1657153 1.55228475,16.718 1,16.718 C0.44771525,16.718 6.76353751e-17,17.1657153 0,17.718 L0,19.631 C0,21.694 1.654,24 3.869,24 L20.13,24 C22.345,24 24,21.694 24,19.63 L24,17.718 C24,17.1657153 23.5522847,16.718 23,16.718"></path>
-                        <path stroke-width="1" fill-rule="evenodd" d="M11.292,18.315 C11.4795683,18.502777 11.7340908,18.6082867 11.9995,18.6082867 C12.2649092,18.6082867 12.5194317,18.502777 12.707,18.315 L19.707,11.316 C20.0974653,10.9255347 20.0974653,10.2924653 19.707,9.902 C19.3165347,9.51153468 18.6834653,9.51153468 18.293,9.902 L13,15.195 L13,1 C13,0.44771525 12.5522847,3.38176876e-17 12,0 C11.4477153,-3.38176876e-17 11,0.44771525 11,1 L11,15.195 L5.707,9.902 C5.31653468,9.51153468 4.68346532,9.51153468 4.293,9.902 C3.90253468,10.2924653 3.90253468,10.9255347 4.293,11.316 L11.292,18.316 L11.292,18.315 Z"></path>
-                    </g>
-                </symbol>
-                <symbol id="icon-close" viewBox="0 0 512 512">
-                    <title>Close</title>
-                    <g>
-                        <path d="M437.5,386.6L306.9,256l130.6-130.6c14.1-14.1,14.1-36.8,0-50.9c-14.1-14.1-36.8-14.1-50.9,0L256,205.1L125.4,74.5
-                        c-14.1-14.1-36.8-14.1-50.9,0c-14.1,14.1-14.1,36.8,0,50.9L205.1,256L74.5,386.6c-14.1,14.1-14.1,36.8,0,50.9
-                        c14.1,14.1,36.8,14.1,50.9,0L256,306.9l130.6,130.6c14.1,14.1,36.8,14.1,50.9,0C451.5,423.4,451.5,400.6,437.5,386.6z"/>
-                    </g>
-                </symbol>
-                <symbol id="icon-facebook" viewBox="0 0 9 18">
-                    <title>Facebook</title>
-                    <path fill-rule="evenodd" d="M6 6h3l-.375 3H6v9H2.11V9H0V6h2.11V3.984c0-1.312.327-2.304.984-2.976C3.75.336 4.844 0 6.375 0H9v3H7.406c-.594 0-.976.094-1.148.281-.172.188-.258.5-.258.938V6z"/>
-                </symbol>
-                <symbol id="search-icon" width="14" height="14" viewBox="0 0 16 15">
-                    <path fill-rule="evenodd" d="M10.208 8.531l-.146.255L14 12.76 12.76 14l-3.937-3.974-.255.182c-.973.608-1.981.912-3.026.912-1.532 0-2.838-.547-3.92-1.64C.541 8.384 0 7.072 0 5.541c0-1.532.54-2.838 1.622-3.92C2.704.541 4.01 0 5.542 0c1.53 0 2.837.54 3.919 1.622 1.082 1.082 1.622 2.388 1.622 3.92 0 1.07-.291 2.066-.875 2.99zM8.641 2.443c-.851-.851-1.884-1.276-3.1-1.276-1.215 0-2.248.425-3.098 1.276-.851.85-1.276 1.883-1.276 3.099 0 1.215.425 2.248 1.276 3.099.85.85 1.883 1.276 3.099 1.276 1.215 0 2.248-.426 3.099-1.276.875-.875 1.312-1.908 1.312-3.1 0-1.19-.437-2.223-1.312-3.098z"/>
-                </symbol>
-                <symbol id="icon-googleplus" viewBox="0 0 24 16">
-                    <title>Google Plus</title>
-                    <path fill-rule="evenodd" d="M15.154 7.663c.081.46.122.894.122 1.3 0 1.49-.311 2.81-.934 3.961a6.759 6.759 0 0 1-2.641 2.702c-1.138.65-2.438.975-3.9.975a7.637 7.637 0 0 1-3.921-1.056A7.742 7.742 0 0 1 1.036 12.7 7.642 7.642 0 0 1 0 8.8c0-1.409.345-2.709 1.036-3.9A7.742 7.742 0 0 1 3.88 2.055 7.637 7.637 0 0 1 7.8 1c2.032 0 3.765.677 5.2 2.031l-2.112 2.032c-.812-.786-1.842-1.178-3.087-1.178-.867 0-1.673.216-2.418.65a4.765 4.765 0 0 0-1.767 1.787 4.91 4.91 0 0 0-.65 2.479c0 .893.217 1.72.65 2.478a4.765 4.765 0 0 0 1.767 1.787c.745.434 1.55.65 2.418.65.948 0 1.774-.203 2.478-.609a3.754 3.754 0 0 0 1.381-1.381c.298-.46.488-.908.569-1.341H7.801V7.663h7.353zm6.57.284H24v2.276h-2.275v2.275H19.45v-2.275h-2.235V7.947h2.235V5.672h2.275v2.275z"/>
-                </symbol>
-                <symbol id="icon-mailto" viewBox="0 0 19 12">
-                    <title>Mail To</title>
-                    <path fill-rule="evenodd" d="M18.5 12H.5V1.365L6.64 5.76 3.454 9.144l.094.087L7.25 6.155 9.5 7.781l2.25-1.626 3.703 3.076.094-.087-3.188-3.384L18.5 1.365V12zM18.125.75L9.5 6.902.875.75h17.25z"/>
-                </symbol>
-                <symbol id="icon-linkedin" viewBox="0 0 19 18">
-                    <title>LinkedIn</title>
-                    <path fill-rule="evenodd" d="M17.047 0c.406 0 .75.133 1.031.398.281.266.422.602.422 1.008v15.047c0 .406-.14.766-.422 1.078a1.335 1.335 0 0 1-1.031.469h-15c-.406 0-.766-.156-1.078-.469C.656 17.22.5 16.86.5 16.453V1.406C.5 1 .648.664.945.398 1.242.133 1.61 0 2.047 0h15zM5.643 14.571V6.857H3.07v7.714h2.572zM4.335 5.143c.378 0 .69-.124.937-.37.247-.248.37-.545.37-.894 0-.378-.115-.69-.348-.937-.232-.247-.537-.37-.915-.37s-.69.123-.937.37c-.247.247-.37.56-.37.937 0 .349.116.646.348.893.233.247.538.37.915.37zm10.736 9.428v-4.408c0-1.087-.267-1.91-.803-2.468-.536-.559-1.232-.838-2.09-.838-.918 0-1.683.412-2.295 1.234V7.033H7.357v7.538h2.526v-4.275c0-.294.03-.5.091-.618.245-.587.674-.881 1.286-.881.857 0 1.286.543 1.286 1.63v4.144h2.525z"/>
-                </symbol>
-                <symbol id="icon-twitter" viewBox="0 0 23 18">
-                    <title>Twitter</title>
-                    <path fill-rule="evenodd" d="M22.5 2.156c-.572.875-1.335 1.656-2.288 2.344v.563c0 3.28-1.2 6.257-3.6 8.93C14.214 16.663 11.029 18 7.056 18 4.513 18 2.161 17.313 0 15.937c.508.063.874.094 1.096.094 2.13 0 4.036-.656 5.72-1.968a4.69 4.69 0 0 1-2.669-.915c-.794-.578-1.334-1.32-1.62-2.226.38.062.667.094.858.094.317 0 .73-.063 1.239-.188a4.674 4.674 0 0 1-2.646-1.57A4.277 4.277 0 0 1 .906 6.375v-.047c.699.375 1.398.563 2.097.563C1.637 6.016.953 4.75.953 3.094c0-.782.207-1.531.62-2.25C4.02 3.813 7.183 5.39 11.06 5.578c-.063-.219-.095-.562-.095-1.031 0-1.281.445-2.36 1.335-3.234C13.189.436 14.285 0 15.588 0c1.303 0 2.415.484 3.337 1.453.953-.156 1.938-.531 2.955-1.125-.318 1.094-1 1.938-2.05 2.531.986-.093 1.876-.328 2.67-.703z"/>
-                </symbol>
-            </svg>
-        {{/element}}
-        {{#element "header" noWith=true}}
-            {{element "hat"}}
-            <header class="{{elementName}}" data-with-toggle-menu itemscope itemtype="http://schema.org/WPHeader"
-                    {{#if mobileLeftAlignNavigation}}data-mobile-left-align-nav{{/if}}>
-                <div class="{{elementName}}-contentWrapper">
-                    {{#element "logo"}}
-                        <div class="{{elementName}}">
-                            {{this}}
-                        </div>
-                    {{/element}}
-
-                    {{#element "navigation"}}
-                        <psd-toggler
-                                class="{{elementName}}-menuToggle"
-                                aria-role="button"
-                                aria-label="Menu"
-                                aria-controls="navigation"
-                                toggle-trigger="navigation">
-                            <svg class="burger-menu"><use xlink:href="#burger-menu"/></svg>
-                            <svg class="close-x"><use xlink:href="#close-x"/></svg>
-                        </psd-toggler>
-                        <div class="{{elementName}}" data-main-navigation data-toggle-item="navigation"{{#if ../navigationAlignment}}data-navigation-alignment="{{../navigationAlignment}}"{{/if}}>
-                            {{this}}
-                        </div>
-                    {{/element}}
-
-                    {{#element "search" noWith=true}}
-                        {{#if searchAction}}
-                            <form class="Header-search" action="{{searchAction}}" novalidate="" autocomplete="off" data-header-search>
-                                {{#element "searchInput" noWith=true}}
-                                    <input type="text" class="{{elementName}}" name="q" placeholder="{{format "placeholderLabel"}}">
-                                {{/element}}
-                                {{#element "searchButton" noWith=true}}
-                                    <button type="submit" class="Header-search-button"><svg class="search-icon"><use xlink:href="#search-icon"/></svg><span>{{format "searchText"}}</span></button>
-                                {{/element}}
-                            </form>
-                        {{/if}}
-                    {{/element}}
+<!DOCTYPE html>
+<html class="Page" lang="{{#with language}}{{this}}{{else}}en{{/with}}" itemscope itemtype="http://schema.org/WebPage">
+    {{include "/core/page/Page-head.hbs" this}}
+    <body class="Page-body" {{~#each extraBodyAttributes}} {{this}} {{~/each~}}
+        {{#if hidePromoDropShadow}} data-hide-promo-dropshadow{{/if}}
+        {{#if promoModuleAlignment}} data-promo-module-alignment="{{promoModuleAlignment}}"{{/if}}
+        {{#if boldMood}} data-mood-bold{{/if}}
+        {{#if inlineSubheading}} data-subheading-inline="{{inlineSubheading}}"{{/if}}
+        {{#if hideExternalLinkIcon}}data-hide-external-link-icon{{/if}}
+        {{#if hat}}data-show-hat{{/if}}
+        {{#if hideHeaderHat}}data-hide-header-hat{{/if}}
+    >
+    {{include "/core/page/Page-icons.hbs" this}}
+    {{#with hat}}
+        <div class="Page-hat">{{this}}</div>
+    {{/with}}
+    <header class="Page-header" data-with-toggle-menu itemscope itemtype="http://schema.org/WPHeader"
+        {{#if mobileLeftAlignNavigation}}data-mobile-left-align-nav{{/if}}>
+        <div class="Page-header-contentWrapper">
+            {{#with logo}}
+                <div class="Page-logo">
+                    {{this}}
                 </div>
-            </header>
-        {{/element}}
-
-        <div class="{{blockName}}-contentWrapper"
-                data-negative-margin={{#if negativeMargin}}"{{negativeMargin}}"{{else}}default{{/if}}>
-            {{#element "sectionNavigation"}}{{/element}}
-            {{element "above"}}
-            {{#element "main" noWith=true}}
-                <main class="{{elementName}}"{{#with backgroundColor}} style="background-color:{{this}}"{{/with}}>
-                    {{#element "pageLeadInfo" noWith=true}}
-                        {{#if pageLead}}
-                            <div class="{{blockName}}-pageLead" data-page-lead{{#if inlineSubheading}} data-subheading-lead{{/if}}>
-                                <div class="{{blockName}}-heading">
-                                    {{pageHeading}}
-                                    {{element "pageSubHeading"}}
-                                </div>
-                                {{pageLead}}
-                            </div>
-                        {{else}}
-                            {{element "pageHeading"}}
-                        {{/if}}
-                        {{element "pageSubHeading"}}
-                    {{/element}}
-                    {{#with main}}
-                        {{this}}
-                    {{/with}}
-                </main>
-            {{/element}}
-            {{element "below"}}
-        </div>
-
-        {{#element "footer" noWith=true}}
-            <footer class="Footer" itemscope itemtype="https://schema.org/WPFooter">
-
-                {{#element "footerContent"}}
-                    <div class="Footer-footerContent">{{this}}</div>
-                {{/element}}
-
-                {{#element "social"}}
-                    <div class="Footer-social">{{this}}</div>
-                {{/element}}
-
-                {{#element "disclaimer"}}
-                    <div class="Footer-disclaimer">{{this}}</div>
-                {{/element}}
-            </footer>
-        {{/element}}
-
-        {{#element "SearchOverlay" noWith=true}}
+            {{/with}}
+            {{#with navigation}}
+                <psd-toggler
+                    class="Page-navigation-menuToggle"
+                    aria-role="button"
+                    aria-label="Menu"
+                    aria-controls="navigation"
+                    toggle-trigger="navigation">
+                    <svg class="burger-menu"><use xlink:href="#burger-menu"/></svg>
+                    <svg class="close-x"><use xlink:href="#close-x"/></svg>
+                </psd-toggler>
+                <div class="Page-navigation" data-main-navigation data-toggle-item="navigation"{{#if ../navigationAlignment}}data-navigation-alignment="{{../navigationAlignment}}"{{/if}}>
+                    {{this}}
+                </div>
+            {{/with}}
             {{#if searchAction}}
-                <div class="SearchOverlay">
-                    <div class="SearchOverlay-content">
-                        <form class="SearchOverlay-form" action="{{searchAction}}" novalidate="" autocomplete="off">
-                            <input type="text" class="SearchOverlay-input" name="q" placeholder="Search...">
-                            <button type="submit" class="SearchOverlay-button">
-                                <span>{{format "searchText"}}</span>
-                                <svg class="search-icon"><use xlink:href="#search-icon"/></svg>
-                            </button>
-                        </form>
-                        <span class="SearchOverlay-close"><svg class="x-close"><use xlink:href="#x-close"/></svg></span>
-                    </div>
-                </div>
+                <form class="Header-search" action="{{searchAction}}" novalidate="" autocomplete="off" data-header-search>
+                    <input type="text" class="Page-searchInput" name="q" placeholder="{{format "/core/page/Page" "placeholderLabel"}}">
+                    {{include "/core/page/Page-searchButton.hbs" this}}
+                </form>
             {{/if}}
-        {{/element}}
-
-        {{element "extraBodyItems"}}
-        </body>
-    {{/element}}
-    </html>
-{{/block}}
+        </div>
+    </header>
+    <div class="Page-contentWrapper"
+        data-negative-margin={{#if negativeMargin}}"{{negativeMargin}}"{{else}}default{{/if}}>
+        {{include "/core/page/Page-sectionNavigation.hbs" this}}
+        {{#with above}}
+            <div class="Page-above">{{this}}</div>
+        {{/with}}
+        <main class="Page-main"{{#with backgroundColor}} style="background-color:{{this}}"{{/with}}>
+            {{#if pageLead}}
+                <div class="Page-pageLead" data-page-lead{{#if inlineSubheading}} data-subheading-lead{{/if}}>
+                    <div class="Page-heading">
+                        {{pageHeading}}
+                        {{#with pageSubHeading}}
+                            <div class="Page-pageSubHeading">{{this}}</div>
+                        {{/with}}
+                    </div>
+                    {{pageLead}}
+                </div>
+            {{else}}
+                {{#with pageHeading}}
+                    <h1 class="Page-pageHeading">{{this}}</h1>
+                {{/with}}
+            {{/if}}
+            {{#with pageSubHeading}}
+                <div class="Page-pageSubHeading">{{this}}</div>
+            {{/with}}
+            {{#with main}}
+                {{this}}
+            {{/with}}
+        </main>
+        {{#with below}}
+            <div class="Page-below">{{this}}</div>
+        {{/with}}
+    </div>
+    {{include "/core/page/Page-footer.hbs" this}}
+    {{include "/core/page/Page-SearchOverlay.hbs" this}}
+    {{include "/core/page/Page-extraBodyItems.hbs" this}}
+</body>
+</html>

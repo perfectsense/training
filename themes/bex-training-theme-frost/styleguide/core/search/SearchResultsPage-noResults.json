@@ -1,8 +1,8 @@
 {
-    "_include": "/core/search/SearchResultsPage.json",
-
-    "noResults": "{{words(40)}}",
-    "results": null,
-    "previousPage": null,
-    "nextPage": null
+  "_include": "/core/search/SearchResultsPage.json",
+  "noResults": "{{words(40)}}",
+  "results": null,
+  "previousPage": null,
+  "nextPage": null,
+  "_hidden": false
 }

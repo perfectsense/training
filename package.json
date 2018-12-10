@@ -5,7 +5,7 @@
   "devDependencies": {
     "autoprefixer": "6.5.1",
     "babel-eslint": "^7.2.1",
-    "brightspot-styleguide": "3.0.614-xe6f094",
+    "brightspot-styleguide": "4.0.738-x4224cc",
     "capitalize": "^1.0.0",
     "fs-extra": "1.0.0",
     "glob": "7.1.1",

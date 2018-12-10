@@ -1,0 +1,25 @@
+{
+  "_template": "NavigationItem.hbs",
+  "text": "{{words(1)}}",
+  "href": "{{var('exampleSiteUrl')}}",
+  "target": "_self",
+  "items": [
+    {
+      "_include": "NavigationLink.json",
+      "_repeat": [
+        3,
+        5
+      ],
+      "isActive": true
+    },
+    {
+      "_template": "/core/social/SocialLink.hbs",
+      "href": "",
+      "body": "Twitter",
+      "socialService": "twitter"
+    }
+  ],
+  "contentId": "a123",
+  "iconUrl": "http://example.com/url/to/icon",
+  "_hidden": true
+}

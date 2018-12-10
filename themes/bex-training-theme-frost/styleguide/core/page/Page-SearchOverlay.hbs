@@ -1,0 +1,14 @@
+{{#if searchAction}}
+    <div class="SearchOverlay">
+        <div class="SearchOverlay-content">
+            <form class="SearchOverlay-form" action="{{searchAction}}" novalidate="" autocomplete="off">
+                <input type="text" class="SearchOverlay-input" name="q" placeholder="Search...">
+                <button type="submit" class="SearchOverlay-button">
+                    <span>{{format "/core/page/Page" "searchText"}}</span>
+                    <svg class="search-icon"><use xlink:href="#search-icon"/></svg>
+                </button>
+            </form>
+            <span class="SearchOverlay-close"><svg class="x-close"><use xlink:href="#x-close"/></svg></span>
+        </div>
+    </div>
+{{/if}}

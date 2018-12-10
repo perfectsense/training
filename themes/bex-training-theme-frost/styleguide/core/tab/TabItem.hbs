@@ -1,7 +1,5 @@
-{{#block "TabItem" extend="_SourceTabItem.hbs" }}
-    <div class="{{blockName}}">
-        {{#element "content"}}
-            <div class="{{elementName}}">{{this}}</div>
-        {{/element}}
-    </div>
-{{/block}}
+<div class="TabItem">
+    {{#with content}}
+        <div class="TabItem-content">{{this}}</div>
+    {{/with}}
+</div>

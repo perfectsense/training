@@ -1,21 +1,20 @@
-{{#block "PromoIconOnSideList" extend="ListGrid.hbs"}}
-    <div class="{{blockName}}" data-column-count="{{#with columnCount}}{{this}}{{else}}3{{/with}}"
-        {{extraAttributes}}
-        {{#if backgroundColor}}style="--color:var(--{{backgroundColor}})"{{/if}}
-        {{#if alternateStyle}}data-alternateStyle{{/if}}>
-
-        {{element "title"}}
-
-        {{element "description"}}
-
-        {{#element "items"}}
-            <div class="{{elementName}}">
-                  {{#each this}}
-                      <div class="{{elementName}}-item">
-                          {{render this [/core/promo/Promo.hbs]="/core/promo/PromoIconOnSide.hbs"}}
-                      </div>
-                  {{/each}}
-            </div>
-        {{/element}}
-    </div>
-{{/block}}
+<div class="PromoIconOnSideList" data-column-count="{{#with columnCount}}{{this}}{{else}}3{{/with}}"
+    {{extraAttributes}}
+    {{#if backgroundColor}}style="--color:var(--{{backgroundColor}})"{{/if}}
+    {{#if alternateStyle}}data-alternateStyle{{/if}}>
+    {{#with title}}
+        <div class="PromoIconOnSideList-title">{{this}}</div>
+    {{/with}}
+    {{#with description}}
+        <div class="PromoIconOnSideList-description">{{this}}</div>
+    {{/with}}
+    {{#with items}}
+        <div class="PromoIconOnSideList-items">
+            {{#each this}}
+                <div class="PromoIconOnSideList-items-item">
+                    {{render this [/core/promo/Promo.hbs]="/core/promo/PromoIconOnSide.hbs"}}
+                </div>
+            {{/each}}
+        </div>
+    {{/with}}
+</div>

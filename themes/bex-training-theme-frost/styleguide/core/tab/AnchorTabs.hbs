@@ -1,22 +1,24 @@
-{{#block "AnchorTabs" extend="/core/tab/Tabs.hbs" }}
-    <div class="{{blockName}}" data-widget="anchortabs">
-
-        <!-- This creates the row of tabs for navigation -->
-        <div class="{{blockName}}-tabWrapper">
-          {{element "tabs"}}
-        </div>
-
-        {{#element "content" noWith=true}}
-            <div class="{{elementName}}">
-                {{#each tabs}}
-                    {{#element "title"}}
-                        <a class="{{elementName}}-panel" href="#{{../id}}" data-tab>{{this}}</a>
-                    {{/element}}
-                    <div class="{{blockName}}-panel" id="{{id}}" data-tab-panel>
-                        {{this}}
-                    </div>
+<div class="AnchorTabs" data-widget="anchortabs">
+    <!-- This creates the row of tabs for navigation -->
+    <div class="AnchorTabs-tabWrapper">
+        {{#with tabs}}
+            <ul class="AnchorTabs-tabs">
+                {{#each this}}
+                    <li>
+                        <a class="AnchorTabs-tab" href="#{{id}}" data-tab>{{label}}</a>
+                    </li>
                 {{/each}}
-            </div>
-        {{/element}}
+            </ul>
+        {{/with}}
     </div>
-{{/block}}
+    <div class="AnchorTabs-content">
+        {{#each tabs}}
+            {{#with title}}
+                <a class="AnchorTabs-title-panel" href="#{{../id}}" data-tab>{{this}}</a>
+            {{/with}}
+            <div class="AnchorTabs-panel" id="{{id}}" data-tab-panel>
+                {{this}}
+            </div>
+        {{/each}}
+    </div>
+</div>

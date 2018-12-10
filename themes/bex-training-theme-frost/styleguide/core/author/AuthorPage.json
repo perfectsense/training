@@ -5,28 +5,32 @@
   "firstName": "{{words(1)}}",
   "lastName": "{{words(1)}}",
   "jobTitle": "VP",
-  "amaversary" : "October 20, 2014",
+  "amaversary": "October 20, 2014",
   "email": "VP@acme.com",
   "affiliation": "ACME, inc.",
   "image": {
-    "_include" : "/core/figure/Figure.json"
+    "_include": "/core/figure/Figure.json"
   },
   "shortBiography": "{{sentences(3)}}",
   "fullBiography": {
     "_include": "/_group/RichText.json",
     "_random": true
   },
-  "careerHighlight" : {
+  "careerHighlight": {
     "_include": "/_group/RichText.json",
     "_random": true
   },
   "links": [
     {
       "_include": "/core/link/Link.json",
-      "_repeat": [3, 5]
+      "_repeat": [
+        3,
+        5
+      ]
     }
   ],
   "authorSocialLinks": {
     "_include": "/core/social/SocialBar.json"
-  }
+  },
+  "_hidden": true
 }

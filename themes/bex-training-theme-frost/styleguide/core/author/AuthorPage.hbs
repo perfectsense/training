@@ -1,53 +1,98 @@
-{{~#block "AuthorPage" override="_SourceAuthorPage.hbs"~}}
-
-    {{#element "main" noWith=true}}
-        {{#if aside}}
-        <div class="{{blockName}}-wrapper">
-        {{/if}}
-            <main class="{{elementName}}" data-statusBar-headline="{{name}}">
-                <hr class="mood-bgcolor"></hr>
-                {{#element "mainContent" noWith="true"}}
-                    <article class="{{elementName}}" itemprop="mainEntity" itemscope itemtype="http://schema.org/Article">
-                        {{element "name"}}
-
-                        {{element "affiliation"}}
-
-                        {{#element "jobTitle"}}
-                            <div class="{{elementName}}" itemprop="jobTitle">{{format "jobTitlePrefix"}} <span>{{this}}</span></div>
-                        {{/element}}
-
-                        {{element "authorSocialLinks"}}
-                        {{element "image"}}
-
-                        <div class="{{blockName}}-articleBody mood-color">
-                            {{element "fullBiography"}}
-
-                            {{#element "careerHighlight"}}
-                                <div class="{{elementName}}">
-                                    <h3 class="mood-color">{{format "careerHighlightsHeading"}}</h3>
-                                    {{this}}
-                                </div>
-                            {{/element}}
-                        </div>
-                    </article>
-                {{/element}}
-            </main>
-        {{#unless aside}}
+<!DOCTYPE html>
+<html class="AuthorPage" lang="{{#with language}}{{this}}{{else}}en{{/with}}" itemscope itemtype="http://schema.org/WebPage">
+    {{include "/core/page/Page-head.hbs" this}}
+    <body class="AuthorPage-body" {{~#each extraBodyAttributes}} {{this}} {{~/each~}}
+        {{#if hidePromoDropShadow}} data-hide-promo-dropshadow{{/if}}
+        {{#if promoModuleAlignment}} data-promo-module-alignment="{{promoModuleAlignment}}"{{/if}}
+        {{#if boldMood}} data-mood-bold{{/if}}
+        {{#if inlineSubheading}} data-subheading-inline="{{inlineSubheading}}"{{/if}}
+        {{#if hideExternalLinkIcon}}data-hide-external-link-icon{{/if}}
+        {{#if hat}}data-show-hat{{/if}}
+        {{#if hideHeaderHat}}data-hide-header-hat{{/if}}
+    >
+    {{include "/core/page/Page-icons.hbs" this}}
+    {{#with hat}}
+        <div class="AuthorPage-hat">{{this}}</div>
+    {{/with}}
+    <header class="AuthorPage-header" data-with-toggle-menu itemscope itemtype="http://schema.org/WPHeader"
+        {{#if mobileLeftAlignNavigation}}data-mobile-left-align-nav{{/if}}>
+        <div class="AuthorPage-header-contentWrapper">
+            {{#with logo}}
+                <div class="AuthorPage-logo">
+                    {{this}}
+                </div>
+            {{/with}}
+            {{#with navigation}}
+                <psd-toggler
+                    class="AuthorPage-navigation-menuToggle"
+                    aria-role="button"
+                    aria-label="Menu"
+                    aria-controls="navigation"
+                    toggle-trigger="navigation">
+                    <svg class="burger-menu"><use xlink:href="#burger-menu"/></svg>
+                    <svg class="close-x"><use xlink:href="#close-x"/></svg>
+                </psd-toggler>
+                <div class="AuthorPage-navigation" data-main-navigation data-toggle-item="navigation"{{#if ../navigationAlignment}}data-navigation-alignment="{{../navigationAlignment}}"{{/if}}>
+                    {{this}}
+                </div>
+            {{/with}}
+            {{#if searchAction}}
+                <form class="Header-search" action="{{searchAction}}" novalidate="" autocomplete="off" data-header-search>
+                    <input type="text" class="AuthorPage-searchInput" name="q" placeholder="{{format "/core/page/Page" "placeholderLabel"}}">
+                    {{include "/core/page/Page-searchButton.hbs" this}}
+                </form>
+            {{/if}}
         </div>
-        {{/unless}}
-    {{/element}}
-
-    {{#element "aside"}}
-        <aside class="{{elementName}}">
-            <div class="{{elementName}}-content" data-sticky-aside>
-                {{#each this}}
-                    {{render this
-                        [/core/list/List.hbs]="/core/list/ListOrderedSticky.hbs"
-                    }}
-                {{/each}}
+    </header>
+    <div class="AuthorPage-contentWrapper"
+        data-negative-margin={{#if negativeMargin}}"{{negativeMargin}}"{{else}}default{{/if}}>
+        {{include "/core/page/Page-sectionNavigation.hbs" this}}
+        {{#with above}}
+            <div class="AuthorPage-above">{{this}}</div>
+        {{/with}}
+        {{#if aside}}
+            <div class="AuthorPage-wrapper">
+            {{/if}}
+            <main class="AuthorPage-main" data-statusBar-headline="{{name}}">
+                <hr class="mood-bgcolor"></hr>
+                <article class="AuthorPage-mainContent" itemprop="mainEntity" itemscope itemtype="http://schema.org/Article">
+                    {{#with name}}
+                        <h1 class="AuthorPage-name" itemprop="name">{{this}}</h1>
+                    {{/with}}
+                    {{#with affiliation}}
+                        <h2 class="AuthorPage-affiliation" itemprop="affiliation">{{this}}</h2>
+                    {{/with}}
+                    {{#with jobTitle}}
+                        <div class="AuthorPage-jobTitle" itemprop="jobTitle">{{format "/core/author/AuthorPage" "jobTitlePrefix"}} <span>{{this}}</span></div>
+                    {{/with}}
+                    {{#with authorSocialLinks}}
+                        <div class="AuthorPage-authorSocialLinks">{{this}}</div>
+                    {{/with}}
+                    {{#with image}}
+                        <div class="AuthorPage-image" itemprop="image">{{this}}</div>
+                    {{/with}}
+                    <div class="AuthorPage-articleBody mood-color">
+                        {{#with fullBiography}}
+                            <div class="AuthorPage-fullBiography" itemprop="description">{{this}}</div>
+                        {{/with}}
+                        {{#with careerHighlight}}
+                            <div class="AuthorPage-careerHighlight">
+                                <h3 class="mood-color">{{format "/core/author/AuthorPage" "careerHighlightsHeading"}}</h3>
+                                {{this}}
+                            </div>
+                        {{/with}}
+                    </div>
+                </article>
+            </main>
+            {{#unless aside}}
             </div>
-        </aside>
+        {{/unless}}
+        {{#with below}}
+            <div class="AuthorPage-below">{{this}}</div>
+        {{/with}}
     </div>
-    {{/element}}
-
-{{/block}}
+    {{include "/core/page/Page-footer.hbs" this}}
+    {{include "/core/page/Page-SearchOverlay.hbs" this}}
+    {{include "/core/page/Page-extraBodyItems.hbs" this}}
+</body>
+</html>

@@ -1,44 +1,45 @@
-{{#block "PromoBlog" extend="Promo.hbs"}}
-<div class="{{blockName}}"{{extraAttributes}}>
-      {{#element "media"}}
-          <div class="{{elementName}}">
-              {{include "../link/Link.hbs" href=../url target=../target body=this}}
-          </div>
-      {{/element}}
-
-        {{#element "info" noWith=true}}
-            <div class="{{elementName}}">
-                {{element "title"}}
-
-                <div class="{{blockName}}-byline">
-                    {{#element "authorName"}}
-                        <div class="{{blockName}}-author">
-                            {{~format "AuthorBy"~}}&nbsp;
-                            {{~#if ../authorUrl~}}
-                                {{~include "../link/Link.hbs" href=../authorUrl target=../target body=this~}}
-                            {{else}}
-                                {{~this~}}
-                            {{~/if~}}
-                            &nbsp;&nbsp;|&nbsp;&nbsp;{{~#with ../date~}}{{~this~}}{{~/with~}}
-                        </div>
-                    {{/element}}
-                    {{#if category}}&nbsp;&nbsp;|&nbsp;&nbsp;{{/if}}
-                    {{element "category"}}
+<div class="PromoBlog"{{extraAttributes}}>
+    {{#with media}}
+        <div class="PromoBlog-media">
+            {{include "../link/Link.hbs" href=../url target=../target body=this}}
+        </div>
+    {{/with}}
+    <div class="PromoBlog-info">
+        {{#with title}}
+            <div class="PromoBlog-title">
+                {{include "../link/Link.hbs" href=../url target=../target body=this}}
+            </div>
+        {{/with}}
+        <div class="PromoBlog-byline">
+            {{#with authorName}}
+                <div class="PromoBlog-author">
+                    {{format "/core/promo/PromoBlog" "AuthorBy"}}&nbsp;
+                    {{~#if ../authorUrl~}}
+                        {{~include "../link/Link.hbs" href=../authorUrl target=../target body=this~}}
+                    {{else}}
+                        {{~this~}}
+                    {{~/if~}}
+                    &nbsp;&nbsp;|&nbsp;&nbsp;{{~#with ../date~}}{{~this~}}{{~/with~}}
                 </div>
-
-
-                {{element "description"}}
-
-                {{#if url}}
-                    <div class="{{elementName}}-button">
-                        {{#if buttonText}}
-                            {{include "/core/link/Link.hbs" href=url target=target body=buttonText contentId=linkId}}
-                        {{else}}
-                            {{include "/core/link/Link.hbs" href=url target=target body="Read Full Story" contentId=linkId}}
-                        {{/if}}
-                    </div>
+            {{/with}}
+            {{#if category}}&nbsp;&nbsp;|&nbsp;&nbsp;{{/if}}
+            {{#with category}}
+                <div class="PromoBlog-category">
+                    {{include "../link/Link.hbs" href=../categoryUrl target=../target body=this contentId=../categoryId}}
+                </div>
+            {{/with}}
+        </div>
+        {{#with description}}
+            <div class="PromoBlog-description">{{this}}</div>
+        {{/with}}
+        {{#if url}}
+            <div class="PromoBlog-info-button">
+                {{#if buttonText}}
+                    {{include "/core/link/Link.hbs" href=url target=target body=buttonText contentId=linkId}}
+                {{else}}
+                    {{include "/core/link/Link.hbs" href=url target=target body="Read Full Story" contentId=linkId}}
                 {{/if}}
             </div>
-        {{/element}}
+        {{/if}}
     </div>
-{{/block}}
+</div>

@@ -1,6 +1,5 @@
 {
-  "_template": "/core/list/ListWaterfall.hbs",
-
+  "_template": "/core/list/List.hbs",
   "items": [
     {
       "_include": "/core/promo/PromoImageOnTop.json",
@@ -45,5 +44,7 @@
       "title": "{{words([3,6])}}",
       "description": "{{words([10,25])}}"
     }
-  ]
+  ],
+  "_styledTemplate": "/core/list/ListWaterfall.hbs",
+  "_hidden": false
 }

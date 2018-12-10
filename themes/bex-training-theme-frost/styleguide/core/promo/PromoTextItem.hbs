@@ -1,5 +1,7 @@
-{{#block "PromoTextItem" extend="/core/promo/Promo.hbs"}}
-    <div class="{{blockName}}">
-        {{element "title"}}
-    </div>
-{{/block}}
+<div class="PromoTextItem">
+    {{#with title}}
+        <div class="PromoTextItem-title">
+            {{include "../link/Link.hbs" href=../url target=../target body=this}}
+        </div>
+    {{/with}}
+</div>

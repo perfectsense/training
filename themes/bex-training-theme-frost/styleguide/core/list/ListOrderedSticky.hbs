@@ -1,28 +1,20 @@
-{{#block "ListOrderedSticky" extend="/core/list/List.hbs"}}
-    <div class="{{blockName}}" data-shortMonths="false" {{extraAttributes}}>
-        <header>
-            {{#element "title"}}
-                <div class="{{elementName}} mood-color">{{this}}</div>
-            {{/element}}
-
-            {{#element "description" noWith=true}}
-                <div class="{{elementName}}">
-                    <span class="date" data-i18n-date></span>
-                </div>
-            {{/element}}
-        </header>
-
-        {{#element "items"}}
-            <ol class="{{elementName}}">
-                {{#each this}}
-                    <li class="{{elementName}}-item">
-                        <span class="number"></span>
-                        {{render this
-                            [/core/promo/Promo.hbs]="/core/promo/PromoTextItem.hbs"
-                        }}
-                    </li>
-                {{/each}}
-            </ol>
-        {{/element}}
-    </div>
-{{/block}}
+<div class="ListOrderedSticky" data-shortMonths="false" {{extraAttributes}}>
+    <header>
+        {{#with title}}
+            <div class="ListOrderedSticky-title mood-color">{{this}}</div>
+        {{/with}}
+        <div class="ListOrderedSticky-description">
+            <span class="date" data-i18n-date></span>
+        </div>
+    </header>
+    {{#with items}}
+        <ol class="ListOrderedSticky-items">
+            {{#each this}}
+                <li class="ListOrderedSticky-items-item">
+                    <span class="number"></span>
+                    {{render this [/core/promo/Promo.hbs]="/core/promo/PromoTextItem.hbs"}}
+                </li>
+            {{/each}}
+        </ol>
+    {{/with}}
+</div>

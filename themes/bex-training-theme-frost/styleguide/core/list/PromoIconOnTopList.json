@@ -1,11 +1,13 @@
 {
-    "_template": "PromoIconOnTopList.hbs",
-    "title": "Products",
-    "description": "Lorem ipsum dolor sit amet consectetur adipiscing elit. Lorem ipsum dolor sit amet consecteur adipiscing elit lorem ipsm dolor sit amet.",
-    "items": [
-      {
-        "_include": "/core/promo/PromoIconOnTop.json",
-        "_repeat": 12
-      }
-    ]
+  "_template": "/core/list/List.hbs",
+  "title": "Products",
+  "description": "Lorem ipsum dolor sit amet consectetur adipiscing elit. Lorem ipsum dolor sit amet consecteur adipiscing elit lorem ipsm dolor sit amet.",
+  "items": [
+    {
+      "_include": "/core/promo/PromoIconOnTop.json",
+      "_repeat": 12
+    }
+  ],
+  "_styledTemplate": "/core/list/PromoIconOnTopList.hbs",
+  "_hidden": false
 }

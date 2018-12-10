@@ -1,21 +1,21 @@
 {
-    "_include": "/core/action-bar/ActionBar.json",
-    "_hidden": true,
-    "items": [
-        {
-            "_include": "/facebook/FacebookShareButton.json"
-        },
-        {
-            "_include": "/twitter/intent/TwitterTweetButton.json"
-        },
-        {
-            "_include": "/linkedin/LinkedInShareButton.json"
-        },
-        {
-            "_include": "/googleplus/GooglePlusShareButton.json"
-        },
-        {
-            "_include": "/core/link/MailToLink.json"
-        }
-    ]
+  "_include": "/core/action-bar/ActionBar.json",
+  "_hidden": true,
+  "items": [
+    {
+      "_include": "/facebook/FacebookShareButton.json"
+    },
+    {
+      "_include": "/twitter/intent/TwitterTweetButton.json"
+    },
+    {
+      "_include": "/linkedin/LinkedInShareButton.json"
+    },
+    {
+      "_include": "/googleplus/GooglePlusShareButton.json"
+    },
+    {
+      "_include": "/core/link/MailToLink.json"
+    }
+  ]
 }

@@ -1,26 +1,27 @@
-{{#block "GallerySlide" extend="_SourceGallerySlide.hbs"}}
-    <div class="{{blockName}}" itemprop="image" itemtype="http://schema.org/ImageObject" {{extraAttributes}}>
-        {{#element "media" noWith=true}}
-            <div class="{{elementName}}">
-                {{#element "mediaContent"}}
-                <div class="{{elementName}}">
-                    <img class="{{blockName}}" alt="{{alt}}"
-                        data-flickity-lazyload-src={{this.[0].image.src}}
-                       {{~#with this.[0].image.srcset}} data-flickity-lazyload-srcset={{this.[0].image.srcset}}{{/with}}
-                    >
-                </div>
-            {{/element}}
-            </div>
-        {{/element}}
-
-        {{#element "info" noWith=true}}
-            <div class="{{elementName}}">
-                {{element "infoTitle"}}
-
-                {{element "infoDescription"}}
-
-                {{element "infoAttribution"}}
-            </div>
-        {{/element}}
-    </div>
-{{/block}}
+<div class="GallerySlide" itemprop="image" itemtype="http://schema.org/ImageObject" {{extraAttributes}}>
+    <div class="GallerySlide-media">
+        {{#with mediaContent}}
+            <div class="GallerySlide-mediaContent">
+                <img class="GallerySlide" alt="{{alt}}"
+                data-flickity-lazyload-src={{this.[0].image.src}}
+                {{~#with this.[0].image.srcset}} data-flickity-lazyload-srcset={{this.[0].image.srcset}}{{/with}}
+            >
+        </div>
+    {{/with}}
+</div>
+<div class="GallerySlide-info">
+    {{#with infoTitle}}
+        <div class="GallerySlide-infoTitle" itemprop="name">
+            {{~this~}}
+        </div>
+    {{/with}}
+    {{#with infoDescription}}
+        <div class="GallerySlide-infoDescription" itemprop="description">
+            {{~this~}}
+        </div>
+    {{/with}}
+    {{#with infoAttribution}}
+        <div class="GallerySlide-infoAttribution">{{this}}</div>
+    {{/with}}
+</div>
+</div>

@@ -1,32 +1,35 @@
-{{#block "VideoLead" extend="_SourceVideoLead.hbs"}}
-    <div class="{{blockName}}" data-embeddedvideo-container>
-        {{~#if videoPoster~}}
-            {{#element "poster" noWith=true}}
-            <div class="{{elementName}}">
-                <div class="{{elementName}}-content">
-                    <div class="{{elementName}}-image">
-                        {{~#if videoPosterMobile~}}
-                            <picture>
-                                <source width="{{videoPoster.image.width}}" height="{{videoPoster.image.height}}" media="(min-width: 768px)" srcset="{{videoPoster.image.srcset}}">
-                                <source width="{{videoPosterMobile.image.width}}" height="{{videoPosterMobile.image.height}}" srcset="{{videoPosterMobile.image.srcset}}">
-                                <img width="{{videoPoster.image.width}}" height="{{videoPoster.image.height}}" class="Image" src="{{videoPoster.image.src}}">
-                            </picture>
-                        {{~^~}}
-                            {{videoPoster}}
-                        {{/if}}
-                    </div>
-
-                    <div class="{{elementName}}-info">
-                        {{element "headline"}}
-                        {{element "subHeadline"}}
-                        <button class="{{blockName}}-play"><span>Play Video</span></button>
-                    </div>
+<div class="VideoLead" data-embeddedvideo-container>
+    {{~#if videoPoster~}}
+        <div class="VideoLead-poster">
+            <div class="VideoLead-poster-content">
+                <div class="VideoLead-poster-image">
+                    {{~#if videoPosterMobile~}}
+                        <picture>
+                            <source width="{{videoPoster.image.width}}" height="{{videoPoster.image.height}}" media="(min-width: 768px)" srcset="{{videoPoster.image.srcset}}">
+                            <source width="{{videoPosterMobile.image.width}}" height="{{videoPosterMobile.image.height}}" srcset="{{videoPosterMobile.image.srcset}}">
+                            <img width="{{videoPoster.image.width}}" height="{{videoPoster.image.height}}" class="Image" src="{{videoPoster.image.src}}">
+                        </picture>
+                    {{~else~}}
+                        {{videoPoster}}
+                    {{/if}}
                 </div>
-                {{element "player"}}
+                <div class="VideoLead-poster-info">
+                    {{#with headline}}
+                        <div class="VideoLead-headline">{{this}}</div>
+                    {{/with}}
+                    {{#with subHeadline}}
+                        <div class="VideoLead-subHeadline">{{this}}</div>
+                    {{/with}}
+                    <button class="VideoLead-play"><span>Play Video</span></button>
+                </div>
             </div>
-            {{/element}}
-        {{~^~}}
-            {{element "player"}}
-        {{~/if~}}
-    </div>
-{{/block}}
+            {{#with player}}
+                <div class="VideoLead-player">{{this}}</div>
+            {{/with}}
+        </div>
+    {{~else~}}
+        {{#with player}}
+            <div class="VideoLead-player">{{this}}</div>
+        {{/with}}
+    {{~/if~}}
+</div>

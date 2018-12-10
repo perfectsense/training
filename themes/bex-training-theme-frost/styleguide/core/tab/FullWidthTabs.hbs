@@ -1,22 +1,24 @@
-{{#block "FullWidthTabs" extend="/core/tab/Tabs.hbs" }}
-    <div class="{{blockName}}" data-widget="Tabs">
-
-        <!-- This creates the row of tabs for navigation -->
-        <div class="{{blockName}}-tabWrapper">
-          {{element "tabs"}}
-        </div>
-
-        {{#element "content" noWith=true}}
-            <div class="{{elementName}}">
-                {{#each tabs}}
-                    {{#element "title"}}
-                        <a class="{{elementName}}-panel" href="#{{../id}}" data-tab>{{this}}</a>
-                    {{/element}}
-                    <div class="{{blockName}}-panel" id="{{id}}" data-tab-panel>
-                        {{this}}
-                    </div>
+<div class="FullWidthTabs" data-widget="Tabs">
+    <!-- This creates the row of tabs for navigation -->
+    <div class="FullWidthTabs-tabWrapper">
+        {{#with tabs}}
+            <ul class="FullWidthTabs-tabs">
+                {{#each this}}
+                    <li>
+                        <a class="FullWidthTabs-tab" href="#{{id}}" data-tab>{{label}}</a>
+                    </li>
                 {{/each}}
-            </div>
-        {{/element}}
+            </ul>
+        {{/with}}
     </div>
-{{/block}}
+    <div class="FullWidthTabs-content">
+        {{#each tabs}}
+            {{#with title}}
+                <a class="FullWidthTabs-title-panel" href="#{{../id}}" data-tab>{{this}}</a>
+            {{/with}}
+            <div class="FullWidthTabs-panel" id="{{id}}" data-tab-panel>
+                {{this}}
+            </div>
+        {{/each}}
+    </div>
+</div>
