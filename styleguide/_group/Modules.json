@@ -64,5 +64,8 @@
   },
   {
     "_include": "/core/tab/Tabs.json"
+  },
+  {
+    "_include": "/core/product/ProductLaunchModule.json"
   }
 ]

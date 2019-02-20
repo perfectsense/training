@@ -3353,6 +3353,10 @@
         "3x"
       ],
       "format": "jpg"
+    },
+    "productLaunchImage": {
+      "width": 600,
+      "height": 350
     }
   },
   "imageSizeContexts": {
@@ -3892,6 +3896,13 @@
         },
         "/core/image/Image.hbs": {
           "image": "moviePromoSmall"
+        }
+      }
+    },
+    "/core/product/ProductLaunchModule.hbs": {
+      "media": {
+        "/core/image/Image.hbs": {
+          "image": "productLaunchImage"
         }
       }
     }
