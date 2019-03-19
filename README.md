@@ -152,6 +152,14 @@ Catalina logs and leave them open in the window:
 tail -f /servers/brightspot/logs/catalina.out
 ```
 
+## Accessing the CMS
+
+Now that the Brightspot service is running you can access the cms by navigating to:
+
+```bash
+http://172.28.128.101/cms
+```
+
 ## Contributing
 
 Please refer to [Building The Training Vagrant](docs/BUILDING.md) on instructions and information on how to contribute
