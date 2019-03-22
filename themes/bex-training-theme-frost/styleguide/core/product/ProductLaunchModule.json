@@ -1,0 +1,12 @@
+{
+  "_template": "/core/product/ProductLaunchModule.hbs",
+  "media": {
+    "_template": "/core/image/Image.hbs",
+    "image": {
+      "_image": true
+    }
+  },
+  "title": "Suspendisse laoreet congue dolor",
+  "description": "Suspendisse laoreet congue dolor ut tempus. Suspendisse sed purus at odio mattis tincidunt. Nullam enim mauris, mollis vel augue eget, faucibus sagittis est.",
+  "endDate": "02/23/2019 07:05:18 PM"
+}

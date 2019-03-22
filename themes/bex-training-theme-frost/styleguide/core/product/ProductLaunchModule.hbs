@@ -1,0 +1,24 @@
+<div class="ProductLaunchModule" {{#with endDate}} data-enddate="{{this}}" {{/with}}>
+
+  {{#with media}}
+    <div class="ProductLaunchModule-media">{{this}}</div>
+  {{/with}}
+
+  {{#with endDate}}
+    <div class="ProductLaunchModule-endDate">
+      <div id="ProductLaunchModule-days"></div>
+      <div id="ProductLaunchModule-hours"></div>
+      <div id="ProductLaunchModule-minutes"></div>
+      <div id="ProductLaunchModule-seconds"></div>
+    </div>
+  {{/with}}
+
+  {{#with title}}
+    <div class="ProductLaunchModule-title">{{this}}</div>
+  {{/with}}
+
+  {{#with description}}
+    <div class="ProductLaunchModule-description">{{this}}</div>
+  {{/with}}
+
+</div>

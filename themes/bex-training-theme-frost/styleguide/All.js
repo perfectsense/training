@@ -15,6 +15,8 @@ import SearchOverlay from './core/search/SearchOverlay.js'
 import { Tabs } from 'tabs'
 import VideoEvents from './core/video/VideoEvents.js'
 import VideoLead from './core/video/VideoLead.js'
+import { ProductLaunchModule } from './core/product/ProductLaunchModule'
 
 plugins.register(Tabs, '[data-widget=Tabs]')
 plugins.register(PlyrFunctions, '[data-embeddedvideo-container]')
+plugins.register(ProductLaunchModule, '.ProductLaunchModule')
