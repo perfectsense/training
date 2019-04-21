@@ -1,179 +1,156 @@
-# Brightspot Express Training
+# Capacitación de Brightspot Express
 
-So you want to learn how to develop on Brightspot Express? Look no further!
+¿Desea aprender cómo desarrollarse en Brightspot Express? ¡No busque más!
 
-This project gives you everything you will need to get going with learning how to do front-end and back-end development on
-Brightspot Express. It includes a bare-bones 4.0 archetype project and all of the core Styleguide templates to use as reference
-to help you take your own web publishing needs from concept to creation.
+Este proyecto le brinda todo lo que necesita para comenzar a aprender cómo realizar desarrollos front-end y back-end en Brightspot Express. Incluye un proyecto ligero de arquetipo 4.0 y todas las plantillas principales de Styleguide para usar como referencia para ayudarlo a llevar sus propias necesidades de publicación web desde el concepto hasta la creación.
 
-## Prerequisites
+## Prerrequisitos
 
-- VirtualBox: `5.0.10` - [Download](http://download.virtualbox.org/virtualbox/5.0.10/VirtualBox-5.0.10-104061-OSX.dmg)
-- Vagrant: `1.8.1` - [Download](https://releases.hashicorp.com/vagrant/1.8.1/vagrant_1.8.1.dmg)
-- Maven: `3.5.2` - [Download](https://archive.apache.org/dist/maven/maven-3/3.5.2/binaries/apache-maven-3.5.2-bin.zip)
-
-- Brew (Homebrew for Mac) - Install using the following command:
+- VirtualBox: `5.0.10` - [Descargar](http://download.virtualbox.org/virtualbox/5.0.10/VirtualBox-5.0.10-104061-OSX.dmg)
+- Vagrant: `1.8.1` - [Descargar](https://releases.hashicorp.com/vagrant/1.8.1/vagrant_1.8.1.dmg)
+- Maven: `3.5.2` - [Descargar](https://archive.apache.org/dist/maven/maven-3/3.5.2/binaries/apache-maven-3.5.2-bin.zip)
+- Brew (Homebrew para Mac) - Instale usando el siguiente comando:
 
 ```bash
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
 
-- Node `9.8.0` - Install using the following command (requires `brew`):
+- Node `9.8.0` - Instale usando el siguiente comando (requiere `brew`):
 
 ```bash
 brew install node
 ```
 
-- Gulp: `3.9.1` - Install using the following command (requires `npm`):
+- Gulp: `3.9.1` - Instale usando el siguiente comando (requiere `npm`):
 
 ```bash
 npm install gulp -g
-``` 
+```
 
-- Yarn: `1.5.1` - Install using the following command (requires `brew`):
+- Yarn: `1.5.1` - Instale usando el siguiente comando (requiere `brew`):
 
 ```bash
 brew install yarn
 ```
 
-#### To install binaries that are zipped upon download, follow the next few steps:
+#### Para instalar archivos binarios que están comprimidos al descargarlos, siga los siguientes pasos:
 
-Add your local binaries directory to your PATH environment variable if you haven't already.
+Agregue su directorio local de archivos binarios a su variable de entorno PATH si no tiene t ya.
+
 ```bash
 export PATH=$PATH:/usr/local/bin
 ```
 
-Unzip the binaries package:
+Descomprima el paquete de binarios:
 
 ```bash
 unzip {name-of-binaries-zip}.zip
 ```
 
-Copy the binaries to your local bin:
+Copie los binarios a su ubicación local:
 
 ```bash
 cp path/to/binaries/binary /usr/local/bin/binary
 ```
 
-Verify the binary is found:
+Verifique que se encuentre el binario:
 
 ```bash
 which binary
 ```
 
-The output should be `/usr/local/bin/binary`. If it says the command was not found, try restarting your terminal.
+La salida debería ser `/usr/local/bin/binary`. Si dice que no se encontró el comando, intente reiniciar su terminal.
 
-Brew is also useful for install 
+Brew también es útil para instalar  
 
-## Prepping The Local Project
+## Preparando el proyecto local
 
-On a Mac (Windows instructions coming soon), open the `Terminal` app. Change your working directory to a location where you want the project code to
-live. For this example, we will use `~/Documents`.
+En una Mac (las instrucciones de Windows se publicarán próximamente), abra la aplicación `Terminal`. Cambie su directorio de trabajo a una ubicación donde desee que el código del proyecto viva. Para este ejemplo, usaremos `~/Documents`.
 
 ```bash
 cd ~/Documents
 ```
 
-Clone the GitHub project into your `~/Documents` folder using the following command:
+Clone el proyecto GitHub en su carpeta `~/Documents` usando el siguiente comando:
 
 ```bash
 git clone git@github.com:perfectsense/training.git
 ```
 
-Change your directory to the project:
+Cambie su directorio para el proyecto:
 
 ```bash
 cd training
 ```
 
-## Building The Project For The First Time
+## Creación del proyecto Por primera vez
 
-Brightspot projects use Maven for dependency management and build configurations. To the build the project for the first time:
+Proyectos de Brightspot utilizan Maven para la gestión de dependencias y las configuraciones de compilación. Para compilar el proyecto por primera vez
 
 ```bash
 mvn clean install
 ```
 
-## Setting Up The Environment
+## Configurando el ambiente
 
-Included with the project is the Brightspot Training `Vagrantfile` at the root of the project. This file contains all of the configuration needed to running the Brightspot Training CMS
-out of the box with pre-published data for the example Marvel Cinematic Universe site.
+Proyecto incluye Brightspot Training `Vagrantfile` en la raíz del proyecto. Este archivo contiene toda la configuración necesaria para ejecutar el Brightspot Training CMS de forma inmediata con datos publicados previamente para el sitio de ejemplo de Marvel Cinematic Universe.
 
-Before booting up the vagrant box, you should clear your box cache to ensure you are importing the most up-to-date Brightspot Training box:
+Antes de iniciar el Vagrant ambiente, debe borrar su caché de caja para asegurarse de que está importando el cuadro de Brightspot Training más actualizado:
 
 ```bash
 rm -rf ~/.vagrant.d/boxes/brightspot-training
 ```
 
-Now, boot up the vagrant:
+Ahora, inicie vagrant:
 
 ```bash
 vagrant up
 ```
 
-When you boot up the vagrant box, it will attempt to mount the current directory the `Vagrantfile` is 
-located in to the directory `/vagrant` within the environment. This will allow the user to symlink the compiled site `*.war` file 
-to Tomcat's `webapps` folder to allow for automatic deployment each time a build completes.
+Cuando inicie el Vagrant ambiente, intentará montar el directorio actual en el que el `Vagrantfile` encuentra en el directorio `/ vagrant` dentro del ambiente. Esto permitirá al usuario enlazar el archivo compilado del sitio `*.war` con la carpeta ` webapps` de Tomcat para permitir la implementación automática cada vez que se complete una compilación.
 
-To do this, you will first want to SSH into the training environment. From the same folder as your `Vagrantfile`, run this command:
+Para hacer esto, primero querrá SSH en el ambiente de entrenamiento. Desde la misma carpeta que su `Vagrantfile`, ejecute este comando:
 
 ```bash
 vagrant ssh
 ```
 
-You will now be logged in as the root user within the training vagrant. If you are not, log in as the root user:
+Ahora se iniciará sesión como usuario root en el entrenamiento de vagrant. Si no lo está, inicie sesión como usuario root:
 
 ```bash
 sudo -i
 ```
 
-Stop the Brightspot service beofre setting up the webapps:
+Detenga el servicio Brightspot antes de configurar la aplicación web:
 
 ```bash
 sv stop brightspot
 ```
 
-You will now need to actually symlink the `*.war` file into the Tomcat's webapps directory:
+Ahora tendrá que crear un enlace simbólico al  `*.war` archivo en el directorio webapps del Tomcat:
 
 ```bash
 ln -s /vagrant/site/target/bex-training-site-1.0.0-SNAPSHOT.war /servers/brightspot/webapps/ROOT.war
 ```
 
-Start the Brightspot service back up:
+Iniciar la copia de seguridad del servicio Brightspot:
 
 ```bash
 sv start brightspot
 ```
 
-During development, you may want to keep yourself SSH'd into the training environment with logs open for debugging. You can tail the
-Catalina logs and leave them open in the window:
+Durante el desarrollo, es posible que desee mantener el SSH en el entorno de entrenamiento con los registros abiertos para la depuración. Puede seguir los registros de Catalina y dejarlos abiertos en la ventana:
 
 ```bash
 tail -f /servers/brightspot/logs/catalina.out
 ```
 
-## Accessing the CMS
+## Contribuir
 
-Now that the Brightspot service is running you can access the cms by navigating to:
+Consulte [Construyendo El Training Vagrant](docs/BUILDING.md) sobre instrucciones e información sobre cómo contribuir al proyecto de capacitación.
 
-```bash
-http://172.28.128.101/cms
-```
+## Créditos
 
-## Contributing
+Escrito y publicado por [Mark Conigliaro](https://github.com/markconigliaro1) (Ingeniero de software en Perfect Sense Digital)
 
-Please refer to [Building The Training Vagrant](docs/BUILDING.md) on instructions and information on how to contribute
-to the training project.
-
-## Credits
-
-Written and Published by [Mark Conigliaro](https://github.com/markconigliaro1) (Software Engineer at Perfect Sense Digital)
-
-Brightspot Platform and Frost theme written and developed by Perfect Sense Digital
-
-
-
-
-
-
-
+Tema Brightspot Platform y Frost escrito y desarrollado por Perfect Sense Digital
