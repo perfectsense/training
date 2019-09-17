@@ -1,5 +1,6 @@
 package bex.training.movie;
 
+import bex.training.album.Album;
 import bex.training.release.Releasable;
 import bex.training.character.Character;
 import brightspot.core.image.ImageOption;
@@ -15,6 +16,7 @@ import brightspot.core.tool.RichTextUtils;
 import com.psddev.cms.db.Content;
 import com.psddev.cms.db.Seo;
 import com.psddev.cms.db.ToolUi;
+import com.psddev.dari.db.Query;
 import com.psddev.dari.db.Recordable;
 import com.psddev.dari.util.ObjectUtils;
 import com.psddev.dari.util.StringUtils;
@@ -205,5 +207,16 @@ public class Movie extends Content implements AutoPermalink,
         return Optional.ofNullable(getPlot())
                 .map(RichTextUtils::getFirstBodyParagraph)
                 .orElse(null);
+    }
+
+    @Indexed
+    public Set<Album> getAllAlbums() {
+       return Query.from(Album.class)
+                .where("movie = ?",
+                        this)
+                .select(0, 10)
+                .getItems()
+               .stream()
+               .collect(Collectors.toSet());
     }
 }
