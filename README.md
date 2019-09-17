@@ -8,14 +8,29 @@ to help you take your own web publishing needs from concept to creation.
 
 ## Prerequisites
 
-- VirtualBox: `5.0.10` - [Download](http://download.virtualbox.org/virtualbox/5.0.10/VirtualBox-5.0.10-104061-OSX.dmg)
-- Vagrant: `1.8.1` - [Download](https://releases.hashicorp.com/vagrant/1.8.1/vagrant_1.8.1.dmg)
-- Maven: `3.5.2` - [Download](https://archive.apache.org/dist/maven/maven-3/3.5.2/binaries/apache-maven-3.5.2-bin.zip)
-
 - Brew (Homebrew for Mac) - Install using the following command:
 
 ```bash
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+brew install cask
+```
+
+- VirtualBox: `5.0.10+` - Install using the following command (requires `brew`):
+
+```bash
+brew cask install virtualbox
+```
+
+- Vagrant: `1.8.1+` - Install using the following command (requires `brew`):
+
+```bash
+brew cask install vagrant
+```
+
+- Maven: `3.5.2+` - Install using the following command (requires `brew`):
+
+```bash
+brew install mvn
 ```
 
 - Node `9.8.0` - Install using the following command (requires `brew`):
@@ -35,35 +50,6 @@ npm install gulp -g
 ```bash
 brew install yarn
 ```
-
-#### To install binaries that are zipped upon download, follow the next few steps:
-
-Add your local binaries directory to your PATH environment variable if you haven't already.
-```bash
-export PATH=$PATH:/usr/local/bin
-```
-
-Unzip the binaries package:
-
-```bash
-unzip {name-of-binaries-zip}.zip
-```
-
-Copy the binaries to your local bin:
-
-```bash
-cp path/to/binaries/binary /usr/local/bin/binary
-```
-
-Verify the binary is found:
-
-```bash
-which binary
-```
-
-The output should be `/usr/local/bin/binary`. If it says the command was not found, try restarting your terminal.
-
-Brew is also useful for install 
 
 ## Prepping The Local Project
 
