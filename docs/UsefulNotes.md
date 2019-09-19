@@ -13,5 +13,5 @@ service golf-advisor stop && cp /Users/ryanbannon/golf-advisor/site/target/golfa
 
 [BSP Docs](http://docs.brightspot.com/)
 
-restore db: https://raw.githubusercontent.com/perfectsense/brightspot-vagrant/f5c027f8162d1ef5b3b7ca9710e2ad65d5afcd5c/ops/chef/files/default/restore_modified.rb
+restore db: https://raw.githubusercontent.com/perfectsense/brightspot-vagrant/4a06cb17595a332ab8f25d6e33e9104f60d81f39/ops/chef/files/default/restore_modified.rb
 
