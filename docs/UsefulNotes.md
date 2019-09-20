@@ -23,6 +23,9 @@ If you get an error that your vagrant can't find your war file, your directory m
 
 [BSP Docs](http://docs.brightspot.com/)
 
+##Vagrant
+restore db: https://raw.githubusercontent.com/perfectsense/brightspot-vagrant/4a06cb17595a332ab8f25d6e33e9104f60d81f39/ops/chef/files/default/restore_modified.rb
+
 ## Brightspot Gartner Review Link
 
 https://gtnr.it/2NnjxM0
