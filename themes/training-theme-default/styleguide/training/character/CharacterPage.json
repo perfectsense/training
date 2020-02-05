@@ -1,5 +1,6 @@
 {
   "_include": "/core/page/Page.json",
+  "_template": "/training/character/CharacterPage.hbs",
   "_hidden": false,
   "alterEgo": "Captain America",
   "biography": "{{html('This is a very short biography')}}",

@@ -14,36 +14,7 @@
     {{#with hat}}
         <div class="CharacterPage-hat">{{this}}</div>
     {{/with}}
-    <header class="CharacterPage-header" data-with-toggle-menu itemscope itemtype="http://schema.org/WPHeader"
-        {{#if mobileLeftAlignNavigation}}data-mobile-left-align-nav{{/if}}>
-        <div class="CharacterPage-header-contentWrapper">
-            {{#with logo}}
-                <div class="CharacterPage-logo">
-                    {{this}}
-                </div>
-            {{/with}}
-            {{#with navigation}}
-                <psd-toggler
-                    class="CharacterPage-navigation-menuToggle"
-                    aria-role="button"
-                    aria-label="Menu"
-                    aria-controls="navigation"
-                    toggle-trigger="navigation">
-                    <svg class="burger-menu"><use xlink:href="#burger-menu"/></svg>
-                    <svg class="close-x"><use xlink:href="#close-x"/></svg>
-                </psd-toggler>
-                <div class="CharacterPage-navigation" data-main-navigation data-toggle-item="navigation"{{#if ../navigationAlignment}}data-navigation-alignment="{{../navigationAlignment}}"{{/if}}>
-                    {{this}}
-                </div>
-            {{/with}}
-            {{#if searchAction}}
-                <form class="Header-search" action="{{searchAction}}" novalidate="" autocomplete="off" data-header-search>
-                    <input type="text" class="CharacterPage-searchInput" name="q" placeholder="{{format "/core/page/Page" "placeholderLabel"}}">
-                    {{include "/core/page/Page-searchButton.hbs" this}}
-                </form>
-            {{/if}}
-        </div>
-    </header>
+    {{include "/core/page/Page-header.hbs" this}}
     <div class="CharacterPage-contentWrapper"
         data-negative-margin={{#if negativeMargin}}"{{negativeMargin}}"{{else}}default{{/if}}>
         {{include "/core/page/Page-sectionNavigation.hbs" this}}
@@ -124,7 +95,7 @@
         {{/with}}
     </div>
     {{include "/core/page/Page-footer.hbs" this}}
-    {{include "/core/page/Page-SearchOverlay.hbs" this}}
+    {{!include "/core/page/Page-SearchOverlay.hbs" this}}
     {{include "/core/page/Page-extraBodyItems.hbs" this}}
 </body>
 </html>

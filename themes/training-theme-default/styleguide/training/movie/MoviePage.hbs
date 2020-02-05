@@ -14,36 +14,7 @@
     {{#with hat}}
         <div class="MoviePage-hat">{{this}}</div>
     {{/with}}
-    <header class="MoviePage-header" data-with-toggle-menu itemscope itemtype="http://schema.org/WPHeader"
-        {{#if mobileLeftAlignNavigation}}data-mobile-left-align-nav{{/if}}>
-        <div class="MoviePage-header-contentWrapper">
-            {{#with logo}}
-                <div class="MoviePage-logo">
-                    {{this}}
-                </div>
-            {{/with}}
-            {{#with navigation}}
-                <psd-toggler
-                    class="MoviePage-navigation-menuToggle"
-                    aria-role="button"
-                    aria-label="Menu"
-                    aria-controls="navigation"
-                    toggle-trigger="navigation">
-                    <svg class="burger-menu"><use xlink:href="#burger-menu"/></svg>
-                    <svg class="close-x"><use xlink:href="#close-x"/></svg>
-                </psd-toggler>
-                <div class="MoviePage-navigation" data-main-navigation data-toggle-item="navigation"{{#if ../navigationAlignment}}data-navigation-alignment="{{../navigationAlignment}}"{{/if}}>
-                    {{this}}
-                </div>
-            {{/with}}
-            {{#if searchAction}}
-                <form class="Header-search" action="{{searchAction}}" novalidate="" autocomplete="off" data-header-search>
-                    <input type="text" class="MoviePage-searchInput" name="q" placeholder="{{format "/core/page/Page" "placeholderLabel"}}">
-                    {{include "/core/page/Page-searchButton.hbs" this}}
-                </form>
-            {{/if}}
-        </div>
-    </header>
+    {{include "/core/page/Page-header.hbs" this}}
     <div class="MoviePage-contentWrapper"
         data-negative-margin={{#if negativeMargin}}"{{negativeMargin}}"{{else}}default{{/if}}>
         {{include "/core/page/Page-sectionNavigation.hbs" this}}
