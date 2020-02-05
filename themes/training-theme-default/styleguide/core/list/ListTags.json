@@ -1,0 +1,11 @@
+{
+  "_wrapper": "/_wrapper.previewAtomic.json",
+  "_template": "/core/list/ListTags.hbs",
+  "title": "Trending",
+  "items": [
+    {
+      "_include": "/core/promo/PromoTag.json",
+      "_repeat": 4
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+
+    {{include "/twitter/widgets/TwitterWidgetsWebpageProperties-borderColor.hbs" this}}
+
+    {{#if csp}}
+        <meta name="twitter:widgets:csp" content="on">
+    {{/if}}
+
+    {{#if dnt}}
+        <meta name="twitter:dnt" content="on">
+    {{/if}}
+
+    {{include "/twitter/widgets/TwitterWidgetsWebpageProperties-linkColor.hbs" this}}
+
+    {{include "/twitter/widgets/TwitterWidgetsWebpageProperties-theme.hbs" this}}

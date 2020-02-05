@@ -6,15 +6,9 @@
             {{#with hat}}
                 <div class="ContentPage-hat">{{this}}</div>
             {{/with}}
-            {{#with logo}}
-                <div class="ContentPage-logo">{{this}}</div>
-            {{/with}}
-            {{#with navigation}}
-                <div class="ContentPage-navigation">{{this}}</div>
-            {{/with}}
-            {{#with social}}
-                <div class="ContentPage-social">{{this}}</div>
-            {{/with}}
+            {{include "/core/page/Page-logo.amp.hbs" this}}
+            {{include "/core/page/Page-navigation.amp.hbs" this}}
+            {{include "/core/page/Page-social.hbs" this}}
             {{#if searchAction}}
                 <form class="ContentPage-search" action="{{searchAction}}" novalidate="" autocomplete="off">
                     <input type="text" class="ContentPage-searchInput" name="q">
@@ -99,9 +93,7 @@
             {{#with footerContent}}
                 <div class="ContentPage-footerContent">{{this}}</div>
             {{/with}}
-            {{#with social}}
-                <div class="ContentPage-social">{{this}}</div>
-            {{/with}}
+            {{include "/core/page/Page-social.hbs" this}}
             {{#with disclaimer}}
                 <div class="ContentPage-disclaimer">{{this}}</div>
             {{/with}}

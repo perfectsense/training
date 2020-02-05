@@ -1,7 +1,0 @@
-{
-  "_wrapper": false,
-  "_include": "SearchResultsPage-noQuery.json",
-  "_template": "SearchResultsPage.hbs",
-  "query": "{{words(3)}}",
-  "_hidden": false
-}

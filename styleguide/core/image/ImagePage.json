@@ -2,11 +2,11 @@
   "_wrapper": false,
   "_include": "/core/page/MediaObjectPage.json",
   "_template": "ImagePage.hbs",
-  "caption": "{{sentences(3)}}",
-  "credit": "{{name}}",
+  "caption": "Caption",
+  "credit": "Jane Doe",
   "colors": [
     "#ffffff",
     "#000000"
   ],
-  "_hidden": false
+  "_hidden": true
 }

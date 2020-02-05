@@ -1,0 +1,25 @@
+{{#if items}}
+    <div class="ListG"{{include "/core/list/List-attributes.hbs" this}}>
+        {{include "/core/list/List-header.hbs" this className="ListG"}}
+        <div class="ListG-items">
+            <div class="ListG-items-column">
+                {{#with items.[0]}}
+                    <div class="ListG-items-item">
+                        {{include "/core/promo/PromoC.hbs" this}}
+                    </div>
+                {{/with}}
+            </div>
+            <div class="ListG-items-column">
+                {{#with items}}
+                    {{#each this}}
+                        {{#if (gt @index 0)}}
+                            <div class="ListG-items-item">
+                                {{include "/core/promo/PromoB.hbs" this imageAlignment="top"}}
+                            </div>
+                        {{/if}}
+                    {{/each}}
+                {{/with}}
+            </div>
+        </div>
+    </div>
+{{else}}{{~noResultsModule~}}{{/if}}

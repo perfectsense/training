@@ -1,0 +1,64 @@
+// Here we deal with the styling of all our social links. The plain "SocialLink"
+// is used in the footer The action bar icons are called "ActionLink" and live in
+// /core/action-bar as they are quite different
+
+.SocialLink {
+  .ButtonAbstract;
+  align-items: center;
+  border: 1px solid var(--tagButtonBorderColor);
+  border-radius: 2px;
+  display: flex;
+  justify-content: center;
+  height: 40px;
+  width: 40px;
+
+  &[data-social-service='facebook'] {
+    svg {
+      background: #4c67a1;
+    }
+  }
+
+  &[data-social-service='instagram'] {
+    svg {
+      background: #d63072;
+    }
+  }
+
+  &[data-social-service='twitter'] {
+    svg {
+      background: #1da1f2;
+    }
+  }
+
+  &[data-social-service='linkedin'] {
+    svg {
+      background: #0077b5;
+    }
+  }
+
+  &[data-social-service='pinterest'] {
+    svg {
+      background: #cb2027;
+    }
+  }
+
+  &[data-social-service='tumblr'] {
+    svg {
+      background: #35465c;
+    }
+  }
+
+  &:hover {
+    border-color: var(--primaryColor1);
+  }
+
+  svg {
+    fill: var(--grayscaleColor1);
+    height: 20px;
+    width: 20px;
+
+    .Page-footer & {
+      fill: var(--secondaryColor5);
+    }
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "_include": "/core/page/Page.json",
+  "_hidden": false,
+  "_template": "/core/search/SearchResultsPage.hbs",
+
+  "filters": [
+    {
+        "_template": "/core/search/SearchFilter.hbs",
+        "heading": "Type",
+        "items": [
+            { "_include": "/core/search/SearchFilterInput.json", "label": "Articles", "count": 1234 },
+            { "_include": "/core/search/SearchFilterInput.json", "label": "Photos", "count": 567 },
+            { "_include": "/core/search/SearchFilterInput.json", "label": "Videos", "count": 89 }
+        ]
+    },
+    {
+        "_template": "/core/search/SearchFilter.hbs",
+        "heading": "Date",
+        "items": [
+            { "_include": "/core/search/SearchFilterInput.json", "label": "Any Time", "selected": true },
+            { "_include": "/core/search/SearchFilterInput.json", "label": "Past Hour", "count": 12 },
+            { "_include": "/core/search/SearchFilterInput.json", "label": "Past Day", "count": 34 },
+            { "_include": "/core/search/SearchFilterInput.json", "label": "Past Month", "count": 56 },
+            { "_include": "/core/search/SearchFilterInput.json", "label": "Past Year", "count": 789 },
+            { "_include": "/core/search/SearchFilterInput.json", "label": "Past 2 Years", "count": 789 },
+            { "_include": "/core/search/SearchFilterInput.json", "label": "Past 5 Years", "count": 3455 }
+        ]
+    }
+  ],
+
+  "query": "Lorem ipsum dolar",
+
+  "aside": [
+    {
+      "_include": "/core/list/ListB.json"
+    }
+  ]
+}

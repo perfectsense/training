@@ -8,34 +8,20 @@
   "datePublishedISO": "2016-02-19T16:43:22+00:00",
   "dateModified": "Modified: December 12, 2016",
   "dateModifiedISO": "2016-02-19T17:44:23+00:00",
-  "headline": "{{words}}",
-  "subHeadline": "{{words}}",
+  "headline": "Headline",
+  "subHeadline": "Sub-Headline",
   "authorUrl": "#",
   "authorImage": {
     "_image": true
   },
-  "authorName": "{{name}}",
-  "authorBiography": "{{sentences}}",
-  "contributors": [
-    {
-      "_template": "../link/Link.hbs",
-      "_repeat": [
-        2,
-        4
-      ],
-      "body": "{{name}}"
-    }
-  ],
-  "people": [
-    {
-      "_include": "../promo/Promo.json",
-      "_repeat": [
-        3,
-        5
-      ],
-      "title": "{{name}}"
-    }
-  ],
-  "source": "{{words(2)}}",
-  "_hidden": false
+  "authorName": "Jane Doe",
+  "authorBiography": "Author Biography",
+  "contributors": {
+    "_include": "/core/link/Link.json"
+  },
+  "people": {
+    "_include": "/core/promo/Promo.json"
+  },
+  "source": "Source",
+  "_hidden": true
 }

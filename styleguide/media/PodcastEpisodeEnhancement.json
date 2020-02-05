@@ -1,0 +1,19 @@
+{
+  "_template": "PodcastEpisodeEnhancement.hbs",
+  "title": "A Podcast Episode Title",
+  "player": {
+    "_include": "/_group/Audios.json",
+    "_key": 0
+  },
+  "podcastEpisodeImage": {
+    "_include": "/core/image/Image.json"
+  },
+  "audioImage": {
+    "_include": "/core/image/Image.json"
+  },
+  "podcastImage": {
+    "_include": "/core/image/Image.json"
+  },
+  "shortDescription": "Short Description",
+  "_hidden": true
+}

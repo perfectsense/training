@@ -1,0 +1,25 @@
+<div class="Commenting">
+    {{#if displayForm}}
+        {{include "CommentForm.hbs" formActionUrl=this.formActionUrl method=this.method targetId=this.targetId}}
+    {{/if}}
+    {{#with comments}}
+        <div class="Commenting-comments">
+            {{~this~}}
+        </div>
+    {{/with}}
+    {{#if displayPagination}}
+        <div class="Commenting-pagination">
+            {{#with paginationNextUrl}}
+                <a class="Commenting-pagination-next" href="{{this}}" rel="next" data-limit="10" data-offset="{{../comments.length}}" data-target-id="{{targetId}}">{{format "/community/commenting/Commenting" "loadMoreText"}}</a>
+            {{/with}}
+        </div>
+    {{/if}}
+    {{!-- This element is used for optimistic UI behavior by Commenting.js--}}
+    <template class="Commenting-commentTemplate">
+        {{include "Comment.hbs" status="Pending"}}
+    </template>
+    {{!-- This element is used by Commenting.js to append a form when replyButton is clicked--}}
+    <template class="Commenting-replyFormTemplate">
+        {{include "CommentForm.hbs" formActionUrl=this.formActionUrl method=this.method targetId=this.targetId}}
+    </template>
+</div>

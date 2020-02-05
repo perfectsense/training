@@ -1,0 +1,9 @@
+{
+  "_include": "/core/link/Link.json",
+  "_template": "SchemaLink.hbs",
+  "schemaProperty": {
+    "_include": "/_group/ClipSchemaProperties.json",
+    "_key": 0
+  },
+  "_hidden": true
+}

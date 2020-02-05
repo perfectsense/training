@@ -1,0 +1,33 @@
+<div id="{{id}}" class="Comment" {{#with level}}data-level="{{this}}"{{/with}} itemscope itemtype="http://schema.org/Comment">
+    <div class="Comment-author">
+        <div class="Comment-authorImage">
+            {{~#with authorImage}}
+                <img class="Comment-authorImage" src="{{src}}" alt="{{alt}}"{{#with srcset}} srcset="{{this}}"{{/with}}{{#with width}} width="{{this}}"{{/with}}{{#with height}} height="{{this}}"{{/with}} />
+            {{/with~}}
+        </div>
+        {{#with authorName}}
+            <span class="Comment-authorName">{{this}}</span>
+        {{/with}}
+    </div>
+    <div class="Comment-meta">
+        {{#with timestamp}}
+            <time class="Comment-timestamp" itemscope itemtype="http://schema.org/DateTime">{{this}}</time>
+        {{/with}}
+        {{#with status}}
+            <div class="Comment-status">{{this}}</div>
+        {{/with}}
+    </div>
+    {{!-- TODO: Threaded comments --}}
+    {{!--
+    {{#element "actions" noWith=true}}
+        <div class="{{elementName}}">
+            {{#element "replyButton" noWith=true}}
+                <button class="{{elementName}}">{{format "replyText"}}</button>
+            {{/element}}
+        </div>
+    {{/element}}
+    --}}
+    <div class="Comment-body">
+        {{this.body}}
+    </div>
+</div>

@@ -1,0 +1,8 @@
+{
+  "_template": "SearchControl.hbs",
+  "count": 1234,
+  "label": "All",
+  "parameterValue": "relevant",
+  "selected": true,
+  "url": "#"
+}

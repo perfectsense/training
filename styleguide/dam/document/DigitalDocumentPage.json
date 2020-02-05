@@ -1,0 +1,16 @@
+{
+  "_include": "/core/page/CreativeWorkPage.json",
+  "_template": "DigitalDocumentPage.hbs",
+  "fileFormat": "docx",
+  "fileSize": "4 KB",
+  "fileUrl": "https://link.to.document.doc",
+  "media": {
+    "_include": "/_group/Medias.json",
+    "_key": 0
+  },
+  "status": "pending",
+  "collections": {
+    "_include": "/core/link/Link.json"
+  },
+  "_hidden": true
+}

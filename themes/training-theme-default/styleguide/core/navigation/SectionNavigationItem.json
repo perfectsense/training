@@ -1,0 +1,7 @@
+{
+  "_template": "/core/navigation/SectionNavigationItem.hbs",
+
+  "text": "{{words(1)}}",
+  "href": "#",
+  "target": "_self"
+}

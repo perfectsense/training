@@ -1,0 +1,12 @@
+{
+  "imageSizeContexts": {
+    "/dam/request/AssetRequestTableRow.hbs": {
+      "asset": {
+        "/core/image/Image.hbs": {
+          "image": "small"
+        }
+      }
+    }
+  },
+  "_hidden": true
+}

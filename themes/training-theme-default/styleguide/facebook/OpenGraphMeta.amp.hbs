@@ -1,0 +1,45 @@
+{{!-- Basic Metadata (Required) --}}
+
+{{~#with title}}
+    <meta property="og:title" content="{{this}}">
+{{/with}}
+
+{{~#with url}}
+    <meta property="og:url" content="{{this}}">
+{{/with}}
+
+{{~#each images~}}
+    {{~this~}}
+{{~/each~}}
+
+{{!-- Optional Metadata --}}
+
+{{~#each audios~}}
+    {{~this~}}
+{{~/each~}}
+
+{{~#with description}}
+    <meta property="og:description" content="{{this}}">
+{{/with}}
+
+{{~#with determiner}}
+    <meta property="og:determiner" content="{{this}}">
+{{/with}}
+
+{{~#with locale}}
+    <meta property="og:locale" content="{{this}}">
+{{/with}}
+
+{{~#each localeAlternates}}
+    <meta property="og:locale:alternate" content="{{this}}">
+{{/each}}
+
+{{~#with siteName}}
+    <meta property="og:site_name" content="{{this}}">
+{{/with}}
+
+{{!-- Main Metadata --}}
+
+{{~#with type}}
+    {{this}}
+{{~/with~}}

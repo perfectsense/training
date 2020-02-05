@@ -1,0 +1,232 @@
+.VideoPage {
+  &:extend(.CreativeWorkPage all);
+
+  // prevents weird double scrolling for playlist
+  .Page-body {
+    // &[data-toggle-video-playlist='true'] {
+    //   overflow: hidden;
+    // }
+
+    &[data-with-playlist] {
+      // not sure why padding on the body doesn't work here, to account for playlist
+      .Page-footer {
+        margin-bottom: 40px;
+      }
+    }
+  }
+
+  .Page-header {
+    &:extend(.Page-header--hardcodedSticky all);
+  }
+
+  &-breadcrumbs {
+    margin-top: @grid-gap;
+  }
+
+  &-content {
+    margin: 0 auto;
+    max-width: @content-width;
+    padding: 0 20px;
+
+    [data-with-playlist] & {
+      max-width: 880px;
+    }
+  }
+
+  &-descriptionBody {
+    p {
+      &:first-of-type {
+        display: inline;
+      }
+    }
+  }
+
+  &-lead {
+    background: var(--grayscaleColor1);
+  }
+
+  &-pageWrapper {
+    [data-loading='true'] & {
+      padding: 400px 0;
+    }
+  }
+
+  &-player {
+    margin: 0 auto;
+    max-width: 1080px;
+  }
+
+  &-playlist {
+    background: var(--secondaryColor5);
+    bottom: 0;
+    position: fixed;
+    top: calc(~'100% - 40px');
+    transition: top 250ms;
+    width: 100%;
+    z-index: @z-index-overlays;
+
+    [data-toggle-video-playlist='true'] & {
+      top: 0;
+    }
+
+    &-items {
+      background-color: var(--secondaryColor4);
+      height: 100%;
+      overflow-y: scroll;
+      padding: 0;
+    }
+
+    &-header {
+      align-items: center;
+      box-shadow: 0 10px 10px -10px rgba(0, 0, 0, 0.3);
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      height: 40px;
+      padding: 3px @grid-gap 0;
+      position: relative;
+
+      svg {
+        fill: var(--primaryTextColor);
+        height: 20px;
+        position: relative;
+        top: -4px;
+        transform: rotate(270deg);
+        width: 14px;
+
+        [data-toggle-video-playlist='true'] & {
+          transform: rotate(90deg);
+          top: 4px;
+        }
+      }
+    }
+
+    &-title {
+      &:extend(.label-4 all);
+
+      line-height: 36px;
+    }
+  }
+
+  @media @mq-viewport-md {
+
+    &-dateModified,
+    &-datePublished {
+      margin-right: 5px;
+    }
+  }
+
+  @media @mq-viewport-lg {
+    .Page-body {
+      // &[data-toggle-video-playlist='true'] {
+      //   overflow: visible;
+      // }
+
+      &[data-with-playlist] {
+        .Page-below {
+          margin-right: 320px;
+        }
+
+        // we are making the footer skinny, so hide one of the columns
+        .Page-footer {
+          margin-bottom: 0;
+          margin-right: 320px;
+
+          .FooterNavigation {
+            &-items {
+              &-item {
+                width: 50%;
+
+                &:nth-of-type(3) {
+                  display: none;
+                }
+              }
+            }
+          }
+        }
+
+        .VideoPage {
+          &-pageWrapper {
+            margin-right: 320px;
+          }
+        }
+      }
+    }
+
+    &-playlist {
+      border: solid 1px var(--secondaryColor3);
+      height: 100vh;
+      right: 0;
+      top: 0;
+      width: 320px;
+      padding: (@grid-gap * 3) 0 0 0;
+
+      [data-toggle-video-playlist='true'] & {
+        height: 100vh;
+      }
+
+      &-items {
+        background-color: var(--secondaryColor4);
+        height: 100%;
+        overflow-y: scroll;
+      }
+
+      &-header {
+        cursor: default;
+        padding-top: 5px;
+
+        svg {
+          display: none;
+        }
+      }
+
+      &-title {
+        line-height: 45px;
+      }
+    }
+  }
+
+
+  @media @mq-viewport-hk {
+    &-content {
+      padding: 0 @grid-gap (@grid-gap * 2);
+    }
+  }
+
+  @media @mq-viewport-xl {
+
+    .Page-body {
+      &[data-toggle-video-playlist='true'] {
+        overflow: visible;
+      }
+
+      &[data-with-playlist] {
+        .Page-footer {
+          margin-right: 360px;
+
+          .FooterNavigation {
+            &-items {
+              &-item {
+                width: 33.333%;
+
+                &:nth-of-type(3) {
+                  display: block;
+                }
+              }
+            }
+          }
+        }
+
+        .VideoPage {
+          &-pageWrapper {
+            margin-right: 360px;
+          }
+        }
+      }
+    }
+
+    &-playlist {
+      width: 360px;
+    }
+  }
+}

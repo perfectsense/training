@@ -1,0 +1,15 @@
+<div class="EmailInput">
+    {{~#with errors}}
+    <div class="EmailInput-errors">{{~this~}}</div>
+    {{/with~}}
+
+    <label class="EmailInput-label"><span>{{label}}</span>
+        <input class="EmailInput-input" type="email" {{~#with inputName}} name="{{this}}" {{else}} name="emailinput"
+            {{/with}} {{~#with autocomplete}} autocomplete="{{this}}" {{/with}} {{~#with autofocus}} autofocus{{/with}}
+            {{~#with disabled}} disabled{{/with}} {{~#with maxlength}} maxlength="{{this}}" {{/with}}
+            {{~#with minlength}} minlength="{{this}}" {{/with}} {{~#with multiple}} multiple{{/with}}
+            {{~#with pattern}} pattern="{{this}}" {{/with}} {{~#with placeholder}} placeholder="{{this}}" {{/with}}
+            {{~#with readonly}} readonly{{/with}} {{~#with required}} required aria-required="true"{{/with}} {{~#with inputValue}} value="{{this}}"
+            {{/with}}>
+    </label>
+</div>

@@ -1,0 +1,31 @@
+<div class="NavigationItem" {{extraAttributes}}>
+    <div class="NavigationItem-text">
+        {{#if href}}
+            <a class="NavigationItem-text-link" href="{{href}}"{{#with target}} target="{{this}}"{{/with}}{{extraAttributes}}>{{~text~}}</a>
+        {{else}}
+            <span>{{~text~}}</span>
+        {{/if}}
+        {{#if items}}
+            <div class="NavigationItem-more">
+                <button aria-label="Open Sub Navigation"><svg class="chevron"><use xlink:href="#chevron"></use></svg></button>
+            </div>
+        {{/if}}
+    </div>
+
+    {{#if items}}
+        <ul class="NavigationItem-items">
+            {{#with items}}
+                {{#each this}}
+                    <li class="NavigationItem-items-item" {{#if this.isCurrent}}data-active{{/if}}>{{~this~}}</li>
+                {{/each}}
+            {{/with}}
+        </ul>
+        <ul class="NavigationItem-items-placeholder">
+            {{#with items}}
+                {{#each this}}
+                    <li class="NavigationItem-items-item">{{~this~}}</li>
+                {{/each}}
+            {{/with}}
+        </ul>
+    {{/if}}
+</div>

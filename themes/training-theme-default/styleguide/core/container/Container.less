@@ -1,0 +1,72 @@
+// lesshint universalSelector: false
+
+.Container {
+  border-bottom: 1px solid var(--gridBorderColor);
+  margin: 0 auto @grid-gap;
+  max-width: @content-width;
+  padding-left: @grid-gap;
+  padding-right: @grid-gap;
+  width: 100%;
+
+  &:last-of-type {
+    border-bottom: none;
+  }
+
+  .OneColumnContainer,
+  .TwoColumnContainer5050,
+  .TwoColumnContainer7030,
+  .TwoColumnContainer3070,
+  .ThreeColumnContainer,
+  .FourColumnContainer {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  &[data-full-bleed] {
+    max-width: none;
+    padding: 0;
+  }
+
+  &-column {
+    padding: 0 @grid-gap;
+
+    & > * {
+      &:not(:last-child) {
+        padding-bottom: (@grid-gap * 2);
+      }
+    }
+  }
+
+  &-row {
+    margin: 0 -@grid-gap;
+  }
+
+  @media @mq-viewport-md {
+    .ListLoadMore,
+    .ListA {
+      padding-bottom: @grid-gap * 2;
+    }
+
+    .TwoColumnContainer5050 {
+      padding-bottom: @grid-gap * 2;
+    }
+  }
+
+  @media @mq-viewport-hk {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  // for demo purposes until we have some real promos
+  .RichTextModule {
+    .example-container {
+      align-items: center;
+      background: var(--secondaryColor2);
+      display: flex;
+      height: 200px;
+      padding: @grid-gap;
+      justify-content: center;
+      width: 100%;
+    }
+  }
+}

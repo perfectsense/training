@@ -1,0 +1,15 @@
+{
+  "_include": "/examples/Article.json",
+
+  "lead": {
+    "_template": "/core/carousel/Carousel.hbs",
+
+    "title": "{{words(5)}}",
+    "slides": [
+      {
+        "_include": "/core/carousel/CarouselSlide.json",
+        "_repeat": [4, 8]
+      }
+    ]
+  }
+}

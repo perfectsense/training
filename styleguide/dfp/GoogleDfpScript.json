@@ -1,5 +1,5 @@
 {
-  "_template": "./GoogleDfpScript.hbs",
+  "_template": "GoogleDfpScript.hbs",
   "targets": "['styleguide', 'true', 'environment', 'test']",
-  "_hidden": false
+  "_hidden": true
 }

@@ -1,0 +1,6 @@
+{
+  "_template": "ModuleType.hbs",
+  "_include": "/core/module/ModuleType.json",
+  "content": null,
+  "_hidden": true
+}

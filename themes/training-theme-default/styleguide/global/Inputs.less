@@ -1,0 +1,94 @@
+.TextInput {
+  input {
+    &:extend(.label-4 all);
+
+    background-color: var(--secondaryColor4);
+    border: 0;
+    border-radius: 0;
+    color: var(--primaryTextColor);
+    font-weight: 500;
+    height: 40px;
+    line-height: normal;
+    padding: 6px (@grid-gap / 2) 4px; // custom padding for extra centering
+    width: 100%;
+  }
+
+  label {
+    span {
+      &:extend(.label-4 all);
+
+      display: block;
+      padding-bottom: (@grid-gap / 2);
+    }
+  }
+
+  &-errors {
+    display: none;
+  }
+}
+
+.TextInputInverse {
+  &:extend(.TextInput all);
+
+  input {
+    background: rgba(255, 255, 255, 0.2); // custom color off the mock
+    color: var(--secondaryColor4);
+
+    &:focus {
+      background-color: var(--secondaryColor5);
+      box-shadow: none;
+      color: var(--primaryTextColor);
+    }
+  }
+}
+
+.CheckboxInput {
+  input {
+    appearance: none;
+    background-color: var(--secondaryColor5);
+    border: 2px solid var(--secondaryColor3);
+    padding: 7px;
+    border-radius: 0;
+    display: inline-block;
+    position: relative;
+    top: 2px;
+
+    &:active,
+    &:checked {
+      background: var(--primaryColor1);
+      border: 2px solid var(--primaryColor1);
+
+      &:after {
+        content: '';
+        border-right: 1px solid var(--primaryTextColorInverse);
+        border-bottom: 1px solid var(--primaryTextColorInverse);
+        width: 5px;
+        height: 13px;
+        position: absolute;
+        top: -1px;
+        transform: rotate(37deg);
+        left: 5px;
+      }
+    }
+  }
+
+  &-label {
+    span {
+      &:extend(.label-4 all);
+
+      margin-left: 3px;
+    }
+  }
+}
+
+// custom font for just this element
+.SearchInput-input {
+  border: 0;
+  color: var(--primaryColor1);
+  font-size: 2.4rem;
+  width: 100%;
+
+  @media @mq-viewport-md {
+    font-size: 4.0rem;
+  }
+}

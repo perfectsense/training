@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html class="VideoPage" lang="{{#with language}}{{this}}{{else}}en{{/with}}">
+    {{include "/core/page/Page-head.hbs" this}}
+
+    <body class="Page-body" {{~#each extraBodyAttributes}} {{this}} {{~/each~}} {{#if playlist}}data-with-playlist{{/if}}>
+        {{include "/core/page/Page-header.hbs" this bannerCheck="true"}}
+        {{include "/core/page/Page-above.hbs" this}}
+
+        <ps-video-playlist>
+            <div class="VideoPage-pageWrapper" data-video-wrapper>
+                {{include "/core/page/Page-banner.hbs" this}}
+
+                <div class="VideoPage-lead">
+                    {{#with player}}
+                        <div class="VideoPage-player" data-video-player-wrapper{{#if ../playlist}} data-in-playlist="true"{{/if}}>{{this}}</div>
+                    {{/with}}
+                </div>
+
+
+                <div class="VideoPage-content">
+                    <div class="VideoPage-wrapper">
+                        <main class="VideoPage-main">
+                            <div class="VideoPage-mainContent">
+                                {{include "/core/page/ContentPage-breadcrumbs.hbs" this className="VideoPage"}}
+
+                                {{include "/core/page/CreativeWorkPage-headline.hbs" this className="VideoPage" kickerText=kicker}}
+
+                                {{include "/core/page/CreativeWorkPage-subHeadline.hbs" this className="VideoPage"}}
+                                <div class="VideoPage-contentInfo">
+                                    <div class="VideoPage-byline">
+                                        {{#if authorName}}
+                                            <div class="VideoPage-authors">
+                                                {{~include "/core/page/CreativeWorkPage-authorName.hbs" this className="VideoPage"~}}
+                                                {{~include "/core/page/CreativeWorkPage-contributors.hbs" this className="VideoPage"~}}
+                                            </div>
+                                        {{/if}}
+                                        {{~include "/core/page/CreativeWorkPage-datePublished.hbs" this className="VideoPage"~}}
+                                    </div>
+                                        {{#with actions}}
+                                            <div class="VideoPage-actions">
+                                                {{this}}
+                                            </div>
+                                        {{/with}}
+                                </div>
+
+                                {{#if videoBody}}
+                                    <div class="VideoPage-descriptionBody RichTextBody"{{#with dateline}} data-dateline{{/with}}>
+                                        {{~#with dateline~}}<span class="VideoPage-dateline">{{this}}&nbsp;—&nbsp;</span>{{~/with~}}
+                                        {{~videoBody~}}
+                                    </div>
+                                {{/if}}
+
+                                {{include "/core/page/ContentPage-tags.hbs" this className="VideoPage"}}
+                                {{include "/core/page/CreativeWorkPage-authorInfo.hbs" this className="VideoPage"}}
+                                {{include "/core/page/CreativeWorkPage-contentFooter.hbs" this className="VideoPage"}}
+                            </div>
+                        </main>
+                    </div>
+                </div>
+            </div>
+
+            {{#with playlist}}
+                <aside class="VideoPage-playlist" data-playlist>
+                    <div class="VideoPage-playlist-header">
+                        <div class="VideoPage-playlist-title">{{format "/core/video/VideoPage" "playlistHeading"}}</div>
+                        <svg class="chevron"><use xlink:href="#chevron"></use></svg>
+                    </div>
+                    <div class="VideoPage-playlist-items">
+                        {{#each this}}
+                            {{this}}
+                        {{/each}}
+                    </div>
+                </aside>
+            {{/with}}
+        </ps-video-playlist>
+
+        {{include "/core/page/Page-below.hbs" this}}
+        {{include "/core/page/Page-footer.hbs" this}}
+        {{include "/core/page/Page-extraBodyItems.hbs" this}}
+    </body>
+</html>

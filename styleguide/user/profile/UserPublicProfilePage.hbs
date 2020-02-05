@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html class="UserPublicProfilePage" lang="{{#with language}}{{this}}{{else}}en{{/with}}" itemscope itemtype="http://schema.org/WebPage">
+    {{include "/core/page/Page-head.hbs" this}}
+    <body class="UserPublicProfilePage-body"{{~#each extraBodyAttributes}} {{this}}{{~/each~}}>
+        <header class="UserPublicProfilePage-header" itemscope itemtype="http://schema.org/WPHeader">
+            {{#with hat}}
+                <div class="UserPublicProfilePage-hat">{{this}}</div>
+            {{/with}}
+            {{#with logo}}
+                <div class="UserPublicProfilePage-logo">{{this}}</div>
+            {{/with}}
+            {{#with navigation}}
+                <div class="UserPublicProfilePage-navigation">{{this}}</div>
+            {{/with}}
+            {{#with social}}
+                <div class="UserPublicProfilePage-social">{{this}}</div>
+            {{/with}}
+            {{#if searchAction}}
+                <form class="UserPublicProfilePage-search" action="{{searchAction}}" novalidate="" autocomplete="off">
+                    <input type="text" class="UserPublicProfilePage-searchInput" name="q">
+                    <button type="submit" class="UserPublicProfilePage-searchButton">{{format "/core/page/Page" "searchButtonLabel"}}</button>
+                </form>
+            {{/if}}
+        </header>
+        {{#with banner}}
+            <div class="UserPublicProfilePage-banner">{{~this~}}</div>
+        {{/with}}
+        {{#with sectionNavigation}}
+            <div class="UserPublicProfilePage-sectionNavigation">{{this}}</div>
+        {{/with}}
+        {{#with packageNavigation}}
+            <div class="UserPublicProfilePage-packageNavigation">{{this}}</div>
+        {{/with}}
+        {{#with above}}
+            <div class="UserPublicProfilePage-above">{{this}}</div>
+        {{/with}}
+        <main class="UserPublicProfilePage-main">
+            {{#with userDisplayName}}
+                <div class="UserPublicProfilePage-userDisplayName">
+                    {{this}}
+                </div>
+            {{/with}}
+            <img class="UserPublicProfilePage-userImage" src="{{userImage.src}}" alt="{{alt}}"
+            {{~#with userImage.srcset}} srcset="{{this}}"{{/with~}}
+            {{~#with userImage.width}} width="{{this}}"{{/with~}}
+            {{~#with userImage.height}} height="{{this}}"{{/with~}} />
+            {{#with userBiography}}
+                <div class="UserPublicProfilePage-userBiography">
+                    {{this}}
+                </div>
+            {{/with}}
+            {{#with main}}{{this}}{{/with}}
+        </main>
+        {{#with aside}}
+            <aside class="UserPublicProfilePage-aside">{{this}}</aside>
+        {{/with}}
+        {{#with below}}
+            <div class="UserPublicProfilePage-below">{{this}}</div>
+        {{/with}}
+        <footer class="UserPublicProfilePage-footer" itemscope itemtype="https://schema.org/WPFooter">
+            {{#with footerLogo}}
+                <div class="UserPublicProfilePage-footerLogo">{{this}}</div>
+            {{/with}}
+            {{#with footerNavigation}}
+                <div class="UserPublicProfilePage-footerNavigation">{{this}}</div>
+            {{/with}}
+            {{#with footerContent}}
+                <div class="UserPublicProfilePage-footerContent">{{this}}</div>
+            {{/with}}
+            {{#with social}}
+                <div class="UserPublicProfilePage-social">{{this}}</div>
+            {{/with}}
+            {{#with disclaimer}}
+                <div class="UserPublicProfilePage-disclaimer">{{this}}</div>
+            {{/with}}
+        </footer>
+        {{include "/core/page/Page-extraBodyItems.hbs" this}}
+    </body>
+</html>

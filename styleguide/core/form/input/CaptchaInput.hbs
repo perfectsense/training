@@ -1,0 +1,13 @@
+<div class="CaptchaInput">
+    {{~#with errors}}
+        <div class="CaptchaInput-errors">{{~this~}}</div>
+    {{/with~}}
+    <label class="CaptchaInput-label">{{label}}
+        {{~#with captcha}}
+            <div class="CaptchaInput-captcha">{{this}}</div>
+        {{/with~}}
+        {{~#with description}}
+            <div class="CaptchaInput-description">{{~this~}}</div>
+        {{/with~}}
+    </label>
+</div>

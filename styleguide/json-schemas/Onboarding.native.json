@@ -1,0 +1,17 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "__comment": "OnboardingItem.json"
+      }
+    },
+    "onComplete": {
+      "type": "object"
+    }
+  },
+  "_hidden": true
+}

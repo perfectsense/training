@@ -6,15 +6,9 @@
             {{#with hat}}
                 <div class="AuthorPage-hat">{{this}}</div>
             {{/with}}
-            {{#with logo}}
-                <div class="AuthorPage-logo">{{this}}</div>
-            {{/with}}
-            {{#with navigation}}
-                <div class="AuthorPage-navigation">{{this}}</div>
-            {{/with}}
-            {{#with social}}
-                <div class="AuthorPage-social">{{this}}</div>
-            {{/with}}
+            {{include "/core/page/Page-logo.amp.hbs" this}}
+            {{include "/core/page/Page-navigation.amp.hbs" this}}
+            {{include "/core/page/Page-social.hbs" this}}
             {{#if searchAction}}
                 <form class="AuthorPage-search" action="{{searchAction}}" novalidate="" autocomplete="off">
                     <input type="text" class="AuthorPage-searchInput" name="q">
@@ -126,9 +120,7 @@
             {{#with footerContent}}
                 <div class="AuthorPage-footerContent">{{this}}</div>
             {{/with}}
-            {{#with social}}
-                <div class="AuthorPage-social">{{this}}</div>
-            {{/with}}
+            {{include "/core/page/Page-social.hbs" this}}
             {{#with disclaimer}}
                 <div class="AuthorPage-disclaimer">{{this}}</div>
             {{/with}}

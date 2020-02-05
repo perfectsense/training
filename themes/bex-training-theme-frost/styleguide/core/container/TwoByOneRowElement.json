@@ -1,9 +1,0 @@
-{
-  "_template": "/core/container/TwoColumnContainer.hbs",
-  "columns": {
-    "_include": "/_group/ContainerColumnOptions.json",
-    "_key": 0
-  },
-  "_styledTemplate": "/core/container/TwoByOneRowElement.hbs",
-  "_hidden": true
-}

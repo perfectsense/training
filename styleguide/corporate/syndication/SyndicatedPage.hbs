@@ -1,0 +1,102 @@
+{{#if syndicatePage}}
+    <!DOCTYPE html>
+    <html class="SyndicatedPage" lang="{{#with language}}{{this}}{{else}}en{{/with}}" itemscope itemtype="http://schema.org/WebPage">
+        <head>
+            <meta charset="{{#with charset}}{{this}}{{else}}UTF-8{{/with}}">
+            <link rel="stylesheet" href="{{cdn "/styleguide/All.min.css"}}">
+            {{include "/core/page/Page-extraStyles.hbs" this}}
+            <meta name="viewport" content="{{#with viewport}}{{this}}{{else}}width=device-width, initial-scale=1{{/with}}">
+            {{include "/core/page/Page-meta.hbs" this}}
+            {{include "/core/page/Page-favicons.hbs" this}}
+            {{include "/core/page/Page-manifestLink.hbs" this}}
+            <script src="{{cdn "/styleguide/All.min.js"}}" async></script>
+            {{include "/core/page/Page-extraScripts.hbs" this}}
+            <meta id="SyndicatedPage-insertHeadContent"/>
+            <link id="SyndicatedPage-insertHeadContent"/>
+            <script id="SyndicatedPage-insertHeadContent"></script>
+        </head>
+        <body class="SyndicatedPage-body"{{~#each extraBodyAttributes}} {{this}}{{~/each~}}>
+            <header class="SyndicatedPage-header" itemscope itemtype="http://schema.org/WPHeader">
+                {{#with hat}}
+                    <div class="SyndicatedPage-hat">{{this}}</div>
+                {{/with}}
+                {{#with logo}}
+                    <div class="SyndicatedPage-logo">{{this}}</div>
+                {{/with}}
+                {{#with navigation}}
+                    <div class="SyndicatedPage-navigation">{{this}}</div>
+                {{/with}}
+                {{#with social}}
+                    <div class="SyndicatedPage-social">{{this}}</div>
+                {{/with}}
+                {{#if searchAction}}
+                    <form class="SyndicatedPage-search" action="{{searchAction}}" novalidate="" autocomplete="off">
+                        <input type="text" class="SyndicatedPage-searchInput" name="q">
+                        <button type="submit" class="SyndicatedPage-searchButton">{{format "/corporate/syndication/SyndicatedPage" "searchButtonLabel"}}</button>
+                    </form>
+                {{/if}}
+            </header>
+            <insert.body.content>
+            </insert.body.content>
+            <footer class="SyndicatedPage-footer" itemscope itemtype="https://schema.org/WPFooter">
+                {{#with logo}}
+                    <div class="SyndicatedPage-logo">{{this}}</div>
+                {{/with}}
+                {{#with footerNavigation}}
+                    <div class="SyndicatedPage-footerNavigation">{{this}}</div>
+                {{/with}}
+                {{#with footerContent}}
+                    <div class="SyndicatedPage-footerContent">{{this}}</div>
+                {{/with}}
+                {{#with social}}
+                    <div class="SyndicatedPage-social">{{this}}</div>
+                {{/with}}
+                {{#with disclaimer}}
+                    <div class="SyndicatedPage-disclaimer">{{this}}</div>
+                {{/with}}
+            </footer>
+            {{include "/core/page/Page-extraBodyItems.hbs" this}}
+        </body>
+    </html>
+{{/if}}
+{{#if syndicateHeader}}
+    <header class="SyndicatedPage-header" itemscope itemtype="http://schema.org/WPHeader">
+        {{#with hat}}
+            <div class="SyndicatedPage-hat">{{this}}</div>
+        {{/with}}
+        {{#with logo}}
+            <div class="SyndicatedPage-logo">{{this}}</div>
+        {{/with}}
+        {{#with navigation}}
+            <div class="SyndicatedPage-navigation">{{this}}</div>
+        {{/with}}
+        {{#with social}}
+            <div class="SyndicatedPage-social">{{this}}</div>
+        {{/with}}
+        {{#if searchAction}}
+            <form class="SyndicatedPage-search" action="{{searchAction}}" novalidate="" autocomplete="off">
+                <input type="text" class="SyndicatedPage-searchInput" name="q">
+                <button type="submit" class="SyndicatedPage-searchButton">{{format "/corporate/syndication/SyndicatedPage" "searchButtonLabel"}}</button>
+            </form>
+        {{/if}}
+    </header>
+{{/if}}
+{{#if syndicateFooter}}
+    <footer class="SyndicatedPage-footer" itemscope itemtype="https://schema.org/WPFooter">
+        {{#with logo}}
+            <div class="SyndicatedPage-logo">{{this}}</div>
+        {{/with}}
+        {{#with footerNavigation}}
+            <div class="SyndicatedPage-footerNavigation">{{this}}</div>
+        {{/with}}
+        {{#with footerContent}}
+            <div class="SyndicatedPage-footerContent">{{this}}</div>
+        {{/with}}
+        {{#with social}}
+            <div class="SyndicatedPage-social">{{this}}</div>
+        {{/with}}
+        {{#with disclaimer}}
+            <div class="SyndicatedPage-disclaimer">{{this}}</div>
+        {{/with}}
+    </footer>
+{{/if}}

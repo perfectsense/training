@@ -1,0 +1,136 @@
+// lesshint idSelector: false
+
+.NewsletterForm {
+  display: block;
+  margin-bottom: @grid-gap;
+
+  .Button[type='submit'] {
+    &:extend(.ButtonPrimary all);
+
+    max-width: 320px;
+    padding: 0;
+    width: 100%;
+
+    .Page-footer & {
+      max-width: none;
+      width: 100%;
+    }
+  }
+
+  .EmailInput {
+    &:extend(.TextInput all);
+
+    .Page-footer & {
+      &:extend(.TextInputInverse all);
+    }
+
+    input {
+      max-width: 320px;
+      width: 100%;
+
+      .Page-footer & {
+        max-width: none;
+        width: 100%;
+      }
+    }
+
+    label {
+      span {
+        &:extend(.sr-only all);
+      }
+    }
+  }
+
+  &-buttons {
+    [data-form-success] & {
+      display: none;
+    }
+  }
+
+  &-items {
+    [data-form-success] & {
+      display: none;
+    }
+
+    margin-bottom: (@grid-gap / 2);
+  }
+
+  &-success {
+    display: none;
+
+    [data-form-success] & {
+      display: block;
+
+      &-message {
+        &:extend(.TextInput input all);
+
+        .Page-footer & {
+          &:extend(.TextInputInverse input all);
+
+          padding-top: 13px;
+        }
+
+        margin-bottom: (@grid-gap / 2);
+        padding-top: 13px;
+        text-align: center;
+        width: 100%;
+      }
+
+      &-more {
+        &:extend(.ButtonPrimary all);
+
+        width: 100%;
+      }
+    }
+  }
+
+  &-title {
+    &:extend(.label-4 all);
+
+    margin-bottom: (@grid-gap / 2);
+
+    .Page-footer & {
+      color: var(--footerTextColor);
+    }
+  }
+
+  @media @mq-viewport-sm {
+    .Button[type='submit'] {
+      .Page-footer & {
+        max-width: 280px;
+        width: 100%;
+      }
+    }
+
+    .EmailInput {
+      input {
+        .Page-footer & {
+          max-width: 280px;
+          width: 100%;
+        }
+      }
+    }
+
+    &-success {
+      [data-form-success] & {
+        &-message {
+          max-width: 320px;
+
+          .Page-footer & {
+            max-width: 280px;
+            width: 100%;
+          }
+        }
+
+        &-more {
+          max-width: 320px;
+
+          .Page-footer & {
+            max-width: 280px;
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}

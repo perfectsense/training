@@ -1,0 +1,17 @@
+{
+    "GetFullStockQuoteListResult": [{
+        "Change": -0.54,
+        "High": 48.85,
+        "High52": 55.08,
+        "Low": 47.95,
+        "Low52": 43.43,
+        "Open": 48.84,
+        "PercChange": 1.109,
+        "PreviousClose": 48.69,
+        "TradeDate": "08/24/2017 16:00:00",
+        "TradePrice": 48.15,
+        "Volume": 2920457,
+        "Volume2": 2920457,
+        "ShareTraded":7311
+    }]
+}

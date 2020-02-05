@@ -1,0 +1,19 @@
+{{#if items}}
+    <div class="SharesTable">
+        <table>
+            {{include "/dam/table/PaginatedTable-head.hbs" this}}
+            {{include "/dam/table/PaginatedTable-items.hbs" this}}
+        </table>
+    </div>
+    <div class="SharesTable-pagination">
+        {{#if pageCount}}
+            <span class="SharesTable-pagination-pageCount">{{pageNumber}} of {{pageCount}}</span>
+        {{/if}}
+        <a {{#if previousPage}}href="{{previousPage}}"{{else}}data-disabled{{/if}} rel="prev" class="SharesTable-pagination-previous" title="Previous"></a>
+        <a {{#if nextPage}}href="{{nextPage}}"{{else}}data-disabled{{/if}} rel="next" class="SharesTable-pagination-next" title="Next"></a>
+    </div>
+{{else}}
+    <h3 class="SharesTable-noResults">
+        There are no items to show.
+    </h3>
+{{/if}}

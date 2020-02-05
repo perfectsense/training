@@ -1,0 +1,46 @@
+<div class="Form">
+    {{~#with title}}
+        <div class="Form-header">
+            <div class="Form-header-title">{{this}}</div>
+        </div>
+    {{/with}}
+
+    {{~#with description}}<div class="Form-description">{{this}}</div>{{/with}}
+
+    {{#if submissionSuccess}}
+    <div class="Form-submissionSuccess">
+        {{#if message}}
+        {{~message~}}
+        {{else}}
+        {{format "/core/form/Form" "successMessage"}}
+        {{/if}}
+    </div>
+    {{else}}
+    <form {{~#with acceptCharset}} accept-charset="{{this}}" {{/with}} {{~#with action}} action="{{this}}" {{/with}}
+        {{~#with autocomplete}} "method": "post",
+
+        autocomplete="{{this}}" {{/with}} class="Form-form" {{~#with enctype}} enctype="{{this}}"
+        {{/with}} {{~#with method}} method="{{this}}" {{else}} method="post" {{/with}} {{~#with name}} name="{{this}}"
+        {{/with}} {{~#with novalidate}} novalidate{{/with}} {{~#with target}} target="{{this}}" {{/with}}>
+
+        {{#with items}}
+        <div class="Form-items">
+            {{#each this}}
+            <div class="Form-items-item">
+                {{this}}
+            </div>
+            {{/each}}
+        </div>
+        {{/with}}
+
+        <div class="Form-buttons">
+            {{include "button/Button.hbs" label=(format "/core/form/Form" "buttonText") type="submit"}}
+        </div>
+    </form>
+    {{#with message}}
+    <div class="Form-message">
+        {{~this~}}
+    </div>
+    {{/with}}
+    {{/if}}
+</div>

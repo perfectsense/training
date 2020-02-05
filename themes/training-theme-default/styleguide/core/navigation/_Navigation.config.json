@@ -1,0 +1,36 @@
+{
+  "styles": {
+    "/core/navigation/Navigation.hbs": {
+      "templates": [
+        {
+          "displayName": "Site Navigation",
+          "example": "/core/navigation/Navigation.json"
+        },
+        {
+          "displayName": "Footer Navigation",
+          "example": "/core/navigation/FooterNavigation.json"
+        },
+        {
+          "displayName": "Section Navigation",
+          "example": "/core/navigation/SectionNavigation.json"
+        }
+      ]
+    },
+    "/core/navigation/NavigationItem.hbs": {
+      "templates": [
+        {
+          "displayName": "Navigation Item",
+          "example": "/core/navigation/NavigationItem.json"
+        },
+        {
+          "displayName": "Footer Navigation Item",
+          "example": "/core/navigation/FooterNavigationItem.json"
+        },
+        {
+          "displayName": "Section Navigation Item",
+          "example": "/core/navigation/SectionNavigationItem.json"
+        }
+      ]
+    }
+  }
+}

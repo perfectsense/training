@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html class="FormPage" lang="{{#with language}}{{this}}{{else}}en{{/with}}" itemscope itemtype="http://schema.org/WebPage">
+    {{include "/core/page/Page-head.hbs" this}}
+    <body class="FormPage-body"{{~#each extraBodyAttributes}} {{this}}{{~/each~}}>
+        <header class="FormPage-header" itemscope itemtype="http://schema.org/WPHeader">
+            {{#with hat}}
+                <div class="FormPage-hat">{{this}}</div>
+            {{/with}}
+            {{#with logo}}
+                <div class="FormPage-logo">{{this}}</div>
+            {{/with}}
+            {{#with navigation}}
+                <div class="FormPage-navigation">{{this}}</div>
+            {{/with}}
+            {{#with social}}
+                <div class="FormPage-social">{{this}}</div>
+            {{/with}}
+            {{#if searchAction}}
+                <form class="FormPage-search" action="{{searchAction}}" novalidate="" autocomplete="off">
+                    <input type="text" class="FormPage-searchInput" name="q">
+                    <button type="submit" class="FormPage-searchButton">{{format "/core/page/Page" "searchButtonLabel"}}</button>
+                </form>
+            {{/if}}
+        </header>
+        {{#with banner}}
+            <div class="FormPage-banner">{{~this~}}</div>
+        {{/with}}
+        {{#with sectionNavigation}}
+            <div class="FormPage-sectionNavigation">{{this}}</div>
+        {{/with}}
+        {{#with packageNavigation}}
+            <div class="FormPage-packageNavigation">{{this}}</div>
+        {{/with}}
+        {{#with above}}
+            <div class="FormPage-above">{{this}}</div>
+        {{/with}}
+        <main class="FormPage-main">
+            {{#with breadcrumbs}}
+                <div class="FormPage-breadcrumbs">{{this}}</div>
+            {{/with}}
+            <div class="FormPage-mainContent">
+                {{#with headline}}
+                    <h1 class="FormPage-headline" itemprop="headline">{{this}}</h1>
+                {{/with}}
+                {{#with subHeadline}}
+                    <div class="FormPage-subHeadline" itemprop="alternativeHeadline">{{this}}</div>
+                {{/with}}
+                <div class="FormPage-byline" itemprop="author" itemscope itemtype="http://schema.org/Person">
+                    {{#with authorImage}}
+                        <div class="FormPage-authorImage" itemprop="image">
+                            {{#with ../authorUrl}}<a href="{{this}}">{{/with}}
+                            <img alt="" src="{{src}}"
+                            {{~#with srcset}} srcset="{{this}}"{{/with~}}
+                            {{~#with width}} width="{{this}}"{{/with~}}
+                            {{~#with height}} height="{{this}}"{{/with~}}
+                        >
+                        {{#with ../authorUrl}}</a>{{/with}}
+                    </div>
+                {{/with}}
+                <div class="FormPage-authorTexts">
+                    {{#with authorName}}
+                        <div class="FormPage-authorName" itemprop="name">
+                            {{#with ../authorUrl}}<a href="{{this}}">{{/with}}
+                            {{this}}
+                            {{#with ../authorUrl}}</a>{{/with}}
+                        </div>
+                    {{/with}}
+                    {{#with authorBiography}}
+                        <div class="FormPage-authorBiography">{{this}}</div>
+                    {{/with}}
+                </div>
+            </div>
+            {{#with contributors}}
+                <div class="FormPage-contributors">
+                    <h2 class="FormPage-contributors-heading">{{format "/core/page/CreativeWorkPage" "contributorsHeading"}}</h2>
+                    <div class="FormPage-contributors-body">
+                        {{~#each this~}}
+                            {{~this~}}
+                            {{~#unless @last}}, {{/unless~}}
+                        {{~/each~}}
+                    </div>
+                </div>
+            {{/with}}
+            <div class="FormPage-datePublished">{{datePublished}}</div>
+            {{#with datePublishedISO}}
+                <meta itemprop="datePublished" content="{{this}}">
+            {{/with}}
+            <div class="FormPage-dateModified">{{dateModified}}</div>
+            {{#with dateModifiedISO}}
+                <meta itemprop="dateModified" content="{{this}}">
+            {{/with}}
+            {{#with form}}
+                <div class="FormPage-form">{{this}}</div>
+            {{/with}}
+        </div>
+        {{#with tags}}
+            <div class="FormPage-tags">
+                <h2 class="FormPage-tags-heading">{{format "/core/page/ContentPage" "tagsHeading"}}</h2>
+                <div class="FormPage-tags-body">{{this}}</div>
+            </div>
+        {{/with}}
+        {{#with countries}}
+            <div class="FormPage-countries">
+                <h2 class="FormPage-countries-heading">{{format "/core/page/ContentPage" "countriesHeading"}}</h2>
+                <div class="FormPage-countries-body">{{this}}</div>
+            </div>
+        {{/with}}
+        {{#with brands}}
+            <div class="FormPage-brands">
+                <h2 class="FormPage-brands-heading">{{format "/core/page/ContentPage" "brandsHeading"}}</h2>
+                <div class="FormPage-brands-body">{{this}}</div>
+            </div>
+        {{/with}}
+        {{#with products}}
+            <div class="FormPage-products">
+                <h2 class="FormPage-products-heading">{{format "/core/page/ContentPage" "productsHeading"}}</h2>
+                <div class="FormPage-products-body">{{this}}</div>
+            </div>
+        {{/with}}
+        {{#with topics}}
+            <div class="FormPage-topics">
+                <h2 class="FormPage-topics-heading">{{format "/core/page/ContentPage" "topicsHeading"}}</h2>
+                <div class="FormPage-topics-body">{{this}}</div>
+            </div>
+        {{/with}}
+        {{#with actions}}
+            <div class="FormPage-actions">
+                <h2 class="FormPage-actions-heading">{{format "/core/page/ContentPage" "actionsHeading"}}</h2>
+                <div class="FormPage-actions-body">{{this}}</div>
+            </div>
+        {{/with}}
+        {{#with comments}}
+            <div class="FormPage-comments">
+                {{this}}
+            </div>
+        {{/with}}
+    </main>
+    {{#with aside}}
+        <aside class="FormPage-aside">{{this}}</aside>
+    {{/with}}
+    {{#with below}}
+        <div class="FormPage-below">{{this}}</div>
+    {{/with}}
+    <footer class="FormPage-footer" itemscope itemtype="https://schema.org/WPFooter">
+        {{#with footerLogo}}
+            <div class="FormPage-footerLogo">{{this}}</div>
+        {{/with}}
+        {{#with footerNavigation}}
+            <div class="FormPage-footerNavigation">{{this}}</div>
+        {{/with}}
+        {{#with footerContent}}
+            <div class="FormPage-footerContent">{{this}}</div>
+        {{/with}}
+        {{#with social}}
+            <div class="FormPage-social">{{this}}</div>
+        {{/with}}
+        {{#with disclaimer}}
+            <div class="FormPage-disclaimer">{{this}}</div>
+        {{/with}}
+    </footer>
+    {{include "/core/page/Page-extraBodyItems.hbs" this}}
+</body>
+</html>

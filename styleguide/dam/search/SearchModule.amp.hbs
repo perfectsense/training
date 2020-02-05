@@ -1,0 +1,6 @@
+{{#if searchAction}}
+    <form class="SearchModule-search" action="{{searchAction}}" novalidate="" autocomplete="off">
+        <input type="text" class="SearchModule-searchInput" placeholder="{{placeholder}}" name="q">
+        <button type="submit" class="SearchModule-searchButton">{{format "/dam/search/SearchModule" "submitButtonLabel"}}</button>
+    </form>
+{{/if}}

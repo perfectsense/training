@@ -1,0 +1,6 @@
+{
+  "_template": "HiddenInput.hbs",
+  "name": "uuid-of-quiz",
+  "value": "true",
+  "_hidden": true
+}

@@ -1,0 +1,8 @@
+{
+  "imageSizeContexts": {
+    "/user/profile/UserPublicProfilePage.hbs": {
+      "userImage": "small"
+    }
+  },
+  "_hidden": true
+}

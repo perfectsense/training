@@ -1,0 +1,46 @@
+.ListA {
+  &:extend(.ListAbstract all);
+
+  &-header {
+    &:extend(.ListHeader all);
+  }
+
+  &-items {
+    &:extend(.ListItemsNoBorder all);
+
+    &-column {
+      padding-bottom: @grid-gap;
+      margin-bottom: @grid-gap;
+
+      &:nth-of-type(2) {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  @media @mq-viewport-md {
+    &-items {
+      display: flex;
+      margin: 0 -(@grid-gap);
+
+      &-column {
+        padding: 0 @grid-gap;
+
+        &:nth-of-type(1) {
+          flex-shrink: 0;
+          width: 65%;
+          border-bottom: 0;
+          margin-bottom: 0;
+        }
+
+        &:nth-of-type(2) {
+          flex-shrink: 0;
+          width: 35%;
+          border-bottom: 0;
+          padding-bottom: 0;
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}

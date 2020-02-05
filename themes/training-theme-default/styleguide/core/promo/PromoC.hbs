@@ -1,0 +1,43 @@
+<div class="PromoC"{{include "Promo-options.hbs" this}}>
+    {{#if (ne imageAlignment "bottom")}}
+        {{#if media}}
+            <div class="PromoC-media">
+                {{#set imageSize='promoLarge'}}
+                    {{#set lazyLoad='true'}}
+                        {{include "../link/Link.hbs" aria-label=title href=url target=target body=media}}
+                    {{/set}}
+                {{/set}}
+            </div>
+        {{/if}}
+    {{/if}}
+
+    <div class="PromoC-content">
+        {{#with category}}
+            <div class="PromoC-category">
+                {{include "../link/Link.hbs" href=../categoryUrl target=../target body=this}}
+            </div>
+        {{/with}}
+
+        {{#with title}}
+            <div class="PromoC-title">
+                {{include "../link/Link.hbs" href=../url target=../target body=this}}
+            </div>
+        {{/with}}
+
+        {{#with description}}
+            <div class="PromoC-description">{{this}}</div>
+        {{/with}}
+    </div>
+
+    {{#if (eq imageAlignment "bottom")}}
+        {{#if media}}
+            <div class="PromoC-media">
+                {{#set imageSize='promoLarge'}}
+                    {{#set lazyLoad='true'}}
+                        {{include "../link/Link.hbs" aria-label=title href=url target=target body=media}}
+                    {{/set}}
+                {{/set}}
+            </div>
+        {{/if}}
+    {{/if}}
+</div>

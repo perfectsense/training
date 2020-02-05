@@ -1,0 +1,161 @@
+.NavigationItem {
+  padding: 0 50px 0 @grid-gap;
+  position: relative;
+
+  &-items-placeholder {
+    display: none;
+  }
+
+  &-more {
+    cursor: pointer;
+    padding: (@grid-gap / 2) @grid-gap;
+    position: absolute;
+    right: 0;
+    top: 0;
+
+    button {
+      &:extend(.NotButton all);
+    }
+
+    svg {
+      fill: var(--primaryTextColor);
+      height: 17px;
+      position: relative;
+      top: 2px;
+      transform: rotate(90deg);
+      width: 11px;
+
+      [data-item-click='true'] & {
+        transform: rotate(270deg);
+        top: -4px;
+      }
+    }
+  }
+
+  &-items {
+    display: none;
+    padding: (@grid-gap / 2) 0 (@grid-gap / 2) (@grid-gap / 2);
+
+    [data-item-click='true'] & {
+      display: block;
+    }
+  }
+
+  // These are the top level items in the navigation
+  &-text {
+    &:extend(.label-4 all);
+
+    color: var(--primaryTextColor);
+    display: flex;
+    justify-content: space-between;
+
+    a,
+    span {
+      display: block;
+      padding: (@grid-gap / 1.5) 0;
+      width: 100%;
+    }
+  }
+
+  // These are the subnav items
+  .NavigationLink {
+    &:extend(.label-4 all);
+
+    color: var(--primaryTextColor);
+    display: block;
+    padding: (@grid-gap / 2) 0;
+    width: 100%;
+
+    &:hover {
+      color: var(--primaryColor1);
+    }
+  }
+
+  @media @mq-viewport-lg {
+    cursor: pointer;
+    margin: 0 (@grid-gap / 2);
+    padding-left: (@grid-gap / 2);
+
+    &[data-item-hover='true'] {
+      background-color: var(--secondaryColor4);
+    }
+
+    &-items {
+      [data-item-click='true'] &,
+      [data-item-hover='true'] & {
+        box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.5);
+        width: 280px;
+        word-break: initial;
+        overflow: initial;
+        visibility: visible;
+
+        &:after,
+        &:before {
+          right: 100%;
+          top: 36px;
+          border: solid transparent;
+          content: ' ';
+          height: 0;
+          width: 0;
+          position: absolute;
+          pointer-events: none;
+        }
+
+        &:after {
+          border-color: transparent;
+          border-right-color: var(--secondaryColor5);
+          border-width: 10px;
+          margin-top: -10px;
+        }
+
+        &:before {
+          border-color: transparent;
+          border-right-color: var(--secondaryColor3);
+          border-width: 11px;
+          margin-top: -11px;
+        }
+      }
+    }
+
+    &-items,
+    &-items-placeholder {
+      display: block;
+      background-color: var(--secondaryColor5);
+      border: solid 1px var(--secondaryColor3);
+      left: 270px;
+      position: absolute;
+      top: -18px;
+      z-index: @z-index-overlays;
+      width: 0;
+      word-break: keep-all;
+      overflow: hidden;
+      padding: @grid-gap (@grid-gap / 2);
+      visibility: hidden;
+
+      .NavigationLink {
+        color: var(--primaryTextColor);
+        padding: 15px (@grid-gap / 2);
+
+        &:hover {
+          background-color: var(--secondaryColor4);
+        }
+      }
+    }
+
+    &-more {
+      cursor: pointer;
+      padding-right: 0;
+
+      svg {
+        top: -2px;
+        transform: rotate(0deg);
+
+        [data-item-hover='true'] &,
+        [data-item-click='true'] & {
+          top: -2px;
+          transform: rotate(0deg);
+        }
+      }
+    }
+  }
+}

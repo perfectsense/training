@@ -1,0 +1,11 @@
+{
+  "_wrapper": "/_wrapper.previewAtomic.json",
+  "_template": "/core/list/ListLoadMore.hbs",
+  "title": "videos",
+  "items": [
+    {
+      "_include": "/core/promo/PromoB.json",
+      "_repeat": 6
+    }
+  ]
+}

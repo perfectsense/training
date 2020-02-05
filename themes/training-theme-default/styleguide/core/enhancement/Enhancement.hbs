@@ -1,0 +1,9 @@
+{{~#with item~}}
+    {{~#if ../inline~}}
+        {{this}}
+    {{~else~}}
+        <div class="Enhancement" {{#if ../enhancementAlignment}} data-{{../enhancementAlignment}}{{else}}data-align-center{{/if}}>
+            <div class="Enhancement-item">{{this}}</div>
+        </div>
+    {{~/if~}}
+{{~/with~}}

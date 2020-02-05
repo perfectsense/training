@@ -1,0 +1,12 @@
+<button class="FollowButton"
+    {{~#with type}} data-type="{{this}}"{{/with~}}
+    {{~#with state}} data-state="{{this}}"{{/with~}}
+    {{~#with endpoint}}data-url="{{this}}"{{/with~}}
+    {{~#with authenticationUrl}}data-auth-url="{{this}}"{{/with~}}
+    {{~#with target}}data-target="{{this}}"{{/with~}}>
+    {{#with count}}
+        <span class="FollowButton-count">{{this}}</span>
+    {{/with}}
+    <span class="FollowButton-icon"></span>
+    <span class="FollowButton-label">{{format "/community/follow/FollowButton" "buttonLabel"}}</span>
+</button>

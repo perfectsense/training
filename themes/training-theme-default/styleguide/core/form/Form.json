@@ -1,0 +1,16 @@
+{
+  "_template": "/core/form/Form.hbs",
+
+  "title": "Generic Form",
+
+  "items": [
+      {
+          "_template": "/core/form/input/TextInput.hbs",
+
+          "inputName": "text",
+          "label": "Text",
+          "placeholder": "Text Input",
+          "required": true
+      }
+  ]
+}

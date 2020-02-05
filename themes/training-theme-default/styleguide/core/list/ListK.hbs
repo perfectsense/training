@@ -1,0 +1,25 @@
+{{#if items}}
+    <div class="ListK"{{include "/core/list/List-attributes.hbs" this}}>
+        {{#with items}}
+            {{#each this}}
+                {{#if @first}}
+                    {{include "/core/promo/PromoF.hbs" this}}
+                {{/if}}
+            {{/each}}
+        {{/with}}
+
+        {{include "/core/list/List-header.hbs" this className="ListK"}}
+
+        {{#with items}}
+            <ul class="ListK-items">
+                {{#each this}}
+                    {{#unless @first}}
+                        <li class="ListK-items-item">
+                            {{include "/core/promo/PromoLink.hbs" this}}
+                        </li>
+                    {{/unless}}
+                {{/each}}
+            </ul>
+        {{/with}}
+    </div>
+{{else}}{{~noResultsModule~}}{{/if}}

@@ -1,0 +1,16 @@
+{
+  "_wrapper": "/_wrapper.previewAtomic.json",
+  "_template": "/core/list/ListG.hbs",
+  "title": "Full Width Container",
+  "items": [
+    {
+      "_include": "/core/promo/PromoC.json"
+    },
+    {
+      "_include": "/core/promo/PromoB.json"
+    },
+    {
+      "_include": "/core/promo/PromoB.json"
+    }
+  ]
+}

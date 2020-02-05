@@ -1,0 +1,7 @@
+{
+  "_template": "Image.hbs",
+  "alt": "{{words}}",
+  "image": {
+    "_image": true
+  }
+}

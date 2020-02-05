@@ -1,0 +1,8 @@
+{
+  "_template": "UnauthenticatedNavigationItem.hbs",
+  "items": {
+    "_include": "/core/navigation/NavigationLink.json"
+  },
+  "iconUrl": "https://example.com/url/to/icon",
+  "_hidden": true
+}

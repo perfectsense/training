@@ -1,6 +1,0 @@
-{
-  "_include": "PromoImageOnTop.json",
-  "_template": "/core/promo/Promo.hbs",
-  "_styledTemplate": "/core/promo/PromoImageOnTop-2x1.hbs",
-  "_hidden": false
-}

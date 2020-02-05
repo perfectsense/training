@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html ⚡ class="EmployeePage" lang="{{#with language}}{{this}}{{else}}en{{/with}}" itemscope itemtype="http://schema.org/WebPage">
+    <head>
+        {{include "/core/page/Page-charset.hbs" this}}
+        {{include "/core/page/Page-webFontLink.amp.hbs" this}}
+        {{include "/core/page/Page-styles.amp.hbs" this}}
+        {{include "/core/page/Page-jsonLinkedData.hbs" this}}
+        <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+        {{include "/core/page/Page-title.hbs" this}}
+        {{include "/core/page/Page-description.hbs" this}}
+        {{include "/core/page/Page-keywords.hbs" this}}
+        {{include "/core/page/Page-canonicalLink.hbs" this}}
+        {{include "/core/page/Page-meta.hbs" this}}
+        {{include "/core/page/Page-favicons.hbs" this}}
+        {{include "/core/page/Page-manifestLink.hbs" this}}
+        <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1">
+        <script async src="https://cdn.ampproject.org/v0.js"></script>
+        {{include "/core/page/Page-ampJs.amp.hbs" this}}
+        {{#if searchAction}}
+            <script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script>
+        {{/if}}
+    </head>
+    <body class="EmployeePage-body"{{~#each extraBodyAttributes}} {{this}}{{~/each~}}>
+        <header class="EmployeePage-header" itemscope itemtype="http://schema.org/WPHeader">
+            {{#with hat}}
+                <div class="EmployeePage-hat">{{this}}</div>
+            {{/with}}
+            {{include "/core/page/Page-logo.amp.hbs" this}}
+            {{include "/core/page/Page-navigation.amp.hbs" this}}
+            {{include "/core/page/Page-social.hbs" this}}
+            {{#if searchAction}}
+                <form class="EmployeePage-search" action="{{searchAction}}" novalidate="" autocomplete="off">
+                    <input type="text" class="EmployeePage-searchInput" name="q">
+                    <button type="submit" class="EmployeePage-searchButton">{{format "/core/page/Page" "searchButtonLabel"}}</button>
+                </form>
+            {{/if}}
+        </header>
+        {{#with banner}}
+            <div class="EmployeePage-banner">{{~this~}}</div>
+        {{/with}}
+        {{#with sectionNavigation}}
+            <div class="EmployeePage-sectionNavigation">{{this}}</div>
+        {{/with}}
+        {{#with packageNavigation}}
+            <div class="EmployeePage-packageNavigation">{{this}}</div>
+        {{/with}}
+        {{#with above}}
+            <div class="EmployeePage-above">{{this}}</div>
+        {{/with}}
+        {{#if showPageHeading}}
+            {{#with pageHeading}}
+                <div class="EmployeePage-pageHeading">{{this}}</div>
+            {{/with}}
+        {{/if}}
+        <main class="EmployeePage-main">
+            {{#with breadcrumbs}}
+                <div class="EmployeePage-breadcrumbs">{{this}}</div>
+            {{/with}}
+            <div class="EmployeePage-mainContent" itemscope itemtype="http://schema.org/Employee"{{extraAttributes}}>
+                {{#with name}}
+                    <h1 class="EmployeePage-name" itemprop="name">{{this}}</h1>
+                {{/with}}
+                {{#with jobTitle}}
+                    <div class="EmployeePage-jobTitle" itemprop="jobTitle">{{this}}</div>
+                {{/with}}
+                {{#with email}}
+                    <div class="EmployeePage-email" itemprop="email">{{this}}</div>
+                {{/with}}
+                {{#with groups}}
+                    <div class="EmployeePage-groups" itemprop="groups">{{this}}</div>
+                {{/with}}
+                {{#with image}}
+                    <div class="EmployeePage-image" itemprop="image">{{this}}</div>
+                {{/with}}
+                {{#with shortBiography}}
+                    <div class="EmployeePage-shortBiography">{{this}}</div>
+                {{/with}}
+                {{#with fullBiography}}
+                    <div class="EmployeePage-fullBiography" itemprop="description">{{this}}</div>
+                {{/with}}
+                {{#with links}}
+                    <ul class="EmployeePage-links">
+                        {{#each this}}
+                            <li class="EmployeePage-links-item">{{this}}</li>
+                        {{/each}}
+                    </ul>
+                {{/with}}
+            </div>
+            {{#with tags}}
+                <div class="EmployeePage-tags">
+                    <h2 class="EmployeePage-tags-heading">{{format "/core/page/ContentPage" "tagsHeading"}}</h2>
+                    <div class="EmployeePage-tags-body">{{this}}</div>
+                </div>
+            {{/with}}
+            {{#with countries}}
+                <div class="EmployeePage-countries">
+                    <h2 class="EmployeePage-countries-heading">{{format "/core/page/ContentPage" "countriesHeading"}}</h2>
+                    <div class="EmployeePage-countries-body">{{this}}</div>
+                </div>
+            {{/with}}
+            {{#with brands}}
+                <div class="EmployeePage-brands">
+                    <h2 class="EmployeePage-brands-heading">{{format "/core/page/ContentPage" "brandsHeading"}}</h2>
+                    <div class="EmployeePage-brands-body">{{this}}</div>
+                </div>
+            {{/with}}
+            {{#with products}}
+                <div class="EmployeePage-products">
+                    <h2 class="EmployeePage-products-heading">{{format "/core/page/ContentPage" "productsHeading"}}</h2>
+                    <div class="EmployeePage-products-body">{{this}}</div>
+                </div>
+            {{/with}}
+            {{#with topics}}
+                <div class="EmployeePage-topics">
+                    <h2 class="EmployeePage-topics-heading">{{format "/core/page/ContentPage" "topicsHeading"}}</h2>
+                    <div class="EmployeePage-topics-body">{{this}}</div>
+                </div>
+            {{/with}}
+            {{#with actions}}
+                <div class="EmployeePage-actions">
+                    <h2 class="EmployeePage-actions-heading">{{format "/core/page/ContentPage" "actionsHeading"}}</h2>
+                    <div class="EmployeePage-actions-body">{{this}}</div>
+                </div>
+            {{/with}}
+            {{#with comments}}
+                <div class="EmployeePage-comments">
+                    {{this}}
+                </div>
+            {{/with}}
+        </main>
+        {{#with aside}}
+            <aside class="EmployeePage-aside">{{this}}</aside>
+        {{/with}}
+        {{#with below}}
+            <div class="EmployeePage-below">{{this}}</div>
+        {{/with}}
+        <footer class="EmployeePage-footer" itemscope itemtype="https://schema.org/WPFooter">
+            {{include "/core/page/Page-logo.amp.hbs" this}}
+            {{include "/core/page/Page-navigation.amp.hbs" this}}
+            {{include "/core/page/Page-social.hbs" this}}
+            {{#with disclaimer}}
+                <div class="EmployeePage-disclaimer">{{this}}</div>
+            {{/with}}
+        </footer>
+        {{include "/core/page/Page-ampIntegrations.amp.hbs" this}}
+        {{include "/core/page/Page-ampAnalytics.amp.hbs" this}}
+    </body>
+</html>

@@ -28,6 +28,14 @@
     "twitterSharing": {
       "width": 1200,
       "height": 675
+    },
+    "nativeSquare": {
+      "width": 380,
+      "height": 380
+    },
+    "nativeLandscape": {
+      "width": 740,
+      "height": 400
     }
   },
   "_hidden": true

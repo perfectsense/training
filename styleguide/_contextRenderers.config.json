@@ -1,3 +1,15 @@
 {
+  "_resolved": {
+    "/core/promo/Promo.native.hbs": [
+      "/core/promo/AuthorPromo.native.hbs",
+      "/core/promo/PromoImageLeft.native.hbs",
+      "/core/promo/PromoImageTop.native.hbs"
+    ]
+  },
+  "_unresolved": {
+    "/core/promo/Promo.native.hbs": [
+      "promoType"
+    ]
+  },
   "_hidden": true
 }

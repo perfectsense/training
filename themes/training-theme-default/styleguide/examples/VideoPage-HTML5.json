@@ -1,0 +1,33 @@
+{
+  "_include": "/examples/VideoPage-noPlaylist.json",
+
+  "title": "HTML5 Video Page",
+
+  "player": {
+    "_include": "/core/video/HTML5VideoPlayer.json",
+    "autoplay": true
+  },
+
+  "aside": null,
+
+  "playlist": [
+    {
+      "_include": "/core/video/PlayListItem.json",
+      "url": "/examples/VideoPage-HTML5.html"
+    },
+    {
+      "_include": "/core/video/PlayListItem.json",
+      "url": "/examples/VideoPage-Brightcove.html"
+    },
+    {
+      "_include": "/core/video/PlayListItem.json",
+      "url": "/examples/VideoPage-YouTube.html"
+    },
+    {
+      "_include": "/core/video/PlayListItem.json",
+      "url": "/examples/VideoPage-Vimeo.html",
+      "_repeat": 10
+    }
+  ],
+  "kicker": "{{words(1)}}"
+}

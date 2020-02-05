@@ -1,0 +1,13 @@
+<div class="Carousel">
+    {{#with title}}
+        <div class="Carousel-title">{{this}}</div>
+    {{/with}}
+    <amp-carousel
+        width="{{#with image.width}}{{this}}{{else}}300{{/with}}"
+        height="{{#with image.height}}{{this}}{{else}}200{{/with}}"
+        layout="fixed"
+        {{#if controls}}controls{{/if}}
+        type="slides">
+        {{#each slides}}{{this}}{{/each}}
+    </amp-carousel>
+</div>

@@ -1,0 +1,12 @@
+{
+  "_template": "NativeApp.hbs",
+  "screens": [
+    {
+      "_include": "/bn/onboarding/OnboardingPage.json"
+    },
+    {
+      "_include": "/core/navigation/Navigation.json"
+    }
+  ],
+  "_hidden": true
+}

@@ -1,14 +1,8 @@
 {
   "_template": "RichTextModule.hbs",
-  "items": [
-    "{{paragraphs([ 2, 5 ])}}",
-    {
-      "_template": "../enhancement/Enhancement.hbs",
-      "item": {
-        "_include": "../figure/Figure.json"
-      }
-    },
-    "{{paragraphs([ 2, 5 ])}}"
-  ],
-  "_hidden": false
+  "items": {
+    "_include": "/_group/RichText.json",
+    "_key": 0
+  },
+  "_hidden": true
 }

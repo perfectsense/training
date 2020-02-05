@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html class="BrandTaxonomyPage" lang="{{#with language}}{{this}}{{else}}en{{/with}}" itemscope itemtype="http://schema.org/WebPage">
+    {{include "/core/page/Page-head.hbs" this}}
+    <body class="BrandTaxonomyPage-body"{{~#each extraBodyAttributes}} {{this}}{{~/each~}}>
+        <header class="BrandTaxonomyPage-header" itemscope itemtype="http://schema.org/WPHeader">
+            {{#with hat}}
+                <div class="BrandTaxonomyPage-hat">{{this}}</div>
+            {{/with}}
+            {{#with logo}}
+                <div class="BrandTaxonomyPage-logo">{{this}}</div>
+            {{/with}}
+            {{#with navigation}}
+                <div class="BrandTaxonomyPage-navigation">{{this}}</div>
+            {{/with}}
+            {{include "/core/page/Page-social.hbs" this}}
+            {{#if searchAction}}
+                <form class="BrandTaxonomyPage-search" action="{{searchAction}}" novalidate="" autocomplete="off">
+                    <input type="text" class="BrandTaxonomyPage-searchInput" name="q">
+                    <button type="submit" class="BrandTaxonomyPage-searchButton">{{format "/core/page/Page" "searchButtonLabel"}}</button>
+                </form>
+            {{/if}}
+        </header>
+        {{#with banner}}
+            <div class="BrandTaxonomyPage-banner">{{~this~}}</div>
+        {{/with}}
+        {{#with sectionNavigation}}
+            <div class="BrandTaxonomyPage-sectionNavigation">{{this}}</div>
+        {{/with}}
+        {{#with packageNavigation}}
+            <div class="BrandTaxonomyPage-packageNavigation">{{this}}</div>
+        {{/with}}
+        {{#with above}}
+            <div class="BrandTaxonomyPage-above">{{this}}</div>
+        {{/with}}
+        <main class="BrandTaxonomyPage-main">
+            {{#with pageHeading}}
+                <h1 class="BrandTaxonomyPage-pageHeading">{{this}}</h1>
+            {{/with}}
+            {{#with taxonomySynonyms}}
+                <div class="BrandTaxonomyPage-taxonomySynonyms">
+                    {{~#each this~}}
+                        <span class="BrandTaxonomyPage-taxonomySynonyms-synonym"> {{~this~}}</span>
+                        {{~#unless @last}}, {{/unless~}}
+                    {{~/each~}}
+                </div>
+            {{/with}}
+            {{#with taxonomyDefinition}}
+                <p class="BrandTaxonomyPage-taxonomyDefinition">{{this}}</p>
+            {{/with}}
+            {{#with fullDescription}}
+                <div class="BrandTaxonomyPage-fullDescription" itemprop="description" itemscope itemtype="https://schema.org/description">{{this}}</div>
+            {{/with}}
+            {{#with pageLead}}
+                <div class="BrandTaxonomyPage-pageLead">{{this}}</div>
+            {{/with}}
+            {{#with taxonomyContent}}
+                <section class="BrandTaxonomyPage-taxonomyContent">
+                    {{#each this}}
+                        {{this}}
+                    {{/each}}
+                </section>
+            {{/with}}
+            {{#with taxonomyProducts}}
+                <h4 class="BrandTaxonomyPage-taxonomyProducts-title">{{format "/corporate/brand/BrandPage" "productsHeading"}}</h4>
+                <div class="BrandTaxonomyPage-taxonomyProducts">
+                    {{#each this}}
+                        {{this}}
+                    {{/each}}
+                </div>
+            {{/with}}
+        </main>
+        {{#with aside}}
+            <aside class="BrandTaxonomyPage-aside">{{this}}</aside>
+        {{/with}}
+        {{#with below}}
+            <div class="BrandTaxonomyPage-below">{{this}}</div>
+        {{/with}}
+        <footer class="BrandTaxonomyPage-footer" itemscope itemtype="https://schema.org/WPFooter">
+            {{#with footerLogo}}
+                <div class="BrandTaxonomyPage-footerLogo">{{this}}</div>
+            {{/with}}
+            {{#with footerNavigation}}
+                <div class="BrandTaxonomyPage-footerNavigation">{{this}}</div>
+            {{/with}}
+            {{#with footerContent}}
+                <div class="BrandTaxonomyPage-footerContent">{{this}}</div>
+            {{/with}}
+            {{include "/core/page/Page-social.hbs" this}}
+            {{#with disclaimer}}
+                <div class="BrandTaxonomyPage-disclaimer">{{this}}</div>
+            {{/with}}
+        </footer>
+        {{include "/core/page/Page-extraBodyItems.hbs" this}}
+    </body>
+</html>

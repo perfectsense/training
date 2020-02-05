@@ -1,0 +1,12 @@
+{{! bug with #or for now so we get this syntax }}
+{{#if tags}}
+<div class="{{#if className}}{{className}}{{else}}ContentPage{{/if}}-tags">
+    {{~#if breadcrumbs~}}{{#each breadcrumbs}}{{#if @last}}{{this}}{{/if}}{{/each}}{{~/if~}}{{~tags~}}
+</div>
+{{else}}
+    {{#if breadcrumbs}}
+    <div class="{{#if className}}{{className}}{{else}}ContentPage{{/if}}-tags">
+        {{#each breadcrumbs}}{{#if @last}}{{this}}{{/if}}{{/each}}
+    </div>
+    {{/if}}
+{{/if}}

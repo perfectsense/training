@@ -2,6 +2,10 @@
   "imageSizeContexts": {
     "/core/gallery/GalleryPage.hbs": {
       "authorImage": "tiny"
+    },
+    "/core/gallery/GalleryPage.amp.hbs": {
+      "authorImage": "tiny",
+      "image": "small"
     }
   },
   "_hidden": true

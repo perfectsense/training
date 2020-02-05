@@ -1,0 +1,53 @@
+{
+  "_wrapper": false,
+  "_template": "/corporate/syndication/SyndicatedPage.hbs",
+  "language": "",
+  "charset": "",
+  "extraStyles": {
+    "_include": "/_group/ExtraStyles.json",
+    "_key": 0
+  },
+  "viewport": "width=device-width, initial-scale=1",
+  "meta": {
+    "_include": "/_group/Metas.json",
+    "_key": 0
+  },
+  "manifestLink": "/manifest.json",
+  "favicons": {
+    "_include": "/core/page/Favicon.json"
+  },
+  "extraScripts": {
+    "_include": "/_group/ExtraScripts.json",
+    "_key": 0
+  },
+  "extraBodyAttributes": {
+    "_include": "/_group/ExtraBodyAttributes.json",
+    "_key": 0
+  },
+  "extraBodyItems": {
+    "_include": "/_group/ExtraBodyItems.json",
+    "_key": 0
+  },
+  "hat": {
+    "_include": "/core/page/PageHeaderTextHat.json"
+  },
+  "logo": {
+    "_include": "/core/page/PageLogo.json"
+  },
+  "navigation": {
+    "_include": "/core/navigation/Navigation.json"
+  },
+  "searchAction": "#",
+  "footerNavigation": {
+    "_include": "/core/navigation/Navigation.json"
+  },
+  "footerContent": {
+    "_include": "/_group/Modules.json",
+    "_key": 0
+  },
+  "disclaimer": "Copyright 2017 Perfect Sense.",
+  "syndicateHeader": true,
+  "syndicateFooter": true,
+  "syndicatePage": true,
+  "_hidden": true
+}

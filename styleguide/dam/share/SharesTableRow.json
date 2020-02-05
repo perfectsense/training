@@ -1,0 +1,12 @@
+{
+  "_template": "SharesTableRow.hbs",
+  "_include": "/core/promo/Promo.json",
+  "date": "2017/10/13",
+  "title": "Title",
+  "emails": {
+    "_include": "ShareEmail.json"
+  },
+  "description": "Description",
+  "button": "Share Again",
+  "_hidden": true
+}

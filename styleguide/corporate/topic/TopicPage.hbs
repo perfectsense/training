@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html class="TopicTaxonomyPage" lang="{{#with language}}{{this}}{{else}}en{{/with}}" itemscope itemtype="http://schema.org/WebPage">
+    {{include "/core/page/Page-head.hbs" this}}
+    <body class="TopicTaxonomyPage-body"{{~#each extraBodyAttributes}} {{this}}{{~/each~}}>
+        <header class="TopicTaxonomyPage-header" itemscope itemtype="http://schema.org/WPHeader">
+            {{#with hat}}
+                <div class="TopicTaxonomyPage-hat">{{this}}</div>
+            {{/with}}
+            {{#with logo}}
+                <div class="TopicTaxonomyPage-logo">{{this}}</div>
+            {{/with}}
+            {{#with navigation}}
+                <div class="TopicTaxonomyPage-navigation">{{this}}</div>
+            {{/with}}
+            {{include "/core/page/Page-social.hbs" this}}
+            {{#if searchAction}}
+                <form class="TopicTaxonomyPage-search" action="{{searchAction}}" novalidate="" autocomplete="off">
+                    <input type="text" class="TopicTaxonomyPage-searchInput" name="q">
+                    <button type="submit" class="TopicTaxonomyPage-searchButton">{{format "/core/page/Page" "searchButtonLabel"}}</button>
+                </form>
+            {{/if}}
+        </header>
+        {{#with banner}}
+            <div class="TopicTaxonomyPage-banner">{{~this~}}</div>
+        {{/with}}
+        {{#with sectionNavigation}}
+            <div class="TopicTaxonomyPage-sectionNavigation">{{this}}</div>
+        {{/with}}
+        {{#with packageNavigation}}
+            <div class="TopicTaxonomyPage-packageNavigation">{{this}}</div>
+        {{/with}}
+        {{#with above}}
+            <div class="TopicTaxonomyPage-above">{{this}}</div>
+        {{/with}}
+        <main class="TopicTaxonomyPage-main">
+            {{#with pageHeading}}
+                <h1 class="TopicTaxonomyPage-pageHeading">{{this}}</h1>
+            {{/with}}
+            {{#with taxonomySynonyms}}
+                <div class="TopicTaxonomyPage-taxonomySynonyms">
+                    {{~#each this~}}
+                        <span class="TopicTaxonomyPage-taxonomySynonyms-synonym"> {{~this~}}</span>
+                        {{~#unless @last}}, {{/unless~}}
+                    {{~/each~}}
+                </div>
+            {{/with}}
+            {{#with taxonomyDefinition}}
+                <p class="TopicTaxonomyPage-taxonomyDefinition">{{this}}</p>
+            {{/with}}
+            {{#with fullDescription}}
+                <div class="TopicTaxonomyPage-fullDescription" itemprop="description" itemscope itemtype="https://schema.org/description">{{this}}</div>
+            {{/with}}
+            {{#with pageLead}}
+                <div class="TopicTaxonomyPage-pageLead">{{this}}</div>
+            {{/with}}
+            {{#with taxonomyContent}}
+                <section class="TopicTaxonomyPage-taxonomyContent">
+                    {{#each this}}
+                        {{this}}
+                    {{/each}}
+                </section>
+            {{/with}}
+        </main>
+        {{#with aside}}
+            <aside class="TopicTaxonomyPage-aside">{{this}}</aside>
+        {{/with}}
+        {{#with below}}
+            <div class="TopicTaxonomyPage-below">{{this}}</div>
+        {{/with}}
+        <footer class="TopicTaxonomyPage-footer" itemscope itemtype="https://schema.org/WPFooter">
+            {{#with footerLogo}}
+                <div class="TopicTaxonomyPage-footerLogo">{{this}}</div>
+            {{/with}}
+            {{#with footerNavigation}}
+                <div class="TopicTaxonomyPage-footerNavigation">{{this}}</div>
+            {{/with}}
+            {{#with footerContent}}
+                <div class="TopicTaxonomyPage-footerContent">{{this}}</div>
+            {{/with}}
+            {{include "/core/page/Page-social.hbs" this}}
+            {{#with disclaimer}}
+                <div class="TopicTaxonomyPage-disclaimer">{{this}}</div>
+            {{/with}}
+        </footer>
+        {{include "/core/page/Page-extraBodyItems.hbs" this}}
+    </body>
+</html>

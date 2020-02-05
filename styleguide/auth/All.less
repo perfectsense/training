@@ -1,0 +1,43 @@
+.LoginForm,
+.ForgotPasswordForm,
+.ResetPasswordForm,
+.RegistrationForm {
+  border: 1px solid black;
+  display: block;
+  margin: 20px 0;
+  padding: 20px;
+  position: relative;
+
+  &:before {
+    background: black;
+    color: white;
+    content: attr(class);
+    font-size: 50%;
+    left: 0;
+    padding: 2px 4px;
+    position: absolute;
+    text-transform: uppercase;
+    top: 0;
+  }
+
+  & form > * + * { // lesshint universalSelector: false
+    margin-top: 1em;
+  }
+
+  &-helpLinks,
+  &-socialLoginLinks {
+    & .Link:not(:first-child) {
+      margin-left: 12px;
+    }
+  }
+}
+
+.ProfileNavigationItem {
+  &-avatar {
+    border-radius: 100%;
+  }
+}
+
+.UnauthenticatedNavigationItem {
+  &:extend(.Navigation all);
+}

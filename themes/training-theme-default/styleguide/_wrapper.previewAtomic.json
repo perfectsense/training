@@ -1,0 +1,13 @@
+{
+  "_wrapper": false,
+  "_template": "/PreviewPage.hbs",
+  "title": "Brighspot Theme Falcon Preview Page",
+  "extraScripts": null,
+  "extraStyles": {
+    "_template": "/core/page/ExternalStyle.hbs",
+    "href": "/styleguide/PreviewPage.css"
+  },
+  "main": {
+    "_delegate": true
+  }
+}

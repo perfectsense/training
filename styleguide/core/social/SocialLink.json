@@ -1,7 +1,7 @@
 {
   "_template": "SocialLink.hbs",
-  "href": "",
   "body": "",
+  "href": "",
   "socialService": "",
-  "_hidden": false
+  "_hidden": true
 }

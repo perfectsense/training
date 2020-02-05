@@ -1,0 +1,465 @@
+.Page-header {
+  background: var(--headerBgColor);
+  display: block;
+  position: sticky;
+  top: 0;
+  z-index: @z-index-header;
+
+  &-bar {
+    align-items: center;
+    border-bottom: 1px solid var(--headerBorderColor);
+    display: flex;
+    height: 50px;
+    justify-content: space-between;
+    position: relative;
+
+    &-logo {
+      display: none;
+      position: absolute;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      top: 50%;
+      z-index: @z-index-base;
+
+      img {
+        max-height: 35px;
+        width: 150px;
+      }
+    }
+  }
+
+  &-disclaimer {
+    &:extend(.label-3 all);
+    color: var(--primaryTextColor);
+    padding: @grid-gap;
+  }
+
+  &-hamburger-menu {
+    background: var(--headerMenuBgColor);
+    color: var(--headerMenuTextColor);
+    height: 100vh;
+    left: -100%;
+    position: absolute;
+    overflow-y: auto;
+    transition: left 250ms;
+    top: 50px;
+    width: 100%;
+    max-width: 568px;
+    visibility: hidden;
+    z-index: @z-index-overlays;
+
+    [data-toggle-header='hamburger-menu'] & {
+      box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.5);
+      left: 0;
+      visibility: visible;
+    }
+  }
+
+  &-logo {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    z-index: @z-index-base;
+
+    img {
+      max-height: 35px;
+      width: 150px;
+    }
+  }
+
+  &-main-navigation {
+    display: none;
+  }
+
+  &-menu-trigger {
+    align-items: center;
+    background: none;
+    border: 0;
+    color: var(--headerTextColor);
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    flex-shrink: 0;
+    height: 40px;
+    width: 59px;
+    padding: 0 20px; // for a better click area
+    border-radius: 2px;
+
+    &:hover {
+      .label {
+        opacity: 0.8;
+      }
+
+      svg {
+        opacity: 0.8;
+      }
+    }
+
+    .burger-menu,
+    .close-x {
+      fill: var(--headerTextColor);
+    }
+
+    .burger-menu {
+      height: 19px;
+      width: 19px;
+
+      [data-toggle-header='hamburger-menu'] & {
+        display: none;
+      }
+    }
+
+    .close-x {
+      display: none;
+      height: 16px;
+      position: relative;
+
+      [data-toggle-header='hamburger-menu'] & {
+        display: block;
+      }
+    }
+
+    .label {
+      .sr-only;
+    }
+  }
+
+  &-quickLinks {
+    &:extend(.label-4 all);
+
+    display: none;
+    justify-content: center;
+    left: (@grid-gap * 4);
+    list-style: none;
+    position: absolute;
+    top: 22px;
+
+    a {
+      color: var(--headerTextColor);
+      margin: 0 (@grid-gap / 2);
+
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+  }
+
+  &-search {
+    // This is only the button in the header. The seach overlay styles were big enough
+    // to where I pulled them into their own file: Page-header-search.less
+
+    &-button {
+      align-items: center;
+      background: none;
+      border: 0;
+      color: var(--headerTextColor);
+      cursor: pointer;
+      display: flex;
+      height: 40px;
+      justify-content: center;
+      padding: 0 10px;
+
+      &:hover {
+        opacity: 0.8;
+      }
+
+      .icon-magnify {
+        fill: var(--headerTextColor);
+        height: 20px;
+        width: 20px;
+
+        [data-toggle-header='search-overlay'] & {
+          display: none;
+        }
+      }
+
+      .close-x {
+        display: none;
+        fill: var(--headerTextColor);
+        height: 16px;
+        width: 16px;
+
+        [data-toggle-header='search-overlay'] & {
+          display: block;
+        }
+      }
+    }
+
+    &-form {
+      border-bottom: 1px solid var(--headerBorderColor);
+      display: flex;
+      justify-content: center;
+      margin: @grid-gap;
+      max-width: 1200px;
+      padding: 0 0 @grid-gap / 4;
+
+      label {
+        width: 100%;
+      }
+    }
+
+    &-input {
+      &:extend(.SearchInput-input all);
+
+      width: 100%;
+    }
+
+    &-overlay {
+      background-color: var(--headerBgColor);
+      bottom: 0;
+      display: none;
+      left: 0;
+      position: absolute;
+      right: 0;
+      top: 200px;
+      z-index: @z-index-overlays;
+
+      [data-toggle-header='search-overlay'] & {
+        display: block;
+      }
+    }
+
+    &-submit {
+      background: none;
+      border: 0;
+      flex-shrink: 0;
+      padding: 0;
+      width: 40px;
+
+      svg {
+        fill: var(--headerTextColor);
+        height: 25px;
+        width: 25px;
+      }
+    }
+  }
+
+  @media @mq-viewport-md {
+    &-bar {
+      height: 60px;
+    }
+
+    &-hamburger-menu {
+      top: 60px;
+      width: 320px;
+
+      &-auth {
+        padding: @grid-gap;
+      }
+    }
+
+    &-search {
+      &-overlay {
+        bottom: auto;
+        box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.15);
+        height: 100px;
+        top: 60px;
+      }
+
+      &-submit {
+        svg {
+          height: 30px;
+          position: relative;
+          top: 5px;
+          width: 30px;
+        }
+      }
+    }
+  }
+
+  @media @mq-viewport-lg {
+    position: relative;
+
+    [data-header-sticky] & {
+      position: sticky;
+    }
+
+    &-bar {
+      &-logo {
+        [data-header-sticky] & {
+          display: block;
+        }
+      }
+    }
+
+    &-hamburger-menu {
+      background: transparent;
+      max-width: none;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+      top: 200px;
+      width: 100vw;
+      z-index: initial;
+
+      [data-header-sticky] & {
+        top: 60px;
+      }
+
+      &-content {
+        padding-top: @grid-gap - 5px;
+        background-color: var(--siteBgColor);
+      }
+
+      &::-webkit-scrollbar {
+        width: 0px;
+      }
+
+      [data-toggle-header='hamburger-menu'] & {
+        box-shadow: none;
+      }
+
+      &-wrapper {
+        background: var(--headerMenuBgColor);
+        width: 320px;
+        height: 100%;
+      }
+    }
+
+    &-logo {
+      align-items: center;
+      border-bottom: 1px solid var(--headerBorderColor);
+      display: flex;
+      height: 140px;
+      justify-content: center;
+      left: auto;
+      top: auto;
+      transform: initial;
+      position: relative;
+
+      img {
+        max-height: 60px;
+        width: 300px;
+      }
+
+      [data-header-sticky] & {
+        display: none;
+      }
+    }
+
+    &-quickLinks {
+      display: flex;
+
+      [data-header-sticky] & {
+        display: none;
+      }
+    }
+
+    &-search {
+      &-overlay {
+        [data-header-sticky] & {
+          top: 60px;
+        }
+      }
+    }
+  }
+
+  @media @mq-viewport-hk {
+    &-search {
+      &-form {
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+  }
+}
+
+.Page-header--hardcodedSticky {
+  position: sticky;
+
+  &-bar {
+    &-logo {
+      display: block;
+    }
+  }
+
+  &-hamburger-menu {
+    top: 60px;
+  }
+
+  &-logo {
+    display: none;
+  }
+
+  &-quickLinks {
+    display: none;
+  }
+
+  &-search {
+    &-overlay {
+      top: 60px;
+    }
+  }
+}
+
+.Page-header--inverse {
+  background: var(--headerBgColorInverse);
+  border-bottom: 1px solid var(--headerBorderColorInverse);
+
+  &-bar {
+    &-logo {
+      img {
+        filter: invert(100%);
+      }
+    }
+  }
+
+  &-logo {
+    img {
+      filter: invert(100%);
+    }
+  }
+
+  &-menu-trigger {
+    color: var(--headerTextColorInverse);
+
+    .burger-menu,
+    .close-x {
+      fill: var(--headerTextColorInverse);
+    }
+  }
+
+  &-quickLinks {
+    a {
+      color: var(--headerTextColorInverse);
+    }
+  }
+
+  &-search {
+    &-button {
+      color: var(--headerTextColorInverse);
+
+      .close-x {
+        fill: var(--headerTextColorInverse);
+      }
+
+      .icon-magnify {
+        fill: var(--headerTextColorInverse);
+      }
+    }
+
+    &-form {
+      border-bottom: 1px solid var(--headerBorderColorInverse);
+    }
+  }
+
+  @media @mq-viewport-md {
+    &-menu-trigger {
+      border: 1px solid var(--headerBorderColorInverse);
+
+      span {
+        color: var(--headerTextColorInverse);
+      }
+
+      .label {
+        color: var(--headerTextColorInverse);
+      }
+    }
+
+    &-search {
+      &-button {
+        border: 1px solid var(--headerBorderColorInverse);
+      }
+    }
+  }
+}

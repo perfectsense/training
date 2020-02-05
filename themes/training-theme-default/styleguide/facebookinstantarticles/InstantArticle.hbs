@@ -1,0 +1,53 @@
+
+    <html lang="en">
+
+        
+            <head>
+                <meta charset="utf-8">
+                <meta property="op:markup_version" content="v1.0">
+
+                {{#with canonicalUrl}}
+                    <link rel="canonical" href="{{this}}">
+                {{/with}}
+
+                <meta property="fb:article_style" content="default">
+            </head>
+        
+
+        
+            <body>
+                <article>
+                    <header>
+                        {{#with leadFigure}}
+                            {{this}}
+                        {{/with}}
+                        {{#with headline}}
+                            <h1>{{this}}</h1>
+                        {{/with}}
+
+                        {{#with tags}}
+                            <h3 class="op-kicker">{{this}}</h3>
+                        {{/with}}
+
+                        {{#with authors}}
+                            {{this}}
+                        {{/with}}
+
+                        {{#with publishedTimeStamp}}
+                            <time class="op-published" dateTime="{{this}}">{{this}}</time>
+                        {{/with}}
+
+                        {{#with modifiedTimeStamp}}
+                            <time class="op-modified" dateTime="{{this}}">{{this}}</time>
+                        {{/with}}
+                    </header>
+
+                    {{body}}
+
+                    {{#with analyticsScript}}
+                        {{this}}
+                    {{/with}}
+                </article>
+            </body>
+        
+    </html>

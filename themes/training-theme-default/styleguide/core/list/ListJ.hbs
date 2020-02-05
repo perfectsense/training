@@ -1,0 +1,21 @@
+{{#if items}}
+    <ps-list-loadmore class="ListJ"{{include "/core/list/List-attributes.hbs" this}}>
+        {{include "/core/list/List-header.hbs" this className="ListJ"}}
+
+        {{#with items}}
+            <ul class="ListJ-items" data-list-loadmore-items>
+                {{#each this}}
+                <li class="ListJ-items-item">
+                    {{include "/core/promo/PromoA.hbs" this description=null}}
+                </li>
+                {{/each}}
+            </ul>
+        {{/with}}
+
+        {{#with nextPage}}
+            <div class="ListJ-nextPage" data-list-loadmore-pagination>
+                <a class="Link" href="{{this}}" rel="nofollow">{{format "/core/list/List" "loadMoreText"}}</a>
+            </div>
+        {{/with}}
+    </ps-list-loadmore>
+{{else}}{{~noResultsModule~}}{{/if}}

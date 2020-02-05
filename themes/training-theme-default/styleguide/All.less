@@ -1,0 +1,87 @@
+// lesshint selectorNaming: false
+// lesshint universalSelector: false
+
+ @import (inline) '../node_modules/sanitize.css/sanitize.css';
+ @import (inline) '../node_modules/flickity/css/flickity.css';
+
+// ----- Globals. These are items like variables, mixins, typography, etc -----
+@import 'global/All';
+
+ // ----- Global, across themes, base styles -----
+ html {
+     font-size: 62.5%;
+ }
+
+ body,
+ html {
+     height: 100%;
+ }
+
+ blockquote,
+ figure,
+ hr {
+   margin: 0;
+ }
+
+ ul,
+ ol {
+     margin: 0;
+     padding: 0;
+ }
+
+ a {
+     text-decoration: none;
+     color: inherit;
+
+     &:hover {
+         text-decoration: none;
+     }
+ }
+
+ img {
+     display: block;
+     height: auto;
+     max-width: 100%;
+ }
+
+// ----- Base page -----
+@import 'core/page/All';
+
+// ----- Components -----
+@import 'core/action-bar/All';
+@import 'core/banner/All';
+@import 'core/carousel/All';
+@import 'core/container/All';
+@import 'dfp/All';
+@import 'core/enhancement/All';
+@import 'core/figure/All';
+@import 'core/form/All';
+@import 'core/list/All';
+@import 'core/navigation/All';
+@import 'core/promo/All';
+@import 'core/quote/All';
+@import 'core/social/All';
+@import 'core/text/All';
+@import 'core/video/All';
+
+// ----- Content Types including Component overrides -----
+@import 'blog/All';
+@import 'core/article/All';
+@import 'core/author/All';
+@import 'core/gallery/All';
+@import 'core/search/All';
+@import 'core/section/All';
+@import 'core/tag/All';
+
+html {
+  overflow-x: hidden;
+}
+
+body {
+  background: var(--siteBgColor);
+  color: var(--primaryTextColor);
+}
+
+ps-promo {
+  display: block;
+}

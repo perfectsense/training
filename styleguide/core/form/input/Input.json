@@ -1,0 +1,11 @@
+{
+  "_hidden": true,
+  "_template": "Input.hbs",
+  "label": "Input Label",
+  "inputName": "inputName",
+  "inputValue": "Input Value",
+  "errors": [
+    "Field is required"
+  ],
+  "description": "Description of this input"
+}

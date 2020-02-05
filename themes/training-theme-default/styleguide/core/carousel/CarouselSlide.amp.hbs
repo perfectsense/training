@@ -1,0 +1,15 @@
+<div class="CarouselSlide" {{extraAttributes}}>
+        {{#with mediaContent}}
+            {{this}}
+        {{/with}}
+    <div class="CarouselSlide-info">
+        <div class="CarouselSlide-numbers">
+            <span class="CarouselSlide-currentSlide">{{add slideNumber 1}}</span>/<span class="CarouselSlide-slidesLength">{{numberOfSlides}}</span>
+        </div>
+        {{#with infoTitle}}
+            <div class="CarouselSlide-infoTitle">
+                {{~this~}}&nbsp;<span class="CarouselSlide-infoAttribution">({{../infoAttribution}})</span>
+            </div>
+        {{/with}}
+    </div>
+</div>

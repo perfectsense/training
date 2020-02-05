@@ -1,8 +1,14 @@
 [
   {
+    "_include": "/core/container/OneColumnContainer.json"
+  },
+  {
     "_include": "/core/container/TwoColumnContainer.json"
   },
   {
     "_include": "/core/container/ThreeColumnContainer.json"
+  },
+  {
+    "_include": "/core/container/FourColumnContainer.json"
   }
 ]

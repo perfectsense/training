@@ -1,0 +1,8 @@
+<div class="SearchFilterInput">
+{{~include "/core/form/input/CheckboxInput.hbs"
+          label=label
+          checked=selected
+          inputName=parameterName
+          inputValue=parameterValue~}}
+    {{~#with count}}<div class="SearchFilterInput-count">({{this}})</div>{{/with~}}
+</div>

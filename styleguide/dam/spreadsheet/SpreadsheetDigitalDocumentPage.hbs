@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html class="SpreadsheetDigitalDocumentPage" lang="{{#with language}}{{this}}{{else}}en{{/with}}" itemscope itemtype="http://schema.org/WebPage">
+    {{include "/core/page/Page-head.hbs" this}}
+    <body class="SpreadsheetDigitalDocumentPage-body"{{~#each extraBodyAttributes}} {{this}}{{~/each~}}>
+        <header class="SpreadsheetDigitalDocumentPage-header" itemscope itemtype="http://schema.org/WPHeader">
+            {{#with hat}}
+                <div class="SpreadsheetDigitalDocumentPage-hat">{{this}}</div>
+            {{/with}}
+            {{#with logo}}
+                <div class="SpreadsheetDigitalDocumentPage-logo">{{this}}</div>
+            {{/with}}
+            {{#with navigation}}
+                <div class="SpreadsheetDigitalDocumentPage-navigation">{{this}}</div>
+            {{/with}}
+            {{#with social}}
+                <div class="SpreadsheetDigitalDocumentPage-social">{{this}}</div>
+            {{/with}}
+            {{#if searchAction}}
+                <form class="SpreadsheetDigitalDocumentPage-search" action="{{searchAction}}" novalidate="" autocomplete="off">
+                    <input type="text" class="SpreadsheetDigitalDocumentPage-searchInput" name="q">
+                    <button type="submit" class="SpreadsheetDigitalDocumentPage-searchButton">{{format "/core/page/Page" "searchButtonLabel"}}</button>
+                </form>
+            {{/if}}
+        </header>
+        {{#with banner}}
+            <div class="SpreadsheetDigitalDocumentPage-banner">{{~this~}}</div>
+        {{/with}}
+        {{#with sectionNavigation}}
+            <div class="SpreadsheetDigitalDocumentPage-sectionNavigation">{{this}}</div>
+        {{/with}}
+        {{#with packageNavigation}}
+            <div class="SpreadsheetDigitalDocumentPage-packageNavigation">{{this}}</div>
+        {{/with}}
+        {{#with above}}
+            <div class="SpreadsheetDigitalDocumentPage-above">{{this}}</div>
+        {{/with}}
+        <main class="SpreadsheetDigitalDocumentPage-main">
+            {{#with breadcrumbs}}
+                <div class="SpreadsheetDigitalDocumentPage-breadcrumbs">{{this}}</div>
+            {{/with}}
+            <div class="SpreadsheetDigitalDocumentPage-mainContent" itemprop="mainEntity" itemscope itemtype="http://schema.org/SpreadsheetDigitalDocument">
+                {{#with headline}}
+                    <h1 class="SpreadsheetDigitalDocumentPage-headline" itemprop="headline">{{this}}</h1>
+                {{/with}}
+                {{#with subHeadline}}
+                    <div class="SpreadsheetDigitalDocumentPage-subHeadline" itemprop="alternativeHeadline">{{this}}</div>
+                {{/with}}
+                <div class="SpreadsheetDigitalDocumentPage-byline" itemprop="author" itemscope itemtype="http://schema.org/Person">
+                    {{#with authorImage}}
+                        <div class="SpreadsheetDigitalDocumentPage-authorImage" itemprop="image">
+                            {{#with ../authorUrl}}<a href="{{this}}">{{/with}}
+                            <img alt="" src="{{src}}"
+                            {{~#with srcset}} srcset="{{this}}"{{/with~}}
+                            {{~#with width}} width="{{this}}"{{/with~}}
+                            {{~#with height}} height="{{this}}"{{/with~}}
+                        >
+                        {{#with ../authorUrl}}</a>{{/with}}
+                    </div>
+                {{/with}}
+                <div class="SpreadsheetDigitalDocumentPage-authorTexts">
+                    {{#with authorName}}
+                        <div class="SpreadsheetDigitalDocumentPage-authorName" itemprop="name">
+                            {{#with ../authorUrl}}<a href="{{this}}">{{/with}}
+                            {{this}}
+                            {{#with ../authorUrl}}</a>{{/with}}
+                        </div>
+                    {{/with}}
+                    {{#with authorBiography}}
+                        <div class="SpreadsheetDigitalDocumentPage-authorBiography">{{this}}</div>
+                    {{/with}}
+                </div>
+            </div>
+            {{#with contributors}}
+                <div class="SpreadsheetDigitalDocumentPage-contributors">
+                    <h2 class="SpreadsheetDigitalDocumentPage-contributors-heading">{{format "/core/page/CreativeWorkPage" "contributorsHeading"}}</h2>
+                    <div class="SpreadsheetDigitalDocumentPage-contributors-body">
+                        {{~#each this~}}
+                            {{~this~}}
+                            {{~#unless @last}}, {{/unless~}}
+                        {{~/each~}}
+                    </div>
+                </div>
+            {{/with}}
+            {{#with dateExpired}}
+                <div class="SpreadsheetDigitalDocumentPage-dateExpired">{{dateExpired}}</div>
+                {{#with dateExpiredISO}}
+                    <meta itemprop="expires" content="{{this}}">
+                {{/with}}
+            {{/with}}
+            <div class="SpreadsheetDigitalDocumentPage-datePublished">{{datePublished}}</div>
+            {{#with datePublishedISO}}
+                <meta itemprop="datePublished" content="{{this}}">
+            {{/with}}
+            <div class="SpreadsheetDigitalDocumentPage-dateModified">{{dateModified}}</div>
+            {{#with dateModifiedISO}}
+                <meta itemprop="dateModified" content="{{this}}">
+            {{/with}}
+            {{#with media}}
+                <div class="SpreadsheetDigitalDocumentPage-media">
+                    {{this}}
+                </div>
+            {{/with}}
+            {{#with status}}
+                <div class="SpreadsheetDigitalDocumentPage-status">{{this}}</div>
+            {{/with}}
+            <aside class="SpreadsheetDigitalDocumentPage-documentProperties">
+                {{#with collections}}
+                    <div class="SpreadsheetDigitalDocumentPage-collections">
+                        <h4 class="SpreadsheetDigitalDocumentPage-collections-heading">{{format "/dam/document/DigitalDocumentPage" "collectionsHeading"}}</h4>
+                        <div class="SpreadsheetDigitalDocumentPage-collections-body">
+                            {{~#each this~}}
+                                {{~this~}}
+                                {{~#unless @last}}, {{/unless~}}
+                            {{~/each~}}
+                        </div>
+                    </div>
+                {{/with}}
+                {{#with fileFormat}}
+                    <div class="SpreadsheetDigitalDocumentPage-fileFormat">
+                        <h4 class="SpreadsheetDigitalDocumentPage-fileFormat-heading">{{format "/dam/document/DigitalDocumentPage" "fileFormatHeading"}}</h4>
+                        <div class="SpreadsheetDigitalDocumentPage-fileFormat-body" itemprop="encodingFormat">{{this}}</div>
+                    </div>
+                {{/with}}
+                {{#with fileSize}}
+                    <div class="SpreadsheetDigitalDocumentPage-fileSize">
+                        <h4 class="SpreadsheetDigitalDocumentPage-fileSize-heading">{{format "/dam/document/DigitalDocumentPage" "fileSizeHeading"}}</h4>
+                        <div class="SpreadsheetDigitalDocumentPage-fileSize-body" itemprop="contentSize">{{this}}</div>
+                    </div>
+                {{/with}}
+                {{#with fileUrl}}
+                    <div class="SpreadsheetDigitalDocumentPage-fileUrl">
+                        <h4 class="SpreadsheetDigitalDocumentPage-fileUrl-heading">{{format "/dam/document/DigitalDocumentPage" "fileUrlHeading"}}</h4>
+                        <div class="SpreadsheetDigitalDocumentPage-fileUrl-body" itemprop="contentUrl">{{this}}</div>
+                    </div>
+                {{/with}}
+                {{#with embedUrl}}
+                    <div class="SpreadsheetDigitalDocumentPage-embedUrl">
+                        <h4 class="SpreadsheetDigitalDocumentPage-embedUrl-heading">{{format "/dam/document/DigitalDocumentPage" "embedUrlHeading"}}</h4>
+                        <div class="SpreadsheetDigitalDocumentPage-embedUrl-body" itemprop="embedUrl">{{this}}</div>
+                    </div>
+                {{/with}}
+            </aside>
+        </div>
+        {{#with tags}}
+            <div class="SpreadsheetDigitalDocumentPage-tags">
+                <h2 class="SpreadsheetDigitalDocumentPage-tags-heading">{{format "/core/page/ContentPage" "tagsHeading"}}</h2>
+                <div class="SpreadsheetDigitalDocumentPage-tags-body">{{this}}</div>
+            </div>
+        {{/with}}
+        {{#with countries}}
+            <div class="SpreadsheetDigitalDocumentPage-countries">
+                <h2 class="SpreadsheetDigitalDocumentPage-countries-heading">{{format "/core/page/ContentPage" "countriesHeading"}}</h2>
+                <div class="SpreadsheetDigitalDocumentPage-countries-body">{{this}}</div>
+            </div>
+        {{/with}}
+        {{#with brands}}
+            <div class="SpreadsheetDigitalDocumentPage-brands">
+                <h2 class="SpreadsheetDigitalDocumentPage-brands-heading">{{format "/core/page/ContentPage" "brandsHeading"}}</h2>
+                <div class="SpreadsheetDigitalDocumentPage-brands-body">{{this}}</div>
+            </div>
+        {{/with}}
+        {{#with products}}
+            <div class="SpreadsheetDigitalDocumentPage-products">
+                <h2 class="SpreadsheetDigitalDocumentPage-products-heading">{{format "/core/page/ContentPage" "productsHeading"}}</h2>
+                <div class="SpreadsheetDigitalDocumentPage-products-body">{{this}}</div>
+            </div>
+        {{/with}}
+        {{#with topics}}
+            <div class="SpreadsheetDigitalDocumentPage-topics">
+                <h2 class="SpreadsheetDigitalDocumentPage-topics-heading">{{format "/core/page/ContentPage" "topicsHeading"}}</h2>
+                <div class="SpreadsheetDigitalDocumentPage-topics-body">{{this}}</div>
+            </div>
+        {{/with}}
+        {{#with actions}}
+            <div class="SpreadsheetDigitalDocumentPage-actions">
+                <h2 class="SpreadsheetDigitalDocumentPage-actions-heading">{{format "/core/page/ContentPage" "actionsHeading"}}</h2>
+                <div class="SpreadsheetDigitalDocumentPage-actions-body">{{this}}</div>
+            </div>
+        {{/with}}
+        {{#with comments}}
+            <div class="SpreadsheetDigitalDocumentPage-comments">
+                {{this}}
+            </div>
+        {{/with}}
+    </main>
+    {{#with aside}}
+        <aside class="SpreadsheetDigitalDocumentPage-aside">{{this}}</aside>
+    {{/with}}
+    {{#with below}}
+        <div class="SpreadsheetDigitalDocumentPage-below">{{this}}</div>
+    {{/with}}
+    <footer class="SpreadsheetDigitalDocumentPage-footer" itemscope itemtype="https://schema.org/WPFooter">
+        {{#with footerLogo}}
+            <div class="SpreadsheetDigitalDocumentPage-footerLogo">{{this}}</div>
+        {{/with}}
+        {{#with footerNavigation}}
+            <div class="SpreadsheetDigitalDocumentPage-footerNavigation">{{this}}</div>
+        {{/with}}
+        {{#with footerContent}}
+            <div class="SpreadsheetDigitalDocumentPage-footerContent">{{this}}</div>
+        {{/with}}
+        {{#with social}}
+            <div class="SpreadsheetDigitalDocumentPage-social">{{this}}</div>
+        {{/with}}
+        {{#with disclaimer}}
+            <div class="SpreadsheetDigitalDocumentPage-disclaimer">{{this}}</div>
+        {{/with}}
+    </footer>
+    {{include "/core/page/Page-extraBodyItems.hbs" this}}
+</body>
+</html>

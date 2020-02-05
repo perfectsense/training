@@ -1,0 +1,68 @@
+.Form, .Fieldset {
+    &-items {
+
+        &-item {
+            margin-top: 20px;
+        }
+    }
+}
+
+.CheckboxInput,
+.EmailInput,
+.FileInput,
+.Input,
+.PasswordInput,
+.RadioInput,
+.TextArea,
+.TextInput {
+
+    &-label {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &-errors {
+        color: red;
+    }
+
+    &-description {
+        color: grey;
+    }
+
+    &-input {
+        transition: outline 0.3s ease;
+    }
+
+    &[data-error] {
+
+        &:before {
+            content: attr(data-error-message);
+            color: red;
+        }
+
+        [class$='-input'] {
+            outline: red auto 5px;
+        }
+    }
+
+    &[data-valid] {
+        [class$='-input'] {
+            outline: green auto 5px;
+        }
+    }
+}
+
+.CaptchaInput {
+
+    &-error {
+        outline: red auto 5px;
+    }
+
+    &-errors {
+        color: red;
+    }
+}
+
+.TextArea-input {
+    resize: none;
+}

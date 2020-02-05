@@ -1,9 +1,9 @@
 {
   "_template": "TwitterTweetButton.hbs",
-  "url": "http://brightspot.com",
+  "url": "https://brightspot.com",
   "via": "brightspotcms",
   "hashtags": "cms, web",
-  "text": "{{words(5)}}",
+  "text": "Text",
   "body": "Tweet",
-  "_hidden": false
+  "_hidden": true
 }

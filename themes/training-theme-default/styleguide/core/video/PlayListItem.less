@@ -1,0 +1,74 @@
+.PlayListItem {
+  cursor: pointer;
+  border-bottom: solid 1px var(--secondaryColor3);
+  border-top: 3px solid transparent;
+  display: flex;
+  padding: @grid-gap;
+
+  &[data-current-item='true'] {
+    background: var(--secondaryColor5);
+    border-top: 3px solid var(--primaryColor1);
+    cursor: default;
+
+    .PlayListItem-media {
+      &-image:after,
+      &-image:before {
+        display: none;
+      }
+
+      &-current {
+        display: block;
+      }
+    }
+  }
+
+  &:last-of-type {
+    border-bottom: 0;
+  }
+
+  &-content {
+    order: 2;
+  }
+
+  &-duration {
+    &:extend(.label-1);
+
+    margin-top: (@grid-gap / 2);
+  }
+
+  &-media {
+    flex-shrink: 0;
+    margin: 0 @grid-gap 0 0;
+    max-width: 180px;
+    order: 1;
+    width: 36%;
+
+    &-current {
+      &:extend(.label-1 all);
+
+      background: var(--primaryColor1);
+      border: solid 1px var(--secondaryColor5);
+      bottom: 10px;
+      color: var(--primaryTextColorInverse);
+      display: none;
+      left: 10px;
+      padding: 10px 10px 6px;
+      position: absolute;
+      text-transform: none;
+      top: auto;
+    }
+
+    &-image {
+      display: block;
+      position: relative;
+    }
+  }
+
+  &-status {
+    display: none;
+  }
+
+  &-title {
+    &:extend(.title-6 all);
+  }
+}

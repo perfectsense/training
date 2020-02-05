@@ -1,0 +1,6 @@
+{
+  "_include": "Input.json",
+  "_template": "RadioInput.hbs",
+  "checked": false,
+  "_hidden": true
+}

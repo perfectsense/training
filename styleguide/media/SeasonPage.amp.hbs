@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html ⚡ class="SeasonPage" lang="{{#with language}}{{this}}{{else}}en{{/with}}" itemscope itemtype="http://schema.org/WebPage">
+    <head>
+        {{include "/core/page/Page-charset.hbs" this}}
+        {{include "/core/page/Page-webFontLink.amp.hbs" this}}
+        {{include "/core/page/Page-styles.amp.hbs" this}}
+        {{include "/core/page/Page-jsonLinkedData.hbs" this}}
+        <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+        {{include "/core/page/Page-title.hbs" this}}
+        {{include "/core/page/Page-description.hbs" this}}
+        {{include "/core/page/Page-keywords.hbs" this}}
+        {{include "/core/page/Page-canonicalLink.hbs" this}}
+        {{include "/core/page/Page-meta.hbs" this}}
+        {{include "/core/page/Page-favicons.hbs" this}}
+        {{include "/core/page/Page-manifestLink.hbs" this}}
+        <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1">
+        <script async src="https://cdn.ampproject.org/v0.js"></script>
+        {{include "/core/page/Page-ampJs.amp.hbs" this}}
+        {{#if searchAction}}
+            <script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script>
+        {{/if}}
+    </head>
+    <body class="SeasonPage-body"{{~#each extraBodyAttributes}} {{this}}{{~/each~}}>
+        <header class="SeasonPage-header" itemscope itemtype="http://schema.org/WPHeader">
+            {{#with hat}}
+                <div class="SeasonPage-hat">{{this}}</div>
+            {{/with}}
+            {{include "/core/page/Page-logo.amp.hbs" this}}
+            {{include "/core/page/Page-navigation.amp.hbs" this}}
+            {{include "/core/page/Page-social.hbs" this}}
+            {{#if searchAction}}
+                <form class="SeasonPage-search" action="{{searchAction}}" novalidate="" autocomplete="off">
+                    <input type="text" class="SeasonPage-searchInput" name="q">
+                    <button type="submit" class="SeasonPage-searchButton">{{format "/core/page/Page" "searchButtonLabel"}}</button>
+                </form>
+            {{/if}}
+        </header>
+        {{#with banner}}
+            <div class="SeasonPage-banner">{{~this~}}</div>
+        {{/with}}
+        {{#with sectionNavigation}}
+            <div class="SeasonPage-sectionNavigation">{{this}}</div>
+        {{/with}}
+        {{#with packageNavigation}}
+            <div class="SeasonPage-packageNavigation">{{this}}</div>
+        {{/with}}
+        {{#with above}}
+            <div class="SeasonPage-above">{{this}}</div>
+        {{/with}}
+        {{#if showPageHeading}}
+            {{#with pageHeading}}
+                <div class="SeasonPage-pageHeading">{{this}}</div>
+            {{/with}}
+        {{/if}}
+        <main class="SeasonPage-main">
+            {{#with breadcrumbs}}
+                <div class="SeasonPage-breadcrumbs">{{this}}</div>
+            {{/with}}
+            <article class="SeasonPage-mainContent" itemprop="mainEntity" itemscope itemtype="https://schema.org/TVSeason">
+                {{include "/media/EpisodePage-show.hbs" this}}
+                {{#with headline}}
+                    <h1 class="SeasonPage-headline" itemprop="headline">{{this}}</h1>
+                {{/with}}
+                {{#with lead}}
+                    <div class="SeasonPage-lead">{{this}}</div>
+                {{/with}}
+                {{#with slug}}
+                    <div class="SeasonPage-slug">{{this}}</div>
+                {{/with}}
+                {{#with seasonNumber}}
+                    <div class="SeasonPage-seasonNumber" itemprop="seasonNumber" itemscope itemtype="https//schema.org/seasonNumber">{{this}}</div>
+                {{/with}}
+                {{#with shortDescription}}
+                    <div class="SeasonPage-shortDescription">{{this}}</div>
+                {{/with}}
+                {{#with fullDescription}}
+                    <div class="SeasonPage-fullDescription" itemprop="description" itemscope itemtype="https://schema.org/description">{{this}}</div>
+                {{/with}}
+            </article>
+            {{#with tags}}
+                <div class="SeasonPage-tags">
+                    <h2 class="SeasonPage-tags-heading">{{format "/core/page/ContentPage" "tagsHeading"}}</h2>
+                    <div class="SeasonPage-tags-body">{{this}}</div>
+                </div>
+            {{/with}}
+            {{#with countries}}
+                <div class="SeasonPage-countries">
+                    <h2 class="SeasonPage-countries-heading">{{format "/core/page/ContentPage" "countriesHeading"}}</h2>
+                    <div class="SeasonPage-countries-body">{{this}}</div>
+                </div>
+            {{/with}}
+            {{#with brands}}
+                <div class="SeasonPage-brands">
+                    <h2 class="SeasonPage-brands-heading">{{format "/core/page/ContentPage" "brandsHeading"}}</h2>
+                    <div class="SeasonPage-brands-body">{{this}}</div>
+                </div>
+            {{/with}}
+            {{#with products}}
+                <div class="SeasonPage-products">
+                    <h2 class="SeasonPage-products-heading">{{format "/core/page/ContentPage" "productsHeading"}}</h2>
+                    <div class="SeasonPage-products-body">{{this}}</div>
+                </div>
+            {{/with}}
+            {{#with topics}}
+                <div class="SeasonPage-topics">
+                    <h2 class="SeasonPage-topics-heading">{{format "/core/page/ContentPage" "topicsHeading"}}</h2>
+                    <div class="SeasonPage-topics-body">{{this}}</div>
+                </div>
+            {{/with}}
+            {{#with actions}}
+                <div class="SeasonPage-actions">
+                    <h2 class="SeasonPage-actions-heading">{{format "/core/page/ContentPage" "actionsHeading"}}</h2>
+                    <div class="SeasonPage-actions-body">{{this}}</div>
+                </div>
+            {{/with}}
+            {{#with comments}}
+                <div class="SeasonPage-comments">
+                    {{this}}
+                </div>
+            {{/with}}
+        </main>
+        {{#with aside}}
+            <aside class="SeasonPage-aside">{{this}}</aside>
+        {{/with}}
+        {{#with below}}
+            <div class="SeasonPage-below">{{this}}</div>
+        {{/with}}
+        <footer class="SeasonPage-footer" itemscope itemtype="https://schema.org/WPFooter">
+            {{include "/core/page/Page-logo.amp.hbs" this}}
+            {{include "/core/page/Page-navigation.amp.hbs" this}}
+            {{include "/core/page/Page-social.hbs" this}}
+            {{#with disclaimer}}
+                <div class="SeasonPage-disclaimer">{{this}}</div>
+            {{/with}}
+        </footer>
+        {{include "/core/page/Page-ampIntegrations.amp.hbs" this}}
+        {{include "/core/page/Page-ampAnalytics.amp.hbs" this}}
+    </body>
+</html>

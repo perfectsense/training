@@ -1,5 +1,0 @@
-{
-  "_template": "Background.hbs",
-  "cssValue": "url({{image}})",
-  "_hidden": false
-}

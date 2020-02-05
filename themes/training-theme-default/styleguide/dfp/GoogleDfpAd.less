@@ -1,0 +1,91 @@
+
+ps-google-dfp-ad {
+  display: block;
+}
+
+.GoogleDfpAd {
+  text-align: center;
+
+  // no article dynamic ads on mobile
+  &[article-dynamic-aside='true'] {
+    display: none;
+  }
+
+  &[data-out-of-page='true'] {
+    height: 0;
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+  }
+
+  // ----- TODO: need to settle on data slot names so we can build some proper placeholders here
+  &-placeholder {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+
+    [data-slot-name='/13236445/responsive_banner'] & {
+      min-height: 50px;
+
+      .ArticlePage-aside & {
+        min-height: 250px;
+      }
+
+      .TwoColumnContainer7030-column:nth-of-type(2) & {
+        min-height: 250px;
+      }
+    }
+  }
+
+  @media @mq-viewport-md {
+    &-placeholder {
+      [data-slot-name='/13236445/responsive_banner'] & {
+        min-height: 90px;
+
+        .ArticlePage-aside & {
+          min-height: 250px;
+        }
+
+        .TwoColumnContainer7030-column:nth-of-type(2) & {
+          min-height: 250px;
+        }
+      }
+    }
+  }
+
+  @media @mq-viewport-hk {
+    // space dynamic article ads wide
+    &[article-dynamic-aside='true'] {
+      display: block;
+      margin-top: 300px;
+    }
+  }
+}
+
+// TEMP CSS for Temp ad examples until we figure out what provider we go with
+.ad-728-90 {
+  align-items: center;
+  background: var(--secondaryColor4);
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  height: 50px;
+  text-align: center;
+  width: 300px;
+
+  @media @mq-viewport-md {
+    height: 90px;
+    width: 728px;
+  }
+}
+
+.ad-300-250 {
+  align-items: center;
+  background: var(--secondaryColor4);
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  height: 250px;
+  text-align: center;
+  width: 300px;
+}

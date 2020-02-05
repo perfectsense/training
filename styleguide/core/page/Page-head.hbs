@@ -1,25 +1,23 @@
 <head>
-    <meta charset="{{#with charset}}{{this}}{{else}}UTF-8{{/with}}">
+    {{include "/core/page/Page-charset.hbs" this}}
     <link rel="stylesheet" href="{{cdn "/styleguide/All.min.css"}}">
-    {{~#with extraStyles}}{{this}}{{/with~}}
+    {{include "/core/page/Page-extraStyles.hbs" this}}
     <meta name="viewport" content="{{#with viewport}}{{this}}{{else}}width=device-width, initial-scale=1{{/with}}">
-    {{~#with title}}<title>{{this}}</title>{{/with~}}
-    {{~#with description}}<meta name="description" content="{{this}}">{{/with~}}
-    {{~#with keywords}}<meta name="keywords" content="{{this}}">{{/with~}}
-    {{~#with canonicalLink}}<link rel="canonical" href="{{this}}">{{/with~}}
+    {{include "/core/page/Page-title.hbs" this}}
+    {{include "/core/page/Page-description.hbs" this}}
+    {{include "/core/page/Page-keywords.hbs" this}}
+    {{include "/core/page/Page-canonicalLink.hbs" this}}
     {{~#with contentId}}<meta name="brightspot.contentId" content="{{this}}">{{/with~}}
-    {{~#with meta}}{{this}}{{/with~}}
-    {{~#with favicons}}{{this}}{{/with}}
-    {{~#with manifestLink}}<link rel="manifest" href="{{this}}">{{/with}}
+    {{include "/core/page/Page-meta.hbs" this}}
+    {{include "/core/page/Page-favicons.hbs" this}}
+    {{include "/core/page/Page-manifestLink.hbs" this}}
     {{~#with feedLink}}{{this}}{{/with~}}
-    {{~#with jsonLinkedData}}
-        <script type="application/ld+json">{{this}}</script>
-    {{/with~}}
+    {{include "/core/page/Page-jsonLinkedData.hbs" this}}
     {{!-- ampLink from brightspot.amp - Provided by ViewModelOverlays --}}
     {{~#with ampLink}}<link rel="amphtml" href="{{{this}}}">{{/with}}
     {{!-- Brightspot Meta Tags - Provided by ViewModelOverlays --}}
     {{!-- CacheControlViewModelOverlay --}}
     <meta name="brightspot.cached" content="{{#with isCached}}{{this}}{{else}}false{{/with}}">
     <script src="{{cdn "/styleguide/All.min.js"}}" async></script>
-    {{~#with extraScripts}}{{this}}{{/with~}}
+    {{include "/core/page/Page-extraScripts.hbs" this}}
 </head>

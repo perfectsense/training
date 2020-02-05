@@ -6,23 +6,26 @@ branches:
   only:
     - develop
     - master
-    - /^release-.*$/
+    - /^release\/.*$/
 
 jdk:
   - oraclejdk8
 
 install: true
 
-before_script:
-  - mvn versions:set -DnewVersion='${project.version}'-$([ $TRAVIS_PULL_REQUEST == false ] && echo ${TRAVIS_COMMIT:0:8} || echo "PR"${TRAVIS_PULL_REQUEST})
-
 env:
    global:
-     - DEPLOY_SOURCE_DIR=$TRAVIS_BUILD_DIR/site/target
+     - DEPLOY_SOURCE_DIR=$TRAVIS_BUILD_DIR/site/build/libs
+
+before_script:
+  - chmod +x build.sh
+  - chmod +x deploy.sh
 
 script:
-  - MAVEN_OPTS='-Xmx2048m' mvn -Plibrary verify
+  - ./build.sh && ./deploy.sh
 
 cache:
   directories:
     - $HOME/.m2
+    - node
+    - node_modules    

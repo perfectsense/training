@@ -1,0 +1,39 @@
+.Tabs {
+    position: relative;
+
+    &-title {
+        text-align: center;
+        color: black;
+    }
+
+    &-tabs {
+        display: flex;
+        border-bottom: gray 1px solid;
+        margin-left: auto;
+        margin-right: auto;
+        justify-content: center;
+        list-style: none;
+
+        li {
+            .Tabs-tab {
+                padding: 0 20px;
+                text-align: center;
+            }
+
+            &:hover,
+            &[data-active] {
+                border-bottom: black 2px solid;
+                cursor: pointer;
+                margin-bottom: -1px;
+            }
+        }
+    }
+
+    &-panel {
+        display: none;
+
+        &[data-visible = 'true'] {
+            display: block;
+        }
+    }
+}

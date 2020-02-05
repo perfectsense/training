@@ -1,0 +1,15 @@
+<div class="GalleryVideoSlide">
+    {{#with imagePlaceholder}}
+        <div class="GalleryVideoSlide-imagePlaceholder">
+            <div class="GalleryVideoSlide-imagePlaceholder-icon">
+                <span class="GalleryVideoSlide-imagePlaceholder-video-icon">
+                    <span class="Icon .icon-play GalleryVideoSlide-imagePlaceholder-play"></span>
+                </span>
+            </div>
+            {{this}}
+        </div>
+    {{/with}}
+    {{#with videoContent}}
+        <div class="GalleryVideoSlide-videoContent">{{this}}</div>
+    {{/with}}
+</div>

@@ -1,6 +1,0 @@
-{
-  "_include": "/core/quote/Quote.json",
-  "_template": "/core/quote/Quote.hbs",
-  "_hidden": true,
-  "_styledTemplate": "/core/quote/FullQuote.hbs"
-}

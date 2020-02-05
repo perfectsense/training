@@ -1,0 +1,8 @@
+<div class="TabItem" {{#if id}}id="{{id}}"{{/if}} {{extraAttributes}}>
+    {{#with title}}
+        <div class="TabItem-title">{{this}}</div>
+    {{/with}}
+    {{#with content}}
+        <div class="TabItem-content">{{this}}</div>
+    {{/with}}
+</div>

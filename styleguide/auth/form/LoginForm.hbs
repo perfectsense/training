@@ -1,0 +1,36 @@
+<div class="LoginForm">
+    {{#with title}}
+        <div class="LoginForm-title">
+            {{~this~}}
+        </div>
+    {{/with}}
+    {{#with message}}
+        <div class="LoginForm-message">
+            {{~this~}}
+        </div>
+    {{/with}}
+    {{#if displayForm}}
+        <form {{#with formActionUrl}}action="{{this}}"{{else}}action="/authenticate/login"{{/with}}
+            {{~#with method}}method="{{this}}"{{else}}method="post"{{/with}}>
+            {{#with errors}}
+                <div class="LoginForm-errors">
+                    {{~this~}}
+                </div>
+            {{/with}}
+            {{include "/auth/form/AuthenticationForm-inputs.hbs" this}}
+            {{#with socialLoginLinks}}
+                <div class="LoginForm-socialLoginLinks">
+                    {{~this~}}
+                </div>
+            {{/with}}
+            {{#with helpLinks}}
+                <div class="LoginForm-helpLinks">
+                    {{~this~}}
+                </div>
+            {{/with}}
+            <button class="LoginForm-submit" type="submit">
+                {{format "/auth/form/LoginForm" "submitButtonLabel"}}
+            </button>
+        </form>
+    {{/if}}
+</div>

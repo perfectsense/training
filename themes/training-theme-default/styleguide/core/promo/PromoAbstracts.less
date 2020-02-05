@@ -1,0 +1,121 @@
+// lesshint maxCharPerLine: { enabled: false }, stringQuotes: false
+
+.PromoAbstract {
+  &-category {
+    .SectionButton;
+
+    .Link {
+      &:hover {
+        color: var(--primaryColor1);
+      }
+    }
+  }
+
+  &-date {
+    .label-1;
+    text-transform: none;
+  }
+
+  &-description {
+    .description-1;
+  }
+
+  &-media {
+    position: relative;
+
+    [data-content-type='document'] & {
+      width: 30px;
+    }
+
+    &[data-hover],
+    &:hover {
+      a:after,
+      div[class$='-image']:after {
+        [data-content-type='video'] &,
+        [data-content-type='gallery'] &,
+        [data-content-type='document'] & {
+          background-color: var(--primaryColor1);
+          border-color: var(--primaryColor1);
+        }
+      }
+    }
+
+    img {
+      width: 100%;
+
+      [data-content-type='document'] & {
+        display: none;
+      }
+    }
+
+    a {
+      display: block;
+      position: relative;
+
+      [data-content-type='document'] & {
+        height: 30px;
+        width: 30px;
+      }
+    }
+
+    a:before,
+    div[class$='-image']:before {
+      [data-content-type='video'] & {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='30' height='30' viewBox='0 0 30 30'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cpath fill='%23fff' d='M9 9l12 6-12 6z'/%3E%3C/g%3E%3C/svg%3E");
+        bottom: 10px;
+        content: ' ';
+        height: 30px;
+        left: 11px;
+        position: absolute;
+        width: 30px;
+        z-index: @z-index-base + 1;
+      }
+
+      [data-content-type='gallery'] & {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='14' height='14' viewBox='0 0 32 32'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cpath fill='%23fff' d='M6.4,5.7 C6.4,6.166669 6.166669,6.4 5.7,6.4 L0.7,6.4 C0.233331,6.4 0,6.166669 0,5.7 L0,0.7 C0,0.233331 0.233331,0 0.7,0 L5.7,0 C6.166669,0 6.4,0.233331 6.4,0.7 L6.4,5.7 Z M19.2,5.7 C19.2,6.166669 18.966669,6.4 18.5,6.4 L13.5,6.4 C13.033331,6.4 12.8,6.166669 12.8,5.7 L12.8,0.7 C12.8,0.233331 13.033331,0 13.5,0 L18.5,0 C18.966669,0 19.2,0.233331 19.2,0.7 L19.2,5.7 Z M32,5.7 C32,6.166669 31.766669,6.4 31.3,6.4 L26.3,6.4 C25.833331,6.4 25.6,6.166669 25.6,5.7 L25.6,0.7 C25.6,0.233331 25.833331,0 26.3,0 L31.3,0 C31.766669,0 32,0.233331 32,0.7 L32,5.7 Z M6.4,18.5 C6.4,18.966669 6.166669,19.2 5.7,19.2 L0.7,19.2 C0.233331,19.2 0,18.966669 0,18.5 L0,13.5 C0,13.033331 0.233331,12.8 0.7,12.8 L5.7,12.8 C6.166669,12.8 6.4,13.033331 6.4,13.5 L6.4,18.5 Z M19.2,18.5 C19.2,18.966669 18.966669,19.2 18.5,19.2 L13.5,19.2 C13.033331,19.2 12.8,18.966669 12.8,18.5 L12.8,13.5 C12.8,13.033331 13.033331,12.8 13.5,12.8 L18.5,12.8 C18.966669,12.8 19.2,13.033331 19.2,13.5 L19.2,18.5 Z M32,18.5 C32,18.966669 31.766669,19.2 31.3,19.2 L26.3,19.2 C25.833331,19.2 25.6,18.966669 25.6,18.5 L25.6,13.5 C25.6,13.033331 25.833331,12.8 26.3,12.8 L31.3,12.8 C31.766669,12.8 32,13.033331 32,13.5 L32,18.5 Z M6.4,31.3 C6.4,31.766669 6.166669,32 5.7,32 L0.7,32 C0.233331,32 0,31.766669 0,31.3 L0,26.3 C0,25.833331 0.233331,25.6 0.7,25.6 L5.7,25.6 C6.166669,25.6 6.4,25.833331 6.4,26.3 L6.4,31.3 Z M19.2,31.3 C19.2,31.766669 18.966669,32 18.5,32 L13.5,32 C13.033331,32 12.8,31.766669 12.8,31.3 L12.8,26.3 C12.8,25.833331 13.033331,25.6 13.5,25.6 L18.5,25.6 C18.966669,25.6 19.2,25.833331 19.2,26.3 L19.2,31.3 Z M32,31.3 C32,31.766669 31.766669,32 31.3,32 L26.3,32 C25.833331,32 25.6,31.766669 25.6,31.3 L25.6,26.3 C25.6,25.833331 25.833331,25.6 26.3,25.6 L31.3,25.6 C31.766669,25.6 32,25.833331 32,26.3 L32,31.3 Z'/%3E%3C/g%3E%3C/svg%3E");
+        bottom: 18px;
+        content: ' ';
+        height: 14px;
+        left: 18px;
+        position: absolute;
+        width: 14px;
+        z-index: @z-index-base + 1;
+      }
+    }
+
+    a:after,
+    div[class$='-image']:after {
+      [data-content-type='video'] & {
+        background-color: rgba(0, 0, 0, 0.5);
+        bottom: 10px;
+        border: 1px solid white;
+        content: ' ';
+        height: 30px;
+        left: 10px;
+        position: absolute;
+        width: 30px;
+        z-index: @z-index-base;
+      }
+
+      [data-content-type='gallery'] & {
+        background-color: rgba(0, 0, 0, 0.5);
+        bottom: 10px;
+        border: 1px solid white;
+        content: ' ';
+        height: 30px;
+        left: 10px;
+        position: absolute;
+        width: 30px;
+        z-index: @z-index-base;
+      }
+    }
+  }
+
+  &-title {
+    .Link {
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+  }
+}

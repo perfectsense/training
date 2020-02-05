@@ -1,0 +1,12 @@
+{
+  "type": "object",
+  "properties": {
+    "heading": {
+      "type": "string"
+    },
+    "content": {
+      "type": "object"
+    }
+  },
+  "_hidden": true
+}

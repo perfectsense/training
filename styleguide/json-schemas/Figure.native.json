@@ -1,0 +1,16 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "image": {
+      "type": "object"
+    },
+    "caption": {
+      "type": "string"
+    },
+    "credit": {
+      "type": "string"
+    }
+  },
+  "_hidden": true
+}

@@ -6,15 +6,9 @@
             {{#with hat}}
                 <div class="CreativeWorkPage-hat">{{this}}</div>
             {{/with}}
-            {{#with logo}}
-                <div class="CreativeWorkPage-logo">{{this}}</div>
-            {{/with}}
-            {{#with navigation}}
-                <div class="CreativeWorkPage-navigation">{{this}}</div>
-            {{/with}}
-            {{#with social}}
-                <div class="CreativeWorkPage-social">{{this}}</div>
-            {{/with}}
+            {{include "/core/page/Page-logo.amp.hbs" this}}
+            {{include "/core/page/Page-navigation.amp.hbs" this}}
+            {{include "/core/page/Page-social.hbs" this}}
             {{#if searchAction}}
                 <form class="CreativeWorkPage-search" action="{{searchAction}}" novalidate="" autocomplete="off">
                     <input type="text" class="CreativeWorkPage-searchInput" name="q">
@@ -99,9 +93,7 @@
             {{#with footerContent}}
                 <div class="CreativeWorkPage-footerContent">{{this}}</div>
             {{/with}}
-            {{#with social}}
-                <div class="CreativeWorkPage-social">{{this}}</div>
-            {{/with}}
+            {{include "/core/page/Page-social.hbs" this}}
             {{#with disclaimer}}
                 <div class="CreativeWorkPage-disclaimer">{{this}}</div>
             {{/with}}

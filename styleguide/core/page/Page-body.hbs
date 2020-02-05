@@ -1,36 +1,9 @@
 <body class="Page-body"{{~#each extraBodyAttributes}} {{this}}{{~/each~}}>
-    <header class="Page-header" itemscope itemtype="http://schema.org/WPHeader">
-        {{#with hat}}
-            <div class="Page-hat">{{this}}</div>
-        {{/with}}
-        {{#with logo}}
-            <div class="Page-logo">{{this}}</div>
-        {{/with}}
-        {{#with navigation}}
-            <div class="Page-navigation">{{this}}</div>
-        {{/with}}
-        {{#with social}}
-            <div class="Page-social">{{this}}</div>
-        {{/with}}
-        {{#if searchAction}}
-            <form class="Page-search" action="{{searchAction}}" novalidate="" autocomplete="off">
-                <input type="text" class="Page-searchInput" name="q">
-                <button type="submit" class="Page-searchButton">{{format "/core/page/Page" "searchButtonLabel"}}</button>
-            </form>
-        {{/if}}
-    </header>
-    {{#with banner}}
-        <div class="Page-banner">{{~this~}}</div>
-    {{/with}}
-    {{#with sectionNavigation}}
-        <div class="Page-sectionNavigation">{{this}}</div>
-    {{/with}}
-    {{#with packageNavigation}}
-        <div class="Page-packageNavigation">{{this}}</div>
-    {{/with}}
-    {{#with above}}
-        <div class="Page-above">{{this}}</div>
-    {{/with}}
+    {{include "/core/page/Page-header.hbs" this}}
+    {{include "/core/page/Page-banner.hbs" this}}
+    {{include "/core/page/Page-sectionNavigation.hbs" this}}
+    {{include "/core/page/Page-packageNavigation.hbs" this}}
+    {{include "/core/page/Page-above.hbs" this}}
     <main class="Page-main">
         {{#with pageHeading}}
             <h1 class="Page-pageHeading">{{this}}</h1>
@@ -49,12 +22,8 @@
             </div>
         {{/with}}
     </main>
-    {{#with aside}}
-        <aside class="Page-aside">{{this}}</aside>
-    {{/with}}
-    {{#with below}}
-        <div class="Page-below">{{this}}</div>
-    {{/with}}
+    {{include "/core/page/Page-aside.hbs" this}}
+    {{include "/core/page/Page-below.hbs" this}}
     <footer class="Page-footer" itemscope itemtype="https://schema.org/WPFooter">
         {{#with footerLogo}}
             <div class="Page-footerLogo">{{this}}</div>
@@ -65,12 +34,8 @@
         {{#with footerContent}}
             <div class="Page-footerContent">{{this}}</div>
         {{/with}}
-        {{#with social}}
-            <div class="Page-social">{{this}}</div>
-        {{/with}}
-        {{#with disclaimer}}
-            <div class="Page-disclaimer">{{this}}</div>
-        {{/with}}
+        {{include "/core/page/Page-social.hbs" this}}
+        {{include "/core/page/Page-disclaimer.hbs" this}}
     </footer>
     {{include "/core/page/Page-extraBodyItems.hbs" this}}
 </body>

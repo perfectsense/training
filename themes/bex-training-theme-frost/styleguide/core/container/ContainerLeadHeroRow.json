@@ -1,9 +1,0 @@
-{
-  "_template": "/core/container/Row.hbs",
-  "columns": {
-    "_include": "/_group/ContainerColumnOptions.json",
-    "_key": 0
-  },
-  "_styledTemplate": "/core/container/ContainerLeadHeroRow.hbs",
-  "_hidden": true
-}

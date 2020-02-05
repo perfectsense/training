@@ -1,0 +1,11 @@
+{{#if href~}}
+    <a href="{{href}}"{{#with target}} target="{{this}}"{{/with}}{{extraAttributes}}>
+    {{~/if}}
+    <amp-img class="PageLogo-image" src="{{image.src}}" alt="{{alt}}"
+        {{~#with image.srcset}} srcset="{{this}}"{{/with~}}
+        width="{{~#with image.width}}{{this}}{{/with~}}"
+        height="{{~#with image.height}}{{this}}{{/with~}}"
+        layout="fixed"></amp-img>
+        {{#if href~}}
+        </a>
+    {{~/if}}

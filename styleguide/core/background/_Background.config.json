@@ -2,6 +2,9 @@
   "imageSizeContexts": {
     "/core/background/Background.hbs": {
       "cssValue": "large"
+    },
+    "/core/background/Background.amp.hbs": {
+      "cssValue": "large"
     }
   },
   "_hidden": true

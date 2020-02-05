@@ -1,0 +1,89 @@
+.Banner {
+  width: 100%;
+  display: none;
+  background-color: var(--breakingColor);
+
+  &[data-show] {
+    display: block;
+  }
+
+  &-content {
+    padding: 11px (@grid-gap * 3) 11px @grid-gap;
+    width: 100%;
+    max-width: 984px;
+    margin: 0 auto;
+  }
+
+  &-title {
+    &:extend(.label-4 all);
+    font-size: var(--label-2);
+    color: var(--breakingTextColor);
+    text-transform: uppercase;
+    line-height: 18px;
+  }
+
+  &-link {
+    &:extend(.title-6 all);
+    font-weight: bold;
+    color: var(--breakingTextColor);
+    order: 1;
+    margin-top: (@grid-gap / 2);
+    font-family: var(--secondaryHeadlineFont);
+  }
+
+  &-close {
+    background-color: transparent;
+    width: 14px;
+    height: 14px;
+    border: 0;
+    position: absolute;
+    top: 14px;
+    right: @grid-gap;
+
+    .close-x {
+      fill: var(--breakingTextColor);
+      height: 14px;
+      width: 14px;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  }
+
+  &-wrapper {
+    position: relative;
+    box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.15);
+  }
+
+  @media @mq-viewport-md {
+    &-content {
+      display: inline-flex;
+      align-items: flex-start;
+      justify-content: center;
+    }
+
+    &-title {
+      width: 105px;
+      min-width: 105px;
+    }
+
+    &-link {
+      margin: 0 0 0 @grid-gap;
+    }
+
+    &-wrapper {
+      display: flex;
+      justify-content: flex-start;
+    }
+  }
+
+  @media @mq-viewport-lg {
+    &-content {
+      padding: 11px (@grid-gap * 2) 11px @grid-gap;
+    }
+  }
+
+  @media @mq-viewport-hk {
+    padding: 0;
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string"
+    },
+    "lead": {
+      "type": "object"
+    },
+    "main": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "below": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    }
+  },
+  "_hidden": true
+}

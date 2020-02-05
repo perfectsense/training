@@ -1,0 +1,13 @@
+<div class="CommentForm">
+    <form {{#with formActionUrl}}action="{{this}}"{{/with}}
+        {{~#with method}}method="{{this}}"{{else}}method="post"{{/with}}>
+        <div class="CommentForm-inputs">
+            <input type="hidden" name="target" value="{{targetId}}" />
+            <input type="hidden" name="parent" value="" />
+            <textarea name="body" required spellcheck="true"></textarea>
+        </div>
+        <button class="CommentForm-submit" type="submit">
+            {{#with submitText}}{{this}}{{else}}Submit{{/with}}
+        </button>
+    </form>
+</div>

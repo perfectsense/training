@@ -1,0 +1,16 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "attribution": {
+      "type": "string"
+    },
+    "quote": {
+      "type": "string"
+    },
+    "image": {
+      "type": "object"
+    }
+  },
+  "_hidden": true
+}

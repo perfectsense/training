@@ -1,0 +1,38 @@
+[
+  {
+    "_include": "/core/form/fieldset/_SimpleFieldset.json"
+  },
+  {
+    "_include": "/core/form/input/CaptchaInput.json"
+  },
+  {
+    "_include": "/core/form/input/CheckboxInput.json"
+  },
+  {
+    "_include": "/core/form/input/EmailInput.json"
+  },
+  {
+    "_include": "/core/form/input/FileInput.json"
+  },
+  {
+    "_include": "/core/form/input/HiddenInput.json"
+  },
+  {
+    "_include": "/core/form/input/PasswordInput.json"
+  },
+  {
+    "_include": "/core/form/input/PhoneNumberInput.json"
+  },
+  {
+    "_include": "/core/form/input/RadioInput.json"
+  },
+  {
+    "_include": "/core/form/input/TextArea.json"
+  },
+  {
+    "_include": "/core/form/input/TextInput.json"
+  },
+  {
+    "_include": "/core/form/select/Select.json"
+  }
+]

@@ -1,0 +1,522 @@
+@import (inline) 'node_modules/normalize.css/normalize.css';
+
+html {
+  box-sizing: border-box;
+}
+
+* { // lesshint universalSelector: false
+  &,
+  &:before,
+  &:after {
+    box-sizing: inherit;
+  }
+}
+
+body {
+  font-family: 'Helvetica Neue', 'Arial', sans-serif;
+  font-size: 18px;
+  line-height: 1.5;
+  margin: 40px;
+}
+
+button,
+input[type='submit'],
+input[type='text'],
+input[type='password'],
+input[type='email'] {
+  height: 2em;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  vertical-align: middle;
+}
+
+input[type='text'],
+input[type='password'],
+input[type='email'] {
+    border: 1px solid black;
+
+    &::placeholder {
+        font-style: italic;
+    }
+}
+
+label {
+    & > input[type='checkbox'] {
+        margin-right: 10px;
+    }
+}
+
+button,
+input[type='submit'] {
+  background: black;
+  border: 0;
+  color: white;
+}
+
+.piped() {
+  display: flex;
+  list-style: none;
+  padding-left: 0;
+
+  li:not(:first-child) {
+    border-left: 1px solid black;
+    margin-left: 1em;
+    padding-left: 1em;
+  }
+}
+
+.ArticlePage,
+.BlogPostPage,
+.GalleryPage,
+.Page,
+.PersonPage,
+.PressReleasePage,
+.ProductPage,
+.SearchResultsPage,
+.VideoPage {
+  &-hat {
+    background: black;
+    color: white;
+    margin: -40px -40px 20px -40px;
+    padding: 10px;
+  }
+
+  &-banner {
+    border: 1px dotted black;
+    margin: 20px 0;
+    padding: 20px;
+  }
+
+  &-above,
+  &-below,
+  &-aside {
+    border: 1px dotted black;
+    margin: 20px 0;
+    padding: 20px;
+    position: relative;
+
+    &:before {
+      background: black;
+      color: white;
+      left: 0;
+      font-size: 50%;
+      padding: 2px 4px;
+      position: absolute;
+      text-transform: uppercase;
+      top: 0;
+    }
+  }
+
+  &-above:before {
+    content: 'Above';
+  }
+
+  &-below:before {
+    content: 'Below';
+  }
+
+  &-aside:before {
+    content: 'Aside';
+  }
+
+  &-headline + &-subHeadline {
+    margin-bottom: 1.5em;
+    margin-top: -1.5em;
+  }
+
+  &-byline {
+    margin-bottom: 20px;
+  }
+
+  &-authorImage {
+    float: left;
+
+    a,
+    img {
+      display: block;
+    }
+
+    img {
+      border-radius: 50%;
+    }
+  }
+
+  &-authorTexts {
+    padding-left: 60px;
+  }
+
+  &-brands,
+  &-countries,
+  &-products,
+  &-tags,
+  &-topics {
+    a {
+      background: black;
+      border-radius: 1em;
+      color: white;
+      display: inline-block;
+      line-height: 2;
+      padding: 0 10px;
+      text-decoration: none;
+    }
+  }
+
+  &-updatesCorrections {
+    border: 1px dotted black;
+    margin: 1.5em 0;
+    padding: 1.5em;
+    position: relative;
+
+    &:before {
+        background: black;
+        color: white;
+        content: 'Updates/Corrections';
+        left: 0;
+        font-size: 50%;
+        padding: 2px 4px;
+        position: absolute;
+        text-transform: uppercase;
+        top: 0;
+    }
+  }
+}
+
+.Navigation {
+  background: black;
+  position: relative;
+  z-index: 1;
+
+  &,
+  a {
+    color: white;
+    text-decoration: none;
+  }
+
+  &-items {
+    display: flex;
+    list-style: none;
+    padding: 0;
+
+    &-item {
+      padding: 10px;
+    }
+  }
+}
+
+.SearchHints {
+  box-sizing: border-box;
+  outline: 0;
+
+  &-list {
+    margin-top: -1px;
+    border: 1px solid black;
+    list-style: none;
+
+    [data-active='true'] {
+      background-color: lightyellow;
+    }
+
+    .Promo {
+
+      &-media,
+      &-type,
+      &-duration,
+      &-date,
+      &-description,
+      &-author,
+      &-actions,
+      &-social {
+        display: none;
+      }
+
+    }
+  }
+}
+
+.UserProfileDataForm {
+    background: white;
+    border: 1px solid black;
+    margin-bottom: 10px;
+    padding: 12px;
+
+    & form > * + * { // lesshint universalSelector: false
+        margin-top: 1em;
+    }
+}
+
+.NavigationItem, .AuthenticatedNavigationItem {
+  position: relative;
+
+  &-items {
+    background: white;
+    border: 1px solid black;
+    display: none;
+    list-style: none;
+    padding: 10px;
+    position: absolute;
+
+    &,
+    a {
+      color: black;
+      text-decoration: none;
+    }
+  }
+
+  &:hover > &-items {
+    display: block;
+  }
+}
+
+.Breadcrumbs {
+  &-items {
+    display: flex;
+    list-style: none;
+    padding: 0;
+
+    &-item:not(:first-child) {
+      &:before {
+        content: '\2192';
+        padding: 0 10px;
+      }
+    }
+  }
+}
+
+.Carousel,
+.Figure,
+.List,
+.Media,
+.MediaWithImage,
+.ProductPromo,
+.Promo,
+.GallerySlide,
+.RichTextModule,
+.VideoPlaylistItem {
+  border: 1px solid black;
+  display: block;
+  margin: 20px 0;
+  padding: 20px;
+  position: relative;
+
+  &:before {
+    background: black;
+    color: white;
+    content: attr(class);
+    font-size: 50%;
+    left: 0;
+    padding: 2px 4px;
+    position: absolute;
+    text-transform: uppercase;
+    top: 0;
+  }
+}
+
+.VideoPlayer {
+  video {
+    width: 100%;
+  }
+}
+
+.YouTubeVideoPlayer {
+  padding-bottom: (900% / 16);
+  position: relative;
+  width: 100%;
+
+  iframe {
+    border: 0;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+}
+
+.SearchResultsPage {
+  display: flex;
+  flex-flow: row wrap;
+  width: 100%;
+
+  &-form {
+    flex: 0 0 100%;
+    font-size: 2em;
+  }
+
+  &-filters {
+    margin-right: 2em;
+  }
+
+  &-found {
+    flex: 1;
+  }
+
+  &-found[data-view=''] > &-views > &-views-list > a,
+  &-found[data-view='grid'] > &-views > &-views-grid > a {
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+  }
+
+  &-found[data-view='grid'] > &-results {
+    display: flex;
+    flex-flow: row wrap;
+    width: 100%;
+
+    > li {
+      flex: 0 0 25%;
+    }
+  }
+
+  &-views,
+  &-sorts,
+  &-pagination {
+    .piped();
+  }
+
+  &-views {
+    float: left;
+  }
+
+  &-sorts {
+    float: right;
+  }
+
+  &-results {
+    clear: both;
+    list-style: none;
+    padding-left: 0;
+  }
+
+  &-pagination {
+    justify-content: center;
+  }
+
+  &-previousPage {
+    &:before {
+      content: '\2190';
+      margin-right: 0.5em;
+    }
+  }
+
+  &-nextPage {
+    &:after {
+      content: '\2192';
+      margin-left: 0.5em;
+    }
+  }
+
+  &-noQuery,
+  &-noResults {
+    background: red;
+    color: white;
+    margin: 1em 0;
+    padding: 1em;
+    width: 100%;
+  }
+}
+
+.SearchFilter-items {
+  list-style: none;
+  padding-left: 0;
+}
+
+.SearchResultsPage-actions {
+  display: inline-block;
+}
+
+.BrandportalAssetPage {
+
+  &-pagination {
+    justify-content: center;
+    .piped();
+  }
+
+  &-previousPage {
+    &:before {
+      content: '\2190';
+      margin-right: 0.5em;
+    }
+  }
+
+  &-nextPage {
+    &:after {
+      content: '\2192';
+      margin-left: 0.5em;
+    }
+  }
+}
+
+.AssetRequestPage,
+.AssetRequestsOverviewPage,
+.SharesPage {
+    &-pageHeading {
+        h1& {
+            display: inline;
+        }
+    }
+}
+
+.SearchControl {
+  color: black;
+  text-decoration: none;
+
+  &:before {
+    content: '\2610';
+    font-size: 1.5em;
+    line-height: 1;
+  }
+
+  &[data-selected]:before {
+    content: '\2611';
+  }
+}
+
+.SearchControl {
+  align-items: baseline;
+  display: flex;
+  width: 100%;
+
+  &-label {
+    flex: 1;
+    margin: 0 1em 0 0.25em;
+  }
+
+  &-count {
+    color: gray;
+    text-align: right;
+  }
+}
+
+.ImagePage-colors {
+  &-info {
+      display: inline-block;
+  }
+
+  &-item {
+    width: 30px;
+    height: 30px;
+    border-radius: 20px;
+    display: inline-block;
+
+    &-hexValue {
+      display: none;
+      position: absolute;
+      margin-left: -20px;
+    }
+
+    &:hover + .ImagePage-colors-item-hexValue {
+      display: block;
+    }
+  }
+}
+
+@import 'auth/All';
+@import 'core/action-bar/ActionBar';
+@import 'core/tab/Tabs';
+@import 'community/All';
+@import 'core/carousel/Slick';
+@import 'core/container/Container';
+@import 'core/form/All';
+@import 'corporate/All';
+@import 'core/social/All';
+@import 'dam/All';

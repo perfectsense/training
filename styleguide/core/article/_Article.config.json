@@ -2,6 +2,9 @@
   "imageSizeContexts": {
     "/core/article/ArticlePage.hbs": {
       "authorImage": "tiny"
+    },
+    "/core/article/ArticlePage.amp.hbs": {
+      "authorImage": "tiny"
     }
   },
   "_hidden": true

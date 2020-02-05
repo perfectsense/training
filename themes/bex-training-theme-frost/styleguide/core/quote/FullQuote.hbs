@@ -1,8 +1,0 @@
-<div class="FullQuote" {{extraAttributes}}>
-    <blockquote {{#if textColor}}style="color:{{textColor}}"{{/if}}>
-        {{include "/core/quote/Quote-quote.hbs" this}}
-    </blockquote>
-    {{#with attribution}}
-        <div class="FullQuote-attribution" {{#if ../textColor}}style="color:{{../textColor}}"{{/if}}>{{this}}</div>
-    {{/with}}
-</div>

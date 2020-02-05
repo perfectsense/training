@@ -1,0 +1,68 @@
+.PreviewPage .Page-body {
+    padding-top: 0;
+}
+
+.Page-main .column-example {
+  align-items: center;
+  background: #cccccc;
+  display: flex;
+  justify-content: center;
+  height: 300px;
+  padding: 40px;
+  text-align: center;
+  width: 100%;
+}
+
+.Page-main > .PromoB {
+  max-width: 530px;
+  min-width: 320px;
+}
+
+.Page-main > .PromoC {
+  max-width: 840px;
+  min-width: 320px;
+}
+
+.Page-main > .PromoA {
+  width: 320px;
+}
+
+.Page-main > .PromoO {
+  max-width: 400px;
+}
+
+.Page-main > .ListA,
+.Page-main > .ListLoadMore,
+.Page-main > .ListE,
+.Page-main > .ListH,
+.Page-main > .ListK,
+.Page-main > .ListN {
+  max-width: 840px;
+  min-width: 320px;
+}
+
+.Page-main > .ListB,
+.Page-main > .ListC,
+.Page-main > .ListF,
+.Page-main > .ListM {
+  max-width: 320px;
+}
+
+.Page-main > .ListG,
+.Page-main > .ListO,
+.Page-main > .PromoR,
+.Page-main > .PromoV {
+  max-width: 1200px;
+  min-width: 320px;
+}
+
+.Page-main > .ListF {
+  margin: 0 auto;
+  max-width: 2000px;
+  min-width: 320px;
+}
+
+.Page-main > .Quote {
+  max-width: 740px;
+  min-width: 320px;
+}

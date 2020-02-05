@@ -1,11 +1,12 @@
 {
   "_template": "NavigationLink.hbs",
-  "href": "{{var('exampleSiteUrl')}}",
+  "href": "#",
   "target": "_self",
-  "text": "{{words(1)}}",
+  "text": "Link Text",
   "contentId": "a123",
   "iconUrl": "",
   "status": "2",
   "count": 3,
-  "_hidden": false
+  "isActive": true,
+  "_hidden": true
 }

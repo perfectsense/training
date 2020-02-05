@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html class="SpecialPage" lang="{{#with language}}{{this}}{{else}}en{{/with}}" itemscope itemtype="http://schema.org/WebPage">
+    {{include "/core/page/Page-head.hbs" this}}
+    <body class="SpecialPage-body"{{~#each extraBodyAttributes}} {{this}}{{~/each~}}>
+        <header class="SpecialPage-header" itemscope itemtype="http://schema.org/WPHeader">
+            {{#with hat}}
+                <div class="SpecialPage-hat">{{this}}</div>
+            {{/with}}
+            {{include "/core/page/Page-logo.amp.hbs" this}}
+            {{include "/core/page/Page-navigation.amp.hbs" this}}
+            {{include "/core/page/Page-social.hbs" this}}
+            {{#if searchAction}}
+                <form class="SpecialPage-search" action="{{searchAction}}" novalidate="" autocomplete="off">
+                    <input type="text" class="SpecialPage-searchInput" name="q">
+                    <button type="submit" class="SpecialPage-searchButton">{{format "/core/page/Page" "searchButtonLabel"}}</button>
+                </form>
+            {{/if}}
+        </header>
+        {{#with banner}}
+            <div class="SpecialPage-banner">{{~this~}}</div>
+        {{/with}}
+        {{#with sectionNavigation}}
+            <div class="SpecialPage-sectionNavigation">{{this}}</div>
+        {{/with}}
+        {{#with packageNavigation}}
+            <div class="SpecialPage-packageNavigation">{{this}}</div>
+        {{/with}}
+        {{#with above}}
+            <div class="SpecialPage-above">{{this}}</div>
+        {{/with}}
+        <main class="SpecialPage-main">
+            {{#with breadcrumbs}}
+                <div class="SpecialPage-breadcrumbs">{{this}}</div>
+            {{/with}}
+            <article class="SpecialPage" itemprop="mainEntity" itemscope itemtype="http://schema.org/Episode" {{extraAttributes}}>
+                {{#with headline}}
+                    <h1 class="SpecialPage-headline" itemprop="headline">{{this}}</h1>
+                {{/with}}
+                {{include "/media/EpisodePage-show.hbs" this}}
+                {{include "/media/EpisodePage-season.hbs" this}}
+                {{#with shortDescription}}
+                    <div class="SpecialPage-shortDescription">{{this}}</div>
+                {{/with}}
+                {{#with fullDescription}}
+                    <div class="SpecialPage-fullDescription" itemprop="description">{{this}}</div>
+                {{/with}}
+                {{#with player}}
+                    <div class="SpecialPage-player" itemprop="video">{{this}}</div>
+                {{/with}}
+                {{#with premiereDate}}
+                    <div class="SpecialPage-premiereDate" itemprop="datePublished">{{this}}</div>
+                {{/with}}
+                {{#with lastAiredDate}}
+                    <div class="SpecialPage-lastAiredDate">{{this}}</div>
+                {{/with}}
+                {{#with mediaType}}
+                    <div class="SpecialPage-mediaType">{{this}}</div>
+                {{/with}}
+            </article>
+            {{#with tags}}
+                <div class="SpecialPage-tags">
+                    <h2 class="SpecialPage-tags-heading">{{format "/core/page/ContentPage" "tagsHeading"}}</h2>
+                    <div class="SpecialPage-tags-body">{{this}}</div>
+                </div>
+            {{/with}}
+            {{#with countries}}
+                <div class="SpecialPage-countries">
+                    <h2 class="SpecialPage-countries-heading">{{format "/core/page/ContentPage" "countriesHeading"}}</h2>
+                    <div class="SpecialPage-countries-body">{{this}}</div>
+                </div>
+            {{/with}}
+            {{#with brands}}
+                <div class="SpecialPage-brands">
+                    <h2 class="SpecialPage-brands-heading">{{format "/core/page/ContentPage" "brandsHeading"}}</h2>
+                    <div class="SpecialPage-brands-body">{{this}}</div>
+                </div>
+            {{/with}}
+            {{#with products}}
+                <div class="SpecialPage-products">
+                    <h2 class="SpecialPage-products-heading">{{format "/core/page/ContentPage" "productsHeading"}}</h2>
+                    <div class="SpecialPage-products-body">{{this}}</div>
+                </div>
+            {{/with}}
+            {{#with topics}}
+                <div class="SpecialPage-topics">
+                    <h2 class="SpecialPage-topics-heading">{{format "/core/page/ContentPage" "topicsHeading"}}</h2>
+                    <div class="SpecialPage-topics-body">{{this}}</div>
+                </div>
+            {{/with}}
+            {{#with actions}}
+                <div class="SpecialPage-actions">
+                    <h2 class="SpecialPage-actions-heading">{{format "/core/page/ContentPage" "actionsHeading"}}</h2>
+                    <div class="SpecialPage-actions-body">{{this}}</div>
+                </div>
+            {{/with}}
+            {{#with comments}}
+                <div class="SpecialPage-comments">
+                    {{this}}
+                </div>
+            {{/with}}
+        </main>
+        {{#with aside}}
+            <aside class="SpecialPage-aside">{{this}}</aside>
+        {{/with}}
+        {{#with below}}
+            <div class="SpecialPage-below">{{this}}</div>
+        {{/with}}
+        <footer class="SpecialPage-footer" itemscope itemtype="https://schema.org/WPFooter">
+            {{#with footerLogo}}
+                <div class="SpecialPage-footerLogo">{{this}}</div>
+            {{/with}}
+            {{#with footerNavigation}}
+                <div class="SpecialPage-footerNavigation">{{this}}</div>
+            {{/with}}
+            {{#with footerContent}}
+                <div class="SpecialPage-footerContent">{{this}}</div>
+            {{/with}}
+            {{include "/core/page/Page-social.hbs" this}}
+            {{#with disclaimer}}
+                <div class="SpecialPage-disclaimer">{{this}}</div>
+            {{/with}}
+        </footer>
+        {{include "/core/page/Page-extraBodyItems.hbs" this}}
+    </body>
+</html>

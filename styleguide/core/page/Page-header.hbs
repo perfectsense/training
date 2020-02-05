@@ -1,0 +1,14 @@
+<header class="Page-header" itemscope itemtype="http://schema.org/WPHeader">
+    {{#with hat}}
+        <div class="Page-hat">{{this}}</div>
+    {{/with}}
+    {{include "/core/page/Page-logo.hbs" this}}
+    {{include "/core/page/Page-navigation.hbs" this}}
+    {{include "/core/page/Page-social.hbs" this}}
+    {{#if searchAction}}
+        <form class="Page-search" action="{{searchAction}}" novalidate="" autocomplete="off">
+            <input type="text" class="Page-searchInput" name="q">
+            <button type="submit" class="Page-searchButton">{{format "/core/page/Page" "searchButtonLabel"}}</button>
+        </form>
+    {{/if}}
+</header>

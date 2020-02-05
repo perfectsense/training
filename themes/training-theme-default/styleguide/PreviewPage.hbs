@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html class="PreviewPage" lang="{{#with language}}{{this}}{{else}}en{{/with}}">
+{{include "/core/page/Page-head.hbs" this}}
+
+<body class="Page-body" {{~#each extraBodyAttributes}} {{this}} {{~/each~}}>
+    <main class="Page-main">
+        {{#with main}}{{this}}{{/with}}
+    </main>
+</body>
+</html>

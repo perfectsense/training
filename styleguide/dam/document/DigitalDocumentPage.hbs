@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html class="DigitalDocumentPage" lang="{{#with language}}{{this}}{{else}}en{{/with}}" itemscope itemtype="http://schema.org/WebPage">
+    {{include "/core/page/Page-head.hbs" this}}
+    <body class="DigitalDocumentPage-body"{{~#each extraBodyAttributes}} {{this}}{{~/each~}}>
+        <header class="DigitalDocumentPage-header" itemscope itemtype="http://schema.org/WPHeader">
+            {{#with hat}}
+                <div class="DigitalDocumentPage-hat">{{this}}</div>
+            {{/with}}
+            {{#with logo}}
+                <div class="DigitalDocumentPage-logo">{{this}}</div>
+            {{/with}}
+            {{#with navigation}}
+                <div class="DigitalDocumentPage-navigation">{{this}}</div>
+            {{/with}}
+            {{#with social}}
+                <div class="DigitalDocumentPage-social">{{this}}</div>
+            {{/with}}
+            {{#if searchAction}}
+                <form class="DigitalDocumentPage-search" action="{{searchAction}}" novalidate="" autocomplete="off">
+                    <input type="text" class="DigitalDocumentPage-searchInput" name="q">
+                    <button type="submit" class="DigitalDocumentPage-searchButton">{{format "/core/page/Page" "searchButtonLabel"}}</button>
+                </form>
+            {{/if}}
+        </header>
+        {{#with banner}}
+            <div class="DigitalDocumentPage-banner">{{~this~}}</div>
+        {{/with}}
+        {{#with sectionNavigation}}
+            <div class="DigitalDocumentPage-sectionNavigation">{{this}}</div>
+        {{/with}}
+        {{#with packageNavigation}}
+            <div class="DigitalDocumentPage-packageNavigation">{{this}}</div>
+        {{/with}}
+        {{#with above}}
+            <div class="DigitalDocumentPage-above">{{this}}</div>
+        {{/with}}
+        <main class="DigitalDocumentPage-main">
+            {{#with breadcrumbs}}
+                <div class="DigitalDocumentPage-breadcrumbs">{{this}}</div>
+            {{/with}}
+            <div class="DigitalDocumentPage-mainContent" itemprop="mainEntity" itemscope itemtype="http://schema.org/DigitalDocument">
+                {{#with headline}}
+                    <h1 class="DigitalDocumentPage-headline" itemprop="headline">{{this}}</h1>
+                {{/with}}
+                {{#with subHeadline}}
+                    <div class="DigitalDocumentPage-subHeadline" itemprop="alternativeHeadline">{{this}}</div>
+                {{/with}}
+                <div class="DigitalDocumentPage-byline" itemprop="author" itemscope itemtype="http://schema.org/Person">
+                    {{#with authorImage}}
+                        <div class="DigitalDocumentPage-authorImage" itemprop="image">
+                            {{#with ../authorUrl}}<a href="{{this}}">{{/with}}
+                            <img alt="" src="{{src}}"
+                            {{~#with srcset}} srcset="{{this}}"{{/with~}}
+                            {{~#with width}} width="{{this}}"{{/with~}}
+                            {{~#with height}} height="{{this}}"{{/with~}}
+                        >
+                        {{#with ../authorUrl}}</a>{{/with}}
+                    </div>
+                {{/with}}
+                <div class="DigitalDocumentPage-authorTexts">
+                    {{#with authorName}}
+                        <div class="DigitalDocumentPage-authorName" itemprop="name">
+                            {{#with ../authorUrl}}<a href="{{this}}">{{/with}}
+                            {{this}}
+                            {{#with ../authorUrl}}</a>{{/with}}
+                        </div>
+                    {{/with}}
+                    {{#with authorBiography}}
+                        <div class="DigitalDocumentPage-authorBiography">{{this}}</div>
+                    {{/with}}
+                </div>
+            </div>
+            {{#with contributors}}
+                <div class="DigitalDocumentPage-contributors">
+                    <h2 class="DigitalDocumentPage-contributors-heading">{{format "/core/page/CreativeWorkPage" "contributorsHeading"}}</h2>
+                    <div class="DigitalDocumentPage-contributors-body">
+                        {{~#each this~}}
+                            {{~this~}}
+                            {{~#unless @last}}, {{/unless~}}
+                        {{~/each~}}
+                    </div>
+                </div>
+            {{/with}}
+            {{#with dateExpired}}
+                <div class="DigitalDocumentPage-dateExpired">{{dateExpired}}</div>
+                {{#with dateExpiredISO}}
+                    <meta itemprop="expires" content="{{this}}">
+                {{/with}}
+            {{/with}}
+            <div class="DigitalDocumentPage-datePublished">{{datePublished}}</div>
+            {{#with datePublishedISO}}
+                <meta itemprop="datePublished" content="{{this}}">
+            {{/with}}
+            <div class="DigitalDocumentPage-dateModified">{{dateModified}}</div>
+            {{#with dateModifiedISO}}
+                <meta itemprop="dateModified" content="{{this}}">
+            {{/with}}
+            {{#with status}}
+                <div class="DigitalDocumentPage-status">{{this}}</div>
+            {{/with}}
+            {{#with media}}
+                <div class="DigitalDocumentPage-media">
+                    {{this}}
+                </div>
+            {{/with}}
+            <aside class="DigitalDocumentPage-documentProperties">
+                {{#with collections}}
+                    <div class="DigitalDocumentPage-collections">
+                        <h4 class="DigitalDocumentPage-collections-heading">{{format "/dam/document/DigitalDocumentPage" "collectionsHeading"}}</h4>
+                        <div class="DigitalDocumentPage-collections-body">
+                            {{~#each this~}}
+                                {{~this~}}
+                                {{~#unless @last}}, {{/unless~}}
+                            {{~/each~}}
+                        </div>
+                    </div>
+                {{/with}}
+                {{#with fileFormat}}
+                    <div class="DigitalDocumentPage-fileFormat">
+                        <h4 class="DigitalDocumentPage-fileFormat-heading">{{format "/dam/document/DigitalDocumentPage" "fileFormatHeading"}}</h4>
+                        <div class="DigitalDocumentPage-fileFormat-body" itemprop="encodingFormat">{{this}}</div>
+                    </div>
+                {{/with}}
+                {{#with fileSize}}
+                    <div class="DigitalDocumentPage-fileSize">
+                        <h4 class="DigitalDocumentPage-fileSize-heading">{{format "/dam/document/DigitalDocumentPage" "fileSizeHeading"}}</h4>
+                        <div class="DigitalDocumentPage-fileSize-body" itemprop="contentSize">{{this}}</div>
+                    </div>
+                {{/with}}
+                {{#with fileUrl}}
+                    <div class="DigitalDocumentPage-fileUrl">
+                        <h4 class="DigitalDocumentPage-fileUrl-heading">{{format "/dam/document/DigitalDocumentPage" "fileUrlHeading"}}</h4>
+                        <div class="DigitalDocumentPage-fileUrl-body" itemprop="contentUrl">{{this}}</div>
+                    </div>
+                {{/with}}
+                {{#with embedUrl}}
+                    <div class="DigitalDocumentPage-embedUrl">
+                        <h4 class="DigitalDocumentPage-embedUrl-heading">{{format "/dam/document/DigitalDocumentPage" "embedUrlHeading"}}</h4>
+                        <div class="DigitalDocumentPage-embedUrl-body" itemprop="embedUrl">{{this}}</div>
+                    </div>
+                {{/with}}
+            </aside>
+        </div>
+        {{#with tags}}
+            <div class="DigitalDocumentPage-tags">
+                <h2 class="DigitalDocumentPage-tags-heading">{{format "/core/page/ContentPage" "tagsHeading"}}</h2>
+                <div class="DigitalDocumentPage-tags-body">{{this}}</div>
+            </div>
+        {{/with}}
+        {{#with countries}}
+            <div class="DigitalDocumentPage-countries">
+                <h2 class="DigitalDocumentPage-countries-heading">{{format "/core/page/ContentPage" "countriesHeading"}}</h2>
+                <div class="DigitalDocumentPage-countries-body">{{this}}</div>
+            </div>
+        {{/with}}
+        {{#with brands}}
+            <div class="DigitalDocumentPage-brands">
+                <h2 class="DigitalDocumentPage-brands-heading">{{format "/core/page/ContentPage" "brandsHeading"}}</h2>
+                <div class="DigitalDocumentPage-brands-body">{{this}}</div>
+            </div>
+        {{/with}}
+        {{#with products}}
+            <div class="DigitalDocumentPage-products">
+                <h2 class="DigitalDocumentPage-products-heading">{{format "/core/page/ContentPage" "productsHeading"}}</h2>
+                <div class="DigitalDocumentPage-products-body">{{this}}</div>
+            </div>
+        {{/with}}
+        {{#with topics}}
+            <div class="DigitalDocumentPage-topics">
+                <h2 class="DigitalDocumentPage-topics-heading">{{format "/core/page/ContentPage" "topicsHeading"}}</h2>
+                <div class="DigitalDocumentPage-topics-body">{{this}}</div>
+            </div>
+        {{/with}}
+        {{#with actions}}
+            <div class="DigitalDocumentPage-actions">
+                <h2 class="DigitalDocumentPage-actions-heading">{{format "/core/page/ContentPage" "actionsHeading"}}</h2>
+                <div class="DigitalDocumentPage-actions-body">{{this}}</div>
+            </div>
+        {{/with}}
+        {{#with comments}}
+            <div class="DigitalDocumentPage-comments">
+                {{this}}
+            </div>
+        {{/with}}
+    </main>
+    {{#with aside}}
+        <aside class="DigitalDocumentPage-aside">{{this}}</aside>
+    {{/with}}
+    {{#with below}}
+        <div class="DigitalDocumentPage-below">{{this}}</div>
+    {{/with}}
+    <footer class="DigitalDocumentPage-footer" itemscope itemtype="https://schema.org/WPFooter">
+        {{#with footerLogo}}
+            <div class="DigitalDocumentPage-footerLogo">{{this}}</div>
+        {{/with}}
+        {{#with footerNavigation}}
+            <div class="DigitalDocumentPage-footerNavigation">{{this}}</div>
+        {{/with}}
+        {{#with footerContent}}
+            <div class="DigitalDocumentPage-footerContent">{{this}}</div>
+        {{/with}}
+        {{#with social}}
+            <div class="DigitalDocumentPage-social">{{this}}</div>
+        {{/with}}
+        {{#with disclaimer}}
+            <div class="DigitalDocumentPage-disclaimer">{{this}}</div>
+        {{/with}}
+    </footer>
+    {{include "/core/page/Page-extraBodyItems.hbs" this}}
+</body>
+</html>

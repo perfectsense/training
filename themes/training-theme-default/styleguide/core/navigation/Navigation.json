@@ -1,0 +1,6 @@
+{
+  "_template": "/core/navigation/Navigation.hbs",
+  "items": {
+      "_include": "/core/navigation/NavigationItem.json"
+  }
+}

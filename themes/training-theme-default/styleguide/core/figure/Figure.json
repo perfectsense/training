@@ -1,0 +1,9 @@
+{
+  "_template": "Figure.hbs",
+  "image": {
+    "_image": true
+  },
+  "alt": "{{words}}",
+  "caption": "{{html('This is a <b>picture</b> and I am the <i>caption</i>.')}}",
+  "credit": "Credit: {{name}}"
+}

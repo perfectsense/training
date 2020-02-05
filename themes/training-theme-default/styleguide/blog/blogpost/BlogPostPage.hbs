@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html class="BlogPostPage" lang="{{#with language}}{{this}}{{else}}en{{/with}}">
+    {{include "/core/page/Page-head.hbs" this}}
+
+    <body class="Page-body" {{~#each extraBodyAttributes}} {{this}} {{~/each~}}>
+        {{include "/core/page/Page-header.hbs" this}}
+        {{include "/core/page/Page-above.hbs" this}}
+
+        <div class="BlogPostPage-content">
+            {{include "/core/page/ContentPage-breadcrumbs.hbs" this className="BlogPostPage"}}
+
+            {{include "/core/page/CreativeWorkPage-headline.hbs" this className="BlogPostPage" kickerText=kicker}}
+
+            <div class="BlogPostPage-wrapper">
+                <main class="BlogPostPage-main">
+                    <div class="BlogPostPage-main-content">
+                        <article class="BlogPostPage-mainContent">
+                            {{#with lead}}
+                                {{#set imageSize='articleImage'}}
+                                    <div class="BlogPostPage-lead">{{this}}</div>
+                                {{/set}}
+                            {{/with}}
+
+                            {{include "/core/page/CreativeWorkPage-subHeadline.hbs" this className="BlogPostPage"}}
+                            <div class="ArticlePage-contentInfo">
+                                <div class="BlogPostPage-byline">
+                                    {{#if bylineText}}
+                                        <div class="BlogPostPage-bylineText">
+                                            <span class="BlogPostPage-authorBy">{{format "/core/page/CreativeWorkPage" "authorBy"}}&nbsp;</span>{{bylineText}}
+                                        </div>
+                                    {{else}}
+                                        {{#if authorName}}
+                                            <div class="BlogPostPage-authors">
+                                                {{~include "/core/page/CreativeWorkPage-authorName.hbs" this className="BlogPostPage"~}}
+                                                {{~include "/core/page/CreativeWorkPage-contributors.hbs" this className="BlogPostPage"~}}
+                                            </div>
+                                        {{/if}}
+                                    {{/if}}
+                                    {{~include "/core/page/CreativeWorkPage-datePublished.hbs" this className="BlogPostPage"~}}
+                                </div>
+                                {{#with actions}}
+                                    <div class="BlogPostPage-actions">
+                                        {{this}}
+                                    </div>
+                                {{/with}}
+                            </div>
+
+                            <div class="BlogPostPage-articleContainer">
+                                {{#if articleBody}}
+                                    <div class="BlogPostPage-articleBody"{{#with dateline}} data-dateline{{/with}}>
+                                        {{~#with dateline~}}<span class="BlogPostPage-dateline">{{this}}&nbsp;—&nbsp;</span>{{~/with~}}
+                                        {{#set imageSize='articleImage'}}
+                                            {{~articleBody~}}
+                                        {{/set}}
+                                    </div>
+                                {{/if}}
+                                {{#if updates}}
+                                    <div class="BlogPostPage-updatesCorrections RichTextBody">
+                                        <div class="Revision-header">{{format "/news/revision/Revision" "updatesText"}}:</div>
+                                        {{#each updates}}{{this}}{{/each}}
+                                    </div>
+                                {{/if}}
+                            </div>
+                        </article>
+
+                        {{include "/core/page/ContentPage-tags.hbs" this className="BlogPostPage"}}
+
+                        {{#with actions}}
+                            <div class="ArticlePage-actions">
+                                {{this}}
+                            </div>
+                        {{/with}}
+
+                        {{include "/core/page/CreativeWorkPage-authorInfo.hbs" this className="BlogPostPage"}}
+
+                        {{include "/core/page/CreativeWorkPage-contentFooter.hbs" this className="BlogPostPage"}}
+                    </div>
+                </main>
+
+                {{#if aside}}
+                    <aside class="BlogPostPage-aside">
+                        {{#with corrections}}
+                            <div class="BlogPostPage-updatesCorrections-wrapper">
+                                <div class="BlogPostPage-updatesCorrections RichTextBody">
+                                    <div class="Revision-header">{{format "/news/revision/Revision" "correctionsText"}}:</div>
+                                    {{#each this}}{{this}}{{/each}}
+                                </div>
+                            </div>
+                        {{/with}}
+                        <aside class="BlogPostPage-aside-content">
+                            {{aside}}
+                        </aside>
+                    </aside>
+                {{/if}}
+            </div>
+        </div>
+
+        {{include "/core/page/Page-below.hbs" this}}
+
+        {{include "/core/page/Page-footer.hbs" this}}
+
+        {{include "/core/page/Page-extraBodyItems.hbs" this}}
+    </body>
+</html>

@@ -1,0 +1,7 @@
+{
+  "_template": "Container.hbs",
+  "title": "Title",
+  "description": "Description",
+  "rows": null,
+  "_hidden": true
+}

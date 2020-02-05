@@ -1,0 +1,56 @@
+{
+  "imageSizes": {
+    "articleImage": {
+      "width": 840,
+      "previewHeight": 560
+    },
+    "carouselSlide": {
+      "width": 840,
+      "height": 560
+    },
+    "gallerySlide": {
+      "previewWidth": 1440,
+      "previewHeight": 960,
+      "maximumWidth": 1440,
+      "maximumHeight": 960
+    },
+    "promoSmall": {
+      "width": 180,
+      "height": 120
+    },
+    "promoMedium": {
+      "width": 320,
+      "height": 209
+    },
+    "promoLarge": {
+      "width": 840,
+      "height": 560
+    },
+    "promoFullWidth": {
+      "width": 2000,
+      "height": 543
+    },
+    "siteLogo": {
+      "previewWidth": 1244,
+      "previewHeight": 120,
+      "maximumWidth": 1244,
+      "maximumHeight": 120
+    },
+    "socialSharing": {
+      "width": 1200,
+      "height": 630
+    },
+    "squareSmall": {
+      "width": 100,
+      "height": 100
+    },
+    "squareMedium": {
+      "width": 200,
+      "height": 200
+    },
+    "twitterSharing": {
+      "width": 1200,
+      "height": 675
+    }
+  }
+}

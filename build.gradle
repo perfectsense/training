@@ -1,0 +1,94 @@
+plugins {
+    id 'java'
+    id 'checkstyle'
+    id 'maven-publish'
+    id 'com.github.node-gradle.node' version '1.3.0'
+}
+
+ext.brightspotGradlePluginVersion = '4.1.2'
+
+allprojects {
+    group = 'com.training'
+
+    if (project.hasProperty('release')) {
+      version = project.release
+    } else {
+      version = '1.0.0-SNAPSHOT'
+    }
+
+    defaultTasks 'build'
+    dependencies {
+
+    }
+
+    // This is to always exclude express-core no matter what.
+    configurations.all {
+        exclude group: "com.psddev", module: "express-core"
+    }
+}
+
+apply from: "https://artifactory.psdops.com/psddev-releases/com/psddev/brightspot-gradle-plugins/express/${brightspotGradlePluginVersion}/express.gradle"
+
+subprojects {
+    apply plugin: 'java-library'
+    apply plugin: 'maven-publish'
+    apply plugin: 'com.github.node-gradle.node'
+    apply from: "https://artifactory.psdops.com/psddev-releases/com/psddev/brightspot-gradle-plugins/no-brightspot-express-dependencies/${brightspotGradlePluginVersion}/no-brightspot-express-dependencies.gradle"
+
+    java {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
+
+    dependencies {
+
+        implementation enforcedPlatform('com.psddev:brightspot-bom:4.1.12.3')
+        implementation enforcedPlatform('com.psddev.component-lib:bom:4.1.142-rc2')
+
+        api enforcedPlatform('org.junit:junit-bom:5.4.2')
+
+        constraints {
+
+            // Third party.
+            api 'com.google.code.gson:gson:2.5'
+            api 'org.slf4j:slf4j-api:1.7.21'
+            api 'org.slf4j:slf4j-jdk14:1.7.21'
+            api 'org.apache.solr:solr-solrj:4.8.1'
+            api 'com.cronutils:cron-utils:6.0.1'
+            api 'com.amazonaws:aws-java-sdk-rekognition:1.11.381'
+            api 'org.ahocorasick:ahocorasick:0.4.0'
+
+            compileOnly 'javax.servlet:javax.servlet-api:3.1.0'
+            compileOnly 'javax.servlet.jsp:javax.servlet.jsp-api:2.3.1'
+            compileOnly 'javax.el:javax.el-api:3.0.0'
+            compileOnly 'taglibs:standard:1.1.2'
+        }
+    }
+
+    node {
+        version = '8.9.3'
+        yarnVersion = '1.12.3'
+        download = true
+    }
+
+    repositories {
+        mavenLocal()
+        mavenCentral()
+        maven { url = 'https://artifactory.psdops.com/public' }
+    }
+
+    sourceCompatibility = '1.8'
+
+    tasks.withType(JavaCompile) {
+        options.encoding = 'UTF-8'
+    }
+
+    test {
+        useJUnitPlatform()
+    }
+}
+
+buildScan {
+    termsOfServiceUrl = 'https://gradle.com/terms-of-service'
+    termsOfServiceAgree = 'yes'
+}

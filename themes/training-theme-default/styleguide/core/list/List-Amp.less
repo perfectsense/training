@@ -1,0 +1,17 @@
+.List-Amp {
+  &:extend(.ListAbstract all);
+
+  &-header {
+    &:extend(.ListHeader all);
+  }
+
+  &-items {
+    &:extend(.ListItemsWithBorder all);
+
+    &-item {
+      &:last-of-type {
+        border-bottom: 1px solid var(--secondaryColor3);
+      }
+    }
+  }
+}

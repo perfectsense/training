@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html class="FranchisePage" lang="{{#with language}}{{this}}{{else}}en{{/with}}" itemscope itemtype="http://schema.org/WebPage">
+    {{include "/core/page/Page-head.hbs" this}}
+    <body class="FranchisePage-body"{{~#each extraBodyAttributes}} {{this}}{{~/each~}}>
+        <header class="FranchisePage-header" itemscope itemtype="http://schema.org/WPHeader">
+            {{#with hat}}
+                <div class="FranchisePage-hat">{{this}}</div>
+            {{/with}}
+            {{include "/core/page/Page-logo.amp.hbs" this}}
+            {{include "/core/page/Page-navigation.amp.hbs" this}}
+            {{include "/core/page/Page-social.hbs" this}}
+            {{#if searchAction}}
+                <form class="FranchisePage-search" action="{{searchAction}}" novalidate="" autocomplete="off">
+                    <input type="text" class="FranchisePage-searchInput" name="q">
+                    <button type="submit" class="FranchisePage-searchButton">{{format "/core/page/Page" "searchButtonLabel"}}</button>
+                </form>
+            {{/if}}
+        </header>
+        {{#with banner}}
+            <div class="FranchisePage-banner">{{~this~}}</div>
+        {{/with}}
+        {{#with sectionNavigation}}
+            <div class="FranchisePage-sectionNavigation">{{this}}</div>
+        {{/with}}
+        {{#with packageNavigation}}
+            <div class="FranchisePage-packageNavigation">{{this}}</div>
+        {{/with}}
+        {{#with above}}
+            <div class="FranchisePage-above">{{this}}</div>
+        {{/with}}
+        <main class="FranchisePage-main" itemprop="mainEntity">
+            {{#with pageHeading}}
+                <h1 class="FranchisePage-pageHeading">{{this}}</h1>
+            {{/with}}
+            {{#with pageLead}}
+                <div class="FranchisePage-pageLead">{{this}}</div>
+            {{/with}}
+            {{#with franchiseNavigation}}
+                <div class="FranchisePage-franchiseNavigation">{{this}}</div>
+            {{/with}}
+            {{#with shortDescription}}
+                <div class="FranchisePage-shortDescription">{{this}}</div>
+            {{/with}}
+            {{#with fullDescription}}
+                <div class="FranchisePage-fullDescription" itemprop="description" itemscope itemtype="https://schema.org/description">{{this}}</div>
+            {{/with}}
+            {{#with contents}}
+                <div class="FranchisePage-contents">{{this}}</div>
+            {{/with}}
+        </main>
+        {{#with aside}}
+            <aside class="FranchisePage-aside">{{this}}</aside>
+        {{/with}}
+        {{#with below}}
+            <div class="FranchisePage-below">{{this}}</div>
+        {{/with}}
+        <footer class="FranchisePage-footer" itemscope itemtype="https://schema.org/WPFooter">
+            {{#with footerLogo}}
+                <div class="FranchisePage-footerLogo">{{this}}</div>
+            {{/with}}
+            {{#with footerNavigation}}
+                <div class="FranchisePage-footerNavigation">{{this}}</div>
+            {{/with}}
+            {{#with footerContent}}
+                <div class="FranchisePage-footerContent">{{this}}</div>
+            {{/with}}
+            {{include "/core/page/Page-social.hbs" this}}
+            {{#with disclaimer}}
+                <div class="FranchisePage-disclaimer">{{this}}</div>
+            {{/with}}
+        </footer>
+        {{include "/core/page/Page-extraBodyItems.hbs" this}}
+    </body>
+</html>

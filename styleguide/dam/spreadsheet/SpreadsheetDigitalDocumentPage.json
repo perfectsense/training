@@ -1,0 +1,6 @@
+{
+  "_include": "/dam/document/DigitalDocumentPage.json",
+  "_template": "SpreadsheetDigitalDocumentPage.hbs",
+  "fileFormat": "xls",
+  "_hidden": true
+}

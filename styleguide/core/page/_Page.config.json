@@ -5,6 +5,12 @@
     },
     "/core/page/PageLogo.hbs": {
       "image": "small"
+    },
+    "/core/page/CreativeWorkPage.amp.hbs": {
+      "authorImage": "tiny"
+    },
+    "/core/page/PageLogo.amp.hbs": {
+      "image": "small"
     }
   },
   "_hidden": true

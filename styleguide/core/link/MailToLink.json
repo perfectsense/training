@@ -3,8 +3,8 @@
   "email": "test@test.com",
   "cc": "testcc@test.com",
   "bcc": "testbcc@test.com",
-  "subject": "{{words(10)}}",
-  "emailBody": "{{words(20)}}",
+  "subject": "Subject",
+  "emailBody": "Email Body",
   "linkBody": "Email",
-  "_hidden": false
+  "_hidden": true
 }

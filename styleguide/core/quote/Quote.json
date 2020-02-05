@@ -1,9 +1,9 @@
 {
   "_template": "Quote.hbs",
-  "quote": "{{words([20,30])}}",
-  "attribution": "{{words}}",
+  "quote": "Lorem Ipsum Dolor",
+  "attribution": "Jane Doe",
   "image": {
     "_include": "/core/image/Image.json"
   },
-  "_hidden": false
+  "_hidden": true
 }

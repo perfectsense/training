@@ -1,0 +1,14 @@
+{
+  "_template": "/core/navigation/FooterNavigation.hbs",
+  "items": [
+    {
+      "_include": "/core/navigation/FooterNavigationItem.json"
+    },
+    {
+      "_include": "/core/navigation/FooterNavigationItem.json"
+    },
+    {
+      "_include": "/core/navigation/FooterNavigationItem.json"
+    }
+  ]
+}

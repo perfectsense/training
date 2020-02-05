@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html ⚡ class="ArticlePage" lang="{{#with language}}{{this}}{{else}}en{{/with}}">
+    {{include "/core/page/Page-head.amp.hbs" this}}
+
+    <body class="Page-body" {{~#each extraBodyAttributes}} {{this}} {{~/each~}}>
+        {{include "/core/page/Page-header.amp.hbs" this}}
+
+        <div class="ArticlePage-content">
+            <div class="ArticlePage-wrapper">
+                <main class="ArticlePage-main">
+                    <article class="ArticlePage-mainContent">
+                        {{include "/core/page/ContentPage-breadcrumbs.amp.hbs" this className="ArticlePage"}}
+                        {{include "/core/page/CreativeWorkPage-headline.amp.hbs" this className="ArticlePage" kickerText=kicker}}
+                        <div class="ArticlePage-contentInfo">
+                            <div class="ArticlePage-byline">
+                                {{#if bylineText}}
+                                    <div class="ArticlePage-bylineText">{{format "/core/page/CreativeWorkPage" "authorBy"}}&nbsp;{{bylineText}}</div>
+                                {{else}}
+                                    {{#if authorName}}
+                                        <div class="ArticlePage-authors">
+                                            {{~include "/core/page/CreativeWorkPage-authorName.amp.hbs" this className="ArticlePage"~}}
+                                            {{~include "/core/page/CreativeWorkPage-contributors.amp.hbs" this className="ArticlePage"~}}
+                                        </div>
+                                    {{/if}}
+                                {{/if}}
+                                {{~include "/core/page/CreativeWorkPage-datePublished.amp.hbs" this className="ArticlePage"~}}
+                            </div>
+
+                            {{#with actions}}
+                                <div class="ArticlePage-actions">
+                                    {{this}}
+                                </div>
+                            {{/with}}
+                        </div>
+
+                        {{#with lead}}
+                            {{#set imageSize='articleImage'}}
+                                <div class="ArticlePage-lead">{{this}}</div>
+                            {{/set}}
+                        {{/with}}
+
+
+                        {{include "/core/page/CreativeWorkPage-subHeadline.amp.hbs" this className="ArticlePage"}}
+                            <div class="ArticlePage-articleContainer">
+                            {{#if articleBody}}
+                                <div class="ArticlePage-articleBody"{{#with dateline}} data-dateline{{/with}}>
+                                    {{~#with dateline~}}<span class="ArticlePage-dateline">{{this}}&nbsp;—&nbsp;</span>{{~/with~}}
+                                    {{#set imageSize='articleImage'}}
+                                        {{~articleBody~}}
+                                    {{/set}}
+                                </div>
+                            {{/if}}
+                            {{#with updatesCorrections}}
+                                <div class="ArticlePage-updatesCorrections">{{{this}}}</div>
+                            {{/with}}
+                        </div>
+                    </article>
+
+                    {{include "/core/page/ContentPage-tags.amp.hbs" this className="ArticlePage"}}
+                    {{#with actions}}
+                        <div class="ArticlePage-actions">
+                            {{this}}
+                        </div>
+                    {{/with}}
+                    {{include "/core/page/CreativeWorkPage-authorInfo.amp.hbs" this className="ArticlePage"}}
+                    {{include "/core/page/CreativeWorkPage-contentFooter.amp.hbs" this className="ArticlePage"}}
+                </main>
+
+                {{include "/core/page/Page-aside.amp.hbs" this className="ArticlePage"}}
+            </div>
+        </div>
+
+        {{include "/core/page/Page-below.amp.hbs" this}}
+        {{include "/core/page/Page-footer.amp.hbs" this}}
+        {{include "/core/page/Page-ampAnalytics.amp.hbs" this}}
+
+        {{include "/core/page/Page-extraBodyItems.amp.hbs" this}}
+    </body>
+</html>

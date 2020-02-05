@@ -1,0 +1,15 @@
+{{#if items}}
+    <div class="List-Amp"{{include "/core/list/List-attributes.hbs" this}}>
+        {{include "/core/list/List-header.amp.hbs" this className="List-Amp"}}
+
+        {{#with items}}
+            <ul class="List-Amp-items">
+                {{#each this}}
+                <li class="List-Amp-items-item">
+                    {{include "/core/promo/PromoA.amp.hbs" this}}
+                </li>
+                {{/each}}
+            </ul>
+        {{/with}}
+    </div>
+{{else}}{{~noResultsModule~}}{{/if}}

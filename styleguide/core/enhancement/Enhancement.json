@@ -2,8 +2,11 @@
   "_template": "Enhancement.hbs",
   "item": {
     "_include": "/_group/RichTextElements.json",
-    "_random": true
+    "_key": 3
   },
   "inline": false,
-  "_hidden": false
+  "externalContent": {
+    "provider_name": "Twitter"
+  },
+  "_hidden": true
 }

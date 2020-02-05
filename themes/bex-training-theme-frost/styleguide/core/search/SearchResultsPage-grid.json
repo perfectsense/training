@@ -1,7 +1,0 @@
-{
-  "_wrapper": false,
-  "_include": "SearchResultsPage.json",
-  "_template": "SearchResultsPage.hbs",
-  "view": "grid",
-  "_hidden": false
-}

@@ -1,0 +1,17 @@
+<nav class="SectionNavigation"{{extraAttributes}}>
+    {{#with items}}
+        <ul class="SectionNavigation-items">
+            {{#each this}}
+                <li class="SectionNavigation-items-item" {{#if this.isCurrent}}data-current-nav-item{{/if}}>
+                    {{render this [/core/navigation/NavigationItem.hbs]="/core/navigation/SectionNavigationItem.hbs"}}
+                </li>
+            {{/each}}
+            <li class="SectionNavigation-items-item" data-sub-trigger tabindex="0">
+                <div class="SectionNavigationItem">
+                    <div class="SectionNavigationItem-text">{{format "/core/navigation/Navigation" "subNavText"}}<svg class="chevron"><use xlink:href="#chevron"></use></svg></div>
+                    <div class="SectionNavigationItem-subNav"></div>
+                </div>
+            </li>
+        </ul>
+    {{/with}}
+</nav>

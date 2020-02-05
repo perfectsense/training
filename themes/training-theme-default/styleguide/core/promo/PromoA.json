@@ -1,0 +1,16 @@
+{
+    "_wrapper": "/_wrapper.previewAtomic.json",
+    "_template": "/core/promo/PromoA.hbs",
+    "media": {
+        "_template": "/core/image/Image.hbs",
+        "image": {
+            "_image": true
+        }
+    },
+    "url": "#",
+    "date": "{{date}}",
+    "target": "_self",
+    "category": "{{words([ 1, 3 ])}}",
+    "categoryUrl": "#",
+    "title": "{{words([6,8])}}"
+}

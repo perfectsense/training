@@ -1,0 +1,11 @@
+{{! Calling this VideoEnhancement on purpose, as on this project we are treating }}
+{{! VideoLead identically to VideoEnhancement. If that changes, we can change this here }}
+
+<div class="VideoEnhancement" data-video-disable-history>
+    {{#with player}}
+        <div class="VideoEnhancement-player">{{this}}</div>
+    {{/with}}
+    {{#with subHeadline}}
+        <div class="VideoEnhancement-title">{{this}}</div>
+    {{/with}}
+</div>

@@ -1,0 +1,11 @@
+{
+  "_template": "UpdateStory.hbs",
+  "updates": {
+    "_include": "UpdateStoryItem.json"
+  },
+  "body": {
+    "_include": "/_group/RichText.json",
+    "_key": 0
+  },
+  "_hidden": true
+}

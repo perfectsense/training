@@ -1,0 +1,120 @@
+// lesshint maxCharPerLine: false
+
+// This is the ActionLink used in the ActionBar. The SocialLink used in the footer is in
+// /core/social as it's quite different from this one
+
+.ActionLink {
+  display: block;
+  border: 0;
+
+  svg {
+    align-items: center;
+    border: 0;
+    border-radius: 2px;
+    display: flex;
+    fill: white;
+    justify-content: center;
+    height: 30px;
+    padding: 7px;
+    width: 30px;
+  }
+
+  &[data-service='print'] {
+    padding: 0;
+
+    svg {
+      background: #000000;
+    }
+  }
+
+  &[data-social-service='facebook'] {
+    svg {
+      background: #4c67a1;
+    }
+  }
+
+  &[data-social-service='twitter'] {
+    svg {
+      background: #1da1f2;
+    }
+  }
+
+  &[data-social-service='linkedin'] {
+    svg {
+      background: #0077b5;
+    }
+  }
+
+  &[data-social-service='pinterest'] {
+    svg {
+      background: #cb2027;
+    }
+  }
+
+  &[data-social-service='tumblr'] {
+    svg {
+      background: #35465c;
+    }
+  }
+
+  &[data-social-service='mailto'],
+  &[data-social-service='copylink'],
+  &[data-social-service='print'] {
+    svg {
+      background: var(--secondaryColor5);
+      border: 1px solid var(--secondaryColor3);
+      fill: var(--primaryTextColor);
+    }
+  }
+
+  &[data-social-service='copylink'] {
+    [data-copied-text] {
+      display: none;
+    }
+
+    &[data-copied='true'] {
+      span {
+        display: none;
+
+        &[data-copied-text] {
+          display: block;
+        }
+      }
+    }
+  }
+
+  &[data-dropdown-trigger] {
+    svg {
+      background: var(--secondaryColor5);
+      border: 1px solid var(--secondaryColor3);
+      fill: var(--primaryTextColor);
+    }
+
+    &:hover {
+      svg {
+        fill: var(--primaryColor1);
+      }
+    }
+  }
+
+  span {
+    .sr-only;
+  }
+}
+
+.ActionLinkWithLabel {
+  display: flex;
+
+  span {
+    .undo-sr-only;
+    &:extend(.label-2 all);
+
+    color: var(--primaryTextColor);
+    display: block;
+    line-height: 30px;
+    font-weight: 500;
+    margin-left: (@grid-gap / 2);
+    text-transform: none;
+    word-break: keep-all;
+  }
+}

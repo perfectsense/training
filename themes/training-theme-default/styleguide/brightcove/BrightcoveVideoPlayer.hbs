@@ -1,0 +1,13 @@
+<ps-brightcoveplayer data-video-player class="BrightcoveVideoPlayer"
+    data-player-id="{{playerId}}"
+    data-video-id="{{videoId}}"
+    data-video-title="{{videoTitle}}"
+    data-video-uuid="{{videoUuid}}"
+    data-video-file-type="{{videoFileType}}"
+    data-category="{{category}}"
+    data-credit="{{credit}}"
+    data-source="{{source}}"
+    data-location="{{dateline}}">
+
+    <video class="video-js" id="brightcove-video-{{videoId}}" data-video-id="{{videoId}}" data-account="{{account}}" data-player="{{playerId}}" data-embed="default" controls {{#if autoplay}}autoplay muted{{/if}} {{#if muted}}muted{{/if}}></video>
+</ps-brightcoveplayer>

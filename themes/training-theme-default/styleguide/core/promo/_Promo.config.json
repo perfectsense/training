@@ -1,0 +1,65 @@
+{
+  "styles": {
+    "/core/promo/Promo.hbs": {
+      "templates": [
+        {
+          "displayName": "Promo A",
+          "example": "/core/promo/PromoA.json",
+          "height": 250,
+          "width": 400
+        },
+        {
+          "displayName": "Promo B",
+          "example": "/core/promo/PromoB.json",
+          "height": 375,
+          "width": 600,
+          "fields": [
+            "imageAlignment"
+          ]
+        },
+        {
+          "displayName": "Promo C",
+          "example": "/core/promo/PromoC.json",
+          "height": 500,
+          "width": 800,
+          "fields": [
+            "imageAlignment"
+          ]
+        },
+        {
+          "displayName": "Promo D",
+          "example": "/core/promo/PromoD.json",
+          "height": 500,
+          "width": 800,
+          "fields": [
+            "imageAlignment"
+          ]
+        },
+        {
+          "displayName": "Promo E",
+          "example": "/core/promo/PromoE.json",
+          "height": 500,
+          "width": 800,
+          "fields": {
+            "alignTextLeft": {
+              "type": "boolean",
+              "cms.ui.note": "Check to align text left inside image container"
+            }
+          }
+        },
+        {
+          "displayName": "Promo F",
+          "example": "/core/promo/PromoF.json",
+          "height": 500,
+          "width": 800
+        },
+        {
+          "displayName": "Promo Link",
+          "example": "/core/promo/PromoLink.json",
+          "height": 125,
+          "width": 200
+        }
+      ]
+    }
+  }
+}

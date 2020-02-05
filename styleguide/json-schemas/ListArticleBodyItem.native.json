@@ -1,0 +1,14 @@
+{
+  "type": "object",
+  "properties": {
+    "headline": {
+      "type": "string"
+    },
+    "body": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "_wrapper": "/_wrapper.previewAtomic.json",
+  "_template": "/core/list/ListB.hbs",
+
+  "title": "the morning ten",
+
+  "items": [
+      {
+        "_include": "/core/promo/PromoA.json",
+        "_repeat": 10
+      }
+  ]
+}

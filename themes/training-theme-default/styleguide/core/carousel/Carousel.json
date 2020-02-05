@@ -1,0 +1,8 @@
+{
+    "_template": "Carousel.hbs",
+    "title": "A Captivating Gallery Title",
+    "slides": [{
+        "_include": "CarouselSlide.json",
+        "_repeat": [10, 12]
+    }]
+}

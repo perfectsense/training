@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html class="PressReleasePage" lang="{{#with language}}{{this}}{{else}}en{{/with}}" itemscope itemtype="http://schema.org/WebPage">
+    {{include "/core/page/Page-head.hbs" this}}
+    <body class="PressReleasePage-body"{{~#each extraBodyAttributes}} {{this}}{{~/each~}}>
+        <header class="PressReleasePage-header" itemscope itemtype="http://schema.org/WPHeader">
+            {{#with hat}}
+                <div class="PressReleasePage-hat">{{this}}</div>
+            {{/with}}
+            {{include "/core/page/Page-logo.amp.hbs" this}}
+            {{include "/core/page/Page-navigation.amp.hbs" this}}
+            {{include "/core/page/Page-social.hbs" this}}
+            {{#if searchAction}}
+                <form class="PressReleasePage-search" action="{{searchAction}}" novalidate="" autocomplete="off">
+                    <input type="text" class="PressReleasePage-searchInput" name="q">
+                    <button type="submit" class="PressReleasePage-searchButton">{{format "/core/page/Page" "searchButtonLabel"}}</button>
+                </form>
+            {{/if}}
+        </header>
+        {{#with banner}}
+            <div class="PressReleasePage-banner">{{~this~}}</div>
+        {{/with}}
+        {{#with sectionNavigation}}
+            <div class="PressReleasePage-sectionNavigation">{{this}}</div>
+        {{/with}}
+        {{#with packageNavigation}}
+            <div class="PressReleasePage-packageNavigation">{{this}}</div>
+        {{/with}}
+        {{#with above}}
+            <div class="PressReleasePage-above">{{this}}</div>
+        {{/with}}
+        <main class="PressReleasePage-main">
+            {{#with breadcrumbs}}
+                <div class="PressReleasePage-breadcrumbs">{{this}}</div>
+            {{/with}}
+            <main class="PressReleasePage-mainContent" itemprop="mainEntity" itemscope itemtype="http://schema.org/Article">
+                {{#with headline}}
+                    <h1 class="PressReleasePage-headline" itemprop="headline">{{this}}</h1>
+                {{/with}}
+                {{#with subHeadline}}
+                    <div class="PressReleasePage-subHeadline" itemprop="alternativeHeadline">{{this}}</div>
+                {{/with}}
+                <div class="PressReleasePage-byline" itemprop="author" itemscope itemtype="http://schema.org/Person">
+                    {{#with authorImage}}
+                        <div class="PressReleasePage-authorImage" itemprop="image">
+                            {{#with ../authorUrl}}<a href="{{this}}">{{/with}}
+                            <img alt="" src="{{src}}"
+                            {{~#with srcset}} srcset="{{this}}"{{/with~}}
+                            {{~#with width}} width="{{this}}"{{/with~}}
+                            {{~#with height}} height="{{this}}"{{/with~}}
+                        >
+                        {{#with ../authorUrl}}</a>{{/with}}
+                    </div>
+                {{/with}}
+                <div class="PressReleasePage-authorTexts">
+                    {{#with authorName}}
+                        <div class="PressReleasePage-authorName" itemprop="name">
+                            {{#with ../authorUrl}}<a href="{{this}}">{{/with}}
+                            {{this}}
+                            {{#with ../authorUrl}}</a>{{/with}}
+                        </div>
+                    {{/with}}
+                    {{#with authorBiography}}
+                        <div class="PressReleasePage-authorBiography">{{this}}</div>
+                    {{/with}}
+                </div>
+            </div>
+            {{#with contributors}}
+                <div class="PressReleasePage-contributors">
+                    <h2 class="PressReleasePage-contributors-heading">{{format "/core/page/CreativeWorkPage" "contributorsHeading"}}</h2>
+                    <div class="PressReleasePage-contributors-body">
+                        {{~#each this~}}
+                            {{~this~}}
+                            {{~#unless @last}}, {{/unless~}}
+                        {{~/each~}}
+                    </div>
+                </div>
+            {{/with}}
+            <div class="PressReleasePage-datePublished">{{datePublished}}</div>
+            {{#with datePublishedISO}}
+                <meta itemprop="datePublished" content="{{this}}">
+            {{/with}}
+            <div class="PressReleasePage-dateModified">{{dateModified}}</div>
+            {{#with dateModifiedISO}}
+                <meta itemprop="dateModified" content="{{this}}">
+            {{/with}}
+            {{#with lead}}
+                <div class="PressReleasePage-lead">{{this}}</div>
+            {{/with}}
+            {{#with richTextModule}}
+                <div class="PressReleasePage-richTextModule">{{this}}</div>
+            {{/with}}
+            {{#with updatesCorrections}}
+                <div class="PressReleasePage-updatesCorrections" itemprop="articleBody">{{this}}</div>
+            {{/with}}
+        </main>
+        {{#with tags}}
+            <div class="PressReleasePage-tags">
+                <h2 class="PressReleasePage-tags-heading">{{format "/core/page/ContentPage" "tagsHeading"}}</h2>
+                <div class="PressReleasePage-tags-body">{{this}}</div>
+            </div>
+        {{/with}}
+        {{#with countries}}
+            <div class="PressReleasePage-countries">
+                <h2 class="PressReleasePage-countries-heading">{{format "/core/page/ContentPage" "countriesHeading"}}</h2>
+                <div class="PressReleasePage-countries-body">{{this}}</div>
+            </div>
+        {{/with}}
+        {{#with brands}}
+            <div class="PressReleasePage-brands">
+                <h2 class="PressReleasePage-brands-heading">{{format "/core/page/ContentPage" "brandsHeading"}}</h2>
+                <div class="PressReleasePage-brands-body">{{this}}</div>
+            </div>
+        {{/with}}
+        {{#with products}}
+            <div class="PressReleasePage-products">
+                <h2 class="PressReleasePage-products-heading">{{format "/core/page/ContentPage" "productsHeading"}}</h2>
+                <div class="PressReleasePage-products-body">{{this}}</div>
+            </div>
+        {{/with}}
+        {{#with topics}}
+            <div class="PressReleasePage-topics">
+                <h2 class="PressReleasePage-topics-heading">{{format "/core/page/ContentPage" "topicsHeading"}}</h2>
+                <div class="PressReleasePage-topics-body">{{this}}</div>
+            </div>
+        {{/with}}
+        {{#with actions}}
+            <div class="PressReleasePage-actions">
+                <h2 class="PressReleasePage-actions-heading">{{format "/core/page/ContentPage" "actionsHeading"}}</h2>
+                <div class="PressReleasePage-actions-body">{{this}}</div>
+            </div>
+        {{/with}}
+        {{#with comments}}
+            <div class="PressReleasePage-comments">
+                {{this}}
+            </div>
+        {{/with}}
+    </main>
+    {{#with aside}}
+        <aside class="PressReleasePage-aside">{{this}}</aside>
+    {{/with}}
+    {{#with below}}
+        <div class="PressReleasePage-below">{{this}}</div>
+    {{/with}}
+    <footer class="PressReleasePage-footer" itemscope itemtype="https://schema.org/WPFooter">
+        {{#with footerLogo}}
+            <div class="PressReleasePage-footerLogo">{{this}}</div>
+        {{/with}}
+        {{#with footerNavigation}}
+            <div class="PressReleasePage-footerNavigation">{{this}}</div>
+        {{/with}}
+        {{#with footerContent}}
+            <div class="PressReleasePage-footerContent">{{this}}</div>
+        {{/with}}
+        {{include "/core/page/Page-social.hbs" this}}
+        {{#with disclaimer}}
+            <div class="PressReleasePage-disclaimer">{{this}}</div>
+        {{/with}}
+    </footer>
+    {{include "/core/page/Page-extraBodyItems.hbs" this}}
+</body>
+</html>

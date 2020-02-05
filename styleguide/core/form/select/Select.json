@@ -1,0 +1,16 @@
+{
+  "_template": "Select.hbs",
+  "label": "Sort by:",
+  "autofocus": false,
+  "name": "Name",
+  "disabled": false,
+  "multiple": false,
+  "placeholder": "Select An Option... ",
+  "required": false,
+  "options": [
+    {
+      "_include": "Option.json"
+    }
+  ],
+  "_hidden": true
+}

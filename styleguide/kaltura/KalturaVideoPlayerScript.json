@@ -3,5 +3,5 @@
   "_template": "KalturaVideoPlayerScript.hbs",
   "partnerId": "2270521",
   "uiConfId": "39207762",
-  "_hidden": false
+  "_hidden": true
 }

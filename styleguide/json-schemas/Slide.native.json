@@ -1,0 +1,19 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "media": {
+      "type": "object"
+    },
+    "attribution": {
+      "type": "string"
+    }
+  },
+  "_hidden": true
+}

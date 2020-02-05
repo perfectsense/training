@@ -1,31 +1,11 @@
 {
   "_template": "Tabs.hbs",
-  "title": "{{words}}",
+  "title": "Title",
+  "description": "Description",
   "tabs": [
     {
-      "_include": "TabItem.json",
-      "label": "{{words (1,2)}}",
-      "id": "cat",
-      "content": {
-        "_include": "/core/promo/Promo.json"
-      }
-    },
-    {
-      "_include": "TabItem.json",
-      "label": "{{words (1,2)}}",
-      "id": "3",
-      "content": {
-        "_include": "/core/text/RichTextModule.json"
-      }
-    },
-    {
-      "_include": "TabItem.json",
-      "label": "{{words (1,2)}}",
-      "id": "4",
-      "content": {
-        "_include": "/core/text/RichTextModule.json"
-      }
+      "_include": "TabItem.json"
     }
   ],
-  "_hidden": false
+  "_hidden": true
 }

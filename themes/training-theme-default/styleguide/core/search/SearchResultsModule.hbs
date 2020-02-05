@@ -1,0 +1,105 @@
+<ps-search-results-module class="SearchResultsModule">
+    <form class="SearchResultsModule-form">
+        <div class="SearchResultsModule-query">
+            {{#if query}}
+                <input type="text" class="SearchResultsModule-formInput" name="q" value="{{query}}" aria-label="search" />
+            {{else}}
+                <input type="text" class="SearchResultsModule-formInput" name="q" aria-label="search" placeholder="{{format 'noQueryText'}}" />
+            {{/if}}
+            <button type="submit" class="SearchResultsModule-formButton">
+                <svg><use xlink:href="#icon-magnify"></use></svg><span class="sr-only">{{format "submitButtonLabel"}}</span>
+            </button>
+        </div>
+        <div class="SearchResultsModule-ajax">
+            <ps-search-filters class="SearchResultsModule-filters">
+                <div class="SearchResultsModule-wrapper">
+                    <aside class="SearchResultsModule-aside">
+                        <button class="SearchResultsModule-filters-open"><span class="sr-only">{{format "filtersOpen"}}</span>{{format "filterTitle"}}<svg class="filter"><use xlink:href="#filter"></use></svg></button>
+                        <div class="SearchResultsModule-filters-overlay">
+                            <button class="SearchResultsModule-filters-close"><svg class="close-x"><use xlink:href="#close-x"></use></svg><span class="sr-only">{{format "filtersClose"}}</span></button>
+                            <div class="SearchResultsModule-filters-title">{{format "filterTitle"}}<svg class="filter"><use xlink:href="#filter"></use></svg></div>
+                            <div class="SearchResultsModule-filters-selected">
+                                <div class="SearchResultsModule-filters-selected-heading">
+                                    <div class="SearchResultsModule-filters-selected-title">{{format "selectedFiltersTitle"}}</div>
+                                    <a class="SearchResultsModule-filters-selected-reset" href="#" title="{{format "selectedFiltersReset"}}">{{format "selectedFiltersReset"}}</a>
+                                </div>
+                                <div class="SearchResultsModule-filters-selected-content"></div>
+                            </div>
+                            <div class="SearchResultsModule-filters-content">
+                                {{#each filters}}
+                                    {{render this}}
+                                {{/each}}
+                            </div>
+                            <div class="SearchResultsModule-filters-apply">
+                                <button class="SearchResultsModule-filters-applyButton">{{format "apply"}}</button>
+                            </div>
+                        </div>
+                    </aside>
+                    <main class="SearchResultsModule-main">
+                        {{#if items}}
+                            <div class="SearchResultsModule-results-header">
+                                {{#if query}}
+                                    <div class="SearchResultsModule-count"><span class="SearchResultsModule-count-desktop">{{{format "/core/search/SearchResultsModule"
+                                    "foundCountText" resultsCount=count searchQuery=query}}}</span><span class="SearchResultsModule-count-mobile">{{{format "/core/search/SearchResultsModule"
+                                    "foundCountMobileText" resultsCount=count}}}</span></div>
+                                {{else}}
+                                    <div class="SearchResultsModule-count"><span class="SearchResultsModule-count-desktop">{{{format "/core/search/SearchResultsModule"
+                                    "noQueryFoundCountText" resultsCount=count}}}</span><span class="SearchResultsModule-count-mobile">{{{format "/core/search/SearchResultsModule"
+                                    "foundCountMobileText" resultsCount=count}}}</span></div>
+                                {{/if}}
+                                {{#if sorts}}
+                                    <div class="SearchResultsModule-sorts">
+                                        <div class="Select">
+                                            <label class="Select-label"><span>{{format "sortBy"}}</span>
+                                                <select class="Select-input" name="{{sorts.[0].parameterName}}">
+                                                    {{#each sorts}}
+                                                        {{this}}
+                                                    {{/each}}
+                                                </select>
+                                            </label>
+                                        </div>
+                                    </div>
+                                {{/if}}
+                            </div>
+                            {{#with spotlights}}
+                                <ul class="SearchResultsModule-spotlights">
+                                    {{#each this}}
+                                        <li class="SearchResultsModule-spotlights-item">
+                                            {{include "/core/promo/PromoB.hbs" this}}
+                                        </li>
+                                    {{/each}}
+                                </ul>
+                            {{/with}}
+                            {{#with items}}
+                                <ul class="SearchResultsModule-results">
+                                    {{#each this}}
+                                        <li class="SearchResultsModule-results-item">
+                                            {{include "/core/promo/PromoB.hbs" this}}
+                                        </li>
+                                    {{/each}}
+                                </ul>
+                            {{/with}}
+                            {{#or previousPage nextPage}}
+                                <div class="SearchResultsModule-pagination">
+                                    <div class="SearchResultsModule-previousPage">{{#with previousPage}}<a href="{{this}}" rel="prev"><svg class="chevron"><use xlink:href="#chevron"></use></svg><span class="sr-only">{{format
+                                            "/core/search/SearchResultsModule" "previousText"}}</span></a>{{else}}<svg class="chevron" data-inactive><use xlink:href="#chevron"></use></svg>{{/with}}</div>
+                                        <div class="SearchResultsModule-pageCounts">{{{format "/core/search/SearchResultsModule" "pageCounts"
+                                        number=pageNumber count=pageCount}}}</div>
+                                        <div class="SearchResultsModule-nextPage">{{#with nextPage}}<a href="{{this}}" rel="next"><svg class="chevron"><use xlink:href="#chevron"></use></svg><span class="sr-only">{{format
+                                            "/core/search/SearchResultsModule" "nextText"}}</span>{{else}}<svg class="chevron" data-inactive><use xlink:href="#chevron"></use></svg>{{/with}}</a></div>
+                                </div>
+                            {{/or}}
+                        {{else}}
+                            {{#if query}}
+                                <div class="SearchResultsModule-noResults">{{{format "/core/search/SearchResultsModule" "noResultsText"
+                                searchQuery=query}}}</div>
+                            {{else}}
+                                <div class="SearchResultsModule-noResults">{{{format "/core/search/SearchResultsModule" "noQueryText"}}}</div>
+                            {{/if}}
+                        {{/if}}
+                    </main>
+                </div>
+            </ps-search-filters>
+        </div>
+    </form>
+</ps-search-results-module>

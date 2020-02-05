@@ -1,0 +1,97 @@
+{
+  "_include": "/core/page/Page.amp.json",
+  "_hidden": false,
+  "_template": "/core/video/VideoPage.amp.hbs",
+  "displayDatePublished": true,
+  "dateExpired": "December 11, 2018",
+  "dateExpiredISO": "2018-02-19T17:44:23+00:00",
+  "datePublished": "December 11, 2016",
+  "datePublishedISO": "2016-02-19T16:43:22+00:00",
+  "dateModified": "December 12, 2016",
+  "dateModifiedISO": "2016-02-19T17:44:23+00:00",
+  "headline": "{{words}}",
+  "subHeadline": "{{words}}",
+  "authorUrl": "#",
+  "authorImage": {
+    "_image": true
+  },
+  "banner": {
+    "_include": "/core/banner/Banner.json",
+    "_template" : "/core/banner/Banner.amp.hbs"
+  },
+  "dateline": "{{words}}",
+  "authorName": "{{name}}",
+  "authorBiography": "{{sentences}}",
+  "contributors": [
+    {
+      "_template": "/core/link/Link.amp.hbs",
+      "_repeat": 2,
+      "body": "{{name}}"
+    }
+  ],
+
+  "above": [
+    {
+      "_template": "/core/list/ListF.amp.hbs",
+
+      "title": "featured",
+      "items": [
+        {
+          "_include": "/core/promo/PromoA.json",
+          "_template": "/core/promo/PromoA.amp.hbs",
+          "_repeat": 12
+        }
+      ]
+    }
+  ],
+
+  "aside": [
+    {
+      "_template": "/core/list/ListC.amp.hbs",
+      "title": "featured",
+      "items": [
+        {
+          "_include": "/core/promo/PromoA.json",
+          "_template": "/core/promo/PromoA.amp.hbs",
+          "_repeat": 5
+        }
+      ]
+    },
+    {
+      "_template": "/core/list/ListB.amp.hbs",
+
+      "title": "featured",
+      "items": [
+        {
+          "_include": "/core/promo/PromoA.json",
+          "_template": "/core/promo/PromoA.amp.hbs",
+          "_repeat": 10
+        }
+      ]
+    }
+  ],
+
+  "breadcrumbs": [
+    {
+        "_include": "/core/link/Link.json",
+        "_template": "/core/link/Link.amp.hbs",
+        "_repeat": [ 2, 3 ]
+    }
+  ],
+
+  "player": {
+    "_include": "/youtube/YouTubeVideoPlayer.json",
+    "_template": "/youtube/YouTubeVideoPlayer.amp.hbs",
+    "autoplay": true
+  },
+  "videoBody": "{{paragraphs([2,5])}}",
+
+  "tags": [
+    {
+      "_include": "/core/link/Link.json",
+      "_template": "/core/link/Link.amp.hbs",
+      "_repeat": 4
+    }
+  ],
+  "kicker": "{{words(1)}}"
+}

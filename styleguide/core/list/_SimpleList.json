@@ -1,6 +1,6 @@
 {
   "_template": "List.hbs",
-  "title": "{{words}}",
-  "items": [],
+  "_include": "/core/list/List.json",
+  "items": null,
   "_hidden": true
 }

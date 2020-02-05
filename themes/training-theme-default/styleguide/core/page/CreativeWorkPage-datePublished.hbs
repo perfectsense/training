@@ -1,0 +1,8 @@
+{{~#if datePublished~}}
+    <div class="{{#if className}}{{className}}{{else}}CreativeWorkPage{{/if}}-datePublished">
+        {{datePublished}}
+    </div>
+{{~/if~}}
+{{#with datePublishedISO}}
+    <meta content="{{this}}">
+{{/with}}

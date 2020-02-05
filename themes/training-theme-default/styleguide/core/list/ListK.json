@@ -1,0 +1,14 @@
+{
+  "_wrapper": "/_wrapper.previewAtomic.json",
+  "_template": "/core/list/ListK.hbs",
+  "title": "More Coverage",
+  "items": [
+    {
+      "_include": "/core/promo/PromoF.json"
+    },
+    {
+      "_include": "/core/promo/PromoLink.json",
+      "_repeat": 3
+    }
+  ]
+}

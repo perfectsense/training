@@ -1,0 +1,100 @@
+{
+  "styles": {
+    "/core/list/List.hbs": {
+      "fields": [
+        "hideCategories",
+        "hideDates",
+        "hideDescriptions"
+      ],
+      "templates": [
+        {
+          "displayName": "List A",
+          "example": "/core/list/ListA.json",
+          "height": 500,
+          "width": 800
+        },
+        {
+          "displayName": "List B",
+          "example": "/core/list/ListB.json",
+          "height": 500,
+          "width": 800,
+          "fields": {
+            "hideNumber": {
+              "type": "boolean",
+              "cms.ui.note": "Hide the List Item Numbers"
+            }
+          }
+        },
+        {
+          "displayName": "List C",
+          "example": "/core/list/ListC.json",
+          "height": 500,
+          "width": 800,
+          "fields": [
+            "imageAlignment"
+          ]
+        },
+        {
+          "displayName": "List Load More",
+          "example": "/core/list/ListLoadMore.json",
+          "height": 500,
+          "width": 800
+        },
+        {
+          "displayName": "List E",
+          "example": "/core/list/ListE.json",
+          "height": 500,
+          "width": 800
+        },
+        {
+          "displayName": "List F",
+          "example": "/core/list/ListF.json",
+          "height": 500,
+          "width": 800
+        },
+        {
+          "displayName": "List G",
+          "example": "/core/list/ListG.json",
+          "height": 500,
+          "width": 800
+        },
+        {
+          "displayName": "List H",
+          "example": "/core/list/ListH.json",
+          "height": 500,
+          "width": 800
+        },
+        {
+          "displayName": "List I",
+          "example": "/core/list/ListI.json",
+          "height": 500,
+          "width": 800
+        },
+        {
+          "displayName": "List J",
+          "example": "/core/list/ListJ.json",
+          "height": 500,
+          "width": 800
+        },
+        {
+          "displayName": "List K",
+          "example": "/core/list/ListK.json",
+          "height": 500,
+          "width": 800
+        },
+        {
+          "displayName": "List Buttons",
+          "example": "/core/list/ListTags.json",
+          "height": 250,
+          "width": 400
+        },
+        {
+          "displayName": "List Section",
+          "hidden": true,
+          "example": "/core/list/ListSection.json",
+          "template": "/core/list/ListSection.hbs"
+        }
+      ]
+    }
+  }
+}

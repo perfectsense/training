@@ -1,44 +1,38 @@
 {
   "_wrapper": false,
-  "_template": "/core/page/Page.hbs",
+  "_template": "Page.hbs",
   "language": "",
   "charset": "",
   "extraStyles": {
-    "_include": "/_group/ExtraStyles.json"
+    "_include": "/_group/ExtraStyles.json",
+    "_key": 0
   },
   "viewport": "width=device-width, initial-scale=1",
   "title": "Brightspot Express",
   "description": "Brightspot Express is...",
   "keywords": "Brightspot, Brightspot Express",
-  "canonicalLink": "http://www.brightspot.com/",
+  "canonicalLink": "https://www.brightspot.com/",
   "meta": {
-    "_include": "/_group/Metas.json"
+    "_include": "/_group/Metas.json",
+    "_key": 0
   },
-  "feedLink": "{{html('<link type=\"application/rss+xml\" rel=\"alternate\" title=\"Brightspot Express\" href=\"http://www.brightspot.com/feed.rss\">')}}",
-  "jsonLinkedData": "{{html('{ \"@type\": \"WebPage\" }')}}",
+  "feedLink": "Feed Link",
+  "jsonLinkedData": "",
   "manifestLink": "/manifest.json",
-  "favicons": [
-    {
-      "_include": "Favicon.json",
-      "rel": "apple-touch-icon",
-      "href": "/apple-touch-icon.png"
-    },
-    {
-      "_include": "Favicon.json"
-    },
-    {
-      "_include": "Favicon.json",
-      "href": "/favicon-16x16.png"
-    }
-  ],
+  "favicons": {
+    "_include": "Favicon.json"
+  },
   "extraScripts": {
-    "_include": "/_group/ExtraScripts.json"
+    "_include": "/_group/ExtraScripts.json",
+    "_key": 0
   },
   "extraBodyAttributes": {
-    "_include": "/_group/ExtraBodyAttributes.json"
+    "_include": "/_group/ExtraBodyAttributes.json",
+    "_key": 0
   },
   "extraBodyItems": {
-    "_include": "/_group/ExtraBodyItems.json"
+    "_include": "/_group/ExtraBodyItems.json",
+    "_key": 0
   },
   "hat": {
     "_include": "/core/page/PageHeaderTextHat.json"
@@ -50,7 +44,8 @@
     "_include": "/core/page/PageLogo.json"
   },
   "banner": {
-    "_include": "/_group/Banners.json"
+    "_include": "/_group/Banners.json",
+    "_key": 0
   },
   "navigation": {
     "_include": "/core/navigation/Navigation.json"
@@ -72,20 +67,20 @@
   "pageHeading": "Brightspot Express",
   "pageLead": {
     "_include": "/_group/Leads.json",
-    "_random": true
+    "_key": 0
   },
-  "pageSubHeading": "{{html('Lorem ipsum dolor sit amet, consectetur adipiscing elit. <a href=\"http://www.brightspot.com/\">Fusce ultrices</a> quis dui quis vehicula. Vivamus id lectus lacinia, volutpat nulla in, vehicula urna. Pellentesque consequat mauris ex, sed vulputate erat commodo et.')}}",
+  "pageSubHeading": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
   "main": {
     "_include": "/_group/Modules.json",
-    "_random": true
+    "_key": 0
   },
   "aside": {
     "_include": "/_group/Modules.json",
-    "_random": true
+    "_key": 0
   },
   "below": {
     "_include": "/_group/Modules.json",
-    "_random": true
+    "_key": 0
   },
   "footerNavigation": {
     "_include": "/core/navigation/Navigation.json"
@@ -94,10 +89,18 @@
     "_include": "/_group/FooterTypes.json",
     "_key": 0
   },
-  "disclaimer": "{{html('&copy; 2017 Perfect Sense. Site powered by our <a href=\"http://www.brightspot.com/\">Brightspot</a> publishing platform.')}}",
+  "disclaimer": "Copyright 2017 Perfect Sense. Site powered by our Brightspot publishing platform.')",
   "contentId": "a123",
+  "ampIntegrations": {
+    "_include": "/_group/AmpIntegrations.json",
+    "_key": 0
+  },
+  "ampAnalytics": {
+    "_include": "/_group/AmpAnalytics.json",
+    "_key": 0
+  },
   "actions": {
     "_include": "/core/action-bar/ActionBar.json"
   },
-  "_hidden": false
+  "_hidden": true
 }

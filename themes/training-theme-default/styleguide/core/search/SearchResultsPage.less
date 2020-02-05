@@ -1,0 +1,37 @@
+.SearchResultsPage {
+  .Page-above {
+    display: none;
+  }
+
+  &-below {
+    margin-bottom: @grid-gap;
+  }
+
+  &-content {
+    margin: 0 auto;
+    max-width: @content-width;
+    padding: @grid-gap;
+  }
+
+  &-title {
+    &:extend(.label-4 all);
+     margin-bottom: (@grid-gap / 4);
+  }
+
+  @media @mq-viewport-md {
+    .Page-above {
+      display: block;
+    }
+
+    &-content {
+      padding-top: (@grid-gap * 2);
+    }
+  }
+
+  @media @mq-viewport-hk {
+    &-content {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+}

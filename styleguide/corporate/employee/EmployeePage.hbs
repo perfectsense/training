@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html class="EmployeePage" lang="{{#with language}}{{this}}{{else}}en{{/with}}" itemscope itemtype="http://schema.org/WebPage">
+    {{include "/core/page/Page-head.hbs" this}}
+    <body class="EmployeePage-body"{{~#each extraBodyAttributes}} {{this}}{{~/each~}}>
+        <header class="EmployeePage-header" itemscope itemtype="http://schema.org/WPHeader">
+            {{#with hat}}
+                <div class="EmployeePage-hat">{{this}}</div>
+            {{/with}}
+            {{include "/core/page/Page-logo.amp.hbs" this}}
+            {{include "/core/page/Page-navigation.amp.hbs" this}}
+            {{include "/core/page/Page-social.hbs" this}}
+            {{#if searchAction}}
+                <form class="EmployeePage-search" action="{{searchAction}}" novalidate="" autocomplete="off">
+                    <input type="text" class="EmployeePage-searchInput" name="q">
+                    <button type="submit" class="EmployeePage-searchButton">{{format "/core/page/Page" "searchButtonLabel"}}</button>
+                </form>
+            {{/if}}
+        </header>
+        {{#with banner}}
+            <div class="EmployeePage-banner">{{~this~}}</div>
+        {{/with}}
+        {{#with sectionNavigation}}
+            <div class="EmployeePage-sectionNavigation">{{this}}</div>
+        {{/with}}
+        {{#with packageNavigation}}
+            <div class="EmployeePage-packageNavigation">{{this}}</div>
+        {{/with}}
+        {{#with above}}
+            <div class="EmployeePage-above">{{this}}</div>
+        {{/with}}
+        <main class="EmployeePage-main">
+            {{#with breadcrumbs}}
+                <div class="EmployeePage-breadcrumbs">{{this}}</div>
+            {{/with}}
+            <div class="EmployeePage-mainContent" itemscope itemtype="http://schema.org/Employee"{{extraAttributes}}>
+                {{#with name}}
+                    <h1 class="EmployeePage-name" itemprop="name">{{this}}</h1>
+                {{/with}}
+                {{#with jobTitle}}
+                    <div class="EmployeePage-jobTitle" itemprop="jobTitle">{{this}}</div>
+                {{/with}}
+                {{#with email}}
+                    <div class="EmployeePage-email" itemprop="email">{{this}}</div>
+                {{/with}}
+                {{#with groups}}
+                    <div class="EmployeePage-groups" itemprop="groups">{{this}}</div>
+                {{/with}}
+                {{#with image}}
+                    <div class="EmployeePage-image" itemprop="image">{{this}}</div>
+                {{/with}}
+                {{#with shortBiography}}
+                    <div class="EmployeePage-shortBiography">{{this}}</div>
+                {{/with}}
+                {{#with fullBiography}}
+                    <div class="EmployeePage-fullBiography" itemprop="description">{{this}}</div>
+                {{/with}}
+                {{#with links}}
+                    <ul class="EmployeePage-links">
+                        {{#each this}}
+                            <li class="EmployeePage-links-item">{{this}}</li>
+                        {{/each}}
+                    </ul>
+                {{/with}}
+                {{#with employeeSocialLinks}}
+                    <div class="EmployeePage-employeeSocialLinks">{{this}}</div>
+                {{/with}}
+            </div>
+            {{#with tags}}
+                <div class="EmployeePage-tags">
+                    <h2 class="EmployeePage-tags-heading">{{format "/core/page/ContentPage" "tagsHeading"}}</h2>
+                    <div class="EmployeePage-tags-body">{{this}}</div>
+                </div>
+            {{/with}}
+            {{#with countries}}
+                <div class="EmployeePage-countries">
+                    <h2 class="EmployeePage-countries-heading">{{format "/core/page/ContentPage" "countriesHeading"}}</h2>
+                    <div class="EmployeePage-countries-body">{{this}}</div>
+                </div>
+            {{/with}}
+            {{#with brands}}
+                <div class="EmployeePage-brands">
+                    <h2 class="EmployeePage-brands-heading">{{format "/core/page/ContentPage" "brandsHeading"}}</h2>
+                    <div class="EmployeePage-brands-body">{{this}}</div>
+                </div>
+            {{/with}}
+            {{#with products}}
+                <div class="EmployeePage-products">
+                    <h2 class="EmployeePage-products-heading">{{format "/core/page/ContentPage" "productsHeading"}}</h2>
+                    <div class="EmployeePage-products-body">{{this}}</div>
+                </div>
+            {{/with}}
+            {{#with topics}}
+                <div class="EmployeePage-topics">
+                    <h2 class="EmployeePage-topics-heading">{{format "/core/page/ContentPage" "topicsHeading"}}</h2>
+                    <div class="EmployeePage-topics-body">{{this}}</div>
+                </div>
+            {{/with}}
+            {{#with actions}}
+                <div class="EmployeePage-actions">
+                    <h2 class="EmployeePage-actions-heading">{{format "/core/page/ContentPage" "actionsHeading"}}</h2>
+                    <div class="EmployeePage-actions-body">{{this}}</div>
+                </div>
+            {{/with}}
+            {{#with comments}}
+                <div class="EmployeePage-comments">
+                    {{this}}
+                </div>
+            {{/with}}
+        </main>
+        {{#with aside}}
+            <aside class="EmployeePage-aside">{{this}}</aside>
+        {{/with}}
+        {{#with below}}
+            <div class="EmployeePage-below">{{this}}</div>
+        {{/with}}
+        <footer class="EmployeePage-footer" itemscope itemtype="https://schema.org/WPFooter">
+            {{#with footerLogo}}
+                <div class="EmployeePage-footerLogo">{{this}}</div>
+            {{/with}}
+            {{#with footerNavigation}}
+                <div class="EmployeePage-footerNavigation">{{this}}</div>
+            {{/with}}
+            {{#with footerContent}}
+                <div class="EmployeePage-footerContent">{{this}}</div>
+            {{/with}}
+            {{include "/core/page/Page-social.hbs" this}}
+            {{#with disclaimer}}
+                <div class="EmployeePage-disclaimer">{{this}}</div>
+            {{/with}}
+        </footer>
+        {{include "/core/page/Page-extraBodyItems.hbs" this}}
+    </body>
+</html>

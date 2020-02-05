@@ -1,0 +1,61 @@
+{
+  "_wrapper": false,
+  "_include": "/core/page/Page.json",
+  "_template": "/core/video/VideoPage.hbs",
+
+  "dateExpired": "December 11, 2018",
+  "dateExpiredISO": "2018-02-19T17:44:23+00:00",
+  "datePublished": "December 11, 2016",
+  "datePublishedISO": "2016-02-19T16:43:22+00:00",
+  "dateModified": "December 12, 2016",
+  "dateModifiedISO": "2016-02-19T17:44:23+00:00",
+
+  "authorUrl": "#",
+  "authorImage": {
+    "_image": true
+  },
+  "authorName": "{{name}}",
+  "authorBiography": "{{sentences}}",
+
+  "breadcrumbs": [
+    {
+        "_include": "/core/link/Link.json",
+        "_repeat": [ 2, 3 ]
+    }
+  ],
+
+  "headline": "{{words([2,5])}}",
+  "banner": {
+    "_include": "/core/banner/Banner.json"
+  },
+  "subHeadline": "{{html('<a href=#>caption credit name</a>')}}",
+
+  "description": "{{paragraphs(3)}}",
+
+  "player": {
+      "_include": "/youtube/YouTubeVideoPlayer.json"
+  },
+
+  "playlist": null,
+
+  "aside": [
+    {
+      "_include": "/core/list/ListC.json"
+    }
+  ],
+
+  "caption": "{{sentences(3)}}",
+
+  "contentFooter": [
+    {
+      "_include": "/core/list/ListLoadMore.json"
+    }
+  ],
+
+  "tags": [
+    {
+      "_include": "/core/link/Link.json",
+      "_repeat": 4
+    }
+  ]
+}

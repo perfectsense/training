@@ -1,4 +1,16 @@
 {
-  "styles": {},
+  "styles": {
+    "/core/navigation/NavigationItem.native.hbs": {
+      "fields": {
+        "iconFontFamily": {
+          "type": "text",
+          "cms.ui.note": "Icon directory: https://expo.github.io/vector-icons/"
+        },
+        "iconFontName": {
+          "type": "text"
+        }
+      }
+    }
+  },
   "_hidden": true
 }

@@ -1,0 +1,11 @@
+.SharesTable {
+    &:extend(.AssetRequestTable all);
+}
+
+.SharesTableRow {
+    &-emails {
+        .ShareEmail:not(:last-child):after {
+            content: ', ';
+        }
+    }
+}

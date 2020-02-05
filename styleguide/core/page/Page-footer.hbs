@@ -1,0 +1,13 @@
+<footer class="EpisodePage-footer" itemscope itemtype="https://schema.org/WPFooter">
+    {{#with footerLogo}}
+        <div class="EpisodePage-footerLogo">{{this}}</div>
+    {{/with}}
+    {{#with footerNavigation}}
+        <div class="EpisodePage-footerNavigation">{{this}}</div>
+    {{/with}}
+    {{#with footerContent}}
+        <div class="EpisodePage-footerContent">{{this}}</div>
+    {{/with}}
+    {{include "/core/page/Page-social.hbs" this}}
+    {{include "/core/page/Page-disclaimer.hbs" this}}
+</footer>

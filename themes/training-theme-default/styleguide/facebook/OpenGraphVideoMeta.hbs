@@ -1,0 +1,23 @@
+{{!-- Required Elements --}}
+
+{{~#with url}}
+    <meta property="og:video" content="{{this}}">
+{{/with~}}
+
+{{!-- Optional Elements --}}
+
+{{~#with secureUrl}}
+    <meta property="og:video:secure_url" content="{{this}}">
+{{/with}}
+
+{{~#with mimeType}}
+    <meta property="og:video:type" content="{{this}}">
+{{/with}}
+
+{{~#with width}}
+    <meta property="og:video:width" content="{{this}}">
+{{/with}}
+
+{{~#with height}}
+    <meta property="og:video:height" content="{{this}}">
+{{~/with~}}

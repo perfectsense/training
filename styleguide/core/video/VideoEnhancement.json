@@ -1,0 +1,15 @@
+{
+  "_template": "/core/video/VideoEnhancement.hbs",
+  "player": {
+    "_include": "/_group/Videos.json",
+    "_key": 0
+  },
+  "playlist": {
+    "_include": "/core/video/PlaylistItem.json"
+  },
+  "thumbnail": {
+    "_include": "/core/image/Image.json"
+  },
+  "title": "Video Enhancement",
+  "_hidden": true
+}

@@ -1,7 +1,0 @@
-{
-  "_include": "VideoPage.json",
-  "_template": "VideoPage.hbs",
-  "subHeadline": "{{words(100)}}",
-  "videoPlayerHighlight": true,
-  "_hidden": false
-}

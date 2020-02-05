@@ -1,5 +1,5 @@
 {
   "_template": "FacebookJavaScriptSdk.hbs",
   "facebookAppId": "YOUR APP ID HERE",
-  "_hidden": false
+  "_hidden": true
 }

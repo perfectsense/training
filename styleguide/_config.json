@@ -1,7 +1,7 @@
 {
-  "sources": [],
-  "javaPackage": "bex.training.view",
   "pom": "frontend/pom.xml",
+  "hiddenExamples": true,
+  "visibleExamples": "/examples/**/*",
   "vars": {
     "exampleSiteUrl": "http://www.perfectsensedigital.com/"
   },
@@ -37,19 +37,59 @@
     }
   },
   "imageSizeContexts": {
+    "/auth/navigation/AuthenticatedNavigationItem.hbs": {
+      "avatar": "tiny"
+    },
+    "/blog/blogpost/BlogPostPage.hbs": {
+      "authorImage": "tiny",
+      "contributorImage": "tiny"
+    },
+    "/blog/blogpost/BlogPostPage.amp.hbs": {
+      "authorImage": "tiny",
+      "contributorImage": "tiny"
+    },
+    "/community/commenting/Comment.hbs": {
+      "authorImage": "tiny"
+    },
+    "/community/commenting/Comment.amp.hbs": {
+      "authorImageSrc": "tiny"
+    },
     "/core/article/ArticlePage.hbs": {
+      "authorImage": "tiny"
+    },
+    "/core/article/ArticlePage.amp.hbs": {
       "authorImage": "tiny"
     },
     "/core/background/Background.hbs": {
       "cssValue": "large"
     },
+    "/core/background/Background.amp.hbs": {
+      "cssValue": "large"
+    },
+    "/core/carousel/Carousel.amp.hbs": {
+      "image": "small"
+    },
     "/core/figure/Figure.hbs": {
       "image": "small"
+    },
+    "/core/figure/Figure.amp.hbs": {
+      "image": "small"
+    },
+    "/core/form/page/FormPage.hbs": {
+      "authorImage": "tiny"
     },
     "/core/gallery/GalleryPage.hbs": {
       "authorImage": "tiny"
     },
+    "/core/gallery/GalleryPage.amp.hbs": {
+      "authorImage": "tiny",
+      "image": "small"
+    },
     "/core/image/Image.hbs": {
+      "image": "small",
+      "narrowImage": "small"
+    },
+    "/core/image/Image.amp.hbs": {
       "image": "small",
       "narrowImage": "small"
     },
@@ -60,6 +100,10 @@
           "image": "large"
         }
       }
+    },
+    "/core/image/Image.native.hbs": {
+      "image": "small",
+      "narrowImage": "small"
     },
     "/core/page/ContentPage.hbs": {
       "authorImage": "tiny"
@@ -76,7 +120,16 @@
     "/core/page/PageLogo.hbs": {
       "image": "small"
     },
+    "/core/page/CreativeWorkPage.amp.hbs": {
+      "authorImage": "tiny"
+    },
+    "/core/page/PageLogo.amp.hbs": {
+      "image": "small"
+    },
     "/core/quote/Quote.hbs": {
+      "image": "tiny"
+    },
+    "/core/quote/Quote.amp.hbs": {
       "image": "tiny"
     },
     "/core/video/VideoPage.hbs": {
@@ -85,11 +138,88 @@
     "/core/video/HTML5VideoPlayer.hbs": {
       "poster": "small"
     },
+    "/core/video/VideoPage.amp.hbs": {
+      "authorImage": "tiny"
+    },
+    "/core/video/HTML5VideoPlayer.amp.hbs": {
+      "poster": "small"
+    },
+    "/dam/document/DigitalDocumentPage.hbs": {
+      "authorImage": "tiny"
+    },
+    "/dam/presentation/PresentationDigitalDocumentPage.hbs": {
+      "authorImage": "tiny"
+    },
+    "/dam/request/AssetRequestTableRow.hbs": {
+      "asset": {
+        "/core/image/Image.hbs": {
+          "image": "small"
+        }
+      }
+    },
+    "/dam/spreadsheet/SpreadsheetDigitalDocumentPage.hbs": {
+      "authorImage": "tiny"
+    },
     "/facebook/OpenGraphImageMeta.hbs": {
       "image": "socialSharing"
     },
     "/jwplayer/JWVideoPlayer.hbs": {
       "image": "small"
+    },
+    "/jwplayer/JWVideoPlayer.amp.hbs": {
+      "image": "small"
+    },
+    "/media/FranchisePage.hbs": {
+      "authorImage": "tiny"
+    },
+    "/media/ShowPage.hbs": {
+      "authorImage": "tiny"
+    },
+    "/media/SeasonPage.hbs": {
+      "authorImage": "tiny"
+    },
+    "/media/EpisodePage.hbs": {
+      "authorImage": "tiny"
+    },
+    "/media/SpecialPage.hbs": {
+      "authorImage": "tiny"
+    },
+    "/media/ClipPage.hbs": {
+      "authorImage": "tiny"
+    },
+    "/media/FranchisePage.amp.hbs": {
+      "authorImage": "tiny"
+    },
+    "/media/ShowPage.amp.hbs": {
+      "authorImage": "tiny"
+    },
+    "/media/SeasonPage.amp.hbs": {
+      "authorImage": "tiny"
+    },
+    "/media/EpisodePage.amp.hbs": {
+      "authorImage": "tiny"
+    },
+    "/media/SpecialPage.amp.hbs": {
+      "authorImage": "tiny"
+    },
+    "/media/ClipPage.amp.hbs": {
+      "authorImage": "tiny"
+    },
+    "/media/PodcastEpisodePage.hbs": {
+      "podcastImage": {
+        "/core/image/Image.hbs": {
+          "image": "tiny"
+        }
+      }
+    },
+    "/press-release/PressRelease.hbs": {
+      "authorImage": "tiny"
+    },
+    "/press-release/PressRelease.amp.hbs": {
+      "authorImage": "tiny"
+    },
+    "/quiz/QuizPage.hbs": {
+      "authorImage": "tiny"
     },
     "/twitter/card/TwitterCard.hbs": {
       "image": "twitterSharing"
@@ -102,8 +232,16 @@
     },
     "/twitter/card/TwitterPlayerCard.hbs": {
       "image": "twitterSharing"
+    },
+    "/user/profile/UserPublicProfilePage.hbs": {
+      "userImage": "small"
     }
   },
-  "styles": {},
+  "includes": [
+    "bn/_NativeApp.config.json",
+    "core/list/_List.config.json",
+    "core/navigation/_NavigationItem.config.json",
+    "core/promo/_Promo.config.json"
+  ],
   "_hidden": true
 }

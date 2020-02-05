@@ -1,0 +1,116 @@
+
+    <!DOCTYPE html>
+    <html ⚡ class="MediaObjectPage" lang="{{#with language}}{{this}}{{else}}en{{/with}}">
+          {{include "/core/page/Page-head.amp.hbs" this}}
+
+
+              <body class="MediaObjectPage-body"{{~#each extraBodyAttributes}} {{this}}{{~/each~}}>
+
+                      <header class="MediaObjectPage-header">
+                          {{#with hat}}
+                              <div class="MediaObjectPage-hat">{{this}}</div>
+                          {{/with}}
+
+                          {{#with logo}}
+                              <div class="MediaObjectPage-logo">{{this}}</div>
+                          {{/with}}
+
+                          {{#with navigation}}
+                              <div class="MediaObjectPage-navigation">{{this}}</div>
+                          {{/with}}
+
+                          {{#with social}}
+                              <div class="MediaObjectPage-social">{{this}}</div>
+                          {{/with}}
+
+
+                              {{#if searchAction}}
+                                  <form class="MediaObjectPage-search" action="{{searchAction}}" novalidate="" autocomplete="off">
+
+                                          <input type="text" class="MediaObjectPage-searchInput" name="q">
+
+
+
+                                          <button type="submit" class="MediaObjectPage-searchButton">{{format "/core/page/Page" "searchButtonLabel"}}</button>
+
+                                  </form>
+                              {{/if}}
+
+                      </header>
+
+
+                  {{#with banner}}
+                    <div class="MediaObjectPage-banner">{{~this~}}</div>
+                  {{/with}}
+
+                  {{#with sectionNavigation}}
+                      <div class="MediaObjectPage-sectionNavigation">{{this}}</div>
+                  {{/with}}
+
+                  {{#with packageNavigation}}
+                      <div class="MediaObjectPage-packageNavigation">{{this}}</div>
+                  {{/with}}
+
+                  {{#with above}}
+                      <div class="MediaObjectPage-above">{{this}}</div>
+                  {{/with}}
+
+
+        <main class="MediaObjectPage-main">
+            {{#with breadcrumbs}}
+                <div class="MediaObjectPage-breadcrumbs">{{this}}</div>
+            {{/with}}
+
+            {{#with mainContent}}
+                <div class="MediaObjectPage-mainContent">{{this}}</div>
+            {{/with}}
+
+            {{#with tags}}
+                <div class="MediaObjectPage-tags">
+                    <h2 class="MediaObjectPage-tags-heading">{{format "/core/page/ContentPage" "tagsHeading"}}</h2>
+                    <div class="MediaObjectPage-tags-body">{{this}}</div>
+                </div>
+            {{/with}}
+
+            {{#with actions}}
+                <div class="MediaObjectPage-actions">
+                    <h2 class="MediaObjectPage-actions-heading">{{format "/core/page/ContentPage" "actionsHeading"}}</h2>
+                    <div class="MediaObjectPage-actions-body">{{this}}</div>
+                </div>
+            {{/with}}
+        </main>
+
+
+                  {{#with aside}}
+                      <aside class="MediaObjectPage-aside">{{this}}</aside>
+                  {{/with}}
+
+                  {{#with below}}
+                      <div class="MediaObjectPage-below">{{this}}</div>
+                  {{/with}}
+
+
+                      <footer class="MediaObjectPage-footer">
+
+                          {{#with footerLogo}}
+                            <div class="MediaObjectPage-footerLogo">{{this}}</div>
+                          {{/with}}
+                          {{#with footerNavigation}}
+                              <div class="MediaObjectPage-footerNavigation">{{this}}</div>
+                          {{/with}}
+                          {{#with footerContent}}
+                              <div class="MediaObjectPage-footerContent">{{this}}</div>
+                          {{/with}}
+                          {{#with social}}
+                              <div class="MediaObjectPage-social">{{this}}</div>
+                          {{/with}}
+
+                          {{#with disclaimer}}
+                              <div class="MediaObjectPage-disclaimer">{{this}}</div>
+                          {{/with}}
+                      </footer>
+
+                  {{include "/core/page/Page-extraBodyItems.amp.hbs" this}}
+              </body>
+
+    </html>

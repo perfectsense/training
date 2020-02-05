@@ -1,0 +1,131 @@
+.SectionPage {
+  &-heading {
+    margin: 0 auto @grid-gap;
+    max-width: 740px;
+    text-align: center;
+  }
+
+  &-sectionNavigation {
+    width: 100%;
+  }
+
+  &-headingWrapper {
+    width: 100%;
+
+    .FollowButton {
+      position: absolute;
+      top: 0;
+      right: 20px;
+      margin-left: @grid-gap;
+    }
+  }
+
+  .Page-s {
+    padding-top: 20px;
+  }
+
+  &-topContainer {
+    background: var(--siteBgColor);
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: @grid-gap @grid-gap 0 @grid-gap;
+    position: relative;
+    border-bottom: 1px solid var(--secondaryColor3);
+  }
+
+  &-main {
+    margin-top: @grid-gap;
+
+    // Ads inside of Containers or Asides get spaced out via those container styles
+    // here we need to apply spacing to the ads that might be placed without containers
+    // directly into the page
+
+    > .GoogleDfpAd {
+      padding-bottom: @grid-gap;
+    }
+
+    > .RichTextModule {
+      padding-bottom: @grid-gap;
+    }
+
+    & > * {
+      padding-bottom: @grid-gap * 2;
+    }
+  }
+
+  &-pageHeading {
+    .getFontSize(30); // custom font size here
+    color: var(--secondaryColor1);
+    font-weight: bold;
+    font-family: var(--tertiaryHeadlineFont);
+    text-transform: uppercase;
+    max-width: 970px;
+  }
+
+  .Page-above {
+    display: none;
+
+    .ListTags {
+      display: flex;
+    }
+  }
+
+  &-navContainer {
+    display: flex;
+    justify-content: center;
+    overflow-x: hidden;
+    width: 100%;
+  }
+
+  @media @mq-viewport-md {
+    &-sectionNavigation {
+      width: auto;
+    }
+
+    .Page-above {
+      display: block;
+    }
+
+    &-heading {
+      text-align: center;
+    }
+
+    &-headingWrapper {
+      overflow-x: visible;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      .FollowButton {
+        position: static;
+      }
+    }
+
+    &-navContainer {
+      overflow-x: visible;
+    }
+
+    &-pageHeading {
+      .getFontSize(36); // custom font size here
+    }
+  }
+
+  @media @mq-viewport-lg {
+    &-main {
+      padding-left: @grid-gap;
+      padding-right: @grid-gap;
+
+      .no-brandscape-ads &,
+      [data-no-brandscape-ads] & {
+        padding-left: 0;
+        padding-right: 0;
+      }
+    }
+
+    &-topContainer {
+      position: relative;
+      z-index: @z-index-base;
+    }
+  }
+}

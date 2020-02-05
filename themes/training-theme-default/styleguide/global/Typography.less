@@ -1,0 +1,217 @@
+@import 'MediaQueries';
+
+// No Google Fonts import is needed here, they're loaded via JS in /core/Page/Page-head.hbs
+@primaryHeadlineFontFamily: var(--primaryHeadlineFont), Arial, Helvetica, sans-serif;
+@secondaryHeadlineFontFamily: var(--secondaryHeadlineFont), Arial, Helvetica, sans-serif;
+@bodyFontFamily: var(--bodyFont), Arial, Helvetica, sans-serif;
+
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  // These are going to be pretty standard, but we can also override if need be
+  .getFontSize(16);
+
+  @media @mq-viewport-md {
+      .getFontSize(18);
+  }
+}
+
+h1, h2, h3, h4, h5 {
+  margin: 0;
+}
+
+:root {
+  --body-1: 1.6rem;
+  --body-2: 1.4rem;
+  --byline-1: 1.2rem;
+  --caption-1: 1.2rem;
+  --counter-1: 1.6rem;
+  --date-1: 1.2rem;
+  --description-1: 1.5rem;
+  --label-1: 1.1rem;
+  --label-2: 1.2rem;
+  --label-3: 1.3rem;
+  --label-4: 1.4rem;
+  --title-1: 3rem;
+  --title-2: 2.6rem;
+  --title-3: 2rem;
+  --title-4: 1.8rem;
+  --title-5: 1.8rem;
+  --title-6: 1.4rem;
+  --quote-1: 1.6rem;
+}
+
+// for some reason using our LESS vars for media queries messes up here
+@media screen and (min-width: 768px) {
+  :root {
+    --title-1: 4rem;
+  }
+}
+
+// for some reason using our LESS vars for media queries messes up here
+@media screen and (min-width: 1024px) {
+  :root {
+    --body-1: 1.8rem;
+    --counter-1: 1.8rem;
+    --title-1: 4.7rem;
+    --title-2: 3rem;
+    --title-3: 2.4rem;
+    --title-4: 1.8rem;
+    --quote-1: 3.2rem;
+  }
+}
+
+.title-1 {
+  font-family: @primaryHeadlineFontFamily;
+  font-size: var(--title-1);
+  font-weight: bold;
+  line-height: 1.13;
+
+  @media @mq-viewport-lg {
+    line-height: 1.08;
+  }
+}
+
+.title-2 {
+  font-family: @primaryHeadlineFontFamily;
+  font-size: var(--title-2);
+  line-height: 1.15;
+  letter-spacing: -0.2px;
+  font-weight: bold;
+}
+
+.title-3 {
+  font-family: @primaryHeadlineFontFamily;
+  font-size: var(--title-3);
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.title-4 {
+  font-family: @primaryHeadlineFontFamily;
+  font-size: var(--title-4);
+  font-weight: 600;
+  line-height: 1.33;
+}
+
+.title-5 {
+  font-family: @primaryHeadlineFontFamily;
+  font-size: var(--title-5);
+  line-height: 1.22;
+  font-weight: 600;
+}
+
+.title-6 {
+  font-family: @primaryHeadlineFontFamily;
+  font-size: var(--title-6);
+  font-weight: 600;
+  line-height: 1.29;
+  letter-spacing: -0.2px;
+}
+
+.description-1 {
+  color: var(--grayscaleColor1);
+  font-family: @bodyFontFamily;
+  font-size: var(--description-1);
+  line-height: 1.27;
+}
+
+.byline-1 {
+  font-family: @secondaryHeadlineFontFamily;
+  font-size: var(--byline-1);
+  color: var(--primaryTextColor);
+  line-height: 1.2;
+}
+
+.date-1 {
+  color: var(--secondaryTextColor);
+  font-family: @secondaryHeadlineFontFamily;
+  font-size: var(--date-1);
+  font-weight: 500;
+  letter-spacing: 0.2px;
+  line-height: 1.2;
+}
+
+.caption-1 {
+  color: var(--primaryTextColor);
+  font-family: @secondaryHeadlineFontFamily;
+  font-size: var(--caption-1);
+      font-style: italic;
+  font-weight: 500;
+  line-height: 1.17;
+}
+
+.body-1 {
+  color: var(--primaryTextColor);
+  font-family: @bodyFontFamily;
+  font-size: var(--body-1);
+  line-height: 1.75;
+
+  @media @mq-viewport-lg {
+    line-height: 1.67;
+  }
+}
+
+.body-2 {
+  color: var(--primaryTextColor);
+  font-family: var(--bodyFont);
+  font-size: var(--body-2);
+  line-height: 1.75;
+}
+
+.label-1 {
+  color: var(--secondaryTextColor);
+  font-family: @secondaryHeadlineFontFamily;
+  font-size: var(--label-1);
+  font-weight: bold;
+  text-transform: uppercase;
+
+  &[data-recent] {
+    color: var(--breakingColor);
+  }
+}
+
+.label-2 {
+  color: var(--grayscaleColor1);
+  font-family: @secondaryHeadlineFontFamily;
+  font-size: var(--label-2);
+  font-weight: 600;
+}
+
+.label-3 {
+  font-family: @secondaryHeadlineFontFamily;
+  font-size: var(--label-3);
+  font-weight: 600;
+}
+
+.label-4 {
+  color: var(--primaryTextColor);
+  font-family: @secondaryHeadlineFontFamily;
+  font-size: var(--label-4);
+  font-weight: bold;
+  line-height: 1;
+}
+
+
+// This is used for "counters" such as ordered list bullets and carousels
+.counter-1 {
+  color: var(--primaryTextColor);
+  font-family: @secondaryHeadlineFontFamily;
+  font-size: var(--counter-1);
+  font-weight: bold;
+  line-height: 1.13;
+}
+
+.quote-1 {
+  color: var(--secondaryColor8);
+  font-size: var(--quote-1);
+  font-weight: 600;
+  font-family: @secondaryHeadlineFontFamily;
+  line-height: 30px;
+
+  @media @mq-viewport-lg {
+    line-height: 1.38;
+  }
+}

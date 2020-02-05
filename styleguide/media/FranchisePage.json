@@ -1,0 +1,17 @@
+{
+  "_include": "/core/page/Page.json",
+  "_template": "FranchisePage.hbs",
+  "shortDescription": "Short Description",
+  "fullDescription": {
+    "_include": "/_group/RichText.json",
+    "_key": 0
+  },
+  "contents": {
+    "_include": "/_group/Modules.json",
+    "_key": 0
+  },
+  "franchiseNavigation": {
+    "_include": "/core/navigation/Navigation.json"
+  },
+  "_hidden": true
+}

@@ -1,0 +1,13 @@
+<button class="AffinityButton"
+    {{~#with type}} data-type="{{this}}"{{/with~}}
+    {{~#with state}} data-state="{{this}}"{{/with~}}
+    data-url="/affinity/submit"
+    {{~#with target}}data-target="{{this}}"{{/with~}}>
+    {{#with count}}
+        <span class="AffinityButton-count">{{this}}</span>
+    {{/with}}
+    <span class="AffinityButton-icon"></span>
+    {{#with label}}
+        <span class="AffinityButton-label">{{this}}</span>
+    {{/with}}
+</button>

@@ -1,0 +1,27 @@
+{{#if items}}
+    <div class="ListA"{{include "/core/list/List-attributes.hbs" this}}>
+        {{include "/core/list/List-header.hbs" this className="ListA"}}
+
+        {{#if items}}
+            <div class="ListA-items">
+                <div class="ListA-items-column">
+                    <div class="ListA-items-item">{{#with items.[0]}}{{include "/core/promo/PromoC.hbs" this}}{{/with}}</div>
+                    {{#each items}}
+                        {{#if (gt @index 0)}}
+                            {{#if (lt @index 3)}}
+                                <div class="ListA-items-item">{{include "/core/promo/PromoB.hbs" this}}</div>
+                            {{/if}}
+                        {{/if}}
+                    {{/each}}
+                </div>
+                <div class="ListA-items-column">
+                    {{#each items}}
+                        {{#if (gt @index 2)}}
+                            <div class="ListA-items-item">{{include "/core/promo/PromoA.hbs" this}}</div>
+                        {{/if}}
+                    {{/each}}
+                </div>
+            </div>
+        {{/if}}
+    </div>
+{{else}}{{~noResultsModule~}}{{/if}}

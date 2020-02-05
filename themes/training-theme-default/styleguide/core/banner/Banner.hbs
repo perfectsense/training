@@ -1,0 +1,21 @@
+<ps-banner class="Banner">
+    <div class="Banner-wrapper">
+        <div class="Banner-content">
+            {{#blockBody}}
+                <div class="Banner-title">{{format "breakingNewsLabel"}}</div>
+
+                <div class="Banner-link">
+                    {{#if linkHref}}
+                    <a class="Banner-link-link" href="{{linkHref}}">
+                        {{~linkBody~}}
+                    </a>
+                    {{else}}
+                        {{~linkBody~}}
+                    {{/if}}
+                </div>
+
+                <button class="Banner-close" data-toggle-trigger="banner" aria-label="Close banner"><svg class="close-x"><use xlink:href="#close-x"></use></svg></button>
+            {{/blockBody}}
+        </div>
+    </div>
+</ps-banner>

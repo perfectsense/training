@@ -1,0 +1,7 @@
+{
+  "_template": "OneColumnContainer.hbs",
+  "columnOne": {
+    "_include": "/_group/Modules.json",
+    "_key": 0
+  }
+}

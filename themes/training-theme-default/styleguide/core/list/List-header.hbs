@@ -1,0 +1,5 @@
+<div class="{{className}}-header" {{#unless title}}data-no-title{{/unless}}>
+    {{#if title}}
+        <div class="{{className}}-header-title">{{#if titleUrl}}<a href="{{titleUrl}}" {{#if titleTarget}}target="{{titleTarget}}"{{/if}}>{{title}}<svg class="chevron"><use xlink:href="#chevron"></use></svg></a>{{else}}{{title}}{{/if}}</div>
+    {{/if}}
+</div>

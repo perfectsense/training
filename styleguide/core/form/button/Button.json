@@ -1,0 +1,15 @@
+{
+  "_template": "Button.hbs",
+  "autofocus": false,
+  "disabled": false,
+  "formaction": "",
+  "formenctype": "",
+  "formmethod": "",
+  "formnovalidate": "",
+  "formtarget": "",
+  "label": "Submit",
+  "name": "",
+  "type": "submit",
+  "value": "",
+  "_hidden": true
+}

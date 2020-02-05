@@ -1,0 +1,65 @@
+.CarouselAbstract {
+  display: block;
+
+  .flickity-page-dots {
+    position: static;
+    margin-top: @grid-gap;
+
+    .dot {
+      width: 5px;
+      height: 5px;
+      border-radius: 100%;
+      margin: 0 5px;
+      background-color: var(--secondaryColor1);
+
+      &.is-selected {
+        background-color: var(--primaryTextColor);
+      }
+    }
+  }
+
+  .flickity-prev-next-button {
+    &:extend(.FlickityCarouselButton all);
+    display: block;
+
+    &.previous {
+      left: 0;
+    }
+
+    &.next {
+      right: 0;
+    }
+  }
+
+  &-slide {
+    display: none;
+
+    &:first-of-type {
+        display: block;
+    }
+
+    .flickity-enabled & {
+        display: block;
+    }
+  }
+
+  @media @mq-viewport-lg {
+    .flickity-prev-next-button {
+      &.previous,
+      &.next {
+        border: 0;
+        top: auto;
+        bottom: -35px;
+      }
+
+      &.previous {
+        left: auto;
+        right: 30px;
+      }
+
+      &.next {
+        right: 0;
+      }
+    }
+  }
+}

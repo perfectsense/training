@@ -1,0 +1,39 @@
+{
+  "styles": {
+    "/core/container/TwoColumnContainer.hbs": {
+      "templates": [
+        {
+          "displayName": "Two Column Container 50%/50% split",
+          "example": "/core/container/TwoColumnContainer5050.json"
+        },
+        {
+          "displayName": "Two Column Container 70%/30% split",
+          "example": "/core/container/TwoColumnContainer7030.json"
+        },
+        {
+          "displayName": "Two Column Container 30%/70% split",
+          "example": "/core/container/TwoColumnContainer3070.json"
+        }
+      ]
+    }
+  },
+  "/core/container/TwoColumnContainer.amp.hbs": {
+    "templates": [
+      {
+        "example": "/core/container/TwoColumnContainer5050.json",
+        "template": "/core/container/TwoColumnContainer5050.amp.hbs",
+        "hidden": true
+      },
+      {
+        "example": "/core/container/TwoColumnContainer7030.json",
+        "template": "/core/container/TwoColumnContainer7030.amp.hbs",
+        "hidden": true
+      },
+      {
+        "example": "/core/container/TwoColumnContainer3070.json",
+        "template": "/core/container/TwoColumnContainer3070.amp.hbs",
+        "hidden": true
+      }
+    ]
+  }
+}

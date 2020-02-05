@@ -1,0 +1,11 @@
+{
+  "_template": "RadioInputChoice.hbs",
+  "label": "Label",
+  "responseMessage": "Response Message",
+  "name": "choice",
+  "value": "uuid-abc-123",
+  "correct": true,
+  "disabled": true,
+  "checked": true,
+  "_hidden": true
+}

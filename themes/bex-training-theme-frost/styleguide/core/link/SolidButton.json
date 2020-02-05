@@ -1,8 +1,0 @@
-{
-  "_include": "/core/link/Link.json",
-  "_template": "/core/link/Link.hbs",
-  "_hidden": true,
-  "body": "Learn More",
-  "target": "_blank",
-  "_styledTemplate": "/core/link/SolidButton.hbs"
-}

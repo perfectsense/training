@@ -1,0 +1,9 @@
+<button class="BookmarkButton"
+    {{~#with type}} data-type="{{this}}"{{/with~}}
+    {{~#with state}} data-state="{{this}}"{{/with~}}
+    data-url="/affinity/submit"
+    {{~#with target}}data-target="{{this}}"{{/with~}}>
+    {{include "/community/affinity/AffinityButton-count.amp.hbs" this}}
+    {{include "/community/affinity/AffinityButton-icon.amp.hbs" this}}
+    <span class="BookmarkButton-label">{{format "/community/favorite/FavoriteButton" "buttonLabel"}}</span>
+</button>

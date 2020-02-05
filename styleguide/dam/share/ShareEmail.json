@@ -1,0 +1,6 @@
+{
+  "_template": "ShareEmail.hbs",
+  "address": "Address",
+  "status": true,
+  "_hidden": true
+}

@@ -1,0 +1,14 @@
+{{!-- This "List" is used when a Section page has only dynamic content configured.
+It self contains it's own container and is rendered contextually when a List is
+dropped directly into the main of a Section page by the View Model. It looks, feels,
+and acts like ListE--}}
+
+{{#if items}}
+<div class="OneColumnContainer">
+    <div class="OneColumnContainer-row">
+        <div class="OneColumnContainer-column">
+            {{include "/core/list/ListE.hbs" this title=null}}
+        </div>
+    </div>
+</div>
+{{/if}}

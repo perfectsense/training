@@ -1,0 +1,27 @@
+{
+  "_include": "/core/page/CreativeWorkPage.json",
+  "_template": "PodcastEpisodePage.hbs",
+  "player": {
+    "_include": "/_group/Audios.json",
+    "_key": 0
+  },
+  "podcastLink": {
+    "_include": "/core/link/Link.json"
+  },
+  "podcastImage": {
+    "_include": "/core/image/Image.json"
+  },
+  "episodeNumber": 4,
+  "shortDescription": "Short Description",
+  "fullDescription": {
+    "_include": "/_group/RichText.json",
+    "_key": 0
+  },
+  "premiereDate": "2019-04-11T08:35:03-0700",
+  "authorUrl": null,
+  "authorImage": null,
+  "authorName": null,
+  "authorBiography": null,
+  "contributors": null,
+  "_hidden": true
+}

@@ -1,0 +1,6 @@
+{
+  "_include": "/core/form/input/TextInput.json",
+  "_template": "TextArea.hbs",
+  "pattern": null,
+  "_hidden": true
+}

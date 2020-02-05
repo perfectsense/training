@@ -1,0 +1,19 @@
+{
+  "_wrapper": false,
+  "_template": "/corporate/taxonomy/TaxonomyPage.hbs",
+  "_include": "/core/page/Page.json",
+  "taxonomyDefinition": "Definition",
+  "fullDescription": {
+    "_include": "/_group/RichText.json",
+    "_key": 0
+  },
+  "taxonomySynonyms": [
+    "Foo",
+    "Bar"
+  ],
+  "taxonomyContent": {
+    "_include": "/_group/Modules.json",
+    "_key": 0
+  },
+  "_hidden": true
+}

@@ -1,0 +1,14 @@
+<fieldset>
+    {{#with legend}}
+        <legend>{{this}}</legend>
+    {{/with}}
+    {{#with items}}
+        <div class="Fieldset-items">
+            {{#each this}}
+                <div class="Fieldset-items-item">
+                    {{this}}
+                </div>
+            {{/each}}
+        </div>
+    {{/with}}
+</fieldset>

@@ -1,0 +1,7 @@
+{
+  "_wrapper": false,
+  "_include": "AllAssetsPage.json",
+  "_template": "AllAssetsPage.hbs",
+  "view": "grid",
+  "_hidden": true
+}

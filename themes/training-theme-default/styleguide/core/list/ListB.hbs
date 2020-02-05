@@ -1,0 +1,21 @@
+{{#if items}}
+    <div class="ListB"{{include "/core/list/List-attributes.hbs" this}}>
+        {{include "/core/list/List-header.hbs" this className="ListB"}}
+
+        {{#with items.[0]}}
+            <div class="ListB-items-first">
+                {{include "/core/promo/PromoC.hbs" this description=null category=null date=null title=null}}
+            </div>
+        {{/with}}
+
+        {{#with items}}
+            <ol class="ListB-items" {{#if ../hideNumber}}data-hidenumber{{/if}}>
+                {{#each this}}
+                    <li class="ListB-items-item">
+                        {{include "/core/promo/PromoLink.hbs" this}}
+                    </li>
+                {{/each}}
+            </ol>
+        {{/with}}
+    </div>
+{{else}}{{~noResultsModule~}}{{/if}}

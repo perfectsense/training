@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html ⚡ class="GalleryPage" lang="{{#with language}}{{this}}{{else}}en{{/with}}" itemscope itemtype="http://schema.org/WebPage">
+    <head>
+        {{include "/core/page/Page-charset.hbs" this}}
+        {{include "/core/page/Page-webFontLink.amp.hbs" this}}
+        {{include "/core/page/Page-styles.amp.hbs" this}}
+        {{include "/core/page/Page-jsonLinkedData.hbs" this}}
+        <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+        {{include "/core/page/Page-title.hbs" this}}
+        {{include "/core/page/Page-description.hbs" this}}
+        {{include "/core/page/Page-keywords.hbs" this}}
+        {{include "/core/page/Page-canonicalLink.hbs" this}}
+        {{include "/core/page/Page-meta.hbs" this}}
+        {{include "/core/page/Page-favicons.hbs" this}}
+        {{include "/core/page/Page-manifestLink.hbs" this}}
+        <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1">
+        <script async src="https://cdn.ampproject.org/v0.js"></script>
+        {{include "/core/page/Page-ampJs.amp.hbs" this}}
+        {{#if searchAction}}
+            <script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script>
+        {{/if}}
+    </head>
+    <body class="GalleryPage-body"{{~#each extraBodyAttributes}} {{this}}{{~/each~}}>
+        <header class="GalleryPage-header" itemscope itemtype="http://schema.org/WPHeader">
+            {{#with hat}}
+                <div class="GalleryPage-hat">{{this}}</div>
+            {{/with}}
+            {{include "/core/page/Page-logo.amp.hbs" this}}
+            {{include "/core/page/Page-navigation.amp.hbs" this}}
+            {{include "/core/page/Page-social.hbs" this}}
+            {{#if searchAction}}
+                <form class="GalleryPage-search" action="{{searchAction}}" novalidate="" autocomplete="off">
+                    <input type="text" class="GalleryPage-searchInput" name="q">
+                    <button type="submit" class="GalleryPage-searchButton">{{format "/core/page/Page" "searchButtonLabel"}}</button>
+                </form>
+            {{/if}}
+        </header>
+        {{#with banner}}
+            <div class="GalleryPage-banner">{{~this~}}</div>
+        {{/with}}
+        {{#with sectionNavigation}}
+            <div class="GalleryPage-sectionNavigation">{{this}}</div>
+        {{/with}}
+        {{#with packageNavigation}}
+            <div class="GalleryPage-packageNavigation">{{this}}</div>
+        {{/with}}
+        {{#with above}}
+            <div class="GalleryPage-above">{{this}}</div>
+        {{/with}}
+        {{#if showPageHeading}}
+            {{#with pageHeading}}
+                <div class="GalleryPage-pageHeading">{{this}}</div>
+            {{/with}}
+        {{/if}}
+        <main class="GalleryPage-main">
+            {{#with breadcrumbs}}
+                <div class="GalleryPage-breadcrumbs">{{this}}</div>
+            {{/with}}
+            <section class="GalleryPage-mainContent"
+                itemscope itemtype="https://schema.org/ImageGallery"
+                {{#with id}} id="{{this}}" {{/with}}
+                {{#with singleton}} data-singleton="{{this}}" {{/with}}
+                {{#with introBackgroundImageSrc}} data-bsp-gallery-options='{"introBackgroundImage":"{{this}}"}'{{/with}}>
+                <div class="Gallery">
+                    <amp-carousel
+                        width="{{#with image.width}}{{this}}{{else}}300{{/with}}"
+                        height="{{#with image.height}}{{this}}{{else}}200{{/with}}"
+                        layout="fixed"
+                        {{#if controls}}controls{{/if}}
+                        type="slides">
+                        {{#each slides}}{{this}}{{/each}}
+                    </amp-carousel>
+                </div>
+            </section>
+            {{#with tags}}
+                <div class="GalleryPage-tags">
+                    <h2 class="GalleryPage-tags-heading">{{format "/core/page/ContentPage" "tagsHeading"}}</h2>
+                    <div class="GalleryPage-tags-body">{{this}}</div>
+                </div>
+            {{/with}}
+            {{#with countries}}
+                <div class="GalleryPage-countries">
+                    <h2 class="GalleryPage-countries-heading">{{format "/core/page/ContentPage" "countriesHeading"}}</h2>
+                    <div class="GalleryPage-countries-body">{{this}}</div>
+                </div>
+            {{/with}}
+            {{#with brands}}
+                <div class="GalleryPage-brands">
+                    <h2 class="GalleryPage-brands-heading">{{format "/core/page/ContentPage" "brandsHeading"}}</h2>
+                    <div class="GalleryPage-brands-body">{{this}}</div>
+                </div>
+            {{/with}}
+            {{#with products}}
+                <div class="GalleryPage-products">
+                    <h2 class="GalleryPage-products-heading">{{format "/core/page/ContentPage" "productsHeading"}}</h2>
+                    <div class="GalleryPage-products-body">{{this}}</div>
+                </div>
+            {{/with}}
+            {{#with topics}}
+                <div class="GalleryPage-topics">
+                    <h2 class="GalleryPage-topics-heading">{{format "/core/page/ContentPage" "topicsHeading"}}</h2>
+                    <div class="GalleryPage-topics-body">{{this}}</div>
+                </div>
+            {{/with}}
+            {{#with actions}}
+                <div class="GalleryPage-actions">
+                    <h2 class="GalleryPage-actions-heading">{{format "/core/page/ContentPage" "actionsHeading"}}</h2>
+                    <div class="GalleryPage-actions-body">{{this}}</div>
+                </div>
+            {{/with}}
+            {{#with comments}}
+                <div class="GalleryPage-comments">
+                    {{this}}
+                </div>
+            {{/with}}
+        </main>
+        {{#with aside}}
+            <aside class="GalleryPage-aside">{{this}}</aside>
+        {{/with}}
+        {{#with below}}
+            <div class="GalleryPage-below">{{this}}</div>
+        {{/with}}
+        <footer class="GalleryPage-footer" itemscope itemtype="https://schema.org/WPFooter">
+            {{include "/core/page/Page-logo.amp.hbs" this}}
+            {{include "/core/page/Page-navigation.amp.hbs" this}}
+            {{include "/core/page/Page-social.hbs" this}}
+            {{#with disclaimer}}
+                <div class="GalleryPage-disclaimer">{{this}}</div>
+            {{/with}}
+        </footer>
+        {{include "/core/page/Page-ampIntegrations.amp.hbs" this}}
+        {{include "/core/page/Page-ampAnalytics.amp.hbs" this}}
+    </body>
+</html>

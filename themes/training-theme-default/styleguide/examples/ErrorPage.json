@@ -1,0 +1,14 @@
+{
+  "_template": "/core/page/ErrorPage.hbs",
+  "_include": "/core/page/Page.json",
+  "_hidden": false,
+  "title": "Oops!",
+  "errorMessage": "We are really sorry, but the page you requested cannot be found.",
+  "errorDescription": "We are really sorry, but the page you requested cannot be found. It seems that the page you were trying to reach doesn't exist anymore, or maybe it was moved. We think that the best thing to do is to start again from the home page or use the search box below.",
+  "searchBoxText": "Search Brightspot",
+  "above": [
+    {
+      "_include": "/dfp/GoogleDfpAdModule.json"
+    }
+  ]
+}

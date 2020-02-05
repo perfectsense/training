@@ -1,0 +1,11 @@
+{
+  "imageSizeContexts": {
+    "/community/commenting/Comment.hbs": {
+      "authorImage": "tiny"
+    },
+    "/community/commenting/Comment.amp.hbs": {
+      "authorImageSrc": "tiny"
+    }
+  },
+  "_hidden": true
+}

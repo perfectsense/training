@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html ⚡ class="AssetPage" lang="{{#with language}}{{this}}{{else}}en{{/with}}" itemscope itemtype="http://schema.org/WebPage">
+    <head>
+        {{include "/core/page/Page-charset.hbs" this}}
+        {{include "/core/page/Page-webFontLink.amp.hbs" this}}
+        {{include "/core/page/Page-styles.amp.hbs" this}}
+        {{include "/core/page/Page-jsonLinkedData.hbs" this}}
+        <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+        {{include "/core/page/Page-title.hbs" this}}
+        {{include "/core/page/Page-description.hbs" this}}
+        {{include "/core/page/Page-keywords.hbs" this}}
+        {{include "/core/page/Page-canonicalLink.hbs" this}}
+        {{include "/core/page/Page-meta.hbs" this}}
+        {{include "/core/page/Page-favicons.hbs" this}}
+        {{include "/core/page/Page-manifestLink.hbs" this}}
+        <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1">
+        <script async src="https://cdn.ampproject.org/v0.js"></script>
+        {{include "/core/page/Page-ampJs.amp.hbs" this}}
+        {{#if searchAction}}
+            <script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script>
+        {{/if}}
+    </head>
+    <body class="AssetPage-body"{{~#each extraBodyAttributes}} {{this}}{{~/each~}}>
+        <header class="AssetPage-header" itemscope itemtype="http://schema.org/WPHeader">
+            {{#with hat}}
+                <div class="AssetPage-hat">{{this}}</div>
+            {{/with}}
+            {{#with logo}}
+                <div class="AssetPage-logo">{{this}}</div>
+            {{/with}}
+            {{#with navigation}}
+                <div class="AssetPage-navigation">{{this}}</div>
+            {{/with}}
+            {{#with social}}
+                <div class="AssetPage-social">{{this}}</div>
+            {{/with}}
+            {{#if searchAction}}
+                <form class="AssetPage-search" action="{{searchAction}}" novalidate="" autocomplete="off">
+                    <input type="text" class="AssetPage-searchInput" name="q">
+                    <button type="submit" class="AssetPage-searchButton">{{format "/core/page/Page" "searchButtonLabel"}}</button>
+                </form>
+            {{/if}}
+        </header>
+        {{#with banner}}
+            <div class="AssetPage-banner">{{~this~}}</div>
+        {{/with}}
+        {{#with sectionNavigation}}
+            <div class="AssetPage-sectionNavigation">{{this}}</div>
+        {{/with}}
+        {{#with packageNavigation}}
+            <div class="AssetPage-packageNavigation">{{this}}</div>
+        {{/with}}
+        {{#with above}}
+            <div class="AssetPage-above">{{this}}</div>
+        {{/with}}
+        {{#if showPageHeading}}
+            {{#with pageHeading}}
+                <div class="AssetPage-pageHeading">{{this}}</div>
+            {{/with}}
+        {{/if}}
+        <main class="AssetPage-main">
+            {{#with breadcrumbs}}
+                <div class="AssetPage-breadcrumbs">{{this}}</div>
+            {{/with}}
+            {{#with mainContent}}
+                <div class="AssetPage-mainContent">{{this}}</div>
+                <div class="AssetPage-mainContent-download">
+                    <a href="{{downloadUrl}}" download>{{format "/dam/asset/AssetPage" "downloadLinkText"}}</a>
+                </div>
+            {{/with}}
+            {{#with assetTitle}}
+                <div class="AssetPage-assetTitle">
+                    <h4>{{format "/dam/asset/AssetPage" "titleHeading"}}</h4>
+                    <div>{{this}}</div>
+                </div>
+            {{/with}}
+            {{#with caption}}
+                <div class="AssetPage-caption">
+                    <h4>{{format "/dam/asset/AssetPage" "captionHeading"}}</h4>
+                    <div>{{this}}</div>
+                </div>
+            {{/with}}
+            <div class="AssetPage-dateModified">
+                <h4>{{format "/dam/asset/AssetPage" "dateModifiedHeading"}}</h4>
+                <div class="AssetPage-dateModified">{{dateModified}}</div>
+                {{#with dateModifiedISO}}
+                    <meta itemprop="dateModified" content="{{this}}">
+                {{/with}}
+            </div>
+            {{#with updatedBy}}
+                <div class="AssetPage-updatedBy">
+                    <h4>{{format "/dam/asset/AssetPage" "updatedByHeading"}}</h4>
+                    <div>{{this}}</div>
+                </div>
+            {{/with}}
+            {{#with credit}}
+                <div class="AssetPage-credit">
+                    <h4>{{format "/dam/asset/AssetPage" "creditHeading"}}</h4>
+                    <div>{{this}}</div>
+                </div>
+            {{/with}}
+            {{#with source}}
+                <div class="AssetPage-source">
+                    <h4>{{format "/dam/asset/AssetPage" "sourceHeading"}}</h4>
+                    <div>{{this}}</div>
+                </div>
+            {{/with}}
+            {{#with topic}}
+                <div class="AssetPage-topic">
+                    <h4>{{format "/dam/asset/AssetPage" "topicHeading"}}</h4>
+                    <div>{{this}}</div>
+                </div>
+            {{/with}}
+            {{#with fileSize}}
+                <div class="AssetPage-fileSize">
+                    <h4>{{format "/dam/asset/AssetPage" "fileSizeHeading"}}</h4>
+                    <div>{{this}}</div>
+                </div>
+            {{/with}}
+            {{#with tags}}
+                <div class="AssetPage-tags">
+                    <h2 class="AssetPage-tags-heading">{{format "/core/page/ContentPage" "tagsHeading"}}</h2>
+                    <div class="AssetPage-tags-body">{{this}}</div>
+                </div>
+            {{/with}}
+            <ul class="AssetPage-pagination">
+                {{#with previousPage}}
+                    <li class="AssetPage-previousPage"><a href="{{this}}" rel="prev">{{format "/dam/asset/AssetPage" "previousText"}}</a></li>
+                {{/with}}
+                {{#with pageCounts}}
+                    <li class="AssetPage-pageCounts">{{format "/dam/asset/AssetPage" "pageCounts" number=../pageNumber count=../pageCount}}</li>
+                {{/with}}
+                {{#with nextPage}}
+                    <li class="AssetPage-nextPage"><a href="{{this}}" rel="next">{{format "/dam/asset/AssetPage" "nextText"}}</a></li>
+                {{/with}}
+            </ul>
+        </main>
+        {{#with aside}}
+            <aside class="AssetPage-aside">{{this}}</aside>
+        {{/with}}
+        {{#with below}}
+            <div class="AssetPage-below">{{this}}</div>
+        {{/with}}
+        <footer class="AssetPage-footer" itemscope itemtype="https://schema.org/WPFooter">
+            {{#with logo}}
+                <div class="AssetPage-logo">{{this}}</div>
+            {{/with}}
+            {{#with navigation}}
+                <div class="AssetPage-navigation">{{this}}</div>
+            {{/with}}
+            {{#with social}}
+                <div class="AssetPage-social">{{this}}</div>
+            {{/with}}
+            {{#with disclaimer}}
+                <div class="AssetPage-disclaimer">{{this}}</div>
+            {{/with}}
+        </footer>
+        {{include "/core/page/Page-ampIntegrations.amp.hbs" this}}
+        {{include "/core/page/Page-ampAnalytics.amp.hbs" this}}
+    </body>
+</html>

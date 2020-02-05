@@ -6,6 +6,9 @@ import PageNavigationItems from './navigation/NavigationItems.js'
 import { HTML5VideoPlayer } from './video/HTML5VideoPlayer.js'
 import { Banner } from './banner/Banner.js'
 import { Tabs } from './tab/Tabs.js'
+/* eslint-disable no-unused-vars */
+import Form from './form/All.js'
+/* eslint-enable no-unused-vars */
 
 plugins.register(Banner, '.Banner')
 plugins.register(HTML5VideoPlayer, '.HTML5VideoPlayer')

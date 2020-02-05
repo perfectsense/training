@@ -1,11 +1,7 @@
 {
   "_template": "FooterColumns.hbs",
   "columns": {
-    "_include": "FooterColumn.json",
-    "_repeat": [
-      1,
-      6
-    ]
+    "_include": "FooterColumn.json"
   },
-  "_hidden": false
+  "_hidden": true
 }

@@ -1,0 +1,33 @@
+{{#if items}}
+    <div class="List" {{extraAttributes}}>
+        {{#with title}}
+            <div class="List-title">{{this}}</div>
+        {{/with}}
+
+        {{#with description}}
+            <div class="List-description">{{this}}</div>
+        {{/with}}
+
+        {{#with items}}
+            <ul class="List-items">
+                {{#each this}}
+                <li class="List-items-item">{{this}}</li>
+                {{/each}}
+            </ul>
+        {{/with}}
+
+        {{#if ctaUrl}}
+            <div class="List-cta">
+                {{include "../link/Link.amp.hbs" href=ctaUrl target=ctaTarget body=(format "/core/list/List" "ctaText")}}
+            </div>
+        {{/if}}
+
+        {{#with pagination}}
+            <div class="List-pagination">
+                {{#each this}}
+                    {{this}}
+                {{/each}}
+            </div>
+        {{/with}}
+    </div>
+{{else}}{{~noResultsModule~}}{{/if}}

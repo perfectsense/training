@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html class="Page" lang="{{#with language}}{{this}}{{else}}en{{/with}}">
+{{include "/core/page/Page-head.hbs" this}}
+
+<body class="Page-body" {{~#each extraBodyAttributes}} {{this}} {{~/each~}}>
+    {{include "/core/page/Page-header.hbs" this}}
+    {{include "/core/page/Page-above.hbs" this}}
+
+    <main class="Page-main">
+        {{#with pageHeading}}
+        <h1 class="Page-pageHeading">{{this}}</h1>
+        {{/with}}
+        {{#with pageSubHeading}}
+        <div class="Page-pageSubHeading">{{this}}</div>
+        {{/with}}
+        {{#with pageLead}}
+        <div class="Page-pageLead">{{this}}</div>
+        {{/with}}
+
+        {{#with main}}{{this}}{{/with}}
+
+        {{#with actions}}
+        <div class="Page-actions">
+            <h2 class="Page-actions-heading">{{format "/core/page/Page" "actionsHeading"}}</h2>
+            <div class="Page-actions-body">{{this}}</div>
+        </div>
+        {{/with}}
+    </main>
+
+    {{include "/core/page/Page-aside.hbs" this}}
+    {{include "/core/page/Page-contentFooter.hbs" this}}
+    {{include "/core/page/Page-below.hbs" this}}
+    {{include "/core/page/Page-footer.hbs" this}}
+    {{include "/core/page/Page-extraBodyItems.hbs" this}}
+</body>
+
+</html>

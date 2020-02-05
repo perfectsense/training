@@ -1,0 +1,11 @@
+<items>
+    {{#if promoType}}
+        {{#each items}}
+            {{render this [/core/promo/Promo.native.hbs]=../promoType}}
+        {{/each}}
+    {{else}}
+        {{#each items}}
+            {{this}}
+        {{/each}}
+    {{/if}}
+</items>

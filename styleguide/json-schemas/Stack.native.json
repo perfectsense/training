@@ -1,0 +1,10 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "main": {
+      "type": "object"
+    }
+  },
+  "_hidden": true
+}

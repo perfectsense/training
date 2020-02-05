@@ -1,0 +1,13 @@
+{
+  "_template": "/core/list/ListSection.hbs",
+  "_exampleOnly": true,
+
+  "title": "{{words(2)}}",
+
+  "items": [
+      {
+        "_include": "/core/promo/PromoC.json",
+        "_repeat": 10
+      }
+  ]
+}

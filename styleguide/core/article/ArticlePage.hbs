@@ -6,15 +6,9 @@
             {{#with hat}}
                 <div class="ArticlePage-hat">{{this}}</div>
             {{/with}}
-            {{#with logo}}
-                <div class="ArticlePage-logo">{{this}}</div>
-            {{/with}}
-            {{#with navigation}}
-                <div class="ArticlePage-navigation">{{this}}</div>
-            {{/with}}
-            {{#with social}}
-                <div class="ArticlePage-social">{{this}}</div>
-            {{/with}}
+            {{include "/core/page/Page-logo.amp.hbs" this}}
+            {{include "/core/page/Page-navigation.amp.hbs" this}}
+            {{include "/core/page/Page-social.hbs" this}}
             {{#if searchAction}}
                 <form class="ArticlePage-search" action="{{searchAction}}" novalidate="" autocomplete="off">
                     <input type="text" class="ArticlePage-searchInput" name="q">
@@ -81,11 +75,7 @@
                     </div>
                 </div>
             {{/with}}
-            {{#with people}}
-                {{#each this}}
-                    {{this}}
-                {{/each}}
-            {{/with}}
+            {{include "/core/page/CreativeWorkPage-people.hbs" this}}
             {{#with dateExpired}}
                 <div class="ArticlePage-dateExpired">{{dateExpired}}</div>
                 {{#with dateExpiredISO}}
@@ -168,9 +158,7 @@
         {{#with footerContent}}
             <div class="ArticlePage-footerContent">{{this}}</div>
         {{/with}}
-        {{#with social}}
-            <div class="ArticlePage-social">{{this}}</div>
-        {{/with}}
+        {{include "/core/page/Page-social.hbs" this}}
         {{#with disclaimer}}
             <div class="ArticlePage-disclaimer">{{this}}</div>
         {{/with}}

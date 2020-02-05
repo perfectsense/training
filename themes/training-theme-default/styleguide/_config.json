@@ -1,0 +1,21 @@
+{
+  "sources": [],
+  "themeFields": {},
+  "vars": {},
+  "fields": {},
+  "styles": {},
+  "includes": [
+    "**/*.config.json"
+  ],
+  "imageSizeContexts": {
+    "/core/background/Background.hbs": {
+      "cssValue": "articleImage"
+    },
+    "/core/figure/Figure.hbs": {
+      "image": "articleImage"
+    },
+    "/core/image/Image.hbs": {
+      "image": "articleImage"
+    }
+  }
+}

@@ -1,0 +1,11 @@
+<ps-vimeoplayer data-video-player class="VimeoVideoPlayer"
+    data-player-id="{{playerId}}"
+    data-video-id="{{videoId}}"
+    data-video-title="{{videoTitle}}"
+
+    {{~#if seekSeconds}} data-seek-seconds="{{seekSeconds}}" {{~/if~}}
+    {{~#if muted}} data-muted="true"{{/if~}}
+    {{~#if autoplay}} data-muted="true" data-autoplay="true"{{/if~}}>
+
+    <div class="VimeoVideoPlayer-player" id="VimeoVideoPlayer-{{playerId}}" data-vimeo-id="{{videoId}}"></div>
+</ps-vimeoplayer>

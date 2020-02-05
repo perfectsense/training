@@ -1,0 +1,22 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "title": {
+      "type": "string"
+    },
+    "iconUrl": {
+      "type": "string"
+    },
+    "iconFontFamily": {
+      "type": "string"
+    },
+    "iconFontName": {
+      "type": "string"
+    },
+    "link": {
+      "type": "object"
+    }
+  },
+  "_hidden": true
+}

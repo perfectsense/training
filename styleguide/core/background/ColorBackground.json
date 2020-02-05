@@ -1,5 +1,5 @@
 {
   "_template": "Background.hbs",
   "cssValue": "blue",
-  "_hidden": false
+  "_hidden": true
 }

@@ -1,0 +1,20 @@
+{
+  "_template": "RegistrationForm.hbs",
+  "title": "",
+  "message": "",
+  "errors": [
+    "Unable to register"
+  ],
+  "formActionUrl": "/auth/page/RegistrationPage.html",
+  "formMethod": "post",
+  "displayForm": true,
+  "socialLoginLinks": {
+    "_include": "/auth/_group/SocialLoginLinks.json",
+    "_key": 0
+  },
+  "helpLinks": {
+    "_include": "/core/link/Link.json"
+  },
+  "redirectUrl": "https://www.example.com",
+  "termsAndConditions": "By signing up I agree to the Terms of Service and Privacy Policy."
+}

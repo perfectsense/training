@@ -1,0 +1,18 @@
+<div class="NavigationItem" {{extraAttributes}}>
+    <div class="NavigationItem-text">
+        {{#if href}}
+            <a class="NavigationItem-text-link" href="{{href}}"{{#with target}} target="{{this}}"{{/with}}{{extraAttributes}}>{{~text~}}</a>
+        {{else}}
+            {{~text~}}
+        {{/if}}
+    </div>
+    {{#if items}}
+        <ul class="NavigationItem-items">
+            {{#with items}}
+                {{#each this}}
+                    <li class="NavigationItem-items-item">{{~this~}}</li>
+                {{/each}}
+            {{/with}}
+        </ul>
+    {{/if}}
+</div>

@@ -1,0 +1,8 @@
+{
+  "_template": "QuestionResponse.hbs",
+  "title": "Title",
+  "response": "Response",
+  "correctResponse": "Correct Response",
+  "correct": true,
+  "_hidden": true
+}

@@ -1,0 +1,14 @@
+{
+  "_template": "UserProfileDataForm.hbs",
+  "moduleTitle": "Edit your user information",
+  "errors": [
+    "Unable to update profile"
+  ],
+  "messages": [
+    "Email successfully saved"
+  ],
+  "firstNameValue": "Bob",
+  "lastNameValue": "Smith",
+  "emailValue": "bs@aol.com",
+  "biographyValue": "Bob Smith works at AOL."
+}

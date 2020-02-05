@@ -1,6 +1,0 @@
-{
-  "_template": "/core/page/PageHeaderTextHat.hbs",
-  "text": "{{words}}",
-  "_styledTemplate": "/core/page/PageHeaderTextHat.hbs",
-  "_hidden": true
-}

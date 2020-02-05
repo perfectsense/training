@@ -1,0 +1,71 @@
+.SectionNavigation {
+  &-items {
+    align-items: center;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+
+    .flickity-viewport {
+      width: 100%;
+      overflow: initial;
+      min-height: 31px;
+    }
+
+    &-item {
+      margin: 0 (@grid-gap / 1.5);
+      padding-bottom: (@grid-gap - 1);
+
+      &[data-current-nav-item] {
+        position: relative;
+
+        &:before {
+          content: '';
+          width: 100%;
+          background-color: var(--primaryColor1);
+          height: 3px;
+          position: absolute;
+          bottom: -1px;
+        }
+      }
+
+      &[data-hide] {
+        display: none;
+      }
+
+      &[data-sub-trigger] {
+        display: none;
+        position: relative;
+
+        &:hover,
+        &[data-hover] {
+          .SectionNavigationItem-subNav {
+            display: block;
+          }
+        }
+
+        svg {
+          margin-left: (@grid-gap / 4);
+          fill: var(--primaryTextColor);
+          height: 16px;
+          position: relative;
+          top: 2px;
+          transform: rotate(90deg);
+          width: 11px;
+        }
+      }
+
+      &[data-sub-trigger='show'] {
+        display: inline;
+      }
+    }
+  }
+
+  @media @mq-viewport-md {
+    margin-bottom: 0;
+
+    &-items {
+      padding: 0;
+      border-bottom: 0;
+    }
+  }
+}

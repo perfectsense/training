@@ -2,6 +2,9 @@
   "imageSizeContexts": {
     "/core/quote/Quote.hbs": {
       "image": "tiny"
+    },
+    "/core/quote/Quote.amp.hbs": {
+      "image": "tiny"
     }
   },
   "_hidden": true

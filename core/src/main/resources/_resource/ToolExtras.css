@@ -1,0 +1,318 @@
+/*
+  SearchDashboardWidget - Hides the default heading from the search dialog in
+  favor of the editorially programmed one
+*/
+.dashboard-widget .widget.SearchWidget > h1 {
+    display: none;
+}
+.dashboard-widget .widget.SearchWidget > h1.SearchWidget-heading {
+    display: block;
+}
+
+/* LinkRichTextElement */
+.rte2-style-brightspot-core-link-LinkRichTextElement {
+    color: #008dbb;
+    text-decoration: underline;
+}
+
+.rte2-toolbar-brightspot-core-link-LinkRichTextElement {
+    content: '\f0c1';
+}
+
+.rte2-toolbar-brightspot-core-link-LinkRichTextElement {
+    max-width: 23px;
+}
+
+.rte2-toolbar-brightspot-core-link-LinkRichTextElement:before {
+    content: '\f0c1';
+    font-family: FontAwesome;
+    font-size: 13px;
+    margin-right: 4px;
+}
+
+/* CarouselRichTextElement, GalleryRichTextElement */
+.rte2-toolbar-brightspot-core-carousel-CarouselRichTextElement,
+.rte2-toolbar-brightspot-core-gallery-GalleryRichTextElement {
+    max-width: 23px;
+}
+
+.rte2-toolbar-brightspot-core-carousel-CarouselRichTextElement:before,
+.rte2-toolbar-brightspot-core-gallery-GalleryRichTextElement:before {
+    content: '\f00a';
+    font-family: FontAwesome;
+    font-size: 13px;
+    margin-right: 4px;
+}
+
+.rte2-style-brightspot-core-carousel-CarouselRichTextElement, .rte2-table bsp\-carousel,
+.rte2-style-brightspot-core-gallery-GalleryRichTextElement, .rte2-table bsp\-gallery {
+    position: relative;
+}
+
+.rte2-style-brightspot-core-carousel-CarouselRichTextElement:before, .rte2-table bsp\-carousel:before,
+.rte2-style-brightspot-core-gallery-GalleryRichTextElement:before, .rte2-table bsp\-gallery:before {
+    color: #949494;
+    content: '\f03e';
+    font-family: FontAwesome;
+    margin: 0 5px;
+    left: 2px;
+    position: relative;
+    top: 3px;
+}
+
+.rte2-style-brightspot-core-gallery-GalleryRichTextElement:after, .rte2-table bsp\-gallery:after {
+    background: white;
+    color: #949494;
+    content: '\f03e';
+    font-family: FontAwesome;
+    font-size: 13px;
+    height: 15px;
+    left: 2px;
+    position: absolute;
+    top: -1px;
+}
+
+.rte2-style-brightspot-core-gallery-GalleryRichTextElement span {
+    font-style: italic;
+}
+
+/* ImageRichTextElement */
+.rte2-toolbar-brightspot-core-image-ImageRichTextElement {
+    max-width: 23px;
+}
+
+.rte2-toolbar-brightspot-core-image-ImageRichTextElement:before {
+    content: '\f03e';
+    font-family: FontAwesome;
+    font-size: 13px;
+    margin-right: 4px;
+}
+
+.rte2-style-brightspot-core-image-ImageRichTextElement:before, .rte2-table bsp\.image:before {
+    color: #949494;
+    content: '\f03e';
+    font-family: FontAwesome;
+    margin: 0 5px;
+}
+
+.rte2-style-brightspot-core-image-ImageRichTextElement span {
+    font-style: italic;
+}
+
+/* FacebookRichTextElement */
+.rte2-toolbar-brightspot-facebook-rte-FacebookRichTextElement {
+    max-width: 20px;
+}
+.rte2-toolbar-brightspot-facebook-rte-FacebookRichTextElement:before {
+    content: '\f09a';
+    font-family: FontAwesome;
+    font-size: 13px;
+    margin-right: 5px;
+}
+
+.rte2-style-brightspot-facebook-rte-FacebookRichTextElement:before {
+    color: #949494;
+    content: '\f09a';
+    font-family: FontAwesome;
+    margin: 0 5px;
+}
+
+.rte2-style-brightspot-facebook-rte-FacebookRichTextElement span {
+    font-style: italic;
+}
+
+/* InstagramRichTextElement */
+.rte2-toolbar-brightspot-instagram-rte-InstagramRichTextElement {
+    max-width: 20px;
+}
+.rte2-toolbar-brightspot-instagram-rte-InstagramRichTextElement:before {
+    content: '\f16d';
+    font-family: FontAwesome;
+    font-size: 13px;
+    margin-right: 5px;
+}
+
+.rte2-style-brightspot-instagram-rte-InstagramRichTextElement:before {
+    color: #949494;
+    content: '\f16d';
+    font-family: FontAwesome;
+    margin: 0 5px;
+}
+
+.rte2-style-brightspot-instagram-rte-InstagramRichTextElement span {
+    font-style: italic;
+}
+
+/* VideoRichTextElement */
+.rte2-toolbar-brightspot-core-video-VideoRichTextElement {
+    max-width: 23px;
+}
+
+.rte2-toolbar-brightspot-core-video-VideoRichTextElement:before {
+    content: '\f008';
+    font-family: FontAwesome;
+    font-size: 13px;
+    margin-right: 5px;
+}
+
+.rte2-style-brightspot-core-video-VideoRichTextElement:before, .rte2-table bsp\.video:before {
+    color: #949494;
+    content: '\f008';
+    font-family: FontAwesome;
+    margin: 0 5px;
+}
+
+.rte2-style-brightspot-core-video-VideoRichTextElement span {
+    font-style: italic;
+}
+
+/* PodcastEpisodeRichTextElement */
+.rte2-toolbar-brightspot-media-podcast-episode-PodcastEpisodeRichTextElement {
+    max-width: 20px;
+}
+
+.rte2-toolbar-brightspot-media-podcast-episode-PodcastEpisodeRichTextElement:before {
+    content: '\f130';
+    font-family: FontAwesome;
+    font-size: 13px;
+    margin-right: 5px;
+}
+
+.rte2-style-brightspot-media-podcast-episode-PodcastEpisodeRichTextElement:before {
+    color: #949494;
+    content: '\f130';
+    font-family: FontAwesome;
+    margin: 0 5px;
+}
+
+.rte2-style-brightspot-media-podcast-episode-PodcastEpisodeRichTextElement span {
+    font-style: italic;
+}
+
+/* QuoteRichTextElement */
+.rte2-toolbar-brightspot-core-quote-QuoteRichTextElement {
+    max-width: 23px;
+}
+
+.rte2-toolbar-brightspot-core-quote-QuoteRichTextElement:before {
+    content: '\f10e';
+    font-family: FontAwesome;
+    font-size: 10px;
+    margin-right: 5px;
+}
+
+.rte2-style-brightspot-core-quote-QuoteRichTextElement:before, .rte2-table bsp\.quote:before {
+    bottom: 10px;
+    color: #949494;
+    content: '\f10d';
+    font-family: FontAwesome;
+    font-size: 10px;
+    margin: 0 5px;
+    position: relative;
+}
+
+.rte2-style-brightspot-core-quote-QuoteRichTextElement:after, .rte2-table bsp\.quote:after {
+    bottom: 10px;
+    color: #949494;
+    content: '\f10e';
+    font-family: FontAwesome;
+    font-size: 10px;
+    margin: 0 5px;
+    position: relative;
+}
+
+.rte2-style-brightspot-core-quote-QuoteRichTextElement span {
+    background-color: #efefef;
+    font-size: 20px;
+    line-height: normal;
+}
+
+/* TweetRichTextElement */
+.rte2-toolbar-brightspot-twitter-rte-TweetRichTextElement {
+    max-width: 20px;
+}
+
+.rte2-toolbar-brightspot-twitter-rte-TweetRichTextElement:before {
+    content: '\f099';
+    font-family: FontAwesome;
+    font-size: 13px;
+    margin-right: 4px;
+}
+
+.rte2-style-brightspot-twitter-rte-TweetRichTextElement, .rte2-table bsp\.tweet {
+    background-color: #efefef;
+}
+
+.rte2-style-brightspot-twitter-rte-TweetRichTextElement:before, .rte2-table bsp\.tweet:before {
+    color: #949494;
+    content: '\f099';
+    font-family: FontAwesome;
+    margin: 0 5px;
+}
+
+.rte2-style-brightspot-twitter-rte-TweetRichTextElement span {
+    font-style: italic;
+    font-size: 11px;
+}
+
+.conditional-mod-hidden,
+.tabs > li.conditional-mod-hidden {
+    display: none;
+}
+
+.repeatableAddToTop > .repeatableForm > .addButtonContainer {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.repeatableAddToTop:before {
+    bottom: 10px;
+}
+
+.repeatableAddToTop > .repeatableForm:before {
+    bottom: 0;
+}
+
+/* Embargo Banner */
+.embargo-warning {
+    background:
+    linear-gradient(45deg, #444 22.5px, transparent 22.5px)32px 32px,
+    linear-gradient(45deg, #444 22.5px, transparent 22.5px,transparent 45.5px, black 45.5px, black 67.5px, transparent 67.5px),
+    linear-gradient(-45deg, #444 11.5px, transparent 11.5px, transparent 34px,#444 34px,#444 56.5px,transparent 56.5px,transparent 79px,#444 79px);
+    background-color:black;
+    background-size: 64px 64px;
+    height: auto;
+    width: 100%;
+    margin-right: -20px;
+    margin-bottom: 10px;
+}
+
+.embargo-warning .embargo-message {
+    text-align: center;
+    color: white;
+    font-size: 28px;
+    text-transform: uppercase;
+    font-weight: bold;
+    display: block;
+    line-height: 60px;
+    padding: 10px;
+}
+
+.embargo-warning .embargo-message .embargo-emphasis {
+    color: #ccc;
+    font-size: 20px;
+    position: relative;
+    top: -3px;
+    padding: 0 10px;
+}
+
+/*
+  SearchDashboardWidget - Hides the default heading from the search dialog in
+  favor of the editorially programmed one
+*/
+.dashboard-widget .widget.SearchWidget > h1 {
+    display: none;
+}
+.dashboard-widget .widget.SearchWidget > h1.SearchWidget-heading {
+    display: block;
+}

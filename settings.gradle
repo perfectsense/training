@@ -1,0 +1,41 @@
+plugins {
+    id "com.gradle.enterprise" version "3.1.1"
+}
+
+rootProject.name = 'training'
+
+include(':training-frontend')
+include(':training-core')
+include(':training-site')
+include(':training-theme-default')
+
+project(':training-frontend').projectDir = file('frontend')
+project(':training-core').projectDir = file('core')
+project(':training-site').projectDir = file('site')
+project(':training-theme-default').projectDir = file('themes/training-theme-default')
+
+// -- Gradle Cache Server -- //
+
+def gradleCacheUrl = "https://cache.gradle.psdops.com/cache/"
+def gradleCacheUsername = System.getenv('GRADLE_CACHE_USERNAME')
+def gradleCachePassword = System.getenv('GRADLE_CACHE_PASSWORD')
+boolean isCiServer = gradleCacheUsername != null
+
+buildCache {
+  if (gradleCacheUrl != null) {
+    local {
+      enabled = !isCiServer
+    }
+    remote(HttpBuildCache) {
+      push = isCiServer
+      url = gradleCacheUrl
+      allowUntrustedServer = true
+      if (gradleCacheUsername != null && gradleCachePassword != null) {
+        credentials {
+            username = gradleCacheUsername
+            password = gradleCachePassword
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html class="TaxonomyPage" lang="{{#with language}}{{this}}{{else}}en{{/with}}" itemscope itemtype="http://schema.org/WebPage">
+    {{include "/core/page/Page-head.hbs" this}}
+    <body class="TaxonomyPage-body"{{~#each extraBodyAttributes}} {{this}}{{~/each~}}>
+        <header class="TaxonomyPage-header" itemscope itemtype="http://schema.org/WPHeader">
+            {{#with hat}}
+                <div class="TaxonomyPage-hat">{{this}}</div>
+            {{/with}}
+            {{#with logo}}
+                <div class="TaxonomyPage-logo">{{this}}</div>
+            {{/with}}
+            {{#with navigation}}
+                <div class="TaxonomyPage-navigation">{{this}}</div>
+            {{/with}}
+            {{include "/core/page/Page-social.hbs" this}}
+            {{#if searchAction}}
+                <form class="TaxonomyPage-search" action="{{searchAction}}" novalidate="" autocomplete="off">
+                    <input type="text" class="TaxonomyPage-searchInput" name="q">
+                    <button type="submit" class="TaxonomyPage-searchButton">{{format "/core/page/Page" "searchButtonLabel"}}</button>
+                </form>
+            {{/if}}
+        </header>
+        {{#with banner}}
+            <div class="TaxonomyPage-banner">{{~this~}}</div>
+        {{/with}}
+        {{#with sectionNavigation}}
+            <div class="TaxonomyPage-sectionNavigation">{{this}}</div>
+        {{/with}}
+        {{#with packageNavigation}}
+            <div class="TaxonomyPage-packageNavigation">{{this}}</div>
+        {{/with}}
+        {{#with above}}
+            <div class="TaxonomyPage-above">{{this}}</div>
+        {{/with}}
+        <main class="TaxonomyPage-main">
+            {{#with pageHeading}}
+                <h1 class="TaxonomyPage-pageHeading">{{this}}</h1>
+            {{/with}}
+            {{#with taxonomySynonyms}}
+                <div class="TaxonomyPage-taxonomySynonyms">
+                    {{~#each this~}}
+                        <span class="TaxonomyPage-taxonomySynonyms-synonym"> {{~this~}}</span>
+                        {{~#unless @last}}, {{/unless~}}
+                    {{~/each~}}
+                </div>
+            {{/with}}
+            {{#with taxonomyDefinition}}
+                <p class="TaxonomyPage-taxonomyDefinition">{{this}}</p>
+            {{/with}}
+            {{#with fullDescription}}
+                <div class="TaxonomyPage-fullDescription" itemprop="description" itemscope itemtype="https://schema.org/description">{{this}}</div>
+            {{/with}}
+            {{#with pageLead}}
+                <div class="TaxonomyPage-pageLead">{{this}}</div>
+            {{/with}}
+            {{#with taxonomyContent}}
+                <section class="TaxonomyPage-taxonomyContent">
+                    {{#each this}}
+                        {{this}}
+                    {{/each}}
+                </section>
+            {{/with}}
+        </main>
+        {{#with aside}}
+            <aside class="TaxonomyPage-aside">{{this}}</aside>
+        {{/with}}
+        {{#with below}}
+            <div class="TaxonomyPage-below">{{this}}</div>
+        {{/with}}
+        <footer class="TaxonomyPage-footer" itemscope itemtype="https://schema.org/WPFooter">
+            {{#with footerLogo}}
+                <div class="TaxonomyPage-footerLogo">{{this}}</div>
+            {{/with}}
+            {{#with footerNavigation}}
+                <div class="TaxonomyPage-footerNavigation">{{this}}</div>
+            {{/with}}
+            {{#with footerContent}}
+                <div class="TaxonomyPage-footerContent">{{this}}</div>
+            {{/with}}
+            {{include "/core/page/Page-social.hbs" this}}
+            {{#with disclaimer}}
+                <div class="TaxonomyPage-disclaimer">{{this}}</div>
+            {{/with}}
+        </footer>
+        {{include "/core/page/Page-extraBodyItems.hbs" this}}
+    </body>
+</html>

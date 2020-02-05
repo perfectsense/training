@@ -1,0 +1,22 @@
+.TwoColumnContainer5050 {
+  &:extend(.Container all);
+
+  &-column:nth-of-type(1) {
+    padding-bottom: @grid-gap*2;
+  }
+
+  @media @mq-viewport-md {
+    &-column {
+      flex-shrink: 0;
+      width: 50%;
+    }
+
+    &-column:nth-of-type(1) {
+      padding-bottom: 0;
+    }
+
+    &-row {
+      display: flex;
+    }
+  }
+}

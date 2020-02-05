@@ -1,0 +1,70 @@
+// lesshint universalSelector: false
+
+.Page {
+  // leaving the below at "Page" level because it seems like there are only ads in it
+  // so we can just deal with teh same class site wide
+
+  &-above {
+    background: var(--siteBgColor);
+    position: relative;
+    z-index: @z-index-base;
+
+    // We know which modules are going to be expected every time in the above and
+    // in what combination so we can be more specific here
+
+    & > * {
+      padding-top: @grid-gap;
+      padding-bottom: @grid-gap;
+    }
+
+    .GoogleDfpAd {
+      background-color: var(--secondaryColor4);
+    }
+  }
+
+  &-banner {
+    position: relative;
+    z-index: @z-index-base;
+  }
+
+  &-below {
+    border-top: 1px solid var(--secondaryColor3);
+    padding: @grid-gap 0;
+  }
+
+  &-body {
+    // overflow-x: hidden; // to prevent ads and other things from breaking the layout
+    height: initial;
+  }
+
+  &-main {
+    min-height: 300px;
+  }
+
+  @media @mq-viewport-md {
+    &-above {
+      .ListTags {
+        display: flex;
+      }
+    }
+  }
+
+  @media @mq-viewport-lg {
+    &-body {
+      &[data-toggle-header='hamburger-menu']&:after {
+        content: '';
+        background: rgba(0, 0, 0, 0.5);
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 25;
+      }
+
+      &[data-header-sticky] {
+        padding-top: 140px;
+      }
+    }
+  }
+}

@@ -1,8 +1,0 @@
-[
-  {
-    "_include": "/google-analytics/GoogleVideoAnalytics.json"
-  },
-  {
-    "_include": "/google-analytics/GoogleTrackableScrolling.json"
-  }
-]

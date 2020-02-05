@@ -1,0 +1,31 @@
+<div class="LiveBlogPost"{{extraAttributes}}>
+    {{#with anchor}}
+        <a name="{{this}}"></a>
+    {{/with}}
+    {{#with headline}}
+        <div class="LiveBlogPost-headline">{{this}}</div>
+    {{/with}}
+    {{#with date}}
+        <div class="LiveBlogPost-date">{{this}}</div>
+    {{/with}}
+    <div class="LiveBlogPost-author">
+        {{#with authorImage}}
+            <div class="LiveBlogPost-authorImage">
+                {{include "../core/link/Link.hbs" href=../authorUrl target=../target body=this}}
+            </div>
+        {{/with}}
+        {{#with authorName}}
+            <div class="LiveBlogPost-authorName">
+                {{include "../core/link/Link.hbs" href=../authorUrl target=../target body=this}}
+            </div>
+        {{/with}}
+    </div>
+    {{#with actions}}
+        <div class="LiveBlogPost-actions">
+            {{this}}
+        </div>
+    {{/with}}
+    {{#with body}}
+        <div class="LiveBlogPost-body" itemprop="description">{{this}}</div>
+    {{/with}}
+</div>

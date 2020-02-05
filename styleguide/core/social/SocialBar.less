@@ -1,0 +1,19 @@
+.SocialBar {
+    border: 1px solid black;
+    display: flex;
+
+    > * {  // lesshint universalSelector: false
+        margin: 12px;
+        padding: 0;
+    }
+
+    &-items {
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+
+        &-item {
+            display: inline-block;
+        }
+    }
+}

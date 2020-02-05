@@ -1,0 +1,11 @@
+[
+  {
+    "_include": "/quiz/IntroQuizBody.json"
+  },
+  {
+    "_include": "/quiz/QuestionQuizBody.json"
+  },
+  {
+    "_include": "/quiz/ScoreQuizBody.json"
+  }
+]

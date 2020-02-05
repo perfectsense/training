@@ -1,0 +1,14 @@
+{
+  "_template": "AssetRequestTableRow.hbs",
+  "_include": "/core/promo/Promo.json",
+  "isUnviewed": true,
+  "media": {
+    "_include": "/core/image/Image.json"
+  },
+  "title": "Title",
+  "date": "2017/10/13",
+  "url": "https://www.perfectsensedigital.com",
+  "status": "pending",
+  "description": "Description",
+  "_hidden": true
+}

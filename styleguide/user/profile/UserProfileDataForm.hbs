@@ -1,0 +1,30 @@
+<div class = "UserProfileDataForm">
+    {{#with moduleTitle}}
+        <h3 class="UserProfileDataForm-moduleTitle">{{this}}</h3>
+    {{/with}}
+    {{#if errors}}
+        <ul class="errors">
+            {{#each errors}}
+                <li>{{this}}</li>
+            {{/each}}
+        </ul>
+    {{/if}}
+    {{#if messages}}
+        <ul class="messages">
+            {{#each messages}}
+                <li>{{this}}</li>
+            {{/each}}
+        </ul>
+    {{/if}}
+    <form action=""
+        method="post">
+        {{include "../../core/form/input/Input.hbs" inputName="firstName" label=(format "/user/profile/UserProfileDataForm" "firstNameLabel") placeholder=(format "/user/profile/UserProfileDataForm" "firstNamePlaceholder") inputValue=firstNameValue}}
+        {{include "../../core/form/input/Input.hbs" inputName="lastName" label=(format "/user/profile/UserProfileDataForm" "lastNameLabel") placeholder=(format "/user/profile/UserProfileDataForm" "lastNamePlaceholder") inputValue=lastNameValue}}
+        {{include "../../core/form/input/EmailInput.hbs" inputName="email" label=(format "/user/profile/UserProfileDataForm" "emailLabel") placeholder=(format "/user/profile/UserProfileDataForm" "emailPlaceholder") inputValue=emailValue}}
+        {{include "../../core/form/input/TextArea.hbs" inputName="biography" label=(format "/user/profile/UserProfileDataForm" "biographyLabel") placeholder=(format "/user/profile/UserProfileDataForm" "biographyPlaceholder") inputValue=biographyValue}}
+        {{include "../../core/form/input/CheckboxInput.hbs" inputName="resetPassword" inputValue="true" body="Reset password"}}
+        <button class="UserProfileDataForm-submit" type="submit">
+            Update
+        </button>
+    </form>
+</div>

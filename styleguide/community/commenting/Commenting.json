@@ -1,0 +1,12 @@
+{
+  "_template": "Commenting.hbs",
+  "targetId": "1234",
+  "formActionUrl": "Comment.html",
+  "paginationNextUrl": "Comments.html",
+  "displayPagination": true,
+  "displayForm": true,
+  "comments": {
+    "_include": "Comments.json"
+  },
+  "_hidden": true
+}

@@ -1,0 +1,23 @@
+<main class="ContentPage-main">
+    {{#with breadcrumbs}}
+        <div class="ContentPage-breadcrumbs">{{this}}</div>
+    {{/with}}
+
+    {{#with mainContent}}
+        <div class="ContentPage-mainContent">{{this}}</div>
+    {{/with}}
+
+    {{#with tags}}
+        <div class="ContentPage-tags">
+            <h2 class="ContentPage-tags-heading">{{format "/core/page/ContentPage" "tagsHeading"}}</h2>
+            <div class="ContentPage-tags-body">{{this}}</div>
+        </div>
+    {{/with}}
+
+    {{#with actions}}
+        <div class="ContentPage-actions">
+            <h2 class="ContentPage-actions-heading">{{format "/core/page/ContentPage" "actionsHeading"}}</h2>
+            <div class="ContentPage-actions-body">{{this}}</div>
+        </div>
+    {{/with}}
+</main>

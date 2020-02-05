@@ -1,8 +1,8 @@
 {
   "_template": "OpenGraphArticleMeta.hbs",
   "authorUrls": [
-    "http://link.to.author1",
-    "http://link.to.author2"
+    "https://link.to.author1",
+    "https://link.to.author2"
   ],
   "publishedTime": "dateTime",
   "modifiedTime": "dateTime",
@@ -13,5 +13,5 @@
     "Tesla",
     "Solar City"
   ],
-  "_hidden": false
+  "_hidden": true
 }

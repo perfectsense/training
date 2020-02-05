@@ -1,0 +1,11 @@
+{
+  "imageSizeContexts": {
+    "/press-release/PressRelease.hbs": {
+      "authorImage": "tiny"
+    },
+    "/press-release/PressRelease.amp.hbs": {
+      "authorImage": "tiny"
+    }
+  },
+  "_hidden": true
+}

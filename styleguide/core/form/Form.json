@@ -1,0 +1,22 @@
+{
+  "_template": "Form.hbs",
+  "title": "We’d love to hear from you!",
+  "description": "Enter your information below",
+  "acceptCharset": "utf-8",
+  "action": "/form",
+  "autocomplete": "on",
+  "enctype": "multipart/form-data",
+  "method": "post",
+  "name": "Name",
+  "novalidate": false,
+  "target": "_self",
+  "submissionSuccess": false,
+  "items": [
+    {
+      "_include": "/_group/FormElements.json",
+      "_key": 1
+    }
+  ],
+  "message": "Lorem Ipsum Dolor",
+  "_hidden": true
+}

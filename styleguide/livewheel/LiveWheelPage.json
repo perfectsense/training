@@ -1,0 +1,6 @@
+{
+  "_include": "/core/video/VideoPage.json",
+  "_template": "LiveWheelPage.hbs",
+  "liveWheelOffset": "1",
+  "_hidden": true
+}

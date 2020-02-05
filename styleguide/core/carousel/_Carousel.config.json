@@ -1,4 +1,8 @@
 {
-  "imageSizeContexts": {},
+  "imageSizeContexts": {
+    "/core/carousel/Carousel.amp.hbs": {
+      "image": "small"
+    }
+  },
   "_hidden": true
 }

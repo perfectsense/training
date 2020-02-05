@@ -1,0 +1,12 @@
+{
+  "_template": "Fieldset.hbs",
+  "description": "How should we contact you?",
+  "errors": [
+    "At least one item must be selected"
+  ],
+  "items": {
+    "_include": "/_group/FormInputs.json"
+  },
+  "legend": "Legend",
+  "_hidden": true
+}

@@ -1,0 +1,10 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "html": {
+      "type": "string"
+    }
+  },
+  "_hidden": true
+}

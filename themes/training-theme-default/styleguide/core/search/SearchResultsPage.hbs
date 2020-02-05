@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html class="SearchResultsPage" lang="{{#with language}}{{this}}{{else}}en{{/with}}">
+    {{include "/core/page/Page-head.hbs" this}}
+
+    <body class="Page-body" {{~#each extraBodyAttributes}} {{this}} {{~/each~}}>
+        {{include "/core/page/Page-header.hbs" this}}
+        {{include "/core/page/Page-above.hbs" this}}
+
+        <div class="SearchResultsPage-content">
+            <h1 class="SearchResultsPage-title">{{{format "searchPageTitle"}}}</h1>
+
+            {{include "/core/search/SearchResultsModule.hbs"
+                query=query
+                sorts=sorts
+                filters=filters
+                items=results
+                spotlights=spotlights
+                count=count
+                previousPage=previousPage
+                nextPage=nextPage
+                pageCount=pageCount
+                pageNumber=pageNumber
+            }}
+        </div>
+
+        {{include "/core/page/Page-below.hbs" this className="SearchResultsPage"}}
+        {{include "/core/page/Page-footer.hbs" this}}
+        {{include "/core/page/Page-extraBodyItems.hbs" this}}
+    </body>
+</html>

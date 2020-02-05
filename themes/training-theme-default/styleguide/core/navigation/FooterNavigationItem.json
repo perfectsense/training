@@ -1,0 +1,10 @@
+{
+  "_template": "/core/navigation/FooterNavigationItem.hbs",
+
+  "items": [
+      {
+          "_include": "/core/navigation/NavigationLink.json",
+          "_repeat": 6
+      }
+  ]
+}

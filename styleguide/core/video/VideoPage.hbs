@@ -6,15 +6,9 @@
             {{#with hat}}
                 <div class="VideoPage-hat">{{this}}</div>
             {{/with}}
-            {{#with logo}}
-                <div class="VideoPage-logo">{{this}}</div>
-            {{/with}}
-            {{#with navigation}}
-                <div class="VideoPage-navigation">{{this}}</div>
-            {{/with}}
-            {{#with social}}
-                <div class="VideoPage-social">{{this}}</div>
-            {{/with}}
+            {{include "/core/page/Page-logo.amp.hbs" this}}
+            {{include "/core/page/Page-navigation.amp.hbs" this}}
+            {{include "/core/page/Page-social.hbs" this}}
             {{#if searchAction}}
                 <form class="VideoPage-search" action="{{searchAction}}" novalidate="" autocomplete="off">
                     <input type="text" class="VideoPage-searchInput" name="q">
@@ -35,9 +29,7 @@
             <div class="VideoPage-above">{{this}}</div>
         {{/with}}
         <main class="VideoPage-main">
-            {{#with breadcrumbs}}
-                <div class="VideoPage-breadcrumbs">{{this}}</div>
-            {{/with}}
+            {{include "/core/page/ContentPage-breadcrumbs.hbs" this}}
             <article class="VideoPage-mainContent" itemprop="mainEntity" itemscope itemtype="https://schema.org/VideoObject">
                 {{#with headline}}
                     <h1 class="VideoPage-headline" itemprop="headline">{{this}}</h1>
@@ -45,9 +37,7 @@
                 {{#with subHeadline}}
                     <div class="VideoPage-subHeadline" itemprop="alternativeHeadline">{{this}}</div>
                 {{/with}}
-                {{#with breadcrumbs}}
-                    <div class="VideoPage-breadcrumbs">{{this}}</div>
-                {{/with}}
+                {{include "/core/page/ContentPage-breadcrumbs.hbs" this}}
                 <div class="VideoPage-byline" itemprop="author" itemscope itemtype="http://schema.org/Person">
                     {{#with authorImage}}
                         <div class="VideoPage-authorImage" itemprop="image">
@@ -242,9 +232,7 @@
         {{#with footerContent}}
             <div class="VideoPage-footerContent">{{this}}</div>
         {{/with}}
-        {{#with social}}
-            <div class="VideoPage-social">{{this}}</div>
-        {{/with}}
+        {{include "/core/page/Page-social.hbs" this}}
         {{#with disclaimer}}
             <div class="VideoPage-disclaimer">{{this}}</div>
         {{/with}}

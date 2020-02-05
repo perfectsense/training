@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html class="AuthenticationPage" lang="{{#with language}}{{this}}{{else}}en{{/with}}" itemscope itemtype="http://schema.org/WebPage">
+    {{include "/core/page/Page-head.hbs" this}}
+    <body class="AuthenticationPage-body"{{~#each extraBodyAttributes}} {{this}}{{~/each~}}>
+        <header class="AuthenticationPage-header" itemscope itemtype="http://schema.org/WPHeader">
+            {{#with hat}}
+                <div class="AuthenticationPage-hat">{{this}}</div>
+            {{/with}}
+            {{#with logo}}
+                <div class="AuthenticationPage-logo">{{this}}</div>
+            {{/with}}
+            {{#with navigation}}
+                <div class="AuthenticationPage-navigation">{{this}}</div>
+            {{/with}}
+            {{#with social}}
+                <div class="AuthenticationPage-social">{{this}}</div>
+            {{/with}}
+            {{#if searchAction}}
+                <form class="AuthenticationPage-search" action="{{searchAction}}" novalidate="" autocomplete="off">
+                    <input type="text" class="AuthenticationPage-searchInput" name="q">
+                    <button type="submit" class="AuthenticationPage-searchButton">{{format "/core/page/Page" "searchButtonLabel"}}</button>
+                </form>
+            {{/if}}
+        </header>
+        {{#with banner}}
+            <div class="AuthenticationPage-banner">{{~this~}}</div>
+        {{/with}}
+        {{#with sectionNavigation}}
+            <div class="AuthenticationPage-sectionNavigation">{{this}}</div>
+        {{/with}}
+        {{#with packageNavigation}}
+            <div class="AuthenticationPage-packageNavigation">{{this}}</div>
+        {{/with}}
+        {{#with above}}
+            <div class="AuthenticationPage-above">{{this}}</div>
+        {{/with}}
+        <main class="AuthenticationPage-main">
+            {{#with form}}
+                <div class="AuthenticationPage-form">
+                    {{this}}
+                </div>
+            {{/with}}
+        </main>
+        {{#with aside}}
+            <aside class="AuthenticationPage-aside">{{this}}</aside>
+        {{/with}}
+        {{#with below}}
+            <div class="AuthenticationPage-below">{{this}}</div>
+        {{/with}}
+        <footer class="AuthenticationPage-footer" itemscope itemtype="https://schema.org/WPFooter">
+            {{#with footerLogo}}
+                <div class="AuthenticationPage-footerLogo">{{this}}</div>
+            {{/with}}
+            {{#with footerNavigation}}
+                <div class="AuthenticationPage-footerNavigation">{{this}}</div>
+            {{/with}}
+            {{#with footerContent}}
+                <div class="AuthenticationPage-footerContent">{{this}}</div>
+            {{/with}}
+            {{#with social}}
+                <div class="AuthenticationPage-social">{{this}}</div>
+            {{/with}}
+            {{#with disclaimer}}
+                <div class="AuthenticationPage-disclaimer">{{this}}</div>
+            {{/with}}
+        </footer>
+        {{include "/core/page/Page-extraBodyItems.hbs" this}}
+    </body>
+</html>

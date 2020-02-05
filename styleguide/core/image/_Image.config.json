@@ -4,6 +4,10 @@
       "image": "small",
       "narrowImage": "small"
     },
+    "/core/image/Image.amp.hbs": {
+      "image": "small",
+      "narrowImage": "small"
+    },
     "/core/image/ImagePage.hbs": {
       "authorImage": "tiny",
       "media": {
@@ -11,6 +15,10 @@
           "image": "large"
         }
       }
+    },
+    "/core/image/Image.native.hbs": {
+      "image": "nativeLandscape",
+      "narrowImage": "nativeLandscape"
     }
   },
   "_hidden": true

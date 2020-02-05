@@ -2,6 +2,9 @@
   "imageSizeContexts": {
     "/core/figure/Figure.hbs": {
       "image": "small"
+    },
+    "/core/figure/Figure.amp.hbs": {
+      "image": "small"
     }
   },
   "_hidden": true

@@ -1,0 +1,6 @@
+{
+  "_template": "HiddenInput.hbs",
+  "inputName": "inputName",
+  "inputValue": "Input Value",
+  "_hidden": true
+}

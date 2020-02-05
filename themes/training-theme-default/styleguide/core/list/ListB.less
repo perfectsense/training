@@ -1,0 +1,49 @@
+.ListB {
+  &:extend(.ListAbstract all);
+
+  &-header {
+    &:extend(.ListHeader all);
+  }
+
+  &-items {
+    &:extend(.ListItemsNoBorder all);
+
+    counter-reset: theCounter;
+
+    &-first {
+      padding: 0 0 (@grid-gap / 2) 0;
+    }
+
+    &[data-hidenumber] {
+      li {
+        padding-left: 0;
+
+        &:before {
+          content: none;
+        }
+      }
+    }
+
+    &-item {
+      counter-increment: theCounter;
+      padding-left: (@grid-gap * 2);
+      position: relative;
+
+      .PromoLink {
+        &:extend(.title-5 all);
+      }
+
+      &:before {
+        &:extend(.counter-1 all);
+
+        content: counter(theCounter);
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 25px;
+        text-align: right;
+      }
+
+    }
+  }
+}

@@ -1,0 +1,12 @@
+<button class="FavoriteButton"
+    {{~#with type}} data-type="{{this}}"{{/with~}}
+    {{~#with state}} data-state="{{this}}"{{/with~}}
+    {{~#with endpoint}}data-url="{{this}}"{{/with~}}
+    {{~#with authenticationUrl}}data-auth-url="{{this}}"{{/with~}}
+    {{~#with target}}data-target="{{this}}"{{/with~}}>
+    {{#with count}}
+        <span class="FavoriteButton-count">{{this}}</span>
+    {{/with}}
+    <span class="FavoriteButton-icon"></span>
+    <span class="FavoriteButton-label">{{format "/community/favorite/FavoriteButton" "buttonLabel"}}</span>
+</button>

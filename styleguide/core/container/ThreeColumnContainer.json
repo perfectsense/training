@@ -1,16 +1,16 @@
 {
   "_template": "ThreeColumnContainer.hbs",
   "columnOne": {
-    "_include": "/_group/ContainerModules.json",
-    "_random": true
+    "_include": "/_group/Modules.json",
+    "_key": 0
   },
   "columnTwo": {
-    "_include": "/_group/ContainerModules.json",
-    "_random": true
+    "_include": "/_group/Modules.json",
+    "_key": 0
   },
   "columnThree": {
-    "_include": "/_group/ContainerModules.json",
-    "_random": true
+    "_include": "/_group/Modules.json",
+    "_key": 0
   },
-  "_hidden": false
+  "_hidden": true
 }

@@ -1,0 +1,13 @@
+{
+  "imageSizeContexts": {
+    "/blog/blogpost/BlogPostPage.hbs": {
+      "authorImage": "tiny",
+      "contributorImage": "tiny"
+    },
+    "/blog/blogpost/BlogPostPage.amp.hbs": {
+      "authorImage": "tiny",
+      "contributorImage": "tiny"
+    }
+  },
+  "_hidden": true
+}

@@ -3,5 +3,5 @@
   "items": {
     "_include": "/_group/ActionBarItems.json"
   },
-  "_hidden": false
+  "_hidden": true
 }

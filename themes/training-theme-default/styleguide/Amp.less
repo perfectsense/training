@@ -1,0 +1,89 @@
+// lesshint universalSelector: false
+
+// ----- Instead of sanitize.css, we can just cherry pick this for AMP -----
+*,
+::before,
+::after {
+  background-repeat: no-repeat; /* 1 */
+  box-sizing: border-box; /* 2 */
+}
+
+// ----- Global, across themes, base styles -----
+html {
+  font-size: 62.5%;
+}
+
+body,
+html {
+  height: 100%;
+}
+
+blockquote,
+figure,
+hr {
+  margin: 0;
+}
+
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+  outline: 0;
+}
+
+img {
+  display: block;
+  height: auto;
+  max-width: 100%;
+}
+
+.iconsMap {
+  display: none;
+}
+
+.sr-only {
+  .sr-only;
+}
+
+// ----- Globals. These are items like variables, mixins, typography, etc -----
+@import 'global/All-Amp';
+
+// ----- Base page -----
+@import 'core/page/All-Amp';
+
+// ----- Components -----
+@import 'core/action-bar/All-Amp';
+// Article, Longform, StoryStack, Gallery, and Video all use Article HTML
+// so they show up looking essentially the same. This is to keep under
+// the 50kb limit for all CSS
+@import 'core/article/ArticlePage-Amp';
+@import 'core/banner/All-Amp';
+@import 'core/carousel/All-Amp';
+@import 'core/container/All-Amp';
+@import 'core/enhancement/All-Amp';
+@import 'core/figure/All-Amp';
+@import 'core/gallery/All-Amp';
+@import 'core/list/All-Amp';
+@import 'core/navigation/All-Amp';
+@import 'core/promo/All-Amp';
+@import 'core/quote/All';
+@import 'core/social/All-Amp';
+@import 'core/text/All-Amp';
+@import 'core/video/VideoEnhancement';
+@import 'core/image/Image-amp';

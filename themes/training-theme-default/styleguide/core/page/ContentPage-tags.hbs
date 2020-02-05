@@ -1,0 +1,15 @@
+{{! bug with #or for now so we get this syntax }}
+{{#if tags}}
+<div class="{{#if className}}{{className}}{{else}}ContentPage{{/if}}-tags">
+<h2 class="{{#if className}}{{className}}{{else}}ContentPage{{/if}}-tags-heading">{{format "/core/page/ContentPage" "tagsHeading"}}</h2>
+    <div class="{{#if className}}{{className}}{{else}}ContentPage{{/if}}-tags-list">
+        {{~#if breadcrumbs~}}{{#each breadcrumbs}}{{#if @last}}{{this}}{{/if}}{{/each}}{{~/if~}}{{~tags~}}
+    </div>
+</div>
+{{else}}
+    {{#if breadcrumbs}}
+    <div class="{{#if className}}{{className}}{{else}}ContentPage{{/if}}-tags">
+        {{#each breadcrumbs}}{{#if @last}}{{this}}{{/if}}{{/each}}
+    </div>
+    {{/if}}
+{{/if}}

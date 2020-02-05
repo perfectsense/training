@@ -1,0 +1,9 @@
+{
+  "_template": "Option.hbs",
+  "label": "Label",
+  "value": "Value",
+  "selected": false,
+  "hidden": false,
+  "disabled": false,
+  "_hidden": true
+}

@@ -1,0 +1,348 @@
+{
+  "fields": {
+    "hideCategories": {
+      "type": "boolean",
+      "cms.ui.note": "Check to hide all promo categories in this list"
+    },
+    "hideDates": {
+      "type": "boolean",
+      "cms.ui.note": "Check to hide all promo dates in this list"
+    },
+    "hideDescriptions": {
+      "type": "boolean",
+      "cms.ui.note": "Check to hide all promo descriptions in this list"
+    },
+    "enhancementAlignment": {
+      "type": "text",
+      "cms.ui.dropDown": true,
+      "cms.ui.note": "Choose alignment",
+      "values": [
+        {
+          "label": "Left Alignment",
+          "value": "align-left"
+        },
+        {
+          "label": "Center Alignment - Contained",
+          "value": "align-center"
+        },
+        {
+          "label": "Center Alignment - Expanded",
+          "value": "align-center-expanded"
+        },
+        {
+          "label": "Right Alignment",
+          "value": "align-right"
+        }
+      ]
+    },
+    "imageAlignment": {
+      "type": "text",
+      "cms.ui.dropDown": true,
+      "cms.ui.note": "Choose image alignment",
+      "values": [
+        {
+          "label": "Left Alignment",
+          "value": "left"
+        },
+        {
+          "label": "Right Alignment",
+          "value": "right"
+        },
+        {
+          "label": "Top Alignment",
+          "value": "top"
+        },
+        {
+          "label": "Bottom Alignment",
+          "value": "bottom"
+        }
+      ]
+    }
+  },
+  "themeFields": {
+
+    "primaryColor1": {
+      "displayName": "Primary Color 1",
+      "type": "color",
+      "cms.ui.cluster": "Colors",
+      "cms.ui.placeholder": "#22b8e1"
+    },
+
+    "primaryColor2": {
+      "displayName": "Primary Color 2",
+      "type": "color",
+      "cms.ui.cluster": "Colors",
+      "cms.ui.placeholder": "#000000"
+    },
+
+    "siteBgColor": {
+      "displayName": "Site Background Color",
+      "type": "color",
+      "cms.ui.cluster": "Colors",
+      "cms.ui.placeholder": "#ffffff"
+    },
+    "siteInverseBgColor": {
+      "displayName": "Site Inverse Background Color",
+      "type": "color",
+      "cms.ui.cluster": "Colors",
+      "cms.ui.placeholder": "#000000"
+    },
+
+    "headerBgColor": {
+      "displayName": "Header Background Color",
+      "type": "color",
+      "cms.ui.cluster": "Colors",
+      "cms.ui.placeholder": "#ffffff"
+    },
+    "headerBgColorInverse": {
+      "displayName": "Header Background Color Inverse",
+      "type": "color",
+      "cms.ui.cluster": "Colors",
+      "cms.ui.placeholder": "#000000"
+    },
+    "headerBorderColor": {
+      "displayName": "Header Border Color",
+      "type": "color",
+      "cms.ui.cluster": "Colors",
+      "cms.ui.placeholder": "#e6e6e6"
+    },
+    "headerBorderColorInverse": {
+      "displayName": "Header Border Color Inverse",
+      "type": "color",
+      "cms.ui.cluster": "Colors",
+      "cms.ui.placeholder": "#858585"
+    },
+    "headerTextColor": {
+      "displayName": "Header Text Color",
+      "type": "color",
+      "cms.ui.cluster": "Colors",
+      "cms.ui.placeholder": "#333333"
+    },
+    "headerTextColorInverse": {
+      "displayName": "Header Text Color Inverse",
+      "type": "color",
+      "cms.ui.cluster": "Colors",
+      "cms.ui.placeholder": "#ffffff"
+    },
+    "headerMenuBgColor": {
+      "displayName": "Header Menu Background Color",
+      "type": "color",
+      "cms.ui.cluster": "Colors",
+      "cms.ui.placeholder": "#ffffff"
+    },
+    "headerMenuTextColor": {
+      "displayName": "Header Menu Text Color",
+      "type": "color",
+      "cms.ui.cluster": "Colors",
+      "cms.ui.placeholder": "#333333"
+    },
+
+    "secondaryHeaderBgColor": {
+      "displayName": "Homepage Secondary Header Background Color",
+      "type": "color",
+      "cms.ui.cluster": "Colors",
+      "cms.ui.placeholder": "#ffffff"
+    },
+    "secondaryHeaderTextColor": {
+      "displayName": "Homepage Secondary Header Text Color",
+      "type": "color",
+      "cms.ui.cluster": "Colors",
+      "cms.ui.placeholder": "#333333"
+    },
+
+    "footerBgColor": {
+      "displayName": "Footer Background Color",
+      "type": "color",
+      "cms.ui.cluster": "Colors",
+      "cms.ui.placeholder": "#000000"
+    },
+    "footerTextColor": {
+      "displayName": "Footer Text Color",
+      "type": "color",
+      "cms.ui.cluster": "Colors",
+      "cms.ui.placeholder": "#ffffff"
+    },
+
+    "primaryTextColor": {
+      "displayName": "Primary Text Color",
+      "type": "color",
+      "cms.ui.cluster": "Colors",
+      "cms.ui.placeholder": "#333333"
+    },
+    "primaryTextColorInverse": {
+      "displayName": "Primary Text Color Inverse",
+      "type": "color",
+      "cms.ui.cluster": "Colors",
+      "cms.ui.placeholder": "#ffffff"
+    },
+    "secondaryTextColor": {
+      "displayName": "Secondary Text Color",
+      "type": "color",
+      "cms.ui.cluster": "Colors",
+      "cms.ui.placeholder": "#666666"
+    },
+    "secondaryTextColorInverse": {
+      "displayName": "Secondary Text Color Inverse",
+      "type": "color",
+      "cms.ui.cluster": "Colors",
+      "cms.ui.placeholder": "#cccccc"
+    },
+    "tertiaryTextColor": {
+      "displayName": "Tertiary Text Color",
+      "type": "color",
+      "cms.ui.cluster": "Colors",
+      "cms.ui.placeholder": "#999999"
+    },
+    "tertiaryTextColorInverse": {
+      "displayName": "Tertiary Text Color Inverse",
+      "type": "color",
+      "cms.ui.cluster": "Colors",
+      "cms.ui.placeholder": "#cccccc"
+    },
+
+    "listBorderColor": {
+      "displayName": "List Header Border Color",
+      "type": "color",
+      "cms.ui.cluster": "Colors",
+      "cms.ui.placeholder": "#030202"
+    },
+    "gridBorderColor": {
+      "displayName": "Grid Border Color",
+      "type": "color",
+      "cms.ui.cluster": "Colors",
+      "cms.ui.placeholder": "#e6e6e6"
+    },
+
+    "buttonBgColor": {
+      "displayName": "Button Background Color",
+      "type": "color",
+      "cms.ui.cluster": "Colors",
+      "cms.ui.placeholder": "#ffffff"
+    },
+    "buttonTextColor": {
+      "displayName": "Button Text Color",
+      "type": "color",
+      "cms.ui.cluster": "Colors",
+      "cms.ui.placeholder": "#333333"
+    },
+    "inverseButtonBgColor": {
+      "displayName": "Button Inverse Background Color",
+      "type": "color",
+      "cms.ui.cluster": "Colors",
+      "cms.ui.placeholder": "#030202"
+    },
+    "tagButtonBgColor": {
+      "displayName": "Tag Button Background Color",
+      "type": "color",
+      "cms.ui.cluster": "Colors",
+      "cms.ui.placeholder": "#666666"
+    },
+    "tagButtonTextColor": {
+      "displayName": "Tag Button Text Color",
+      "type": "color",
+      "cms.ui.cluster": "Colors",
+      "cms.ui.placeholder": "#ffffff"
+    },
+
+    "breakingColor": {
+      "displayName": "Breaking Background Color",
+      "type": "color",
+      "cms.ui.cluster": "Colors",
+      "cms.ui.placeholder": "#ff6f00"
+    },
+    "breakingTextColor": {
+      "displayName": "Breaking Text Color",
+      "type": "color",
+      "cms.ui.cluster": "Colors",
+      "cms.ui.placeholder": "#ffffff"
+    },
+
+    "sectionTextColor": {
+      "displayName": "Section Text Color",
+      "type": "color",
+      "cms.ui.cluster": "Colors",
+      "cms.ui.placeholder": "#ffffff"
+    },
+    "secondaryColor1": {
+      "displayName": "Secondary Color 1",
+      "type": "color",
+      "cms.ui.cluster": "Colors",
+      "cms.ui.placeholder": "#858585"
+    },
+    "secondaryColor2": {
+      "displayName": "Secondary Color 2",
+      "type": "color",
+      "cms.ui.cluster": "Colors",
+      "cms.ui.placeholder": "#cccccc"
+    },
+    "secondaryColor3": {
+      "displayName": "Secondary Color 3",
+      "type": "color",
+      "cms.ui.cluster": "Colors",
+      "cms.ui.placeholder": "#e6e6e6"
+    },
+    "secondaryColor4": {
+      "displayName": "Secondary Color 4",
+      "type": "color",
+      "cms.ui.cluster": "Colors",
+      "cms.ui.placeholder": "#f5f5f5"
+    },
+    "secondaryColor5": {
+      "displayName": "Secondary Color 5",
+      "type": "color",
+      "cms.ui.cluster": "Colors",
+      "cms.ui.placeholder": "#ffffff"
+    },
+    "primaryHeadlineFont": {
+      "displayName": "Primary Headline",
+      "type": "text",
+      "cms.ui.dropDown": true,
+      "cms.ui.note": "",
+      "cms.ui.cluster": "Fonts",
+      "values": [
+        {
+          "label": "Vollkorn",
+          "value": "Vollkorn"
+        },
+        {
+          "label": "Arvo",
+          "value": "Arvo"
+        }
+      ]
+    },
+    "secondaryHeadlineFont": {
+      "displayName": "Secondary Headline",
+      "type": "text",
+      "cms.ui.dropDown": true,
+      "cms.ui.note": "",
+      "cms.ui.cluster": "Fonts",
+      "values": [
+        {
+          "label": "PT Sans",
+          "value": "PT+Sans"
+        },
+        {
+          "label": "Oswald",
+          "value": "Oswald"
+        }
+      ]
+    },
+    "bodyFont": {
+      "displayName": "Body",
+      "type": "text",
+      "cms.ui.dropDown": true,
+      "cms.ui.note": "",
+      "cms.ui.cluster": "Fonts",
+      "values": [
+        {
+          "label": "Georgia",
+          "value": "Georgia"
+        },
+        {
+          "label": "Source Sans Pro",
+          "value": "Source Sans Pro"
+        }
+      ]
+    }
+  }
+}

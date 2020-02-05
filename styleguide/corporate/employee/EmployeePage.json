@@ -1,0 +1,24 @@
+{
+  "_wrapper": false,
+  "_include": "/core/page/ContentPage.json",
+  "_template": "EmployeePage.hbs",
+  "name": "John Doe",
+  "jobTitle": "VP",
+  "email": "VP@acme.com",
+  "groups": "Marketing, Sales",
+  "image": {
+    "_include": "/core/image/Image.json"
+  },
+  "shortBiography": "Short Biography",
+  "fullBiography": {
+    "_include": "/_group/RichText.json",
+    "_key": 0
+  },
+  "links": {
+    "_include": "/core/link/Link.json"
+  },
+  "employeeSocialLinks": {
+    "_include": "/core/social/SocialBar.json"
+  },
+  "_hidden": true
+}

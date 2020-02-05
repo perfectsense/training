@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html class="BlogPage" lang="{{#with language}}{{this}}{{else}}en{{/with}}">
+{{include "/core/page/Page-head.hbs" this}}
+    <body class="Page-body" {{~#each extraBodyAttributes}} {{this}} {{~/each~}}>
+        {{include "/core/page/Page-header.hbs" this}}
+        {{include "/core/page/Page-above.hbs" this dataClick="above"}}
+
+        <div class="BlogPage-topContainer">
+            <div class="BlogPage-headingWrapper">
+                {{#with pageHeading}}
+                    <div class="BlogPage-heading">
+                        <h1 class="BlogPage-pageHeading">{{this}}</h1>
+                    </div>
+                {{/with}}
+            </div>
+        </div>
+
+        <main class="BlogPage-main">
+            {{#with main}}
+                {{#each this}}
+                    {{render this [/core/list/List.hbs]="/core/list/ListSection.hbs"}}
+                {{/each}}
+            {{/with}}
+        </main>
+
+        {{include "/core/page/Page-below.hbs" this}}
+        {{include "/core/page/Page-footer.hbs" this}}
+        {{include "/core/page/Page-extraBodyItems.hbs" this}}
+    </body>
+</html>

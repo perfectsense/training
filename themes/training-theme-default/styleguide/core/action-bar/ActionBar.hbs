@@ -1,0 +1,32 @@
+<ps-actionbar class="ActionBar">
+    <ul class="ActionBar-items">
+        {{#each items}}
+            {{#if (lt @index 5)}}
+                <li class="ActionBar-items-item">{{render this}}</li>
+            {{/if}}
+        {{/each}} 
+        <li class="ActionBar-items-item">
+            <a class="ActionLink" data-dropdown-trigger href="#"><svg><use xlink:href="#share-more-arrow"></use></svg><span>{{format "DropdownOpenText"}}</span></a>
+        </li>  
+    </ul>
+
+    <div class="ActionBar-dropdown">
+        <div class="ActionBar-dropdown-header">
+            <span>{{format "ShareText"}}</span>
+            <button class="ActionBar-dropdown-close" data-dropdown-close><svg><use xlink:href="#close-x"></use></svg><span class="sr-only">{{format "CloseText"}}</span></button>
+        </div>
+        <ul class="ActionBar-dropdown-items">
+            {{#each items}}
+                <li class="ActionBar-dropdown-items-item">{{this}}</li>
+            {{/each}}
+
+            {{! print and copy are hardcoded, no real express support }}
+            <li class="ActionBar-dropdown-items-item">
+                <a class="ActionLink" data-social-service="copylink" href="#"><svg><use xlink:href="#mono-icon-copylink"></use></svg><span>{{format "CopyLinkText"}}</span><span data-copied-text>{{format "CopiedLinkText"}}</span></a>
+            </li>
+            <li class="ActionBar-dropdown-items-item">
+                <a class="ActionLink" data-social-service="print" href="javascript:window.print()"><svg><use xlink:href="#mono-icon-print"></use></svg><span>{{format "PrintText"}}</span></a>
+            </li>
+        </ul>
+    </div>
+</ps-actionbar>

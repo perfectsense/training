@@ -1,0 +1,9 @@
+<div class="FooterNavigationItem" {{extraAttributes}}>
+    {{#with items}}
+        <ul class="FooterNavigationItem-items">
+            {{#each this}}
+                <li class="FooterNavigationItem-items-item">{{~this~}}</li>
+            {{/each}}
+        </ul>
+    {{/with}}
+</div>

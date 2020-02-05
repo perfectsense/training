@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html ⚡ class="ContentPage" lang="{{#with language}}{{this}}{{else}}en{{/with}}" itemscope itemtype="http://schema.org/WebPage">
+    <head>
+        {{include "/core/page/Page-charset.hbs" this}}
+        {{include "/core/page/Page-webFontLink.amp.hbs" this}}
+        {{include "/core/page/Page-styles.amp.hbs" this}}
+        {{include "/core/page/Page-jsonLinkedData.hbs" this}}
+        <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+        {{include "/core/page/Page-title.hbs" this}}
+        {{include "/core/page/Page-description.hbs" this}}
+        {{include "/core/page/Page-keywords.hbs" this}}
+        {{include "/core/page/Page-canonicalLink.hbs" this}}
+        {{include "/core/page/Page-meta.hbs" this}}
+        {{include "/core/page/Page-favicons.hbs" this}}
+        {{include "/core/page/Page-manifestLink.hbs" this}}
+        <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1">
+        <script async src="https://cdn.ampproject.org/v0.js"></script>
+        {{include "/core/page/Page-ampJs.amp.hbs" this}}
+        {{#if searchAction}}
+            <script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script>
+        {{/if}}
+    </head>
+    <body class="ContentPage-body"{{~#each extraBodyAttributes}} {{this}}{{~/each~}}>
+        <header class="ContentPage-header" itemscope itemtype="http://schema.org/WPHeader">
+            {{#with hat}}
+                <div class="ContentPage-hat">{{this}}</div>
+            {{/with}}
+            {{include "/core/page/Page-logo.amp.hbs" this}}
+            {{include "/core/page/Page-navigation.amp.hbs" this}}
+            {{include "/core/page/Page-social.hbs" this}}
+            {{#if searchAction}}
+                <form class="ContentPage-search" action="{{searchAction}}" novalidate="" autocomplete="off">
+                    <input type="text" class="ContentPage-searchInput" name="q">
+                    <button type="submit" class="ContentPage-searchButton">{{format "/core/page/Page" "searchButtonLabel"}}</button>
+                </form>
+            {{/if}}
+        </header>
+        {{#with banner}}
+            <div class="ContentPage-banner">{{~this~}}</div>
+        {{/with}}
+        {{#with sectionNavigation}}
+            <div class="ContentPage-sectionNavigation">{{this}}</div>
+        {{/with}}
+        {{#with packageNavigation}}
+            <div class="ContentPage-packageNavigation">{{this}}</div>
+        {{/with}}
+        {{#with above}}
+            <div class="ContentPage-above">{{this}}</div>
+        {{/with}}
+        {{#if showPageHeading}}
+            {{#with pageHeading}}
+                <div class="ContentPage-pageHeading">{{this}}</div>
+            {{/with}}
+        {{/if}}
+        <main class="ContentPage-main">
+            {{#with breadcrumbs}}
+                <div class="ContentPage-breadcrumbs">{{this}}</div>
+            {{/with}}
+            {{#with mainContent}}
+                <div class="ContentPage-mainContent">{{this}}</div>
+            {{/with}}
+            {{#with tags}}
+                <div class="ContentPage-tags">
+                    <h2 class="ContentPage-tags-heading">{{format "/core/page/ContentPage" "tagsHeading"}}</h2>
+                    <div class="ContentPage-tags-body">{{this}}</div>
+                </div>
+            {{/with}}
+            {{#with countries}}
+                <div class="ContentPage-countries">
+                    <h2 class="ContentPage-countries-heading">{{format "/core/page/ContentPage" "countriesHeading"}}</h2>
+                    <div class="ContentPage-countries-body">{{this}}</div>
+                </div>
+            {{/with}}
+            {{#with brands}}
+                <div class="ContentPage-brands">
+                    <h2 class="ContentPage-brands-heading">{{format "/core/page/ContentPage" "brandsHeading"}}</h2>
+                    <div class="ContentPage-brands-body">{{this}}</div>
+                </div>
+            {{/with}}
+            {{#with products}}
+                <div class="ContentPage-products">
+                    <h2 class="ContentPage-products-heading">{{format "/core/page/ContentPage" "productsHeading"}}</h2>
+                    <div class="ContentPage-products-body">{{this}}</div>
+                </div>
+            {{/with}}
+            {{#with topics}}
+                <div class="ContentPage-topics">
+                    <h2 class="ContentPage-topics-heading">{{format "/core/page/ContentPage" "topicsHeading"}}</h2>
+                    <div class="ContentPage-topics-body">{{this}}</div>
+                </div>
+            {{/with}}
+            {{#with actions}}
+                <div class="ContentPage-actions">
+                    <h2 class="ContentPage-actions-heading">{{format "/core/page/ContentPage" "actionsHeading"}}</h2>
+                    <div class="ContentPage-actions-body">{{this}}</div>
+                </div>
+            {{/with}}
+            {{#with comments}}
+                <div class="ContentPage-comments">
+                    {{this}}
+                </div>
+            {{/with}}
+        </main>
+        {{#with aside}}
+            <aside class="ContentPage-aside">{{this}}</aside>
+        {{/with}}
+        {{#with below}}
+            <div class="ContentPage-below">{{this}}</div>
+        {{/with}}
+        <footer class="ContentPage-footer" itemscope itemtype="https://schema.org/WPFooter">
+            {{include "/core/page/Page-logo.amp.hbs" this}}
+            {{include "/core/page/Page-navigation.amp.hbs" this}}
+            {{include "/core/page/Page-social.hbs" this}}
+            {{#with disclaimer}}
+                <div class="ContentPage-disclaimer">{{this}}</div>
+            {{/with}}
+        </footer>
+        {{include "/core/page/Page-ampIntegrations.amp.hbs" this}}
+        {{include "/core/page/Page-ampAnalytics.amp.hbs" this}}
+    </body>
+</html>

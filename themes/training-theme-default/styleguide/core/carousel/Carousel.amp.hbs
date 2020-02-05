@@ -1,0 +1,9 @@
+<div class="Carousel">
+    <amp-carousel class="Carousel-slides" width="840" height="740" layout="responsive" type="slides">
+        {{#each slides}}
+            <div class="Carousel-slide">
+                {{include "/core/carousel/CarouselSlide.amp.hbs" this slideNumber=@index numberOfSlides=../slides.length}}
+            </div>
+        {{/each}}
+    </amp-carousel>
+</div>
