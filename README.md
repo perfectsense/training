@@ -150,6 +150,12 @@ Now that your vagrant is configured, let's deploy a build to it. On your local m
 ./gradlew training-site:deploy
 ```
 
+If you're running Mac OSX Catalina or there is some other reason that your WAR file doesn't deploy, you can SSH into your vagrant and use a symlink to point to your WAR file instead:
+
+```bash
+ln -s  /vagrant/site/build/libs/training-site-1.0.0-SNAPSHOT.war /servers/brightspot/webapps/ROOT.war
+```
+
 ## Accessing the CMS
 
 Now that the Brightspot service is running you can access the cms by navigating to:
