@@ -1,10 +1,9 @@
 package bex.training.movie;
 
-import brightspot.core.permalink.ExpressDefaultPermalinkRule;
+import brightspot.core.permalink.AbstractPermalinkRule;
 import com.psddev.cms.db.Site;
-import com.psddev.dari.db.Record;
 
-public class PhasePermalinkRule extends Record implements ExpressDefaultPermalinkRule {
+public class PhasePermalinkRule extends AbstractPermalinkRule {
 
     @Override
     public String createPermalink(Site site, Object object) {

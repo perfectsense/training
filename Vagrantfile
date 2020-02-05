@@ -23,5 +23,6 @@ Vagrant.configure('2') do |config|
   # Standard box name and location, DO NOT MODIFY.
   config.vm.box = 'brightspot'
   config.vm.box_url = 'https://s3.amazonaws.com/brightspot-vagrant/boxes/brightspot.box'
+  config.vm.network 'private_network', ip: '172.28.128.101'
 
 end

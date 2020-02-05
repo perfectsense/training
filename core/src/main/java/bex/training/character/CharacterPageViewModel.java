@@ -48,13 +48,8 @@ public class CharacterPageViewModel extends AbstractContentPageViewModel<Charact
      * @return The processed Views representing the {@link Character}'s full biography including HTML and enhancements.
      */
     @Override
-    public Iterable<? extends CharacterPageViewBiographyField> getBiography() {
-        if (!StringUtils.isBlank(model.getFullBiography())) {
-            return RichTextUtils.buildHtml(Database.Static.getDefault(), model.getFullBiography(),
-                    s -> createView(CharacterPageViewBiographyField.class, s));
-        }
-
-        return null;
+    public CharSequence getBiography() {
+        return RichTextUtils.buildInlineHtml(model.getState().getDatabase(), model.getFullBiography(), this::createView);
     }
 
     @Override

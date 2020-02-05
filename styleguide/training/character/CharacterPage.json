@@ -2,9 +2,7 @@
   "_include": "/core/page/ContentPage.json",
   "_template": "CharacterPage.hbs",
   "alterEgo": "Captain America",
-  "biography": {
-    "_include": "/_group/RichText.json"
-  },
+  "biography": "{{html('This is a very short biography')}}",
   "image": {
     "_include": "/core/image/Image.json"
   },

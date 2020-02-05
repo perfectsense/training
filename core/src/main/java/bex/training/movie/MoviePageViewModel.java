@@ -61,13 +61,8 @@ public class MoviePageViewModel extends AbstractContentPageViewModel<Movie> impl
     }
 
     @Override
-    public Iterable<? extends MoviePageViewPlotField> getPlot() {
-        if (!StringUtils.isBlank(model.getPlot())) {
-            return RichTextUtils.buildHtml(Database.Static.getDefault(), model.getPlot(),
-                    s -> createView(MoviePageViewPlotField.class, s));
-        }
-
-        return null;
+    public CharSequence getPlot() {
+        return RichTextUtils.buildInlineHtml(model.getState().getDatabase(), model.getPlot(), this::createView);
     }
 
     @Override
@@ -76,13 +71,8 @@ public class MoviePageViewModel extends AbstractContentPageViewModel<Movie> impl
     }
 
     @Override
-    public Iterable<? extends MoviePageViewSummaryField> getSummary() {
-        if (!StringUtils.isBlank(model.getSummary())) {
-            return RichTextUtils.buildHtml(Database.Static.getDefault(), model.getSummary(),
-                    s -> createView(MoviePageViewSummaryField.class, s));
-        }
-
-        return null;
+    public CharSequence getSummary() {
+        return RichTextUtils.buildInlineHtml(model.getState().getDatabase(), model.getSummary(), this::createView);
     }
 
     // Page Support.
