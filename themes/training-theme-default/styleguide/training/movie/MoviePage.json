@@ -1,5 +1,6 @@
 {
   "_include": "/core/page/Page.json",
+  "_template": "MoviePage.hbs",
   "name": "Avengers",
   "phase": "Phase 1",
   "releaseDate": "April 11, 2012",

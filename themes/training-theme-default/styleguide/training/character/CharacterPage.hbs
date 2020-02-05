@@ -1,22 +1,23 @@
 <!DOCTYPE html>
-<html class="CharacterPage" lang="{{#with language}}{{this}}{{else}}en{{/with}}" itemscope itemtype="http://schema.org/WebPage">
-    {{include "/core/page/Page-head.hbs" this}}
+<html class="CharacterPage" lang="{{#with language}}{{this}}{{else}}en{{/with}}" itemscope
+      itemtype="http://schema.org/WebPage">
+{{include "/core/page/Page-head.hbs" this}}
     <body class="CharacterPage-body" {{~#each extraBodyAttributes}} {{this}} {{~/each~}}
-        {{#if hidePromoDropShadow}} data-hide-promo-dropshadow{{/if}}
-        {{#if promoModuleAlignment}} data-promo-module-alignment="{{promoModuleAlignment}}"{{/if}}
-        {{#if boldMood}} data-mood-bold{{/if}}
-        {{#if inlineSubheading}} data-subheading-inline="{{inlineSubheading}}"{{/if}}
-        {{#if hideExternalLinkIcon}}data-hide-external-link-icon{{/if}}
-        {{#if hat}}data-show-hat{{/if}}
-        {{#if hideHeaderHat}}data-hide-header-hat{{/if}}
+    {{#if hidePromoDropShadow}} data-hide-promo-dropshadow{{/if}}
+    {{#if promoModuleAlignment}} data-promo-module-alignment="{{promoModuleAlignment}}"{{/if}}
+    {{#if boldMood}} data-mood-bold{{/if}}
+    {{#if inlineSubheading}} data-subheading-inline="{{inlineSubheading}}"{{/if}}
+    {{#if hideExternalLinkIcon}}data-hide-external-link-icon{{/if}}
+    {{#if hat}}data-show-hat{{/if}}
+    {{#if hideHeaderHat}}data-hide-header-hat{{/if}}
     >
-    {{include "/core/page/Page-icons.hbs" this}}
-    {{#with hat}}
-        <div class="CharacterPage-hat">{{this}}</div>
-    {{/with}}
-    {{include "/core/page/Page-header.hbs" this}}
-    <div class="CharacterPage-contentWrapper"
-        data-negative-margin={{#if negativeMargin}}"{{negativeMargin}}"{{else}}default{{/if}}>
+        {{include "/core/page/Page-icons.hbs" this}}
+        {{#with hat}}
+            <div class="CharacterPage-hat">{{this}}</div>
+        {{/with}}
+        {{include "/core/page/Page-header.hbs" this}}
+        <div class="CharacterPage-contentWrapper"
+             data-negative-margin={{#if negativeMargin}}"{{negativeMargin}}"{{else}}default{{/if}}>
         {{include "/core/page/Page-sectionNavigation.hbs" this}}
         {{#with above}}
             <div class="CharacterPage-above">{{this}}</div>
@@ -93,9 +94,12 @@
         {{#with below}}
             <div class="CharacterPage-below">{{this}}</div>
         {{/with}}
-    </div>
-    {{include "/core/page/Page-footer.hbs" this}}
-    {{!include "/core/page/Page-SearchOverlay.hbs" this}}
-    {{include "/core/page/Page-extraBodyItems.hbs" this}}
-</body>
+        </div>
+
+        {{include "/core/page/Page-aside.hbs" this}}
+        {{include "/core/page/Page-contentFooter.hbs" this}}
+        {{include "/core/page/Page-below.hbs" this}}
+        {{include "/core/page/Page-footer.hbs" this}}
+        {{include "/core/page/Page-extraBodyItems.hbs" this}}
+    </body>
 </html>
