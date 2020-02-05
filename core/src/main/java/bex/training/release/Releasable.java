@@ -1,8 +1,8 @@
 package bex.training.release;
 
-import com.psddev.dari.db.Recordable;
-
 import java.util.Date;
+
+import com.psddev.dari.db.Recordable;
 
 public interface Releasable extends Recordable {
 

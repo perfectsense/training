@@ -1,5 +1,8 @@
 package bex.training.character;
 
+import java.util.Collections;
+import java.util.List;
+
 import bex.training.movie.Movie;
 import brightspot.core.page.AbstractContentPageViewModel;
 import brightspot.core.tool.RichTextUtils;
@@ -7,16 +10,11 @@ import com.psddev.cms.view.PageEntryView;
 import com.psddev.dari.db.Database;
 import com.psddev.dari.db.Query;
 import com.psddev.dari.util.ObjectUtils;
-import com.psddev.dari.util.StringUtils;
 import com.psddev.styleguide.core.list.ListView;
 import com.psddev.styleguide.core.list.ListViewItemsField;
 import com.psddev.styleguide.training.character.CharacterPageView;
-import com.psddev.styleguide.training.character.CharacterPageViewBiographyField;
 import com.psddev.styleguide.training.character.CharacterPageViewFeaturedMoviesField;
 import com.psddev.styleguide.training.character.CharacterPageViewImageField;
-
-import java.util.Collections;
-import java.util.List;
 
 public class CharacterPageViewModel extends AbstractContentPageViewModel<Character> implements CharacterPageView, PageEntryView {
 

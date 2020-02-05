@@ -1,10 +1,10 @@
 package bex.training.util;
 
-import com.psddev.dari.util.StringUtils;
-
 import java.util.Arrays;
 import java.util.Optional;
 import java.util.stream.Collectors;
+
+import com.psddev.dari.util.StringUtils;
 
 /**
  * Utility class containing various methods to assist throughout the project.
