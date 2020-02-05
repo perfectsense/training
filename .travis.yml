@@ -19,13 +19,12 @@ env:
 
 before_script:
   - chmod +x build.sh
-  - chmod +x deploy.sh
 
 script:
-  - ./build.sh && ./deploy.sh
+  - ./build.sh
 
 cache:
   directories:
     - $HOME/.m2
     - node
-    - node_modules    
+    - node_modules
