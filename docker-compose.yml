@@ -1,0 +1,16 @@
+version: '3'
+services:
+  brightspot:
+    build: .
+    ports:
+      - 80:80
+      - 5005:5005
+    volumes:
+      - ./site/build/libs/training-site-1.0.0-SNAPSHOT.war:/servers/brightspot/webapps/ROOT.war
+      - mysql-data:/var/lib/mysql
+      - solr-data:/servers/solr/solr/collection1/data
+      - storage-data:/servers/brightspot/www/storage
+volumes:
+  mysql-data:
+  solr-data:
+  storage-data:

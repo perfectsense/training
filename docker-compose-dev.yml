@@ -1,0 +1,9 @@
+version: '3'
+services:
+  brightspot:
+    volumes:
+      - training-sync:$PWD:nocopy
+
+volumes:
+  training-sync:
+    external: true
