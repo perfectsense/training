@@ -1,5 +1,8 @@
 package bex.training.character;
 
+import java.util.Collections;
+import java.util.List;
+
 import bex.training.movie.Movie;
 import brightspot.core.page.AbstractContentPageViewModel;
 import brightspot.core.tool.RichTextUtils;
@@ -7,16 +10,11 @@ import com.psddev.cms.view.PageEntryView;
 import com.psddev.dari.db.Database;
 import com.psddev.dari.db.Query;
 import com.psddev.dari.util.ObjectUtils;
-import com.psddev.dari.util.StringUtils;
 import com.psddev.styleguide.core.list.ListView;
 import com.psddev.styleguide.core.list.ListViewItemsField;
 import com.psddev.styleguide.training.character.CharacterPageView;
-import com.psddev.styleguide.training.character.CharacterPageViewBiographyField;
 import com.psddev.styleguide.training.character.CharacterPageViewFeaturedMoviesField;
 import com.psddev.styleguide.training.character.CharacterPageViewImageField;
-
-import java.util.Collections;
-import java.util.List;
 
 public class CharacterPageViewModel extends AbstractContentPageViewModel<Character> implements CharacterPageView, PageEntryView {
 
@@ -48,13 +46,8 @@ public class CharacterPageViewModel extends AbstractContentPageViewModel<Charact
      * @return The processed Views representing the {@link Character}'s full biography including HTML and enhancements.
      */
     @Override
-    public Iterable<? extends CharacterPageViewBiographyField> getBiography() {
-        if (!StringUtils.isBlank(model.getFullBiography())) {
-            return RichTextUtils.buildHtml(Database.Static.getDefault(), model.getFullBiography(),
-                    s -> createView(CharacterPageViewBiographyField.class, s));
-        }
-
-        return null;
+    public CharSequence getBiography() {
+        return RichTextUtils.buildInlineHtml(model.getState().getDatabase(), model.getFullBiography(), this::createView);
     }
 
     @Override

@@ -1,0 +1,15 @@
+{
+  "_include": "/core/page/Page.json",
+  "_hidden": false,
+  "_template": "/core/tag/TagPage.hbs",
+  "above": {
+    "_include": "/dfp/GoogleDfpAdModule.json"
+  },
+  "pageHeading": "Tag Page",
+
+  "main": [
+    {
+      "_include": "/core/list/ListSection.json"
+    }
+  ]
+}

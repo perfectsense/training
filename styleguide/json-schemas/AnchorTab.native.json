@@ -1,0 +1,9 @@
+{
+  "type": "object",
+  "properties": {
+    "tab": {
+      "type": "string"
+    }
+  },
+  "_hidden": true
+}

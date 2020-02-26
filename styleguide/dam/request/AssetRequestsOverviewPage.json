@@ -1,0 +1,18 @@
+{
+  "_include": "/core/page/Page.json",
+  "_template": "AssetRequestsOverviewPage.hbs",
+  "pageLead": null,
+  "main": {
+    "_include": "/dam/request/AssetRequestsOverviewTable.json"
+  },
+  "banner": null,
+  "breadcrumbs": {
+    "_include": "/core/link/Link.json"
+  },
+  "totalCount": "1",
+  "above": null,
+  "aside": null,
+  "below": null,
+  "hat": null,
+  "_hidden": true
+}

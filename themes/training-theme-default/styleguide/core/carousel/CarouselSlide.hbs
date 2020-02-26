@@ -1,0 +1,27 @@
+<div class="CarouselSlide" {{extraAttributes}}>
+    <div class="CarouselSlide-media">
+        {{#with mediaContent}}
+            {{#resize this.[0].image "carouselSlide"}}
+                <img class="Image" alt="{{../alt}}"
+                    {{#if (eq ../../slideNumber 0)}}
+                        {{~#with width}} width="{{this}}"{{/with~}}
+                        {{~#with height}} height="{{this}}"{{/with~}}
+                        src="{{src}}"
+                    {{else}}
+                        data-flickity-lazyload="{{src}}"
+                    {{/if}}
+                >
+            {{/resize}}
+        {{/with}}
+    </div>
+    <div class="CarouselSlide-info">
+        <div class="CarouselSlide-numbers">
+            <span class="CarouselSlide-currentSlide">{{add slideNumber 1}}</span>/<span class="CarouselSlide-slidesLength">{{numberOfSlides}}</span>
+        </div>
+        {{#with infoTitle}}
+            <div class="CarouselSlide-infoTitle">
+                {{~this~}}&nbsp;<span class="CarouselSlide-infoAttribution">({{../infoAttribution}})</span>
+            </div>
+        {{/with}}
+    </div>
+</div>

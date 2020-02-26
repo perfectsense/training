@@ -1,0 +1,53 @@
+description = 'Training: Core'
+
+dependencies {
+
+    api project(':training-frontend')
+
+    // Brightspot
+    api 'com.psddev:auth'
+    api 'com.psddev:aws-ses'
+    api 'com.psddev:cms-db'
+    api 'com.psddev:cms-tool-ui'
+    api 'com.psddev:dari-aws'
+    api 'com.psddev:dari-db'
+    api 'com.psddev:dari-mysql'
+    api 'com.psddev:dari-util'
+    api 'com.psddev:handlebars'
+    api 'com.psddev:image'
+    api 'com.psddev:native'
+    api 'com.psddev:rss'
+    api 'com.psddev:sitemap'
+    api 'com.psddev:terms'
+    api 'com.psddev:theme'
+
+    // Component Lib.
+    api 'com.psddev.component-lib:materialize'
+    api 'com.psddev.component-lib:query-memoization-modifiers'
+    api 'com.psddev.component-lib:query-memoization-util'
+
+    // Third party.
+    api 'org.slf4j:slf4j-api'
+    api 'org.slf4j:slf4j-jdk14'
+    api 'org.apache.solr:solr-solrj'
+    api 'com.cronutils:cron-utils'
+    api 'com.amazonaws:aws-java-sdk-rekognition'
+    api 'org.ahocorasick:ahocorasick'
+
+    compileOnly 'javax.el:javax.el-api'
+    compileOnly 'javax.servlet:javax.servlet-api'
+    compileOnly 'javax.servlet.jsp:javax.servlet.jsp-api'
+    compileOnly 'taglibs:standard'
+
+    // Test.
+    testImplementation("org.junit.jupiter:junit-jupiter-api")
+    // Start com.psddev:express-core dependencies
+    api 'com.psddev:dam'
+    // End com.psddev:express-core dependencies
+    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine")
+}
+
+project.afterEvaluate {
+
+    jar.dependsOn(test)
+}

@@ -1,0 +1,10 @@
+{
+  "_wrapper": false,
+  "_template": "BrandPage.hbs",
+  "_include": "/corporate/taxonomy/TaxonomyPage.json",
+  "taxonomyProducts": {
+    "_include": "/core/promo/Promo.json"
+  },
+  "customContent": false,
+  "_hidden": true
+}

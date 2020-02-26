@@ -1,0 +1,8 @@
+{{~#with contributors~}}
+    <div class="{{#if ../className}}{{../className}}{{else}}CreativeWorkPage{{/if}}-contributors">
+        {{~#each this~}}
+            <span>{{~this~}}</span>
+            {{~#unless @last}},&nbsp;{{/unless~}}
+        {{~/each~}}
+    </div>
+{{~/with~}}

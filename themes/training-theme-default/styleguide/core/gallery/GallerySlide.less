@@ -1,0 +1,34 @@
+.GallerySlide {
+  height: 100%;
+  width: 100%;
+
+  &-content {
+    display: none;
+  }
+
+  &-media {
+    align-items: center;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+
+    img {
+      height: auto;
+      max-height: 100%;
+      width: auto;
+    }
+  }
+
+  &-infoDescription,
+  &-title {
+    display: none;
+  }
+
+  &-title {
+    &:extend(.title-6 all);
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "type": "object",
+  "additionalProperties": true,
+  "properties": {
+    "label": {
+      "type": "string"
+    },
+    "count": {
+      "type": "number"
+    },  
+    "url": {
+      "type": "string"
+    }
+  }
+}

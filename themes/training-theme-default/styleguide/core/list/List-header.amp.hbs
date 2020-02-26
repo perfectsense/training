@@ -1,0 +1,5 @@
+<div class="{{className}}-header" {{#unless title}}data-no-title{{/unless}}>
+    {{#if title}}
+        <div class="{{className}}-header-title">{{#if ctaUrl}}<a href="{{ctaUrl}}" {{#if ctaTarget}}target="{{ctaTarget}}"{{/if}}>{{title}}&nbsp;</a>{{else}}{{title}}{{/if}}</div>
+    {{/if}}
+</div>

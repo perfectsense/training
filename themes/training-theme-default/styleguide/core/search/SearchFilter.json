@@ -1,0 +1,11 @@
+{
+  "_template": "/core/search/SearchFilter.hbs",
+  "heading": "Type",
+  "items": [
+    { "_include": "/core/search/SearchFilterInput.json", "label": "All", "selected": true },
+    { "_include": "/core/search/SearchFilterInput.json", "label": "Articles", "count": 1234 },
+    { "_include": "/core/search/SearchFilterInput.json", "label": "Photos", "count": 567 },
+    { "_include": "/core/search/SearchFilterInput.json", "label": "Videos", "count": 89 }
+  ],
+  "_hidden": true
+}

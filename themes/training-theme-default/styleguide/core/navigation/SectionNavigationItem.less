@@ -1,0 +1,46 @@
+.SectionNavigationItem {
+  position: relative;
+
+  &-text,
+  a {
+    &:extend(.label-4 all);
+    white-space: nowrap;
+
+    &-link {
+      &:hover {
+        opacity: 0.80;
+      }
+    }
+  }
+
+  &-subNav {
+    position: absolute;
+    top: 35px;
+    width: 235px;
+    background-color: var(--primaryTextColorInverse);
+    padding: 15px;
+    box-shadow: 0 0 @grid-gap 0 rgba(0, 0, 0, 0.2);
+    display: none;
+    z-index: 20;
+
+    .SectionNavigationItem {
+      display: none;
+
+      &[data-show] {
+        display: block;
+      }
+
+      &-text {
+        &-link {
+          &:hover {
+            color: var(--secondaryColor1);
+          }
+        }
+      }
+
+      &:not(:last-child) {
+        margin-bottom: @grid-gap;
+      }
+    }
+  }
+}

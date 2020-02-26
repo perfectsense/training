@@ -1,0 +1,16 @@
+{
+  "type": "object",
+  "properties": {
+    "screens": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "styleOverride": {
+      "type": "object",
+      "_style": "true"
+    }
+  },
+  "_hidden": true
+}

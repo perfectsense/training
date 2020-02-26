@@ -1,0 +1,40 @@
+.Quote {
+  margin: (@grid-gap * 2) 0;
+  padding: (@grid-gap / 2) 0 0 0;
+  position: relative;
+  width: 100%;
+
+  blockquote {
+    &:extend(.quote-1 all);
+
+    margin: @grid-gap 0 (@grid-gap / 2);
+    text-align: center;
+
+    &:before {
+      content: '\201C';
+    }
+  
+    &:after {
+      content: '\201D';
+    }
+  }
+
+  &-attribution {
+    &:extend(.label-3 all);
+
+    display: block;
+    line-height: 1.2;
+    text-align: center;
+  }
+
+  @media @mq-viewport-md {
+    &:before {
+      font-size: 80px;
+      top: -2px;
+    }
+
+    blockquote {
+      margin-bottom: @grid-gap;
+    }
+  }
+}

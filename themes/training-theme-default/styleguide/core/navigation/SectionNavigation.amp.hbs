@@ -1,0 +1,11 @@
+<nav class="SectionNavigation"{{extraAttributes}}>
+    {{#with items}}
+        <ul class="SectionNavigation-items">
+            {{#each this}}
+                <li class="SectionNavigation-items-item" {{#if this.isCurrent}}data-current-nav-item{{/if}}>
+                    {{render this [/core/navigation/NavigationItem.amp.hbs]="/core/navigation/SectionNavigationItem.amp.hbs"}}
+                </li>
+            {{/each}}
+        </ul>
+    {{/with}}
+</nav>

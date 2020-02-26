@@ -1,0 +1,25 @@
+{{!-- HomePage gets a different HTML class and a page body --}}
+<!DOCTYPE html>
+<html class="HomePage" lang="{{#with language}}{{this}}{{else}}en{{/with}}">
+    {{include "/core/page/Page-head.hbs" this}}
+
+    {{!-- HomePage body removes the section and package navigations, pageHeading, pageSubheading, aside, and
+    actions, none of which
+    we need on a home page --}}
+
+    <body class="Page-body" {{~#each extraBodyAttributes}} {{this}} {{~/each~}}>
+        {{include "/core/page/Page-header.hbs" this}}
+        {{include "/core/page/Page-above.hbs" this}}
+
+        <main class="HomePage-main">
+            {{#with pageHeading}}
+                <h1 class="HomePage-pageHeading">{{this}}</h1>
+            {{/with}}
+            {{#with main}}{{this}}{{/with}}
+        </main>
+
+        {{include "/core/page/Page-below.hbs" this}}
+        {{include "/core/page/Page-footer.hbs" this}}
+        {{include "/core/page/Page-extraBodyItems.hbs" this}}
+    </body>
+</html>

@@ -1,0 +1,417 @@
+// lesshint universalSelector: false
+@import (reference) '../text/All';
+
+.CreativeWorkPage {
+  &-actions {
+    display: block;
+  }
+
+  &-authors {
+    width: 100%;
+    margin-bottom: (@grid-gap / 2);
+    text-transform: uppercase;
+  }
+
+  &-actionsSticky {
+    display: none;
+    left: 0;
+    top: 60px; // header height
+    position: sticky;
+    z-index: @z-index-base;
+
+    &-content {
+      left: 0;
+      transform: translateX(-100%);
+      position: absolute;
+      top: @grid-gap * 2;
+    }
+  }
+
+  &-authorBy {
+    text-transform: none;
+
+    [lang='es'] & {
+      display: none;
+    }
+  }
+
+  &-authorInfo {
+    .clearfix;
+    margin-bottom: (@grid-gap * 2);
+
+    &-bio {
+      &-content {
+        .body-2;
+
+        p {
+          margin: (@grid-gap * 1.5) 0;
+
+          &:first-of-type {
+            margin-top: 0;
+          }
+
+          &:last-of-type {
+            margin-bottom: 0;
+          }
+        }
+
+        .Link,
+        a {
+          text-decoration: underline;
+        }
+      }
+
+      &-name {
+        .title-4;
+
+        align-items: center;
+        display: flex;
+        height: 60px;
+        margin-bottom: (@grid-gap / 2);
+      }
+    }
+
+    &-follow {
+      margin-left: @grid-gap;
+    }
+
+    &-image {
+      float: left;
+      margin-right: @grid-gap;
+      width: 60px;
+
+      img {
+        border: solid 2px var(--secondaryColor3);
+        border-radius: 100%;
+      }
+    }
+  }
+
+  &-authorName,
+  &-contributors {
+    .byline-1;
+    text-transform: none;
+
+    display: inline;
+    font-weight: 600;
+  }
+
+  &-authorTitle {
+    display: block;
+  }
+
+  &-bylineText {
+    margin-bottom: (@grid-gap / 2);
+  }
+
+  &-breadcrumbs {
+
+    .Link {
+      .SectionButton;
+
+      margin: 0 (@grid-gap / 2) (@grid-gap / 2) 0;
+    }
+
+    span.Link {
+      pointer-events: none;
+    }
+  }
+
+  &-byline {
+    margin-bottom: @grid-gap;
+  }
+
+  &-bylineText {
+    .byline-1;
+
+    display: inline;
+    font-weight: 500;
+
+    margin-bottom: (@grid-gap / 2);
+    text-transform: uppercase;
+    width: 100%;
+  }
+
+  &-contentInfo {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+
+    [class$='-actions'] {
+      margin-bottom: 20px;
+    }
+  }
+
+  &-contentFooter {
+    & > * {
+      &:not(:last-child) {
+        padding-bottom: @grid-gap * 2;
+      }
+    }
+  }
+
+  &-dateModified,
+  &-datePublished {
+    .date-1;
+    word-break: keep-all;
+    margin-top: 1px;
+  }
+
+  &-headline {
+    .title-1;
+
+    font-weight: 600;
+    line-height: 1.19;
+    letter-spacing: normal;
+    margin-bottom: (@grid-gap / 2);
+  }
+
+  &-mainContent {
+    hr {
+      background: var(--secondaryColor2);
+      border: 0;
+      height: 1px;
+      margin: (@grid-gap * 2) 0;
+      width: 70px;
+
+      &[data-wide] {
+        margin: (@grid-gap * 2) auto;
+        width: 200px;
+      }
+    }
+  }
+
+  &-subHeadline {
+    .title-3;
+    margin-bottom: @grid-gap;
+    font-weight: normal;
+  }
+
+  &-tags {
+    margin: @grid-gap 0;
+    display: flex;
+    align-items: baseline;
+
+    &-heading {
+      .label-3;
+      text-transform: uppercase;
+      padding-right: 10px; 
+    }
+
+    .Link {
+      .TagButton;
+
+      margin: 0 (@grid-gap / 2) (@grid-gap / 2) 0;
+    }
+
+    span.Link {
+      pointer-events: none;
+    }
+  }
+
+  &-updatesCorrections {
+    border: 1px solid var(--secondaryColor3);
+    border-top: 2px solid var(--listBorderColor);
+    font-style: italic;
+    margin: @grid-gap 0;
+    padding: @grid-gap;
+
+    &-wrapper {
+      [class$='aside'] & {
+        display: none;
+      }
+    }
+
+    [class$='aside'] & {
+      margin-bottom: 0;
+      margin-top: 0;
+    }
+  }
+
+  @media @mq-viewport-md {
+    &-headline {
+      margin-bottom: @grid-gap;
+    }
+
+    &-datePublished {
+      & > div {
+        display: inline;
+
+        &:nth-of-type(2) {
+          margin-left: @grid-gap / 4;
+
+          &:before {
+            content: '|';
+            display: inline;
+            padding-right: @grid-gap / 2;
+          }
+        }
+      }
+    }
+
+    &-authors {
+      margin-bottom: 12px;
+    }
+
+    &-tags {
+      margin: (@grid-gap * 2) 0;
+    }
+
+    &-byline {
+      flex-wrap: nowrap;
+    }
+
+    &-bylineText,
+    &-authors {
+      width: initial;
+      margin-bottom: 0;
+      margin-right: (@grid-gap / 2);
+    }
+
+    &-actions {
+      margin-left: auto;
+    }
+
+    &-authorTitle {
+      display: inline;
+
+      &:before {
+        content: ' | ';
+        margin-right: 3px;
+      }
+    }
+  }
+
+  @media @mq-viewport-lg {
+
+    &-actionsSticky {
+      display: block;
+    }
+
+    &-headline {
+      margin-bottom: (@grid-gap * 2);
+    }
+
+    &-byline {
+      justify-content: initial;
+    }
+
+    &-authorInfo {
+      &-bio {
+        &-content {
+          margin-top: (@grid-gap / 2);
+        }
+
+        &-name {
+          display: block;
+          height: auto;
+        }
+      }
+
+      &-follow {
+        margin-left: 0;
+        margin-top: (@grid-gap / 4);
+      }
+
+      &-image {
+        width: 80px;
+      }
+    }
+  }
+
+  @media @mq-viewport-hk {
+    &-actionsSticky {
+      &-content {
+        transform: none;
+        left: -(@grid-gap * 2.5);
+      }
+    }
+
+    &-updatesCorrections {
+      &-wrapper {
+        [class$='aside'] & {
+          display: block;
+        }
+      }
+    }
+
+    .Corrections {
+      &[data-with-aside='true'] {
+        display: none;
+      }
+    }
+  }
+}
+
+/**
+ * CreativeWorkTwoColumnLayout
+ */
+.CreativeWorkPageTwoColumnLayout {
+  &-aside {
+    flex-shrink: 0;
+    margin-top: (@grid-gap * 2);
+
+    [class$='updatesCorrections-wrapper'] {
+      padding-bottom: @grid-gap * 2;
+    }
+
+    &-content {
+      > * {
+        padding-bottom: @grid-gap * 2;
+
+        &:last-child {
+          padding-bottom: 0;
+        }
+      }
+    }
+  }
+
+  &-content {
+    margin: 0 auto;
+    max-width: @content-width;
+    padding: (@grid-gap * 2) @grid-gap;
+  }
+
+  &-wrapper {
+    margin-top: @grid-gap;
+  }
+
+  @media @mq-viewport-md {
+    &-wrapper {
+      margin-top: @grid-gap;
+    }
+  }
+
+  @media @mq-viewport-hk {
+    &-content {
+      padding-left: 0;
+      padding-right: @grid-gap;
+    }
+  }
+
+  @media @mq-viewport-hk {
+    &-aside {
+      margin-top: 0;
+      margin-left: @grid-gap * 2;
+      width: 320px;
+    }
+
+    &-content {
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    &-main {
+      width: calc(~'100% - 320px');
+
+      &-content {
+        width: 100%;
+      }
+    }
+
+    &-wrapper {
+      display: flex;
+    }
+  }
+}

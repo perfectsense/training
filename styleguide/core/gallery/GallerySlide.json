@@ -1,0 +1,10 @@
+{
+  "_template": "GallerySlide.hbs",
+  "mediaContent": {
+    "_include": "/core/image/Image.json"
+  },
+  "infoTitle": "Title",
+  "infoDescription": "Description",
+  "infoAttribution": "Photo by: Jane Doe",
+  "_hidden": true
+}

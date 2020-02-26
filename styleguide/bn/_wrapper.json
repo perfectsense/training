@@ -1,0 +1,6 @@
+{
+  "_template": "/bn/NativeApp.hbs",
+  "screens": {
+    "_delegate": true
+  }
+}

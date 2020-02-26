@@ -1,0 +1,8 @@
+{
+    "_template": "/core/video/VideoEnhancement.hbs",
+    "title": "YouTube Video Enhancement",
+    "subHeadline": "YouTube Video Enhancement SubHeadline",
+    "player": {
+        "_include": "/youtube/YouTubeVideoPlayer.json"
+    }
+}

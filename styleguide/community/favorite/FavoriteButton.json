@@ -1,0 +1,5 @@
+{
+  "_include": "/community/affinity/AffinityButton.json",
+  "_template": "FavoriteButton.hbs",
+  "_hidden": true
+}

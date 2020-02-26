@@ -1,0 +1,11 @@
+<div class="SocialBar">
+    <div class="SocialBar-heading">{{format "/core/social/SocialBar" "headingText"}}</div>
+
+    {{#with items}}
+        <ul class="SocialBar-items">
+            {{#each this}}
+                <li class="SocialBar-items-item">{{this}}</li>
+            {{/each}}
+        </ul>
+    {{/with}}
+</div>

@@ -1,13 +1,9 @@
 {
   "_template": "ListArticleBodyItem.hbs",
-  "_repeat": [
-    2,
-    5
-  ],
-  "headline": "{{words}}",
+  "headline": "Headline",
   "body": {
     "_include": "/_group/RichText.json",
-    "_random": true
+    "_key": 0
   },
-  "_hidden": false
+  "_hidden": true
 }

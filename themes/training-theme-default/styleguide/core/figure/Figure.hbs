@@ -1,0 +1,28 @@
+<figure class="Figure">
+    {{#resize image (fallback (get "imageSize") "articleImage")}}
+    <img src="{{src}}" alt="{{../alt}}" {{~#with srcset}} srcset="{{this}}" {{/with~}} {{~#with width}} width="{{this}}" {{/with~}} {{~#with height}} height="{{this}}" {{/with~}} />
+    {{/resize}}
+    {{!-- we do not have or yet, once we do, I'll convert this --}}
+    {{#if caption}}
+        <div class="Figure-content">
+    {{else}}
+        {{#if credit}}
+            <div class="Figure-content">
+        {{/if}}
+    {{/if}}
+
+        {{~#with caption~}}
+            <figcaption class="Figure-caption">{{this}}</figcaption>
+        {{~/with~}}
+        {{~#with credit~}}
+            <div class="Figure-credit">{{this}}</div>
+        {{~/with~}}
+
+    {{#if caption}}
+        </div>
+    {{else}}
+        {{#if credit}}
+            </div>
+        {{/if}}
+    {{/if}}
+</figure>

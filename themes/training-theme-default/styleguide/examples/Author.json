@@ -1,0 +1,68 @@
+{
+  "_include": "/core/page/Page.json",
+  "_hidden": false,
+  "_template": "/core/author/AuthorPage.hbs",
+
+  "name": "{{name}}",
+  "firstName": "{{words(1)}}",
+  "lastName": "{{words(1)}}",
+  "jobTitle": "VP",
+  "email": "VP@acme.com",
+  "affiliation": "ACME, inc.",
+  "image": {
+      "_include": "/core/image/Image.json"
+  },
+  "shortBiography": "{{sentences(3)}}",
+  "fullBiography": "{{paragraphs(3)}}",
+  "authorSocialLinks": {
+      "_include": "/core/social/SocialBar.json"
+  },
+  "aside": [
+    {
+      "_include": "/core/list/ListC.json"
+    }
+  ],
+  "contentFooter": [
+    {
+      "_include": "/core/list/ListE.json"
+    }
+  ],
+  "navigationModules": null,
+  "navigation": {
+    "_template": "/core/navigation/Navigation.hbs",
+    "items": [
+      {
+        "_template": "/core/navigation/NavigationItem.hbs",
+        "_repeat": 2,
+
+        "text": "{{words(1)}}",
+        "href": "{{var('exampleSiteUrl')}}",
+        "target": "_self"
+      },
+      {
+        "_template": "/core/navigation/NavigationItem.hbs",
+        "_repeat": [10, 15],
+
+        "text": "{{words(1)}}",
+        "items": [
+          {
+            "_include": "/core/navigation/NavigationLink.json",
+            "_repeat": [10, 15]
+          }
+        ]
+      },
+      {
+        "_template": "/core/navigation/NavigationItem.hbs",
+
+        "text": "{{words(1)}}",
+        "href": "{{var('exampleSiteUrl')}}",
+        "items": [
+          {
+            "_include": "/core/navigation/NavigationLink.json",
+            "_repeat": [10, 15]
+          }
+        ]
+      }
+    ]
+  }
+}

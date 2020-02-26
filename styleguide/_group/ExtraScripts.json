@@ -1,27 +1,24 @@
 [
   {
+    "_include": "/comscore/ComScoreScript.json"
+  },
+  {
     "_include": "/core/page/ExternalScript.json"
   },
   {
     "_include": "/core/page/InlineScript.json"
   },
   {
-    "_include": "/comscore/ComScoreScript.json"
+    "_include": "/adsense/GoogleAdsenseScript.json"
+  },
+  {
+    "_include": "/dfp/GoogleDfpScript.json"
   },
   {
     "_include": "/facebook/FacebookJavaScriptSdk.json"
   },
   {
-    "_include": "/twitter/widgets/TwitterWidgetsJavaScript.json"
-  },
-  {
     "_include": "/google-analytics/GoogleAnalyticsScript.json"
-  },
-  {
-    "_include": "/adsense/GoogleAdsenseScript.json"
-  },
-  {
-    "_include": "/dfp/GoogleDfpScript.json"
   },
   {
     "_include": "/jwplayer/JWVideoPlayerScript.json"
@@ -31,5 +28,8 @@
   },
   {
     "_include": "/mpx/MPXVideoPlayerScript.json"
+  },
+  {
+    "_include": "/twitter/widgets/TwitterWidgetsJavaScript.json"
   }
 ]

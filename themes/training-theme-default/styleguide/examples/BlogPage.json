@@ -1,0 +1,16 @@
+{
+  "_include": "/core/page/Page.json",
+  "_hidden": false,
+  "_template": "/blog/BlogPage.hbs",
+  "above": [
+    {
+      "_include": "/dfp/GoogleDfpAdModule.json"
+    }
+  ],
+  "pageHeading": "Blog Posts",
+  "main": [
+    {
+      "_include": "/core/list/ListSection.json"
+    }
+  ]
+}

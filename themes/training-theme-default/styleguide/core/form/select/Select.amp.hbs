@@ -1,0 +1,25 @@
+
+    <div class="Select">
+        
+            <label class="Select-label">{{label}}
+                
+                    <select class="Select-input" name="{{#if name}}{{name}}{{else}}Select-input{{/if}}"
+                          {{~#with autofocus}} autofocus{{/with}}
+                          {{~#with disabled}} disabled{{/with}}
+                          {{~#with multiple}} multiple{{/with~}}
+                          {{~#with required}} required{{/with}}>
+
+                      {{#with placeholder}}
+                          <option value="" selected>{{this}}</option>
+                      {{/with}}
+
+                      {{#with options~}}
+                          {{#each this}}
+                            {{~this~}}
+                          {{/each}}
+                      {{/with}}
+                    </select>
+                
+            </label>
+        
+    </div>

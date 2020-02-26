@@ -1,0 +1,8 @@
+{
+  "_template": "StockTicker.hbs",
+  "exchange": "NASDAQ",
+  "symbol": "AAPL",
+  "serviceUri": "q4/Q4ApiResponse.apijson",
+  "updateInterval": 5,
+  "_hidden": true
+}

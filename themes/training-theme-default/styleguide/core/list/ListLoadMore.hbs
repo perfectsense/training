@@ -1,0 +1,15 @@
+{{#if items}}
+    <div class="ListLoadMore"{{include "/core/list/List-attributes.hbs" this}}>
+        {{include "/core/list/List-header.hbs" this className="ListLoadMore"}}
+
+        {{#with items}}
+            <ul class="ListLoadMore-items">
+                {{#each this}}
+                <li class="ListLoadMore-items-item">
+                    {{include "/core/promo/PromoB.hbs" this description=null imageAlignment="top"}}
+                </li>
+                {{/each}}
+            </ul>
+        {{/with}}
+    </div>
+{{else}}{{~noResultsModule~}}{{/if}}

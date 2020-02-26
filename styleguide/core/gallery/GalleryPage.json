@@ -4,32 +4,22 @@
   "_template": "GalleryPage.hbs",
   "slides": [
     {
-      "_include": "/core/gallery/_GallerySlide.json",
-      "_repeat": [
-        8,
-        12
-      ]
+      "_include": "/core/gallery/GallerySlide.json"
     }
   ],
   "endCard": {
     "_include": "/_group/Modules.json",
-    "_random": true
+    "_key": 0
   },
   "contentId": "a123",
   "galleryBody": {
-    "_include": "/_group/RichText.json"
+    "_include": "/_group/RichText.json",
+    "_key": 0
   },
   "pagination": [
     {
-      "_template": "../link/Link.hbs",
-      "href": "#page=1",
-      "body": "1"
-    },
-    {
-      "_template": "../link/Link.hbs",
-      "href": "#page=2",
-      "body": "2"
+      "_include": "/core/link/Link.json"
     }
   ],
-  "_hidden": false
+  "_hidden": true
 }

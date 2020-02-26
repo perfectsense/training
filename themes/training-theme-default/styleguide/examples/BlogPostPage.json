@@ -1,0 +1,112 @@
+{
+  "_include": "/core/page/Page.json",
+  "_hidden": false,
+  "_template": "/blog/blogpost/BlogPostPage.hbs",
+  "aside": [
+    {
+      "_include": "/core/list/ListC.json"
+    }
+  ],
+  "dateExpired": "December 11, 2018",
+  "dateExpiredISO": "2018-02-19T17:44:23+00:00",
+  "datePublished": "December 11, 2016",
+  "datePublishedISO": "2016-02-19T16:43:22+00:00",
+  "dateModified": "December 12, 2016",
+  "dateModifiedISO": "2016-02-19T17:44:23+00:00",
+  "displayDatePublished": true,
+  "headline": "{{words}}",
+  "subHeadline": "{{words}}",
+  "authorUrl": "#",
+  "authorImage": {
+    "_image": true
+  },
+  "authorName": "{{name}}",
+  "authorBiography": "{{sentences}}",
+  "contributors": [
+    {
+      "_template": "/core/link/Link.hbs",
+      "_repeat": 2,
+      "body": "{{name}}"
+    }
+  ],
+
+  "above": [
+    {
+      "_include": "/dfp/GoogleDfpAdModule.json"
+    }
+  ],
+
+  "breadcrumbs": [
+    {
+        "_include": "/core/link/Link.json",
+        "_repeat": [ 2, 3 ]
+    }
+  ],
+  "lead": {
+    "_include": "/core/figure/Figure.json"
+  },
+
+  "articleBody": {
+    "_template": "/core/article/RichTextArticleBody.hbs",
+    "body": [
+      "{{paragraphs([ 2, 3 ])}}",
+      {
+        "_template": "/core/enhancement/Enhancement.hbs",
+
+        "item": {
+          "_include": "/core/figure/Figure.json"
+        },
+        "inline": false
+      },
+      "{{paragraphs([ 2, 3 ])}}",
+      {
+        "_template": "/core/enhancement/Enhancement.hbs",
+
+        "enhancementAlignment": "align-left",
+        "item": {
+          "_include": "/core/quote/Quote.json"
+        },
+        "inline": false
+      },
+      "{{paragraphs([ 2, 3 ])}}",
+      {
+        "_template": "/core/enhancement/Enhancement.hbs",
+
+        "item": {
+          "_include": "/youtube/YouTubeVideoEnhancement.json"
+        },
+        "inline": false
+      },
+      "{{paragraphs([ 2, 3 ])}}",
+      {
+        "_template": "/core/enhancement/Enhancement.hbs",
+
+        "item": {
+          "_template": "/core/carousel/Carousel.hbs",
+
+          "title": "{{words(5)}}",
+          "slides": [
+            {
+              "_include": "/core/carousel/CarouselSlide.json",
+              "_repeat": [4, 8]
+            }
+          ]
+        },
+        "inline": false
+      },
+      "{{paragraphs([ 2, 3 ])}}"
+    ]
+  },
+
+  "contentFooter": [
+    {
+      "_include": "/core/list/ListLoadMore.json"
+    }
+  ],
+  "tags": [
+    {
+      "_include": "/core/link/Link.json",
+      "_repeat": 4
+    }
+  ]
+}

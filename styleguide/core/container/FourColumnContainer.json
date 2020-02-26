@@ -1,0 +1,20 @@
+{
+  "_template": "FourColumnContainer.hbs",
+  "columnOne": {
+    "_include": "/_group/Modules.json",
+    "_key": 0
+  },
+  "columnTwo": {
+    "_include": "/_group/Modules.json",
+    "_key": 0
+  },
+  "columnThree": {
+    "_include": "/_group/Modules.json",
+    "_key": 0
+  },
+  "columnFour": {
+    "_include": "/_group/Modules.json",
+    "_key": 0
+  },
+  "_hidden": true
+}

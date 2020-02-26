@@ -1,0 +1,7 @@
+{{#with sectionNavigation}}
+    <ps-section-nav class="SectionPage-navContainer">
+        <div class="{{#if ../className}}{{../className}}{{else}}Page{{/if}}-sectionNavigation">
+            {{render this [/core/navigation/Navigation.hbs]="/core/navigation/SectionNavigation.hbs"}}
+        </div>
+    </ps-section-nav>
+{{/with}}

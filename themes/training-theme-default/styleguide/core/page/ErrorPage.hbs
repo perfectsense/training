@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html class="ErrorPage" lang="{{#with language}}{{this}}{{else}}en{{/with}}">
+  {{include "/core/page/Page-head.hbs" this}}
+
+  <body class="Page-body" {{~#each extraBodyAttributes}} {{this}} {{~/each~}}>
+      {{include "/core/page/Page-header.hbs" this}}
+      {{include "/core/page/Page-above.hbs" this}}
+
+      <main class="ErrorPage-main">
+          <div class="ErrorPage-wrapper">
+            {{#with title}}
+              <h1 class="ErrorPage-title">{{this}}</h1>
+            {{/with}}
+            {{#with errorMessage}}
+              <div class="ErrorPage-errorMessage">{{this}}</div>
+            {{/with}}
+            {{#with errorDescription}}
+              <div class="ErrorPage-errorDescription">{{this}}</div>
+            {{/with}}
+            {{#if searchAction}}
+                <form class="ErrorPage-search" action="{{searchAction}}" novalidate="" autocomplete="off">
+                    <label><input placeholder="{{#if searchBoxText}}{{searchBoxText}}{{else}}{{format "/core/page/Page" "searchInputPlaceholder"}}{{/if}}" type="text" class="ErrorPage-search-input" name="q" required="true"><span class="sr-only">{{format "/core/page/Page" "searchInputLabel"}}</span></label>
+                    <button type="submit" class="ErrorPage-search-submit"><svg><use xlink:href="#icon-magnify"></use></svg><span class="sr-only">{{format "/core/page/Page" "searchSubmitLabel"}}</span><div class="ErrorPage-search-submit-text">{{format "/core/page/Page" "errorPageSearchButtonLabel"}}</div></button>
+                </form>
+            {{/if}}
+            {{#with main}}{{render this [/core/list/List.hbs]="/core/list/ListLoadMore.hbs"}}{{/with}}
+          </div>
+      </main>
+
+      {{include "/core/page/Page-contentFooter.hbs" this}}
+      {{include "/core/page/Page-below.hbs" this}}
+      {{include "/core/page/Page-footer.hbs" this}}
+      {{include "/core/page/Page-extraBodyItems.hbs" this}}
+  </body>
+</html>

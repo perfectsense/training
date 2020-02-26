@@ -1,0 +1,12 @@
+{
+  "_wrapper": false,
+  "_include": "/core/search/SearchResultsPage.json",
+  "_template": "CollectionPage.hbs",
+  "filters": null,
+  "viewUrl": null,
+  "redirectUrl": "#",
+  "breadcrumbs": {
+    "_include": "/core/link/Link.json"
+  },
+  "_hidden": true
+}

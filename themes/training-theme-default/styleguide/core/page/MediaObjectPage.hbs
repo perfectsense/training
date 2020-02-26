@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html class="MediaObjectPage" lang="{{#with language}}{{this}}{{else}}en{{/with}}">
+    {{include "/core/page/Page-head.hbs" this}}
+
+    <body class="MediaObjectPage-body" {{~#each extraBodyAttributes}} {{this}} {{~/each~}}>
+        {{include "/core/page/Page-header.hbs" this}}
+
+        {{include "/core/page/Page-sectionNavigation.hbs" this}}
+
+        {{include "/core/page/Page-above.hbs" this}}
+
+        {{include "/core/page/ContentPage-main.hbs" this}}
+
+        {{include "/core/page/Page-aside.hbs" this}}
+
+        {{include "/core/page/Page-below.hbs" this}}
+
+        {{include "/core/page/Page-footer.hbs" this}}
+
+        {{include "/core/page/Page-extraBodyItems.hbs" this}}
+    </body>
+
+</html>

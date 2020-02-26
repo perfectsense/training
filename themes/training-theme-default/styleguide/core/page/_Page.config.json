@@ -1,0 +1,38 @@
+{
+  "styles": {
+    "/core/page/Page.hbs": {
+      "templates": [
+        {
+          "displayName": "Section Page",
+          "example": "/examples/Section-Default.json"
+        },
+        {
+          "displayName": "Home Page",
+          "example": "/examples/HomePage.json"
+        },
+        {
+          "displayName": "Error Page",
+          "example": "/examples/ErrorPage.json",
+          "fields": {
+            "title": {
+              "type": "text",
+              "cms.ui.note": "Set a title"
+            },
+            "errorMessage": {
+              "type": "text",
+              "cms.ui.note": "Set an error message"
+            },
+            "errorDescription": {
+              "type": "text",
+              "cms.ui.note": "Set an error description"
+            },
+            "searchBoxText": {
+              "type": "text",
+              "cms.ui.note": "Set a placeholder for search"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

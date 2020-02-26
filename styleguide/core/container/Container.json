@@ -1,15 +1,10 @@
 {
   "_template": "Container.hbs",
-  "title": "{{words(3)}}",
-  "description": "{{words}}",
-  "rows": [
-    {
-      "_include": "/core/container/Row.json",
-      "_repeat": [
-        1,
-        2
-      ]
-    }
-  ],
-  "_hidden": false
+  "title": "Title",
+  "description": "Description",
+  "rows": {
+    "_include": "/_group/ContainerColumnOptions.json",
+    "_key": 0
+  },
+  "_hidden": true
 }

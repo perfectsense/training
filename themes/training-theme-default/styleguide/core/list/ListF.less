@@ -1,0 +1,142 @@
+.ListF {
+  &:extend(.CarouselAbstract all);
+
+  // manually adding vs extending .ListAbstract because of class naming issues
+  &[data-hide-categories='true'] {
+    .ListF-slides {
+      .PromoA-category {
+        display: none;
+      }
+    }
+  }
+
+  padding: @grid-gap (@grid-gap);
+  width: 100%;
+
+  .flickity-prev-next-button {
+    display: block;
+
+    &.next {
+      right: -(@grid-gap);
+    }
+
+    &.previous {
+      left: -(@grid-gap);
+    }
+  }
+
+  &-slide {
+    padding: 0 @grid-gap;
+    width: 100%;
+
+    &:nth-of-type(4n) {
+      border-right: 0;
+    }
+  }
+
+  &-slides {
+    .clearfix;
+    width: 100%;
+  }
+
+  @media @mq-viewport-md {
+    padding: @grid-gap (@grid-gap * 1.5);
+
+    .flickity-prev-next-button {
+      &.next {
+        right: -(@grid-gap * 1.5);
+      }
+
+      &.previous {
+        left: -(@grid-gap * 1.5);
+      }
+    }
+
+    &-slide {
+      display: none;
+      float: left;
+      width: 50%;
+
+      &:first-of-type,
+      &:nth-of-type(2) {
+          display: block;
+      }
+
+      .flickity-enabled & {
+        display: block;
+        float: none;
+      }
+    }
+  }
+
+  @media @mq-viewport-lg {
+    padding: @grid-gap (@grid-gap * 2);
+
+    .flickity-prev-next-button {
+      &.next {
+        border: 1px solid var(--secondaryColor3);
+        right: -(@grid-gap * 2);
+        top: 44%;
+
+      }
+
+      &.previous {
+        border: 1px solid var(--secondaryColor3);
+        left: -(@grid-gap * 2);
+        top: 44%;
+      }
+    }
+
+    &-slide {
+      display: none;
+      width: 33.333%;
+
+      &:first-of-type,
+      &:nth-of-type(2),
+      &:nth-of-type(3) {
+          display: block;
+      }
+
+      .flickity-enabled & {
+        display: block;
+      }
+    }
+  }
+
+  @media @mq-viewport-xl {
+    padding: @grid-gap (@grid-gap * 3);
+
+    .flickity-prev-next-button {
+      &.next {
+        right: -(@grid-gap * 3);
+        border-right: 1px solid var(--secondaryColor3);
+      }
+
+      &.previous {
+        left: -(@grid-gap * 3);
+        border-left: 1px solid var(--secondaryColor3);
+      }
+    }
+
+    &-slides {
+      max-width: 1440px;
+      margin: 0 auto;
+    }
+
+    &-slide {
+      display: none;
+      width: 25%;
+
+      &:first-of-type,
+      &:nth-of-type(2),
+      &:nth-of-type(3),
+      &:nth-of-type(4) {
+        display: block;
+      }
+
+      .flickity-enabled & {
+        display: block;
+      }
+    }
+  }
+}

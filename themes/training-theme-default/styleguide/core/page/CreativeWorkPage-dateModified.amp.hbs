@@ -1,0 +1,4 @@
+{{#if dateModified}}<div class="{{#if className}}{{className}}{{else}}CreativeWorkPage{{/if}}-dateModified">{{format "/core/page/CreativeWorkPage" "modifiedDateHeading"}}&nbsp;{{dateModified}}</div>{{/if}}
+{{#with dateModifiedISO}}
+    <meta content="{{this}}">
+{{/with}}

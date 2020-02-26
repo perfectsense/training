@@ -1,9 +1,0 @@
-{
-  "_template": "FacebookShareButton.hbs",
-  "shareHref": "http%3A%2F%2Fbrightspot.com",
-  "display": "popup",
-  "facebookAppId": "YOUR APP ID HERE",
-  "redirectUri": "http%3A%2F%2Fbrightspot.com",
-  "body": "facebook",
-  "_hidden": false
-}

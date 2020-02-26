@@ -1,0 +1,14 @@
+<button class="ButtonWithChevron"
+    {{~#with index}} data-toggle-trigger="{{this}}"{{/with}}
+    {{~#with autofocus}} autofocus{{/with}}
+    {{~#with disabled}} disabled{{/with}}
+    {{~#with formaction}} formaction="{{this}}"{{/with}}
+    {{~#with formenctype}} formenctype="{{this}}"{{/with}}
+    {{~#with formmethod}} formmethod="{{this}}"{{/with}}
+    {{~#with formnovalidate}} formnovalidate="{{this}}"{{/with}}
+    {{~#with formtarget}} formtarget="{{this}}"{{/with}}
+    {{~#with name}} name="{{this}}"{{/with}}
+    {{~#with type}} type="{{this}}"{{else}} type="button"{{/with}}
+    {{~#with value}} value="{{this}}"{{/with}}>
+      <span class="ButtonWithChevron-primaryText">{{~label~}}</span><span class="ButtonWithChevron-alternateText">{{~alternateLabel~}}</span><svg class="chevron"><use xlink:href="#chevron"></use></svg>
+</button>

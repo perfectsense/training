@@ -1,0 +1,21 @@
+{
+  "_template": "AssetRequestsOverviewTable.hbs",
+  "_include": "/core/list/List.json",
+  "head": [
+    "",
+    "Date",
+    "Request",
+    "Approved",
+    "Denied",
+    "Pending",
+    "Your Request"
+  ],
+  "items": {
+    "_include": "/dam/request/AssetRequestsOverviewTableRow.json"
+  },
+  "previousPage": "#",
+  "pageNumber": 1,
+  "pageCount": 123,
+  "nextPage": "#",
+  "_hidden": true
+}

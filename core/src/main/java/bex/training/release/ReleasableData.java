@@ -1,10 +1,10 @@
 package bex.training.release;
 
+import java.util.Date;
+
 import com.psddev.cms.db.ToolUi;
 import com.psddev.dari.db.Modification;
 import com.psddev.dari.db.Recordable;
-
-import java.util.Date;
 
 @Recordable.FieldInternalNamePrefix("releasable.")
 public class ReleasableData extends Modification<Releasable> {

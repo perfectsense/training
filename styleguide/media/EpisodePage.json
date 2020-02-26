@@ -1,0 +1,24 @@
+{
+  "_include": "/core/page/CreativeWorkPage.json",
+  "_template": "EpisodePage.hbs",
+  "show": {
+    "_include": "SchemaLink.json"
+  },
+  "episodeNumber": "Episode 14",
+  "season": {
+    "_include": "SchemaLink.json"
+  },
+  "shortDescription": "Short Description",
+  "fullDescription": {
+    "_include": "/_group/RichText.json",
+    "_key": 0
+  },
+  "player": {
+    "_include": "/_group/Videos.json",
+    "_key": 0
+  },
+  "premiereDate": "2019-04-11T08:35:03-0700",
+  "lastAiredDate": "2019-04-11T08:35:03-0700",
+  "mediaType": "episode",
+  "_hidden": true
+}

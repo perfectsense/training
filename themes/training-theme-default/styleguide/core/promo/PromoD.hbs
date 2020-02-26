@@ -1,0 +1,43 @@
+<div class="PromoD"{{include "Promo-options.hbs" this}}>
+    {{#if (ne imageAlignment "bottom")}}
+        {{#if media}}
+            <div class="PromoD-media">
+                {{#set imageSize='promoFullWidth'}}
+                    {{#set lazyLoad='true'}}
+                        {{include "../link/Link.hbs" aria-label=title href=url target=target body=media}}
+                    {{/set}}
+                {{/set}}
+            </div>
+        {{/if}}
+    {{/if}}
+
+    <div class="PromoD-content">
+        {{#with category}}
+            <div class="PromoD-category">
+                {{include "../link/Link.hbs" href=../categoryUrl target=../target body=this}}
+            </div>
+        {{/with}}
+
+        {{#with title}}
+            <div class="PromoD-title">
+                {{include "../link/Link.hbs" href=../url target=../target body=this}}
+            </div>
+        {{/with}}
+
+        {{#with description}}
+            <div class="PromoD-description">{{this}}</div>
+        {{/with}}
+    </div>
+
+    {{#if (eq imageAlignment "bottom")}}
+        {{#if media}}
+            <div class="PromoD-media">
+                {{#set imageSize='promoFullWidth'}}
+                    {{#set lazyLoad='true'}}
+                        {{include "../link/Link.hbs" aria-label=title href=url target=target body=media}}
+                    {{/set}}
+                {{/set}}
+            </div>
+        {{/if}}
+    {{/if}}
+</div>

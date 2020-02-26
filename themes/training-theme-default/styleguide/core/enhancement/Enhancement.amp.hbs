@@ -1,0 +1,5 @@
+<div class="Enhancement" {{#if enhancementAlignment}} data-{{enhancementAlignment}}{{else}}data-align-center{{/if}}>
+    {{~#with item~}}{{render this
+                        [/core/promo/Promo.hbs]="/core/promo/PromoA.hbs"
+                        [/core/list/List.hbs]="/core/list/ListC.hbs"}}{{~/with~}}
+</div>

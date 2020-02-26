@@ -1,0 +1,13 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "src": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string"
+    }
+  },
+  "_hidden": true
+}

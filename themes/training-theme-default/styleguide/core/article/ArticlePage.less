@@ -1,0 +1,65 @@
+// lesshint universalSelector: false
+
+.ArticlePage {
+  &:extend(.CreativeWorkPageTwoColumnLayout all);
+  &:extend(.CreativeWorkPage all);
+
+  &-articleBody {
+
+    .ListArticleBody {
+      &-items {
+        list-style: none;
+      }
+    }
+
+    .ListArticleBodyItem {
+      margin: (@grid-gap * 1.5) auto;
+
+      &-headline {
+        &:extend(.title-3 all);
+
+        margin-bottom: (@grid-gap / 2);
+      }
+    }
+  }
+
+  &-actions {
+    margin-bottom: 60px;
+  }
+
+  &-content {
+    position: relative;
+  }
+
+  &-lead {
+    margin: 0 -@grid-gap @grid-gap;
+  }
+
+  @media @mq-viewport-md {
+    &-dateModified,
+    &-datePublished {
+      margin-right: 5px;
+    }
+
+    &-lead {
+      margin-bottom: @grid-gap;
+    }
+
+
+
+    &-authors {
+      margin-bottom: 0;
+    }
+  }
+
+  @media @mq-viewport-lg {
+    &-byline {
+      margin-bottom: @grid-gap;
+    }
+
+    &-lead {
+      margin: 0 0 @grid-gap * 2;
+    }
+  }
+
+}

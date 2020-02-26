@@ -1,0 +1,12 @@
+{
+  "_template": "AssetRequestsOverviewTableRow.hbs",
+  "status": 1,
+  "date": "09/26/2017",
+  "title": "Title",
+  "url": "https://www.perfectsensedigital.com",
+  "approvedCount": 3,
+  "pendingCount": 0,
+  "deniedCount": 2,
+  "description": "Description",
+  "_hidden": true
+}

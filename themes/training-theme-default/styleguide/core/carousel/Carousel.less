@@ -1,0 +1,28 @@
+.Carousel {
+  &:extend(.CarouselAbstract all);
+
+  display: block;
+  height: auto;
+  position: relative;
+
+  .flickity-prev-next-button {
+    top: 40%;
+  }
+
+  &-slide {
+    margin-right: 0;
+    width: 100%;
+  }
+
+  @media @mq-viewport-md {
+    .flickity-prev-next-button {
+      top: 45%;
+    }
+  }
+
+  @media @mq-viewport-lg {
+    .flickity-prev-next-button {
+      top: calc(~'50% - 40px');
+    }
+  }
+}

@@ -1,0 +1,20 @@
+.ListTags {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+
+  &-items {
+    display: flex;
+    list-style: none;
+
+    &-item {
+      margin-right: (@grid-gap / 2);
+    }
+  }
+
+  &-title {
+    &:extend(.label-2 all);
+
+    margin-right: (@grid-gap / 2);
+  }
+}

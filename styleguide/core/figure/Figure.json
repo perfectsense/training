@@ -3,8 +3,8 @@
   "image": {
     "_image": true
   },
-  "alt": "{{words}}",
-  "caption": "{{html('This is a <b>picture</b> and I am the <i>caption</i>.')}}",
-  "credit": "Credit: {{name}}",
-  "_hidden": false
+  "alt": "Alt Text",
+  "caption": "Rich Text Caption",
+  "credit": "Credit: Jane Doe",
+  "_hidden": true
 }

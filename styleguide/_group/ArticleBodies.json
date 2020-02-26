@@ -1,8 +1,11 @@
 [
   {
+    "_include": "/core/article/ListArticleBody.json"
+  },
+  {
     "_include": "/core/article/RichTextArticleBody.json"
   },
   {
-    "_include": "/core/article/ListArticleBody.json"
+    "_include": "/news/UpdateStory.json"
   }
 ]

@@ -1,7 +1,7 @@
 {
   "_template": "Navigation.hbs",
   "items": {
-    "_include": "../../_group/NavigationItems.json"
+    "_include": "/_group/NavigationItems.json"
   },
-  "_hidden": false
+  "_hidden": true
 }

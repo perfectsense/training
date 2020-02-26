@@ -1,11 +1,11 @@
 {
   "_template": "Image.hbs",
-  "alt": "{{words}}",
+  "alt": "Alt Text",
   "image": {
     "_image": true
   },
   "narrowImage": {
     "_image": true
   },
-  "_hidden": false
+  "_hidden": true
 }

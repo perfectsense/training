@@ -1,0 +1,19 @@
+{
+  "_template": "SharesTable.hbs",
+  "_include": "/core/list/List.json",
+  "head": [
+    "Date",
+    "Subject",
+    "Email(s)",
+    "Your Message",
+    ""
+  ],
+  "items": {
+    "_include": "/dam/share/SharesTableRow.json"
+  },
+  "previousPage": "#",
+  "pageNumber": 1,
+  "pageCount": 123,
+  "nextPage": "#",
+  "_hidden": true
+}

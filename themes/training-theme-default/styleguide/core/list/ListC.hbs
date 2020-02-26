@@ -1,0 +1,15 @@
+{{#if items}}
+    <div class="ListC"{{include "/core/list/List-attributes.hbs" this}}>
+        {{include "/core/list/List-header.hbs" this className="ListC"}}
+
+        {{#with items}}
+            <ul class="ListC-items">
+                {{#each this}}
+                <li class="ListC-items-item">
+                    {{include "/core/promo/PromoA.hbs" this imageAlignment=../../imageAlignment}}
+                </li>
+                {{/each}}
+            </ul>
+        {{/with}}
+    </div>
+{{else}}{{~noResultsModule~}}{{/if}}

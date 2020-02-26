@@ -1,0 +1,7 @@
+{
+  "_include": "/dam/document/DigitalDocumentPage.json",
+  "_template": "PresentationDigitalDocumentPage.hbs",
+  "fileUrl": "https://link.to.powerpoint.ppt",
+  "fileFormat": "ppt",
+  "_hidden": true
+}

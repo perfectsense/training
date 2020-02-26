@@ -1,0 +1,7 @@
+{
+  "_wrapper": false,
+  "_template": "/corporate/topic/TopicPage.hbs",
+  "_include": "/corporate/taxonomy/TaxonomyPage.json",
+  "customContent": false,
+  "_hidden": true
+}

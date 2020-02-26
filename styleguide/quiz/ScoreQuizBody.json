@@ -1,0 +1,14 @@
+{
+  "_template": "ScoreQuizBody.hbs",
+  "title": "Title",
+  "score": "30%",
+  "correctCount": 3,
+  "size": 8,
+  "responses": {
+    "_include": "QuestionResponse.json"
+  },
+  "cta": {
+    "_include": "/core/link/Link.json"
+  },
+  "_hidden": true
+}

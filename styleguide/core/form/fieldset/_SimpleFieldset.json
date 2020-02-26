@@ -1,0 +1,6 @@
+{
+  "_template": "Fieldset.hbs",
+  "_include": "/core/form/fieldset/Fieldset.json",
+  "items": null,
+  "_hidden": true
+}

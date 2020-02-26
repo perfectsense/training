@@ -1,0 +1,5 @@
+{
+  "_template": "AwsElementalVideoPlayer.hbs",
+  "playerSnippet": "<video class=\"awsElementalHlsVideo\"></video><script src=\"https://cdn.plyr.io/1.8.2/plyr.js\"></script><script src=\"https://cdn.jsdelivr.net/hls.js/latest/hls.js\"></script><link rel=\"stylesheet\" href=\"https://cdn.plyr.io/1.8.2/plyr.css\"></link><script>(function () {  var video = document.querySelector('.awsElementalHlsVideo');  if (Hls.isSupported()) {    var hls = new Hls();    hls.loadSource('https://content.jwplatform.com/manifests/vM7nH0Kl.m3u8');    hls.attachMedia(video);    hls.on(Hls.Events.MANIFEST_PARSED,function() {      video.play();    })  }    plyr.setup(video);})();</script>",
+  "_hidden": true
+}

@@ -1,0 +1,49 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "lead": {
+      "type": "object"
+    },
+    "preHeadline": {
+      "type": "string"
+    },
+    "creativeWorkHeadline": {
+      "type": "string"
+    },
+    "creativeWorkSubHeadline": {
+      "type": "string"
+    },
+    "authorName": {
+      "type": "string"
+    },
+    "authorUrl": {
+      "type": "object"
+    },
+    "contributors": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "datePublished": {
+      "type": "string"
+    },
+    "body": {
+      "type": "object"
+    },
+    "revisions": {
+      "type": "object"
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "people": {
+      "type": "object"
+    }
+  },
+  "_hidden": true
+}

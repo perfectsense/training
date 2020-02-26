@@ -1,0 +1,34 @@
+.BlogPostPage {
+  &:extend(.Page all);
+  &:extend(.ArticlePage all);
+
+  &-breadcrumbs {
+    margin-bottom: 0;
+  }
+
+  &-content {
+    display: block;
+  }
+
+  &-headline {
+    font-weight: normal;
+  }
+
+  &-lead {
+    margin-bottom: (@grid-gap * 2);
+  }
+
+  &-readMore {
+    margin-top: @grid-gap;
+
+    .ButtonWithChevron {
+      margin: 0 auto;
+    }
+  }
+
+  @media @mq-viewport-md {
+    &-wrapper {
+      margin-top: @grid-gap;
+    }
+  }
+}

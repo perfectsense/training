@@ -2,5 +2,5 @@
   "_template": "FacebookEmbed.hbs",
   "embedCode": "<iframe src=\"https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2F20531316728%2Fposts%2F10154009990506729%2F&width=500&show_text=true&appId=317435848457623&height=290\" width=\"500\" height=\"290\" style=\"border:none;overflow:hidden\" scrolling=\"no\" frameborder=\"0\" allowTransparency=\"true\"></iframe>",
   "postUrl": "https://www.facebook.com/20531316728/posts/10154009990506729/",
-  "_hidden": false
+  "_hidden": true
 }

@@ -1,5 +1,0 @@
-{
-  "_template": "FreeformText.hbs",
-  "text": "{{words}}",
-  "_hidden": false
-}

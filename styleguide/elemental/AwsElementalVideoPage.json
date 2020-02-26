@@ -1,0 +1,8 @@
+{
+  "_wrapper": false,
+  "_include": "/core/video/VideoPage.json",
+  "player": {
+    "_include": "AwsElementalVideoPlayer.json"
+  },
+  "_hidden": true
+}

@@ -1,0 +1,9 @@
+{
+  "_template": "UpdateStoryItem.hbs",
+  "publishDate": "2019-04-11T08:35:03-0700",
+  "body": {
+    "_include": "/_group/RichText.json",
+    "_key": 0
+  },
+  "_hidden": true
+}

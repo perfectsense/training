@@ -1,0 +1,7 @@
+{
+  "_wrapper": false,
+  "_include": "/core/page/Page.json",
+  "_template": "SectionPage.hbs",
+  "customContent": false,
+  "_hidden": true
+}

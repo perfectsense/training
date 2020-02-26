@@ -1,8 +1,0 @@
-{
-  "_include": "Promo.json",
-  "_template": "/core/promo/Promo.hbs",
-  "category": "Brand Storytelling",
-  "title": "Ut in Justo Porta Eleifend Turpis Quis Lobortis Leo",
-  "_styledTemplate": "/core/promo/PromoCategoryTitle.hbs",
-  "_hidden": false
-}

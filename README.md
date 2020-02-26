@@ -1,16 +1,15 @@
-# Brightspot Express Training
+# Brightspot Training
 
-So you want to learn how to develop on Brightspot Express? Look no further!
+So you want to learn how to develop on Brightspot? Look no further!
 
 This project gives you everything you will need to get going with learning how to do front-end and back-end development on
-Brightspot Express. It includes a bare-bones 4.0 archetype project and all of the core Styleguide templates to use as reference
+Brightspot. It includes a bare-bones project and all of the core Styleguide templates to use as reference
 to help you take your own web publishing needs from concept to creation.
 
 ## Prerequisites
 
-- VirtualBox: `5.0.10` - [Download](http://download.virtualbox.org/virtualbox/5.0.10/VirtualBox-5.0.10-104061-OSX.dmg)
-- Vagrant: `1.8.1` - [Download](https://releases.hashicorp.com/vagrant/1.8.1/vagrant_1.8.1.dmg)
-- Maven: `3.5.2` - [Download](https://archive.apache.org/dist/maven/maven-3/3.5.2/binaries/apache-maven-3.5.2-bin.zip)
+- VirtualBox: `5.2.20+` - [Download](https://www.virtualbox.org/wiki/Downloads)
+- Vagrant: `2.2.0+` - [Download](https://www.vagrantup.com/downloads.html)
 
 - Brew (Homebrew for Mac) - Install using the following command:
 
@@ -24,13 +23,7 @@ to help you take your own web publishing needs from concept to creation.
 brew install node
 ```
 
-- Gulp: `3.9.1` - Install using the following command (requires `npm`):
-
-```bash
-npm install gulp -g
-``` 
-
-- Yarn: `1.5.1` - Install using the following command (requires `brew`):
+- Yarn: - Install using the following command (requires `brew`):
 
 ```bash
 brew install yarn
@@ -63,7 +56,7 @@ which binary
 
 The output should be `/usr/local/bin/binary`. If it says the command was not found, try restarting your terminal.
 
-Brew is also useful for install 
+Brew is also useful for install
 
 ## Prepping The Local Project
 
@@ -77,7 +70,7 @@ cd ~/Documents
 Clone the GitHub project into your `~/Documents` folder using the following command:
 
 ```bash
-git clone git@github.com:perfectsense/training.git
+git clone https://github.com/perfectsense/training.git
 ```
 
 Change your directory to the project:
@@ -88,21 +81,39 @@ cd training
 
 ## Building The Project For The First Time
 
-Brightspot projects use Maven for dependency management and build configurations. To the build the project for the first time:
+Brightspot projects use Gradle for dependency management and build configurations. To the build the project for the first time:
 
 ```bash
-mvn clean install
+./gradlew
+```
+
+Here are some ways to run Gradle:
+
+```console
+./gradlew # Builds everything.
+./gradlew build # Same as above.
+./gradlew -x test # Builds everything but skips tests.
+./gradlew training-site:deploy # Builds everything then deploys the WAR to your local Vagrant.
+./gradlew tasks # Lists all tasks that you can run.
+./gradlew -p youtube # Builds youtube
+./gradlew -p youtube install #Installs youtube into your m2
+```
+
+You don't normally have to clean out your build files since Gradle can detect files that have been removed, but if you suspect a problem, you can run:
+
+```console
+./gradlew --rerun-tasks clean build
 ```
 
 ## Setting Up The Environment
 
-Included with the project is the Brightspot Training `Vagrantfile` at the root of the project. This file contains all of the configuration needed to running the Brightspot Training CMS
-out of the box with pre-published data for the example Marvel Cinematic Universe site.
+Included with the project is the Brightspot `Vagrantfile` at the root of the project. This file contains all of the configuration needed to running the Brightspot CMS
+out of the box for the example Marvel Cinematic Universe site.
 
 Before booting up the vagrant box, you should clear your box cache to ensure you are importing the most up-to-date Brightspot Training box:
 
 ```bash
-rm -rf ~/.vagrant.d/boxes/brightspot-training
+vagrant box remove brightspot
 ```
 
 Now, boot up the vagrant:
@@ -111,11 +122,10 @@ Now, boot up the vagrant:
 vagrant up
 ```
 
-When you boot up the vagrant box, it will attempt to mount the current directory the `Vagrantfile` is 
-located in to the directory `/vagrant` within the environment. This will allow the user to symlink the compiled site `*.war` file 
-to Tomcat's `webapps` folder to allow for automatic deployment each time a build completes.
+When you boot up the vagrant box, it will attempt to mount the current directory the `Vagrantfile` is
+located in to the directory `/vagrant` within the environment.
 
-To do this, you will first want to SSH into the training environment. From the same folder as your `Vagrantfile`, run this command:
+It is very simple to SSH into the training environment. From the same folder as your `Vagrantfile`, run this command:
 
 ```bash
 vagrant ssh
@@ -127,29 +137,23 @@ You will now be logged in as the root user within the training vagrant. If you a
 sudo -i
 ```
 
-Stop the Brightspot service beofre setting up the webapps:
-
-```bash
-sv stop brightspot
-```
-
-You will now need to actually symlink the `*.war` file into the Tomcat's webapps directory:
-
-```bash
-ln -s /vagrant/site/target/bex-training-site-1.0.0-SNAPSHOT.war /servers/brightspot/webapps/ROOT.war
-```
-
-Start the Brightspot service back up:
-
-```bash
-sv start brightspot
-```
-
 During development, you may want to keep yourself SSH'd into the training environment with logs open for debugging. You can tail the
 Catalina logs and leave them open in the window:
 
 ```bash
 tail -f /servers/brightspot/logs/catalina.out
+```
+
+Now that your vagrant is configured, let's deploy a build to it. On your local machine, run the following command:
+
+```bash
+./gradlew training-site:deploy
+```
+
+If you're running Mac OSX Catalina or there is some other reason that your WAR file doesn't deploy, you can SSH into your vagrant and use a symlink to point to your WAR file instead:
+
+```bash
+ln -s  /vagrant/site/build/libs/training-site-1.0.0-SNAPSHOT.war /servers/brightspot/webapps/ROOT.war
 ```
 
 ## Accessing the CMS

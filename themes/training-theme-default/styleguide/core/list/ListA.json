@@ -1,0 +1,18 @@
+{
+  "_wrapper": "/_wrapper.previewAtomic.json",
+  "_template": "/core/list/ListA.hbs",
+  "title": "Featured",
+  "items": [
+    {
+      "_include": "/core/promo/PromoC.json"
+    },
+    {
+      "_include": "/core/promo/PromoB.json",
+      "_repeat": 2
+    },
+    {
+      "_include": "/core/promo/PromoA.json",
+      "_repeat": 7
+    }
+  ]
+}

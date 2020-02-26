@@ -1,0 +1,15 @@
+{
+    "_template": "/core/video/VideoModule.hbs",
+    "title": "Brightcove Video Module",
+    "player": {
+        "_include": "/brightcove/BrightcoveVideoPlayer.json"
+    },
+    "playlist": [
+        {
+            "_include": "/core/video/PlayListItem.json",
+            "_repeat": 3
+        }
+    ],
+    "ctaUrl": "#",
+    "ctaTarget": "_self"
+}

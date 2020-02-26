@@ -1,0 +1,7 @@
+{
+  "_template" : "Banner.hbs",
+  "title" : "Breaking News",
+  "linkBody" : "Have to avoid using the words helper here so that we can see truncation at work. Will not proceed to add over 150 characters. Here is some more filler to take up more space and eventually reach that count.",
+  "linkHref" : "#",
+  "closeText": "Close"
+}

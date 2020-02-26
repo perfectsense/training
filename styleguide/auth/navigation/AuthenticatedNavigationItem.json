@@ -1,0 +1,14 @@
+{
+  "_template": "AuthenticatedNavigationItem.hbs",
+  "text": "Text",
+  "href": "#",
+  "target": "_self",
+  "items": {
+    "_include": "/core/navigation/NavigationLink.json"
+  },
+  "avatar": {
+    "_image": true
+  },
+  "iconUrl": "https://example.com/url/to/icon",
+  "_hidden": true
+}

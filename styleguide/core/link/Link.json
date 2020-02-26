@@ -2,7 +2,7 @@
   "_template": "Link.hbs",
   "href": "#",
   "target": "_self",
-  "body": "{{words(3)}}",
+  "body": "Link Body",
   "contentId": "a123",
-  "_hidden": false
+  "_hidden": true
 }

@@ -1,0 +1,22 @@
+{
+  "_include": "/core/page/CreativeWorkPage.json",
+  "_template": "SeasonPage.hbs",
+  "show": {
+    "_include": "SchemaLink.json"
+  },
+  "lead": {
+    "_include": "/_group/Leads.json",
+    "_key": 0
+  },
+  "contents": {
+    "_include": "/_group/Modules.json",
+    "_key": 0
+  },
+  "seasonNumber": 1,
+  "shortDescription": "Short description",
+  "fullDescription": {
+    "_include": "/_group/RichText.json",
+    "_key": 0
+  },
+  "_hidden": true
+}

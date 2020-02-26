@@ -1,0 +1,29 @@
+.ListLoadMore {
+  &:extend(.ListAbstract all);
+
+  &-header {
+    &:extend(.ListHeader all);
+  }
+
+  &-items {
+    &:extend(.ListItemsNoBorder all);
+  }
+
+  @media @mq-viewport-md {
+    &-items {
+      display: flex;
+      flex-wrap: wrap;
+      margin: 0 -(@grid-gap / 2);
+
+      &-item {
+        padding: @grid-gap (@grid-gap / 2) 0;
+        width: 33.333%;
+        margin-bottom: 0;
+      }
+    }
+
+    &-header {
+      margin-bottom: 0;
+    }
+  }
+}

@@ -1,0 +1,45 @@
+.PromoF {
+  &:extend(.PromoAbstract all);
+
+  &-category {
+    margin-bottom: (@grid-gap / 2);
+  }
+
+  &-date {
+    margin-top: @grid-gap / 2;
+  }
+
+  &-content {
+    margin-top: @grid-gap;
+  }
+
+  &-description {
+    margin-top: (@grid-gap / 2);
+  }
+
+  &-media {
+    float: none;
+    width: 100%;
+    margin: 0 0 @grid-gap;
+  }
+
+  &-title {
+    &:extend(.title-1 all);
+  }
+
+  @media @mq-viewport-md {
+    padding-bottom: 0;
+
+    &-media {
+      float: right;
+      width: 470px;
+      margin: 0 0 0 @grid-gap;
+    }
+  }
+
+  @media @mq-viewport-xl {
+    &-media {
+      width: 550px;
+    }
+  }
+}

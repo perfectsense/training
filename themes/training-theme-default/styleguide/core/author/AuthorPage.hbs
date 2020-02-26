@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html class="AuthorPage" lang="{{#with language}}{{this}}{{else}}en{{/with}}">
+    {{include "/core/page/Page-head.hbs" this}}
+
+    <body class="Page-body" {{~#each extraBodyAttributes}} {{this}} {{~/each~}}>
+        {{include "/core/page/Page-header.hbs" this}}
+        {{include "/core/page/Page-above.hbs" this}}
+
+        <div class="AuthorPage-content">
+            <div class="AuthorPage-wrapper">
+                <main class="AuthorPage-main">
+                    <article class="AuthorPage-mainContent">
+
+                        <div class="AuthorPage-intro">
+                            {{#with image}}
+                                {{#set imageSize='squareMedium'}}
+                                    <div class="AuthorPage-image">{{this}}</div>
+                                {{/set}}
+                            {{/with}}
+
+                            <div class="AuthorPage-info">
+                                {{#with name}}
+                                    <h1 class="AuthorPage-name">{{this}}</h1>
+                                {{/with}}
+                                {{#with jobTitle}}
+                                    <span class="AuthorPage-jobTitle">{{this}}</span>
+                                {{/with}}
+                                {{#with authorSocialLinks}}
+                                    <div class="AuthorPage-authorSocialLinks">{{this}}</div>
+                                {{/with}}
+                            </div>
+                        </div>
+                        {{#with fullBiography}}
+                                <div class="AuthorPage-fullBiography-content RichTextBody">
+                                    {{this}}
+                               </div>
+
+                        {{/with}}
+
+                    </article>
+
+                    {{include "/core/page/CreativeWorkPage-contentFooter.hbs" this className="AuthorPage"}}
+                </main>
+
+                {{include "/core/page/Page-aside.hbs" this className="AuthorPage"}}
+            </div>
+        </div>
+
+
+        {{include "/core/page/Page-below.hbs" this}}
+        {{include "/core/page/Page-footer.hbs" this}}
+
+        {{include "/core/page/Page-extraBodyItems.hbs" this}}
+    </body>
+</html>

@@ -1,0 +1,8 @@
+{
+  "_wrapper": "/_wrapper.previewAtomic.json",
+  "_template": "/core/promo/PromoLink.hbs",
+
+  "url": "#",
+  "target": "_self",
+  "title": "{{words(3)}}"
+}

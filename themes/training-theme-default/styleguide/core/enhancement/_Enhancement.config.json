@@ -1,0 +1,10 @@
+{
+  "styles": {
+    "/core/enhancement/Enhancement.hbs": {
+        "inline": true,
+        "fields": [
+            "enhancementAlignment"
+        ]
+    }
+  }
+}

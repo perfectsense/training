@@ -1,0 +1,44 @@
+.Promo-Amp {
+  display: flex;
+
+  &-category {
+    .SectionButton;
+
+    margin-bottom: (@grid-gap / 2);
+
+    &:hover {
+      color: var(--primaryColor1);
+    }
+  }
+
+  &-content {
+    order: 2;
+  }
+
+  &-date {
+    &:extend(.label-1 all);
+    text-transform: none;
+  }
+
+  &-media {
+    &:extend(.PromoMedia all);
+
+    flex-shrink: 0;
+    margin: 0 @grid-gap 0 0;
+    max-width: 180px;
+    order: 1;
+    width: 36%;
+  }
+
+  &-title {
+    &:extend(.title-4 all);
+    margin-bottom: (@grid-gap / 2);
+
+    &[data-hover],
+    &:hover {
+      & > a {
+        opacity: 0.8;
+      }
+    }
+  }
+}

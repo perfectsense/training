@@ -1,0 +1,14 @@
+{
+  "_wrapper": "/_wrapper.previewAtomic.json",
+  "_template": "/core/container/TwoColumnContainer5050.hbs",
+  "columnOne": {
+    "_template": "/core/text/RichTextModule.hbs",
+
+    "items": ["{{html('<div class=\"column-example\">Column One</div>')}}"]
+  },
+  "columnTwo": {
+    "_template": "/core/text/RichTextModule.hbs",
+
+    "items": ["{{html('<div class=\"column-example\">Column Two</div>')}}"]
+  }
+}

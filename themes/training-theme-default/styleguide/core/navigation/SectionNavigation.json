@@ -1,0 +1,20 @@
+{
+  "_template": "/core/navigation/SectionNavigation.hbs",
+  "items": [
+    {
+      "_template": "/core/navigation/SectionNavigationItem.hbs",
+      "text": "{{words(1)}}",
+      "target": "_self",
+      "href": "#",
+      "isCurrent": true
+    },
+    {
+      "_template": "/core/navigation/SectionNavigationItem.hbs",
+      "_repeat": 5,
+
+      "text": "{{words(1)}}",
+      "target": "_self",
+      "href": "#"
+    }
+  ]
+}

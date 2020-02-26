@@ -1,0 +1,11 @@
+{
+  "_include": "/core/page/Page.json",
+  "_template": "UserProfilePage.hbs",
+  "pageHeading": null,
+  "pageLead": null,
+  "main": null,
+  "dataForm": {
+    "_include": "UserProfileDataForm.json"
+  },
+  "_hidden": true
+}

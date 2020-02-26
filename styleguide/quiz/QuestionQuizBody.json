@@ -1,0 +1,30 @@
+{
+  "_template": "QuestionQuizBody.hbs",
+  "size": 5,
+  "index": 2,
+  "correctCountInput": {
+    "_include": "HiddenInput.json"
+  },
+  "incorrectCountInput": {
+    "_include": "HiddenInput.json"
+  },
+  "questionInput": {
+    "_include": "HiddenInput.json"
+  },
+  "responseInput": {
+    "_include": "HiddenInput.json"
+  },
+  "correctCount": 2,
+  "incorrectCount": 2,
+  "title": "Title",
+  "mediaContent": {
+    "_include": "/core/image/Image.json"
+  },
+  "answerStatus": "Correct",
+  "choices": {
+    "_include": "RadioInputChoice.json"
+  },
+  "buttonValue": "submit",
+  "buttonLabel": "Check Answer",
+  "_hidden": true
+}

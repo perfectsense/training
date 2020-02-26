@@ -2,7 +2,7 @@
   "_template": "TwitterAppCard.hbs",
   "creator": "brightspotcms",
   "creatorId": "358165108",
-  "description": "{{words(20)}}",
+  "description": "Description",
   "site": "brightspotcms",
   "siteId": "358165108",
   "appCountry": "US",
@@ -14,6 +14,6 @@
   "ipadAppUrl": "brightspot://psddev/5149e249222f9e600a7540ef",
   "googlePlayAppName": "brightspot",
   "googlePlayAppId": "com.psddev.samples.brightspot",
-  "googlePlayAppUrl": "http://brightspot.psddev.com/5149e249222f9e600a7540ef",
-  "_hidden": false
+  "googlePlayAppUrl": "https://brightspot.psddev.com/5149e249222f9e600a7540ef",
+  "_hidden": true
 }

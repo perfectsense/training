@@ -1,0 +1,29 @@
+<div class="PromoA"{{include "Promo-options.hbs" this}}>
+    {{#if media}}
+        <div class="PromoA-media">
+            {{#set imageSize='promoSmall'}}
+                {{#set lazyLoad='true'}}
+                    {{include "../link/Link.hbs" aria-label=title href=url target=target body=media}}
+                {{/set}}
+            {{/set}}
+        </div>
+    {{/if}}
+
+    <div class="PromoA-content">
+        {{#with category}}
+            <div class="PromoA-category">
+                {{include "../link/Link.hbs" href=../categoryUrl target=../target body=this}}
+            </div>
+        {{/with}}
+
+        {{#with title}}
+            <div class="PromoA-title">
+                {{include "../link/Link.hbs" href=../url target=../target body=this}}
+            </div>
+        {{/with}}
+
+        {{#with date}}
+            <div class="PromoA-date">{{this}}</div>
+        {{/with}}
+    </div>
+</div>

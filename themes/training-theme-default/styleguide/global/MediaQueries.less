@@ -1,0 +1,49 @@
+/**
+ * As much as we can we want to reuse media queries across all the sites
+ */
+
+// ------------------- Standard viewports where we change the site layout --------------------
+@viewport-xs-width: 320px;
+@viewport-sm-width: 568px;
+@viewport-md-width: 768px;
+@viewport-lg-width: 1024px;
+@viewport-hk-width: 1240px; // husky. It's 1240 because of 1200 content width + 20px of padding
+@viewport-xl-width: 1440px;
+
+// ------------------- Shortcuts for most used media queries----------------------
+@mq-viewport-xs: ~'only screen and (min-width: @{viewport-xs-width})';
+@mq-viewport-sm: ~'only screen and (min-width: @{viewport-sm-width})';
+@mq-viewport-md: ~'only screen and (min-width: @{viewport-md-width})';
+@mq-viewport-hk: ~'only screen and (min-width: @{viewport-hk-width})';
+@mq-viewport-lg: ~'only screen and (min-width: @{viewport-lg-width})';
+@mq-viewport-xl: ~'only screen and (min-width: @{viewport-xl-width})';
+
+// ----- Sizes (used in conjuction with util breakpoints) -----
+body:before {
+  .sr-only;
+  visibility: hidden;
+
+  @media @mq-viewport-xs {
+      content: 'mq-xs';
+  }
+
+  @media @mq-viewport-sm {
+      content: 'mq-sm';
+  }
+
+  @media @mq-viewport-md {
+      content: 'mq-md';
+  }
+
+  @media @mq-viewport-lg {
+      content: 'mq-lg';
+  }
+
+  @media @mq-viewport-hk {
+    content: 'mq-hk';
+}
+
+  @media @mq-viewport-xl {
+      content: 'mq-xl';
+  }
+}

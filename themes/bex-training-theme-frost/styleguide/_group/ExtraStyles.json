@@ -1,8 +1,0 @@
-[
-  {
-    "_include": "/core/page/ExternalStyle.json"
-  },
-  {
-    "_include": "/core/page/InlineStyle.json"
-  }
-]

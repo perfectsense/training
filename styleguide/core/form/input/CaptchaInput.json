@@ -1,0 +1,8 @@
+{
+  "_include": "/core/form/input/Input.json",
+  "_template": "CaptchaInput.hbs",
+  "captcha": {
+    "_include": "/_group/Captchas.json"
+  },
+  "_hidden": true
+}

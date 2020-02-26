@@ -1,0 +1,28 @@
+<footer class="Page-footer">
+    <div class="Page-footer-content">
+        {{#with footerLogo}}
+            <div class="Page-footer-logo">{{this}}</div>
+        {{/with}}
+
+        <div class="Page-footer-columns">
+            {{#with footerContent}}
+                <div class="Page-footer-column">
+                    <div class="Page-footer-content">
+                        {{render this [/core/form/Form.hbs]="/core/form/NewsletterForm.hbs"}}
+                    </div>
+                </div>
+            {{/with}}
+            <div class="Page-footer-column">
+                {{#with footerNavigation}}
+                    <div class="Page-footer-navigation">
+                        {{render this [/core/navigation/Navigation.hbs]="/core/navigation/FooterNavigation.hbs"}}
+                    </div>
+                {{/with}}
+            </div>
+        </div>
+
+        {{#with disclaimer}}
+            <div class="Page-footer-disclaimer">{{this}}</div>
+        {{/with}}
+    </div>
+</footer>

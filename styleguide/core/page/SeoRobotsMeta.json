@@ -1,5 +1,5 @@
 {
   "_template": "SeoRobotsMeta.hbs",
   "robotsString": "noindex,nofollow",
-  "_hidden": false
+  "_hidden": true
 }

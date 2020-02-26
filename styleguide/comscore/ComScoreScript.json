@@ -1,7 +1,7 @@
 {
-  "_template": "./ComScoreScript.hbs",
+  "_template": "ComScoreScript.hbs",
   "clientId": "0",
   "clientSegment": "",
   "genre": "",
-  "_hidden": false
+  "_hidden": true
 }

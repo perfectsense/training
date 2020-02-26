@@ -1,0 +1,64 @@
+{
+  "_include": "/core/page/Page.json",
+  "_hidden": false,
+  "_template": "/core/page/HomePage.hbs",
+  "above": [
+    {
+      "_include": "/dfp/GoogleDfpAdModule.json"
+    }
+  ],
+  "banner": {
+    "_include": "/core/banner/Banner.json"
+  },
+  "main": [
+    {
+      "_template": "/core/container/Container.hbs",
+      "rows": {
+        "_template": "/core/container/OneColumnContainer.hbs",
+        "columnOne": [
+          {
+            "_include": "/core/list/ListG.json"
+          }
+        ]
+      }
+    },
+    {
+      "_template": "/core/container/Container.hbs",
+      "rows": {
+        "_template": "/core/container/TwoColumnContainer7030.hbs",
+        "columnOne": [
+          {
+            "_include": "/core/list/ListLoadMore.json"
+          },
+          {
+            "_include": "/core/list/ListJ.json"
+          },
+          {
+            "_include": "/core/list/ListLoadMore.json"
+          },
+          {
+            "_include": "/core/list/ListJ.json"
+          }
+        ],
+        "columnTwo": [
+          {
+            "_include": "/dfp/GoogleDfpAdModule.json",
+            "sizes": "[[300, 250]]",
+            "adSizeMaps": "[[[1024,768], [300,250]], [[300,250], [300,250]]]"
+          }
+        ]
+      }
+    },
+    {
+      "_template": "/core/container/Container.hbs",
+      "rows": {
+        "_template": "/core/container/OneColumnContainer.hbs",
+        "columnOne": [
+          {
+            "_include": "/core/list/ListI.json"
+          }
+        ]
+      }
+    }
+  ]
+}

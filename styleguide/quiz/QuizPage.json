@@ -1,0 +1,19 @@
+{
+  "_wrapper": false,
+  "_include": "/core/page/CreativeWorkPage.json",
+  "_template": "QuizPage.hbs",
+  "formMethod": "GET",
+  "formAction": "#handler",
+  "responses": {
+    "_include": "HiddenInput.json"
+  },
+  "topBody": {
+    "_include": "/_group/RichText.json",
+    "_key": 0
+  },
+  "quizBody": {
+    "_include": "/_group/QuizBodies.json",
+    "_key": 0
+  },
+  "_hidden": true
+}

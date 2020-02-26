@@ -1,0 +1,28 @@
+.PromoC {
+  &:extend(.PromoAbstract all);
+
+  &-category {
+    margin-bottom: (@grid-gap / 2);
+  }
+
+  &-description {
+    margin-top: (@grid-gap / 2);
+  }
+
+  &-media {
+    margin-bottom: (@grid-gap / 2);
+
+    [data-image-align='bottom'] & {
+      margin-bottom: 0;
+      margin-top: (@grid-gap / 2);
+    }
+  }
+
+  &-title {
+    &:extend(.title-2 all);
+  }
+
+  @media @mq-viewport-md {
+    padding-bottom: 0;
+  }
+}

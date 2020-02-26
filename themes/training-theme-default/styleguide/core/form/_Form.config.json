@@ -1,0 +1,20 @@
+{
+  "styles": {
+    "/core/form/Form.hbs": {
+      "templates": [
+        {
+          "displayName": "Form",
+          "example": "/core/form/Form.json",
+          "height": 400,
+          "width": 700
+        },
+        {
+          "displayName": "Newsletter Form",
+          "example": "/core/form/NewsletterForm.json",
+          "height": 400,
+          "width": 700
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "_template": "IntroQuizBody.hbs",
+  "mediaContent": {
+    "_include": "/core/image/Image.json"
+  },
+  "title": "Title",
+  "description": "Description",
+  "buttonValue": "start",
+  "_hidden": true
+}

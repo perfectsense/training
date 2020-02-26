@@ -1,0 +1,30 @@
+<ps-form-newsletter class="NewsletterForm">
+    {{#with title}}
+        <div class="NewsletterForm-title">{{this}}</div>
+    {{/with}}
+
+    <form role="form" {{~#with acceptCharset}} accept-charset="{{this}}" {{/with}} {{~#with action}} action="{{this}}" {{/with}}
+        {{~#with autocomplete}} autocomplete="{{this}}" {{/with}} class="NewsletterForm-form" {{~#with enctype}} enctype="{{this}}"
+        {{/with}} {{~#with method}} method="{{this}}" {{else}} method="post" {{/with}} {{~#with name}} name="{{this}}"
+        {{/with}} {{~#with novalidate}} novalidate{{/with}} {{~#with target}} target="{{this}}" {{/with}}>
+
+        {{#with items}}
+        <div class="NewsletterForm-items">
+            {{#each this}}
+            <div class="NewsletterForm-items-item">
+                {{this}}
+            </div>
+            {{/each}}
+        </div>
+        {{/with}}
+
+        <div class="NewsletterForm-success">
+            <div class="NewsletterForm-success-message">{{format "successText"}}</div>
+            <button class="NewsletterForm-success-more">{{format "moreText"}}</button>
+        </div>
+
+        <div class="NewsletterForm-buttons">
+            {{include "button/Button.hbs" label=(format "/core/form/NewsletterForm" "subscribeText") type="submit"}}
+        </div>
+    </form>
+</ps-form-newsletter>

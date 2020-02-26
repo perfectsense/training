@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html class="GalleryPage" lang="{{#with language}}{{this}}{{else}}en{{/with}}">
+{{include "/core/page/Page-head.hbs" this}}
+
+    <body class="Page-body" {{~#each extraBodyAttributes}} {{this}} {{~/each~}}>
+    {{include "/core/page/Page-header.hbs" this}}
+
+    <ps-gallery-page class="GalleryPage-content" data-state="start" data-showing-aside="true"{{#if aside}} data-with-aside="true"{{/if}}>
+        <div class="GalleryPage-wrapper">
+            <main class="GalleryPage-main">
+                <div class="GalleryPage-slides">
+                    <div class="GalleryPage-slide" id="slide-0">
+                        <div class="GallerySlide">
+                            <div class="GalleryPage-lead">
+                                <div class="GalleryPage-lead-media">
+                                    {{#with slides.[0].mediaContent}}
+                                        {{#set imageSize="gallerySlide"}}{{this}}{{/set}}
+                                    {{/with}}
+                                </div>
+                                <div class="GalleryPage-lead-content">
+                                    {{#with slides}}
+                                        <div class="GalleryPage-lead-icon">
+                                            <svg class="GalleryPage-lead-grid"><use xlink:href="#grid"></use></svg>
+                                        </div>
+                                        <div class="GalleryPage-lead-count">
+                                            {{this.length}}
+                                            {{format "/core/gallery/GalleryPage" "countLabel"}}
+                                        </div>
+                                    {{/with}}
+                                    {{include "/core/page/CreativeWorkPage-headline.hbs" this className="GalleryPage"}}
+                                    {{include "/core/page/CreativeWorkPage-subHeadline.hbs" this className="GalleryPage"}}
+                                    <button class="GalleryPage-start">{{format "/core/gallery/GalleryPage" "startSlideshow"}}</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {{#each slides}}
+                        <div class="GalleryPage-slide" id="slide-{{add @index 1}}">
+                            {{include "/core/gallery/GallerySlide.hbs" this slideNumber=@index}}
+                        </div>
+                    {{/each}}
+                </div>
+                <div class="GalleryPage-infoBar">
+                     <div class="GalleryPage-numbers">
+                        <span class="GalleryPage-currentSlide">1</span>/<span class="GalleryPage-slidesLength">{{slides.length}}</span>
+                    </div>
+                    <button class="GalleryPage-infoButton"><span class="sr-only">{{format "showInfoText"}}</span></button>
+                </div>
+            </main>
+            <aside class="GalleryPage-aside">
+                <div class="GalleryPage-aside-content">
+                    {{include "/core/page/CreativeWorkPage-headline.hbs" this className="GalleryPage"}}
+
+                    <div class="GalleryPage-aside-slideContent"></div>
+
+                    {{#with actions}}
+                        {{this}}
+                    {{/with}}
+
+                    {{#with galleryCta}}
+                        <div class="GalleryPage-aside-cta">{{this}}</div>
+                    {{/with}}
+                </div>
+                {{#with aside}}
+                    <div class="GalleryPage-aside-modules">
+                        {{#each this}}
+                            {{this}}
+                        {{/each}}
+                    </div>
+                {{/with}}
+            </aside>
+        </div>
+    </ps-gallery-page>
+
+    {{include "/core/page/Page-extraBodyItems.hbs" this}}
+    </body>
+</html>

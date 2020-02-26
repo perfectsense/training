@@ -1,0 +1,27 @@
+<div class="GallerySlide">
+    <div class="GallerySlide-media" data-image-bsp-id="{{bspId}}">
+        {{#with mediaContent}}
+            {{#resize this.[0].image "gallerySlide"}}
+                <img class="Image" alt="{{../alt}}"
+                    {{~#with width}} width="{{this}}"{{/with~}}
+                    {{~#with height}} height="{{this}}"{{/with~}}
+                    {{#if (eq ../../slideNumber 0)}}
+                        src="{{src}}"
+                    {{else}}
+                        data-src="{{src}}" data-lazy-load="true" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                    {{/if}}
+                >
+            {{/resize}}
+        {{/with}}
+    </div>
+    <div class="GallerySlide-content">
+        {{#with infoTitle}}
+            <div class="GallerySlide-title" data-info-title="{{~this~}}" data-info-attribution="{{../infoAttribution}}">{{~this~}}</div>
+        {{/with}}
+        {{#with infoDescription}}
+            <div class="GallerySlide-infoDescription">
+                {{~this~}}&nbsp;<span class="GallerySlide-attribution">({{../infoAttribution}})</span>
+            </div>
+        {{/with}}
+    </div>
+</div>

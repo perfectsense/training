@@ -2,12 +2,8 @@
   "_template": "ListArticleBody.hbs",
   "items": [
     {
-      "_include": "/core/article/ListArticleBodyItem.json",
-      "_repeat": [
-        2,
-        5
-      ]
+      "_include": "/core/article/ListArticleBodyItem.json"
     }
   ],
-  "_hidden": false
+  "_hidden": true
 }

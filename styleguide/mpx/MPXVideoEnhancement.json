@@ -1,8 +1,0 @@
-{
-  "_template": "/core/video/VideoEnhancement.hbs",
-  "title": "MPX Video Enhancement",
-  "player": {
-    "_include": "/mpx/MPXVideoPlayer.json"
-  },
-  "_hidden": false
-}

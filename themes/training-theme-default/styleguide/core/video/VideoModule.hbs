@@ -1,0 +1,45 @@
+<ps-video-playlist class="VideoModule">
+    <div class="VideoModule-header">
+        {{#if title}}
+            <div class="VideoModule-header-title">
+                {{#if ctaUrl}}
+                    {{include "/core/link/Link.hbs" href=ctaUrl target=ctaTarget body=title}}
+                {{else}}
+                    {{title}}
+                {{/if}}
+            </div>
+        {{/if}}
+    </div>
+
+    <div class="VideoModule-content">
+        <div class="VideoModule-content-wrapper">
+            {{#with player}}
+                <div class="VideoModule-player" data-video-player-wrapper>{{this}}</div>
+            {{/with}}
+
+            {{#if playlist}}
+                <div class="VideoModule-playlist-wrapper">
+                    {{#with playlist}}
+                        <div class="VideoModule-playlist">
+                            <div class="VideoModule-playlist-item">
+                                {{#with this.[0]}}{{include "/core/video/PlayListItem.hbs" this isCurrentItem="true"}}{{/with}}
+                            </div>
+
+                            {{#each this}}
+                                {{#if (gt @index 0)}}
+                                    <div class="VideoModule-playlist-item">{{include "/core/video/PlayListItem.hbs" this}}</div>
+                                {{/if}}
+                            {{/each}}
+                        </div>
+                    {{/with}}
+
+                    {{#if ctaUrl}}
+                        <div class="VideoModule-cta">
+                            {{include "../link/Link.hbs" href=ctaUrl target=ctaTarget body=(format "/core/video/VideoModule" "ctaText")}}
+                        </div>
+                    {{/if}}
+                </div>
+            {{/if}}
+        </div>
+    </div>
+</ps-video-playlist>

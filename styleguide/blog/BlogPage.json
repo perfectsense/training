@@ -1,0 +1,21 @@
+{
+  "_template": "BlogPage.hbs",
+  "_include": "/core/page/ContentPage.json",
+  "blogLead": {
+    "_include": "/_group/Leads.json",
+    "_key": 0
+  },
+  "posts": [
+    {
+      "_include": "/core/promo/Promo.json"
+    }
+  ],
+  "blogNavigation": {
+    "_include": "/core/navigation/Navigation.json"
+  },
+  "previousPage": "#",
+  "pageNumber": 1,
+  "pageCount": 123,
+  "nextPage": "#",
+  "_hidden": true
+}

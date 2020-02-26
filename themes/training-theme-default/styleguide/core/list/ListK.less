@@ -1,0 +1,37 @@
+.ListK {
+  &:extend(.ListAbstract all);
+  .clearfix;
+
+  // these fall outside the regular pattern
+  &[data-hide-categories='true'] {
+    .PromoF-category {
+      display: none;
+    }
+  }
+
+  &[data-hide-dates='true'] {
+    .PromoF-date {
+      display: none;
+    }
+  }
+
+  &[data-hide-descriptions='true'] {
+    .PromoF-description {
+      display: none;
+    }
+  }
+
+  &-header {
+    &:extend(.label-2 all);
+    margin-top: @grid-gap;
+  }
+
+  &-items {
+    &:extend(.title-6 all);
+    font-weight: 500;
+
+    &-item {
+      margin-top: (@grid-gap / 2);
+    }
+  }
+}

@@ -1,0 +1,31 @@
+<div class="PromoE"{{include "Promo-options.hbs" this}}>
+    <div class="PromoE-wrapper">
+        {{#if media}}
+            <div class="PromoE-media">
+                {{#set imageSize='promoFullWidth'}}
+                    {{#set lazyLoad='true'}}
+                        {{media}}
+                    {{/set}}
+                {{/set}}
+            </div>
+        {{/if}}
+
+        <div class="PromoE-content"{{#with alignTextLeft}} data-left-align{{/with}}>
+            {{#with category}}
+                <div class="PromoE-category">
+                    {{include "../link/Link.hbs" href=../categoryUrl target=../target body=this}}
+                </div>
+            {{/with}}
+
+            {{#with title}}
+                <div class="PromoE-title">
+                    {{include "../link/Link.hbs" href=../url target=../target body=this}}
+                </div>
+            {{/with}}
+
+            {{#with description}}
+                <div class="PromoE-description">{{this}}</div>
+            {{/with}}
+        </div>
+    </div>
+</div>

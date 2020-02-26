@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html class="CharacterPage" lang="{{#with language}}{{this}}{{else}}en{{/with}}" itemscope
+      itemtype="http://schema.org/WebPage">
+{{include "/core/page/Page-head.hbs" this}}
+    <body class="CharacterPage-body" {{~#each extraBodyAttributes}} {{this}} {{~/each~}}
+    {{#if hidePromoDropShadow}} data-hide-promo-dropshadow{{/if}}
+    {{#if promoModuleAlignment}} data-promo-module-alignment="{{promoModuleAlignment}}"{{/if}}
+    {{#if boldMood}} data-mood-bold{{/if}}
+    {{#if inlineSubheading}} data-subheading-inline="{{inlineSubheading}}"{{/if}}
+    {{#if hideExternalLinkIcon}}data-hide-external-link-icon{{/if}}
+    {{#if hat}}data-show-hat{{/if}}
+    {{#if hideHeaderHat}}data-hide-header-hat{{/if}}
+    >
+        {{include "/core/page/Page-icons.hbs" this}}
+        {{#with hat}}
+            <div class="CharacterPage-hat">{{this}}</div>
+        {{/with}}
+        {{include "/core/page/Page-header.hbs" this}}
+        <div class="CharacterPage-contentWrapper"
+             data-negative-margin={{#if negativeMargin}}"{{negativeMargin}}"{{else}}default{{/if}}>
+        {{include "/core/page/Page-sectionNavigation.hbs" this}}
+        {{#with above}}
+            <div class="CharacterPage-above">{{this}}</div>
+        {{/with}}
+        <main class="CharacterPage-main">
+            {{#with breadcrumbs}}
+                <div class="CharacterPage-breadcrumbs">{{this}}</div>
+            {{/with}}
+            <div class="CharacterPage-mainContent" itemscope itemtype="http://schema.org/Person"{{extraAttributes}}>
+                <div class="CharacterPage-card">
+                    {{#with image}}
+                        <div class="CharacterPage-image" itemprop="image">{{this}}</div>
+                    {{/with}}
+                    <div class="CharacterPage-card-data">
+                        {{#with name}}
+                            <h1 class="CharacterPage-name" itemprop="name">{{this}}</h1>
+                        {{/with}}
+                        {{#with alterEgo}}
+                            <div class="CharacterPage-alterEgo">{{this}}</div>
+                        {{/with}}
+                    </div>
+                </div>
+                {{#with biography}}
+                    <div class="CharacterPage-biography" itemprop="description">{{this}}</div>
+                {{/with}}
+                {{#with featuredMovies}}
+                    <div class="CharacterPage-featuredMovies">
+                        {{this}}
+                    </div>
+                {{/with}}
+            </div>
+            {{#with tags}}
+                <div class="CharacterPage-tags">
+                    <h2 class="CharacterPage-tags-heading">{{format "/core/page/ContentPage" "tagsHeading"}}</h2>
+                    <div class="CharacterPage-tags-body">{{this}}</div>
+                </div>
+            {{/with}}
+            {{#with countries}}
+                <div class="CharacterPage-countries">
+                    <h2 class="CharacterPage-countries-heading">{{format "/core/page/ContentPage" "countriesHeading"}}</h2>
+                    <div class="CharacterPage-countries-body">{{this}}</div>
+                </div>
+            {{/with}}
+            {{#with brands}}
+                <div class="CharacterPage-brands">
+                    <h2 class="CharacterPage-brands-heading">{{format "/core/page/ContentPage" "brandsHeading"}}</h2>
+                    <div class="CharacterPage-brands-body">{{this}}</div>
+                </div>
+            {{/with}}
+            {{#with products}}
+                <div class="CharacterPage-products">
+                    <h2 class="CharacterPage-products-heading">{{format "/core/page/ContentPage" "productsHeading"}}</h2>
+                    <div class="CharacterPage-products-body">{{this}}</div>
+                </div>
+            {{/with}}
+            {{#with topics}}
+                <div class="CharacterPage-topics">
+                    <h2 class="CharacterPage-topics-heading">{{format "/core/page/ContentPage" "topicsHeading"}}</h2>
+                    <div class="CharacterPage-topics-body">{{this}}</div>
+                </div>
+            {{/with}}
+            {{#with actions}}
+                <div class="CharacterPage-actions">
+                    <h2 class="CharacterPage-actions-heading">{{format "/core/page/ContentPage" "actionsHeading"}}</h2>
+                    <div class="CharacterPage-actions-body">{{this}}</div>
+                </div>
+            {{/with}}
+            {{#with comments}}
+                <div class="CharacterPage-comments">
+                    {{this}}
+                </div>
+            {{/with}}
+        </main>
+        {{#with below}}
+            <div class="CharacterPage-below">{{this}}</div>
+        {{/with}}
+        </div>
+
+        {{include "/core/page/Page-aside.hbs" this}}
+        {{include "/core/page/Page-contentFooter.hbs" this}}
+        {{include "/core/page/Page-below.hbs" this}}
+        {{include "/core/page/Page-footer.hbs" this}}
+        {{include "/core/page/Page-extraBodyItems.hbs" this}}
+    </body>
+</html>

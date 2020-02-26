@@ -1,0 +1,22 @@
+{
+  "_template": "LiveBlogPage.hbs",
+  "_wrapper": false,
+  "_hidden": true,
+  "_include": "/core/page/CreativeWorkPage.json",
+  "blogLead": {
+    "_include": "/_group/Leads.json",
+    "_key": 0
+  },
+  "blogBody": {
+    "_include": "/_group/RichText.json",
+    "_key": 0
+  },
+  "posts": {
+    "_include": "LiveBlogPost.json"
+  },
+  "previousPage": "#",
+  "pageNumber": 1,
+  "pageCount": 123,
+  "pageCounts": true,
+  "nextPage": "#"
+}

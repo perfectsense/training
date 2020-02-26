@@ -1,24 +1,20 @@
 package bex.training.movie;
 
+import java.text.SimpleDateFormat;
+import java.util.Collections;
+import java.util.Optional;
+
 import bex.training.character.Character;
 import brightspot.core.page.AbstractContentPageViewModel;
 import brightspot.core.section.Section;
 import brightspot.core.tool.RichTextUtils;
 import com.psddev.cms.view.PageEntryView;
-import com.psddev.dari.db.Database;
 import com.psddev.dari.util.ObjectUtils;
-import com.psddev.dari.util.StringUtils;
 import com.psddev.styleguide.core.list.ListView;
 import com.psddev.styleguide.core.list.ListViewItemsField;
 import com.psddev.styleguide.training.movie.MoviePageView;
 import com.psddev.styleguide.training.movie.MoviePageViewCoverField;
 import com.psddev.styleguide.training.movie.MoviePageViewFeaturedCharactersField;
-import com.psddev.styleguide.training.movie.MoviePageViewPlotField;
-import com.psddev.styleguide.training.movie.MoviePageViewSummaryField;
-
-import java.text.SimpleDateFormat;
-import java.util.Collections;
-import java.util.Optional;
 
 public class MoviePageViewModel extends AbstractContentPageViewModel<Movie> implements MoviePageView, PageEntryView {
 
@@ -61,13 +57,8 @@ public class MoviePageViewModel extends AbstractContentPageViewModel<Movie> impl
     }
 
     @Override
-    public Iterable<? extends MoviePageViewPlotField> getPlot() {
-        if (!StringUtils.isBlank(model.getPlot())) {
-            return RichTextUtils.buildHtml(Database.Static.getDefault(), model.getPlot(),
-                    s -> createView(MoviePageViewPlotField.class, s));
-        }
-
-        return null;
+    public CharSequence getPlot() {
+        return RichTextUtils.buildInlineHtml(model.getState().getDatabase(), model.getPlot(), this::createView);
     }
 
     @Override
@@ -76,13 +67,8 @@ public class MoviePageViewModel extends AbstractContentPageViewModel<Movie> impl
     }
 
     @Override
-    public Iterable<? extends MoviePageViewSummaryField> getSummary() {
-        if (!StringUtils.isBlank(model.getSummary())) {
-            return RichTextUtils.buildHtml(Database.Static.getDefault(), model.getSummary(),
-                    s -> createView(MoviePageViewSummaryField.class, s));
-        }
-
-        return null;
+    public CharSequence getSummary() {
+        return RichTextUtils.buildInlineHtml(model.getState().getDatabase(), model.getSummary(), this::createView);
     }
 
     // Page Support.

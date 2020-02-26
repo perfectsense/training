@@ -1,0 +1,24 @@
+// Generic Form styles, so a non specified form looks ok
+.Form {
+  .Button[type='submit'] {
+    &:extend(.ButtonPrimary all);
+
+    width: 100%;
+  }
+
+  .TextInput {
+    margin-bottom: (@grid-gap / 1.5);
+  }
+
+  &-header {
+    &:extend(.ListHeader all);
+  }
+
+  &-message {
+    &:extend(.label-3 all);
+
+    color: var(--primaryTextColor);
+    margin-top: (@grid-gap / 2);
+    text-align: center;
+  }
+}

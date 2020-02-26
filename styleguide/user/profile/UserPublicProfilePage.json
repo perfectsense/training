@@ -1,0 +1,12 @@
+{
+  "_include": "/core/page/Page.json",
+  "_template": "UserPublicProfilePage.hbs",
+  "pageHeading": null,
+  "pageLead": null,
+  "userDisplayName": "Bob Smith",
+  "userImage": {
+    "_image": true
+  },
+  "userBiography": "User Biography",
+  "_hidden": true
+}

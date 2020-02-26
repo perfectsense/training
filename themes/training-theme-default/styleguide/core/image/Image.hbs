@@ -1,0 +1,12 @@
+{{#resize image (fallback (get "imageSize") "articleImage")}}
+    <img class="Image" alt="{{../alt}}"
+        {{~#with srcset}} srcset="{{this}}"{{/with~}}
+        {{~#with width}} width="{{this}}"{{/with~}}
+        {{~#with height}} height="{{this}}"{{/with~}}
+        {{~#if (eq (get "lazyLoad") "true")}}
+        data-src="{{src}}" data-lazy-load="true" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+        {{~else}}
+        src="{{src}}"
+        {{/if~}}
+    >
+{{/resize}}

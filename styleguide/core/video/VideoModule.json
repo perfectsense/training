@@ -1,0 +1,14 @@
+{
+  "_template": "/core/video/VideoModule.hbs",
+  "title": "Video Module",
+  "player": {
+    "_include": "/_group/Videos.json",
+    "_key": 0
+  },
+  "playlist": {
+    "_include": "/core/video/PlaylistItem.json"
+  },
+  "ctaUrl": "#",
+  "ctaTarget": "_self",
+  "_hidden": true
+}

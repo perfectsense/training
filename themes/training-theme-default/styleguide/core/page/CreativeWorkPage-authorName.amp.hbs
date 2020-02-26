@@ -1,0 +1,9 @@
+{{~#if authorName~}}
+<div class="{{#if className}}{{className}}{{else}}CreativeWorkPage{{/if}}-authorName">
+<span class="{{#if className}}{{className}}{{else}}CreativeWorkPage{{/if}}-authorBy">{{format "/core/page/CreativeWorkPage" "authorBy"}}&nbsp;</span>{{~#with ../authorUrl~}}<a aria-label="{{../this}}" href="{{this}}">{{~/with~}}{{~#with authorName~}}<span>{{~this~}}&nbsp;</span>{{~/with~}}{{~#with
+        ../authorUrl~}}</a>{{~/with~}}
+        {{~#unless contributors~}}
+            {{~#with authorTitle~}}<span class="{{#if ../className}}{{../className}}{{else}}CreativeWorkPage{{/if}}-authorTitle">{{~this~}}&nbsp;</span> {{~/with~}}
+        {{/unless}}
+        {{~#if contributors~}},&nbsp;{{~/if~}}</div>
+{{~/if~}}

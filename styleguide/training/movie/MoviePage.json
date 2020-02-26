@@ -8,12 +8,8 @@
   "cover": {
     "_include": "/core/image/Image.json"
   },
-  "summary": {
-    "_include": "/_group/RichText.json"
-  },
-  "plot": {
-    "_include": "/_group/RichText.json"
-  },
+  "summary": "{{html('This is a very short summary')}}",
+  "plot": "{{html('This is a very short plot')}}",
   "featuredCharacters": {
     "_include": "/core/list/List.json"
   }

@@ -1,7 +1,7 @@
 [
-  "{{paragraphs([ 2, 5 ])}}",
+  "Lorem Ipsum Dolor",
   {
     "_include": "/core/enhancement/Enhancement.json"
   },
-  "{{paragraphs([ 2, 5 ])}}"
+  "Lorem Ipsum Dolor"
 ]

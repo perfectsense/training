@@ -1,0 +1,18 @@
+<button class="Button"
+    {{~#with readMore}} data-readmore{{/with}}
+    {{~#with autofocus}} autofocus{{/with}}
+    {{~#with disabled}} disabled{{/with}}
+    {{~#with formaction}} formaction="{{this}}"{{/with}}
+    {{~#with formenctype}} formenctype="{{this}}"{{/with}}
+    {{~#with formmethod}} formmethod="{{this}}"{{/with}}
+    {{~#with formnovalidate}} formnovalidate="{{this}}"{{/with}}
+    {{~#with formtarget}} formtarget="{{this}}"{{/with}}
+    {{~#with name}} name="{{this}}"{{/with}}
+    {{~#with type}} type="{{this}}"{{else}} type="button"{{/with}}
+    {{~#with value}} value="{{this}}"{{/with}}>
+    {{~#if readMore}}
+        <span>{{~label~}}</span><svg class="chevron"><use xlink:href="#chevron"></use></svg>
+    {{~else~}}
+        {{~label~}}
+    {{/if}}
+</button>

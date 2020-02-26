@@ -1,0 +1,12 @@
+{
+  "_wrapper": "/_wrapper.previewAtomic.json",
+  "_template": "/core/list/ListJ.hbs",
+  "title": "featured",
+  "items": [
+    {
+      "_include": "/core/promo/PromoB.json",
+      "_repeat": 10
+    }
+  ],
+  "nextPage": "#"
+}

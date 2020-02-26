@@ -1,0 +1,23 @@
+<ps-html5player data-video-player class="HTML5VideoPlayer"
+    data-video-id="{{videoId}}"
+    data-video-title="{{videoTitle}}"
+    {{~#if muted}} data-muted="true"{{/if~}}
+    {{~#if autoplay}} data-muted="true" data-autoplay="true"{{/if~}}>
+
+    <div class="HTML5VideoPlayer-screen" data-aspect-ratio="{{#if aspectRatio}}{{aspectRatio}}{{else}}4x3{{/if}}">
+        <video id="HTML5VideoPlayer-{{playerId}}" class="HTML5VideoPlayer-video"
+            {{!--
+                                this puts a transparent pixel in place for the placeholder attr and then uses a background image
+                                technique: https://iandevlin.com/html5/poster/
+                            --}}
+            {{#resize poster}} poster="{{src}}" {{/resize}} preload="{{#if preloadNone}}none{{/if}}{{#if preloadMetaData}}metadata{{/if}}"
+            {{#if autoplay}} autoplay muted{{/if}} controls {{#if loop}} loop{{/if}} {{#if muted}} muted{{/if}}
+            {{#if height}} height="{{height}}" {{/if}} {{#if width}} width="{{width}}" {{/if}} {{extraAttributes}}>
+            {{#with sources}}
+            {{#each this}}
+            {{this}}
+            {{/each}}
+            {{/with}}
+        </video>
+    </div>
+</ps-html5player>

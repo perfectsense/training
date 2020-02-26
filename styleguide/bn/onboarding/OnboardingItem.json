@@ -1,0 +1,9 @@
+{
+  "_template": "OnboardingItem.hbs",
+  "title": "Title",
+  "description": "Description",
+  "image": {
+    "_include": "/core/image/Image.json"
+  },
+  "_hidden": true
+}

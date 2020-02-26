@@ -1,0 +1,372 @@
+.GalleryPage {
+  .GallerySlide {
+    &-title,
+    &-infoDescription {
+      display: block;
+      margin-bottom: @grid-gap;
+    }
+  }
+
+  .Page-header {
+    &:extend(.Page-header--inverse all);
+    &:extend(.Page-header--hardcodedSticky all);
+
+    &-bar {
+      border-bottom: none;
+      padding: 0 @grid-gap;
+    }
+
+    position: fixed;
+    width: 100%;
+  }
+
+  &-aside {
+    background: rgba(0, 0, 0, 0.8);
+    bottom: 50px;
+    height: auto;
+    left: 0;
+    max-height: 0;
+    overflow: hidden;
+    position: absolute;
+    transition: max-height 500ms;
+    width: 100%;
+
+    &-cta {
+      &:extend(.title-6 all);
+
+      color: var(--primaryTextColorInverse);
+      margin-top: @grid-gap;
+    }
+
+    &-content {
+      padding: @grid-gap;
+    }
+
+    &-modules {
+      display: none;
+
+      padding-top: @grid-gap;
+    }
+
+    &-slideContent {
+      &:extend(.caption-1 all);
+
+      color: var(--secondaryColor5);
+    }
+
+    [data-showing-aside='true'] & {
+      max-height: 300px;
+    }
+
+    [data-state='start'] & {
+      max-height: 0;
+    }
+  }
+
+  &-content {
+    background: var(--headerBgColorInverse);
+    bottom: 0;
+    color: var(--secondaryColor5);
+    left: 0;
+    max-height: 1440px; // fixes CMS preview
+    position: fixed;
+    right: 0;
+    top: 50px;
+
+    .ActionBar-items {
+      flex-direction: row;
+    }
+
+    .ActionBar-items-item {
+      margin-right: (@grid-gap / 4);
+    }
+  }
+
+  &-headline {
+    &:extend(.title-1 all);
+
+    font-weight: normal;
+    line-height: 1.13;
+    letter-spacing: -0.2px;
+    margin-bottom: (@grid-gap / 2);
+    text-align: center;
+
+    .GalleryPage-aside & {
+      &:extend(.title-3 all);
+
+      text-align: left;
+      font-weight: normal;
+    }
+  }
+
+
+  &-infoBar {
+    align-items: center;
+    border-top: 1px solid var(--secondaryColor1);
+    bottom: 0;
+    display: flex;
+    height: 50px;
+    justify-content: center;
+    left: 0;
+    padding-left: @grid-gap;
+    padding-right: @grid-gap;
+    right: 0;
+    position: absolute;
+    width: 100%;
+
+    [data-state='start'] & {
+      display: none;
+    }
+  }
+
+  &-infoButton {
+    &:extend(.ButtonInverse all);
+
+    border-color: var(--secondaryColor5);
+    height: 30px;
+    line-height: 27px;
+    position: absolute;
+    right: @grid-gap;
+    width: 30px;
+
+    &:before {
+      content: 'i';
+      font-family: 'Times New Roman', Times, serif;
+      font-size: 23px;
+      font-weight: 100;
+    }
+
+    [data-showing-aside='true'] & {
+      background: var(--primaryColor1);
+      border-color: var(--primaryColor1);
+    }
+
+    &:hover {
+      background: var(--primaryColor1);
+      border-color: var(--primaryColor1);
+    }
+  }
+
+  &-lead {
+    align-items: center;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    width: 100%;
+
+    &-content {
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      margin: 0 auto;
+      max-width: 680px;
+      padding: @grid-gap (@grid-gap * 2);
+      position: relative;
+      z-index: @z-index-base + 1;
+      width: 100%;
+    }
+
+    &-count {
+      &:extend(.counter-1 all);
+
+      color: var(--secondaryColor5);
+      margin-bottom: (@grid-gap * 1.5);
+    }
+
+    &-grid {
+      fill: var(--secondaryColor5);
+      height: 32px;
+      width: 32px;
+    }
+
+    &-icon {
+      background: rgba(0, 0, 0, 0.4);
+      border: 1px solid var(--secondaryColor5);
+      margin-bottom: (@grid-gap / 2);
+      padding: 20px;
+    }
+
+    &-media {
+      height: 100%;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 100%;
+      z-index: @z-index-base;
+
+      img {
+        height: 100%;
+        max-width: none;
+        object-fit: cover;
+        width: 100%;
+      }
+    }
+  }
+
+  &-main {
+    height: 100%;
+    width: 100%;
+  }
+
+  &-numbers {
+    &:extend(.counter-1 all);
+
+    color: var(--secondaryColor1);
+    margin: (@grid-gap / 2) 0;
+
+    span {
+      color: var(--secondaryColor5);
+      font-weight: bold;
+    }
+  }
+
+  &-slide {
+    display: none;
+    height: 100%;
+    width: 100%;
+
+    .flickity-enabled & {
+      display: block;
+    }
+
+    &:first-of-type {
+      display: block;
+
+      img {
+        opacity: 0.5;
+      }
+    }
+  }
+
+  &-slides {
+    &:extend(.CarouselAbstract all);
+
+    .flickity-prev-next-button {
+      &.previous,
+      &.next {
+        top: calc(~'50% - 20px');
+      }
+    }
+
+    // overrides flickity, we want full height always
+    .flickity-viewport {
+      height: 100% !important; // lesshint importantRule: false
+    }
+
+    height: calc(~'100% - 50px');
+    width: 100%;
+
+    [data-state='start'] & {
+      height: 100%;
+    }
+  }
+
+  &-start {
+    &:extend(.ButtonPrimary all);
+  }
+
+  &-subHeadline {
+    &:extend(.title-3 all);
+
+    font-weight: normal;
+    margin-bottom: (@grid-gap * 2);
+    text-align: center;
+  }
+
+  &-wrapper {
+    height: 100%;
+    position: relative;
+    width: 100%;
+  }
+
+  @media @mq-viewport-md {
+    &-content {
+      top: 60px;
+    }
+  }
+
+  @media @mq-viewport-lg {
+    &-aside {
+      background: var(--grayscaleColor1);
+      border-left: 1px solid var(--secondaryColor1);
+      bottom: 0;
+      height: 100%;
+      left: auto;
+      max-height: none;
+      right: -340px;
+      top: 0;
+      width: 340px;
+      overflow-y: scroll;
+      padding-bottom: @grid-gap;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+
+      &::-webkit-scrollbar {
+        width: 0px;
+      }
+
+      [data-showing-aside='true'] & {
+        max-height: none;
+        right: 0;
+      }
+
+      [data-showing-aside='true'][data-state='start'] & {
+        max-height: 0;
+        right: -340px;
+      }
+
+      [data-showing-aside='false'] & {
+        right: -340px;
+      }
+
+      &-content {
+        display: none;
+        padding-bottom: 0;
+
+        [data-state='gallery'] & {
+          display: block;
+        }
+      }
+
+      &-modules {
+        display: block;
+      }
+    }
+
+    &-infoBar {
+      [data-showing-aside='true'] & {
+        width: calc(~'100% - 340px');
+      }
+
+      [data-showing-aside='false'] & {
+        width: 100%;
+      }
+    }
+
+    &-main {
+      height: 100%;
+
+      [data-showing-aside='true'] & {
+        width: calc(~'100% - 340px');
+      }
+
+      [data-showing-aside='false'] &,
+      [data-showing-aside='true'][data-state='start'] & {
+        width: 100%;
+      }
+    }
+
+    &-slides {
+      .flickity-prev-next-button {
+        &.previous {
+          left: 0;
+        }
+
+        &.next {
+          right: 0;
+        }
+      }
+    }
+  }
+}

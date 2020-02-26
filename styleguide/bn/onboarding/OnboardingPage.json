@@ -1,0 +1,12 @@
+{
+  "_template": "OnboardingPage.hbs",
+  "pages": [
+    {
+      "_include": "OnboardingItem.json"
+    }
+  ],
+  "link": {
+    "_include": "/core/link/Link.json"
+  },
+  "_hidden": true
+}

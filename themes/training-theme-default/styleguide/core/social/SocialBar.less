@@ -1,0 +1,110 @@
+// Social Bar is used in the footer and is a "Find us on" vs the regular share bar,
+// which is Action Bar and is located in /core/action-bar
+
+// SocialBar-forPeson is used in person pages where we are doing a "Find this Person"
+// vs a global facebook link for the site
+
+.SocialBar {
+  display: flex;
+  align-items: baseline;
+  &-heading {
+    .label-3;
+    text-transform: uppercase;
+    padding-right: 10px; 
+
+    .Page-footer & {
+      color: var(--footerTextColor);
+    }
+  }
+
+  &-items {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: -(@grid-gap / 2);
+    list-style: none;
+
+    &-item {
+      flex-shrink: 0;
+      margin: (@grid-gap / 4);
+
+      &:last-of-type {
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+.SocialBar-forPerson {
+  &-heading {
+    display: none;
+  }
+
+  &-items {
+    justify-content: center;
+    list-style: none;
+
+    &-item {
+      margin: (@grid-gap / 4);
+    }
+  }
+
+  .SocialLink {
+    border: 0;
+    color: var(--secondaryColor1);
+    height: auto;
+    width: auto;
+
+    svg {
+      align-items: center;
+      border: 0;
+      border-radius: 2px;
+      display: flex;
+      fill: white;
+      justify-content: center;
+      height: 30px;
+      padding: 7px;
+      width: 30px;
+    }
+
+    &[data-service='print'] {
+      padding: 0;
+  
+      svg {
+        background: #000000;
+      }
+    }
+  
+    &[data-social-service='mailto'],
+    &[data-social-service='copylink'],
+    &[data-social-service='print'] {
+      svg {
+        background: var(--grayscaleColor6);
+        border: 1px solid var(--grayscaleColor4);
+        fill: var(--primaryTextColor);
+      }
+    }
+  
+    &[data-social-service='copylink'] {
+      [data-copied-text] {
+        display: none;
+      }
+  
+      &[data-copied='true'] {
+        span {
+          display: none;
+  
+          &[data-copied-text] {
+            display: block;
+          }
+        }
+      }
+    }
+
+  }
+
+  @media @mq-viewport-md {
+    &-items {
+      justify-content: left;
+    }
+  }
+}

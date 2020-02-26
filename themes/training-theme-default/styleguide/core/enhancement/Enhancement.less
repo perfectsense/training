@@ -1,0 +1,122 @@
+.Enhancement {
+  // just in case people put two aligned enhancements next to each other
+  clear: both;
+  margin: (@grid-gap * 1.5) 0;
+  width: 100%;
+
+  // ----- We will write some custom rules for enhancements here as they get custom widths -----
+
+  .Figure,
+  .Carousel,
+  .VideoEnhancement {
+    margin: 0 -@grid-gap;
+  }
+
+  // center aligning for all social embeds
+  .FacebookEmbed,
+  .FacebookUrl,
+  .InstagramUrl,
+  .InstagramEmbed,
+  .TweetEmbed,
+  .TweetUrl {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    overflow: hidden;
+    text-align: center;
+  }
+
+  @media @mq-viewport-md {
+    &[data-align-left] {
+      float: left;
+      margin-top: 0;
+      margin-right: (@grid-gap * 2);
+      width: 50%;
+
+      .Carousel,
+      .Figure,
+      .VideoEnhancement {
+        margin: 0;
+      }
+
+      .FacebookEmbed {
+        width: 100%;
+
+        iframe {
+          width: 100%;
+        }
+      }
+    }
+
+    &[data-align-right] {
+      float: right;
+      margin-top: 0;
+      margin-left: (@grid-gap * 2);
+      width: 50%;
+
+      .Carousel,
+      .Figure,
+      .VideoEnhancement {
+        margin: 0;
+      }
+    }
+  }
+
+  @media @mq-viewport-lg {
+    .Figure {
+      margin: 0;
+
+      &-content {
+        padding-left: 0;
+        padding-right: 0;
+      }
+    }
+
+    .Carousel,
+    .VideoEnhancement,
+    .Figure {
+      margin: 0;
+    }
+  }
+
+  @media @mq-viewport-hk {
+    .Carousel,
+    .Figure,
+    .VideoEnhancement {
+      margin: 0;
+
+      &-content,
+      &-title {
+        padding-left: 0;
+        padding-right: 0;
+      }
+    }
+
+    &[data-align-left],
+    &[data-align-right] {
+      .Carousel,
+      .Figure,
+      .VideoEnhancement {
+        margin: 0;
+      }
+    }
+
+    &[data-align-left] {
+      .Carousel,
+      .Figure,
+      .VideoEnhancement {
+        margin-left: 0;
+      }
+    }
+
+    &[data-align-right] {
+      .Carousel,
+      .Figure,
+      .ListC,
+      > .PromoA,
+      .VideoEnhancement {
+        margin-right: 0;
+      }
+    }
+  }
+}

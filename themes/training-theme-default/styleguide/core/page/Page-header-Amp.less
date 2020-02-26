@@ -1,0 +1,38 @@
+@import 'Page-header';
+
+.Page-header {
+
+  &-search-overlay {
+    display: block;
+    bottom: auto;
+    box-shadow: 0 5px 5px 0 rgba(0,0,0,.15);
+    top: 49px;
+
+    &[hidden] {
+      display: none;
+    }
+  }
+
+  &-search-button {
+
+    .close-x {
+      display: block;
+    }
+
+    .icon-hide {
+      display: none;
+    }
+  }
+
+  &-hamburger-menu {
+    z-index: 2147483647;
+  }
+
+  &-logoInverse {
+    img {
+      height: auto;
+      min-width: auto;
+      min-height: auto;
+    }
+  }
+}

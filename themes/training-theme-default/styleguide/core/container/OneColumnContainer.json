@@ -1,0 +1,9 @@
+{
+  "_wrapper": "/_wrapper.previewAtomic.json",
+  "_template": "/core/container/OneColumnContainer.hbs",
+  "columnOne": {
+    "_template": "/core/text/RichTextModule.hbs",
+
+    "items": ["{{html('<div class=\"column-example\">Column One</div>')}}"]
+  }
+}

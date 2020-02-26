@@ -1,0 +1,45 @@
+{
+  "type": "object",
+  "additionalProperties": true,
+  "properties": {
+    "heading": {
+      "type": "string"
+    },
+    "count": {
+      "type": "number"
+    },
+    "query": {
+      "type": "string"
+    },
+    "filters": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "sorts": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "results": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "spotlights": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "searchAction": {
+      "type": "string"
+    },
+    "next": {
+      "type": "string"
+    }
+  }
+}

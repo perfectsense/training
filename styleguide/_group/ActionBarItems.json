@@ -1,15 +1,15 @@
 [
   {
-    "_include": "/tumblr/TumblrShareButton.json"
+    "_include": "/community/bookmark/BookmarkButton.json"
   },
   {
-    "_include": "/facebook/FacebookShareButton.json"
+    "_include": "/community/favorite/FavoriteButton.json"
   },
   {
-    "_include": "/twitter/intent/TwitterTweetButton.json"
+    "_include": "/community/follow/FollowButton.json"
   },
   {
-    "_include": "/googleplus/GooglePlusShareButton.json"
+    "_include": "/core/link/Link.json"
   },
   {
     "_include": "/core/link/MailToLink.json"
@@ -18,12 +18,18 @@
     "_include": "/core/link/PrintLink.json"
   },
   {
-    "_include": "/pinterest/PinterestShareButton.json"
+    "_include": "/facebook/FacebookShareButton.json"
   },
   {
     "_include": "/linkedin/LinkedInShareButton.json"
   },
   {
-    "_include": "/core/link/Link.json"
+    "_include": "/pinterest/PinterestShareButton.json"
+  },
+  {
+    "_include": "/tumblr/TumblrShareButton.json"
+  },
+  {
+    "_include": "/twitter/intent/TwitterTweetButton.json"
   }
 ]

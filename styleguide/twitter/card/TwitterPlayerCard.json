@@ -1,17 +1,17 @@
 {
   "_template": "TwitterPlayerCard.hbs",
-  "title": "{{words(10)}}",
+  "title": "Title",
   "site": "brightspotcms",
   "siteId": "358165108",
-  "description": "{{words(20)}}",
+  "description": "Description",
   "image": {
     "_image": true
   },
   "imageAlt": "alt",
-  "player": "http://brightspot.com/iframe/url",
+  "player": "https://brightspot.com/iframe/url",
   "playerWidth": 500,
   "playerHeight": 500,
-  "playerStream": "http://brightspot.com/stream/url",
+  "playerStream": "https://brightspot.com/stream/url",
   "playerStreamContentType": "video/mp4",
-  "_hidden": false
+  "_hidden": true
 }

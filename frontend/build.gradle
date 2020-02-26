@@ -1,0 +1,9 @@
+plugins {
+    id 'war'
+    id 'com.github.node-gradle.node'
+    id 'com.github.node-gradle.gulp'
+}
+
+description = 'Training: Frontend'
+
+apply from: "https://artifactory.psdops.com/psddev-releases/com/psddev/brightspot-gradle-plugins/express-frontend/${brightspotGradlePluginVersion}/express-frontend.gradle"

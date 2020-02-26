@@ -1,0 +1,37 @@
+plugins {
+    id 'war'
+}
+
+description = 'Training: Site'
+
+dependencies {
+
+    api project(':training-core')
+    api project(':training-frontend')
+    api project(':training-theme-default')
+
+    // Brightspot
+    api 'com.psddev:cms-db:'
+    api 'com.psddev:cms-tool-ui'
+    api 'com.psddev:dari-aws'
+    api 'com.psddev:dari-db'
+    api 'com.psddev:dari-mysql'
+    api 'com.psddev:dari-util'
+    api 'com.psddev:express-themes-core' // Express core excluded globally
+    api 'com.psddev:theme'
+
+    // Component Lib
+    api 'com.psddev.component-lib:profiler-utils'
+    testImplementation 'com.psddev.component-lib:test-utils'
+    testImplementation 'com.psddev.component-lib:shared-unit-tests'
+
+    api 'org.apache.solr:solr-solrj'
+    api 'org.slf4j:slf4j-api'
+    api 'org.slf4j:slf4j-jdk14'
+    api 'javax.servlet:javax.servlet-api'
+    api 'javax.servlet.jsp:javax.servlet.jsp-api'
+}
+
+if (!System.getProperty("dependencies")) {
+    apply from: "https://artifactory.psdops.com/psddev-releases/com/psddev/brightspot-gradle-plugins/express-site/${brightspotGradlePluginVersion}/express-site.gradle"
+}

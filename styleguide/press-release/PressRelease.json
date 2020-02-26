@@ -1,0 +1,15 @@
+{
+  "_wrapper": false,
+  "_include": "/core/page/CreativeWorkPage.json",
+  "_template": "PressRelease.hbs",
+  "lead": {
+    "_include": "/_group/Leads.json",
+    "_key": 0
+  },
+  "richTextModule": {
+    "_include": "/_group/RichText.json",
+    "_key": 0
+  },
+  "updatesCorrections": "This is an update to the original story.",
+  "_hidden": true
+}

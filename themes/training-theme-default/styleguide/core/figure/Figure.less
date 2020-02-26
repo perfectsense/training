@@ -1,0 +1,34 @@
+.Figure {
+  img {
+    margin-bottom: (@grid-gap / 2);
+    width: 100%;
+  }
+
+  &-content {
+    &:extend(.caption-1 all);
+
+    margin: 0 0 @grid-gap;
+    padding-left: @grid-gap;
+    padding-right: @grid-gap;
+  }
+
+  &-caption,
+  &-credit {
+    display: inline;;
+
+    p {
+      display: inline;
+    }
+  }
+
+  &-credit {
+    margin-left: 5px;
+  }
+
+  @media @mq-viewport-lg {
+    &-content {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+}

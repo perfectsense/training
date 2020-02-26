@@ -1,0 +1,10 @@
+{
+    "_template": "MailToLink.hbs",
+
+    "email": "test@test.com",
+    "cc": "testcc@test.com",
+    "bcc": "testbcc@test.com",
+    "subject": "{{words(10)}}",
+    "emailBody": "{{words(20)}}",
+    "linkBody": "Email"
+}

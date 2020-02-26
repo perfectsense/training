@@ -1,0 +1,10 @@
+{
+  "_wrapper": false,
+  "_include": "/core/search/SearchResultsPage.json",
+  "_template": "AllAssetsPage.hbs",
+  "pageHeading": "All Assets",
+  "breadcrumbs": {
+    "_include": "/core/link/Link.json"
+  },
+  "_hidden": true
+}

@@ -1,0 +1,6 @@
+{
+  "_wrapper": false,
+  "_template": "/facebookinstantarticles/Body.hbs",
+  "bodyHtml": "This is the body of the article.",
+  "_hidden": true
+}

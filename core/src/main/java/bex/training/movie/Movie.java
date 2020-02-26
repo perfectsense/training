@@ -1,10 +1,15 @@
 package bex.training.movie;
 
-import bex.training.release.Releasable;
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Optional;
+import java.util.Set;
+import java.util.stream.Collectors;
+
 import bex.training.character.Character;
+import bex.training.release.Releasable;
 import brightspot.core.image.ImageOption;
 import brightspot.core.link.Linkable;
-import brightspot.core.permalink.AutoPermalink;
 import brightspot.core.promo.PromotableWithOverrides;
 import brightspot.core.share.Shareable;
 import brightspot.core.slug.Sluggable;
@@ -19,19 +24,12 @@ import com.psddev.dari.db.Recordable;
 import com.psddev.dari.util.ObjectUtils;
 import com.psddev.dari.util.StringUtils;
 
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.Optional;
-import java.util.Set;
-import java.util.stream.Collectors;
-
 @Seo.TitleFields("getSeoTitle")
 @Seo.DescriptionFields("getSeoDescription")
 @Seo.KeywordsFields("getSeoKeywords")
 @ToolUi.Main
 @Recordable.PreviewField("cover/file")
-public class Movie extends Content implements AutoPermalink,
-                                              Linkable,
+public class Movie extends Content implements Linkable,
                                               PromotableWithOverrides,
                                               Releasable,
                                               Shareable,

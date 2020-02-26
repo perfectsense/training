@@ -1,0 +1,26 @@
+.ThreeColumnContainer {
+  &:extend(.Container all);
+
+  &-column:nth-of-type(1),
+  &-column:nth-of-type(2) {
+    padding-bottom: @grid-gap*2;
+  }
+
+  @media @mq-viewport-md {
+    padding-bottom: @grid-gap * 2;
+
+    &-column {
+      flex-shrink: 0;
+      width: 33.333%;
+    }
+
+    &-column:nth-of-type(1),
+    &-column:nth-of-type(2) {
+      padding-bottom: 0;
+    }
+
+    &-row {
+      display: flex;
+    }
+  }
+}

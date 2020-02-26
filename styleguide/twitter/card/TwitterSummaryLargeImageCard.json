@@ -4,11 +4,11 @@
   "siteId": "358165108",
   "creator": "brightspotcms",
   "creatorId": "358165108",
-  "description": "{{words(20)}}",
-  "title": "{{words(10)}}",
+  "description": "Description",
+  "title": "Title",
   "image": {
     "_image": true
   },
   "imageAlt": "brightspot logo",
-  "_hidden": false
+  "_hidden": true
 }

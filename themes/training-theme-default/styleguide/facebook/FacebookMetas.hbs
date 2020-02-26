@@ -1,0 +1,19 @@
+{{!-- Required Elements --}}
+
+{{~#with appId}}
+    <meta property="fb:app_id" content="{{this}}">
+{{/with~}}
+
+{{!-- Optional Elements --}}
+
+{{~#with pagesId}}
+    <meta property="fb:pages" content="{{this}}">
+{{/with}}
+
+{{~#with profileId}}
+    <meta property="fb:profile_id" content="{{this}}">
+{{/with}}
+
+{{~#with adminIds}}
+    <meta property="fb:admins" content="{{~#each this}}{{this}}{{#unless @last}}, {{/unless}}{{/each}}">
+{{/with}}

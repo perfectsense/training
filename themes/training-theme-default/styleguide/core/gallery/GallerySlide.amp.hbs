@@ -1,0 +1,15 @@
+<a class="GallerySlide" href="{{mediaContent.[0].image.src}}" {{extraAttributes}}>
+    <div class="GallerySlide-media">
+        {{#with mediaContent}}{{this}}{{/with}}
+    </div>
+    <div class="GallerySlide-info">
+        <div class="GallerySlide-numbers">
+            <span class="GallerySlide-currentSlide">{{add slideNumber 1}}</span>/<span class="GallerySlide-slidesLength">{{numberOfSlides}}</span>
+        </div>
+        {{#with infoTitle}}
+            <div class="GallerySlide-infoTitle">
+                {{~this~}}&nbsp;<span class="GallerySlide-infoAttribution">({{../infoAttribution}})</span>
+            </div>
+        {{/with}}
+    </div>
+</a>

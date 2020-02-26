@@ -4,5 +4,5 @@
   "lastName": "Gang",
   "username": "DGang",
   "gender": "male",
-  "_hidden": false
+  "_hidden": true
 }

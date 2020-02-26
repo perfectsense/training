@@ -1,0 +1,22 @@
+{
+  "_include": "/core/page/Page.json",
+  "_template": "AssetRequestPage.hbs",
+  "pageLead": null,
+  "main": {
+    "_include": "/dam/request/AssetRequestTable.json"
+  },
+  "banner": null,
+  "breadcrumbs": {
+    "_include": "/core/link/Link.json"
+  },
+  "pageHeading": "Title of Request",
+  "totalCount": "10 (3 pending)",
+  "above": null,
+  "aside": null,
+  "below": null,
+  "logo": {
+    "_include": "/core/page/PageLogo.json"
+  },
+  "hat": null,
+  "_hidden": true
+}

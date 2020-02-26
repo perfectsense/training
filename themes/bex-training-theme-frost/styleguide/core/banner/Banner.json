@@ -1,8 +1,0 @@
-{
-  "_template": "Banner.hbs",
-  "title": "Breaking News",
-  "linkBody": "{{words([5,10])}}",
-  "linkHref": "#",
-  "closeText": "Close",
-  "_hidden": false
-}

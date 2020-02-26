@@ -1,0 +1,8 @@
+{
+  "_template": "SearchFilter.hbs",
+  "heading": "Date",
+  "items": {
+    "_include": "/core/search/SearchControl.json"
+  },
+  "parameterName": "f1"
+}

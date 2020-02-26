@@ -1,5 +1,9 @@
 package bex.training.movie.query;
 
+import java.util.HashSet;
+import java.util.Set;
+import java.util.stream.Collectors;
+
 import bex.training.movie.Phase;
 import brightspot.core.listmodule.DynamicItemStream;
 import brightspot.core.listmodule.DynamicQueryModifier;
@@ -11,10 +15,6 @@ import com.psddev.dari.db.Modification;
 import com.psddev.dari.db.Query;
 import com.psddev.dari.db.Recordable;
 import com.psddev.dari.util.ObjectUtils;
-
-import java.util.HashSet;
-import java.util.Set;
-import java.util.stream.Collectors;
 
 @Recordable.FieldInternalNamePrefix("phases.")
 @Modification.Classes({DynamicItemStream.class})

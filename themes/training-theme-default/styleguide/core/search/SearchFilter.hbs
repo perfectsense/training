@@ -1,0 +1,17 @@
+<div class="SearchFilter">
+    <ps-toggler data-toggle="search-filter" class="SearchFilter-content" {{#if (gt items.length 4)}}data-see-all{{/if}}>
+        <div class="SearchFilter-heading" data-toggle-trigger="search-filter">{{heading}}<svg class="chevron"><use xlink:href="#chevron"></use></svg></div>
+        <ps-toggler class="SearchFilter-seeAll" data-toggle="see-all">
+            <div class="SearchFilter-items-wrapper">
+                <ul class="SearchFilter-items">
+                    {{~#each items~}}
+                        <li class="SearchFilter-items-item">
+                            {{~this~}}
+                        </li>
+                    {{~/each~}}
+                </ul>
+            </div>
+            {{#if (gt items.length 4)}}<button class="SearchFilter-seeAll-button" data-toggle-trigger="see-all"><span class="seeAllText">{{format "seeAll"}}</span><span class="seeLessText">{{format "seeLess"}}</span></button>{{/if}}
+        </ps-toggler>
+    </ps-toggler>
+</div>

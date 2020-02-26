@@ -1,10 +1,10 @@
 {
   "_template": "VimeoVideoPlayer.hbs",
   "playerId": "1",
-  "videoTitle": "{{words([2,6])}}",
+  "videoTitle": "Title",
   "videoId": "997312",
   "autoplay": false,
   "muted": true,
   "seekSeconds": 10,
-  "_hidden": false
+  "_hidden": true
 }

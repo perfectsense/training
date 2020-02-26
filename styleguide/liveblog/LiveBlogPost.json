@@ -1,0 +1,19 @@
+{
+  "_template": "LiveBlogPost.hbs",
+  "headline": "Headline",
+  "authorName": "Jane Doe",
+  "authorUrl": "#",
+  "authorImage": {
+    "_include": "/core/image/Image.json"
+  },
+  "date": "2019-04-11T08:35:03-0700",
+  "body": {
+    "_include": "/_group/RichText.json",
+    "_key": 0
+  },
+  "anchor": "#",
+  "actions": {
+    "_include": "/core/action-bar/ActionBar.json"
+  },
+  "_hidden": true
+}

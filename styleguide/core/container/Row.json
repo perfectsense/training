@@ -1,8 +1,0 @@
-{
-  "_template": "Row.hbs",
-  "columns": {
-    "_include": "/_group/ContainerColumnOptions.json",
-    "_key": 0
-  },
-  "_hidden": false
-}

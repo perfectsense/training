@@ -1,0 +1,16 @@
+.FooterNavigationItem {
+  margin-bottom: -@grid-gap;
+
+  a {
+    &:extend(.label-4 all);
+
+    color: var(--primaryTextColorInverse);
+    display: block;
+    margin-bottom: @grid-gap;
+    word-break: keep-all;
+
+    &:hover {
+      color: var(--secondaryColor2);
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{{#if authorName}}
+    <div class="{{#if className}}{{className}}{{else}}CreativeWorkPage{{/if}}-authorInfo">
+        {{#resize authorImage "squareSmall"}}
+            <div class="{{#if ../className}}{{../className}}{{else}}CreativeWorkPage{{/if}}-authorInfo-image">
+                {{#with ../authorUrl}}<a aria-label="{{../../authorName}}" href="{{this}}">{{/with}}
+                <img alt="{{../../authorName}}" src="{{src}}"
+                    {{~#with srcset}} srcset="{{this}}"{{/with~}}
+                    {{~#with width}} width="{{this}}"{{/with~}}
+                    {{~#with height}} height="{{this}}"{{/with~}}
+                >
+                {{#with ../authorUrl}}</a>{{/with}}
+            </div>
+        {{/resize}}
+
+        <div class="{{#if className}}{{className}}{{else}}CreativeWorkPage{{/if}}-authorInfo-bio">
+            {{#with authorName}}
+                <div class="{{#if ../className}}{{../className}}{{else}}CreativeWorkPage{{/if}}-authorInfo-bio-name">
+                    {{#with ../authorUrl}}<a href="{{this}}" aria-label="{{../authorName}}">{{/with}}{{~this~}}{{#with ../authorUrl}}</a>{{/with}}
+                </div>
+            {{/with}}
+            <div class="{{#if className}}{{className}}{{else}}CreativeWorkPage{{/if}}-authorInfo-bio-content">
+                {{#with authorBiography}}
+                    {{this}}
+                {{/with}}
+            </div>
+        </div>
+    </div>
+{{/if}}

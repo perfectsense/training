@@ -1,0 +1,19 @@
+
+    <div
+        class="YouTubeVideoPlayer"
+        data-video-player
+        data-player-id="{{playerId}}"
+        data-video-id="{{videoId}}"
+        data-video-title="{{videoTitle}}"
+        {{~#if muted}} data-muted{{/if~}}
+        {{~#if autoplay}} data-autoplay{{/if~}}
+    >
+        <amp-youtube data-block-on-consent
+                data-videoid="{{videoId}}"
+                layout="fixed"
+                {{~#with autoplay}} autoplay='1' {{/with~}}
+                width="{{~#with width}}{{this}}{{else}}400{{/with~}}"
+                height="{{~#with height}}{{this}}{{else}}300{{/with~}}"
+        ></amp-youtube>
+
+    </div>

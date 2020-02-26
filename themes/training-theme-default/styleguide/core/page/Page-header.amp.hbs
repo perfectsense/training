@@ -1,0 +1,72 @@
+<!-- Putting icons here, so we don't have to include in a bunch of -body hbs's -->
+{{include "/core/page/Page-icons.amp.hbs" this}}
+<header class="Page-header">
+    <amp-sidebar id="Page-header-hamburger-menu" class="Page-header-hamburger-menu" layout="nodisplay" side="left">
+        <div class="Page-header-hamburger-menu-wrapper">
+            <div class="Page-header-hamburger-menu-content">
+                {{#with navigation}}
+                    {{this}}
+                {{/with}}
+                {{#with navigationModules}}{{this}}{{/with}}
+                {{#with disclaimer}}
+                    <div class="Page-header-disclaimer">{{this}}</div>
+                {{/with}}
+            </div>
+        </div>
+    </amp-sidebar>
+
+    {{#with logo}}
+        {{#set imageSize='siteLogo'}}
+            <div class="Page-header-logo">{{this}}</div>
+        {{/set}}
+    {{/with}}
+
+    <div class="Page-header-bar">
+        <button class="Page-header-menu-trigger" on="tap:Page-header-hamburger-menu.toggle" aria-expanded="false" tabindex="1">
+            <svg class="burger-menu">
+                <use xlink:href="#burger-menu"></use>
+            </svg>
+            <svg class="close-x">
+                <use xlink:href="#close-x"></use>
+            </svg>
+            <span class="label">{{#with navigationToggle}}{{this}}{{else}}{{format "/core/page/Page" "menuLabel"}}{{/with}}</span>
+        </button>
+
+        {{#with quickLinks}}
+            <ul class="Page-header-quickLinks">
+                {{#each this}}
+                    <li class="Page-header-quickLinks-item">{{this}}</li>
+                {{/each}}
+            </ul>
+        {{/with}}
+
+        {{#with logo}}
+            {{#set imageSize='siteLogo'}}
+                <div class="Page-header-bar-logo">{{this}}</div>
+            {{/set}}
+        {{/with}}
+
+        <div class="Page-header-end">
+            {{#if searchAction}}
+                <button class="Page-header-search-button" on="tap:SearchOverlay.toggleVisibility,AMP.setState({searchVisible: !searchVisible})">
+                    <svg [class]="searchVisible ? 'icon-magnify  icon-hide' : 'icon-magnify icon-show'" class="icon-magnify icon-show">
+                        <use xlink:href="#icon-magnify"></use>
+                    </svg>
+                    <span class="sr-only">{{format "/core/page/Page" "searchButtonLabel"}}</span>
+                    <svg [class]="searchVisible ? 'close-x icon-show' : 'close-x icon-hide'" class="close-x icon-hide">
+                        <use xlink:href="#close-x"></use>
+                    </svg>
+                </button>
+
+                    <div class="Page-header-search-overlay" id="SearchOverlay" hidden>
+                        <form class="Page-header-search-form" action="{{searchAction}}#nt=navsearch" target="_top">
+                            <label><input placeholder="{{format "/core/page/Page" "searchInputPlaceholder"}}" type="text" class="Page-header-search-input" name="q" required="true"><span class="sr-only">{{format "/core/page/Page" "searchInputLabel"}}</span></label>
+                            <button type="submit" class="Page-header-search-submit"><svg><use xlink:href="#icon-magnify"></use></svg><span class="sr-only">{{format "/core/page/Page" "searchSubmitLabel"}}</span></button>
+                        </form>
+                    </div>
+            {{/if}}
+        </div>
+    </div>
+</header>
+
+{{include "/core/page/Page-banner.hbs" this}}

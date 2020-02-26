@@ -1,0 +1,8 @@
+[
+  {
+    "_include": "/comscore/ComScoreScript.json"
+  },
+  {
+    "_include": "/google-analytics/GoogleAnalyticsScript.json"
+  }
+]

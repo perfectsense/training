@@ -1,0 +1,11 @@
+{{#if items}}
+    <ps-carousel class="ListF"{{include "/core/list/List-attributes.hbs" this}}>
+        <div class="ListF-slides">
+            {{#each items}}
+                <div class="ListF-slide">
+                    {{include "/core/promo/PromoA.hbs" this date=null}}
+                </div>
+            {{/each}}
+        </div>
+    </ps-carousel>
+{{else}}{{~noResultsModule~}}{{/if}}

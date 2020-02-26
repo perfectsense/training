@@ -1,6 +1,6 @@
 {
   "_wrapper": false,
-  "_hidden": false,
+  "_hidden": true,
   "_include": "/core/page/CreativeWorkPage.json",
   "_template": "ArticlePage.hbs",
   "lead": {
@@ -9,7 +9,7 @@
   },
   "articleBody": {
     "_include": "/_group/ArticleBodies.json",
-    "_key": 0
+    "_key": 1
   },
-  "updatesCorrections": "{{html('This is an <strong>update</strong> to the original story.')}}"
+  "updatesCorrections": "This is an update to the original story."
 }

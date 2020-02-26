@@ -1,0 +1,10 @@
+plugins {
+    id 'com.github.node-gradle.node'
+    id 'com.github.node-gradle.gulp'
+}
+
+description = 'Training: Theme - default'
+
+System.properties.put('theme.training-theme-default.cdnCssFiles', '/styleguide/All.min.css')
+
+apply from: "https://artifactory.psdops.com/psddev-releases/com/psddev/brightspot-gradle-plugins/express-theme/${brightspotGradlePluginVersion}/express-theme.gradle"

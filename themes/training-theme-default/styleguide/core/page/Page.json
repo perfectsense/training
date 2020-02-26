@@ -1,0 +1,172 @@
+{
+    "_wrapper": false,
+    "_template": "/core/page/Page.hbs",
+    "_hidden": true,
+    "_exampleOnly": true,
+
+    "language": "",
+    "charset": "",
+    "firstScripts": [],
+
+    "extraScripts": [
+      {
+        "_include": "/dfp/GoogleDfpScript.json"
+      }
+    ],
+    "extraLinks": [
+      {
+        "_include": "/core/page/LinkElement.json"
+      }
+    ],
+
+    "viewport": "width=device-width, initial-scale=1",
+    "title": "Brightspot Styleguide Falcon Theme",
+    "description": "Perfect Sense Brightspot Styleguide Falcon Theme",
+    "keywords": "Perfect Sense, Brightspot, Styleguide, Falcon Theme",
+    "canonicalLink": "http://www.brightspot.com/",
+
+    "meta": [
+      {
+        "_include": "/core/page/MetaElement.json"
+      }
+    ],
+
+    "feedLink": "{{html('<link type=\"application/rss+xml\" rel=\"alternate\" title=\"Brightspot Express\" href=\"http://www.brightspot.com/feed.rss\">')}}",
+
+    "jsonLinkedData": "{{html('{ \"@type\": \"WebPage\" }')}}",
+
+    "manifestLink": "/manifest.json",
+
+    "favicons": null,
+
+    "quickLinks": [
+      {
+        "_include": "/core/link/Link.json",
+        "_repeat": 6,
+
+        "body": "{{words(1)}}"
+      }
+    ],
+
+    "extraBodyAttributes": null,
+
+    "extraBodyItems": null,
+
+    "hat": null,
+
+    "actions": {
+      "_template" : "/core/action-bar/ActionBar.hbs",
+      "items": [
+        {
+          "_include": "/facebook/FacebookShareButton.json"
+        },
+        {
+          "_include": "/twitter/intent/TwitterTweetButton.json"
+        },
+        {
+          "_include": "/linkedin/LinkedInShareButton.json"
+        },
+        {
+          "_include": "/pinterest/PinterestShareButton.json"
+        },
+        {
+            "_include": "/tumblr/TumblrShareButton.json"
+        },
+        {
+          "_include": "/core/link/MailToLink.json"
+        }
+      ]
+    },
+
+    "logo": {
+      "_include": "/core/page/PageLogo.json",
+      "image": {
+        "_image": true,
+        "src": "/styleguide/assets/falcon-black.svg"
+      }
+    },
+
+    "footerLogo": {
+      "_include": "/core/page/PageLogo.json",
+      "image": {
+        "_image": true,
+        "src": "/styleguide/assets/falcon-inverse.png"
+      }
+    },
+
+    "banner": null,
+
+    "navigation": {
+      "_template": "/core/navigation/Navigation.hbs",
+      "items": [
+        {
+          "_template": "/core/navigation/NavigationItem.hbs",
+          "_repeat": 2,
+
+          "text": "{{words(1)}}",
+          "href": "{{var('exampleSiteUrl')}}",
+          "target": "_self"
+        },
+        {
+          "_template": "/core/navigation/NavigationItem.hbs",
+
+          "text": "{{words(1)}}",
+          "href": "{{var('exampleSiteUrl')}}",
+          "items": [
+            {
+              "_include": "/core/navigation/NavigationLink.json",
+              "_repeat": [10, 15]
+            }
+          ]
+        },
+        {
+          "_template": "/core/navigation/NavigationItem.hbs",
+          "_repeat": [10, 15],
+
+          "text": "{{words(1)}}",
+          "items": [
+            {
+              "_include": "/core/navigation/NavigationLink.json",
+              "_repeat": [10, 15]
+            }
+          ]
+        }
+      ]
+    },
+
+    "social": {
+        "_include": "/core/social/SocialBar.json"
+    },
+
+    "todayDate": "Friday, Oct 5, 2018",
+
+    "sectionNavigation": null,
+
+    "searchAction": "Search-Results.html",
+
+    "above": null,
+
+    "pageHeading": "Brightspot Styleguide DK",
+
+    "pageLead": null,
+
+    "pageSubHeading": null,
+
+    "main": null,
+
+    "aside": null,
+
+    "below": null,
+
+    "footerNavigation": {
+        "_include": "/core/navigation/FooterNavigation.json"
+    },
+
+    "disclaimer": "{{html('&copy; 2019 Perfect Sense. Site powered by the <a href=\"http://www.brightspot.com/\">Brightspot</a> publishing platform.')}}",
+
+    "contentId": null,
+
+    "ampIntegrations": null,
+
+    "ampAnalytics": null
+}
