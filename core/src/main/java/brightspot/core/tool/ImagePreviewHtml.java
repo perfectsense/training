@@ -3,6 +3,7 @@ package brightspot.core.tool;
 import java.io.StringWriter;
 import java.util.Optional;
 
+import brightspot.core.image.Image;
 import brightspot.core.image.ImageOption;
 import com.psddev.cms.db.ImageTag;
 import com.psddev.dari.util.HtmlWriter;
@@ -10,17 +11,27 @@ import com.psddev.dari.util.StorageItem;
 
 public interface ImagePreviewHtml {
 
+    default String writePreviewImageHtml(Image image) {
+        return Optional.ofNullable(image)
+                .map(Image::getFile)
+                .map(this::writePreviewImageHtml)
+                .orElse(null);
+    }
+
+    default String writePreviewImageHtml(ImageOption image) {
+        return Optional.ofNullable(image)
+                .map(ImageOption::getImageOptionFile)
+                .map(this::writePreviewImageHtml)
+                .orElse(null);
+    }
+
     /**
      * Returns CMS UI HTML markup for the image fallback when it's not explicitly published in the object field. Used
      * for dynamic ToolUi.NoteHtml.
      *
      * @return CMS UI HTML
      */
-    default String writePreviewImageHtml(ImageOption image) {
-
-        StorageItem file = Optional.ofNullable(image)
-            .map(ImageOption::getImageOptionFile)
-            .orElse(null);
+    default String writePreviewImageHtml(StorageItem file) {
 
         if (file == null) {
             return "<span></span>";
