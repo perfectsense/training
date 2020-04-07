@@ -10,5 +10,8 @@
   "featuredMovies": {
     "_include": "/core/list/List.json"
   },
+  "countdowns": {
+    "_include": "/countdown/CountdownModule.json"
+  },
   "_hidden": false
 }

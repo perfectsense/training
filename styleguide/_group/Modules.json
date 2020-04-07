@@ -49,5 +49,8 @@
   },
   {
     "_include": "/dfp/GoogleDfpAdModule.json"
+  },
+  {
+    "_include": "/countdown/CountdownModule.json"
   }
 ]
