@@ -2,7 +2,10 @@ package bex.training.character;
 
 import java.util.Collections;
 import java.util.List;
+import java.util.stream.Collectors;
 
+import bex.training.countdown.Countdown;
+import bex.training.countdown.CountdownModule;
 import bex.training.movie.Movie;
 import brightspot.core.page.AbstractContentPageViewModel;
 import brightspot.core.tool.RichTextUtils;
@@ -53,7 +56,18 @@ public class CharacterPageViewModel extends AbstractContentPageViewModel<Charact
 
     @Override
     public Iterable<? extends CharacterPageViewCountdownsField> getCountdowns() {
-        return null;  // TODO fill this in later
+        return createViews(CharacterPageViewCountdownsField.class,
+                Query.from(Countdown.class)
+                        .where("villains = ?", model)
+                        .select(0, 10)
+                        .getItems()
+                        .stream()
+                        .map(countdown -> {
+                            CountdownModule module = new CountdownModule();
+                            module.setCountdown(countdown);
+                            return module;
+                        })
+                        .collect(Collectors.toList()));
     }
 
     @Override
