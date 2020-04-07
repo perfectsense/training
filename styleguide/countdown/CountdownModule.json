@@ -1,0 +1,13 @@
+{
+  "_template": "CountdownModule.hbs",
+
+  "title": "",
+  "description": "",
+  "image": {
+    "_include": "/core/image/Image.json"
+  },
+  "endDate": 0,
+  "villains": {
+    "_include": "/core/promo/Promo.json"
+  }
+}
