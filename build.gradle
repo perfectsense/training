@@ -5,7 +5,9 @@ plugins {
     id 'com.github.node-gradle.node' version '1.3.0'
 }
 
-ext.brightspotGradlePluginVersion = '4.1.2'
+ext.brightspotGradlePluginVersion = '4.1.7'
+ext.brightspotVersion = '4.1.14'
+ext.componentLibVersion = '4.1.179'
 
 allprojects {
     group = 'com.training'
@@ -42,8 +44,8 @@ subprojects {
 
     dependencies {
 
-        implementation enforcedPlatform('com.psddev:brightspot-bom:4.1.12.3')
-        implementation enforcedPlatform('com.psddev.component-lib:bom:4.1.142-rc2')
+        implementation enforcedPlatform("com.psddev:brightspot-bom:${brightspotVersion}")
+        implementation enforcedPlatform("com.psddev.component-lib:bom:${componentLibVersion}")
 
         api enforcedPlatform('org.junit:junit-bom:5.4.2')
 

@@ -1,4 +1,4 @@
-dist: trusty
+dist: xenial
 
 language: java
 
@@ -7,24 +7,24 @@ branches:
     - develop
     - master
     - /^release\/.*$/
+    - /^v\d+\.\d+(\.\d+)?(-\S*)?$/
+    - feature/improve-ci
 
 jdk:
-  - oraclejdk8
+  - openjdk8
 
 install: true
-
-env:
-   global:
-     - DEPLOY_SOURCE_DIR=$TRAVIS_BUILD_DIR/site/build/libs
-
-before_script:
-  - chmod +x build.sh
 
 script:
   - ./build.sh
 
+before_cache:
+  - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
+  - rm -fr $HOME/.gradle/caches/*/plugin-resolution/
+
 cache:
   directories:
-    - $HOME/.m2
+    - $HOME/.gradle/caches/
+    - $HOME/.gradle/wrapper/
     - node
-    - node_modules
+    - themes/training-theme-default/node_modules
