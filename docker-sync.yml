@@ -1,5 +1,0 @@
-version: '2'
-syncs:
-  training-sync:
-    src: ./
-    sync_excludes: ['node_modules', '.idea', '.git', '.gradle']

@@ -80,6 +80,14 @@ Included with the project is the Brightspot `Dockerfile` and
 configuration needed to run the Brightspot CMS out of the box for the example
 Marvel Cinematic Universe site.
 
+```console
+docker-compose up -d # create the Brightspot Docker Container
+docker-compose logs -f # tail the log
+docker-compose stop # stop the Brightspot Docker Container
+docker-compose start # start the Brightspot Docker Container
+docker-compose down -v # permanently destroy the Brightspot Docker Container and all data
+```
+
 Further instructions and tips can be found at the [Brightspot docker container site](https://hub.docker.com/r/brightspot/brightspot).
 
 ## Accessing the CMS

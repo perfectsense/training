@@ -15,3 +15,5 @@ RUN service mysql start \
     && gunzip -c /servers/brightspot/sql.gz | mysql brightspot \
     && service mysql stop
 RUN rm /servers/brightspot/sql.gz
+
+RUN ln -sf /code/site/build/libs/training-site-1.0.0-SNAPSHOT.war /servers/brightspot/webapps/ROOT.war
