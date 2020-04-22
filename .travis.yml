@@ -27,4 +27,5 @@ cache:
     - $HOME/.gradle/caches/
     - $HOME/.gradle/wrapper/
     - node
+    - node_modules
     - themes/training-theme-default/node_modules
