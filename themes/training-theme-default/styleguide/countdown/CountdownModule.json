@@ -6,7 +6,7 @@
   "image": {
     "_include": "/core/image/Image.json"
   },
-  "endDate": 0,
+  "endDate": 1688777762482,
   "villains": [
     {
       "_include": "/core/promo/PromoA.json"

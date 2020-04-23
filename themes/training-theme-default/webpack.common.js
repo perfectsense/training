@@ -40,6 +40,10 @@ module.exports = {
       ),
       banner: path.join(__dirname, './styleguide/core/banner/Banner.js'),
       carousel: path.join(__dirname, './styleguide/core/carousel/Carousel.js'),
+      countdownModule: path.join(
+        __dirname,
+        './styleguide/countdown/CountdownModule.js'
+      ),
       talkCustom: path.join(
         __dirname,
         './styleguide/community/commenting/TalkCustom.js'

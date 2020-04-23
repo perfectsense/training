@@ -1,4 +1,4 @@
-<div class="CountdownModule">
+<ps-countdown-module class="CountdownModule">
     {{#with title}}
         <div class="CountdownModule-title">
             {{this}}
@@ -15,7 +15,7 @@
         </div>
     {{/with}}
     {{#with endDate}}
-        <div class="CountdownModule-countdown" data-end-date="{{this}}"></div>
+        <div class="CountdownModule-countdown" data-end-date="{{this}}"><span class="CountdownModule-countdown-days"></span>&nbsp;{{format "countdownText"}}</div>
     {{/with}}
     {{#with villains}}
         <div class="CountdownModule-villains">
@@ -26,4 +26,4 @@
             {{/each}}
         </div>
     {{/with}}
-</div>
+</ps-countdown-module>
