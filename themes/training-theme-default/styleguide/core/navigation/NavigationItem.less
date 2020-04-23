@@ -1,5 +1,5 @@
 .NavigationItem {
-  padding: 0 50px 0 @grid-gap;
+  padding: 0 50px 0 @gap;
   position: relative;
 
   &-items-placeholder {
@@ -8,7 +8,7 @@
 
   &-more {
     cursor: pointer;
-    padding: (@grid-gap / 2) @grid-gap;
+    padding: (@gap / 2) @gap;
     position: absolute;
     right: 0;
     top: 0;
@@ -34,7 +34,7 @@
 
   &-items {
     display: none;
-    padding: (@grid-gap / 2) 0 (@grid-gap / 2) (@grid-gap / 2);
+    padding: (@gap / 2) 0 (@gap / 2) (@gap / 2);
 
     [data-item-click='true'] & {
       display: block;
@@ -52,7 +52,7 @@
     a,
     span {
       display: block;
-      padding: (@grid-gap / 1.5) 0;
+      padding: (@gap / 1.5) 0;
       width: 100%;
     }
   }
@@ -63,7 +63,7 @@
 
     color: var(--primaryTextColor);
     display: block;
-    padding: (@grid-gap / 2) 0;
+    padding: (@gap / 2) 0;
     width: 100%;
 
     &:hover {
@@ -73,8 +73,8 @@
 
   @media @mq-viewport-lg {
     cursor: pointer;
-    margin: 0 (@grid-gap / 2);
-    padding-left: (@grid-gap / 2);
+    margin: 0 (@gap / 2);
+    padding-left: (@gap / 2);
 
     &[data-item-hover='true'] {
       background-color: var(--secondaryColor4);
@@ -129,12 +129,12 @@
       width: 0;
       word-break: keep-all;
       overflow: hidden;
-      padding: @grid-gap (@grid-gap / 2);
+      padding: @gap (@gap / 2);
       visibility: hidden;
 
       .NavigationLink {
         color: var(--primaryTextColor);
-        padding: 15px (@grid-gap / 2);
+        padding: 15px (@gap / 2);
 
         &:hover {
           background-color: var(--secondaryColor4);

@@ -1,13 +1,13 @@
 .Quote {
-  margin: (@grid-gap * 2) 0;
-  padding: (@grid-gap / 2) 0 0 0;
+  margin: (@gap * 2) 0;
+  padding: (@gap / 2) 0 0 0;
   position: relative;
   width: 100%;
 
   blockquote {
     &:extend(.quote-1 all);
 
-    margin: @grid-gap 0 (@grid-gap / 2);
+    margin: @gap 0 (@gap / 2);
     text-align: center;
 
     &:before {
@@ -34,7 +34,7 @@
     }
 
     blockquote {
-      margin-bottom: @grid-gap;
+      margin-bottom: @gap;
     }
   }
 }

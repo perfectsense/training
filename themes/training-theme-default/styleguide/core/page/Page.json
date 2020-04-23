@@ -19,7 +19,7 @@
       }
     ],
 
-    "viewport": "width=device-width, initial-scale=1",
+    "viewport": "width=device-width, initial-scale=1, minimum-scale=1",
     "title": "Brightspot Styleguide Falcon Theme",
     "description": "Perfect Sense Brightspot Styleguide Falcon Theme",
     "keywords": "Perfect Sense, Brightspot, Styleguide, Falcon Theme",

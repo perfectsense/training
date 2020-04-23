@@ -2,10 +2,10 @@
 
 .Container {
   border-bottom: 1px solid var(--gridBorderColor);
-  margin: 0 auto @grid-gap;
+  margin: 0 auto @gap;
   max-width: @content-width;
-  padding-left: @grid-gap;
-  padding-right: @grid-gap;
+  padding-left: @gap;
+  padding-right: @gap;
   width: 100%;
 
   &:last-of-type {
@@ -28,27 +28,27 @@
   }
 
   &-column {
-    padding: 0 @grid-gap;
+    padding: 0 @gap;
 
     & > * {
       &:not(:last-child) {
-        padding-bottom: (@grid-gap * 2);
+        padding-bottom: (@gap * 2);
       }
     }
   }
 
   &-row {
-    margin: 0 -@grid-gap;
+    margin: 0 -@gap;
   }
 
   @media @mq-viewport-md {
     .ListLoadMore,
     .ListA {
-      padding-bottom: @grid-gap * 2;
+      padding-bottom: @gap * 2;
     }
 
     .TwoColumnContainer5050 {
-      padding-bottom: @grid-gap * 2;
+      padding-bottom: @gap * 2;
     }
   }
 
@@ -64,7 +64,7 @@
       background: var(--secondaryColor2);
       display: flex;
       height: 200px;
-      padding: @grid-gap;
+      padding: @gap;
       justify-content: center;
       width: 100%;
     }

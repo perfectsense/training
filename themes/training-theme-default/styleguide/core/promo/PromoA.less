@@ -4,16 +4,16 @@
   display: flex;
 
   &-category {
-    margin-bottom: (@grid-gap / 2);
+    margin-bottom: (@gap / 2);
   }
 
   &-date {
-    margin-top: (@grid-gap / 2);
+    margin-top: (@gap / 2);
   }
 
   &-media {
     flex-shrink: 0;
-    margin: 0 @grid-gap 0 0;
+    margin: 0 @gap 0 0;
     max-width: 180px;
     order: 1;
     width: 36%;
@@ -23,7 +23,7 @@
     }
 
     [data-image-align='right'] & {
-      margin: 0 0 0 @grid-gap;
+      margin: 0 0 0 @gap;
       order: 2;
     }
   }

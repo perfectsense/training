@@ -1341,15 +1341,15 @@ babel-eslint@6.1.2:
     lodash.assign "^4.0.0"
     lodash.pickby "^4.0.0"
 
-babel-eslint@^7.2.1:
-  version "7.2.3"
-  resolved "https://artifactory.psdops.com/api/npm/npm/babel-eslint/-/babel-eslint-7.2.3.tgz#b2fe2d80126470f5c19442dc757253a897710827"
-  integrity sha1-sv4tgBJkcPXBlELcdXJTqJdxCCc=
+babel-eslint@7.2.1:
+  version "7.2.1"
+  resolved "https://artifactory.psdops.com/api/npm/npm/babel-eslint/-/babel-eslint-7.2.1.tgz#079422eb73ba811e3ca0865ce87af29327f8c52f"
+  integrity sha1-B5Qi63O6gR48oIZc6Hrykyf4xS8=
   dependencies:
     babel-code-frame "^6.22.0"
     babel-traverse "^6.23.1"
     babel-types "^6.23.0"
-    babylon "^6.17.0"
+    babylon "^6.16.1"
 
 babel-generator@^6.26.0:
   version "6.26.1"
@@ -1489,7 +1489,7 @@ babel-types@^6.0.19, babel-types@^6.23.0, babel-types@^6.24.1, babel-types@^6.26
     lodash "^4.17.4"
     to-fast-properties "^1.0.3"
 
-babylon@^6.0.18, babylon@^6.17.0, babylon@^6.18.0:
+babylon@^6.0.18, babylon@^6.16.1, babylon@^6.18.0:
   version "6.18.0"
   resolved "https://artifactory.psdops.com/api/npm/npm/babylon/-/babylon-6.18.0.tgz#af2f3b88fa6f5c1e4c634d1a0f8eac4f55b395e3"
   integrity sha1-ry87iPpvXB5MY00aD46sT1WzleM=
@@ -1662,10 +1662,10 @@ braces@^2.3.1, braces@^2.3.2:
     split-string "^3.0.2"
     to-regex "^3.0.1"
 
-brightspot-styleguide@4.1.14:
-  version "4.1.14"
-  resolved "https://artifactory.psdops.com/api/npm/npm/brightspot-styleguide/-/brightspot-styleguide-4.1.14.tgz#a395fa995a60cde5390400cb98460ff83f5a6d19"
-  integrity sha1-o5X6mVpgzeU5BADLmEYP+D9abRk=
+brightspot-styleguide@4.1.778-x0f76cf:
+  version "4.1.778-x0f76cf"
+  resolved "https://artifactory.psdops.com/api/npm/npm/brightspot-styleguide/-/brightspot-styleguide-v4.1.778-x0f76cf.tgz#73e992d10479205b5d15c60d2da8e39eea1e0814"
+  integrity sha1-c+mS0QR5IFtdFcYNLajjnuoeCBQ=
   dependencies:
     babel-eslint "6.1.2"
     body-parser "1.18.3"

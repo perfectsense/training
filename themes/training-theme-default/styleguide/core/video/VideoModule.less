@@ -19,7 +19,7 @@
   }
 
   &-cta {
-    padding-top: @grid-gap;
+    padding-top: @gap;
 
     a {
       &:extend(.Button all);
@@ -33,12 +33,12 @@
   }
 
   &-playlist {
-    padding-top: @grid-gap;
+    padding-top: @gap;
 
     &-item {
       border-bottom: 1px solid var(--secondaryColor3);
       display: none;
-      padding: @grid-gap 0;
+      padding: @gap 0;
 
       &:nth-of-type(1),
       &:nth-of-type(2),
@@ -58,26 +58,26 @@
       display: block;
 
       &-media {
-        margin: 0 0 @grid-gap;
+        margin: 0 0 @gap;
         width: 100%;
       }
     }
 
     &-cta {
       border-top: 1px solid var(--secondaryColor3);
-      margin-top: @grid-gap;
+      margin-top: @gap;
     }
 
     &-playlist {
       display: flex;
-      margin: 0 -@grid-gap;
+      margin: 0 -@gap;
       width: calc(~'100% + 20px');
 
       &-item {
         border-bottom: 0;
         border-right: 1px solid var(--secondaryColor3);
         flex-shrink: 0;
-        padding: 0 @grid-gap;
+        padding: 0 @gap;
         width: 25%;
 
         &:last-of-type {
@@ -94,7 +94,7 @@
       display: flex;
 
       &-media {
-        margin: 0 @grid-gap 0 0;
+        margin: 0 @gap 0 0;
         width: 36%;
       }
     }
@@ -118,7 +118,7 @@
     }
 
     &-cta {
-      padding-bottom: @grid-gap;
+      padding-bottom: @gap;
     }
 
     &-player {
@@ -137,7 +137,7 @@
         border-right: 0;
         display: block;
         flex-shrink: 0;
-        padding: @grid-gap;
+        padding: @gap;
         width: 100%;
 
         &:last-of-type {

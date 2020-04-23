@@ -1,7 +1,7 @@
 .Enhancement {
   // just in case people put two aligned enhancements next to each other
   clear: both;
-  margin: (@grid-gap * 1.5) 0;
+  margin: (@gap * 1.5) 0;
   width: 100%;
 
   // ----- We will write some custom rules for enhancements here as they get custom widths -----
@@ -9,7 +9,7 @@
   .Figure,
   .Carousel,
   .VideoEnhancement {
-    margin: 0 -@grid-gap;
+    margin: 0 -@gap;
   }
 
   // center aligning for all social embeds
@@ -30,7 +30,7 @@
     &[data-align-left] {
       float: left;
       margin-top: 0;
-      margin-right: (@grid-gap * 2);
+      margin-right: (@gap * 2);
       width: 50%;
 
       .Carousel,
@@ -51,7 +51,7 @@
     &[data-align-right] {
       float: right;
       margin-top: 0;
-      margin-left: (@grid-gap * 2);
+      margin-left: (@gap * 2);
       width: 50%;
 
       .Carousel,

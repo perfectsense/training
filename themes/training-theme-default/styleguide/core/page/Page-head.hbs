@@ -12,7 +12,7 @@
 
     {{include "/core/page/Page-extraStyles.hbs" this}}
 
-    <meta name="viewport" content="{{#with viewport}}{{this}}{{else}}width=device-width, initial-scale=1, maximum-scale=5{{/with}}">
+    <meta name="viewport" content="{{#with viewport}}{{this}}{{else}}width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=5{{/with}}">
 
     {{~#with title}}<title>{{this}}</title>{{/with~}}
     {{~#with description}}<meta name="description" content="{{this}}">{{/with~}}

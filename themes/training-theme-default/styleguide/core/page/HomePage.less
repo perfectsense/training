@@ -2,22 +2,22 @@
 
 .HomePage {
   &-main {
-    margin-top: @grid-gap;
+    margin-top: @gap;
 
     // Ads inside of Containers or Asides get spaced out via those container styles
     // here we need to apply spacing to the ads that might be placed without containers
     // directly into the page
     > .GoogleDfpAd {
-      padding-bottom: @grid-gap;
-      padding-top: @grid-gap;
+      padding-bottom: @gap;
+      padding-top: @gap;
     }
 
     > .RichTextModule {
-      padding-bottom: @grid-gap;
+      padding-bottom: @gap;
     }
 
     & > * {
-      padding-bottom: @grid-gap * 2;
+      padding-bottom: @gap * 2;
     }
   }
 
