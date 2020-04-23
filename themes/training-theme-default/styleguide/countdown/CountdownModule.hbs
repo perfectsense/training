@@ -1,0 +1,29 @@
+<div class="CountdownModule">
+    {{#with title}}
+        <div class="CountdownModule-title">
+            {{this}}
+        </div>
+    {{/with}}
+    {{#with description}}
+        <div class="CountdownModule-description">
+            {{this}}
+        </div>
+    {{/with}}
+    {{#with image}}
+        <div class="CountdownModule-image">
+            {{this}}
+        </div>
+    {{/with}}
+    {{#with endDate}}
+        <div class="CountdownModule-countdown" data-end-date="{{this}}"></div>
+    {{/with}}
+    {{#with villains}}
+        <div class="CountdownModule-villains">
+            {{#each this}}
+                <div class="CountdownModule-villains-villain">
+                    {{this}}
+                </div>
+            {{/each}}
+        </div>
+    {{/with}}
+</div>

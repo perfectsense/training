@@ -10,5 +10,8 @@
   "name": "Steve Rodgers",
   "featuredMovies": {
     "_include": "/core/list/ListA.json"
+  },
+  "countdowns": {
+    "_include": "/countdown/CountdownModule.json"
   }
 }
