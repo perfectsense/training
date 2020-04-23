@@ -5,19 +5,56 @@
         {{include "/core/page/Page-header.hbs" this}}
         {{include "/core/page/Page-above.hbs" this dataClick="above"}}
 
-        <div class="MoviePage-topContainer">
-                <div class="MoviePage-headingWrapper">
-                    {{#with pageHeading}}
-                        <div class="MoviePage-heading">
-                            <h1 class="MoviePage-pageHeading">{{this}}</h1>
+        <div class="MoviePage-content">
+            <div class="MoviePage-wrapper">
+                <main class="MoviePage-main">
+                    <article class="MoviePage-mainContent">
+
+                        <div class="MoviePage-intro">
+                            {{#with cover}}
+                                {{#set imageSize='squareMedium'}}
+                                    <div class="MoviePage-cover">{{this}}</div>
+                                {{/set}}
+                            {{/with}}
+
+                            <div class="MoviePage-info">
+                                {{#with name}}
+                                    <h1 class="MoviePage-name">{{this}}</h1>
+                                {{/with}}
+                                {{#with phase}}
+                                    <h2 class="MoviePage-phase">{{this}}</h2>
+                                {{/with}}
+                            </div>
+                        </div>
+
+                        {{#with summary}}
+                            <div class="MoviePage-summary RichTextBody">
+                                {{this}}
+                            </div>
+                        {{/with}}
+
+                        {{#with plot}}
+                            <div class="MoviePage-plot RichTextBody">
+                                {{this}}
+                            </div>
+                        {{/with}}
+
+                        {{#with releaseDate}}
+                            <div class="MoviePage-plot releaseDate">
+                                {{this}}
+                            </div>
+                        {{/with}}
+
+                    </article>
+
+                    {{#with featuredCharacters}}
+                        <div class="MoviePage-contentFooter">
+                            {{this}}
                         </div>
                     {{/with}}
-                </div>
+                </main>
             </div>
-
-        <main class="MoviePage-main">
-
-        </main>
+        </div>
 
         {{include "/core/page/Page-below.hbs" this dataClick="below"}}
         {{include "/core/page/Page-footer.hbs" this}}

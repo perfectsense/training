@@ -5,19 +5,44 @@
         {{include "/core/page/Page-header.hbs" this}}
         {{include "/core/page/Page-above.hbs" this dataClick="above"}}
 
-        <div class="CharacterPage-topContainer">
-                <div class="CharacterPage-headingWrapper">
-                    {{#with pageHeading}}
-                        <div class="CharacterPage-heading">
-                            <h1 class="CharacterPage-pageHeading">{{this}}</h1>
+        <div class="CharacterPage-content">
+            <div class="CharacterPage-wrapper">
+                <main class="CharacterPage-main">
+                    <article class="CharacterPage-mainContent">
+
+                        <div class="CharacterPage-intro">
+                            {{#with image}}
+                                {{#set imageSize='squareMedium'}}
+                                    <div class="CharacterPage-image">{{this}}</div>
+                                {{/set}}
+                            {{/with}}
+
+                            <div class="CharacterPage-info">
+                                {{#with name}}
+                                    <h1 class="CharacterPage-name">{{this}}</h1>
+                                {{/with}}
+                                {{#with alterEgo}}
+                                    <h2 class="CharacterPage-alterEgo">{{this}}</h2>
+                                {{/with}}
+                            </div>
+                        </div>
+
+                        {{#with biography}}
+                            <div class="CharacterPage-biography RichTextBody">
+                                {{this}}
+                            </div>
+                        {{/with}}
+
+                    </article>
+
+                    {{#with featuredMovies}}
+                        <div class="CharacterPage-contentFooter">
+                            {{this}}
                         </div>
                     {{/with}}
-                </div>
+                </main>
             </div>
-
-        <main class="CharacterPage-main">
-
-        </main>
+        </div>
 
         {{include "/core/page/Page-below.hbs" this dataClick="below"}}
         {{include "/core/page/Page-footer.hbs" this}}

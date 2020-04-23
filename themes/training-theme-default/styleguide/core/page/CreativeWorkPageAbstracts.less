@@ -144,6 +144,8 @@
   }
 
   &-contentFooter {
+    margin-top: @gap * 2;
+
     & > * {
       &:not(:last-child) {
         padding-bottom: @gap * 2;
@@ -196,7 +198,7 @@
     &-heading {
       .label-3;
       text-transform: uppercase;
-      padding-right: 10px; 
+      padding-right: 10px;
     }
 
     .Link {
@@ -343,6 +345,35 @@
     }
   }
 }
+
+/**
+ * CreativeWorkOneColumnLayout
+ */
+ .CreativeWorkPageOneColumnLayout {
+  &-content {
+    margin: 0 auto;
+    max-width: @content-width;
+    padding: (@gap * 2) @gap;
+  }
+
+  &-wrapper {
+    margin-top: @gap;
+  }
+
+  @media @mq-viewport-md {
+    &-wrapper {
+      margin-top: @gap;
+    }
+  }
+
+  @media @mq-viewport-hk {
+    &-content {
+      padding-left: 0;
+      padding-right: @gap;
+    }
+  }
+}
+
 
 /**
  * CreativeWorkTwoColumnLayout
