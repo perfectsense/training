@@ -24,14 +24,13 @@
                                 {{#with alterEgo}}
                                     <h2 class="CharacterPage-alterEgo">{{this}}</h2>
                                 {{/with}}
+                                {{#with biography}}
+                                    <div class="CharacterPage-biography RichTextBody">
+                                        {{this}}
+                                    </div>
+                                {{/with}}
                             </div>
                         </div>
-
-                        {{#with biography}}
-                            <div class="CharacterPage-biography RichTextBody">
-                                {{this}}
-                            </div>
-                        {{/with}}
 
                         {{#with countdowns}}
                             <div class="CharacterPage-countdowns">

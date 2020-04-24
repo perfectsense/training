@@ -1,8 +1,7 @@
 {
   "_template": "/countdown/CountdownModule.hbs",
 
-  "title": "Countdown Module Title",
-  "description": "Countdown Module Description",
+  "description": "Unless these villains are stopped:",
   "image": {
     "_include": "/core/image/Image.json"
   },

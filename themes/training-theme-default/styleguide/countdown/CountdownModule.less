@@ -1,3 +1,21 @@
 .CountdownModule {
-  background: red;
+  display: block;
+
+  &-countdown {
+    margin-bottom: @gap;
+  }
+
+  &-description {
+    margin-bottom: @gap;
+  }
+
+  &-villains {
+    &-villain {
+      margin-bottom: @gap;
+
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+    }
+  }
 }

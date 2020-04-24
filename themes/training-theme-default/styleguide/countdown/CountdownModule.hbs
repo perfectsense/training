@@ -1,21 +1,11 @@
 <ps-countdown-module class="CountdownModule">
-    {{#with title}}
-        <div class="CountdownModule-title">
-            {{this}}
-        </div>
+    {{#with endDate}}
+        <div class="CountdownModule-countdown" data-end-date="{{this}}"><span class="CountdownModule-countdown-days"></span>&nbsp;{{format "countdownText"}}</div>
     {{/with}}
     {{#with description}}
         <div class="CountdownModule-description">
             {{this}}
         </div>
-    {{/with}}
-    {{#with image}}
-        <div class="CountdownModule-image">
-            {{this}}
-        </div>
-    {{/with}}
-    {{#with endDate}}
-        <div class="CountdownModule-countdown" data-end-date="{{this}}"><span class="CountdownModule-countdown-days"></span>&nbsp;{{format "countdownText"}}</div>
     {{/with}}
     {{#with villains}}
         <div class="CountdownModule-villains">
