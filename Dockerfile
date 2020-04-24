@@ -1,4 +1,4 @@
-FROM brightspot/brightspot:latest
+FROM brightspot/brightspot:1.0
 
 # Restore storage into container. To back up (execute from project root):
 # docker-compose exec brightspot tar zcf $PWD/etc/data/storage.tar.gz -C /servers/brightspot/www/storage .
@@ -15,5 +15,3 @@ RUN service mysql start \
     && gunzip -c /servers/brightspot/sql.gz | mysql brightspot \
     && service mysql stop
 RUN rm /servers/brightspot/sql.gz
-
-RUN ln -sf /code/site/build/libs/training-site-1.0.0-SNAPSHOT.war /servers/brightspot/webapps/ROOT.war

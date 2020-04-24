@@ -10,6 +10,8 @@ services:
       - mysql-data:/var/lib/mysql
       - solr-data:/servers/solr/solr/collection1/data
       - storage-data:/servers/brightspot/www/storage
+    environment:
+      - ROOT_WAR=/code/site/build/libs/training-site-1.0.0-SNAPSHOT.war
 volumes:
   mysql-data:
   solr-data:
