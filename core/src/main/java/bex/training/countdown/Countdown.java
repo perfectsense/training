@@ -12,10 +12,12 @@ import com.psddev.cms.db.Content;
 import com.psddev.cms.db.ToolUi;
 import com.psddev.cms.tool.ContentEditWidgetDisplay;
 import com.psddev.cms.tool.content.UrlsWidget;
+import com.psddev.cms.view.ModelWrapper;
 import com.psddev.dari.db.State;
 
 public class Countdown extends Content implements
-        ContentEditWidgetDisplay {
+        ContentEditWidgetDisplay,
+        ModelWrapper {
 
     private static final List<String> HIDDEN_WIDGETS = Arrays.asList(
             UrlsWidget.class.getName());
@@ -82,6 +84,15 @@ public class Countdown extends Content implements
     @Override
     public boolean shouldDisplayContentEditWidget(String widgetName) {
         return !HIDDEN_WIDGETS.contains(widgetName);
+    }
+
+    // --- ModelWrapper implementation ---
+
+    @Override
+    public Object unwrap() {
+        CountdownModule module = new CountdownModule();
+        module.setCountdown(this);
+        return module;
     }
 
     // --- Record implementation ---
