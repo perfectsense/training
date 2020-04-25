@@ -1,6 +1,7 @@
 package bex.training.countdown;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 
@@ -9,9 +10,15 @@ import brightspot.core.image.Image;
 import brightspot.core.tool.SmallRichTextToolbar;
 import com.psddev.cms.db.Content;
 import com.psddev.cms.db.ToolUi;
+import com.psddev.cms.tool.ContentEditWidgetDisplay;
+import com.psddev.cms.tool.content.UrlsWidget;
 import com.psddev.dari.db.State;
 
-public class Countdown extends Content {
+public class Countdown extends Content implements
+        ContentEditWidgetDisplay {
+
+    private static final List<String> HIDDEN_WIDGETS = Arrays.asList(
+            UrlsWidget.class.getName());
 
     @Indexed
     @Required
@@ -68,6 +75,13 @@ public class Countdown extends Content {
 
     public void setVillains(List<Villain> villains) {
         this.villains = villains;
+    }
+
+    // --- ContentEditWidgetDisplay implementation ---
+
+    @Override
+    public boolean shouldDisplayContentEditWidget(String widgetName) {
+        return !HIDDEN_WIDGETS.contains(widgetName);
     }
 
     // --- Record implementation ---
