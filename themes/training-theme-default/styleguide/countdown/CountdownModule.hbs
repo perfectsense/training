@@ -1,4 +1,9 @@
 <ps-countdown-module class="CountdownModule">
+    {{#with image}}
+        {{#set imageSize='countdownBanner'}}
+            <div class="CountdownModule-image">{{this}}</div>
+        {{/set}}
+    {{/with}}
     {{#with endDate}}
         <div class="CountdownModule-countdown" data-end-date="{{this}}"><span class="CountdownModule-countdown-days"></span>&nbsp;{{format "countdownText"}}</div>
     {{/with}}
