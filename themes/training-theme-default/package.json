@@ -1,6 +1,6 @@
 {
-  "name": "brightspot-theme-falcon",
-  "version": "1.0.0-SNAPSHOT",
+  "name": "training-theme-default",
+  "version": "4.1.8",
   "private": true,
   "devDependencies": {
     "autoprefixer": "6.5.1",
@@ -10,7 +10,7 @@
     "@babel/preset-env": "7.1.6",
     "babel-eslint": "7.2.1",
     "babel-loader": "8.0.4",
-    "brightspot-styleguide": "4.1.778-x0f76cf",
+    "brightspot-styleguide": "4.1.14",
     "capitalize": "^1.0.0",
     "css-loader": "1.0.1",
     "cssnano": "4.1.10",
