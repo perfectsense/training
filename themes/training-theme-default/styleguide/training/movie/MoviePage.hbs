@@ -1,114 +1,62 @@
 <!DOCTYPE html>
-<html class="MoviePage" lang="{{#with language}}{{this}}{{else}}en{{/with}}" itemscope
-      itemtype="http://schema.org/WebPage">
+<html class="MoviePage" lang="{{#with language}}{{this}}{{else}}en{{/with}}">
 {{include "/core/page/Page-head.hbs" this}}
-    <body class="MoviePage-body" {{~#each extraBodyAttributes}} {{this}} {{~/each~}}
-    {{#if hidePromoDropShadow}} data-hide-promo-dropshadow{{/if}}
-    {{#if promoModuleAlignment}} data-promo-module-alignment="{{promoModuleAlignment}}"{{/if}}
-    {{#if boldMood}} data-mood-bold{{/if}}
-    {{#if inlineSubheading}} data-subheading-inline="{{inlineSubheading}}"{{/if}}
-    {{#if hideExternalLinkIcon}}data-hide-external-link-icon{{/if}}
-    {{#if hat}}data-show-hat{{/if}}
-    {{#if hideHeaderHat}}data-hide-header-hat{{/if}}
-    >
-        {{include "/core/page/Page-icons.hbs" this}}
-        {{#with hat}}
-            <div class="MoviePage-hat">{{this}}</div>
-        {{/with}}
+    <body class="Page-body" {{~#each extraBodyAttributes}} {{this}} {{~/each~}}>
         {{include "/core/page/Page-header.hbs" this}}
-        <div class="MoviePage-contentWrapper"
-             data-negative-margin={{#if negativeMargin}}"{{negativeMargin}}"{{else}}default{{/if}}>
-        {{include "/core/page/Page-sectionNavigation.hbs" this}}
-        {{#with above}}
-            <div class="MoviePage-above">{{this}}</div>
-        {{/with}}
-        <main class="MoviePage-main">
-            {{#with breadcrumbs}}
-                <div class="MoviePage-breadcrumbs">{{this}}</div>
-            {{/with}}
-            <div class="MoviePage-mainContent" itemscope itemtype="http://schema.org/Person"{{extraAttributes}}>
-                <div class="MoviePage-info">
-                    <div class="MoviePage-info-card">
-                        {{#with cover}}
-                            <div class="MoviePage-cover" itemprop="image">{{this}}</div>
-                        {{/with}}
-                        <div class="MoviePage-info-data">
-                            {{#with name}}
-                                <h1 class="MoviePage-name" itemprop="name">{{this}}</h1>
+        {{include "/core/page/Page-above.hbs" this dataClick="above"}}
+
+        <div class="MoviePage-content">
+            <div class="MoviePage-wrapper">
+                <main class="MoviePage-main">
+                    <article class="MoviePage-mainContent">
+
+                        <div class="MoviePage-intro">
+                            {{#with cover}}
+                                {{#set imageSize='squareMedium'}}
+                                    <div class="MoviePage-cover">{{this}}</div>
+                                {{/set}}
                             {{/with}}
-                            {{#with phase}}
-                                <div class="MoviePage-phase">{{this}}</div>
-                            {{/with}}
-                            {{#with releaseDate}}
-                                <div class="MoviePage-releaseDate">{{this}}</div>
-                            {{/with}}
-                            {{#with summary}}
-                                <div class="MoviePage-summary">{{this}}</div>
-                            {{/with}}
+
+                            <div class="MoviePage-info">
+                                {{#with name}}
+                                    <h1 class="MoviePage-name">{{this}}</h1>
+                                {{/with}}
+                                {{#with phase}}
+                                    <h2 class="MoviePage-phase">{{this}}</h2>
+                                {{/with}}
+                            </div>
                         </div>
-                    </div>
-                    <hr>
-                    {{#with plot}}
-                        <h2 class="MoviePage-plot-header">Plot</h2>
-                        <div class="MoviePage-plot" itemprop="description">{{this}}</div>
+
+                        {{#with summary}}
+                            <div class="MoviePage-summary RichTextBody">
+                                {{this}}
+                            </div>
+                        {{/with}}
+
+                        {{#with plot}}
+                            <div class="MoviePage-plot RichTextBody">
+                                {{this}}
+                            </div>
+                        {{/with}}
+
+                        {{#with releaseDate}}
+                            <div class="MoviePage-plot releaseDate">
+                                {{this}}
+                            </div>
+                        {{/with}}
+
+                    </article>
+
+                    {{#with featuredCharacters}}
+                        <div class="MoviePage-contentFooter">
+                            {{this}}
+                        </div>
                     {{/with}}
-                    <hr>
-                </div>
-                {{#with featuredCharacters}}
-                    <div class="MoviePage-featuredCharacters">
-                        {{this}}
-                    </div>
-                {{/with}}
+                </main>
             </div>
-            {{#with tags}}
-                <div class="MoviePage-tags">
-                    <h2 class="MoviePage-tags-heading">{{format "/core/page/ContentPage" "tagsHeading"}}</h2>
-                    <div class="MoviePage-tags-body">{{this}}</div>
-                </div>
-            {{/with}}
-            {{#with countries}}
-                <div class="MoviePage-countries">
-                    <h2 class="MoviePage-countries-heading">{{format "/core/page/ContentPage" "countriesHeading"}}</h2>
-                    <div class="MoviePage-countries-body">{{this}}</div>
-                </div>
-            {{/with}}
-            {{#with brands}}
-                <div class="MoviePage-brands">
-                    <h2 class="MoviePage-brands-heading">{{format "/core/page/ContentPage" "brandsHeading"}}</h2>
-                    <div class="MoviePage-brands-body">{{this}}</div>
-                </div>
-            {{/with}}
-            {{#with products}}
-                <div class="MoviePage-products">
-                    <h2 class="MoviePage-products-heading">{{format "/core/page/ContentPage" "productsHeading"}}</h2>
-                    <div class="MoviePage-products-body">{{this}}</div>
-                </div>
-            {{/with}}
-            {{#with topics}}
-                <div class="MoviePage-topics">
-                    <h2 class="MoviePage-topics-heading">{{format "/core/page/ContentPage" "topicsHeading"}}</h2>
-                    <div class="MoviePage-topics-body">{{this}}</div>
-                </div>
-            {{/with}}
-            {{#with actions}}
-                <div class="MoviePage-actions">
-                    <h2 class="MoviePage-actions-heading">{{format "/core/page/ContentPage" "actionsHeading"}}</h2>
-                    <div class="MoviePage-actions-body">{{this}}</div>
-                </div>
-            {{/with}}
-            {{#with comments}}
-                <div class="MoviePage-comments">
-                    {{this}}
-                </div>
-            {{/with}}
-        </main>
-        {{#with below}}
-            <div class="MoviePage-below">{{this}}</div>
-        {{/with}}
         </div>
-        {{include "/core/page/Page-aside.hbs" this}}
-        {{include "/core/page/Page-contentFooter.hbs" this}}
-        {{include "/core/page/Page-below.hbs" this}}
+
+        {{include "/core/page/Page-below.hbs" this dataClick="below"}}
         {{include "/core/page/Page-footer.hbs" this}}
         {{include "/core/page/Page-extraBodyItems.hbs" this}}
     </body>

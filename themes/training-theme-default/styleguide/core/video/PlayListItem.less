@@ -3,7 +3,7 @@
   border-bottom: solid 1px var(--secondaryColor3);
   border-top: 3px solid transparent;
   display: flex;
-  padding: @grid-gap;
+  padding: @gap;
 
   &[data-current-item='true'] {
     background: var(--secondaryColor5);
@@ -33,12 +33,12 @@
   &-duration {
     &:extend(.label-1);
 
-    margin-top: (@grid-gap / 2);
+    margin-top: (@gap / 2);
   }
 
   &-media {
     flex-shrink: 0;
-    margin: 0 @grid-gap 0 0;
+    margin: 0 @gap 0 0;
     max-width: 180px;
     order: 1;
     width: 36%;

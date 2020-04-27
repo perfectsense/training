@@ -8,7 +8,7 @@
 
   &-authors {
     width: 100%;
-    margin-bottom: (@grid-gap / 2);
+    margin-bottom: (@gap / 2);
     text-transform: uppercase;
   }
 
@@ -23,7 +23,7 @@
       left: 0;
       transform: translateX(-100%);
       position: absolute;
-      top: @grid-gap * 2;
+      top: @gap * 2;
     }
   }
 
@@ -37,14 +37,14 @@
 
   &-authorInfo {
     .clearfix;
-    margin-bottom: (@grid-gap * 2);
+    margin-bottom: (@gap * 2);
 
     &-bio {
       &-content {
         .body-2;
 
         p {
-          margin: (@grid-gap * 1.5) 0;
+          margin: (@gap * 1.5) 0;
 
           &:first-of-type {
             margin-top: 0;
@@ -67,17 +67,17 @@
         align-items: center;
         display: flex;
         height: 60px;
-        margin-bottom: (@grid-gap / 2);
+        margin-bottom: (@gap / 2);
       }
     }
 
     &-follow {
-      margin-left: @grid-gap;
+      margin-left: @gap;
     }
 
     &-image {
       float: left;
-      margin-right: @grid-gap;
+      margin-right: @gap;
       width: 60px;
 
       img {
@@ -101,7 +101,7 @@
   }
 
   &-bylineText {
-    margin-bottom: (@grid-gap / 2);
+    margin-bottom: (@gap / 2);
   }
 
   &-breadcrumbs {
@@ -109,7 +109,7 @@
     .Link {
       .SectionButton;
 
-      margin: 0 (@grid-gap / 2) (@grid-gap / 2) 0;
+      margin: 0 (@gap / 2) (@gap / 2) 0;
     }
 
     span.Link {
@@ -118,7 +118,7 @@
   }
 
   &-byline {
-    margin-bottom: @grid-gap;
+    margin-bottom: @gap;
   }
 
   &-bylineText {
@@ -127,7 +127,7 @@
     display: inline;
     font-weight: 500;
 
-    margin-bottom: (@grid-gap / 2);
+    margin-bottom: (@gap / 2);
     text-transform: uppercase;
     width: 100%;
   }
@@ -144,9 +144,11 @@
   }
 
   &-contentFooter {
+    margin-top: @gap * 2;
+
     & > * {
       &:not(:last-child) {
-        padding-bottom: @grid-gap * 2;
+        padding-bottom: @gap * 2;
       }
     }
   }
@@ -164,7 +166,7 @@
     font-weight: 600;
     line-height: 1.19;
     letter-spacing: normal;
-    margin-bottom: (@grid-gap / 2);
+    margin-bottom: (@gap / 2);
   }
 
   &-mainContent {
@@ -172,11 +174,11 @@
       background: var(--secondaryColor2);
       border: 0;
       height: 1px;
-      margin: (@grid-gap * 2) 0;
+      margin: (@gap * 2) 0;
       width: 70px;
 
       &[data-wide] {
-        margin: (@grid-gap * 2) auto;
+        margin: (@gap * 2) auto;
         width: 200px;
       }
     }
@@ -184,25 +186,25 @@
 
   &-subHeadline {
     .title-3;
-    margin-bottom: @grid-gap;
+    margin-bottom: @gap;
     font-weight: normal;
   }
 
   &-tags {
-    margin: @grid-gap 0;
+    margin: @gap 0;
     display: flex;
     align-items: baseline;
 
     &-heading {
       .label-3;
       text-transform: uppercase;
-      padding-right: 10px; 
+      padding-right: 10px;
     }
 
     .Link {
       .TagButton;
 
-      margin: 0 (@grid-gap / 2) (@grid-gap / 2) 0;
+      margin: 0 (@gap / 2) (@gap / 2) 0;
     }
 
     span.Link {
@@ -214,8 +216,8 @@
     border: 1px solid var(--secondaryColor3);
     border-top: 2px solid var(--listBorderColor);
     font-style: italic;
-    margin: @grid-gap 0;
-    padding: @grid-gap;
+    margin: @gap 0;
+    padding: @gap;
 
     &-wrapper {
       [class$='aside'] & {
@@ -231,7 +233,7 @@
 
   @media @mq-viewport-md {
     &-headline {
-      margin-bottom: @grid-gap;
+      margin-bottom: @gap;
     }
 
     &-datePublished {
@@ -239,12 +241,12 @@
         display: inline;
 
         &:nth-of-type(2) {
-          margin-left: @grid-gap / 4;
+          margin-left: @gap / 4;
 
           &:before {
             content: '|';
             display: inline;
-            padding-right: @grid-gap / 2;
+            padding-right: @gap / 2;
           }
         }
       }
@@ -255,7 +257,7 @@
     }
 
     &-tags {
-      margin: (@grid-gap * 2) 0;
+      margin: (@gap * 2) 0;
     }
 
     &-byline {
@@ -266,7 +268,7 @@
     &-authors {
       width: initial;
       margin-bottom: 0;
-      margin-right: (@grid-gap / 2);
+      margin-right: (@gap / 2);
     }
 
     &-actions {
@@ -290,7 +292,7 @@
     }
 
     &-headline {
-      margin-bottom: (@grid-gap * 2);
+      margin-bottom: (@gap * 2);
     }
 
     &-byline {
@@ -300,7 +302,7 @@
     &-authorInfo {
       &-bio {
         &-content {
-          margin-top: (@grid-gap / 2);
+          margin-top: (@gap / 2);
         }
 
         &-name {
@@ -311,7 +313,7 @@
 
       &-follow {
         margin-left: 0;
-        margin-top: (@grid-gap / 4);
+        margin-top: (@gap / 4);
       }
 
       &-image {
@@ -324,7 +326,7 @@
     &-actionsSticky {
       &-content {
         transform: none;
-        left: -(@grid-gap * 2.5);
+        left: -(@gap * 2.5);
       }
     }
 
@@ -345,20 +347,49 @@
 }
 
 /**
+ * CreativeWorkOneColumnLayout
+ */
+ .CreativeWorkPageOneColumnLayout {
+  &-content {
+    margin: 0 auto;
+    max-width: @content-width;
+    padding: (@gap * 2) @gap;
+  }
+
+  &-wrapper {
+    margin-top: @gap;
+  }
+
+  @media @mq-viewport-md {
+    &-wrapper {
+      margin-top: @gap;
+    }
+  }
+
+  @media @mq-viewport-hk {
+    &-content {
+      padding-left: 0;
+      padding-right: @gap;
+    }
+  }
+}
+
+
+/**
  * CreativeWorkTwoColumnLayout
  */
 .CreativeWorkPageTwoColumnLayout {
   &-aside {
     flex-shrink: 0;
-    margin-top: (@grid-gap * 2);
+    margin-top: (@gap * 2);
 
     [class$='updatesCorrections-wrapper'] {
-      padding-bottom: @grid-gap * 2;
+      padding-bottom: @gap * 2;
     }
 
     &-content {
       > * {
-        padding-bottom: @grid-gap * 2;
+        padding-bottom: @gap * 2;
 
         &:last-child {
           padding-bottom: 0;
@@ -370,30 +401,30 @@
   &-content {
     margin: 0 auto;
     max-width: @content-width;
-    padding: (@grid-gap * 2) @grid-gap;
+    padding: (@gap * 2) @gap;
   }
 
   &-wrapper {
-    margin-top: @grid-gap;
+    margin-top: @gap;
   }
 
   @media @mq-viewport-md {
     &-wrapper {
-      margin-top: @grid-gap;
+      margin-top: @gap;
     }
   }
 
   @media @mq-viewport-hk {
     &-content {
       padding-left: 0;
-      padding-right: @grid-gap;
+      padding-right: @gap;
     }
   }
 
   @media @mq-viewport-hk {
     &-aside {
       margin-top: 0;
-      margin-left: @grid-gap * 2;
+      margin-left: @gap * 2;
       width: 320px;
     }
 

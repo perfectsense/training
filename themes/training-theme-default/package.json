@@ -1,20 +1,20 @@
 {
-  "name": "training-theme-default",
-  "version": "4.1.8",
+  "name": "brightspot-theme-falcon",
+  "version": "1.0.0-SNAPSHOT",
   "private": true,
   "devDependencies": {
+    "autoprefixer": "6.5.1",
     "@babel/core": "7.1.6",
     "@babel/plugin-proposal-class-properties": "7.1.0",
     "@babel/plugin-syntax-dynamic-import": "7.0.0",
     "@babel/preset-env": "7.1.6",
-    "autoprefixer": "6.5.1",
-    "babel-eslint": "^7.2.1",
+    "babel-eslint": "7.2.1",
     "babel-loader": "8.0.4",
-    "brightspot-styleguide": "4.1.14",
+    "brightspot-styleguide": "4.1.778-x0f76cf",
     "capitalize": "^1.0.0",
     "css-loader": "1.0.1",
-    "css-vars-ponyfill": "1.8.0",
     "cssnano": "4.1.10",
+    "css-vars-ponyfill": "1.8.0",
     "eslint-loader": "2.1.1",
     "fs-extra": "1.0.0",
     "glob": "7.1.1",
@@ -40,9 +40,9 @@
     "prettier": "1.17",
     "prettier-eslint": "8.8.2",
     "prettier-eslint-cli": "4.7.1",
-    "style-loader": "0.23.1",
     "systemjs-builder": "0.15.32",
     "systemjs-plugin-babel": "^0.0.21",
+    "style-loader": "0.23.1",
     "url-loader": "1.1.2",
     "webpack": "4.26.0",
     "webpack-cli": "3.1.2",
@@ -50,10 +50,10 @@
     "webpack-merge": "4.1.4"
   },
   "dependencies": {
-    "flickity": "2.2.0",
-    "flickity-hash": "1.0.3",
     "gulp-size": "^2.1.0",
     "hoverintent": "1.0.1",
+    "flickity": "2.2.0",
+    "flickity-hash": "1.0.3",
     "js.cookie": "^0.0.4",
     "picturefill": "^3.0.2",
     "postcss-amp": "^1.1.0",
@@ -72,6 +72,7 @@
     "server:brightspot": "gulp styleguide --webpack-config webpack.dev.js --webpack-target https://www.brightspot.com/",
     "server:styleguide": "gulp styleguide --webpack-config webpack.dev.js"
   },
+
   "standard": {
     "parser": "babel-eslint"
   }

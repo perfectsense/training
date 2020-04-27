@@ -13,12 +13,12 @@
     }
 
     .ListArticleBodyItem {
-      margin: (@grid-gap * 1.5) auto;
+      margin: (@gap * 1.5) auto;
 
       &-headline {
         &:extend(.title-3 all);
 
-        margin-bottom: (@grid-gap / 2);
+        margin-bottom: (@gap / 2);
       }
     }
   }
@@ -32,7 +32,7 @@
   }
 
   &-lead {
-    margin: 0 -@grid-gap @grid-gap;
+    margin: 0 -@gap @gap;
   }
 
   @media @mq-viewport-md {
@@ -42,7 +42,7 @@
     }
 
     &-lead {
-      margin-bottom: @grid-gap;
+      margin-bottom: @gap;
     }
 
 
@@ -54,11 +54,11 @@
 
   @media @mq-viewport-lg {
     &-byline {
-      margin-bottom: @grid-gap;
+      margin-bottom: @gap;
     }
 
     &-lead {
-      margin: 0 0 @grid-gap * 2;
+      margin: 0 0 @gap * 2;
     }
   }
 

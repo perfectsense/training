@@ -9,8 +9,8 @@
     &:extend(.ListItemsNoBorder all);
 
     &-column {
-      padding-bottom: @grid-gap;
-      margin-bottom: @grid-gap;
+      padding-bottom: @gap;
+      margin-bottom: @gap;
 
       &:nth-of-type(2) {
         margin-bottom: 0;
@@ -21,10 +21,10 @@
   @media @mq-viewport-md {
     &-items {
       display: flex;
-      margin: 0 -(@grid-gap);
+      margin: 0 -(@gap);
 
       &-column {
-        padding: 0 @grid-gap;
+        padding: 0 @gap;
 
         &:nth-of-type(1) {
           flex-shrink: 0;

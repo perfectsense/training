@@ -31,7 +31,7 @@
   &-disclaimer {
     &:extend(.label-3 all);
     color: var(--primaryTextColor);
-    padding: @grid-gap;
+    padding: @gap;
   }
 
   &-hamburger-menu {
@@ -130,14 +130,14 @@
 
     display: none;
     justify-content: center;
-    left: (@grid-gap * 4);
+    left: (@gap * 4);
     list-style: none;
     position: absolute;
     top: 22px;
 
     a {
       color: var(--headerTextColor);
-      margin: 0 (@grid-gap / 2);
+      margin: 0 (@gap / 2);
 
       &:hover {
         opacity: 0.8;
@@ -190,9 +190,9 @@
       border-bottom: 1px solid var(--headerBorderColor);
       display: flex;
       justify-content: center;
-      margin: @grid-gap;
+      margin: @gap;
       max-width: 1200px;
-      padding: 0 0 @grid-gap / 4;
+      padding: 0 0 @gap / 4;
 
       label {
         width: 100%;
@@ -245,7 +245,7 @@
       width: 320px;
 
       &-auth {
-        padding: @grid-gap;
+        padding: @gap;
       }
     }
 
@@ -297,7 +297,7 @@
       }
 
       &-content {
-        padding-top: @grid-gap - 5px;
+        padding-top: @gap - 5px;
         background-color: var(--siteBgColor);
       }
 

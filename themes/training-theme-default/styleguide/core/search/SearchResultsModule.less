@@ -27,7 +27,7 @@ body&[data-filters-open='true'] {
     margin-top: 0;
 
     > * {
-      padding-bottom: @grid-gap;
+      padding-bottom: @gap;
     }
   }
 
@@ -44,7 +44,7 @@ body&[data-filters-open='true'] {
 
     &-apply {
       border-top: solid 1px var(--secondaryColor3);
-      padding: (@grid-gap / 2) 0;
+      padding: (@gap / 2) 0;
     }
 
     &-applyButton {
@@ -57,8 +57,8 @@ body&[data-filters-open='true'] {
       &:extend(.NotButton all);
 
       position: absolute;
-      right: @grid-gap;
-      top: @grid-gap;
+      right: @gap;
+      top: @gap;
 
       svg {
         fill: var(--grayscaleColor1);
@@ -71,7 +71,7 @@ body&[data-filters-open='true'] {
       &:extend(.Button all);
       width: 100%;
       border-color: var(--secondaryColor3);
-      margin: 0 auto @grid-gap;
+      margin: 0 auto @gap;
     }
 
     &-overlay {
@@ -80,7 +80,7 @@ body&[data-filters-open='true'] {
       display: none;
       left: 0;
       right: 0;
-      padding: (@grid-gap * 2) 0;
+      padding: (@gap * 2) 0;
       position: fixed;
       top: 0;
       z-index: @z-index-modal;
@@ -101,7 +101,7 @@ body&[data-filters-open='true'] {
         display: block;
         background: var(--secondaryColor4);
         height: auto;
-        padding: @grid-gap;
+        padding: @gap;
       }
 
       &-heading {
@@ -114,7 +114,7 @@ body&[data-filters-open='true'] {
 
         display: flex;
         justify-content: space-between;
-        margin-bottom: @grid-gap;
+        margin-bottom: @gap;
 
         .close-x {
           fill: var(--primaryColor1);
@@ -136,14 +136,14 @@ body&[data-filters-open='true'] {
       &-title {
         &:extend(.label-4 all);
 
-        margin-bottom: @grid-gap;
+        margin-bottom: @gap;
       }
     }
 
     &-title {
       &:extend(.label-4 all);
 
-      padding: 0 @grid-gap (@grid-gap * 0.75) @grid-gap;
+      padding: 0 @gap (@gap * 0.75) @gap;
     }
   }
 
@@ -181,7 +181,7 @@ body&[data-filters-open='true'] {
   &-nextPage,
   &-previousPage {
     a {
-      padding: 0 @grid-gap;
+      padding: 0 @gap;
     }
 
     svg {
@@ -196,7 +196,7 @@ body&[data-filters-open='true'] {
       &[data-inactive] {
         cursor: default;
         fill: var(--secondaryColor3);
-        margin: 0 @grid-gap;
+        margin: 0 @gap;
 
         &:hover {
           cursor: default;
@@ -239,7 +239,7 @@ body&[data-filters-open='true'] {
       .ListItemsWithCompleteBorder;
 
       &:last-of-type {
-        margin-bottom: @grid-gap;
+        margin-bottom: @gap;
       }
 
      list-style: none;
@@ -251,8 +251,8 @@ body&[data-filters-open='true'] {
       border-bottom: solid 1px var(--secondaryColor3);
       display: flex;
       justify-content: space-between;
-      margin-bottom: @grid-gap;
-      padding-bottom: @grid-gap;
+      margin-bottom: @gap;
+      padding-bottom: @gap;
     }
   }
 
@@ -266,7 +266,7 @@ body&[data-filters-open='true'] {
   }
 
   &-wrapper {
-    margin-top: @grid-gap;
+    margin-top: @gap;
   }
 
   @media @mq-viewport-md {
@@ -329,18 +329,18 @@ body&[data-filters-open='true'] {
       }
 
       &-title {
-        padding: 0 0 @grid-gap;
+        padding: 0 0 @gap;
       }
     }
 
     &-main {
-      margin: 0 0 0 (@grid-gap * 2);
+      margin: 0 0 0 (@gap * 2);
       width: 100%;
     }
 
     &-wrapper {
       display: flex;
-      margin-top: (@grid-gap * 2);
+      margin-top: (@gap * 2);
     }
   }
 }

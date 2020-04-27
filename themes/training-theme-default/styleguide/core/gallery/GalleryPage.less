@@ -3,7 +3,7 @@
     &-title,
     &-infoDescription {
       display: block;
-      margin-bottom: @grid-gap;
+      margin-bottom: @gap;
     }
   }
 
@@ -13,7 +13,7 @@
 
     &-bar {
       border-bottom: none;
-      padding: 0 @grid-gap;
+      padding: 0 @gap;
     }
 
     position: fixed;
@@ -35,17 +35,17 @@
       &:extend(.title-6 all);
 
       color: var(--primaryTextColorInverse);
-      margin-top: @grid-gap;
+      margin-top: @gap;
     }
 
     &-content {
-      padding: @grid-gap;
+      padding: @gap;
     }
 
     &-modules {
       display: none;
 
-      padding-top: @grid-gap;
+      padding-top: @gap;
     }
 
     &-slideContent {
@@ -78,7 +78,7 @@
     }
 
     .ActionBar-items-item {
-      margin-right: (@grid-gap / 4);
+      margin-right: (@gap / 4);
     }
   }
 
@@ -88,7 +88,7 @@
     font-weight: normal;
     line-height: 1.13;
     letter-spacing: -0.2px;
-    margin-bottom: (@grid-gap / 2);
+    margin-bottom: (@gap / 2);
     text-align: center;
 
     .GalleryPage-aside & {
@@ -108,8 +108,8 @@
     height: 50px;
     justify-content: center;
     left: 0;
-    padding-left: @grid-gap;
-    padding-right: @grid-gap;
+    padding-left: @gap;
+    padding-right: @gap;
     right: 0;
     position: absolute;
     width: 100%;
@@ -126,7 +126,7 @@
     height: 30px;
     line-height: 27px;
     position: absolute;
-    right: @grid-gap;
+    right: @gap;
     width: 30px;
 
     &:before {
@@ -161,7 +161,7 @@
       justify-content: center;
       margin: 0 auto;
       max-width: 680px;
-      padding: @grid-gap (@grid-gap * 2);
+      padding: @gap (@gap * 2);
       position: relative;
       z-index: @z-index-base + 1;
       width: 100%;
@@ -171,7 +171,7 @@
       &:extend(.counter-1 all);
 
       color: var(--secondaryColor5);
-      margin-bottom: (@grid-gap * 1.5);
+      margin-bottom: (@gap * 1.5);
     }
 
     &-grid {
@@ -183,7 +183,7 @@
     &-icon {
       background: rgba(0, 0, 0, 0.4);
       border: 1px solid var(--secondaryColor5);
-      margin-bottom: (@grid-gap / 2);
+      margin-bottom: (@gap / 2);
       padding: 20px;
     }
 
@@ -213,7 +213,7 @@
     &:extend(.counter-1 all);
 
     color: var(--secondaryColor1);
-    margin: (@grid-gap / 2) 0;
+    margin: (@gap / 2) 0;
 
     span {
       color: var(--secondaryColor5);
@@ -270,7 +270,7 @@
     &:extend(.title-3 all);
 
     font-weight: normal;
-    margin-bottom: (@grid-gap * 2);
+    margin-bottom: (@gap * 2);
     text-align: center;
   }
 
@@ -298,7 +298,7 @@
       top: 0;
       width: 340px;
       overflow-y: scroll;
-      padding-bottom: @grid-gap;
+      padding-bottom: @gap;
       scrollbar-width: none;
       -ms-overflow-style: none;
 

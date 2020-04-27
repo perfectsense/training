@@ -1,6 +1,15 @@
 {
   "pages": [
     {
+      "name": "Globals",
+      "pages": [
+        {
+          "name": "Typography",
+          "content": "/global/TypographyPage.html"
+        }
+      ]
+    },
+    {
       "name": "Containers",
       "pages": [
         {

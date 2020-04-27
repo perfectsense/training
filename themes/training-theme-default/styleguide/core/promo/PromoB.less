@@ -5,27 +5,27 @@
   position: relative;
 
   &-category {
-    margin-bottom: (@grid-gap / 2);
+    margin-bottom: (@gap / 2);
   }
 
   &-date {
-    margin-top: @grid-gap / 2;
+    margin-top: @gap / 2;
   }
 
   &-description {
-    margin-top: (@grid-gap / 2);
+    margin-top: (@gap / 2);
   }
 
   &-media {
     float: left;
-    margin-bottom: @grid-gap;
-    margin-right: @grid-gap;
+    margin-bottom: @gap;
+    margin-right: @gap;
     max-width: 150px;
     width: 30%;
 
     [data-image-align='right'] & {
       float: right;
-      margin-left: @grid-gap;
+      margin-left: @gap;
       margin-right: 0;
     }
 
@@ -39,7 +39,7 @@
   &-title {
     &:extend(.title-3 all);
 
-    margin-bottom: (@grid-gap / 2);
+    margin-bottom: (@gap / 2);
   }
 
   @media @mq-viewport-md {
@@ -56,13 +56,13 @@
 
     &-content {
       margin-left: 270px;
-      padding-left: @grid-gap;
+      padding-left: @gap;
 
       [data-image-align='right'] & {
         margin-left: 0;
         margin-right: 270px;
         padding-left: 0;
-        padding-right: @grid-gap;
+        padding-right: @gap;
       }
 
       [data-image-align='top'] &,
@@ -91,13 +91,13 @@
       }
 
       [data-image-align='top'] & {
-        padding-bottom: @grid-gap;
+        padding-bottom: @gap;
         position: relative;
         width: 100%;
       }
 
       [data-image-align='bottom'] & {
-        padding-top: @grid-gap;
+        padding-top: @gap;
         position: relative;
         width: 100%;
       }

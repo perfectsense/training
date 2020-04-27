@@ -11,8 +11,8 @@
 
     &-item {
       &:last-of-type {
-        margin-bottom: @grid-gap;
-        padding-bottom: @grid-gap;
+        margin-bottom: @gap;
+        padding-bottom: @gap;
       }
     }
   }
@@ -21,10 +21,10 @@
     &-items {
       display: flex;
       flex-wrap: wrap;
-      margin: 0 -(@grid-gap / 2);
+      margin: 0 -(@gap / 2);
 
       &-item {
-        padding: @grid-gap (@grid-gap / 2) 0;
+        padding: @gap (@gap / 2) 0;
         width: 50%;
         margin-bottom: 0;
       }
@@ -40,7 +40,7 @@
       &:extend(.Button all);
       border-color: var(--secondaryColor2);
       color: var(--secondaryTextColor);
-      margin: @grid-gap auto 0;
+      margin: @gap auto 0;
     }
   }
 }
