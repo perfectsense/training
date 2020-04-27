@@ -22,6 +22,7 @@ dependencies {
 
     // Component Lib
     api 'com.psddev.component-lib:profiler-utils'
+    api 'com.psddev.component-lib:util-settings-enforcer'
     testImplementation 'com.psddev.component-lib:test-utils'
     testImplementation 'com.psddev.component-lib:shared-unit-tests'
 
