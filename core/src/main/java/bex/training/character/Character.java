@@ -8,6 +8,7 @@ import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Collectors;
 
+import bex.training.alphasort.AlphaSortable;
 import bex.training.util.TrainingUtils;
 import brightspot.core.image.ImageOption;
 import brightspot.core.link.Linkable;
@@ -31,7 +32,8 @@ import com.psddev.dari.util.StringUtils;
 @Seo.KeywordsFields("getSeoKeywords")
 @ToolUi.Main
 @Recordable.PreviewField("image/image/file")
-public abstract class Character extends Content implements Linkable,
+public abstract class Character extends Content implements AlphaSortable,
+                                                           Linkable,
                                                            PromotableWithOverrides,
                                                            Shareable,
                                                            Sluggable,
@@ -143,6 +145,13 @@ public abstract class Character extends Content implements Linkable,
     @Override
     public String getLabel() {
         return ObjectUtils.firstNonBlank(alterEgo, getName());
+    }
+
+    // AlphaSortable Support.
+
+    @Override
+    public String getAlphaSortValue() {
+        return ObjectUtils.firstNonBlank(getAlterEgo(), getLastName(), getName());
     }
 
     // Linkable Support.

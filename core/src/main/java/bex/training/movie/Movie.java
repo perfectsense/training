@@ -6,6 +6,7 @@ import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Collectors;
 
+import bex.training.alphasort.AlphaSortOverride;
 import bex.training.character.Character;
 import bex.training.release.Releasable;
 import brightspot.core.image.ImageOption;
@@ -29,7 +30,8 @@ import com.psddev.dari.util.StringUtils;
 @Seo.KeywordsFields("getSeoKeywords")
 @ToolUi.Main
 @Recordable.PreviewField("cover/file")
-public class Movie extends Content implements Linkable,
+public class Movie extends Content implements AlphaSortOverride,
+                                              Linkable,
                                               PromotableWithOverrides,
                                               Releasable,
                                               Shareable,
@@ -116,6 +118,13 @@ public class Movie extends Content implements Linkable,
 
     public void setFeaturedCharacters(Set<Character> featuredCharacters) {
         this.featuredCharacters = featuredCharacters;
+    }
+
+    // AlphaSortOverride Support.
+
+    @Override
+    public String getAlphaSortValueFallback() {
+        return getName();
     }
 
     // Linkable Support.
