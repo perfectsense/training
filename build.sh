@@ -31,9 +31,9 @@ else
 
     else
         COMMIT_COUNT=$(git rev-list --count HEAD)
-        COMMIT_SHA=$(git rev-parse --short HEAD)
+        COMMIT_SHA=$(git rev-parse --short=6 HEAD)
 
-        version=$(git describe --tags --match "v[0-9]*" HEAD || echo v0.$COMMIT_COUNT-$COMMIT_SHA)
+        version=$(git describe --tags --match "v[0-9]*" --abbrev=6 HEAD || echo v0-$COMMIT_COUNT-g$COMMIT_SHA)
         version=${version/v/}
         version+=+$TRAVIS_BUILD_NUMBER
 
