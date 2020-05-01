@@ -1,5 +1,3 @@
-os: linux
-arch: arm64
 dist: xenial
 
 language: java
@@ -10,6 +8,7 @@ branches:
     - master
     - /^release\/.*$/
     - /^v\d+\.\d+(\.\d+)?(-\S*)?$/
+    - feature/improve-ci
 
 jdk:
   - openjdk8
