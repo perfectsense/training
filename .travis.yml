@@ -17,7 +17,3 @@ install: true
 
 script:
   - ./build.sh
-
-cache:
-  directories:
-    - themes/training-theme-default/node_modules
