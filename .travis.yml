@@ -20,4 +20,4 @@ script:
 
 cache:
   directories:
-    - themes/*/node_modules
+    - themes/training-theme-default/node_modules
