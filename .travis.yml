@@ -18,14 +18,6 @@ install: true
 script:
   - ./build.sh
 
-before_cache:
-  - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
-  - rm -fr $HOME/.gradle/caches/*/plugin-resolution/
-
 cache:
   directories:
-    - .gradle
-    - $HOME/.gradle/caches/
-    - $HOME/.gradle/wrapper/
     - themes/training-theme-default/node_modules
-    - themes/training-theme-default/.gradle
