@@ -49,7 +49,11 @@
                                 {{#if articleBody}}
                                     <div class="ArticlePage-articleBody">
                                         {{#set imageSize='articleImage'}}
-                                            {{~articleBody~}}
+                                            <div class="RichTextArticleBody">
+                                                {{#with articleBody}}
+                                                    <div class="RichTextArticleBody-body RichTextBody">{{this}}</div>
+                                                {{/with}}
+                                            </div>
                                         {{/set}}
                                     </div>
                                 {{/if}}
@@ -57,7 +61,7 @@
                         </article>
 
                         {{include "/core/page/ContentPage-tags.hbs" this className="ArticlePage"}}
-                        
+
                         {{#with actions}}
                             <div class="ArticlePage-actions">
                                 {{this}}

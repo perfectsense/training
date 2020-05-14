@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Locale;
-import java.util.Objects;
 import java.util.Optional;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -29,6 +28,7 @@ import brightspot.core.slug.Sluggable;
 import brightspot.core.tag.Tag;
 import brightspot.core.tag.Taggable;
 import brightspot.core.tool.DirectoryItemUtils;
+import brightspot.core.tool.LargeRichTextToolbar;
 import brightspot.core.tool.RichTextUtils;
 import brightspot.core.update.LastUpdatedProvider;
 import brightspot.corporate.tag.CorporateTaggable;
@@ -83,7 +83,7 @@ import com.psddev.theme.StyleEmbeddedContentCreator;
     "cms.content.updateDate",
     "cms.content.updateUser"})
 @ToolUi.IconName("subject")
-@ToolUi.SearchShortcut(shortcut = "bo", field = "getBody/getPlainTextPreview")
+@ToolUi.SearchShortcut(shortcut = "bo", field = "body")
 @ToolUi.SearchShortcut(shortcut = "hl", field = "getHeadline")
 @ToolUi.SearchShortcut(shortcut = "sh", field = "getSubHeadline")
 @ToolUi.SearchShortcut(shortcut = "sl", field = "sluggable.getSlug")
@@ -109,28 +109,18 @@ public class Article extends CreativeWork implements
 
     public static final String PROMOTABLE_TYPE = "article";
 
-    @Required
-    private Body body = Body.createDefault();
+    @ToolUi.RichText(inline = false, toolbar = LargeRichTextToolbar.class, lines = 10)
+    @ToolUi.Unlabeled
+    private String body;
 
     @ToolUi.EmbeddedContentCreatorClass(StyleEmbeddedContentCreator.class)
     private Lead lead;
 
-    @Indexed
-    @ToolUi.Hidden
-    @ToolUi.Filterable
-    @ToolUi.DropDown
-    @Where("groups = " + Body.INTERNAL_NAME
-        + " && internalName != " + Body.INTERNAL_NAME
-        + " && isAbstract = false")
-    private ObjectType bodyType;
-
-    @Indexed
-    @ToolUi.Hidden
-    public Body getBody() {
+    public String getBody() {
         return body;
     }
 
-    public void setBody(Body body) {
+    public void setBody(String body) {
         this.body = body;
     }
 
@@ -140,12 +130,6 @@ public class Article extends CreativeWork implements
 
     public void setLead(Lead lead) {
         this.lead = lead;
-    }
-
-    @Override
-    protected void beforeSave() {
-
-        this.updateBodyType();
     }
 
     // *** Promotable implementation *** //
@@ -158,7 +142,7 @@ public class Article extends CreativeWork implements
     public String getPromotableDescriptionFallback() {
         return ObjectUtils.firstNonBlank(
             getSubHeadline(),
-            Optional.ofNullable(getBody()).map(Body::getPlainTextPreview).orElse(null));
+            getBody());
     }
 
     /**
@@ -178,20 +162,7 @@ public class Article extends CreativeWork implements
             return fallbackImage;
         }
 
-        Body body = getBody();
-        if (body == null) {
-            return null;
-        }
-
-        String bodyString = null;
-        if (body instanceof RichTextBody) {
-            bodyString = ((RichTextBody) body).getRichText();
-        } else if (body instanceof ListBody) {
-            bodyString = ((ListBody) body).getItems().stream()
-                .map(ListItem::getBody)
-                .filter(Objects::nonNull)
-                .collect(Collectors.joining(" "));
-        }
+        String bodyString = getBody();
 
         return RichTextUtils.getFirstImageFromRichText(bodyString);
     }
@@ -201,9 +172,18 @@ public class Article extends CreativeWork implements
         return PROMOTABLE_TYPE;
     }
 
+    public long getCharacterCount() {
+
+        return Optional.ofNullable(getBody())
+                .map(RichTextUtils::stripRichTextElements)
+                .map(RichTextUtils::richTextToPlainText)
+                .map(String::length)
+                .orElse(0);
+    }
+
     @Override
     public String getPromotableDuration() {
-        long characterCount = (getBody() == null ? 0 : getBody().getCharacterCount());
+        long characterCount = getCharacterCount();
 
         // TODO: localization needed. This implementation is highly dependent on language!
         // Average adult reading time given: 275 wpm. Average number of characters per English
@@ -236,12 +216,6 @@ public class Article extends CreativeWork implements
     @Override
     public String getSluggableSlugFallback() {
         return StringUtils.toNormalized(getHeadline());
-    }
-
-    private void updateBodyType() {
-        if (body != null) {
-            bodyType = body.getState().getType();
-        }
     }
 
     // *** CreativeWork implementation *** //
@@ -333,13 +307,10 @@ public class Article extends CreativeWork implements
 
     @Override
     public String getFullContentEncoded() {
-        if (body instanceof RichTextBody) {
-            return Optional.ofNullable(((RichTextBody) body).getRichText())
-                .map(RichTextUtils::stripRichTextElements)
-                .map(RichTextUtils::richTextToPlainText)
-                .orElse(null);
-        }
-        return null;
+        return Optional.ofNullable(getBody())
+            .map(RichTextUtils::stripRichTextElements)
+            .map(RichTextUtils::richTextToPlainText)
+            .orElse(null);
     }
 
     @Override

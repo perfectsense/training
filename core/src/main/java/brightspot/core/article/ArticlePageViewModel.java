@@ -14,6 +14,7 @@ import brightspot.core.person.Author;
 import brightspot.core.seo.PersonSchemaViewModel;
 import brightspot.core.tool.DateTimeUtils;
 import brightspot.core.tool.DirectoryItemUtils;
+import brightspot.core.tool.RichTextUtils;
 import brightspot.core.update.LastUpdatedProvider;
 import com.google.common.collect.ImmutableMap;
 import com.psddev.cms.view.PageEntryView;
@@ -35,7 +36,10 @@ public class ArticlePageViewModel extends AbstractCreativeWorkPageViewModel<Arti
 
     @Override
     public Iterable<? extends ArticlePageViewArticleBodyField> getArticleBody() {
-        return createViews(ArticlePageViewArticleBodyField.class, model.getBody());
+        return RichTextUtils.buildHtml(
+                model.getState().getDatabase(),
+                model.getBody(),
+                e -> createView(ArticlePageViewArticleBodyField.class, e));
     }
 
     @Override

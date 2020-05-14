@@ -8,8 +8,7 @@
     "_key": 1
   },
   "articleBody": {
-    "_include": "/_group/ArticleBodies.json",
-    "_key": 1
+    "_include": "/_group/RichText.json"
   },
   "updatesCorrections": "This is an update to the original story."
 }
