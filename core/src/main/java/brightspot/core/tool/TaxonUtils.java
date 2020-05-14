@@ -17,6 +17,7 @@ import com.google.common.base.Preconditions;
 import com.psddev.dari.db.Database;
 import com.psddev.dari.db.Query;
 import com.psddev.dari.db.Recordable;
+import com.psddev.dari.util.UnresolvedState;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -37,7 +38,7 @@ public final class TaxonUtils {
         Set<T> taxonsAndAncestors = new HashSet<>();
 
         StreamSupport.stream(taxons.spliterator(), false)
-            .map(StateUtils::resolve)
+            .map(UnresolvedState::resolve)
             .filter(Objects::nonNull)
             .forEach(t -> {
                 taxonsAndAncestors.add(t);
@@ -88,7 +89,7 @@ public final class TaxonUtils {
 
         Optional.ofNullable(hierarchical)
             .map(Hierarchical::getHierarchicalParent)
-            .map(StateUtils::resolve)
+            .map(UnresolvedState::resolve)
             .ifPresent(parent -> {
                 ancestors.add(parent);
                 ancestors.addAll(TaxonUtils.getHierarchicalAncestors(parent, Hierarchical::getHierarchicalParent));

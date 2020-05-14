@@ -1,1 +1,3 @@
 com.psddev.cms.rte.ExternalContentRichTextElement
+com.psddev.cms.rte.GuideFieldLinkRichTextElement
+com.psddev.cms.rte.GuideFieldImageRichTextElement

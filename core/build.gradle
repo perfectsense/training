@@ -21,10 +21,13 @@ dependencies {
     api 'com.psddev:terms'
     api 'com.psddev:theme'
 
+    api 'com.psddev:graphql'
+
     // Component Lib.
     api 'com.psddev.component-lib:materialize'
     api 'com.psddev.component-lib:query-memoization-modifiers'
     api 'com.psddev.component-lib:query-memoization-util'
+    api 'com.psddev.component-lib:util-unresolved-state'
 
     // Third party.
     api 'org.slf4j:slf4j-api'
