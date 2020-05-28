@@ -40,7 +40,6 @@ dependencies {
     compileOnly 'javax.el:javax.el-api'
     compileOnly 'javax.servlet:javax.servlet-api'
     compileOnly 'javax.servlet.jsp:javax.servlet.jsp-api'
-    compileOnly 'taglibs:standard'
 
     // Test.
     testImplementation("org.junit.jupiter:junit-jupiter-api")

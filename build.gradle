@@ -6,8 +6,8 @@ plugins {
 }
 
 ext.brightspotGradlePluginVersion = '4.1.9'
-ext.brightspotVersion = '4.2.8'
-ext.componentLibVersion = '4.2.36'
+ext.brightspotVersion = '4.2.9-rc1'
+ext.componentLibVersion = '4.2.39'
 
 allprojects {
     group = 'com.psddev.training'
@@ -45,26 +45,11 @@ subprojects {
     dependencies {
 
         implementation enforcedPlatform("com.psddev:brightspot-bom:${brightspotVersion}")
+        implementation enforcedPlatform("com.psddev:brightspot-dependencies:${brightspotVersion}")
         implementation enforcedPlatform("com.psddev.component-lib:bom:${componentLibVersion}")
 
         api enforcedPlatform('org.junit:junit-bom:5.4.2')
 
-        constraints {
-
-            // Third party.
-            api 'com.google.code.gson:gson:2.5'
-            api 'org.slf4j:slf4j-api:1.7.21'
-            api 'org.slf4j:slf4j-jdk14:1.7.21'
-            api 'org.apache.solr:solr-solrj:4.8.1'
-            api 'com.cronutils:cron-utils:6.0.1'
-            api 'com.amazonaws:aws-java-sdk-rekognition:1.11.381'
-            api 'org.ahocorasick:ahocorasick:0.4.0'
-
-            compileOnly 'javax.servlet:javax.servlet-api:3.1.0'
-            compileOnly 'javax.servlet.jsp:javax.servlet.jsp-api:2.3.1'
-            compileOnly 'javax.el:javax.el-api:3.0.0'
-            compileOnly 'taglibs:standard:1.1.2'
-        }
     }
 
     node {
