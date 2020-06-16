@@ -6,16 +6,10 @@
 
     "language": "",
     "charset": "",
-    "firstScripts": [],
 
     "extraScripts": [
       {
         "_include": "/dfp/GoogleDfpScript.json"
-      }
-    ],
-    "extraLinks": [
-      {
-        "_include": "/core/page/LinkElement.json"
       }
     ],
 
@@ -25,12 +19,6 @@
     "keywords": "Perfect Sense, Brightspot, Styleguide, Falcon Theme",
     "canonicalLink": "http://www.brightspot.com/",
 
-    "meta": [
-      {
-        "_include": "/core/page/MetaElement.json"
-      }
-    ],
-
     "feedLink": "{{html('<link type=\"application/rss+xml\" rel=\"alternate\" title=\"Brightspot Express\" href=\"http://www.brightspot.com/feed.rss\">')}}",
 
     "jsonLinkedData": "{{html('{ \"@type\": \"WebPage\" }')}}",
@@ -38,15 +26,6 @@
     "manifestLink": "/manifest.json",
 
     "favicons": null,
-
-    "quickLinks": [
-      {
-        "_include": "/core/link/Link.json",
-        "_repeat": 6,
-
-        "body": "{{words(1)}}"
-      }
-    ],
 
     "extraBodyAttributes": null,
 
@@ -137,8 +116,6 @@
     "social": {
         "_include": "/core/social/SocialBar.json"
     },
-
-    "todayDate": "Friday, Oct 5, 2018",
 
     "sectionNavigation": null,
 
