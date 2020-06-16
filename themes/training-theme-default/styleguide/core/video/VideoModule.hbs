@@ -22,12 +22,12 @@
                     {{#with playlist}}
                         <div class="VideoModule-playlist">
                             <div class="VideoModule-playlist-item">
-                                {{#with this.[0]}}{{include "/core/video/PlayListItem.hbs" this isCurrentItem="true"}}{{/with}}
+                                {{#with this.[0]}}{{include "/core/video/PlaylistItem.hbs" this isCurrentItem="true"}}{{/with}}
                             </div>
 
                             {{#each this}}
                                 {{#if (gt @index 0)}}
-                                    <div class="VideoModule-playlist-item">{{include "/core/video/PlayListItem.hbs" this}}</div>
+                                    <div class="VideoModule-playlist-item">{{include "/core/video/PlaylistItem.hbs" this}}</div>
                                 {{/if}}
                             {{/each}}
                         </div>

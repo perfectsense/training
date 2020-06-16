@@ -1,0 +1,27 @@
+<div class="PlaylistItem" data-content-type="video" data-item-url={{url}}{{#with isCurrentItem}} data-current-item="true"{{/with}}
+    {{#with videoId}} data-video-id="{{this}}"{{/with}}{{extraAttributes}}>
+    {{#with media}}
+        <div class="PlaylistItem-media">
+            <div class="PlaylistItem-media-image">
+                {{#set imageSize='promoSmall'}}
+                    {{this}}
+                {{/set}}
+                <span class="PlaylistItem-media-current">{{format "onNowText"}}</span>
+            </div>
+        </div>
+    {{/with}}
+
+    <div class="PlaylistItem-content">
+        {{#with title}}
+        <div class="PlaylistItem-title">{{this}}</div>
+        {{/with}}
+
+        {{#with duration}}
+        <div class="PlaylistItem-duration">{{this}}</div>
+        {{/with}}
+    </div>
+
+    {{#with status}}
+    <div class="PlaylistItem-status">{{this}}</div>
+    {{/with}}
+</div>

@@ -1,5 +1,5 @@
 {
-  "_template": "/core/video/PlayListItem.hbs",
+  "_template": "/core/video/PlaylistItem.hbs",
 
   "media": {
     "_template": "/core/image/Image.hbs",

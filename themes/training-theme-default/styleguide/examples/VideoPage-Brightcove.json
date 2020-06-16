@@ -17,21 +17,21 @@
 
   "playlist": [
     {
-      "_include": "/core/video/PlayListItem.json",
+      "_include": "/core/video/PlaylistItem.json",
       "url": "/examples/VideoPage-Brightcove.html"
     },
     {
-      "_include": "/core/video/PlayListItem.json",
+      "_include": "/core/video/PlaylistItem.json",
       "url": "/examples/VideoPage-YouTube.html",
       "videoId": "5842800655002"
     },
     {
-      "_include": "/core/video/PlayListItem.json",
+      "_include": "/core/video/PlaylistItem.json",
       "url": "/examples/VideoPage-HTML5.html",
       "videoId": "5842800655003"
     },
     {
-      "_include": "/core/video/PlayListItem.json",
+      "_include": "/core/video/PlaylistItem.json",
       "url": "/examples/VideoPage-Vimeo.html",
       "videoId": "5842800655004"
     }

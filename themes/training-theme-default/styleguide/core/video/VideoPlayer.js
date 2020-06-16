@@ -379,11 +379,11 @@ export class VideoPlayer extends window.HTMLElement {
 
   getPlayListTagsosition (id) {
     let playlist = document.querySelector('[data-playlist]')
-    let PlayListItems = playlist.querySelectorAll('.PlayListItem')
+    let PlaylistItems = playlist.querySelectorAll('.PlaylistItem')
     let activeVid = playlist.querySelector(`[data-video-id='${id}']`)
 
-    for (let i = 0; i < PlayListItems.length; i++) {
-      if (activeVid === PlayListItems[i]) {
+    for (let i = 0; i < PlaylistItems.length; i++) {
+      if (activeVid === PlaylistItems[i]) {
         return i
       }
     }

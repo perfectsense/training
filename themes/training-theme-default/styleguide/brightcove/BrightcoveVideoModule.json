@@ -6,7 +6,7 @@
     },
     "playlist": [
         {
-            "_include": "/core/video/PlayListItem.json",
+            "_include": "/core/video/PlaylistItem.json",
             "_repeat": 3
         }
     ],
