@@ -1662,10 +1662,10 @@ braces@^2.3.1, braces@^2.3.2:
     split-string "^3.0.2"
     to-regex "^3.0.1"
 
-brightspot-styleguide@4.1.14:
-  version "4.1.14"
-  resolved "https://artifactory.psdops.com/api/npm/npm/brightspot-styleguide/-/brightspot-styleguide-4.1.14.tgz#a395fa995a60cde5390400cb98460ff83f5a6d19"
-  integrity sha1-o5X6mVpgzeU5BADLmEYP+D9abRk=
+brightspot-styleguide@4.2.9:
+  version "4.2.9"
+  resolved "https://artifactory.psdops.com/api/npm/npm/brightspot-styleguide/-/brightspot-styleguide-4.2.9.tgz#83039d79fbf7d4078174115de829891a2b823fbc"
+  integrity sha1-gwOdefv31AeBdBFd6CmJGiuCP7w=
   dependencies:
     babel-eslint "6.1.2"
     body-parser "1.18.3"

@@ -25,12 +25,21 @@ dependencies {
     api 'com.psddev.component-lib:util-settings-enforcer'
     testImplementation 'com.psddev.component-lib:test-utils'
     testImplementation 'com.psddev.component-lib:shared-unit-tests'
+    testImplementation 'com.psddev:styleguide-codegen'
 
     api 'org.apache.solr:solr-solrj'
     api 'org.slf4j:slf4j-api'
     api 'org.slf4j:slf4j-jdk14'
     api 'javax.servlet:javax.servlet-api'
     api 'javax.servlet.jsp:javax.servlet.jsp-api'
+}
+
+test {
+    project.rootProject.allprojects.each {
+        if (it.name.contains('-theme-') && it.buildDir.exists()) {
+            systemProperties.put('theme.' + it.name + '.compatibilityTestMode', 'error')
+        }
+    }
 }
 
 if (!System.getProperty("dependencies")) {
