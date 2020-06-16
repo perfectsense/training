@@ -1,6 +1,7 @@
 {
   "_wrapper": "/_wrapper.previewAtomic.json",
-  "_template": "/core/promo/PromoTag.hbs",
+  "_template": "/core/promo/Promo.hbs",
+  "_styledTemplate": "/core/promo/PromoTag.hbs",
 
   "url": "#",
   "target": "_self",
