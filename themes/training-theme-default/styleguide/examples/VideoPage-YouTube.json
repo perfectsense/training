@@ -3,7 +3,6 @@
 
   "title": "YouTube Video Page",
   "datePublished": "Monday, June 1 1995",
-  "displayDatePublished": true,
   "player": {
     "_include": "/youtube/YouTubeVideoPlayer.json",
     "autoplay": true
