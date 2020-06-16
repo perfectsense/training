@@ -90,20 +90,6 @@
   "contentId": "a123",
   "galleryBody": ["{{paragraphs([ 2, 3 ])}}"],
 
-  "contentFooter": [
-    {
-      "_template": "/core/list/ListE.amp.hbs",
-      "title": "stay connected",
-      "items": [
-        {
-          "_include": "/core/promo/PromoC.json",
-          "_template": "/core/promo/PromoC.amp.hbs",
-          "_repeat": 5
-        }
-      ]
-    }
-  ],
-
   "tags": [
     {
       "_include": "/core/link/Link.json",

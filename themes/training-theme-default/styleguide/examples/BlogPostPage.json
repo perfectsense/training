@@ -98,11 +98,6 @@
     ]
   },
 
-  "contentFooter": [
-    {
-      "_include": "/core/list/ListLoadMore.json"
-    }
-  ],
   "tags": [
     {
       "_include": "/core/link/Link.json",

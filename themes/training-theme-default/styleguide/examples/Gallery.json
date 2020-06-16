@@ -48,12 +48,6 @@
     "_include": "/core/link/Link.json"
   },
 
-  "contentFooter": [
-    {
-      "_include": "/core/list/ListE.json"
-    }
-  ],
-
   "tags": [
     {
       "_include": "/core/link/Link.json",

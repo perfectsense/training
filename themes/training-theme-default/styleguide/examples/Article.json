@@ -92,12 +92,6 @@
     ]
   },
 
-  "contentFooter": [
-    {
-      "_include": "/core/list/ListE.json"
-    }
-  ],
-
   "tags": [
     {
       "_include": "/core/link/Link.json",
