@@ -42,29 +42,6 @@
             "_include": "/core/list/ListA.json"
           },
           {
-            "_template": "/core/container/Container.hbs",
-
-            "columns": {
-              "_template": "/core/container/ThreeColumnContainer.hbs",
-
-              "columnOne": [
-                {
-                  "_include": "/core/list/ListB.json"
-                }
-              ],
-              "columnTwo": [
-                {
-                  "_include": "/core/list/ListB.json"
-                }
-              ],
-              "columnThree": [
-                {
-                  "_include": "/core/list/ListB.json"
-                }
-              ]
-            }
-          },
-          {
             "_include": "/core/list/ListE.json"
           }
         ],

@@ -44,10 +44,6 @@
   "contentId": "a123",
   "galleryBody": ["{{paragraphs([ 2, 3 ])}}"],
 
-  "galleryCta": {
-    "_include": "/core/link/Link.json"
-  },
-
   "tags": [
     {
       "_include": "/core/link/Link.json",
