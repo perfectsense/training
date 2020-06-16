@@ -1,5 +1,6 @@
 {
-  "_template": "CarouselSlide.hbs",
+  "_template": "/core/gallery/GallerySlide.hbs",
+  "_styledTemplate": "CarouselSlide.hbs",
 
   "mediaContent": {
       "_template": "/core/image/Image.hbs",

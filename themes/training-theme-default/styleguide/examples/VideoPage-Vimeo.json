@@ -21,10 +21,6 @@
     },
     {
       "_include": "/core/video/PlaylistItem.json",
-      "url": "/examples/VideoPage-Brightcove.html"
-    },
-    {
-      "_include": "/core/video/PlaylistItem.json",
       "url": "/examples/VideoPage-YouTube.html"
     }
   ]
