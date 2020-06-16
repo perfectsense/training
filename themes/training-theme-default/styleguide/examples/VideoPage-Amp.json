@@ -91,6 +91,5 @@
       "_template": "/core/link/Link.amp.hbs",
       "_repeat": 4
     }
-  ],
-  "kicker": "{{words(1)}}"
+  ]
 }

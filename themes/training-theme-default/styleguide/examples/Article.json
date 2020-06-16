@@ -17,13 +17,8 @@
   "banner": {
     "_include": "/core/banner/Banner.json"
   },
-  "dateline": "{{words}}",
   "authorName": "{{name}}",
-  "authorTitle": "Author Title",
   "authorBiography": "{{sentences}}",
-  "authorSocial": {
-    "_include": "/core/social/SocialBar.json"
-  },
   "contributors": [
     {
       "_include": "/core//link/Link.json",
@@ -96,6 +91,5 @@
       "_include": "/core/link/Link.json",
       "_repeat": 4
     }
-  ],
-  "kicker": "{{words(1)}}"
+  ]
 }

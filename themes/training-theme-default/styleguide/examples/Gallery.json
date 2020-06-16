@@ -53,6 +53,5 @@
       "_include": "/core/link/Link.json",
       "_repeat": 4
     }
-  ],
-  "kicker": "{{words(1)}}"
+  ]
 }
