@@ -7,8 +7,6 @@
     "_include": "/youtube/YouTubeVideoPlayer.json",
     "autoplay": true
   },
-  "dateline": "{{sentences(1)}}",
-  "videoBody": "{{paragraphs([2,5])}}",
   "aside": null,
 
   "playlist": [
