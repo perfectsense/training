@@ -8,6 +8,5 @@
     },
     "category": "{{words([ 1, 3 ])}}",
     "categoryUrl": "#",
-    "duration": "{{number([3, 10])}} min",
-    "credit": "Video Credit"
+    "duration": "{{number([3, 10])}} min"
 }

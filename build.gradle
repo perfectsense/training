@@ -5,9 +5,9 @@ plugins {
     id 'com.github.node-gradle.node' version '1.3.0'
 }
 
-ext.brightspotGradlePluginVersion = '4.1.9'
-ext.brightspotVersion = '4.2.9-rc1'
-ext.componentLibVersion = '4.2.39'
+ext.brightspotGradlePluginVersion = '4.1.11'
+ext.brightspotVersion = '4.2.9'
+ext.componentLibVersion = '4.2.41'
 
 allprojects {
     group = 'com.psddev.training'

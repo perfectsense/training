@@ -1,5 +1,6 @@
 {
-  "_template": "CarouselSlide.hbs",
+  "_template": "/core/gallery/GallerySlide.hbs",
+  "_styledTemplate": "CarouselSlide.hbs",
 
   "mediaContent": {
       "_template": "/core/image/Image.hbs",
@@ -8,7 +9,6 @@
       }
   },
 
-  "bspId": "00000167-1234-5678-9abc-1234567890ab",
   "infoTitle": "{{words(8,12)}}",
   "infoDescription": "{{words(60,120)}}",
   "infoAttribution": "Photo by: {{name()}}"

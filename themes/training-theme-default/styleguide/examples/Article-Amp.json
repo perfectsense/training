@@ -2,7 +2,6 @@
   "_include": "/core/page/Page.amp.json",
   "_hidden": false,
   "_template": "/core/article/ArticlePage.amp.hbs",
-  "displayDatePublished": true,
   "dateExpired": "December 11, 2018",
   "dateExpiredISO": "2018-02-19T17:44:23+00:00",
   "datePublished": "December 11, 2016",
@@ -145,20 +144,6 @@
     ]
   },
 
-  "contentFooter": [
-    {
-      "_template": "/core/list/ListE.amp.hbs",
-      "title": "stay connected",
-      "items": [
-        {
-          "_include": "/core/promo/PromoC.json",
-          "_template": "/core/promo/PromoC.amp.hbs",
-          "_repeat": 5
-        }
-      ]
-    }
-  ],
-
   "updatesCorrections": "{{html('This is an <strong>update</strong> to the original story.')}}",
 
   "tags": [
@@ -167,6 +152,5 @@
       "_template": "/core/link/Link.amp.hbs",
       "_repeat": 4
     }
-  ],
-  "kicker": "{{words(1)}}"
+  ]
 }

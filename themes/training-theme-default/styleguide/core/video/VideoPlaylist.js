@@ -6,17 +6,17 @@ export class VideoPlaylist extends window.HTMLElement {
       this.handlePlaylistOpening()
 
       if (this.isVideoPage) {
-        this.markCurrentPlayListItem(window.location.href)
+        this.markCurrentPlaylistItem(window.location.href)
       }
 
-      this.handlePlayListItemClicks()
+      this.handlePlaylistItemClicks()
       this.reactToVideoEnd()
     }
   }
 
   cacheElements () {
     this.playlist = this.querySelector('[class$="-playlist"]')
-    this.PlayListItems = this.querySelectorAll('.PlayListItem')
+    this.PlaylistItems = this.querySelectorAll('.PlaylistItem')
 
     if (this.isVideoPage) {
       this.videoWrapper = this.querySelector('[data-video-wrapper]')
@@ -39,14 +39,14 @@ export class VideoPlaylist extends window.HTMLElement {
     this.querySelector('[data-video-player]').addEventListener(
       'Video:onVideoEnded',
       event => {
-        let currentPlayListItem = this.playlist.querySelector(
+        let currentPlaylistItem = this.playlist.querySelector(
           '[data-current-item="true"]'
         )
-        let nextItem = currentPlayListItem.nextElementSibling
+        let nextItem = currentPlaylistItem.nextElementSibling
 
         if (!nextItem) {
-          nextItem = currentPlayListItem.parentElement.nextElementSibling.querySelector(
-            '.PlayListItem'
+          nextItem = currentPlaylistItem.parentElement.nextElementSibling.querySelector(
+            '.PlaylistItem'
           )
         }
 
@@ -62,11 +62,11 @@ export class VideoPlaylist extends window.HTMLElement {
     )
   }
 
-  // Handles clicks for each individual PlayListItem. If you clicked on something that's not currently
+  // Handles clicks for each individual PlaylistItem. If you clicked on something that's not currently
   // playing, we load it. We also close the Playlist always, which just sets data attributes and the
   // desktop level CSS just ignores those
-  handlePlayListItemClicks () {
-    this.PlayListItems.forEach(item => {
+  handlePlaylistItemClicks () {
+    this.PlaylistItems.forEach(item => {
       let itemUrl = item.getAttribute('data-item-url')
 
       item.addEventListener('click', event => {
@@ -163,7 +163,7 @@ export class VideoPlaylist extends window.HTMLElement {
     }
 
     // mark the item current now that we have the right URL
-    this.markCurrentPlayListItem(url)
+    this.markCurrentPlaylistItem(url)
 
     // redo this event, as we have a new video player
     this.reactToVideoEnd()
@@ -185,8 +185,8 @@ export class VideoPlaylist extends window.HTMLElement {
   }
 
   // this checks the playlist items against the current URL and marks the right one
-  markCurrentPlayListItem (url) {
-    this.PlayListItems.forEach(item => {
+  markCurrentPlaylistItem (url) {
+    this.PlaylistItems.forEach(item => {
       item.removeAttribute('data-current-item')
 
       let itemUrl = item.getAttribute('data-item-url')

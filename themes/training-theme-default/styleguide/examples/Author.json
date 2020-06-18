@@ -22,12 +22,6 @@
       "_include": "/core/list/ListC.json"
     }
   ],
-  "contentFooter": [
-    {
-      "_include": "/core/list/ListE.json"
-    }
-  ],
-  "navigationModules": null,
   "navigation": {
     "_template": "/core/navigation/Navigation.hbs",
     "items": [

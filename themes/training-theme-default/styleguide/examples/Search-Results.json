@@ -6,9 +6,6 @@
   "count": 123456,
 
   "sorts": [
-      { "_template": "/core/search/SearchSortInput.hbs", "url": "#", "label": "Relevant", "selected": true, "parameterName": "sort", "parameterValue": "relevant" },
-      { "_template": "/core/search/SearchSortInput.hbs", "url": "#", "label": "Newest", "parameterName": "sort", "parameterValue": "newest" },
-      { "_template": "/core/search/SearchSortInput.hbs", "url": "#", "label": "Oldest", "parameterName": "sort", "parameterValue": "oldest" }
   ],
   "spotlights": [
       {

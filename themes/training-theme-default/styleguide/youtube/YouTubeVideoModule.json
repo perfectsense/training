@@ -6,28 +6,20 @@
   },
   "playlist": [
     {
-      "_include": "/core/video/PlayListItem.json",
+      "_include": "/core/video/PlaylistItem.json",
       "url": "/examples/VideoPage-YouTube.html"
     },
     {
-      "_include": "/core/video/PlayListItem.json",
+      "_include": "/core/video/PlaylistItem.json",
       "url": "/examples/VideoPage-Vimeo.html"
     },
     {
-      "_include": "/core/video/PlayListItem.json",
+      "_include": "/core/video/PlaylistItem.json",
       "url": "/examples/VideoPage-HTML5.html"
     },
     {
-      "_include": "/core/video/PlayListItem.json",
-      "url": "/examples/VideoPage-Brightcove.html"
-    },
-    {
-      "_include": "/core/video/PlayListItem.json",
+      "_include": "/core/video/PlaylistItem.json",
       "url": "/examples/VideoPage-HTML5.html"
-    },
-    {
-      "_include": "/core/video/PlayListItem.json",
-      "url": "/examples/VideoPage-Brightcove.html"
     }
   ],
   "ctaUrl": "#",
