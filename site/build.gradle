@@ -36,12 +36,10 @@ dependencies {
 
 test {
     project.rootProject.allprojects.each {
-        if (it.name.contains('-theme-') && it.buildDir.exists()) {
+        if (it.name.contains('-theme-')) {
             systemProperties.put('theme.' + it.name + '.compatibilityTestMode', 'error')
         }
     }
 }
 
-if (!System.getProperty("dependencies")) {
-    apply from: "https://artifactory.psdops.com/psddev-releases/com/psddev/brightspot-gradle-plugins/express-site/${brightspotGradlePluginVersion}/express-site.gradle"
-}
+apply from: "https://artifactory.psdops.com/psddev-releases/com/psddev/brightspot-gradle-plugins/express-site/${brightspotGradlePluginVersion}/express-site.gradle"

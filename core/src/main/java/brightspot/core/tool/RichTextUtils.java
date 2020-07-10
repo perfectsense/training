@@ -253,11 +253,7 @@ public final class RichTextUtils {
             return;
         }
 
-        new NodeTraversor(
-            new RichTextElementObserverVisitor(observers)
-        ).traverse(
-            documentFromRichText(richText)
-        );
+        NodeTraversor.traverse(new RichTextElementObserverVisitor(observers), documentFromRichText(richText));
     }
 
     /**

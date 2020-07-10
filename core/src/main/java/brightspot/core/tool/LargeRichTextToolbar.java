@@ -42,13 +42,6 @@ public class LargeRichTextToolbar implements RichTextToolbar {
 
             RichTextToolbarSeparator.BLOCK,
             RichTextToolbarAction.TABLE,
-            RichTextToolbarAction.MERGE_TABLE_CELLS,
-            RichTextToolbarAction.TABLE_ADD_ROW_AFTER,
-            RichTextToolbarAction.TABLE_ADD_ROW_BEFORE,
-            RichTextToolbarAction.TABLE_ADD_COLUMN_AFTER,
-            RichTextToolbarAction.TABLE_ADD_COLUMN_BEFORE,
-            RichTextToolbarAction.TABLE_DELETE_ROW,
-            RichTextToolbarAction.TABLE_DELETE_COLUMN,
 
             RichTextToolbarSeparator.INLINE,
             RichTextToolbarAction.KEYBOARD,
