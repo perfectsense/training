@@ -18,6 +18,9 @@
             </div>
 
         <main class="SectionPage-main">
+            {{#with pageLead}}
+                <div class="SecionPage-pageLead">{{this}}</div>
+            {{/with}}
             {{#with main}}
                 {{#each this}}
                     {{render this [/core/list/List.hbs]="/core/list/ListSection.hbs"}}
