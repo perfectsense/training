@@ -1,0 +1,40 @@
+<div class="Hud">
+    <main class="Hud-main">
+        {{!-- If there is an image display it as a background image by accessing its src --}}
+        <div class="Hud-intro" {{#with image}}style="background-image:url('{{this.[0].image.src}}')" {{/with}}>
+            {{!-- If the editor set the battle name display it --}}
+            {{#with battleName}}
+                <h2 class="Hud-battle">{{this}}</h2>
+            {{/with}}
+        </div>
+        {{!-- If villains are set display them --}}
+        {{#with villains}}
+            <h3 class="Hud-title-villains">Villains</h3>
+            <div class="Hud-villains">
+                {{#each this}}
+                    <div class="Hud-villains-villain">
+                        {{include "/core/promo/PromoCollapsible.hbs" this}}
+                    </div>
+                {{/each}}
+            </div>
+        {{/with}}
+        {{!-- If heroes are set display them --}}
+        {{#with heroes}}
+            <h3 class="Hud-title-heroes">Heroes</h3>
+            <div class="Hud-heroes">
+                {{#each this}}
+                    <div class="Hud-heroes-hero">
+                        {{include "/core/promo/PromoCollapsible.hbs" this}}
+                    </div>
+                {{/each}}
+            </div>
+        {{/with}}
+        {{!-- If we have set a report access its location to add it to our href --}}
+        {{#with href}}
+            <div class="Hud-button">
+                {{!-- Format allows us to access the properties we want to stay as constants which are set in our Hud.properties file --}}
+                <a href="/storage/{{this}}" target="_blank" download>{{format "downloadText"}}</a>
+            </div>
+        {{/with}}
+    </main>
+</div>

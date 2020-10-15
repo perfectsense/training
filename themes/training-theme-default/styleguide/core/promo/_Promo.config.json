@@ -58,6 +58,12 @@
           "example": "/core/promo/PromoLink.json",
           "height": 125,
           "width": 200
+        },
+        {
+          "displayName": "Promo Collapsible",
+          "example": "/core/promo/PromoCollapsible.json",
+          "height": 500,
+          "width": 800
         }
       ]
     }

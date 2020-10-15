@@ -15,6 +15,8 @@ import com.psddev.styleguide.core.list.ListViewItemsField;
 import com.psddev.styleguide.training.movie.MoviePageView;
 import com.psddev.styleguide.training.movie.MoviePageViewCoverField;
 import com.psddev.styleguide.training.movie.MoviePageViewFeaturedCharactersField;
+import bex.training.hud.Hud;
+import com.psddev.styleguide.training.movie.MoviePageViewHudField;
 
 public class MoviePageViewModel extends AbstractContentPageViewModel<Movie> implements MoviePageView, PageEntryView {
 
@@ -76,5 +78,10 @@ public class MoviePageViewModel extends AbstractContentPageViewModel<Movie> impl
     @Override
     public CharSequence getPageSubHeading() {
         return null;
+    }
+
+    @Override
+    public Iterable<? extends MoviePageViewHudField> getHud() {
+        return createViews(MoviePageViewHudField.class, model.getHud());
     }
 }

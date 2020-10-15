@@ -153,6 +153,15 @@
     {
       "name": "Pages",
       "pages": "/examples/**.html"
+    },
+    {
+      "name": "Heads Up Display (HUD)",
+      "pages": [
+        {
+          "name": "Heads Up Display (HUD)",
+          "content": "/training/hud/Hud.html"
+        }
+      ]
     }
   ]
 }

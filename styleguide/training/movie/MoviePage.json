@@ -12,5 +12,8 @@
   "plot": "{{html('This is a very short plot')}}",
   "featuredCharacters": {
     "_include": "/core/list/List.json"
+  },
+  "hud": {
+    "_include": "/training/hud/Hud.json"
   }
 }

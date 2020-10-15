@@ -12,5 +12,8 @@
   "featuredCharacters": {
     "_include": "/core/list/ListA.json"
   },
+  "hud": {
+    "_include": "/training/hud/Hud.json"
+  },
   "_hidden": false
 }

@@ -112,6 +112,10 @@ module.exports = {
       youTubeVideoPlayer: path.join(
         __dirname,
         './styleguide/youtube/YouTubeVideoPlayer.js'
+      ),
+      bspAccordion: path.join(
+        __dirname,
+        './styleguide/core/promo/PromoCollapsible.js'
       )
     }
   }

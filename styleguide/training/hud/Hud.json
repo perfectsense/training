@@ -1,0 +1,15 @@
+{
+  "_template": "Hud.hbs",
+  "battleName": "",
+  "href": "",
+  "image": {
+    "_include": "/core/image/Image.json"
+  },
+  "villains": {
+    "_include": "/core/promo/Promo.json"
+  },
+  "heroes": {
+    "_include": "/core/promo/Promo.json"
+  },
+  "_hidden": false
+}
