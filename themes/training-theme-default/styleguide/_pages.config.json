@@ -89,6 +89,10 @@
         {
           "name": "Promo F - Super Lede Small",
           "content": "/core/promo/PromoF.html"
+        },
+        {
+          "name": "Promo Collapsible",
+          "content": "/core/promo/PromoCollapsible.html"
         }
       ]
     },
