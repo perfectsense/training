@@ -13,6 +13,7 @@ import com.psddev.dari.util.ObjectUtils;
 import com.psddev.styleguide.core.list.ListView;
 import com.psddev.styleguide.core.list.ListViewItemsField;
 import com.psddev.styleguide.training.character.CharacterPageView;
+import com.psddev.styleguide.training.character.CharacterPageViewCountdownsField;
 import com.psddev.styleguide.training.character.CharacterPageViewFeaturedMoviesField;
 import com.psddev.styleguide.training.character.CharacterPageViewImageField;
 
@@ -48,6 +49,11 @@ public class CharacterPageViewModel extends AbstractContentPageViewModel<Charact
     @Override
     public CharSequence getBiography() {
         return RichTextUtils.buildInlineHtml(model.getState().getDatabase(), model.getFullBiography(), this::createView);
+    }
+
+    @Override
+    public Iterable<? extends CharacterPageViewCountdownsField> getCountdowns() {
+        return null;  // TODO fill this in later
     }
 
     @Override
