@@ -2,6 +2,7 @@ version: '3'
 services:
   brightspot:
     build: .
+    hostname: training.localhost
     ports:
       - 80:80
       - 5005:5005
