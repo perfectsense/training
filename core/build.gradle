@@ -25,7 +25,7 @@ dependencies {
 
     // Component Lib.
     api 'com.psddev.component-lib:materialize'
-    api 'com.psddev.component-lib:query-memoization-modifiers'
+    api 'com.psddev.component-lib:query-memoization-express-modifiers'
     api 'com.psddev.component-lib:query-memoization-util'
     api 'com.psddev.component-lib:util-unresolved-state'
 
