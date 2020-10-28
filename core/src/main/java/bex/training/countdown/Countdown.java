@@ -26,6 +26,10 @@ public class Countdown extends Content implements
     @Required
     private String name;
 
+    @DisplayName("Countdown ID")
+    @Indexed(unique = true)
+    private String countdownId;
+
     private Double gammaDistributionShape;
 
     @ToolUi.RichText(toolbar = SmallRichTextToolbar.class)
@@ -42,6 +46,14 @@ public class Countdown extends Content implements
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getCountdownId() {
+        return countdownId;
+    }
+
+    public void setCountdownId(String countdownId) {
+        this.countdownId = countdownId;
     }
 
     public Double getGammaDistributionShape() {
