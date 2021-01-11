@@ -1,7 +1,0 @@
-FROM brightspot/mysql:percona5
-
-# Restore mysql into container. To back up (execute from project root):
-# docker-compose exec mysql sh -c "mysqldump -uroot -pbrightspot --compact --hex-blob --single-transaction --add-drop-table brightspot | gzip > $PWD/etc/data/sql.gz"
-ADD ./data/sql.gz /tmp/sql.gz
-RUN gunzip -c /tmp/sql.gz | mysql brightspot
-RUN rm /tmp/sql.gz

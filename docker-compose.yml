@@ -33,13 +33,11 @@ services:
     volumes:
       - storage-data:/var/www/localhost/htdocs/storage
   mysql:
-    build:
-      context: ./etc
-      dockerfile: ./Dockerfile-mysql
-    image: bsp-training-mysql
+    image: brightspot/mysql:percona5
     volumes:
       - mysql-data:/var/lib/mysql
       - mysql-logs:/var/log/mysql
+      - ./etc/data:/docker-entrypoint-initdb.d:ro
   greenmail:
     image: greenmail/standalone:1.5.14
     ports:
