@@ -1,19 +1,56 @@
 version: '3'
 services:
-  brightspot:
-    build: .
-    hostname: training.localhost
+  tomcat:
+    build:
+      context: ./etc
+      dockerfile: ./Dockerfile-tomcat
+    image: bsp-training-tomcat
+    hostname: training.brightspot
     ports:
-      - 80:80
       - 5005:5005
     volumes:
-      - .:/code
-      - mysql-data:/var/lib/mysql
-      - solr-data:/servers/solr/solr/collection1/data
-      - storage-data:/servers/brightspot/www/storage
+      - .:/code:cached
+      - storage-data:/servers/tomcat/storage
     environment:
       - ROOT_WAR=/code/site/build/libs/training-site-1.0.0-SNAPSHOT.war
+      - CONTEXT_PROPERTIES=/code/docker-context.properties
+      - LOGGING_PROPERTIES=/code/docker-logging.properties
+      - SOLR_URL=http://solr:8080/solr/collection1
+  solr:
+    build:
+      context: ./etc
+      dockerfile: ./Dockerfile-solr
+    image: bsp-training-solr
+    ports:
+      - 8081:8080
+    volumes:
+      - solr-data:/var/solr/data/collection1/data
+  apache:
+    image: brightspot/apache:2-dims3
+    ports:
+      - 80:80
+      - 443:443
+    volumes:
+      - storage-data:/var/www/localhost/htdocs/storage
+  mysql:
+    build:
+      context: ./etc
+      dockerfile: ./Dockerfile-mysql
+    image: bsp-training-mysql
+    volumes:
+      - mysql-data:/var/lib/mysql
+      - mysql-logs:/var/log/mysql
+  greenmail:
+    image: greenmail/standalone:1.5.14
+    ports:
+      - 3025:3025
+      - 3110:3110
+      - 3143:3143
+      - 3465:3465
+      - 3993:3993
+      - 3995:3995
 volumes:
-  mysql-data:
-  solr-data:
   storage-data:
+  mysql-data:
+  mysql-logs:
+  solr-data:
