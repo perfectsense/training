@@ -50,6 +50,11 @@ subprojects {
         implementation enforcedPlatform("com.psddev.component-lib:bom:${componentLibVersion}")
         implementation enforcedPlatform('org.junit:junit-bom:5.4.2')
 
+        constraints {
+            api('org.apache.solr:solr-solrj:8.6.1') {
+                force = true
+            }
+        }
     }
 
     node {

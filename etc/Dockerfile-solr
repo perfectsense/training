@@ -1,9 +1,10 @@
-FROM 59bcc62c44f50d60aa2dbad68ecab780860310300497bab6217e70fb3ead39f4
+FROM brightspot/solr:8.6.1
 
 # Restore solr into container. To back up (execute from project root):
-# docker-compose exec solr tar zcf $PWD/etc/data/solr.tar.gz -C /servers/tomcat/solr/collection1/data .
-ADD ./data/solr.tar.gz /servers/tomcat/solr/collection1/data
+# docker-compose exec solr tar zcf /tmp/solr.tar.gz -C /var/solr/data/collection1/data .
+# docker cp CONTAINER_ID:/tmp/solr.tar.gz etc/data/solr.tar.gz
+ADD ./data/solr.tar.gz /var/solr/data/collection1/data
 USER root
-RUN chown -R tomcat:tomcat /servers/tomcat/solr/collection1/data
-USER tomcat
-VOLUME /servers/tomcat/solr/collection1/data
+RUN chown -R solr:solr /var/solr/data/collection1/data
+USER solr
+VOLUME /var/solr/data/collection1/data

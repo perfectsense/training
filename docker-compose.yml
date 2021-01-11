@@ -24,7 +24,7 @@ services:
     ports:
       - 8081:8080
     volumes:
-      - solr-data:/servers/tomcat/solr/collection1/data
+      - solr-data:/var/solr/data/collection1/data
   apache:
     image: brightspot/apache:2-dims3
     ports:
