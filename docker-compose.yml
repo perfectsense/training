@@ -48,7 +48,7 @@ services:
       - 3993:3993
       - 3995:3995
 volumes:
-  storage-data:
   mysql-data:
   mysql-logs:
   solr-data:
+  storage-data:
