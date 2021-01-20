@@ -26,6 +26,7 @@ allprojects {
     // This is to always exclude express-core no matter what.
     configurations.all {
         exclude group: "com.psddev", module: "express-core"
+        exclude group: "commons-logging", module: "commons-logging" // using org.slf4j:jcl-over-slf4j instead
         exclude group: "javax.activation", module: "activation" // conflicts with javax.activation:javax.activation-api
     }
 }
