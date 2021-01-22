@@ -1,0 +1,10 @@
+FROM brightspot/tomcat:8.5-jdk8
+
+# Restore storage into container. To back up (execute from project root):
+# docker-compose exec tomcat tar zcf /tmp/storage.tar.gz -C /servers/tomcat/storage .
+# docker cp TOMCAT_CONTAINER_ID:/tmp/storage.tar.gz etc/data/storage.tar.gz
+ADD ./data/storage.tar.gz /servers/tomcat/storage/
+USER root
+RUN chown -R tomcat:tomcat /servers/tomcat/storage/
+USER tomcat
+VOLUME /servers/tomcat/storage
