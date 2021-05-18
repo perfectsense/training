@@ -3,14 +3,12 @@ package brightspot.core.video;
 import java.io.IOException;
 import java.io.StringWriter;
 import java.time.Duration;
-import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.Collections;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 import brightspot.core.asset.Asset;
 import brightspot.core.creativework.CreativeWork;
@@ -50,11 +48,11 @@ import com.psddev.dari.db.Recordable;
 import com.psddev.dari.util.HtmlWriter;
 import com.psddev.dari.util.ObjectUtils;
 import com.psddev.dari.util.StorageItem;
-import com.psddev.dari.util.StringUtils;
 import com.psddev.sitemap.SiteMapEntry;
 import com.psddev.sitemap.SiteMapSettingsModification;
 import com.psddev.sitemap.SiteMapVideo;
 import com.psddev.sitemap.VideoSiteMapItem;
+import org.apache.commons.lang3.StringUtils;
 
 @Recordable.PreviewField("getPreviewStorageItem")
 @Seo.OpenGraphType("video")
@@ -366,92 +364,73 @@ public class Video extends CreativeWork implements
     // ExpressSiteMapItem Support
 
     @Override
-    public List<SiteMapEntry> getSiteMapEntries() {
-        List<SiteMapEntry> siteMapEntries = new ArrayList<>();
-
-        Stream.concat(Site.Static.findAll().stream(), Stream.of(new Site[] { null })).forEach(site -> {
-
-            String sitePermalinkPath = as(Directory.ObjectModification.class).getSitePermalinkPath(site);
-            if (sitePermalinkPath == null) {
-                return;
-            }
-
-            VideoProvider videoProvider = this.getVideoProvider();
-            if (videoProvider == null) {
-                return;
-            }
-
-            String thumbnailLoc = Optional.ofNullable(this.getThumbnail())
+    public List<SiteMapEntry> getSiteMapEntries(Site site) {
+        String sitePermalinkPath = as(Directory.ObjectModification.class).getSitePermalinkPath(site);
+        VideoProvider videoProvider = this.getVideoProvider();
+        String thumbnailLoc = Optional.ofNullable(this.getThumbnail())
                 .map(ImageOption::getImageOptionFile)
                 .map(StorageItem::getPublicUrl)
                 .orElse(null);
-            if (thumbnailLoc == null) {
-                return;
-            }
 
-            SiteMapEntry siteMapEntry = new SiteMapEntry();
-            siteMapEntry.setUpdateDate(
+        if (StringUtils.isBlank(sitePermalinkPath) || videoProvider == null || StringUtils.isBlank(thumbnailLoc)) {
+            return Collections.emptyList();
+        }
+
+        SiteMapEntry siteMapEntry = new SiteMapEntry();
+        siteMapEntry.setUpdateDate(
                 ObjectUtils.firstNonNull(
-                    LastUpdatedProvider.getMostRecentUpdateDate(getState()),
-                    getState().as(Content.ObjectModification.class).getPublishDate()
+                        LastUpdatedProvider.getMostRecentUpdateDate(getState()),
+                        getState().as(Content.ObjectModification.class).getPublishDate()
                 )
-            );
+        );
 
-            siteMapEntry.setPermalink(SiteSettings.get(
+        siteMapEntry.setPermalink(SiteSettings.get(
                 site,
-                f -> f.as(SiteMapSettingsModification.class).getSiteMapDefaultUrl() + StringUtils.ensureStart(
-                    sitePermalinkPath,
-                    "/")));
+                f -> f.as(SiteMapSettingsModification.class).getSiteMapDefaultUrl()
+                        + StringUtils.prependIfMissing(sitePermalinkPath, "/")));
 
-            SiteMapVideo siteMapVideo = new SiteMapVideo();
+        SiteMapVideo siteMapVideo = new SiteMapVideo();
 
-            siteMapVideo.setThumbnailLoc(thumbnailLoc);
+        siteMapVideo.setThumbnailLoc(thumbnailLoc);
 
-            siteMapVideo.setTitle(ObjectUtils.firstNonBlank(
+        siteMapVideo.setTitle(ObjectUtils.firstNonBlank(
                 this.as(Seo.ObjectModification.class).getTitle(),
                 this.getHeadline()
-            ));
+        ));
 
-            siteMapVideo.setDescription(ObjectUtils.firstNonBlank(
+        siteMapVideo.setDescription(ObjectUtils.firstNonBlank(
                 this.as(Seo.ObjectModification.class).getDescription(),
                 this.getSubHeadline(),
                 this.getHeadline()));
-            siteMapVideo.setContentLoc(videoProvider.getEmbeddableStreamUrl());
+        siteMapVideo.setContentLoc(videoProvider.getEmbeddableStreamUrl());
 
-            Long duration = this.getDuration();
-            if (duration != null) {
-                siteMapVideo.setDuration(duration / 1000);
-            }
+        Long duration = this.getDuration();
+        if (duration != null) {
+            siteMapVideo.setDuration(duration / 1000);
+        }
 
-            String category = Optional.ofNullable(this.asSectionableData().getSection())
+        Optional.ofNullable(this.asSectionableData().getSection())
                 .map(Section::getDisplayName)
-                .orElse(null);
+                .ifPresent(siteMapVideo::setCategory);
 
-            if (category != null) {
-                siteMapVideo.setCategory(category);
-            }
-
-            List<String> tags = this.asTaggableData().getTags().stream()
+        List<String> tags = this.asTaggableData().getTags().stream()
                 .map(Tag::getDisplayName)
                 .collect(Collectors.toList());
 
-            if (tags.size() < 10) {
-                tags.addAll(this.as(Seo.ObjectModification.class).getKeywords());
+        if (tags.size() < 10) {
+            tags.addAll(this.as(Seo.ObjectModification.class).getKeywords());
+        }
+
+        if (!ObjectUtils.isBlank(tags)) {
+            if (tags.size() > 10) {
+                tags = tags.subList(0, 10);
             }
+            siteMapVideo.setTags(tags);
+        }
 
-            if (!ObjectUtils.isBlank(tags)) {
-                if (tags.size() > 10) {
-                    tags = tags.subList(0, 10);
-                }
-                siteMapVideo.setTags(tags);
-            }
+        siteMapEntry.setVideos(Collections.singletonList(siteMapVideo));
 
-            siteMapEntry.setVideos(Arrays.asList(siteMapVideo));
-
-            siteMapEntries.add(siteMapEntry);
-        });
-
-        return siteMapEntries;
+        return Collections.singletonList(siteMapEntry);
     }
 
     // TimedContent Support

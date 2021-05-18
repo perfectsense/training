@@ -6,8 +6,8 @@ plugins {
 }
 
 ext.brightspotGradlePluginVersion = '4.1.15'
-ext.brightspotVersion = '4.2.11.1'
-ext.componentLibVersion = '4.2.65'
+ext.brightspotVersion = '4.2.19.1'
+ext.componentLibVersion = '4.2.108'
 
 allprojects {
     group = 'com.psddev.training'

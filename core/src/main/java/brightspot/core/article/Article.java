@@ -1,12 +1,10 @@
 package brightspot.core.article;
 
-import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 import java.util.Locale;
 import java.util.Optional;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 import brightspot.core.creativework.CreativeWork;
 import brightspot.core.image.ImageOption;
@@ -40,15 +38,15 @@ import com.psddev.cms.db.Seo;
 import com.psddev.cms.db.Site;
 import com.psddev.cms.db.SiteSettings;
 import com.psddev.cms.db.ToolUi;
-import com.psddev.dari.db.ObjectType;
 import com.psddev.dari.util.ObjectUtils;
-import com.psddev.dari.util.StringUtils;
+import com.psddev.dari.util.Utils;
 import com.psddev.feed.FeedItem;
 import com.psddev.sitemap.NewsSiteMapItem;
 import com.psddev.sitemap.SiteMapEntry;
 import com.psddev.sitemap.SiteMapNews;
 import com.psddev.sitemap.SiteMapSettingsModification;
 import com.psddev.theme.StyleEmbeddedContentCreator;
+import org.apache.commons.lang3.StringUtils;
 
 @Seo.OpenGraphType("article")
 @ToolUi.FieldDisplayOrder({
@@ -215,7 +213,7 @@ public class Article extends CreativeWork implements
 
     @Override
     public String getSluggableSlugFallback() {
-        return StringUtils.toNormalized(getHeadline());
+        return Utils.toNormalized(getHeadline());
     }
 
     // *** CreativeWork implementation *** //
@@ -236,58 +234,55 @@ public class Article extends CreativeWork implements
     }
 
     @Override
-    public List<SiteMapEntry> getNewsSiteMapEntries() {
-        List<SiteMapEntry> siteMapEntries = new ArrayList<>();
-        Stream.concat(Site.Static.findAll().stream(), Stream.of(new Site[] { null })).forEach(site -> {
+    public List<SiteMapEntry> getNewsSiteMapEntries(Site site) {
+        String sitePermalinkPath = as(Directory.ObjectModification.class).getSitePermalinkPath(site);
+        if (StringUtils.isBlank(sitePermalinkPath)) {
+            return Collections.emptyList();
+        }
 
-            Locale locale = ObjectUtils.firstNonNull(
+        Locale locale = ObjectUtils.firstNonNull(
                 FrontEndSettings.get(site, FrontEndSettings::getLocale),
                 Locale.getDefault());
-            String sitePermalinkPath = as(Directory.ObjectModification.class).getSitePermalinkPath(site);
-            if (!StringUtils.isBlank(sitePermalinkPath)) {
-                SiteMapEntry siteMapEntry = new SiteMapEntry();
-                siteMapEntry.setUpdateDate(
-                    ObjectUtils.firstNonNull(
+
+        SiteMapEntry siteMapEntry = new SiteMapEntry();
+        siteMapEntry.setUpdateDate(
+                ObjectUtils.firstNonNull(
                         LastUpdatedProvider.getMostRecentUpdateDate(getState()),
                         getState().as(Content.ObjectModification.class).getPublishDate()
-                    )
-                );
-                siteMapEntry.setPermalink(SiteSettings.get(
-                    site,
-                    f -> f.as(SiteMapSettingsModification.class).getSiteMapDefaultUrl() + StringUtils.ensureStart(
-                        sitePermalinkPath,
-                        "/")));
+                )
+        );
+        siteMapEntry.setPermalink(SiteSettings.get(
+                site,
+                f -> f.as(SiteMapSettingsModification.class).getSiteMapDefaultUrl()
+                        + StringUtils.prependIfMissing(sitePermalinkPath, "/")));
 
-                SiteMapNews siteMapNews = new SiteMapNews();
-                siteMapNews.setName(site != null ? site.getName() : "Global");
+        SiteMapNews siteMapNews = new SiteMapNews();
+        siteMapNews.setName(site != null ? site.getName() : "Global");
 
-                siteMapNews.setLanguage(locale.getISO3Language());
-                siteMapNews.setPublicationDate(this.getPublishDate());
-                siteMapNews.setTitle(ObjectUtils.firstNonBlank(
-                    this.as(Seo.ObjectModification.class).getTitle(),
-                    this.getHeadline()
-                ));
-                List<String> keywords = this.asTaggableData().getTags().stream()
-                    .map(Tag::getDisplayName)
-                    .collect(Collectors.toList());
+        siteMapNews.setLanguage(locale.getISO3Language());
+        siteMapNews.setPublicationDate(this.getPublishDate());
+        siteMapNews.setTitle(ObjectUtils.firstNonBlank(
+                this.as(Seo.ObjectModification.class).getTitle(),
+                this.getHeadline()
+        ));
+        List<String> keywords = this.asTaggableData().getTags().stream()
+                .map(Tag::getDisplayName)
+                .collect(Collectors.toList());
 
-                if (keywords.size() < 10) {
-                    keywords.addAll(this.as(Seo.ObjectModification.class).getKeywords());
-                }
+        if (keywords.size() < 10) {
+            keywords.addAll(this.as(Seo.ObjectModification.class).getKeywords());
+        }
 
-                if (!ObjectUtils.isBlank(keywords)) {
-                    if (keywords.size() > 10) {
-                        keywords = keywords.subList(0, 10);
-                    }
-                    siteMapNews.setKeywords(keywords);
-                }
-
-                siteMapEntry.setNews(Arrays.asList(siteMapNews));
-
-                siteMapEntries.add(siteMapEntry);
+        if (!ObjectUtils.isBlank(keywords)) {
+            if (keywords.size() > 10) {
+                keywords = keywords.subList(0, 10);
             }
-        });
-        return siteMapEntries;
+            siteMapNews.setKeywords(keywords);
+        }
+
+        siteMapEntry.setNews(Collections.singletonList(siteMapNews));
+
+        return Collections.singletonList(siteMapEntry);
     }
 
     @Override
