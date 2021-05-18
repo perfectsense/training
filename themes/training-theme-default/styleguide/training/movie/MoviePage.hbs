@@ -12,7 +12,7 @@
 
                         <div class="MoviePage-intro">
                             {{#with cover}}
-                                {{#set imageSize='squareMedium'}}
+                                {{#set imageSize='articleImage'}}
                                     <div class="MoviePage-cover">{{this}}</div>
                                 {{/set}}
                             {{/with}}
@@ -23,6 +23,11 @@
                                 {{/with}}
                                 {{#with phase}}
                                     <h2 class="MoviePage-phase">{{this}}</h2>
+                                {{/with}}
+                                {{#with releaseDate}}
+                                    <div class="MoviePage-releaseDate">
+                                        {{format "releaseDateText"}}&nbsp;{{this}}
+                                    </div>
                                 {{/with}}
                             </div>
                         </div>
@@ -39,11 +44,7 @@
                             </div>
                         {{/with}}
 
-                        {{#with releaseDate}}
-                            <div class="MoviePage-plot releaseDate">
-                                {{this}}
-                            </div>
-                        {{/with}}
+
 
                     </article>
 

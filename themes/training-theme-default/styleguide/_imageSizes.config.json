@@ -8,6 +8,10 @@
       "width": 840,
       "height": 560
     },
+    "countdownBanner": {
+      "width": 500,
+      "height": 100
+    },
     "gallerySlide": {
       "previewWidth": 1440,
       "previewHeight": 960,

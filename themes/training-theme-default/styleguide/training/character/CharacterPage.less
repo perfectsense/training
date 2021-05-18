@@ -1,4 +1,36 @@
 .CharacterPage {
   &:extend(.CreativeWorkPage all);
   &:extend(.CreativeWorkPageOneColumnLayout all);
+
+  &-alterEgo {
+    margin-bottom: @gap / 2;
+  }
+
+  &-image {
+    margin-bottom: @gap;
+
+    img {
+      border-radius: 100%;
+    }
+  }
+
+  &-intro {
+    margin-bottom: @gap;
+  }
+
+  &-name {
+    margin-bottom: @gap / 2;
+  }
+
+  @media @mq-viewport-md {
+    &-intro {
+      display: flex;
+    }
+
+    &-image {
+      flex-shrink: 0;
+      margin: 0 @gap 0 0;
+      width: 200px;
+    }
+  }
 }

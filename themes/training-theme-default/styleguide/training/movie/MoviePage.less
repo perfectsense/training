@@ -1,4 +1,36 @@
 .MoviePage {
   &:extend(.CreativeWorkPage all);
   &:extend(.CreativeWorkPageOneColumnLayout all);
+
+  &-cover {
+    margin-bottom: @gap;
+  }
+
+  &-info {
+    margin-bottom: @gap;
+  }
+
+  &-name {
+    margin-bottom: @gap / 2;
+  }
+
+  &-releaseDate {
+    margin-top: @gap / 2;
+  }
+
+  @media @mq-viewport-lg {
+    &-cover,
+    &-info {
+      flex-shrink: 0;
+      width: 50%;
+    }
+
+    &-cover {
+      margin-right: @gap;
+    }
+
+    &-intro {
+      display: flex;
+    }
+  }
 }
