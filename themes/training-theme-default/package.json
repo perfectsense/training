@@ -10,7 +10,7 @@
     "@babel/preset-env": "7.1.6",
     "babel-eslint": "7.2.1",
     "babel-loader": "8.0.4",
-    "brightspot-styleguide": "4.2.9",
+    "brightspot-styleguide": "4.2.19",
     "capitalize": "^1.0.0",
     "css-loader": "1.0.1",
     "cssnano": "4.1.10",

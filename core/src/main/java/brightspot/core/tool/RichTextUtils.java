@@ -247,13 +247,18 @@ public final class RichTextUtils {
      * @param richText The rich text String.
      * @param observers A list of observers to observe each RichTextElement.
      */
-    public static void observeRichTextElements(String richText, List<RichTextElementObserver> observers) {
+    public static void observeRichTextElements(
+            Database database,
+            String richText,
+            List<RichTextElementObserver> observers) {
 
         if (richText == null || observers == null || observers.isEmpty()) {
             return;
         }
 
-        NodeTraversor.traverse(new RichTextElementObserverVisitor(observers), documentFromRichText(richText));
+        NodeTraversor.traverse(
+                new RichTextElementObserverVisitor(database, observers),
+                documentFromRichText(richText));
     }
 
     /**
