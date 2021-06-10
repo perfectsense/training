@@ -63,6 +63,7 @@ public class MoviePageViewModel extends AbstractContentPageViewModel<Movie> impl
 
     @Override
     public CharSequence getReleaseDate() {
+        if(model.getReleaseDate()==null)return null;
         return RELEASE_DATE_FORMAT.format(model.getReleaseDate());
     }
 
