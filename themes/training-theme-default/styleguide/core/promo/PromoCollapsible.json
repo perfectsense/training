@@ -1,0 +1,17 @@
+{
+  "_wrapper": "/_wrapper.previewAtomic.json",
+  "_template": "/core/promo/PromoCollapsible.hbs",
+  "media": {
+    "_template": "/core/image/Image.hbs",
+    "image": {
+      "_image": true
+    }
+  },
+  "date": "",
+  "url": "#",
+  "target": "_self",
+  "title": "{{words(2,4)}}",
+  "description": "{{paragraphs(1)}}",
+  "category": "",
+  "categoryUrl": ""
+}

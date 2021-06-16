@@ -19,6 +19,7 @@ import { SectionNavigation } from 'sectionNavigation'
 import { YouTubeVideoPlayer } from 'youTubeVideoPlayer'
 import { VimeoVideoPlayer } from 'vimeoVideoPlayer'
 import { VideoPlaylist } from 'videoPlaylist'
+import { BSPAccordion } from 'bspAccordion'
 
 function registerCustomElements () {
   window.customElements.define('ps-actionbar', ActionBar)
@@ -37,6 +38,7 @@ function registerCustomElements () {
   window.customElements.define('ps-youtubeplayer', YouTubeVideoPlayer)
   window.customElements.define('ps-vimeoplayer', VimeoVideoPlayer)
   window.customElements.define('ps-video-playlist', VideoPlaylist)
+  window.customElements.define('bsp-accordion', BSPAccordion)
   new GoogleDfp()
   new LazyLoadImages()
 }

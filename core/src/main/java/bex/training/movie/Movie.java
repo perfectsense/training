@@ -24,6 +24,9 @@ import com.psddev.dari.db.Recordable;
 import com.psddev.dari.util.ObjectUtils;
 import com.psddev.dari.util.StringUtils;
 
+// Import association to the HUD files
+import bex.training.hud.Hud;
+
 @Seo.TitleFields("getSeoTitle")
 @Seo.DescriptionFields("getSeoDescription")
 @Seo.KeywordsFields("getSeoKeywords")
@@ -101,6 +104,20 @@ public class Movie extends Content implements Linkable,
 
     public void setPhase(Phase phase) {
         this.phase = phase;
+    }
+
+    @Required
+    @Indexed
+    @ToolUi.Filterable
+    private Hud hud;
+
+    // Getters and Setters
+    public Hud getHud() {
+        return hud;
+    }
+
+    public void setHud(Hud hud) {
+        this.hud = hud;
     }
 
     @Indexed

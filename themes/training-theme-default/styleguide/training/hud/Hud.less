@@ -1,0 +1,70 @@
+.Hud {
+  font-family: fantasy;
+
+  &-intro {
+    width: 100%;
+    padding: 60px;
+    color: white;
+    background-size: cover;
+    text-align: center;
+    background-color: crimson;
+    font-weight: bold;
+  }
+  &-title {
+    &-villains {
+      background: black;
+      color: crimson;
+      padding: 30px;
+      text-align: center;
+      font-weight: bold;
+    }
+    &-heroes {
+      color: whitesmoke;
+      background: dodgerblue;
+      padding: 30px;
+      text-align: center;
+      margin-top: 30px;
+      font-weight: bold;
+    }
+  }
+
+  &-villains,
+  &-heroes {
+    margin-top: 60px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    &-villain,
+    &-hero {
+      width: 50%;
+      text-align: center;
+
+      &:nth-child(odd) {
+        padding-right: 15px;
+      }
+
+      &:nth-child(even) {
+        padding-left: 15px;
+      }
+      img {
+        max-width: 100%;
+        margin: 0 auto 15px;
+      }
+    }
+  }
+
+  &-button {
+    text-align: center;
+    margin-top: 30px;
+    a {
+      color: whitesmoke;
+      background: dodgerblue;
+      width: auto;
+      padding: 15px 30px;
+      border-radius: 30px;
+      display: inline-block;
+      font-weight: bold;
+    }
+  }
+}

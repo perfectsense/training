@@ -1,0 +1,27 @@
+<div class="PromoCollapsible">
+    <div class="PromoCollapsible-content">
+        {{#if media}}
+            <div class="PromoCollapsible-media">
+                {{#set imageSize='promoMedium'}}
+                    {{#set lazyLoad='true'}}
+                        {{include "../link/Link.hbs" aria-label=title href=url target=target body=media}}
+                    {{/set}}
+                {{/set}}
+            </div>
+        {{/if}}
+        {{#with title}}
+            <div class="PromoCollapsible-title">
+                {{include "../link/Link.hbs" href=../url target=../target body=this}}
+            </div>
+        {{/with}}
+        {{#with description}}
+        {{!-- We are using a new Custom Element to handle our Javascript Interactions defined in our JS File --}}
+            <bsp-accordion>
+                <button class="PromoCollapsible-button" data-accordion-trigger>View Bio</button>
+                <div class="PromoCollapsible-accordion">
+                    <div class="PromoCollapsible-description">{{this}}</div>
+                </div>
+            </bsp-accordion>
+        {{/with}}
+    </div>
+</div>

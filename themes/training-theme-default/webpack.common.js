@@ -39,6 +39,7 @@ module.exports = {
         './styleguide/core/action-bar/ActionBar.js'
       ),
       banner: path.join(__dirname, './styleguide/core/banner/Banner.js'),
+      bspAccordion: path.join(__dirname, './styleguide/core/promo/PromoCollapsible.js'),
       carousel: path.join(__dirname, './styleguide/core/carousel/Carousel.js'),
       talkCustom: path.join(
         __dirname,
