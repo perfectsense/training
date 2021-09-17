@@ -33,7 +33,7 @@ services:
     volumes:
       - storage-data:/var/www/localhost/htdocs/storage
   mysql:
-    image: brightspot/mysql:percona5
+    image: brightspot/mysql:mysql5.6
     volumes:
       - mysql-data:/var/lib/mysql
       - mysql-logs:/var/log/mysql
