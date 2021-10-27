@@ -1,0 +1,39 @@
+plugins {
+    id "com.gradle.enterprise" version "3.1.1"
+}
+
+rootProject.name = 'brightspot-training'
+
+include(':brightspot-training-core')
+include(':brightspot-training-frontend')
+include(':brightspot-training-web')
+
+project(':brightspot-training-core').projectDir = file('core')
+project(':brightspot-training-frontend').projectDir = file('frontend')
+project(':brightspot-training-web').projectDir = file('web')
+
+// -- Gradle Cache Server -- //
+
+def gradleCacheUrl = "https://cache.gradle.psdops.com/cache/"
+def gradleCacheUsername = System.getenv('GRADLE_CACHE_USERNAME')
+def gradleCachePassword = System.getenv('GRADLE_CACHE_PASSWORD')
+boolean isCiServer = gradleCacheUsername != null
+
+buildCache {
+  if (gradleCacheUrl != null) {
+    local {
+      enabled = !isCiServer
+    }
+    remote(HttpBuildCache) {
+      push = isCiServer
+      url = gradleCacheUrl
+      allowUntrustedServer = true
+      if (gradleCacheUsername != null && gradleCachePassword != null) {
+        credentials {
+            username = gradleCacheUsername
+            password = gradleCachePassword
+        }
+      }
+    }
+  }
+}

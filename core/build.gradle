@@ -1,0 +1,46 @@
+description = 'Brightspot Training: Core'
+
+dependencies {
+    // Brightspot
+    api 'com.psddev:auth'
+    api 'com.psddev:cms-db'
+    api 'com.psddev:cms-hunspell'
+    api 'com.psddev:cms-tool-ui'
+    api 'com.psddev:conversation'
+    api 'com.psddev:dari-db'
+    api 'com.psddev:dari-mysql'
+    api 'com.psddev:dari-util'
+    api 'com.psddev:handlebars'
+    api 'com.psddev:image'
+    api 'com.psddev:jobs'
+    api 'com.psddev:redirects'
+    api 'com.psddev:rss'
+    api 'com.psddev:sitemap'
+    api 'com.psddev:terms'
+    api 'com.psddev:theme'
+    api 'com.psddev:timeseries-mysql'
+
+    // Component Lib.
+    api 'com.brightspot.go:lib-util-essentials-cms'
+    api 'com.psddev.component-lib:materialize'
+
+    // Third party.
+    api 'com.cronutils:cron-utils'
+    api 'org.ahocorasick:ahocorasick'
+
+    // Provided
+    compileOnly 'javax.el:javax.el-api'
+    compileOnly 'javax.servlet:javax.servlet-api'
+    compileOnly 'javax.servlet.jsp:javax.servlet.jsp-api'
+
+    // Test.
+    testImplementation("org.junit.jupiter:junit-jupiter-api")
+    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine")
+}
+
+apply from: file("host.gradle")
+
+project.afterEvaluate {
+
+    jar.dependsOn(test)
+}
