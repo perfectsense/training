@@ -1,0 +1,9 @@
+{
+  "_wrapper": false,
+  "_include": "/page/CreativeWorkPage.json",
+  "_template": "FormPage.hbs",
+  "form": {
+    "_include": "/form/Form.json"
+  },
+  "_hidden": true
+}

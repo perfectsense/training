@@ -1,0 +1,28 @@
+{
+  "_template": "NavigationItem.hbs",
+  "text": {
+    "_include": "/_group/RichTextElementsTiny.json"
+  },
+  "href": "#",
+  "target": "_self",
+  "items": [
+    {
+      "_include": "NavigationLink.json"
+    },
+    {
+      "_include": "NavigationGroup.json"
+    },
+    {
+      "_include": "/social/SocialLink.json"
+    }
+  ],
+  "promos": [
+    {
+      "_include": "/page/promo/PagePromo.json"
+    }
+  ],
+  "contentId": "a123",
+  "iconUrl": "https://example.com/url/to/icon",
+  "isCurrent": true,
+  "_hidden": true
+}

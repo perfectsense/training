@@ -1,0 +1,10 @@
+{
+  "_template": "BlockQuote.hbs",
+  "quote": {
+    "_include": "/_group/RichTextElementsTiny.json"
+  },
+  "attribution": {
+    "_include": "/_group/RichTextElementsTiny.json"
+  },
+  "_hidden": true
+}

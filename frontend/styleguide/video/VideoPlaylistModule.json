@@ -1,0 +1,20 @@
+{
+  "_template": "/video/VideoPlaylistModule.hbs",
+  "title": {
+    "_include": "/_group/RichTextElementsTiny.json"
+  },
+  "description": {
+    "_include": "/_group/RichTextElementsSmall.json",
+    "_key": 1
+  },
+  "player": {
+    "_include": "/_group/Videos.json",
+    "_key": 0
+  },
+  "playlist": {
+    "_include": "/video/PlaylistItem.json"
+  },
+  "ctaUrl": "#",
+  "ctaTarget": "_self",
+  "_hidden": true
+}

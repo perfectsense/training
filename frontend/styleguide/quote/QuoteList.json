@@ -1,0 +1,11 @@
+{
+  "_template": "QuoteList.hbs",
+  "title": {
+    "_include": "/_group/RichTextElementsTiny.json"
+  },
+  "items": {
+    "_include": "/quote/Quote.json"
+  },
+  "ctaUrl": "#",
+  "ctaTarget": "_self"
+}

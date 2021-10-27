@@ -1,0 +1,16 @@
+{
+  "_include": "/form/input/Input.json",
+  "_template": "PhoneNumberInput.hbs",
+  "inputName": "tel",
+  "placeholder": "Placeholder",
+  "autocomplete": "tel",
+  "autofocus": false,
+  "disabled": false,
+  "maxlength": 100,
+  "minlength": 1,
+  "pattern": "",
+  "readonly": false,
+  "required": false,
+  "inputValue": "",
+  "_hidden": true
+}

@@ -1,0 +1,6 @@
+{
+  "_include": "/externalcontent/ExternalContent.json",
+  "_template": "TweetUrl.hbs",
+  "postId": "123456789012345678",
+  "_hidden": true
+}

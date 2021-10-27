@@ -1,0 +1,33 @@
+{
+  "_wrapper": false,
+  "_include": "/page/ContentPage.json",
+  "_template": "CreativeWorkPage.hbs",
+  "datePublished": "December 11, 2016",
+  "datePublishedISO": "2016-02-19T16:43:22+00:00",
+  "dateModified": "Modified: December 12, 2016",
+  "dateModifiedISO": "2016-02-19T17:44:23+00:00",
+  "headline": {
+    "_include": "/_group/RichTextElementsTiny.json"
+  },
+  "subHeadline": {
+    "_include": "/_group/RichTextElementsTiny.json"
+  },
+  "authorUrl": "#",
+  "authorImage": {
+    "_image": true
+  },
+  "authorName": {
+    "_include": "/_group/RichTextElementsTiny.json"
+  },
+  "authorBiography": {
+    "_include": "/_group/RichTextElementsMedium.json"
+  },
+  "contributors": {
+    "_include": "/link/Link.json"
+  },
+  "people": {
+    "_include": "/page/promo/PagePromo.json"
+  },
+  "source": "Source",
+  "_hidden": true
+}

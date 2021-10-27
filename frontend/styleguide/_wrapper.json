@@ -1,0 +1,41 @@
+{
+  "_template": "PreviewPage.hbs",
+  "language": "",
+  "extraStyles": {
+    "_include": "/_group/ExtraStyles.json"
+  },
+  "title": "Brightspot Express Component Preview",
+  "description": "Brightspot Express is...",
+  "keywords": "Brightspot, Brightspot Express",
+  "canonicalLink": "https://www.brightspot.com/",
+  "meta": {
+    "_include": "/_group/Metas.json"
+  },
+  "manifestLink": "/manifest.json",
+  "favicons": [
+    {
+      "_include": "/page/Favicon.json",
+      "rel": "apple-touch-icon",
+      "href": "/apple-touch-icon.png"
+    },
+    {
+      "_include": "/page/Favicon.json"
+    },
+    {
+      "_include": "/page/Favicon.json",
+      "href": "/favicon-16x16.png"
+    }
+  ],
+  "stylePackage": {
+    "_include": "/page/StylePackage.json"
+  },
+  "extraScripts": {
+    "_include": "/_group/ExtraScripts.json"
+  },
+  "extraBodyItems": {
+    "_include": "/_group/ExtraBodyItems.json"
+  },
+  "main": {
+    "_delegate": true
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "_hidden": true,
+  "_template": "Input.hbs",
+  "label": {
+    "_include": "/_group/RichTextElementsTiny.json"
+  },
+  "labelPlainText": "",
+  "inputName": "inputName",
+  "inputValue": "Input Value",
+  "errors": [
+    "Field is required"
+  ],
+  "description": {
+    "_include": "/_group/RichTextElementsTiny.json"
+  }
+}

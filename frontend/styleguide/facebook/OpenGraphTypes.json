@@ -1,0 +1,17 @@
+[
+  {
+    "_include": "OpenGraphArticleMeta.json"
+  },
+  {
+    "_include": "OpenGraphProfileMeta.json"
+  },
+  {
+    "_include": "OpenGraphVideoMeta.json"
+  },
+  {
+    "_include": "OpenGraphAudioMeta.json"
+  },
+  {
+    "_template": "OpenGraphWebsiteMeta.hbs"
+  }
+]

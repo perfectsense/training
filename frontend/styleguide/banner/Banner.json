@@ -1,0 +1,6 @@
+{
+  "_template": "Banner.hbs",
+  "linkBody": "Lorem Ipsum Dolor",
+  "linkHref": "#",
+  "_hidden": true
+}

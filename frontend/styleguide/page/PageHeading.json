@@ -1,0 +1,20 @@
+{
+  "_template": "/page/PageHeading.hbs",
+  "eyebrow": {
+    "_include": "/_group/RichTextElementsTiny.json"
+  },
+  "eyebrowUrl": "",
+  "eyebrowTarget": "",
+  "pageHeading": {
+    "_include": "/_group/RichTextElementsTiny.json"
+  },
+  "pageSubHeading": {
+    "_include": "/_group/RichTextElementsTiny.json"
+  },
+  "logo": {
+    "_include": "/image/Image.json"
+  },
+  "media": {
+    "_include": "/image/Image.json"
+  }
+}

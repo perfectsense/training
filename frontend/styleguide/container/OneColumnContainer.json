@@ -1,0 +1,14 @@
+{
+  "_template": "OneColumnContainer.hbs",
+  "title": {
+    "_include": "/_group/RichTextElementsTiny.json"
+  },
+  "description": {
+    "_include": "/_group/RichTextElementsSmall.json",
+    "_key": 1
+  },
+  "columnOne": {
+    "_include": "/_group/Modules.json",
+    "_key": 0
+  }
+}

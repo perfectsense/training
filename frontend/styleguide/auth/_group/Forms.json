@@ -1,0 +1,14 @@
+[
+  {
+    "_include": "/auth/form/LoginForm.json"
+  },
+  {
+    "_include": "/auth/form/RegistrationForm.json"
+  },
+  {
+    "_include": "/auth/form/ForgotPasswordForm.json"
+  },
+  {
+    "_include": "/auth/form/ResetPasswordForm.json"
+  }
+]

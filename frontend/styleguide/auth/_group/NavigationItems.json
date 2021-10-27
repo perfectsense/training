@@ -1,0 +1,8 @@
+[
+  {
+    "_include": "/auth/navigation/AuthenticatedNavigationItem.json"
+  },
+  {
+    "_include": "/auth/navigation/UnauthenticatedNavigationItem.json"
+  }
+]

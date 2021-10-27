@@ -1,0 +1,20 @@
+{
+  "_template": "NewsletterList.hbs",
+  "title": "NewsletterList Title",
+  "description": {
+    "_include": "/_group/RichTextElementsSmall.json"
+  },
+  "items": {
+    "_template": "/newsletter/NewsletterPromo.hbs"
+  },
+  "newsletterDataSource": "",
+  "newsletterDataMedium": "",
+  "newsletterDataCampaign": "",
+  "newsletterDataContent": "",
+  "isNotUTMCapable": "false",
+  "ctaIsNotUTMCapable": "false",
+  "ctaUrl": "#",
+  "ctaTarget": "_self",
+  "ctaTitle": "Read More",
+  "_hidden": true
+}

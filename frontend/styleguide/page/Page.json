@@ -1,0 +1,113 @@
+{
+  "_wrapper": false,
+  "_template": "Page.hbs",
+  "language": "",
+  "extraStyles": {
+    "_include": "/_group/ExtraStyles.json",
+    "_key": 0
+  },
+  "extraLinks": [
+    {
+      "_include": "/page/LinkElement.json"
+    }
+  ],
+  "title": "Brightspot Express",
+  "description": "Brightspot Express is...",
+  "keywords": "Brightspot, Brightspot Express",
+  "canonicalLink": "https://www.brightspot.com/",
+  "meta": {
+    "_include": "/_group/Metas.json",
+    "_key": 0
+  },
+  "feedLink": "Feed Link",
+  "jsonLinkedData": "",
+  "manifestLink": "/manifest.json",
+  "favicons": {
+    "_include": "Favicon.json"
+  },
+  "extraScripts": {
+    "_include": "/_group/ExtraScripts.json",
+    "_key": 0
+  },
+  "stylePackage": {
+    "_include": "StylePackage.json"
+  },
+  "extraBodyItems": {
+    "_include": "/_group/ExtraBodyItems.json",
+    "_key": 0
+  },
+  "hat": {
+    "_include": "/page/PageHeaderTextHat.json"
+  },
+  "logo": {
+    "_include": "/page/PageLogo.json"
+  },
+  "footerLogo": {
+    "_include": "/page/PageLogo.json"
+  },
+  "banner": {
+    "_include": "/_group/Banners.json",
+    "_key": 0
+  },
+  "navigation": {
+    "_include": "/navigation/Navigation.json"
+  },
+  "social": {
+    "_include": "/social/SocialBar.json"
+  },
+  "sectionNavigation": {
+    "_include": "/navigation/Navigation.json"
+  },
+  "searchAction": "#",
+  "above": {
+    "_include": "/_group/Modules.json",
+    "_key": 0
+  },
+  "pageHeading": {
+    "_include": "/_group/RichTextElementsTiny.json"
+  },
+  "pageLead": {
+    "_include": "/_group/Leads.json",
+    "_key": 0
+  },
+  "pageSubHeading": {
+    "_include": "/_group/RichTextElementsSmall.json",
+    "_key": 1
+  },
+  "main": {
+    "_include": "/_group/Modules.json",
+    "_key": 0
+  },
+  "aside": {
+    "_include": "/_group/Modules.json",
+    "_key": 0
+  },
+  "below": {
+    "_include": "/_group/Modules.json",
+    "_key": 0
+  },
+  "footerNavigation": {
+    "_include": "/navigation/Navigation.json"
+  },
+  "footerContent": {
+    "_include": "/_group/Modules.json",
+    "_key": 0
+  },
+  "disclaimer": {
+    "_include": "/_group/RichTextElementsSmall.json",
+    "_key": 1
+  },
+  "contentId": "a123",
+  "ampIntegrations": {
+    "_include": "/_group/AmpIntegrations.json",
+    "_key": 0
+  },
+  "ampAnalytics": {
+    "_include": "/_group/AmpAnalytics.json",
+    "_key": 0
+  },
+  "actions": {
+    "_include": "/action-bar/ActionBar.json"
+  },
+  "_hidden": true
+}

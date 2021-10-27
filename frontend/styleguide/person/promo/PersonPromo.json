@@ -1,0 +1,20 @@
+{
+  "_template": "/person/promo/PersonPromo.hbs",
+  "media": {
+    "_template": "/image/Image.hbs",
+    "image": {
+      "_image": true
+    }
+  },
+  "publicationUrl": "#",
+  "publicationTitle": {
+    "_include": "/_group/RichTextElementsTiny.json"
+  },
+  "name": {
+    "_include": "/_group/RichTextElementsTiny.json"
+  },
+  "jobTitle": {
+    "_include": "/_group/RichTextElementsTiny.json"
+  },
+  "url": "#"
+}

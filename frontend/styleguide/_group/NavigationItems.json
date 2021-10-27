@@ -1,0 +1,12 @@
+[
+  {
+    "_template": "/navigation/NavigationItem.hbs"
+  },
+  {
+    "_include": "/auth/_group/NavigationItems.json",
+    "_key": 0
+  },
+  {
+    "_template": "/social/SocialLink.hbs"
+  }
+]

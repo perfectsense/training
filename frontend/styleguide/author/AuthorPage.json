@@ -1,0 +1,39 @@
+{
+  "_wrapper": false,
+  "_include": "/page/ContentPage.json",
+  "_template": "AuthorPage.hbs",
+  "name": {
+    "_include": "/_group/RichTextElementsTiny.json"
+  },
+  "firstName": {
+    "_include": "/_group/RichTextElementsTiny.json"
+  },
+  "lastName": {
+    "_include": "/_group/RichTextElementsTiny.json"
+  },
+  "jobTitle": {
+    "_include": "/_group/RichTextElementsTiny.json"
+  },
+  "email": "VP@acme.com",
+  "affiliation": {
+    "_include": "/_group/RichTextElementsTiny.json"
+  },
+  "image": {
+    "_include": "/image/Image.json"
+  },
+  "shortBiography": {
+    "_include": "/_group/RichTextElementsSmall.json",
+    "_key": 1
+  },
+  "fullBiography": {
+    "_include": "/_group/RichTextElementsMedium.json",
+    "_key": 1
+  },
+  "links": {
+    "_include": "/link/Link.json"
+  },
+  "authorSocialLinks": {
+    "_include": "/social/SocialBar.json"
+  },
+  "_hidden": true
+}

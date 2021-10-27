@@ -1,0 +1,14 @@
+{
+  "_template": "/author/list/AuthorList.hbs",
+  "title": {
+    "_include": "/_group/RichTextElementsTiny.json"
+  },
+  "items": [
+    {
+      "_include": "/author/promo/AuthorPromo.json",
+      "_repeat": 24
+    }
+  ],
+  "ctaUrl": "#",
+  "ctaTarget": "_self"
+}

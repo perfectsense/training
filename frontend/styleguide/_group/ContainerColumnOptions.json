@@ -1,0 +1,14 @@
+[
+  {
+    "_template": "/container/OneColumnContainer.hbs"
+  },
+  {
+    "_template": "/container/TwoColumnContainer.hbs"
+  },
+  {
+    "_template": "/container/ThreeColumnContainer.hbs"
+  },
+  {
+    "_template": "/container/FourColumnContainer.hbs"
+  }
+]

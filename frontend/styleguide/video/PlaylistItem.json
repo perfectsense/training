@@ -1,0 +1,22 @@
+{
+  "_template": "/video/PlaylistItem.hbs",
+  "media": {
+    "_include": "/image/Image.json"
+  },
+  "date": "2019-04-11T08:35:03-0700",
+  "duration": "1 min",
+  "url": "#",
+  "target": "_self",
+  "type": "Type",
+  "title": {
+    "_include": "/_group/RichTextElementsTiny.json"
+  },
+  "description": {
+    "_include": "/_group/RichTextElementsSmall.json"
+  },
+  "contentId": "a123",
+  "companions": {
+    "_include": "/video/CompanionContentItem.json"
+  },
+  "_hidden": true
+}

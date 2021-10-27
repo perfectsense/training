@@ -1,0 +1,12 @@
+{
+  "_template": "VideoModule.hbs",
+  "title": {
+    "_include": "/_group/RichTextElementsTiny.json"
+  },
+  "description": {
+    "_include": "/_group/RichTextElementsSmall.json"
+  },
+  "player": {
+    "_include": "/_group/Videos.json"
+  }
+}

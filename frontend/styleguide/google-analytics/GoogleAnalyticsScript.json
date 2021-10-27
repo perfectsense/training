@@ -1,0 +1,6 @@
+{
+  "_template": "./GoogleAnalyticsScript.hbs",
+  "trackingId": "UA-90584504-1",
+  "attributes": "{\"dimension0\": \"foo\", \"dimension1\": \"bar\", \"metric0\": 1000}",
+  "_hidden": true
+}

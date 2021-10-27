@@ -1,0 +1,18 @@
+{
+  "_template": "/stat/StatList.hbs",
+  "title": {
+    "_include": "/_group/RichTextElementsTiny.json"
+  },
+  "description": {
+    "_include": "/_group/RichTextElementsSmall.json",
+    "_key": 1
+  },
+  "ctaUrl": "#",
+  "ctaTarget": "_self",
+  "items": [
+    {
+      "_include": "/stat/StatPromo.json"
+    }
+  ],
+  "_hidden": true
+}

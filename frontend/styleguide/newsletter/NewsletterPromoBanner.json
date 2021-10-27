@@ -1,0 +1,12 @@
+{
+  "_template": "./NewsletterPromoBanner.hbs",
+  "title": "Title",
+  "description": {
+    "_include": "/_group/RichTextElementsSmall.json"
+  },
+  "newsletterDataSource": "",
+  "newsletterDataMedium": "",
+  "newsletterDataCampaign": "",
+  "newsletterDataContent": "",
+  "isNotUTMCapable": "false"
+}

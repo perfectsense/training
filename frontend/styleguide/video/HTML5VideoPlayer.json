@@ -1,0 +1,20 @@
+{
+  "_template": "HTML5VideoPlayer.hbs",
+  "playerId": "1",
+  "videoTitle": {
+    "_include": "/_group/RichTextElementsTiny.json"
+  },
+  "videoId": "XXXXXX",
+  "poster": {
+    "_image": true
+  },
+  "autoplay": false,
+  "muted": true,
+  "sources": {
+    "_include": "HTML5VideoPlayerSource.json"
+  },
+  "extraAttributes": {
+    "_include": "/_group/VideoExtraAttributes.json"
+  },
+  "_hidden": true
+}

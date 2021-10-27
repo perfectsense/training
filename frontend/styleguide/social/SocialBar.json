@@ -1,0 +1,7 @@
+{
+  "_template": "SocialBar.hbs",
+  "items": {
+    "_include": "/social/SocialLink.json"
+  },
+  "_hidden": true
+}

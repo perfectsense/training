@@ -1,0 +1,15 @@
+{
+  "_template": "Carousel.hbs",
+  "title": {
+    "_include": "/_group/RichTextElementsTiny.json"
+  },
+  "description": {
+    "_include": "/_group/RichTextElementsTiny.json"
+  },
+  "slides": [
+    {
+      "_include": "/gallery/GallerySlide.json"
+    }
+  ],
+  "_hidden": true
+}

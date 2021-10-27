@@ -1,0 +1,11 @@
+{
+  "_template": "/attachment/AttachmentEnhancement.hbs",
+  "target": "_self",
+  "title": {
+    "_include": "/_group/RichTextElementsTiny.json"
+  },
+  "src": "https://www.example.com/files/attachment.pdf",
+  "type": "application/pdf",
+  "fileName": "attachment.pdf",
+  "_hidden": true
+}

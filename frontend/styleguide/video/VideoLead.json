@@ -1,0 +1,16 @@
+{
+  "_template": "VideoLead.hbs",
+  "headline": {
+    "_include": "/_group/RichTextElementsTiny.json"
+  },
+  "subHeadline": {
+    "_include": "/_group/RichTextElementsSmall.json",
+    "_key": 1
+  },
+  "player": {
+    "_include": "/_group/Videos.json",
+    "_key": 0
+  },
+  "duration": "1 min",
+  "_hidden": true
+}

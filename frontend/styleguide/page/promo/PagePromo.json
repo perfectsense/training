@@ -1,0 +1,28 @@
+{
+  "_template": "/page/promo/PagePromo.hbs",
+  "authorName": {
+    "_include": "/_group/RichTextElementsTiny.json"
+  },
+  "authorUrl": "#",
+  "authorImage": {
+    "_include": "/image/Image.json"
+  },
+  "media": {
+    "_include": "/image/Image.json"
+  },
+  "url": "#",
+  "target": "_self",
+  "category": {
+    "_include": "/_group/RichTextElementsTiny.json"
+  },
+  "categoryUrl": "#",
+  "type": "Type",
+  "title": {
+    "_include": "/_group/RichTextElementsTiny.json"
+  },
+  "description": {
+    "_include": "/_group/RichTextElementsTiny.json"
+  },
+  "publishDate": "",
+  "_hidden": true
+}

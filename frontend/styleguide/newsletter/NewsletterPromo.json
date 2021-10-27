@@ -1,0 +1,27 @@
+{
+  "_template": "NewsletterPromo.hbs",
+  "media": {
+    "_include": "/image/Image.json"
+  },
+  "url": "#",
+  "target": "_self",
+  "category": {
+    "_include": "/_group/RichTextElementsTiny.json"
+  },
+  "categoryUrl": "#",
+  "type": "Type",
+  "title": {
+    "_include": "/_group/RichTextElementsTiny.json"
+  },
+  "description": {
+    "_include": "/_group/RichTextElementsTiny.json"
+  },
+  "downloadLink": "http://example.com",
+  "downloadSize": "5 MB",
+  "newsletterDataSource": "",
+  "newsletterDataMedium": "",
+  "newsletterDataCampaign": "",
+  "newsletterDataContent": "",
+  "isNotUTMCapable": "false",
+  "_hidden": true
+}

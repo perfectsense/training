@@ -1,0 +1,41 @@
+{
+  "_template": "PageList.hbs",
+  "title": {
+    "_include": "/_group/RichTextElementsTiny.json"
+  },
+  "description": {
+    "_include": "/_group/RichTextElementsSmall.json",
+    "_key": 1
+  },
+  "items": [
+    {
+      "_include": "/page/promo/PagePromo.json",
+      "_key": 0
+    },
+    {
+      "_include": "/iframe/IframeModule.json",
+      "_key": 0
+    },
+    {
+      "_include": "/htmlmodule/HtmlModule.json",
+      "_key": 1
+    },
+    {
+      "_include": "/adsense/GoogleAdsenseAdModule.json",
+      "_key": 2
+    },
+    {
+      "_include": "/dfp/GoogleDfpAdModule.json",
+      "_key": 2
+    }
+  ],
+  "ctaButtonText": {
+    "_include": "/_group/RichTextElementsTiny.json"
+  },
+  "ctaUrl": "#",
+  "ctaTarget": "_self",
+  "pagination": {
+    "_include": "/link/Link.json"
+  },
+  "_hidden": true
+}

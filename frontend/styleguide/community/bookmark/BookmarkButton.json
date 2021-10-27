@@ -1,0 +1,5 @@
+{
+  "_include": "/community/affinity/AffinityButton.json",
+  "_template": "BookmarkButton.hbs",
+  "_hidden": true
+}

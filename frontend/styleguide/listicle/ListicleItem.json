@@ -1,0 +1,10 @@
+{
+  "_template": "ListicleItem.hbs",
+  "title": {
+    "_include": "/_group/RichTextElementsTiny.json"
+  },
+  "body": {
+    "_include": "/_group/RichTextElementsLarge.json",
+    "_key": 0
+  }
+}

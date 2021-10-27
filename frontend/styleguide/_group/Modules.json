@@ -1,0 +1,77 @@
+[
+  {
+    "_template": "/adsense/GoogleAdsenseAdModule.hbs"
+  },
+  {
+    "_template": "/author/list/AuthorList.hbs"
+  },
+  {
+    "_template": "/carousel/Carousel.hbs"
+  },
+  {
+    "_template": "/container/OneColumnContainer.hbs"
+  },
+  {
+    "_template": "/container/TwoColumnContainer.hbs"
+  },
+  {
+    "_template": "/container/ThreeColumnContainer.hbs"
+  },
+  {
+    "_template": "/container/FourColumnContainer.hbs"
+  },
+  {
+    "_template": "/figure/Figure.hbs"
+  },
+  {
+    "_template": "/form/Form.hbs"
+  },
+  {
+    "_template": "/htmlmodule/HtmlModule.hbs"
+  },
+  {
+    "_template": "/iframe/IframeModule.hbs"
+  },
+  {
+    "_template": "/page/list/PageList.hbs"
+  },
+  {
+    "_template": "/page/promo/PagePromoModule.hbs"
+  },
+  {
+    "_template": "/person/list/PersonList.hbs"
+  },
+  {
+    "_template": "/quote/Quote.hbs"
+  },
+  {
+    "_template": "/quote/QuoteList.hbs"
+  },
+  {
+    "_template": "/stat/StatList.hbs"
+  },
+  {
+    "_template": "/search/SearchModule.hbs"
+  },
+  {
+    "_template": "/search/SearchResultsModule.hbs"
+  },
+  {
+    "_template": "/tab/Tabs.hbs"
+  },
+  {
+    "_template": "/text/RichTextModule.hbs"
+  },
+  {
+    "_template": "/video/VideoEnhancement.hbs"
+  },
+  {
+    "_template": "/video/VideoModule.hbs"
+  },
+  {
+    "_template": "/video/VideoPlaylistModule.hbs"
+  },
+  {
+    "_template": "/dfp/GoogleDfpAdModule.hbs"
+  }
+]

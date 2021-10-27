@@ -1,0 +1,8 @@
+{
+  "_template": "Favicon.hbs",
+  "href": "/favicon-32x32.png",
+  "rel": "icon",
+  "type": "image/png",
+  "sizes": "32x32",
+  "_hidden": true
+}

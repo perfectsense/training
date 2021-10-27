@@ -1,0 +1,16 @@
+{
+  "_template": "Tabs.hbs",
+  "title": {
+    "_include": "/_group/RichTextElementsTiny.json"
+  },
+  "description": {
+    "_include": "/_group/RichTextElementsSmall.json",
+    "_key": 1
+  },
+  "tabs": [
+    {
+      "_include": "TabItem.json"
+    }
+  ],
+  "_hidden": true
+}

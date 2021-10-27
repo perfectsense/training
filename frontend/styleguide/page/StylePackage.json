@@ -1,0 +1,8 @@
+{
+  "_view": "page.StylePackage",
+  "cssUrl": "/styleguide/All.min.css",
+  "jsUrl": "/styleguide/All.min.js",
+  "additionalCssUrls": [""],
+  "additionalJsUrls": [""],
+  "error": ""
+}

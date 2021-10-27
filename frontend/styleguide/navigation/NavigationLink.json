@@ -1,0 +1,17 @@
+{
+  "_template": "NavigationLink.hbs",
+  "href": "#",
+  "target": "_self",
+  "text": {
+    "_include": "/_group/RichTextElementsTiny.json"
+  },
+  "description": {
+    "_include": "/_group/RichTextElementsTiny.json"
+  },
+  "contentId": "a123",
+  "iconUrl": "",
+  "status": "2",
+  "count": 3,
+  "isActive": true,
+  "_hidden": true
+}

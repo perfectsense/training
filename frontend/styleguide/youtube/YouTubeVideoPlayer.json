@@ -1,0 +1,12 @@
+{
+  "_template": "YouTubeVideoPlayer.hbs",
+  "playerId": "1",
+  "videoTitle": {
+    "_include": "/_group/RichTextElementsTiny.json"
+  },
+  "videoId": "NYvM6j56IBk",
+  "autoplay": false,
+  "muted": true,
+  "seekSeconds": 10,
+  "_hidden": true
+}

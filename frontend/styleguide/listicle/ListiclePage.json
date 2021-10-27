@@ -1,0 +1,15 @@
+{
+  "_wrapper": false,
+  "_hidden": true,
+  "_include": "/page/CreativeWorkPage.json",
+  "_template": "ListiclePage.hbs",
+  "pageLead": {
+    "_include": "/_group/Leads.json"
+  },
+  "items": {
+    "_template": "ListicleItem.hbs"
+  },
+  "intro": {
+    "_include": "/_group/RichTextElementsLarge.json"
+  }
+}

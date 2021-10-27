@@ -1,0 +1,6 @@
+{
+  "_template": "NewsletterQuote.hbs",
+  "quote": "Lorem ipsum dolor elit, sed do eiusmod tempor incididunt ut labore et aliqua.”",
+  "attribution": "Marius Da Silva",
+  "date": "{{date}}"
+}

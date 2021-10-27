@@ -1,0 +1,27 @@
+{
+  "_template": "FourColumnContainer.hbs",
+  "title": {
+    "_include": "/_group/RichTextElementsTiny.json"
+  },
+  "description": {
+    "_include": "/_group/RichTextElementsSmall.json",
+    "_key": 1
+  },
+  "columnOne": {
+    "_include": "/_group/Modules.json",
+    "_key": 0
+  },
+  "columnTwo": {
+    "_include": "/_group/Modules.json",
+    "_key": 0
+  },
+  "columnThree": {
+    "_include": "/_group/Modules.json",
+    "_key": 0
+  },
+  "columnFour": {
+    "_include": "/_group/Modules.json",
+    "_key": 0
+  },
+  "_hidden": true
+}

@@ -1,0 +1,19 @@
+{
+  "_template": "LoginForm.hbs",
+  "title": "",
+  "message": "",
+  "errors": [
+    "Unable to login"
+  ],
+  "displayForm": true,
+  "formActionUrl": "/auth/page/LoginPage.html",
+  "formMethod": "post",
+  "socialLoginLinks": {
+    "_include": "/auth/_group/SocialLoginLinks.json",
+    "_key": 0
+  },
+  "helpLinks": {
+    "_include": "/link/Link.json"
+  },
+  "redirectUrl": "https://www.example.com"
+}

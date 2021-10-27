@@ -1,0 +1,25 @@
+{
+  "_wrapper": false,
+  "_include": "/page/CreativeWorkPage.json",
+  "_template": "PressReleasePage.hbs",
+
+  "authorUrl": null,
+  "authorImage": null,
+  "authorName": null,
+  "authorBiography": null,
+  "contributors": null,
+
+  "lead": {
+    "_include": "/_group/Leads.json",
+    "_key": 0
+  },
+  "articleBody": {
+    "_include": "/_group/RichTextElementsLarge.json",
+    "_key": 0
+  },
+  "attributionBody": {
+    "_include": "/_group/RichTextElementsLarge.json",
+    "_key": 0
+  },
+  "_hidden": true
+}

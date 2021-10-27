@@ -1,0 +1,23 @@
+[
+  {
+    "_template": "/page/ExternalScript.hbs"
+  },
+  {
+    "_template": "/page/InlineScript.hbs"
+  },
+  {
+    "_template": "/adsense/GoogleAdsenseScript.hbs"
+  },
+  {
+    "_template": "/dfp/GoogleDfpScript.hbs"
+  },
+  {
+    "_template": "/facebook/FacebookJavaScriptSdk.hbs"
+  },
+  {
+    "_template": "/google-analytics/GoogleAnalyticsScript.hbs"
+  },
+  {
+    "_template": "/twitter/widgets/TwitterWidgetsJavaScript.hbs"
+  }
+]

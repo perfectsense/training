@@ -1,0 +1,35 @@
+[
+  {
+    "_template": "/community/bookmark/BookmarkButton.hbs"
+  },
+  {
+    "_template": "/community/favorite/FavoriteButton.hbs"
+  },
+  {
+    "_template": "/community/follow/FollowButton.hbs"
+  },
+  {
+    "_template": "/link/Link.hbs"
+  },
+  {
+    "_template": "/link/MailToLink.hbs"
+  },
+  {
+    "_template": "/link/PrintLink.hbs"
+  },
+  {
+    "_template": "/facebook/FacebookShareButton.hbs"
+  },
+  {
+    "_template": "/linkedin/LinkedInShareButton.hbs"
+  },
+  {
+    "_template": "/pinterest/PinterestShareButton.hbs"
+  },
+  {
+    "_template": "/tumblr/TumblrShareButton.hbs"
+  },
+  {
+    "_template": "/twitter/intent/TwitterTweetButton.hbs"
+  }
+]

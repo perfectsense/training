@@ -1,0 +1,10 @@
+{
+  "_hidden": true,
+  "_wrapper": false,
+  "_template": "Comments.hbs",
+  "comments": [
+    {
+      "_include": "Comment.json"
+    }
+  ]
+}

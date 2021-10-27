@@ -1,0 +1,13 @@
+{
+  "_template": "Quote.hbs",
+  "quote": {
+    "_include": "/_group/RichTextElementsTiny.json"
+  },
+  "attribution": {
+    "_include": "/_group/RichTextElementsTiny.json"
+  },
+  "image": {
+    "_include": "/image/Image.json"
+  },
+  "_hidden": true
+}

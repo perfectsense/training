@@ -1,0 +1,11 @@
+{
+  "_template": "RichTextModule.hbs",
+  "title": {
+    "_include": "/_group/RichTextElementsTiny.json"
+  },
+  "items": {
+    "_include": "/_group/RichTextElementsLarge.json",
+    "_key": 0
+  },
+  "_hidden": true
+}
