@@ -1,0 +1,45 @@
+:root {
+  --color-primary: {{#with primaryColor}}{{this}}{{else}}#22B8E1{{/with}};
+  --color-secondary: {{#with secondaryColor}}{{this}}{{else}}#FFFFFF{{/with}};
+
+  --color-primary-text: {{#with primaryTextColor}}{{this}}{{else}}#333333{{/with}};
+  --color-primary-text-inverse: {{#with primaryTextColorInverse}}{{this}}{{else}}#FFFFFF{{/with}};
+  --color-secondary-text: {{#with secondaryTextColor}}{{this}}{{else}}var(--color-primary-text){{/with}};
+  --color-secondary-text-inverse: {{#with secondaryTextColorInverse}}{{this}}{{else}}#FFFFFF{{/with}};
+  --color-tertiary-text: {{#with tertiaryTextColor}}{{this}}{{else}}#999999{{/with}};
+  --color-tertiary-inverse: {{#with tertiaryTextColorInverse}}{{this}}{{else}}#FFFFFF{{/with}};
+  --color-site-bg: {{#with siteBgColor}}{{this}}{{else}}#FFFFFF{{/with}};
+  --color-border: {{#with borderColor}}{{this}}{{else}}#E6E6E6{{/with}};
+
+  --color-header-bg: {{#with headerBgColor}}{{this}}{{else}}#000000{{/with}};
+  --color-header-secondary-bg: {{#with headerSecondaryBgColor}}{{this}}{{else}}#333333{{/with}};
+  --color-header-text: {{#with headerTextColor}}{{this}}{{else}}var(--color-primary-text-inverse){{/with}};
+  --color-header-border: {{#with headerBorderColor}}{{this}}{{else}}#808080{{/with}};
+
+  --color-hat-bg: {{#with hatBgColor}}{{this}}{{else}}var(--color-primary){{/with}};
+  --color-hat-text: {{#with hatTextColor}}{{this}}{{else}}var(--color-primary-text-inverse){{/with}};
+
+  --color-heading-bg: {{#with headingBgColor}}{{this}}{{else}}#808080{{/with}};
+
+  --color-footer-bg: {{#with footerBgColor}}{{this}}{{else}}#000000{{/with}};
+  --color-footer-text: {{#with footerTextColor}}{{this}}{{else}}var(--color-primary-text-inverse){{/with}};
+
+  --color-banner-bg: {{#with BannerBgColor}}{{this}}{{else}}#d31141{{/with}};
+  --color-banner-text: {{#with BannerTextColor}}{{this}}{{else}}var(--color-primary-text-inverse){{/with}};
+
+  --color-link-text: {{#with linkTextColor}}{{this}}{{else}}var(--color-primary-text){{/with}};
+  --color-link-text-hover: {{#with linkHoverColor}}{{this}}{{else}}var(--color-primary){{/with}};
+
+  --color-button-bg: {{#with buttonBgColor}}{{this}}{{else}}var(--color-primary){{/with}};
+  --color-button-hover-bg: {{#with buttonHoverBgColor}}{{this}}{{else}}#FFFFFF{{/with}};
+  --color-button-hover-text: {{#with buttonHoverTextColor}}{{this}}{{else}}var(--color-primary){{/with}};
+  --color-button-border: {{#with buttonBorderColor}}{{this}}{{else}}var(--color-primary){{/with}};
+  --color-button-text: {{#with buttonTextColor}}{{this}}{{else}}var(--color-secondary){{/with}};
+
+  --color-list-title:  {{#with listTitleColor}}{{this}}{{else}}var(--color-primary-text){{/with}};
+  --color-list-border: {{#with listBorderColor}}{{this}}{{else}}var(--color-border){{/with}};
+  --color-category-text: {{#with categoryTextColor}}{{this}}{{else}}var(--color-primary){{/with}};
+
+  --color-gray: #dddddd;
+  --color-dark-gray: #333333;
+}

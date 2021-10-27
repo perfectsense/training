@@ -1,0 +1,37 @@
+@import 'Promo';
+
+.Promo-Amp {
+  &:extend(.Promo all);
+  display: flex;
+  flex-direction: row;
+
+  &-title {
+    &:extend(.title-5 all);
+  }
+  
+  .Promo-Amp {
+    &-media {
+      flex-shrink: 0;
+      max-width: 330px;
+      margin: 0 0 0 20px;
+      order: 2;
+      width: 30%;
+    }
+  }
+
+  &[data-align-top],
+  &[data-align-bottom] {
+    display: flex;
+    flex-direction: row;
+
+    .Promo-Amp {
+      &-media {
+        flex-shrink: 0;
+        max-width: 330px;
+        margin: 0 0 0 20px;
+        order: 2;
+        width: 30%;
+      }
+    }
+  }
+}

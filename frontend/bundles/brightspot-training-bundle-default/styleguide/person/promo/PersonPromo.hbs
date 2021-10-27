@@ -1,0 +1,23 @@
+<div class="PersonPromo">
+    {{#set imageSize=(fallback (get "imageSize") "small-square")}}
+        {{#if media}}
+            <div class="PagePromo-media">
+                {{~#if url~}}
+                    <a class="Link" {{#with name}}aria-label="{{this}}"{{/with}} href="{{url}}">{{media}}</a>
+                {{~else~}}
+                    <span class="Link">{{media}}</span>
+                {{~/if~}}
+            </div>
+        {{/if}}
+    {{/set}}
+
+    <div class="PersonPromo-content">
+        {{include "/page/promo/includes/PagePromoTitle.hbs" this title=name}}
+
+        {{#if jobTitle}}
+            <div class="PagePromo-label">
+                {{include "/link/Link.hbs" href=url body=jobTitle}}
+            </div>
+        {{/if}}
+    </div>
+</div>

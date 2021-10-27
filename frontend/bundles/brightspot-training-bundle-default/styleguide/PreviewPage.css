@@ -1,0 +1,14 @@
+.PreviewPage .Page-body {
+  padding-top: 0;
+}
+
+.column-example {
+  background: lightgray;
+  padding: 40px;
+}
+
+.PreviewPage .Page-main>.Form {
+  max-width: 800px;
+  margin: auto;
+  padding: 60px;
+}

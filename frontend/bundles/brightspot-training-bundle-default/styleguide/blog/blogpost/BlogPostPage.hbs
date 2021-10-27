@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html class="BlogPostPage" {{~include "/page/Page-htmlAttributes.hbs" this}}>
+{{include "/page/Page-head.hbs" this}}
+
+<body class="Page-body">
+    {{include "/page/Page-header.hbs" this}}
+    {{include "/page/Page-above.hbs" this}}
+
+    <div class="Page-content">
+        <div class="Page-twoColumn">
+            <main class="Page-main">
+                {{include "/page/Page-breadcrumbs.hbs" this}}
+
+                {{include "/page/Page-headline.hbs" this}}
+
+                {{include "/page/Page-subHeadline.hbs" this}}
+
+                {{include "/page/Page-lead.hbs" this}}
+
+                {{include "/page/Page-byline.hbs" this}}
+
+                {{include "/page/Page-actions.hbs" this}}
+
+                {{#with articleBody}}
+                    <div class="Page-articleBody">
+                        {{#set imageSize="medium"}}
+                            {{this}}
+                        {{/set}}
+                    </div>
+                {{/with}}
+
+                {{include "/page/Page-tags.hbs" this}}
+
+                {{include "/page/Page-authorInfo.hbs" this}}
+            </main>
+
+            {{#if aside}}
+                <aside class="Page-aside">
+                    {{#each aside}}
+                        {{#set imagePositionVertical="top"}}
+                            {{render this
+                                            [/page/promo/PagePromo.hbs]="/page/promo/PagePromoB.hbs"
+                                            [/page/list/PageList.hbs]="/page/list/PageListB.hbs"
+                            }}
+                        {{/set}}
+                    {{/each}}
+                </aside>
+            {{/if}}
+        </div>
+    </div>
+
+    {{include "/page/Page-below.hbs" this}}
+    {{include "/page/Page-footer.hbs" this}}
+    {{include "/page/Page-extraBodyItems.hbs" this}}
+</body>
+</html>

@@ -1,0 +1,15 @@
+{
+  "stylePackages": {
+    "style-1": {
+      "name": "Style 1",
+      "cssPath": "styles/style-1/All.min.css",
+      "jsPath": "styles/style-1/All.min.js",
+      "default": true
+    },
+    "style-2": {
+      "name": "Style 2",
+      "cssPath": "styles/style-2/All.min.css",
+      "jsPath": "styles/style-2/All.min.js"
+    }
+  }
+}

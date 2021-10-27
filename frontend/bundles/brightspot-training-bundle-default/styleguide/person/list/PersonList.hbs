@@ -1,0 +1,14 @@
+<div class="PersonList" data-module>
+    {{include "/page/list/includes/PageList-header.hbs" this}}
+
+    {{#with items}}
+        <ul class="PersonList-items">
+            {{#each this}}
+                <li class="PersonList-items-item">
+                    {{include "/person/promo/PersonPromo.hbs" this}}
+                </li>
+            {{/each}}
+        </ul>
+    {{/with}}
+    {{include "/page/list/includes/PageList-cta.hbs" this}}
+</div>

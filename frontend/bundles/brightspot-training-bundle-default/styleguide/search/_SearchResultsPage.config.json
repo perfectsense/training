@@ -1,0 +1,8 @@
+{
+  "styles": {
+    "/search/SearchResultsPage.hbs": {
+      "example": "/search/SearchResultsPage.json",
+      "fields": ["searchFormBackgroundColor"]
+    }
+  }
+}

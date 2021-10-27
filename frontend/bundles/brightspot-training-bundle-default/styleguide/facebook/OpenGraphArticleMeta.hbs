@@ -1,0 +1,24 @@
+<meta property="og:type" content="article">
+{{#each authorUrls}}
+    <meta property="article:author" content="{{this}}">
+{{/each}}
+
+{{~#with publishedTime}}
+    <meta property="article:published_time" content="{{this}}">
+{{/with}}
+
+{{~#with modifiedTime}}
+    <meta property="article:modified_time" content="{{this}}">
+{{/with}}
+
+{{~#with expirationTime}}
+    <meta property="article:expiration_time" content="{{this}}">
+{{/with}}
+
+{{~#with section}}
+    <meta property="article:section" content="{{this}}">
+{{/with}}
+
+{{~#each tags}}
+    <meta property="article:tag" content="{{this}}">
+{{/each}}

@@ -1,0 +1,15 @@
+<div class="PagePromoModuleC" data-module {{include "includes/PagePromoAttributes.hbs" this}} imagePositionHorizontal="{{#if imagePositionHorizontal}}{{imagePositionHorizontal}}{{else}}left{{/if}}">
+    {{#set imageSize="large"}}
+        {{include "includes/PagePromoMediaWithIcon.hbs" this}}
+    {{/set}}
+
+    <div class="PagePromoModuleC-content">
+        {{include "includes/PagePromoCategory.hbs" this}}
+
+        {{include "includes/PagePromoTitle.hbs" this}}
+
+        {{include "includes/PagePromoDescription.hbs" this}}
+
+        {{include "includes/PagePromoButton.hbs" this}}
+    </div>
+</div>

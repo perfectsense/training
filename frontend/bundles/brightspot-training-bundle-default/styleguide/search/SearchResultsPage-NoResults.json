@@ -1,0 +1,255 @@
+{
+  "_include": "/page/Page.json",
+  "_template": "/search/SearchResultsPage.hbs",
+  "above": {
+    "_include": "/dfp/GoogleDfpAdModule.json"
+  },
+  "query": "Bacon Ipsum",
+  "filters": [
+    {
+      "_template": "/search/SearchFilter.hbs",
+      "heading": "Type",
+      "items": [
+        {
+          "_include": "/search/SearchFilterInput.json",
+          "url": "#",
+          "label": "All"
+        },
+        {
+          "_include": "/search/SearchFilterInput.json",
+          "url": "#",
+          "label": "Articles",
+          "count": 1234,
+          "selected": true
+        },
+        {
+          "_include": "/search/SearchFilterInput.json",
+          "url": "#",
+          "label": "Photos",
+          "count": 567
+        },
+        {
+          "_include": "/search/SearchFilterInput.json",
+          "url": "#",
+          "label": "Videos",
+          "count": 89
+        }
+      ]
+    },
+    {
+      "_template": "/search/SearchFilter.hbs",
+      "heading": "Countries",
+      "items": [
+        {
+          "_include": "/search/SearchFilterInput.json",
+          "url": "#",
+          "label": "All"
+        },
+        {
+          "_include": "/search/SearchFilterInput.json",
+          "url": "#",
+          "label": "Ireland",
+          "count": 1337,
+          "selected": true
+        },
+        {
+          "_include": "/search/SearchFilterInput.json",
+          "url": "#",
+          "label": "The Democratic Republic of Sao Tome and Principe",
+          "count": 567
+        },
+        {
+          "_include": "/search/SearchFilterInput.json",
+          "url": "#",
+          "label": "USA",
+          "count": 89
+        }
+      ]
+    },
+    {
+      "_template": "/search/SearchFilter.hbs",
+      "heading": "Brands",
+      "items": [
+        {
+          "_include": "/search/SearchFilterInput.json",
+          "url": "#",
+          "label": "All"
+        },
+        {
+          "_include": "/search/SearchFilterInput.json",
+          "url": "#",
+          "label": "Coca Cola",
+          "count": 1337
+        },
+        {
+          "_include": "/search/SearchFilterInput.json",
+          "url": "#",
+          "label": "BCG",
+          "count": 567
+        },
+        {
+          "_include": "/search/SearchFilterInput.json",
+          "url": "#",
+          "label": "Walmart",
+          "count": 89,
+          "selected": true
+        }
+      ]
+    },
+    {
+      "_template": "/search/SearchFilter.hbs",
+      "heading": "Topics",
+      "items": [
+        {
+          "_include": "/search/SearchFilterInput.json",
+          "url": "#",
+          "label": "All"
+        },
+        {
+          "_include": "/search/SearchFilterInput.json",
+          "url": "#",
+          "label": "Topic 1",
+          "count": 1337
+        },
+        {
+          "_include": "/search/SearchFilterInput.json",
+          "url": "#",
+          "label": "Topic 2",
+          "count": 567
+        }
+      ]
+    },
+    {
+      "_template": "/search/SearchFilter.hbs",
+      "heading": "Products",
+      "items": [
+        {
+          "_include": "/search/SearchFilterInput.json",
+          "url": "#",
+          "label": "All"
+        },
+        {
+          "_include": "/search/SearchFilterInput.json",
+          "url": "#",
+          "label": "Product 1",
+          "count": 1337
+        },
+        {
+          "_include": "/search/SearchFilterInput.json",
+          "url": "#",
+          "label": "Product 2",
+          "count": 567
+        }
+      ]
+    },
+    {
+      "_template": "/search/SearchFilter.hbs",
+      "heading": "Tags",
+      "items": [
+        {
+          "_include": "/search/SearchFilterInput.json",
+          "url": "#",
+          "label": "All"
+        },
+        {
+          "_include": "/search/SearchFilterInput.json",
+          "url": "#",
+          "label": "Tag 1",
+          "count": 1337
+        },
+        {
+          "_include": "/search/SearchFilterInput.json",
+          "url": "#",
+          "label": "Tag 2",
+          "count": 567
+        }
+      ]
+    },
+    {
+      "_template": "/search/SearchFilter.hbs",
+      "heading": "Sections",
+      "items": [
+        {
+          "_include": "/search/SearchFilterInput.json",
+          "url": "#",
+          "label": "All"
+        },
+        {
+          "_include": "/search/SearchFilterInput.json",
+          "url": "#",
+          "label": "Section 1",
+          "count": 1337
+        },
+        {
+          "_include": "/search/SearchFilterInput.json",
+          "url": "#",
+          "label": "Section 2",
+          "count": 567
+        }
+      ]
+    },
+    {
+      "_template": "/search/SearchFilter.hbs",
+      "heading": "Date",
+      "items": [
+        {
+          "_include": "/search/SearchFilterInput.json",
+          "url": "#",
+          "label": "Any Time"
+        },
+        {
+          "_include": "/search/SearchFilterInput.json",
+          "url": "#",
+          "label": "Past Hour",
+          "count": 12
+        },
+        {
+          "_include": "/search/SearchFilterInput.json",
+          "url": "#",
+          "label": "Past Day",
+          "count": 34
+        },
+        {
+          "_include": "/search/SearchFilterInput.json",
+          "url": "#",
+          "label": "Past Month",
+          "count": 56
+        },
+        {
+          "_include": "/search/SearchFilterInput.json",
+          "url": "#",
+          "label": "Past Year",
+          "count": 789
+        }
+      ]
+    }
+  ],
+  "sorts": [
+    {
+      "_include": "/search/SearchSortInput.json",
+      "url": "#",
+      "label": "Relevance",
+      "parameterValue": "relevant",
+      "selected": true
+    },
+    {
+      "_include": "/search/SearchSortInput.json",
+      "url": "#",
+      "label": "Newest",
+      "parameterValue": "newest"
+    },
+    {
+      "_include": "/search/SearchSortInput.json",
+      "url": "#",
+      "label": "Oldest",
+      "parameterValue": "oldest"
+    }
+  ],
+  "count": 123456,
+  "spotlights": null,
+  "results": null,
+  "pageNumber": 1,
+  "pageCount": 123,
+  "nextPage": "#",
+  "aside": null
+}

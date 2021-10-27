@@ -1,0 +1,19 @@
+<div class="Page-byline">
+    <div class="Page-authors">
+        {{#if authorImage}}
+            {{#set imageSize="small-square"}}
+                {{~#if authorUrl~}}<a class="Page-authors-image" href="{{authorUrl}}">{{~/if~}}{{~include "/image/Image.amp.hbs" this alt=authorName image=authorImage}}{{~#if authorUrl~}}</a>{{~/if~}}
+            {{/set}}
+        {{/if}}
+        {{#if authorName}}
+        <span>
+            <span>{{~format "/page/Page" "authorBy"~}}&nbsp;</span>
+            {{~#if authorUrl~}}<a href="{{authorUrl}}">{{~/if~}}{{~#with authorName~}}<span>{{~this~}}</span>{{~/with~}}{{~#if authorUrl~}}</a>{{~/if~}}{{~#if contributors~}},&nbsp;{{~/if~}}
+            {{~#with contributors~}}{{~#each this~}}<span>{{~this~}}</span>{{~#unless @last~}},&nbsp;{{~/unless~}}{{~/each~}}{{~/with~}}
+        </span>
+        {{/if}}
+    </div>
+    {{~#if datePublished~}}
+        <div class="Page-datePublished">{{~#if authorName~}},&nbsp;{{~/if~}}{{~datePublished~}}</div>
+    {{~/if~}}
+</div>

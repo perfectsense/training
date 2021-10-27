@@ -1,0 +1,22 @@
+
+<div class="VideoPlaylistModule">
+    {{#with title}}
+        <div class="VideoPlaylistModule-title">{{this}}</div>
+    {{/with}}
+    {{#with actions}}
+        <div class="VideoPlaylistModule-actions">{{this}}</div>
+    {{/with}}
+    {{#with player}}
+        <div class="VideoPlaylistModule-player">{{this}}</div>
+    {{/with}}
+    {{#with playlist}}
+        <div class="VideoPlaylistModule-playlist">{{this}}</div>
+    {{/with}}
+
+        {{#if ctaUrl}}
+            <div class="VideoPlaylistModule-cta">
+                {{include "../link/Link.amp.hbs" href=ctaUrl target=ctaTarget body=(format "/video/VideoPlaylistModule" "ctaText")}}
+            </div>
+        {{/if}}
+
+</div>

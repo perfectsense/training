@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html class="ColorPage" itemscope itemtype="http://schema.org/WebPage">
+{{include "/page/Page-head.hbs" this}}
+
+<body class="Page-body">
+    <style type="text/css">
+        .Page-body {
+            padding-top: 0;
+        }
+
+        .ColorWrapper {
+            max-width: 1000px;
+        }
+
+        .ColorName {
+            color: gray;
+            font-size: 14px;
+        }
+
+        .ColorSwatches {
+            display: grid;
+            grid-gap: 20px;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            margin-top: 20px;
+            margin-bottom: 60px;
+        }
+
+        .ColorSwatch {
+            border: 1px solid gray;
+            padding: 20px;
+        }
+
+        .ColorSwatch-swatch {
+            border: 1px solid lightgray;
+            margin-bottom: 10px;
+            height: 140px;
+            width: 100%;
+        }
+    </style>
+
+    <div class="Page-content">
+        <div class="ColorWrapper">
+            <h2 class="title-2">Go Palette</h2>
+
+            <div class="ColorSwatches">
+                <div class="ColorSwatch">
+                    <div class="ColorSwatch-swatch" style="background: var(--color-primary);"></div>
+                    <div class="ColorName">Color Primary</div>
+                </div>
+                <div class="ColorSwatch">
+                    <div class="ColorSwatch-swatch" style="background: var(--color-secondary);"></div>
+                    <div class="ColorName">Color Secondary</div>
+                </div>
+                <div class="ColorSwatch">
+                    <div class="ColorSwatch-swatch" style="background: var(--color-primary-text);"></div>
+                    <div class="ColorName">Color Primary Text</div>
+                </div>
+                <div class="ColorSwatch">
+                    <div class="ColorSwatch-swatch" style="background: var(--color-secondary-text);"></div>
+                    <div class="ColorName">Color Secondary Text</div>
+                </div>
+                <div class="ColorSwatch">
+                    <div class="ColorSwatch-swatch" style="background: var(--color-site-bg);"></div>
+                    <div class="ColorName">Color Site Background</div>
+                </div>
+                <div class="ColorSwatch">
+                    <div class="ColorSwatch-swatch" style="background: var(--color-border);"></div>
+                    <div class="ColorName">Color Default Border</div>
+                </div>
+            </div>
+
+            <div class="ColorSwatches">
+                <div class="ColorSwatch">
+                    <div class="ColorSwatch-swatch" style="background: var(--color-header-bg);"></div>
+                    <div class="ColorName">Color Header Background</div>
+                </div>
+                <div class="ColorSwatch">
+                    <div class="ColorSwatch-swatch" style="background: var(--color-header-secondary-bg);"></div>
+                    <div class="ColorName">Color Header Secondary Background</div>
+                </div>
+                <div class="ColorSwatch">
+                    <div class="ColorSwatch-swatch" style="background: var(--color-header-text);"></div>
+                    <div class="ColorName">Color Header Text</div>
+                </div>
+                <div class="ColorSwatch">
+                    <div class="ColorSwatch-swatch" style="background: var(--color-header-border);"></div>
+                    <div class="ColorName">Color Header Border</div>
+                </div>
+            </div>
+
+            <div class="ColorSwatches">
+                <div class="ColorSwatch">
+                    <div class="ColorSwatch-swatch" style="background: var(--color-footer-bg);"></div>
+                    <div class="ColorName">Color Footer Background</div>
+                </div>
+                <div class="ColorSwatch">
+                    <div class="ColorSwatch-swatch" style="background: var(--color-footer-text);"></div>
+                    <div class="ColorName">Color Footer Text</div>
+                </div>
+            </div>
+
+            <div class="ColorSwatches">
+                <div class="ColorSwatch">
+                    <div class="ColorSwatch-swatch" style="background: var(--color-link-text);"></div>
+                    <div class="ColorName">Color Link Text</div>
+                </div>
+                <div class="ColorSwatch">
+                    <div class="ColorSwatch-swatch" style="background: var(--color-link-text-hover);"></div>
+                    <div class="ColorName">Color Link Text on Hover</div>
+                </div>
+            </div>
+
+            <div class="ColorSwatches">
+                <div class="ColorSwatch">
+                    <div class="ColorSwatch-swatch" style="background: var(--color-button-bg);"></div>
+                    <div class="ColorName">Color Button Background</div>
+                </div>
+                <div class="ColorSwatch">
+                    <div class="ColorSwatch-swatch" style="background: var(--color-button-border);"></div>
+                    <div class="ColorName">Color Button Border</div>
+                </div>
+                <div class="ColorSwatch">
+                    <div class="ColorSwatch-swatch" style="background: var(--color-button-text);"></div>
+                    <div class="ColorName">Color Button Text</div>
+                </div>
+            </div>
+
+            <div class="ColorSwatches">
+                <div class="ColorSwatch">
+                    <div class="ColorSwatch-swatch" style="background: var(--color-list-title);"></div>
+                    <div class="ColorName">Color List Title</div>
+                </div>
+                <div class="ColorSwatch">
+                    <div class="ColorSwatch-swatch" style="background: var(--color-list-border);"></div>
+                    <div class="ColorName">Color List Border</div>
+                </div>
+                <div class="ColorSwatch">
+                    <div class="ColorSwatch-swatch" style="background: var(--color-category-text);"></div>
+                    <div class="ColorName">Color Promo Category Text</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

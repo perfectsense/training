@@ -1,0 +1,168 @@
+{{#set leadStyle=(fallback (fallback articleLeadStyle defaultArticleLeadStyle) "standard")}}
+<!DOCTYPE html>
+<html class="ArticlePage" {{~include "/page/Page-htmlAttributes.hbs" this}}{{#unless aside}} data-no-aside{{/unless}} data-lead="{{get "leadStyle"}}">
+    {{include "/page/Page-head.hbs" this}}
+
+<body class="Page-body">
+    {{include "/page/Page-header.hbs" this}}
+    {{include "/page/Page-above.hbs" this}}
+
+    <div class="Page-content">
+        {{#unless (eq (get "leadStyle") "nested")}}
+        <div class="ArticlePage-lede">
+            {{#eq (get "leadStyle") "overlay"}}
+                {{#if lead}}
+                    {{#set imageSize="large-square"}}
+                        {{#set imageSizeAlt="xl-2x1"}}
+                            <div class="Page-lead">
+                                {{#with lead}}
+                                    {{this}}
+                                {{/with}}
+
+                                <div class="Page-lead-content">
+                                    {{include "/page/Page-breadcrumbs.hbs" this}}
+                                    {{include "/page/Page-headline.hbs" this}}
+                                    {{include "/page/Page-subHeadline.hbs" this}}
+                                </div>
+                            </div>
+                        {{/set}}
+                    {{/set}}
+                {{/if}}
+
+                <div class="ArticlePage-lede-content">
+                    <div class="ArticlePage-actions-wrapper">
+                        {{include "/page/Page-byline.hbs" this}}
+
+                        {{include "/page/Page-actions.hbs" this}}
+                    </div>
+                {{else}}
+                    <div class="ArticlePage-lede-content">
+                    {{include "/page/Page-breadcrumbs.hbs" this}}
+
+                    {{include "/page/Page-headline.hbs" this}}
+
+                    {{include "/page/Page-subHeadline.hbs" this}}
+
+                    <div class="ArticlePage-actions-wrapper">
+                        {{include "/page/Page-byline.hbs" this}}
+
+                        {{include "/page/Page-actions.hbs" this}}
+                    </div>
+                {{/eq}}
+
+                {{#if aside}}
+                    {{#eq (get "leadStyle") "large"}}
+                        {{#set imageSize="xl-2x1"}}
+                            {{include "/page/Page-lead.hbs" this}}
+                        {{/set}}
+                    {{/eq}}
+                {{/if}}
+            </div>
+            {{#unless aside}}
+                {{#eq (get "leadStyle") "large"}}
+                    {{#set imageSize="xl-24x1"}}
+                        {{include "/page/Page-lead.hbs" this}}
+                    {{/set}}
+                {{/eq}}
+            {{/unless}}
+        </div>
+        {{/unless}}
+        {{#if aside}}<div class="Page-twoColumn">{{else}}<div class="Page-oneColumn" data-modulewell>{{/if}}
+            <main class="Page-main" data-module data-padding="none">
+                {{#if (eq (get "leadStyle") "nested")}}
+                    <div class="ArticlePage-lede">
+                        <div class="ArticlePage-lede-content">
+                            {{include "/page/Page-breadcrumbs.hbs" this}}
+
+                            {{include "/page/Page-headline.hbs" this}}
+
+                            {{include "/page/Page-subHeadline.hbs" this}}
+
+                            <div class="ArticlePage-actions-wrapper">
+                                {{include "/page/Page-byline.hbs" this}}
+
+                                {{include "/page/Page-actions.hbs" this}}
+                            </div>
+                        </div>
+                    </div>
+                    {{#set imageSize="large-2x1"}}
+                        {{include "/page/Page-lead.hbs" this}}
+                    {{/set}}
+                {{else}}
+                    {{#unless (get "leadStyle")}}
+                        {{#set imageSize="large-2x1"}}
+                            {{include "/page/Page-lead.hbs" this}}
+                        {{/set}}
+                    {{else}}
+                        {{#eq (get "leadStyle") "standard"}}
+                            {{#set imageSize="large-2x1"}}
+                                {{include "/page/Page-lead.hbs" this}}
+                            {{/set}}
+                        {{/eq}}
+                    {{/unless}}
+                {{/if}}
+
+                <div class="Page-articleBody">
+                    {{#set imageSize='large-2x1-notfixed'}}
+                            {{#with intro}}
+                                <div class="Page-articleBody-intro RichTextBody">
+                                {{this}}
+                                </div>
+                            {{/with}}
+
+                            {{#with items}}
+                                <div class="Page-articleBody-items">
+                                    {{#each this~}}
+                                        <div class="Page-articleBody-items-item">
+                                            {{include "/listicle/ListicleItem.hbs" this index=(add @index 1)}}
+                                        </div>
+                                    {{~/each}}
+                                </div>
+                            {{/with}}
+
+                            {{#with articleBody}}
+                                <div class="RichTextArticleBody RichTextBody">
+                                    {{this}}
+                                </div>
+                            {{/with}}
+
+                            {{#with attributionBody}}
+                                <div class="RichTextArticleBody RichTextBody">
+                                    {{this}}
+                                </div>
+                            {{/with}}
+                    {{/set}}
+                </div>
+
+                {{#if actions}}
+                <div class="Page-actions-bottom">
+                    {{include "/page/Page-actions.hbs" this}}
+                </div>
+                {{/if}}
+
+                {{include "/page/Page-tags.hbs" this}}
+
+                {{include "/page/Page-authorInfo.hbs" this}}
+            </main>
+
+            {{#if aside}}
+                <aside class="Page-aside">
+                    {{#each aside}}
+                        {{#set imagePositionVertical="top"}}
+                            {{render this
+                                            [/page/promo/PagePromo.hbs]="/page/promo/PagePromoB.hbs"
+                                            [/page/list/PageList.hbs]="/page/list/PageListB.hbs"
+                            }}
+                        {{/set}}
+                    {{/each}}
+                </aside>
+            {{/if}}
+        </div>
+    </div>
+
+    {{include "/page/Page-below.hbs" this}}
+    {{include "/page/Page-footer.hbs" this}}
+    {{include "/page/Page-extraBodyItems.hbs" this}}
+</body>
+</html>
+{{/set}}

@@ -1,0 +1,7 @@
+{
+  "styles": {
+    "/pullquote/PullQuote.hbs": {
+      "fields": ["enhancementAlignment", "backgroundColor","inverseColors"]
+    }
+  }
+}

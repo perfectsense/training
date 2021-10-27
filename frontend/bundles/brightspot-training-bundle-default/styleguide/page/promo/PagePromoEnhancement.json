@@ -1,0 +1,6 @@
+{
+  "_template": "PagePromoEnhancement.hbs",
+  "item": {
+    "_include": "/page/promo/PagePromo.json"
+  }
+}

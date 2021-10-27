@@ -1,0 +1,82 @@
+.NavigationItem {
+  position: relative;
+  white-space: nowrap;
+
+  &-more {
+    border-left: 1px solid var(--color-header-border);
+    cursor: pointer;
+    height: 56px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 50px;
+
+    button {
+      &:extend(.NotButton all);
+
+      height: 100%;
+      position: relative;
+      width: 100%;
+    }
+
+    svg {
+      fill: var(--color-header-text);
+      height: 17px;
+      position: absolute;
+      left: 20px;
+      top: 20px;
+      width: 11px;
+
+      [data-item-click="true"] & {
+        transform: rotate(180deg);
+        top: 16px;
+      }
+    }
+  }
+
+  &-items {
+    border-top: 1px solid var(--color-header-border);
+    display: none;
+    padding: 15px 0 15px 20px;
+
+    [data-item-click="true"] & {
+      display: block;
+    }
+  }
+
+  // These are the top level items in the navigation
+  &-text {
+    &:extend(.label-2);
+    font-size: 1.6rem;
+    line-height: 1;
+    color: var(--color-header-text);
+    display: flex;
+    justify-content: space-between;
+
+    a,
+    span {
+      color: var(--color-header-text);
+      display: block;
+      padding: 20px;
+      width: 100%;
+      margin-bottom: -5px;
+      border-bottom: 5px solid transparent;
+      transition: all 0.1s ease;
+    }
+  }
+
+  // These are the subnav items
+  .NavigationLink {
+    &:extend(.label-2);
+    font-size: 1.6rem;
+    color: var(--color-header-text);
+    display: block;
+    padding: 15px;
+    width: 100%;
+    text-transform: capitalize;
+
+    &:hover {
+      color: var(--color-primary);
+    }
+  }
+}

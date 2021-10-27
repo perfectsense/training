@@ -1,0 +1,37 @@
+{
+  "_include": "/page/Page.json",
+
+  "main": [
+    {
+      "_include": "/page/promo/PagePromoModuleA.json",
+      "category": "PagePromo Module A"
+    },
+    {
+      "_include": "/page/promo/PagePromoModuleA.json",
+      "category": "PagePromo Module A (image on top)",
+      "imagePositionVertical": "top"
+    },
+    {
+      "_include": "/page/promo/PagePromoModuleB.json",
+      "category": "PagePromo Module B"
+    },
+    {
+      "_include": "/page/promo/PagePromoModuleC.json",
+      "category": "PagePromo Module C"
+    },
+    {
+      "_include": "/page/promo/PagePromoModuleC.json",
+      "category": "PagePromo Module C (image left)",
+      "imagePositionHorizontal": "left"
+    },
+    {
+      "_include": "/page/promo/PagePromoModuleD.json",
+      "category": "PagePromo Module D"
+    },
+    {
+      "_include": "/page/promo/PagePromoModuleD.json",
+      "category": "PagePromo Module D (text align left)",
+      "textAlign": "left"
+    }
+  ]
+}

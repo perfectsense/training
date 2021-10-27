@@ -1,0 +1,10 @@
+{
+    "env": {
+        "browser": true
+    },
+    "extends": "standard",
+    "parser": "@babel/eslint-parser",
+    "parserOptions": {
+        "allowImportExportEverywhere": true
+    }
+}

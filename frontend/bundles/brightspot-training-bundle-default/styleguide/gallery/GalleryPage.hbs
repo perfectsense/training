@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html class="GalleryPage" {{~include "/page/Page-htmlAttributes.hbs" this}}>
+{{include "/page/Page-head.hbs" this}}
+
+<body class="Page-body">
+    {{include "/page/Page-header.hbs" this}}
+    {{include "/page/Page-above.hbs" this}}
+
+    <bsp-gallery-page class="Page-content" data-gallery-style="{{#with galleryPageStyle}}{{this}}{{else}}carousel{{/with}}">
+        <button class="GalleryPage-backToTop" title='Go to top'><svg><use xlink:href="#chevron-up"></use></svg></button>
+        <div class="GalleryPage-lede">
+                <div class="GalleryPage-lede-content">
+                {{include "/page/Page-breadcrumbs.hbs" this}}
+                {{include "/page/Page-headline.hbs" this}}
+                {{include "/page/Page-subHeadline.hbs" this}}
+                {{include "/page/Page-lead.hbs" this}}
+                {{include "/page/Page-byline.hbs" this}}
+                {{include "/page/Page-actions.hbs" this}}
+            </div>
+        </div>
+        <div class="Page-twoColumn">
+            <main class="Page-main">
+                {{#with galleryBody}}
+                    <div class="Page-articleBody RichTextBody">
+                        {{#set imageSize="medium"}}
+                            {{this}}
+                        {{/set}}
+                    </div>
+                {{/with}}
+
+                {{#if (eq galleryPageStyle "waterfall")}}
+                    {{#with slides}}
+                        {{#each this}}
+                            {{#set tabIndex="true"}}
+                                {{include "/gallery/GallerySlide.hbs" this className="GallerySlideWaterfall" slideNumber=@index}}
+                            {{/set}}
+                        {{/each}}
+                    {{/with}}
+                {{else}}
+                    {{#with slides}}
+                        <bsp-carousel class="GalleryPage-slides">
+                            {{#each this}}
+                                <div class="GalleryPage-slides-slide" id="slide-{{@index}}">
+                                    {{include "/gallery/GallerySlide.hbs" this slideNumber=@index}}
+                                </div>
+                            {{/each}}
+                        </bsp-carousel>
+                    {{/with}}
+                {{/if}}
+                <div class="Page-actions-bottom">
+                    {{include "/page/Page-actions.hbs" this}}
+                </div>
+                {{include "/page/Page-tags.hbs" this}}
+                {{!-- {{include "/page/Page-authorInfo.hbs" this}} --}}
+            </main>
+
+            {{#if aside}}
+                <aside class="Page-aside">
+                    {{#each aside}}
+                        {{#set imagePositionVertical="top"}}
+                            {{render this
+                                            [/page/promo/PagePromo.hbs]="/page/promo/PagePromoB.hbs"
+                                            [/page/list/PageList.hbs]="/page/list/PageListB.hbs"
+                            }}
+                        {{/set}}
+                    {{/each}}
+                </aside>
+            {{/if}}
+        </div>
+    </bsp-gallery-page>
+
+    {{include "/page/Page-below.hbs" this}}
+    {{include "/page/Page-footer.hbs" this}}
+    {{include "./GalleryPageCarousel.hbs" this}}
+    {{include "/page/Page-extraBodyItems.hbs" this}}
+</body>
+</html>

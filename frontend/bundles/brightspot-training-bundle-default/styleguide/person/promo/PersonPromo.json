@@ -1,0 +1,12 @@
+{
+  "_template": "/person/promo/PersonPromo.hbs",
+  "media": {
+    "_template": "/image/Image.hbs",
+    "image": {
+      "_image": true
+    }
+  },
+  "name": "Person Name",
+  "jobTitle": "Person Title Here",
+  "url": "#"
+}

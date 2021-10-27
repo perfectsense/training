@@ -1,0 +1,10 @@
+{
+  "_template": "VideoLead.hbs",
+  "headline": "Headline",
+  "subHeadline": "Subheadline",
+  "player": {
+    "_include": "/video/HTML5VideoPlayer.json"
+  },
+  "duration": "1 min",
+  "_hidden": true
+}

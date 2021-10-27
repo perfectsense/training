@@ -1,0 +1,20 @@
+<bsp-banner class="Banner">
+    <div class="Banner-content">
+        <span class="Banner-title">
+            {{format "/banner/Banner" "bannerTitle"}}
+        </span>
+        {{#if linkHref}}
+            <a class="Banner-link" href="{{linkHref}}">
+                {{linkBody}}
+            </a>
+        {{else}}
+            <span class="Banner-link">{{linkBody}}</span>
+        {{/if}}
+    </div>
+    <button class="Banner-close" data-toggle-trigger="banner">
+        <span class="sr-only">{{format "/banner/Banner" "closeText"}}</span>
+        <svg class="close-x">
+            <use xlink:href="#close-x"></use>
+        </svg>
+    </button>
+</bsp-banner>

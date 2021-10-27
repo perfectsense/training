@@ -1,0 +1,10 @@
+{
+  "styles": {
+    "/carousel/CarouselEnhancement.hbs": {
+        "inline": true,
+        "fields": [
+            "enhancementAlignment"
+        ]
+    }
+  }
+}

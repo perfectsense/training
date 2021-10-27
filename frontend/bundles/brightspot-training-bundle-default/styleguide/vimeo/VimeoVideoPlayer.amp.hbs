@@ -1,0 +1,22 @@
+
+    <div
+        class="VimeoVideoPlayer"
+        data-video-player
+        data-player-id="{{playerId}}"
+        data-video-id="{{videoId}}"
+        data-video-title="{{videoTitle}}"
+        {{~#if seekSeconds}} data-seek-seconds="{{seekSeconds}}"{{~/if~}}
+        {{~#if muted}} data-muted{{/if~}}
+        {{~#if autoplay}} data-autoplay{{/if~}}
+    >
+
+        <amp-vimeo data-block-on-consent
+                data-videoid="{{~videoId}}"
+                width="{{~#with width}}{{this}}{{else}}400{{/with~}}"
+                height="{{~#with height}}{{this}}{{else}}300{{/with~}}"
+                {{~#with autoplay}}data-vimeo-autoplay="true"{{/with~}}
+                layout="fixed"
+                >
+
+        </amp-vimeo>
+    </div>

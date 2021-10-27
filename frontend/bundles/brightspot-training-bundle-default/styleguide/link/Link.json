@@ -1,0 +1,7 @@
+{
+    "_template": "Link.hbs",
+    "href": "#",
+    "target": "_self",
+    "body": "Link Text",
+    "contentId": "a123"
+}

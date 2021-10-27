@@ -1,0 +1,12 @@
+<source
+    {{~#with (get "mediaQuery")}} media="{{this}}" {{/with~}}
+    {{~#if type}} type="{{type}}" {{/if~}}
+
+    {{#with width}} width="{{~this~}}"{{/with}}
+    {{#with height}} height="{{~this~}}"{{/with}}
+    {{~#eq (get "lazyLoad") false}}
+        srcset="{{src}}"
+    {{~else}}
+        data-srcset="{{src}}" data-lazy-load="true" srcset="{{svgPlaceholder width height}}"
+    {{/eq~}}
+/>

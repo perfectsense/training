@@ -1,0 +1,97 @@
+{
+  "_template": "/page/Page.hbs",
+  "_wrapper": false,
+  "_hidden": true,
+  "_exampleOnly": true,
+
+  "language": "",
+
+  "extraScripts": [{
+    "_include": "/dfp/GoogleDfpScript.json"
+  }],
+  "title": "Brightspot Styleguide",
+  "description": "Brightspot Styleguide",
+  "keywords": "Brightspot, Styleguide",
+  "canonicalLink": "http://www.brightspot.com/",
+
+  "stylePackage": [{
+    "_include": "StylePackage.json"
+  }],
+
+  "feedLink": "{{html('<link type=\"application/rss+xml\" rel=\"alternate\" title=\"Brightspot Express\" href=\"http://www.brightspot.com/feed.rss\">')}}",
+
+  "jsonLinkedData": "{{html('{ \"@type\": \"WebPage\" }')}}",
+
+  "manifestLink": "/manifest.json",
+
+  "favicons": null,
+
+  "extraBodyItems": null,
+
+  "actions": {
+    "_include": "/action-bar/ActionBar.json"
+  },
+
+  "logo": {
+    "_include": "/page/PageLogo.json",
+    "image": {
+      "_image": true
+    }
+  },
+
+  "footerLogo": {
+    "_include": "/page/PageLogo.json",
+    "image": {
+      "_image": true
+    }
+  },
+
+  "banner": null,
+
+  "navigation": {
+    "_include": "/navigation/Navigation.json"
+  },
+
+  "social": {
+    "_include": "/social/SocialBar.json"
+  },
+
+  "hat": {
+    "_include": "/page/PageHeaderTextHat.json"
+  },
+
+  "sectionNavigation": null,
+
+  "searchAction": "Search-Results.html",
+
+  "above": null,
+
+  "pageLead": {
+    "_include": "/page/PageHeading.json"
+  },
+
+  "main": null,
+
+  "aside": null,
+
+  "below": null,
+
+  "footerNavigation": {
+    "_include": "/navigation/FooterNavigation.json"
+  },
+
+  "footerContent": [
+    {
+      "_include": "/page/promo/PagePromoFooter.json"
+    }
+  ],
+
+  "disclaimer": "{{html('&copy; 2020. Site powered by the <a href=\"http://www.brightspot.com/\">Brightspot</a> publishing platform.')}}",
+
+  "contentId": null,
+
+  "ampIntegrations": null,
+
+  "ampAnalytics": null
+
+}

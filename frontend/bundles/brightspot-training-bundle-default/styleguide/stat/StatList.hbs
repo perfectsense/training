@@ -1,0 +1,13 @@
+<div class="StatList" data-module {{include "/page/list/includes/PageList-attributes.hbs" this}}>
+    {{include "/page/list/includes/PageList-header.hbs" this}}
+
+    {{#if items}}
+        <div class="StatList-items">
+            {{#each items}}
+                {{include "/stat/StatPromo.hbs" this}}
+            {{/each}}
+        </div>
+    {{/if}}
+
+    {{include "/page/list/includes/PageList-footer.hbs" this}}
+</div>

@@ -1,0 +1,63 @@
+{
+  "_include": "/page/Page.json",
+  "pageLead": null,
+  "above": {
+    "_include": "/dfp/GoogleDfpAdModule.json"
+  },
+  "main": [
+    {
+      "_template": "/container/TwoColumnContainer.hbs",
+        "_styledTemplate": "/container/TwoColumnContainer7030.hbs",
+        "columnOne": [
+          {
+            "_include": "/page/list/PageListA.json"
+          }
+        ],
+        "columnTwo": [
+          {
+            "_include": "/page/list/PageListB.json"
+          },
+          {
+            "_template": "/dfp/GoogleDfpAdModule.hbs",
+            "adIndex": "1251",
+            "slot": "/13236445/responsive_banner",
+            "sizes": "[[300, 250]]",
+            "adSizeMaps": "[[[1024,768], [300,250]], [[300,250], [300,250]]]"
+          },
+          {
+            "_include": "/page/list/PageListB.json"
+          },
+          {
+            "_template": "/dfp/GoogleDfpAdModule.hbs",
+            "adIndex": "1252",
+            "slot": "/13236445/responsive_banner",
+            "sizes": "[[300, 250]]",
+            "adSizeMaps": "[[[1024,768], [300,250]], [[300,250], [300,250]]]"
+          }
+        ]
+    },
+    {
+      "_include": "/quote/QuoteListA.json"
+    },
+    {
+      "_include": "/quote/QuoteListB.json"
+    },
+    {
+      "_include": "/dfp/GoogleDfpAdModule.json",
+      "adIndex": "1253"
+    },
+    {
+      "_include": "/quote/Quote.json"
+    },
+    {
+      "_include": "/page/list/PageListF.json"
+    },
+    {
+      "_include": "/dfp/GoogleDfpAdModule.json",
+      "adIndex": "1254"
+    },
+    {
+      "_include": "/page/list/PageListA.json"
+    }
+  ]
+}

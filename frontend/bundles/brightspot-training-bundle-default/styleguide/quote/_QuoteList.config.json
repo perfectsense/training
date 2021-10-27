@@ -1,0 +1,20 @@
+{
+  "styles": {
+    "/quote/QuoteList.hbs": {
+      "templates": [
+        {
+          "displayName": "Quote List A",
+          "example": "/quote/QuoteListA.json",
+          "height": 800,
+          "width": 1024
+        },
+        {
+          "displayName": "Quote List B",
+          "example": "/quote/QuoteListB.json",
+          "height": 800,
+          "width": 1024
+        }
+      ]
+    }
+  }
+}

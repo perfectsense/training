@@ -1,0 +1,34 @@
+{
+  "_template": "/author/list/AuthorList.hbs",
+  "_styledTemplate": "/author/list/AuthorListA.hbs",
+  "title": "Author List A",
+  "items": [
+    {
+      "_include": "/author/promo/AuthorPromo.json"
+    },
+    {
+      "_include": "/author/promo/AuthorPromo.json"
+    },
+    {
+      "_include": "/author/promo/AuthorPromo.json"
+    },
+    {
+      "_include": "/author/promo/AuthorPromo.json"
+    },
+    {
+      "_include": "/author/promo/AuthorPromo.json"
+    },
+    {
+      "_include": "/author/promo/AuthorPromo.json"
+    },
+    {
+      "_include": "/author/promo/AuthorPromo.json"
+    },
+    {
+      "_include": "/author/promo/AuthorPromo.json"
+    },
+    {
+      "_include": "/author/promo/AuthorPromo.json"
+    }
+  ]
+}

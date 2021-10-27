@@ -1,0 +1,9 @@
+{
+  "_template": "/video/VideoPlaylistModule.hbs",
+  "title": "HTML 5 Video Module",
+  "player": {
+    "_include": "/video/HTML5VideoPlayer.json"
+  },
+  "ctaUrl": "#",
+  "ctaTarget": "_self"
+}

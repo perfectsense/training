@@ -1,0 +1,14 @@
+<div class="AuthorListA" data-module{{include "/page/list/includes/PageList-attributes.hbs" this}}>
+    {{include "/page/list/includes/PageList-header.hbs" this}}
+
+    {{#with items}}
+        <ul class="AuthorListA-items" data-with-borders>
+            {{#each this}}
+                <li class="AuthorListA-items-item">
+                    {{include "/author/promo/AuthorPromo.hbs" this}}
+                </li>
+            {{/each}}
+        </ul>
+    {{/with}}
+    {{include "/page/list/includes/PageList-footer.hbs" this}}
+</div>

@@ -6,6 +6,7 @@ description = 'Brightspot Training: Web'
 
 dependencies {
     api project(':brightspot-training-core')
+    api project(':brightspot-training-bundle-default')
 
     // Solr v6+
     constraints.api('org.apache.solr:solr-solrj:8.6.1') { force = true }

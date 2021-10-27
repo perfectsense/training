@@ -1,0 +1,47 @@
+.Enhancement {
+  // just in case people put two aligned enhancements next to each other
+  clear: both;
+  margin: 30px 0;
+  width: 100%;
+
+  // center aligning for all social embeds
+  .FacebookEmbed,
+  .FacebookUrl,
+  .InstagramUrl,
+  .InstagramEmbed,
+  .TweetEmbed,
+  .TweetUrl,
+  .twitter-tweet,
+  .fb-post {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    overflow: hidden;
+    text-align: center;
+
+    iframe {
+      width: 100%;
+    }
+  }
+
+  .twitter-tweet {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  &[data-align-fullWidth] {
+    img {
+      max-width: unset;
+      margin-left: -20px;
+      margin-right: -20px;
+      width: calc(~'100% + 40px');
+    }
+  }
+
+  &[data-align-portrait-left],
+  &[data-align-portrait-right] {
+    max-width: 330px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

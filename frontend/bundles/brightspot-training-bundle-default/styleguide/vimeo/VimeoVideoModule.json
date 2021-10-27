@@ -1,0 +1,9 @@
+{
+  "_template": "/video/VideoPlaylistModule.hbs",
+  "title": "Vimeo Video Module",
+  "player": {
+    "_include": "/vimeo/VimeoVideoPlayer.json"
+  },
+  "ctaUrl": "#",
+  "ctaTarget": "_self"
+}

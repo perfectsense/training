@@ -1,0 +1,6 @@
+{
+  "_template": "CarouselEnhancement.hbs",
+  "item": {
+    "_include": "/carousel/Carousel.json"
+  }
+}

@@ -1,0 +1,15 @@
+<div class="Enhancement"{{#if enhancementAlignment}} data-{{enhancementAlignment}}{{else}} data-align-center{{/if}}>
+    <div class="Enhancement-item">
+        <div class="Quote" {{#if backgroundColor}} data-with-bg{{/if}}{{#if inverseColors}} data-inverse-colors{{/if}} style="--color-quote-background: {{#with backgroundColor}}{{this}}{{else}}#fff{{/with}};">
+            <div class="Quote-content">
+                <blockquote>
+                    {{~quote~}}
+                </blockquote>
+
+                {{#with attribution}}
+                    <div class="Quote-attribution">{{this}}</div>
+                {{/with}}
+            </div>
+        </div>
+    </div>
+</div>

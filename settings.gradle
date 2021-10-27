@@ -7,10 +7,12 @@ rootProject.name = 'brightspot-training'
 include(':brightspot-training-core')
 include(':brightspot-training-frontend')
 include(':brightspot-training-web')
+include(':brightspot-training-bundle-default')
 
 project(':brightspot-training-core').projectDir = file('core')
 project(':brightspot-training-frontend').projectDir = file('frontend')
 project(':brightspot-training-web').projectDir = file('web')
+project(':brightspot-training-bundle-default').projectDir = file('frontend/bundles/brightspot-training-bundle-default')
 
 // -- Gradle Cache Server -- //
 

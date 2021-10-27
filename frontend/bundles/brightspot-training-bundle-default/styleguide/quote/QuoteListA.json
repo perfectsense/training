@@ -1,0 +1,19 @@
+{
+  "_template": "/quote/QuoteList.hbs",
+  "_styledTemplate": "/quote/QuoteListA.hbs",
+  "title": "Quote List A",
+  "items": [
+    {
+      "_include": "/quote/Quote.json",
+      "backgroundColor": "green"
+    },
+    {
+      "_include": "/quote/Quote.json",
+      "backgroundColor": "purple"
+    },
+    {
+      "_include": "/quote/Quote.json",
+      "backgroundColor": "gray"
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "_template": "Figure.hbs",
+  "image": {
+    "_image": true
+  },
+  "alt": "Bacon ipsum dolor amet",
+  "caption": "Bacon ipsum dolor amet",
+  "credit": "Bacon: Corned beef shank "
+}

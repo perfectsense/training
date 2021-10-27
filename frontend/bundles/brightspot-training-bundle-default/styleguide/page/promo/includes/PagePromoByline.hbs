@@ -1,0 +1,10 @@
+{{#or publishDate authorName}}
+    <div class="PagePromo-byline">
+        {{~#if publishDate~}}
+            <div class="PagePromo-date">{{publishDate}}</div>{{#if authorName}}<span class="dot">&nbsp;&#183;&nbsp;</span>{{/if}}
+        {{~/if~}}
+        {{~#if authorName~}}
+            <div class="PagePromo-author">{{include "/link/Link.hbs" href=authorUrl body=authorName}}</div>
+        {{~/if~}}
+    </div>
+{{/or}}

@@ -1,0 +1,23 @@
+{
+  "_template": "/navigation/NavigationItem.hbs",
+  "items": [
+    {
+      "_include": "/navigation/NavigationLink.json"
+    },
+    {
+      "_include": "/navigation/NavigationLink.json"
+    },
+    {
+      "_include": "/navigation/NavigationLink.json"
+    },
+    {
+      "_include": "/navigation/NavigationLink.json"
+    },
+    {
+      "_include": "/navigation/NavigationLink.json"
+    },
+    {
+      "_include": "/navigation/NavigationLink.json"
+    }
+  ]
+}

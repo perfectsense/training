@@ -1,0 +1,21 @@
+<table class="NewsletterFooter">
+    <tr>
+        <td class="NewsletterFooter-disclaimer">
+            {{body}}
+        </td>
+    </tr>
+    {{#with links}}
+    <tr>
+        <td class="NewsletterFooter-links">
+            {{this}}
+        </td>
+    </tr>
+    {{/with}}
+    {{#with extraLinks}}
+    <tr>
+        <td class="NewsletterFooter-extraLinks">
+            {{this}}
+        </td>
+    </tr>
+    {{/with}}
+</table>

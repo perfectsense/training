@@ -1,0 +1,27 @@
+{{#if authorName}}
+    <div class="Page-authorInfo">
+        <div class="Page-authorInfo-image">
+            {{#if authorUrl}}<a href="{{authorUrl}}">{{/if}}
+                {{#if authorImage}}
+                    {{#set imageSize="small-square"}}
+                        {{include "/image/Image.amp.hbs" this alt=authorName image=authorImage}}
+                    {{/set}}
+                {{/if}}
+            {{#if authorUrl}}</a>{{/if}}
+        </div>
+
+        <div class="Page-authorInfo-content">
+            {{#if authorName}}
+                <div class="Page-authorInfo-name">
+                    {{#if authorUrl}}<a href="{{authorUrl}}">{{/if}}{{authorName}}{{#if authorUrl}}</a>{{/if}}
+                </div>
+            {{/if}}
+
+            {{#with authorBiography}}
+                <div class="Page-authorInfo-bio RichTextBody" data-type="small">
+                    {{this}}
+                </div>
+            {{/with}}
+        </div>
+    </div>
+{{/if}}

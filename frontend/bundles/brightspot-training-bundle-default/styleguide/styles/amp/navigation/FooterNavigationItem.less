@@ -1,0 +1,25 @@
+.FooterNavigationItem {
+  span {
+    &:extend(.title-3 all);
+    margin-bottom: 20px;
+    display: block;
+    font-weight: normal;
+  }
+
+  &-items {
+    &-item {
+      &:last-child {
+        a {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+
+  a {
+    &:extend(.label-2);
+    display: block;
+    margin-bottom: 15px;
+    word-break: keep-all;
+  }
+}

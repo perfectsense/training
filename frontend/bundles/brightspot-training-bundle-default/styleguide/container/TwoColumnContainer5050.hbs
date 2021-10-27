@@ -1,0 +1,16 @@
+<div class="TwoColumnContainer" data-module>
+    {{include "includes/Container-title.hbs" this}}
+
+    <div class="TwoColumnContainer-container">
+        {{#with columnOne}}
+            <div class="TwoColumnContainer-column" data-modulewell>
+                {{this}}
+            </div>
+        {{/with}}
+        {{#with columnTwo}}
+            <div class="TwoColumnContainer-column" data-modulewell>
+                {{this}}
+            </div>
+        {{/with}}
+    </div>
+</div>

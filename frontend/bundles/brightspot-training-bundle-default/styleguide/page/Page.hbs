@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html class="Page" {{~include "/page/Page-htmlAttributes.hbs" this}}>
+{{include "/page/Page-head.hbs" this}}
+
+<body class="Page-body">
+    {{include "/page/Page-header.hbs" this}}
+    {{include "/page/Page-above.hbs" this}}
+
+    <div class="Page-content">
+        {{#with pageLead}}
+            <div class="Page-pageLead" data-pagelead>{{this}}</div>
+        {{/with}}
+
+        {{#with main}}
+            <main class="Page-oneColumn" data-modulewell>{{this}}</main>
+        {{/with}}
+    </div>
+
+    {{include "/page/Page-below.hbs" this}}
+    {{include "/page/Page-footer.hbs" this}}
+    {{include "/page/Page-extraBodyItems.hbs" this}}
+</body>
+</html>

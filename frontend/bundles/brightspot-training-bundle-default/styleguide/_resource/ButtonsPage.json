@@ -1,0 +1,5 @@
+{
+  "_include": "/page/Page.json",
+  "_hidden": false,
+  "_template": "/global/ButtonsPage.hbs"
+}

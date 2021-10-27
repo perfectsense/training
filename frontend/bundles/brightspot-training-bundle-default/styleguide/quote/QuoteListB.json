@@ -1,0 +1,41 @@
+{
+  "_template": "/quote/QuoteList.hbs",
+  "_styledTemplate": "/quote/QuoteListB.hbs",
+  "title": "Quote List B",
+  "items": [
+    {
+      "_include": "/quote/Quote.json",
+      "backgroundColor": "green",
+      "inverseColors": true
+    },
+    {
+      "_include": "/quote/Quote.json",
+      "backgroundColor": "purple",
+      "inverseColors": true
+    },
+    {
+      "_include": "/quote/Quote.json"
+    },
+    {
+      "_include": "/quote/Quote.json"
+    },
+    {
+      "_include": "/quote/Quote.json",
+      "backgroundColor": "pink",
+      "inverseColors": true
+    },
+    {
+      "_include": "/quote/Quote.json"
+    },
+    {
+      "_include": "/quote/Quote.json",
+      "backgroundColor": "yellow"
+    },
+    {
+      "_include": "/quote/Quote.json"
+    },
+    {
+      "_include": "/quote/Quote.json"
+    }
+  ]
+}

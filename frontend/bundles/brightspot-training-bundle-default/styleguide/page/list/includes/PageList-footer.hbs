@@ -1,0 +1,9 @@
+{{#or (and canPaginate pagination) ctaUrl}}
+<div class="PageList-footer">
+    {{#if ctaUrl}}
+        {{include "PageList-cta.hbs" this}}
+    {{else if (and (not suppressPagination) canPaginate pagination)}}
+        {{include "PageList-loadMore.hbs" this}}
+    {{/if}}
+</div>
+{{/or}}

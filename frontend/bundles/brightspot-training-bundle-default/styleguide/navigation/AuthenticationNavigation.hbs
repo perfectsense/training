@@ -1,0 +1,9 @@
+<nav class="AuthenticationNavigation"{{extraAttributes}}>
+    {{#with items}}
+        <ul class="AuthenticationNavigation-items">
+            {{#each this}}
+                <li class="AuthenticationNavigation-items-item" {{#if this.isCurrent}}data-current-nav-item{{/if}}>{{this}}</li>
+            {{/each}}
+        </ul>
+    {{/with}}
+</nav>

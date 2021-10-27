@@ -1,0 +1,12 @@
+{
+  "styles": {
+    "/section/SectionPage.hbs": {
+      "fields": [
+        "sectionNavAlign",
+        "sectionNavBgColor",
+        "sectionNavTextColor",
+        "sectionNavTextHoverColor"
+      ]
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "styles": {
+    "/image/ImageEnhancement.hbs": {
+        "inline": true,
+        "fields": [
+            "enhancementAlignmentImage"
+        ]
+    }
+  }
+}

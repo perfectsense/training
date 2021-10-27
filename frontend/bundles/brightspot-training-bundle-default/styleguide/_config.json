@@ -1,0 +1,9 @@
+{
+  "themeFields": {},
+  "fields": {},
+  "styles": {},
+  "includes": [
+    "**/*.config.json"
+  ],
+  "stylePackages": {}
+}

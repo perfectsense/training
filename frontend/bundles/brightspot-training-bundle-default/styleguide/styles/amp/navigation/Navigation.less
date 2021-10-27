@@ -1,0 +1,51 @@
+.Navigation {
+  background: var(--color-header-secondary-bg);
+  display: block;
+  height: 100%;
+  width: 100%;
+
+  amp-accordion {
+    section[expanded] .NavigationItem-more svg {
+            transform: rotate(270deg);
+            top: 16px;
+    }
+
+    header.NavigationItem-text {
+        background-color: transparent;
+        border: 0;
+    }
+}
+
+  [data-toggle-header='hamburger-menu'] & {
+    display: block;
+  }
+
+  &-items {
+    width: 100%;
+
+    &-item {
+      border-bottom: 1px solid var(--color-header-border);
+
+      &[data-social-nav-item] {
+        border-bottom: none;
+        display: inline-block;
+        width: 40px;
+      }
+    }
+  }
+
+  .SocialLink {
+    display: block;
+    padding: 30px 30px 25px 20px;
+
+    svg {
+      fill: var(--color-header-text);
+      height: 25px;
+      width: 25px;
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+}

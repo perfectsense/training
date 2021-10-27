@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html class="ButtonsPage" itemscope
+    itemtype="http://schema.org/WebPage">
+{{include "/page/Page-head.hbs" this}}
+{{include "/page/Page-icons.hbs" this}}
+
+<body class="Page-body">
+    <style type="text/css">
+        .Page-body {
+            padding-top: 0;
+        }
+
+        .ButtonsPage {
+            display: block;
+            margin: 0 0 20px;
+            padding: 10px;
+        }
+
+        .ButtonsPage-block {
+            padding: 20px;
+            display: block;
+            border-radius: 5px;
+        }
+
+        .ButtonsPage-arrows-wrapper {
+            position: relative;
+            min-height: 87px;
+            max-width: 114px;
+        }
+
+        .bg {
+            background: var(--color-primary);
+        }
+
+        .bg-img {
+            background: url('/assets/style-2-bg-small.png') no-repeat;
+        }
+
+        .ButtonsPage-arrows-wrapper.Carousel .flickity-prev-next-button {
+            border: 0;
+            top: 50%;
+        }
+
+        .ButtonsPage-block button {
+            margin-bottom: 20px;
+        }
+
+        .ButtonsPage-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .ButtonsPage-block-subTitle {
+            margin-bottom: 10px;
+        }
+
+        .ButtonsPage .Page-tags {
+            margin-top: 0;
+        }
+
+        .ButtonsPage .ButtonsPage-container .flickity-prev-next-button.previous {
+            left: 10px;
+        }
+
+        .ButtonsPage .ButtonsPage-container .flickity-prev-next-button.next {
+            right: 10px;
+        }
+
+        code {
+            font-size: 12px;
+            background: #f4f4f4;
+            border: 1px solid #ddd;
+            border-left: 3px solid #f36d33;
+            padding: 5px 15px;
+            display: inline-block;
+            top: -3px;
+            position: relative;
+        }
+    </style>
+
+    <div class="Page-content">
+        <div class="ColorWrapper">
+            <h2 class="title-2">Go Buttons & Links</h2>
+            <div class="ButtonsPage-container">
+                <div class="ButtonsPage-section">
+                    <div class="ButtonsPage-block">
+                        <h3 class="ButtonsPage-block-subTitle">Primary Buttons
+                            <!-- <code>.Button / .Button-inverse</code> -->
+                        </h3>
+                        <button class="Button">Button Label</button>
+                        <button class="Button-inverse">Button Label</button>
+                    </div>
+                    <div class="ButtonsPage-block">
+                        <h3 class="ButtonsPage-block-subTitle">Primary Buttons - small
+                            <!-- <code>.Button-small / .Button-small-inverse</code> -->
+                        </h3>
+                        <button class="Button-small">Button Label</button>
+                        <button class="Button-small-inverse">Button Label</button>
+                    </div>
+                    <div class="ButtonsPage-block">
+                        <h3 class="ButtonsPage-block-subTitle">Primary Buttons - disabled</h3>
+                        <button class="Button" disabled>Button Label</button>
+                        <button class="Button-inverse" disabled>Button Label</button>
+                    </div>
+                    <div class="ButtonsPage-block">
+                        <h3 class="ButtonsPage-block-subTitle">Primary Buttons - small - disabled</h3>
+                        <button class="Button-small" disabled>Button Label</button>
+                        <button class="Button-small-inverse" disabled>Button Label</button>
+                    </div>
+
+                    <div class="ButtonsPage-block">
+                        <h3 class="ButtonsPage-block-subTitle">Tag Buttons</h3>
+                        <div class="Page-tags">
+                            <a class="Link" href="#">Tag</a>
+                            <a class="Link" href="#">Tag</a>
+                            <a class="Link" href="#">Tag</a>
+                            <a class="Link" href="#">Tag</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ButtonsPage-section">
+                    <div class="ButtonsPage-block RichTextBody">
+                        <h3 class="ButtonsPage-block-subTitle">Standard Body Links</h3>
+                        <p>Lorem ipsum dolor sit amet, <a href="#">consectetur adipiscing elit.</a> Donec gravida
+                            lacinia odio at ultricies. <b>Nulla facilisi</b>. Quisque eleifend.</p>
+                    </div>
+
+                    <div class="ButtonsPage-block">
+                        <h3 class="ButtonsPage-block-subTitle">Social Bar</h3>
+                        <div class="SocialBar">
+                            <ul class="SocialBar-items">
+                                <li class="SocialBar-items-item">
+                                    <a class="SocialLink" rel="noreferrer"
+                                        href="https://www.facebook.com/BrightspotCMS/" target="_blank"
+                                        data-social-service="facebook">
+                                        <svg>
+                                            <use xlink:href="#mono-icon-facebook"></use>
+                                        </svg>
+                                        <span class="sr-only">facebook</span>
+                                    </a>
+                                </li>
+                                <li class="SocialBar-items-item">
+                                    <a class="SocialLink" rel="noreferrer" href="https://twitter.com/TeamBrightspot"
+                                        target="_blank" data-social-service="twitter">
+                                        <svg>
+                                            <use xlink:href="#mono-icon-twitter"></use>
+                                        </svg>
+                                        <span class="sr-only">twitter</span>
+                                    </a>
+                                </li>
+                                <li class="SocialBar-items-item">
+                                    <a class="SocialLink" rel="noreferrer" href="mailto:#" target="_blank"
+                                        data-social-service="mailto">
+                                        <svg>
+                                            <use xlink:href="#mono-icon-mailto"></use>
+                                        </svg>
+                                        <span class="sr-only">mailto</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="ButtonsPage-block" data-pagelead>
+                        <h3 class="ButtonsPage-block-subTitle">Arrows - (Within a Lead)</h3>
+                        <div class="bg-img">
+                            <div class="ButtonsPage-arrows-wrapper CarouselAbstract">
+                                <button class="flickity-button flickity-prev-next-button previous" type="button"
+                                    aria-label="Previous"><svg class="flickity-button-icon" viewBox="0 0 100 100">
+                                        <path d="M 10,50 L 60,100 L 70,90 L 30,50  L 70,10 L 60,0 Z" class="arrow">
+                                        </path>
+                                    </svg></button>
+                                <button class="flickity-button flickity-prev-next-button next" type="button"
+                                    aria-label="Next" disabled=""><svg class="flickity-button-icon"
+                                        viewBox="0 0 100 100">
+                                        <path d="M 10,50 L 60,100 L 70,90 L 30,50  L 70,10 L 60,0 Z" class="arrow"
+                                            transform="translate(100, 100) rotate(180) "></path>
+                                    </svg></button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="ButtonsPage-block">
+                        <h3 class="ButtonsPage-block-subTitle">Arrows - Carousel</h3>
+                        <div class="ButtonsPage-arrows-wrapper Carousel bg-img">
+                            <button class="flickity-button flickity-prev-next-button previous" type="button"
+                                aria-label="Previous"><svg class="flickity-button-icon" viewBox="0 0 100 100">
+                                    <path d="M 10,50 L 60,100 L 70,90 L 30,50  L 70,10 L 60,0 Z" class="arrow"></path>
+                                </svg></button>
+                            <button class="flickity-button flickity-prev-next-button next" type="button"
+                                aria-label="Next" disabled=""><svg class="flickity-button-icon" viewBox="0 0 100 100">
+                                    <path d="M 10,50 L 60,100 L 70,90 L 30,50  L 70,10 L 60,0 Z" class="arrow"
+                                        transform="translate(100, 100) rotate(180) "></path>
+                                </svg></button>
+                        </div>
+                    </div>
+
+                    <div class="ButtonsPage-block">
+                        <h3 class="ButtonsPage-block-subTitle">Arrows</h3>
+                        <div class="ButtonsPage-arrows-wrapper CarouselAbstract">
+                            <button class="flickity-button flickity-prev-next-button previous" type="button"
+                                aria-label="Previous"><svg class="flickity-button-icon" viewBox="0 0 100 100">
+                                    <path d="M 10,50 L 60,100 L 70,90 L 30,50  L 70,10 L 60,0 Z" class="arrow"></path>
+                                </svg></button>
+                            <button class="flickity-button flickity-prev-next-button next" type="button"
+                                aria-label="Next" disabled=""><svg class="flickity-button-icon" viewBox="0 0 100 100">
+                                    <path d="M 10,50 L 60,100 L 70,90 L 30,50  L 70,10 L 60,0 Z" class="arrow"
+                                        transform="translate(100, 100) rotate(180) "></path>
+                                </svg></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

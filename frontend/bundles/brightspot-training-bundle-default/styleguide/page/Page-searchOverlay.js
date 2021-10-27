@@ -1,0 +1,54 @@
+export class SearchOverlay extends window.HTMLElement {
+  connectedCallback () {
+    this.cacheElements()
+    this.init()
+  }
+
+  cacheElements () {
+    this.searchButton = this.querySelector('[class$="-search-button"]')
+    this.searchInput = this.querySelector('[class$="-search-input"]')
+    this.searchInputClear = this.querySelector('[class$="-search-form-clear"]')
+  }
+
+  init () {
+    if (this.searchButton) {
+      this.searchButton.addEventListener('click', e => {
+        e.preventDefault()
+
+        if (this.isSearchOpen()) {
+          this.closeSearch()
+        } else {
+          this.openSearch()
+        }
+      })
+    }
+
+    if (this.searchInputClear) {
+      this.searchInputClear.addEventListener('click', e => {
+        e.preventDefault()
+        this.searchInput.value = ''
+      })
+    }
+  }
+
+  openSearch () {
+    document.body.setAttribute('data-toggle-header', 'search-overlay')
+    this.setAttribute('data-toggle-header', 'search-overlay')
+    this.searchInput.focus()
+  }
+
+  closeSearch () {
+    if (this.isSearchOpen()) {
+      document.body.removeAttribute('data-toggle-header')
+      this.removeAttribute('data-toggle-header')
+    }
+  }
+
+  isSearchOpen () {
+    if (document.body.getAttribute('data-toggle-header') === 'search-overlay') {
+      return true
+    } else {
+      return false
+    }
+  }
+}

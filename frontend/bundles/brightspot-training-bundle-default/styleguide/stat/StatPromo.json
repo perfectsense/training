@@ -1,0 +1,6 @@
+{
+  "_template": "/stat/StatPromo.hbs",
+  "title": "Stat Title",
+  "description": "Stat Description",
+  "value": "Stat Value"
+}

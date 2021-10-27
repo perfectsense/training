@@ -1,0 +1,9 @@
+{
+  "_include": "/liveblog/LiveBlogPage.json",
+  "fragment": true,
+  "currentPosts": [
+    {
+      "_include": "/liveblog/LiveBlogPost.json"
+    }
+  ]
+}

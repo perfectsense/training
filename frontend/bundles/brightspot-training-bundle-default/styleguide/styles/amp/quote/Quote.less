@@ -1,0 +1,26 @@
+.Quote {
+  position: relative;
+  width: 100%;
+
+  blockquote {
+    &:extend(.quote-1 all);
+
+    margin: 10px 0 5px;
+    text-align: center;
+
+    &:before {
+      content: '\201C';
+    }
+
+    &:after {
+      content: '\201D';
+    }
+  }
+
+  &-attribution {
+    &:extend(.byline-1 all);
+
+    margin-top: 10px;
+    text-align: center;
+  }
+}

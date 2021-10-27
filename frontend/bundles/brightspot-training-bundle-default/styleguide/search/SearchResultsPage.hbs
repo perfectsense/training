@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html class="SearchResultsPage" {{~include "/page/Page-htmlAttributes.hbs" this}}>
+    {{include "/page/Page-head.hbs" this}}
+
+    <body class="Page-body" style="--color-search-module-background: {{~#with searchFormBackgroundColor~}}{{this}}{{else}}#f0f0f0{{~/with~}};">
+        {{include "/page/Page-header.hbs" this}}
+        {{include "/page/Page-above.hbs" this}}
+
+        <div class="SearchResultsPage-content">
+            {{include "/search/SearchResultsModule.hbs"
+                query=query
+                items=results
+                sorts=sorts
+                filters=filters
+                spotlights=spotlights
+                count=count
+                previousPage=previousPage
+                nextPage=nextPage
+                pageCount=pageCount
+                pageNumber=pageNumber
+                title=title
+                aside=aside
+            }}
+        </div>
+
+        {{include "/page/Page-below.hbs" this className="SearchResultsPage"}}
+        {{include "/page/Page-footer.hbs" this}}
+        {{include "/page/Page-extraBodyItems.hbs" this}}
+    </body>
+</html>

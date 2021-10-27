@@ -1,0 +1,80 @@
+// lesshint universalSelector: false
+
+// ----- Instead of sanitize.css, we can just cherry pick this for AMP -----
+*,
+::before,
+::after {
+  background-repeat: no-repeat; /* 1 */
+  box-sizing: border-box; /* 2 */
+}
+
+// ----- Global, across themes, base styles -----
+html {
+  font-size: 62.5%;
+}
+
+body,
+html {
+  height: 100%;
+}
+
+blockquote,
+figure,
+hr {
+  margin: 0;
+}
+
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+  outline: 0;
+}
+
+img {
+  display: block;
+  height: auto;
+  max-width: 100%;
+}
+
+#iconsMap {
+  display: none;
+}
+
+
+// ----- Globals. These are items like variables, mixins, typography, etc -----
+@import 'global/All';
+
+// ----- Base page -----
+@import 'page/All';
+@import 'link/All';
+@import 'article/All';
+
+// ----- Components -----
+@import 'action-bar/All';
+@import 'enhancement/All';
+@import 'figure/All';
+@import 'gallery/All';
+@import 'image/All';
+@import 'navigation/All';
+@import 'page/list/All';
+@import 'page/promo/All';
+@import 'quote/All';
+@import 'social/All';
+@import 'text/All';

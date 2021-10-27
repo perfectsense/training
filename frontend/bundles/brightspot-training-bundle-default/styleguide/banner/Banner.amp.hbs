@@ -1,0 +1,19 @@
+<div class="Banner">
+    <div class="Banner-wrapper">
+        <div class="Banner-content">
+            <div class="Banner-title">{{format "/banner/Banner" "bannerTitle"}}</div>
+
+            <div class="Banner-link">
+                {{#if linkHref}}
+                <a class="Banner-link-link" href="{{linkHref}}">
+                    {{~linkBody~}}
+                </a>
+                {{else}}
+                    {{~linkBody~}}
+                {{/if}}
+            </div>
+
+            <button class="Banner-close" data-toggle-trigger="banner">{{format "/banner/Banner" "closeText"}}</button>
+        </div>
+    </div>
+</div>

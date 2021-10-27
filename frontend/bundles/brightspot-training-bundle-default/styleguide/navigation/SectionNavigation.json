@@ -1,0 +1,27 @@
+{
+  "_template": "/navigation/Navigation.hbs",
+  "items": [
+    {
+      "_template": "/navigation/NavigationItem.hbs",
+      "target": "_self",
+      "text": "Ipsum",
+      "href": "#",
+      "isCurrent": true
+    },
+    {
+      "_template": "/navigation/NavigationItem.hbs",
+      "text": "Ipsum",
+      "href": "#"
+    },
+    {
+      "_template": "/navigation/NavigationItem.hbs",
+      "text": "Ipsum",
+      "href": "#"
+    },
+    {
+      "_template": "/navigation/NavigationItem.hbs",
+      "text": "Ipsum",
+      "href": "#"
+    }
+  ]
+}

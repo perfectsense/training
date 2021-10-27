@@ -1,0 +1,17 @@
+<div class="GallerySlide">
+    <div class="GallerySlide-media">
+        {{#with mediaContent}}
+            {{#set imageSize="large"}}
+                {{image}}
+            {{/set}}
+        {{/with}}
+    </div>
+    <div class="GallerySlide-content">
+        {{#with infoTitle}}
+            <div class="GallerySlide-title">{{this}}</div>
+        {{/with}}
+        {{#with infoDescription}}
+            <div class="GallerySlide-description">{{this}}</div>
+        {{/with}}
+    </div>
+</div>

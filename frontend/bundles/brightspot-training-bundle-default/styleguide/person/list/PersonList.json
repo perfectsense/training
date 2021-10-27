@@ -1,0 +1,33 @@
+{
+  "_template": "/person/list/PersonList.hbs",
+  "title": "Person List A",
+  "items": [
+    {
+      "_include": "/person/promo/PersonPromo.json"
+    },
+    {
+      "_include": "/person/promo/PersonPromo.json"
+    },
+    {
+      "_include": "/person/promo/PersonPromo.json"
+    },
+    {
+      "_include": "/person/promo/PersonPromo.json"
+    },
+    {
+      "_include": "/person/promo/PersonPromo.json"
+    },
+    {
+      "_include": "/person/promo/PersonPromo.json"
+    },
+    {
+      "_include": "/person/promo/PersonPromo.json"
+    },
+    {
+      "_include": "/person/promo/PersonPromo.json"
+    },
+    {
+      "_include": "/person/promo/PersonPromo.json"
+    }
+  ]
+}

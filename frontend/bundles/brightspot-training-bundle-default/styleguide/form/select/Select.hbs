@@ -1,0 +1,27 @@
+
+    <div class="Select">
+
+            <label class="Select-label"><span>{{label}}</span>
+                <div class="Select-wrapper">
+                    <select class="Select-input" name="{{#if name}}{{name}}{{else}}Select-input{{/if}}"
+                          {{~#with autofocus}} autofocus{{/with}}
+                          {{~#with disabled}} disabled{{/with}}
+                          {{~#with multiple}} multiple{{/with~}}
+                          {{~#with required}} required{{/with}}>
+
+                      {{#with placeholder}}
+                          <option value="" selected>{{this}}</option>
+                      {{/with}}
+
+                      {{#with options~}}
+                          {{#each this}}
+                            {{~this~}}
+                          {{/each}}
+                      {{/with}}
+                    </select>
+                  <svg class="chevron"><use xlink:href="#icon-arrow-down"></use></svg>
+                </div>
+                <div class="TextInput-errors"></div>
+            </label>
+
+    </div>

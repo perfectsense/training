@@ -1,0 +1,10 @@
+{
+  "styles": {
+    "/page/promo/PagePromoEnhancement.hbs": {
+        "inline": true,
+        "fields": [
+            "enhancementAlignment"
+        ]
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "styles": {
+    "/stat/StatList.hbs": {
+      "fields": [
+        "backgroundColor",
+        "inverseColors"
+      ]
+    }
+  }
+}

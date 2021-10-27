@@ -1,0 +1,10 @@
+{
+  "_include": "/form/Form.json",
+  "_template": "/form/Form.hbs",
+  "backgroundImage": {
+    "_template": "/image/Image.hbs",
+    "image": {
+      "_image": true
+    }
+  }
+}
