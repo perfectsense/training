@@ -1,0 +1,4 @@
+rootProject.name = 'training-setup'
+
+include('ic-export')
+include('training-import')
