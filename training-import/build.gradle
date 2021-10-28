@@ -1,0 +1,29 @@
+plugins {
+    id 'java'
+}
+
+ext {
+    brightspotVersion = '4.2.24'
+    componentLibVersion = '4.2.159'
+    goVersion = '0.10.0'
+}
+
+dependencies {
+    implementation enforcedPlatform("com.psddev:brightspot-bom:$brightspotVersion")
+    implementation enforcedPlatform("com.psddev:brightspot-dependencies:$brightspotVersion")
+    implementation enforcedPlatform("com.psddev.component-lib:bom:$componentLibVersion")
+    implementation enforcedPlatform("com.brightspot.go:bom:$goVersion")
+    implementation enforcedPlatform("com.brightspot.go:go-dependencies:$goVersion")
+
+    implementation 'com.psddev:cms-db'
+    implementation 'com.psddev:theme'
+
+    implementation 'com.brightspot.go:pack-enterprise-corporate'
+
+    implementation 'com.psddev.component-lib:util-task-pipeline'
+}
+
+repositories {
+    mavenCentral()
+    maven { url = 'https://artifactory.psdops.com/public' }
+}
