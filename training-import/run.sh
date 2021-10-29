@@ -3,6 +3,7 @@
 # PRECONDITIONS
 #
 # 1. Java 11 compiler active
+# 2. Required (by Docker) localhost ports are available
 #
 # POSTCONDITIONS
 #
@@ -43,7 +44,7 @@ cd -- "$repo_dir"
 
 echo "Starting Docker in $(pwd)" >&2
 docker-compose up -d
-echo "Press ENTER when tomcat has started" >&2
+echo 'Press ENTER when tomcat has started (try loading http://localhost/cms)' >&2
 read -r # wait for input
 
 curl 'http://localhost/_debug/code' \

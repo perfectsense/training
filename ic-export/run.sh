@@ -5,6 +5,7 @@
 # 1. Brightspot Docker mysql container has been started successfully
 # 2. Have an LDAP account with at least developer access level to the
 #    'Brightspot Platform' project
+# 3. Required (by Docker) localhost ports are available
 #
 # POSTCONDITIONS
 # 1. export-training.json created in directory where script was run
@@ -64,7 +65,7 @@ run_ic_docker() {
 export_data() {
   output_file="$1"
 
-  echo "Press ENTER when tomcat has started" >&2
+  echo 'Press ENTER when tomcat has started (try loading http://localhost/cms)' >&2
   read -r # wait for input
   curl http://localhost/export-training > "$output_file"
 }
