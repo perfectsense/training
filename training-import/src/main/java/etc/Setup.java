@@ -103,7 +103,7 @@ public class Setup {
         new Task() {
 
             @Override
-            protected void doTask() throws IOException {
+            protected void doTask() throws InterruptedException, IOException {
                 setUpDocker();
             }
         }.submit();
@@ -111,7 +111,7 @@ public class Setup {
         return "Setup and import started";
     }
 
-    public static void setUpDocker() throws IOException {
+    public static void setUpDocker() throws InterruptedException, IOException {
         if (Query.fromAll()
             .where("_type != ?", ClassFinder.findConcreteClasses(Singleton.class))
             .and("_type != ?", JarBundle.class)
@@ -294,7 +294,7 @@ public class Setup {
         return homepage;
     }
 
-    private static void importContent(ToolUser importUser) throws IOException {
+    private static void importContent(ToolUser importUser) throws InterruptedException, IOException {
         try (FileInputStream inputStream = new FileInputStream(new File("/code/export-training.json"))) {
 
             @SuppressWarnings("unchecked")
@@ -319,7 +319,8 @@ public class Setup {
                     .operation(WriteOperation.SAVE_UNSAFELY))
 
                 .build()
-                .start(new Date().toString());
+                .start(new Date().toString())
+                .waitForCompletion();
         }
     }
 
