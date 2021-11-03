@@ -30,6 +30,7 @@ dependencies {
     // Third party.
     api 'com.cronutils:cron-utils'
     api 'org.ahocorasick:ahocorasick'
+    implementation 'org.threeten:threeten-extra:1.7.0'
 
     // Provided
     compileOnly 'javax.el:javax.el-api'
