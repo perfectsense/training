@@ -134,6 +134,12 @@
                     {{/set}}
                 </div>
 
+                {{#with recipe}}
+                <div class="ArticlePage-recipe">
+                    {{this}}
+                </div>
+                {{/with}}
+
                 {{#if actions}}
                 <div class="Page-actions-bottom">
                     {{include "/page/Page-actions.hbs" this}}

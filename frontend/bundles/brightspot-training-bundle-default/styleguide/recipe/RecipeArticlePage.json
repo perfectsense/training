@@ -1,0 +1,14 @@
+{
+  "_include": "/article/ArticlePage.json",
+
+  "articleBody": {
+    "_template": "/article/RichTextArticleBody.hbs",
+    "body": [
+      "{{html('<p>Hor bodwo lub onumiskav noflur oghuje niteg wis kawocdo eheodi omlogga loso piiwe zoc. Dabfuwoz muc gis jarej etgi busdalwuj basvaztos Emily Hall taclimoco riwe mes Steve Bailey. Pitaw nu boniz lifbip Billy Brown vinecwah idocovwo Tom Walsh sures Sallie Dennis ri urusotul umce vowo fefehfe. Zurien ej aweraz ubsah re tanisi cadtosu ben fim cainimo Roger Huff nar ocaurha.</p><p>Fiduh lor vaasu ok odaaturag Scott White Ida Simmons burho tep nibi dawirvun meteuja rudin miw nevop sihubib olkunve arkon. Tu gup tago cefa necba hapapju surbor zi mobol fuf izamad begom. Wujiv zalka radsoves selpepij iwoda va sujihojuv im enu Floyd Blair Teresa Jones povro iz ba. Zajus uvpeiga siwtob fuh puc wupnuj rul Darrell Wright wili vinuacu jawib miozan. Iva Harrington cawug Travis Mason putejon bamon itis lace ibenic vaklicpaz Vincent Bell ib lokzof ugubi. Aztak ujebuv unoohecev carku legwaevo iwhese ki ga cekse hufbijme tewu majzorwal vev. Arpaguk wiku jamohkis fupuk ofgu ci zimdor Mason Wheeler altele kuidu egohu ec.</p>')}}"
+    ]
+  },
+
+  "recipe": {
+    "_include": "/recipe/RecipeModule.json"
+  }
+}
