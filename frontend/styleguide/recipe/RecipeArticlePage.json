@@ -1,0 +1,17 @@
+{
+  "_wrapper": false,
+  "_include": "/page/CreativeWorkPage.json",
+  "_template": "RecipeArticlePage.hbs",
+
+  "lead": {
+    "_include": "/_group/Leads.json",
+    "_key": 0
+  },
+  "articleBody": {
+    "_include": "/_group/RichTextElementsLarge.json",
+    "_key": 0
+  },
+  "recipe": {
+    "_template": "RecipeModule.hbs"
+  }
+}
