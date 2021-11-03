@@ -21,6 +21,7 @@ dependencies {
 
     // Third party.
     api 'com.cronutils:cron-utils'
+    implementation 'org.threeten:threeten-extra:1.7.0'
 
     // Provided.
     compileOnly 'javax.el:javax.el-api'
