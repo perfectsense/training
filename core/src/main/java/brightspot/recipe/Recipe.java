@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
+import java.util.Set;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 import brightspot.image.WebImage;
@@ -17,9 +19,19 @@ import com.psddev.cms.db.Content;
 import com.psddev.cms.db.ToolUi;
 import com.psddev.cms.ui.form.DynamicPlaceholderMethod;
 import com.psddev.cms.ui.form.Note;
+import com.psddev.dari.util.UnresolvedState;
 
 public class Recipe extends Content implements
     NoUrlsWidget {
+
+    public static final String COOK_TIME_FIELD = "cookTime";
+    public static final String DIFFICULTY_FIELD = "difficulty";
+    public static final String INACTIVE_PREP_TIME_FIELD = "inactivePrepTime";
+    public static final String PREP_TIME_FIELD = "prepTime";
+    public static final String RECIPE_TAG_NAMES_FIELD = "getRecipeTagNames";
+    public static final String RECIPE_TAGS_FIELD = "recipeTags";
+    public static final String TITLE_PLAIN_TEXT_FIELD = "getTitlePlainText";
+    public static final String TOTAL_TIME_FIELD = "getTotalTime";
 
     private static final String TIMING_CLUSTER = "Timing";
 
@@ -31,6 +43,7 @@ public class Recipe extends Content implements
     @DynamicPlaceholderMethod("getInternalNameFallback")
     private String internalName;
 
+    @Indexed
     private Difficulty difficulty;
 
     @ToolUi.RichText(inline = false, toolbar = SmallRichTextToolbar.class)
@@ -41,18 +54,22 @@ public class Recipe extends Content implements
 
     private WebImage image;
 
+    @Indexed
     private List<RecipeTag> recipeTags;
 
+    @Indexed
     @Note("Value is in minutes")
     @ToolUi.Cluster(TIMING_CLUSTER)
     @ToolUi.CssClass("is-third")
     private Integer prepTime;
 
+    @Indexed
     @Note("Value is in minutes")
     @ToolUi.Cluster(TIMING_CLUSTER)
     @ToolUi.CssClass("is-third")
     private Integer inactivePrepTime;
 
+    @Indexed
     @Note("Value is in minutes")
     @ToolUi.Cluster(TIMING_CLUSTER)
     @ToolUi.CssClass("is-third")
@@ -159,6 +176,8 @@ public class Recipe extends Content implements
 
     // --- API methods ---
 
+    @Indexed
+    @ToolUi.Hidden
     public Integer getTotalTime() {
         return Optional.ofNullable(getTotalTimeOverride())
             .orElseGet(this::getTotalTimeFallback);
@@ -178,6 +197,33 @@ public class Recipe extends Content implements
             .filter(Objects::nonNull)
             .mapToInt(Integer::intValue)
             .reduce(0, Integer::sum);
+    }
+
+    // --- Indexes ---
+
+    @Indexed
+    @ToolUi.Hidden
+    @ToolUi.Sortable
+    public Integer getDifficultyLevel() {
+        return Optional.ofNullable(getDifficulty())
+            .map(Difficulty::getCode)
+            .orElse(null);
+    }
+
+    @Indexed
+    @ToolUi.Hidden
+    public String getTitlePlainText() {
+        return RichTextUtils.richTextToPlainText(getTitle());
+    }
+
+    @Indexed
+    @ToolUi.Hidden
+    public Set<String> getRecipeTagNames() {
+        return UnresolvedState.resolveAndGet(this, Recipe::getRecipeTags)
+            .stream()
+            .map(RecipeTag::getName)
+            .map(RichTextUtils::richTextToPlainText)
+            .collect(Collectors.toSet());
     }
 
     // --- Recordable support ---
