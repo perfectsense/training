@@ -48,6 +48,9 @@
     "_template": "/quote/QuoteList.hbs"
   },
   {
+    "_template": "/recipe/RecipeModule.hbs"
+  },
+  {
     "_template": "/stat/StatList.hbs"
   },
   {
