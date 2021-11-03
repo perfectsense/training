@@ -77,7 +77,7 @@ public class RecipeViewModel extends ViewModel<Recipe> implements RecipeModuleVi
     }
 
     private String formatDuration(Integer minutes) {
-        if (minutes == null) {
+        if (minutes == null || minutes <= 0) {
             return null;
         }
 
