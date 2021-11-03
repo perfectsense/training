@@ -28,6 +28,7 @@ dependencies {
     api 'com.amazonaws:aws-java-sdk-rekognition'
     api 'com.amazonaws:aws-java-sdk-sts'
     api 'com.cronutils:cron-utils'
+    implementation 'org.threeten:threeten-extra:1.7.0'
 
     // Provided.
     compileOnly 'javax.el:javax.el-api'
