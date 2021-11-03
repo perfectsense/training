@@ -1,5 +1,9 @@
 package brightspot.recipe;
 
+import java.util.Collections;
+import java.util.List;
+import java.util.Optional;
+
 import brightspot.article.AbstractRichTextArticle;
 import com.psddev.cms.db.ToolUi;
 
@@ -21,7 +25,8 @@ import com.psddev.cms.db.ToolUi;
     "hasTags.tags",
     "embargoable.embargo"
 })
-public class RecipeArticle extends AbstractRichTextArticle {
+public class RecipeArticle extends AbstractRichTextArticle implements
+    HasRecipes {
 
     @Required
     private Recipe recipe;
@@ -34,5 +39,14 @@ public class RecipeArticle extends AbstractRichTextArticle {
 
     public void setRecipe(Recipe recipe) {
         this.recipe = recipe;
+    }
+
+    // --- HasRecipes support ---
+
+    @Override
+    public List<Recipe> getRecipes() {
+        return Optional.ofNullable(getRecipe())
+            .map(Collections::singletonList)
+            .orElse(Collections.emptyList());
     }
 }
