@@ -140,6 +140,7 @@ public class RecipeArticle extends Content implements
     HasCoralPageMetadata,
     HasDisqusPageMetadata,
     HasMediaTypeWithOverride,
+    HasRecipes,
     HasSecondarySectionsWithField,
     HasSectionWithField,
     HasSiteSearchBoostIndexes,
@@ -640,5 +641,14 @@ public class RecipeArticle extends Content implements
             ObjectType.getInstance(PagePromoModulePlacementInline.class).getId(),
             ObjectType.getInstance(LinkRichTextElement.class).getId()
         );
+    }
+
+    // --- HasRecipes support ---
+
+    @Override
+    public List<Recipe> getRecipes() {
+        return Optional.ofNullable(getRecipe())
+            .map(Collections::singletonList)
+            .orElse(Collections.emptyList());
     }
 }
