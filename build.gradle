@@ -6,10 +6,10 @@ plugins {
 }
 
 ext {
-    brightspotVersion = '4.2.24'
+    brightspotVersion = '4.2.25'
     brightspotGradlePluginVersion = '4.2.9'
-    componentLibVersion = '4.2.159'
-    goVersion = '0.10.0'
+    componentLibVersion = '4.2.160'
+    goVersion = '0.10.2'
 }
 
 allprojects {
