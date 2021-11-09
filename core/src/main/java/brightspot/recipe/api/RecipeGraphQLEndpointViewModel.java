@@ -29,6 +29,18 @@ public class RecipeGraphQLEndpointViewModel extends ViewModel<RecipeGraphQLEndpo
     @WebParameter
     private String title;
 
+    @RangeGraphQLParameter
+    private RangeParameter totalTime;
+
+    @RangeGraphQLParameter
+    private RangeParameter prepTime;
+
+    @RangeGraphQLParameter
+    private RangeParameter inactivePrepTime;
+
+    @RangeGraphQLParameter
+    private RangeParameter cookTime;
+
     @WebParameter
     private Difficulty difficulty;
 
@@ -70,6 +82,22 @@ public class RecipeGraphQLEndpointViewModel extends ViewModel<RecipeGraphQLEndpo
 
         if (!StringUtils.isBlank(title)) {
             query.and(Recipe.TITLE_PLAIN_TEXT_FIELD + " matches ?", title);
+        }
+
+        if (totalTime != null) {
+            totalTime.updateQuery(query, Recipe.TOTAL_TIME_FIELD);
+        }
+
+        if (prepTime != null) {
+            prepTime.updateQuery(query, Recipe.PREP_TIME_FIELD);
+        }
+
+        if (inactivePrepTime != null) {
+            inactivePrepTime.updateQuery(query, Recipe.INACTIVE_PREP_TIME_FIELD);
+        }
+
+        if (cookTime != null) {
+            cookTime.updateQuery(query, Recipe.COOK_TIME_FIELD);
         }
 
         if (difficulty != null) {
