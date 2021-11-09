@@ -15,6 +15,11 @@ import com.psddev.styleguide.recipe.RecipeModuleViewIngredientsField;
 import com.psddev.styleguide.recipe.RecipeModuleViewTitleField;
 import org.threeten.extra.AmountFormats;
 
+/**
+ * ViewModel for Recipe for use with Handlebars.
+ *
+ * Not to be confused with {@link brightspot.recipe.api.RecipeApiViewModel} which is for use with APIs.
+ */
 public class RecipeViewModel extends ViewModel<Recipe> implements RecipeModuleView {
 
     @CurrentLocale
