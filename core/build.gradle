@@ -12,6 +12,7 @@ dependencies {
     api 'com.psddev:dari-db'
     api 'com.psddev:dari-mysql'
     api 'com.psddev:dari-util'
+    api 'com.psddev:graphql'
     api 'com.psddev:handlebars'
     api 'com.psddev:image'
     api 'com.psddev:jobs'
