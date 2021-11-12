@@ -7,7 +7,7 @@ Brightspot. It includes a bare-bones project and all the core Styleguide templat
 to help you take your own web publishing needs from concept to creation.
 
 Since with Brightspot backend and frontend development can proceed independently of one another, this guide covers 
-[Backend](#Backend) and [Frontend](#Frontend) separately. Of course if you are going to do full-stack development you
+[Backend](#backend) and [Frontend](#frontend) separately. Of course if you are going to do full-stack development you
 can follow the steps for both.
 
 
@@ -92,17 +92,17 @@ enter.
 
 #### Mac
 
-Install [Homebrew](https://brew.sh/) if you don't already have it.
+Install [Homebrew](https://brew.sh/) if you don't already have it:
 ```
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
-Install Node.
+Install [Node](https://nodejs.org/en/):
 ```
 brew install node
 ```
 
-Install Yarn.
+Install [Yarn](https://yarnpkg.com/):
 ```
 brew install yarn
 ```
@@ -111,7 +111,7 @@ brew install yarn
 
 Install [Node](https://nodejs.org/en/) — we recommend using the latest LTS release, currently 16.13.0.
 
-Install Yarn
+Install Yarn:
 ```
 npm install --global yarn
 ```
