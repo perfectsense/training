@@ -99,12 +99,12 @@ Install [Homebrew](https://brew.sh/) if you don't already have it:
 
 Install [Node](https://nodejs.org/en/):
 ```
-brew install node
+brew install node@16
 ```
 
 Install [Yarn](https://yarnpkg.com/):
 ```
-brew install yarn
+npm install -g yarn
 ```
 
 #### Windows
@@ -123,4 +123,4 @@ Run from the `frontend/bundle/default/styleguide/` directory of the project:
 yarn server:styleguide
 ```
 
-You can access the Styleguide application at http://localhost:8080/_styleguide/index.html.
+You can access the Styleguide application at http://localhost:8080.
