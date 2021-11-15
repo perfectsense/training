@@ -51,7 +51,7 @@
     "@babel/runtime": "7.14.8",
     "@webcomponents/webcomponentsjs": "2.5.0",
     "flickity": "2.2.2",
-    "gulp-sass": "^4.1.0",
+    "gulp-sass": "5.0.0",
     "hoverintent": "1.0.1",
     "picturefill": "3.0.2",
     "postcss-amp": "1.1.0",
