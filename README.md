@@ -2,13 +2,13 @@
 
 So you want to learn how to develop on Brightspot? Look no further!
 
-This project gives you everything you will need to get going with learning how to do front-end and back-end development on
-Brightspot. It includes a bare-bones project and all the core Styleguide templates to use as reference
-to help you take your own web publishing needs from concept to creation.
+This project gives you everything you will need to get going with learning how to do frontend and backend development 
+on Brightspot. It includes a bare-bones project and all the core Styleguide templates to use as reference to help you 
+take your own web publishing needs from concept to creation.
 
 Since with Brightspot backend and frontend development can proceed independently of one another, this guide covers 
 [Backend](#backend) and [Frontend](#frontend) separately. Of course if you are going to do full-stack development you
-can follow the steps for both.
+should follow the steps for both.
 
 
 ## Backend
@@ -81,7 +81,7 @@ Further instructions and tips can be found at the [Brightspot Docker container s
 
 ### Accessing the CMS
 
-After starting the Brightspot Docker container you can access the cms by navigating to http://localhost/cms. You can 
+After starting the Brightspot Docker container you can access the CMS by navigating to http://localhost/cms. You can 
 log in to the CMS using any username and password: a new account will be created automatically for any credentials you
 enter.
 
@@ -104,7 +104,7 @@ brew install node@16
 
 Install [Yarn](https://yarnpkg.com/):
 ```
-npm install -g yarn
+npm install --global yarn
 ```
 
 #### Windows
@@ -118,13 +118,13 @@ npm install --global yarn
 
 ### Building the project
 
-The first time you build the Styleguide application you will need to run from the `frontend/bundle/default/` directory 
-of the project:
+The first time you build the Styleguide application you will need to run from the 
+`frontend/bundles/brightspot-training-bundle-default/` directory of the project:
 ```console
 yarn
 ```
 
-After that, run from the `frontend/bundle/default/` directory of the project:
+After that, run from the `frontend/bundles/brightspot-training-bundle-default/` directory of the project:
 ```console
 yarn server:styleguide
 ```
