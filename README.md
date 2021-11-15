@@ -118,7 +118,13 @@ npm install --global yarn
 
 ### Building the project
 
-Run from the `frontend/bundle/default/styleguide/` directory of the project:
+The first time you build the Styleguide application you will need to run from the `frontend/bundle/default/` directory 
+of the project:
+```console
+yarn
+```
+
+After that, run from the `frontend/bundle/default/` directory of the project:
 ```console
 yarn server:styleguide
 ```
