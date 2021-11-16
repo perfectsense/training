@@ -263,6 +263,16 @@
             "backgroundColor",
             "inverseColors"
           ]
+        },
+        {
+          "displayName": "List Y",
+          "example": "/page/list/PageListY.json",
+          "height": 800,
+          "width": 1024,
+          "fields": [
+            "backgroundColor",
+            "inverseColors"
+          ]
         }
       ]
     },
