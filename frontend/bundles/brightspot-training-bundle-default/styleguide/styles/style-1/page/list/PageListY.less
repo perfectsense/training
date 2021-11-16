@@ -1,0 +1,28 @@
+.PageListY {
+  &:extend(.PageListAbstract all);
+
+  &-items {
+    &-item {
+      margin-bottom: 20px;
+    }
+  }
+
+  .PagePromo {
+    &-title {
+      .title-2;
+    }
+  }
+
+  @media @mq-md {
+    &-items {
+      display: grid;
+      grid-row-gap: 20px;
+      grid-column-gap: 20px;
+      grid-template-columns: 1fr 1fr;
+
+      &-item {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
