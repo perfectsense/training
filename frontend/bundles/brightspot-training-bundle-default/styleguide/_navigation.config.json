@@ -209,6 +209,10 @@
         {
           "displayName": "List X",
           "page": "/page/list/PageListX.json"
+        },
+        {
+          "displayName": "List Y",
+          "page": "/page/list/PageListY.json"
         }
       ]
     },

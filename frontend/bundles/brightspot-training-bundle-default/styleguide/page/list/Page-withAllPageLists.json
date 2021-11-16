@@ -97,6 +97,9 @@
       "columnFour": {
         "_include": "/page/list/PageListW.json"
       }
+    },
+    {
+      "_include": "/page/list/PageListY.json"
     }
   ]
 }
