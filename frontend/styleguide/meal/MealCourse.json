@@ -1,0 +1,17 @@
+{
+  "_template": "MealCourse.hbs",
+
+  "name": {
+    "_include": "/_group/RichTextElementsTiny.json",
+    "_key": 0
+  },
+
+  "description": {
+    "_include": "/_group/RichTextElementsSmall.json",
+    "_key": 0
+  },
+
+  "dishes": {
+    "_template": "/recipe/RecipeModule.hbs"
+  }
+}
