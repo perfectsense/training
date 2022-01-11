@@ -1,0 +1,25 @@
+{
+  "_template": "MealPage.hbs",
+  "_include": "/page/ContentPage.json",
+
+  "lead": {
+    "_include": "/_group/Leads.json",
+    "_key": 1
+  },
+
+  "mealTitle": {
+    "_include": "/_group/RichTextElementsTiny.json"
+  },
+
+  "mealDescription": {
+    "_include": "/_group/RichTextElementsMedium.json"
+  },
+
+  "courses": {
+    "_template": "MealCourse.hbs"
+  },
+
+  "similarMeals": {
+    "_template": "/page/list/PageList.hbs"
+  }
+}
