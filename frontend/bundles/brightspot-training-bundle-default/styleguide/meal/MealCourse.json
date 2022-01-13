@@ -1,0 +1,14 @@
+{
+  "_template": "/meal/MealCourse.hbs",
+
+  "name": "{{words([5,10])}}",
+
+  "description": "{{words([15,25])}}",
+
+  "dishes": [
+    {
+      "_include": "/recipe/RecipeModule.json",
+      "_repeat": 2
+    }
+  ]
+}

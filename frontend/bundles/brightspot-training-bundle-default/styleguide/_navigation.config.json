@@ -335,6 +335,10 @@
           "page": "/liveblog/LiveBlogPage.json"
         },
         {
+          "displayName": "Meal",
+          "page": "/meal/MealPage.json"
+        },
+        {
           "displayName": "Person",
           "page": "/person/PersonPage.json"
         },

@@ -1,0 +1,21 @@
+<div class="MealCourse" data-module>
+    {{#with name}}
+        <div class="MealCourse-name">{{this}}</div>
+    {{/with}}
+    {{#with description}}
+        <div class="MealCourse-description">{{this}}</div>
+    {{/with}}
+    {{#with dishes}}
+        <div class="MealCourse-dishes">
+            <div class="MealCourse-dishes-heading">{{format "dishesHeading"}}</div>
+            {{#each this}}
+                <bsp-toggler class="MealCourse-dish" data-toggle="recipe">
+                    <button class="MealCourse-dish-title" data-toggle-trigger="recipe">{{this.title}}<svg class="chevron"><use xlink:href="#chevron-down"></use></svg></button>
+                    <div class="MealCourse-dish-recipe">
+                        {{include "/recipe/RecipeModule.hbs" this title=null}}
+                    </div>
+                </bsp-toggler>
+            {{/each}}
+        </div>
+    {{/with}}
+</div>
