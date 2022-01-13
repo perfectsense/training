@@ -1,0 +1,77 @@
+.MealCourse {
+  margin-bottom: 40px;
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+
+  &-description {
+    &:extend(.description-1);
+    margin-top: 20px;
+  }
+
+  &-dishes {
+    border: 1px solid var(--color-border);
+    padding: 20px;
+    margin-top: 20px;
+
+    &-heading {
+      &:extend(.list-title-2);
+      border-bottom: 1px solid var(--color-primary);
+      padding-bottom: 10px;
+    }
+  }
+
+  &-dish {
+    border-bottom: 1px solid var(--color-border);
+    display: block;
+    padding: 20px 0;
+
+    .RecipeModule {
+      border: none;
+      padding: 0;
+    }
+
+    &[data-toggle-in='recipe'] {
+      .MealCourse-dish-recipe {
+        display: block;
+      }
+
+      svg {
+        transform: rotate(180deg);
+      }
+    }
+
+    &:last-of-type {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    &-recipe {
+      display: none;
+    }
+
+    &-title {
+      &:extend(.list-title-2);
+      .NotButton;
+
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 20px;
+      text-align: left;
+      width: 100%;
+
+      svg {
+        height: 20px;
+        position: relative;
+        top: 5px;
+        transition: transform 500ms;
+        width: 20px;
+      }
+    }
+  }
+
+  &-name {
+    &:extend(.list-title-2);
+  }
+}

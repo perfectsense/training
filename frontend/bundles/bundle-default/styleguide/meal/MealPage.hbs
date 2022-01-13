@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html class="MealPage" {{~include "/page/Page-htmlAttributes.hbs" this}}>
+{{include "/page/Page-head.hbs" this}}
+
+<body class="Page-body">
+    {{include "/page/Page-header.hbs" this}}
+    {{include "/page/Page-above.hbs" this}}
+
+    <div class="Page-content">
+        <div class="Page-pageLead" data-pagelead>
+            <div class="MealPage-lead">
+                {{#with mealTitle}}
+                    <div class="Page-headline">{{this}}</div>
+                {{/with}}
+                {{#with mealDescription}}
+                    <div class="MealPage-description">{{this}}</div>
+                {{/with}}
+                {{#with lead}}
+                    <div class="MealPage-lead-image">
+                        {{#set imageSize="xl-16x9"}}
+                            {{this}}
+                        {{/set}}
+                    </div>
+                {{/with}}
+            </div>
+        </div>
+
+        <main class="Page-oneColumn" data-modulewell>
+            {{#with courses}}
+                <div class="MealPage-courses" data-module>
+                    <div class="MealPage-courses-heading" >{{format "CoursesHeading"}}</div>
+                    {{this}}
+                </div>
+            {{/with}}
+            {{#each similarMeals}}
+                {{include "/page/list/PageListStandardD.hbs" this}}
+            {{/each}}
+        </main>
+    </div>
+
+    {{include "/page/Page-below.hbs" this}}
+    {{include "/page/Page-footer.hbs" this}}
+    {{include "/page/Page-extraBodyItems.hbs" this}}
+</body>
+</html>

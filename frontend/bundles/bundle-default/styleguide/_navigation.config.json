@@ -549,6 +549,10 @@
           "page": "/liveblog/LiveBlogPage.json"
         },
         {
+          "displayName": "Meal",
+          "page": "/meal/MealPage.json"
+        },
+        {
           "displayName": "Person Page",
           "page": "/person/PersonPage.json"
         },

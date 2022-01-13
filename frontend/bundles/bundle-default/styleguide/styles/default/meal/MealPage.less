@@ -1,0 +1,29 @@
+.MealPage {
+  &-courses,
+  &-similarMeals {
+    &-heading {
+      &:extend(.list-title-1);
+      border-bottom: 1px solid var(--color-primary);
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+    }
+  }
+
+  &-description {
+    &:extend(.description-1);
+    margin-top: 20px;
+  }
+
+  &-lead {
+    .layoutWidth();
+    margin-top: 30px;
+
+    &-image {
+      margin-top: 20px;
+    }
+  }
+
+  @media @mq-lg {
+    margin-top: 50px;
+  }
+}
