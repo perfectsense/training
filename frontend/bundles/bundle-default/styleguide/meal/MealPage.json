@@ -1,0 +1,29 @@
+{
+  "_include": "/page/Page.json",
+  "_template": "/meal/MealPage.hbs",
+
+  "lead": {
+    "_include": "/figure/Figure.json"
+  },
+
+  "mealTitle": "{{words([5,10])}}",
+
+  "mealDescription": "{{words([15,25])}}",
+
+  "courses": [
+    {
+      "_include": "/meal/MealCourse.json",
+      "_repeat": 2
+    }
+  ],
+
+  "similarMeals": {
+    "_template": "/page/list/PageList.hbs",
+
+    "title": "Similar Recipes:",
+    "items": [{
+      "_include": "/page/promo/PagePromo.json",
+      "_repeat": 3
+    }]
+  }
+}
