@@ -7,7 +7,6 @@ dependencies {
     // Brightspot
     api 'com.psddev:auth'
     api 'com.psddev:cms-db'
-    api 'com.psddev:cms-hunspell'
     api 'com.psddev:cms-tool-ui'
     api 'com.psddev:conversation'
     api 'com.psddev:dari-db'
