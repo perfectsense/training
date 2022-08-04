@@ -39,10 +39,11 @@ import brightspot.page.CascadingPageData;
 import brightspot.page.ContentErrorHandler;
 import brightspot.page.ErrorHandlerSettings;
 import brightspot.page.FaviconSettings;
+import brightspot.rss.feed.apple.ITunesCategory;
 import brightspot.search.NavigationSearchSettings;
 import brightspot.search.SiteSearchPage;
 import brightspot.search.TypeFilter;
-import brightspot.search.sectionfilter.SectionFilter;
+import brightspot.search.sectionsecondaryfilter.SectionSecondaryFilter;
 import brightspot.search.tagfilter.TagFilter;
 import brightspot.section.SectionPage;
 import brightspot.sort.publishdate.NewestPublishDate;
@@ -57,10 +58,9 @@ import com.psddev.cms.db.Content;
 import com.psddev.cms.db.Directory;
 import com.psddev.cms.db.History;
 import com.psddev.cms.db.Site;
+import com.psddev.cms.db.ToolUi;
 import com.psddev.cms.db.ToolUser;
-import com.psddev.cms.l10n.AvailableLocaleSiteSettings;
-import com.psddev.cms.l10n.JavaLocale;
-import com.psddev.cms.l10n.LocaleGlobalSettings;
+import com.psddev.cms.l10n.Localizable;
 import com.psddev.cms.tool.CmsTool;
 import com.psddev.cms.tool.TrailingSlashConfiguration;
 import com.psddev.dari.db.ObjectType;
@@ -78,6 +78,9 @@ import com.psddev.dari.util.StorageItem;
 import com.psddev.dari.util.Task;
 import com.psddev.dari.util.ThrowingConsumer;
 import com.psddev.dari.util.TypeReference;
+import com.psddev.localization.ListAvailableLocaleSetting;
+import com.psddev.localization.LocalizationData;
+import com.psddev.localization.LocalizationSiteSettings;
 import com.psddev.theme.FixedRelease;
 import com.psddev.theme.SharedThemeOption;
 import com.psddev.theme.Theme;
@@ -114,6 +117,7 @@ public class Setup {
     public static void setUpDocker() throws InterruptedException, IOException {
         if (Query.fromAll()
             .where("_type != ?", ClassFinder.findConcreteClasses(Singleton.class))
+            .and("_type != ?", ITunesCategory.class)
             .and("_type != ?", JarBundle.class)
             .hasMoreThan(0)) {
 
@@ -121,6 +125,7 @@ public class Setup {
         }
         if (Query.fromAll()
             .where("_type != ?", ClassFinder.findConcreteClasses(Singleton.class))
+            .and("_type != ?", ITunesCategory.class)
             .and("_type != ?", JarBundle.class)
             .and("* matches *")
             .hasMoreThan(0)) {
@@ -195,9 +200,10 @@ public class Setup {
         cmsTool.setListGalleryDefaultView(true);
         cmsTool.setTrailingSlashConfiguration(TrailingSlashConfiguration.NORMALIZE);
 
-        cmsTool.as(LocaleGlobalSettings.class).getLocales().add(build(new JavaLocale(), javaLocale -> {
-            javaLocale.setLocale(Locale.US);
-        }));
+        cmsTool.as(LocalizationSiteSettings.class)
+            .setAvailableLocalesSetting(build(
+                new ListAvailableLocaleSetting(),
+                localeSetting -> localeSetting.getLocales().add(Locale.US)));
 
         return cmsTool;
     }
@@ -230,7 +236,7 @@ public class Setup {
             siteSearch.setTitle("Search Inspire Confidence");
 
             siteSearch.getFilters().add(new TypeFilter());
-            siteSearch.getFilters().add(new SectionFilter());
+            siteSearch.getFilters().add(new SectionSecondaryFilter());
             siteSearch.getFilters().add(new TagFilter());
 
             Content.Static.publish(siteSearch, site, importUser);
@@ -250,7 +256,10 @@ public class Setup {
             localeProvider.setLocale(Locale.US);
         }));
 
-        site.as(AvailableLocaleSiteSettings.class).getAvailableLanguageTags().add(Locale.US.toLanguageTag());
+        site.as(LocalizationSiteSettings.class)
+            .setAvailableLocalesSetting(build(
+                new ListAvailableLocaleSetting(),
+                localeSetting -> localeSetting.getLocales().add(Locale.US)));
 
         return site;
     }
@@ -340,6 +349,10 @@ public class Setup {
 
         if (pathData != null) {
             processPaths(state, pathData);
+        }
+
+        if (state.getType().as(ToolUi.class).isPublishable() || state.isInstantiableTo(Localizable.class)) {
+            state.as(LocalizationData.class).setLocale(Locale.US);
         }
 
         return (Recordable) state.getOriginalObject();
