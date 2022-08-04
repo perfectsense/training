@@ -3,9 +3,9 @@ plugins {
 }
 
 ext {
-    brightspotVersion = '4.2.24'
-    componentLibVersion = '4.2.159'
-    goVersion = '0.10.0'
+    brightspotVersion = '4.5.7.1'
+    componentLibVersion = '4.5.6'
+    goVersion = '1.1.2'
 }
 
 dependencies {
