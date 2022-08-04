@@ -3,7 +3,7 @@ plugins {
 }
 
 ext {
-    brightspotVersion = '4.2.24'
+    brightspotVersion = '4.5.7.1'
 }
 
 dependencies {

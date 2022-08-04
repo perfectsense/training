@@ -12,7 +12,7 @@
 #
 # NOTES
 #
-# Tested with Brightspot repo at version 4.2.24
+# Tested with Brightspot repo at version 4.5.7.1
 
 
 set -eu
