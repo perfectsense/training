@@ -30,7 +30,7 @@ fi
 
 repo_dir="$(mktemp -dt training_repo_XXXXXX)"
 absolute_repo_dir="$(CDPATH='' cd -- "$repo_dir" && pwd -P)"
-trap '[ -e "$absolute_repo_dir" ] && rm -rf -- "$absolute_repo_dir"' EXIT
+trap '[ -e "$absolute_repo_dir" ] && (cd -- "$absolute_repo_dir" && docker-compose down -v || true) && rm -rf -- "$absolute_repo_dir"' EXIT
 
 git clone -b go --depth 1 -- 'https://github.com/perfectsense/training' "$repo_dir" # TODO default branch instead
 cp "$ic_export_file" "$repo_dir/export-training.json"
