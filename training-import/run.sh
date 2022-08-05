@@ -3,6 +3,7 @@
 # PRECONDITIONS
 #
 # 1. Java 11 compiler active
+# 2. Docker daemon active
 # 2. Required (by Docker) localhost ports are available
 #
 # POSTCONDITIONS
