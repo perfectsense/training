@@ -8,7 +8,7 @@ nav_order: 1
 
 ### Welcome to Brightspot!
 
-This site contains supplemental materials for the [Brighspot Training repo](https://github.com/perfectsense/training).
+This site contains supplemental materials for the [Brightspot Training repo](https://github.com/perfectsense/training).
 
 ### Brought to you by the Brightspot Delivery Team
 
