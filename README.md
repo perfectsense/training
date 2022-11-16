@@ -62,7 +62,7 @@ suspect a problem, you can run:
 
 Included with the project is the Brightspot [`docker-compose.yml`](docker-compose.yml) file at the root of the project. 
 This file contains all the configuration needed to run the Brightspot CMS out of the box for the example Inspire 
-Confidence site.
+Confidence site. We recommend allocating at least 2GB of memory to Docker.
 
 Run from the root directory of the project:
 ```console
