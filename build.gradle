@@ -25,15 +25,18 @@ allprojects {
 
     configurations.all {
         resolutionStrategy {
+            force 'org.jetbrains:annotations:23.0.0'
+
             dependencySubstitution {
                 substitute module('commons-logging:commons-logging') with module('org.slf4j:jcl-over-slf4j:0')
-                substitute module('com.github.bbottema:jetbrains-runtime-annotations') with module('org.jetbrains:annotations:0')
+                substitute module('com.github.bbottema:jetbrains-runtime-annotations') with module('org.jetbrains:annotations:23.0.0')
                 substitute module('com.google.android.tools:dx') with module('junit:junit:0')
                 substitute module('com.sun.mail:javax.mail') with module('com.sun.mail:jakarta.mail:1.6.5')
                 substitute module('javax.activation:activation') with module('com.sun.activation:jakarta.activation:1.2.1')
                 substitute module('javax.activation:javax.activation-api') with module('com.sun.activation:jakarta.activation:1.2.1')
                 substitute module('jakarta.activation:jakarta.activation-api') with module('com.sun.activation:jakarta.activation:1.2.1')
                 substitute module('javax.annotation:javax.annotation-api') with module('jakarta.annotation:jakarta.annotation-api:1.3.5')
+                substitute module('javax.inject:javax.inject') with module('org.glassfish.hk2.external:javax.inject:2.3.0-b05')
             }
         }
     }
