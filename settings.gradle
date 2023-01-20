@@ -4,15 +4,15 @@ plugins {
 
 rootProject.name = 'brightspot-training'
 
-include(':brightspot-training-core')
-include(':brightspot-training-frontend')
-include(':brightspot-training-web')
-include(':brightspot-training-bundle-default')
+include(':core')
+include(':web')
+include(':frontend')
+include(':bundle-default')
 
-project(':brightspot-training-core').projectDir = file('core')
-project(':brightspot-training-frontend').projectDir = file('frontend')
-project(':brightspot-training-web').projectDir = file('web')
-project(':brightspot-training-bundle-default').projectDir = file('frontend/bundles/brightspot-training-bundle-default')
+project(':core').projectDir = file('core')
+project(':web').projectDir = file('web')
+project(':frontend').projectDir = file('frontend')
+project(':bundle-default').projectDir = file('frontend/bundles/bundle-default')
 
 // -- Gradle Cache Server -- //
 
