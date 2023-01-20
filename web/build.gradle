@@ -17,7 +17,7 @@ dependencies {
 }
 
 war {
-    archiveFileName = "brightspot-training-web-${archiveVersion}.war"
+    archiveName = "brightspot-training-web-${version}.war"
     rootSpec.exclude '**/javax.el-api'
     rootSpec.exclude '**/javax.servlet-api-*.jar'
     rootSpec.exclude '**/javax.servlet.jsp-api-*.jar'

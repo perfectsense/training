@@ -7,7 +7,7 @@ plugins {
 
 ext {
     brightspotVersion = '4.5.11.1'
-    brightspotGradlePluginVersion = '4.2.13'
+    brightspotGradlePluginVersion = '4.2.12'
     componentLibVersion = '4.5.12'
     goVersion = '1.2.7'
 }
