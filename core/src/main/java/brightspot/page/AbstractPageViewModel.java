@@ -3,7 +3,10 @@ package brightspot.page;
 import java.util.Map;
 import java.util.Optional;
 
+import brightspot.entitlements.EntitlementProvider;
+import brightspot.entitlements.EntitlementsSiteSettings;
 import com.psddev.cms.db.Site;
+import com.psddev.cms.db.SiteSettings;
 import com.psddev.cms.view.ViewModel;
 import com.psddev.cms.view.jsonld.JsonLd;
 import com.psddev.cms.view.jsonld.JsonLdNode;
@@ -17,7 +20,9 @@ import com.psddev.styleguide.page.PageViewAmpIntegrationsField;
 import com.psddev.styleguide.page.PageViewAsideField;
 import com.psddev.styleguide.page.PageViewBannerField;
 import com.psddev.styleguide.page.PageViewBelowField;
+import com.psddev.styleguide.page.PageViewCommentingField;
 import com.psddev.styleguide.page.PageViewDisclaimerField;
+import com.psddev.styleguide.page.PageViewEntitlementsField;
 import com.psddev.styleguide.page.PageViewExtraBodyItemsField;
 import com.psddev.styleguide.page.PageViewExtraLinksField;
 import com.psddev.styleguide.page.PageViewExtraScriptsField;
@@ -27,12 +32,12 @@ import com.psddev.styleguide.page.PageViewFooterContentField;
 import com.psddev.styleguide.page.PageViewFooterLogoField;
 import com.psddev.styleguide.page.PageViewFooterNavigationField;
 import com.psddev.styleguide.page.PageViewHatField;
+import com.psddev.styleguide.page.PageViewLanguagesField;
 import com.psddev.styleguide.page.PageViewLogoField;
 import com.psddev.styleguide.page.PageViewMetaField;
 import com.psddev.styleguide.page.PageViewNavigationField;
 import com.psddev.styleguide.page.PageViewSectionNavigationField;
 import com.psddev.styleguide.page.PageViewSocialField;
-import com.psddev.styleguide.page.PageViewStylePackageField;
 
 /**
  * Note:  This a port/refactor of the current page view model pattern in use across Express (and ultimately
@@ -93,11 +98,6 @@ public abstract class AbstractPageViewModel<M extends Recordable> extends ViewMo
     }
 
     @Override
-    public Iterable<? extends PageViewStylePackageField> getStylePackage() {
-        return page.getStylePackage(PageViewStylePackageField.class);
-    }
-
-    @Override
     public Iterable<? extends PageViewExtraLinksField> getExtraLinks() {
         return page.getExtraLinks(PageViewExtraLinksField.class);
     }
@@ -105,6 +105,11 @@ public abstract class AbstractPageViewModel<M extends Recordable> extends ViewMo
     @Override
     public CharSequence getContentId() {
         return page.getContentId();
+    }
+
+    @Override
+    public Iterable<? extends PageViewCommentingField> getCommenting() {
+        return page.getCommenting(PageViewCommentingField.class);
     }
 
     @JsonLdNode("description")
@@ -171,11 +176,6 @@ public abstract class AbstractPageViewModel<M extends Recordable> extends ViewMo
     }
 
     @Override
-    public CharSequence getKeywords() {
-        return page.getKeywords();
-    }
-
-    @Override
     public CharSequence getLanguage() {
         return page.getLanguage();
     }
@@ -229,5 +229,16 @@ public abstract class AbstractPageViewModel<M extends Recordable> extends ViewMo
     @JsonLdNode("publisher")
     public Map<String, Object> getPublisherData() {
         return page.getPublisherData();
+    }
+
+    @Override
+    public Iterable<? extends PageViewLanguagesField> getLanguages() {
+        return page.getLanguageMenu(PageViewLanguagesField.class);
+    }
+
+    public Iterable<? extends PageViewEntitlementsField> getEntitlements() {
+        EntitlementProvider entitlementProvider = SiteSettings.get(getSite(), siteSettings -> siteSettings.as(
+                EntitlementsSiteSettings.class).getEntitlementProvider());
+        return createViews(PageViewEntitlementsField.class, entitlementProvider);
     }
 }

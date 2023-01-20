@@ -1,14 +1,9 @@
 package brightspot.person;
 
-import java.util.Optional;
-
 import brightspot.page.AbstractContentPageViewModel;
-import brightspot.seo.PersonSchemaView;
 import brightspot.util.RichTextUtils;
 import com.psddev.cms.view.PageEntryView;
-import com.psddev.cms.view.jsonld.JsonLd;
 import com.psddev.cms.view.jsonld.JsonLdType;
-import com.psddev.styleguide.RawHtml;
 import com.psddev.styleguide.page.PageViewPageSubHeadingField;
 import com.psddev.styleguide.person.PersonPageView;
 import com.psddev.styleguide.person.PersonPageViewAffiliationField;
@@ -23,7 +18,13 @@ import com.psddev.styleguide.person.PersonPageViewPersonSocialLinksField;
 import com.psddev.styleguide.person.PersonPageViewShortBiographyField;
 
 @JsonLdType("WebPage")
-public class PersonPageViewModel extends AbstractContentPageViewModel<PersonPage> implements PersonPageView, PageEntryView {
+public class PersonPageViewModel extends AbstractContentPageViewModel<PersonPage> implements PersonPageView,
+        PageEntryView {
+
+    @Override
+    public Iterable<? extends PageViewPageSubHeadingField> getPageSubHeading() {
+        return null;
+    }
 
     @Override
     public Iterable<? extends PersonPageViewAffiliationField> getAffiliation() {
@@ -34,7 +35,7 @@ public class PersonPageViewModel extends AbstractContentPageViewModel<PersonPage
     }
 
     @Override
-    public String getEmail() {
+    public CharSequence getEmail() {
         return model.getEmail();
     }
 
@@ -49,9 +50,9 @@ public class PersonPageViewModel extends AbstractContentPageViewModel<PersonPage
     @Override
     public Iterable<? extends PersonPageViewFullBiographyField> getFullBiography() {
         return RichTextUtils.buildHtml(
-            model,
-            PersonPage::getFullBiography,
-            e -> createView(PersonPageViewFullBiographyField.class, e));
+                model,
+                PersonPage::getFullBiography,
+                e -> createView(PersonPageViewFullBiographyField.class, e));
     }
 
     @Override
@@ -98,15 +99,4 @@ public class PersonPageViewModel extends AbstractContentPageViewModel<PersonPage
         return RichTextUtils.buildHtml(model, PersonPage::getShortBiography, e -> createView(PersonPageViewShortBiographyField.class, e));
     }
 
-    @Override
-    public CharSequence getJsonLinkedData() {
-        return Optional.ofNullable(JsonLd.createHtmlScriptBody(createView(PersonSchemaView.class, model)))
-            .map(RawHtml::of)
-            .orElse(null);
-    }
-
-    @Override
-    public Iterable<? extends PageViewPageSubHeadingField> getPageSubHeading() {
-        return null;
-    }
 }

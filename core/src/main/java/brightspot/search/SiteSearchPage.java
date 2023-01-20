@@ -11,13 +11,23 @@ import brightspot.permalink.Permalink;
 import brightspot.promo.page.PagePromotable;
 import brightspot.query.QueryBuilderDynamicQueryModifiable;
 import brightspot.search.boost.BoostDynamicQueryModifiable;
+import brightspot.search.modifier.exclusion.SearchExclusionQueryModifiable;
 import brightspot.search.stopwords.StopWordsDynamicQueryModifiable;
 import brightspot.seo.SeoWithFields;
 import brightspot.util.RichTextUtils;
 import com.psddev.cms.db.Directory;
 import com.psddev.cms.db.Site;
+import com.psddev.cms.db.ToolUi;
 import com.psddev.dari.db.Recordable;
 
+@ToolUi.FieldDisplayOrder({
+        "seo.title",
+        "seo.suppressSeoDisplayName",
+        "seo.description",
+        "seo.keywords",
+        "seo.robots",
+        "ampPage.ampDisabled"
+})
 public class SiteSearchPage extends AbstractSiteSearchPage implements
         BoostDynamicQueryModifiable,
         Directory.Item,
@@ -27,6 +37,7 @@ public class SiteSearchPage extends AbstractSiteSearchPage implements
         Page,
         PathedOnlyQueryModifiableWithField,
         QueryBuilderDynamicQueryModifiable,
+        SearchExclusionQueryModifiable,
         SeoWithFields,
         SiteItemsQueryModifiable,
         StopWordsDynamicQueryModifiable {

@@ -1,5 +1,7 @@
 package brightspot.author;
 
+import java.util.Optional;
+
 import brightspot.cascading.CascadingPageElements;
 import brightspot.image.WebImage;
 import brightspot.image.WebImageAsset;
@@ -13,39 +15,51 @@ import brightspot.promo.page.PagePromotableWithOverrides;
 import brightspot.rte.MediumRichTextToolbar;
 import brightspot.rte.SmallRichTextToolbar;
 import brightspot.rte.TinyRichTextToolbar;
+import brightspot.search.boost.HasSiteSearchBoostIndexes;
 import brightspot.search.modifier.exclusion.SearchExcludable;
+import brightspot.search.sortalphabetical.AlphabeticallySortable;
 import brightspot.seo.SeoWithFields;
 import brightspot.share.Shareable;
 import brightspot.site.DefaultSiteMapItem;
 import brightspot.social.SocialEntity;
 import brightspot.urlslug.HasUrlSlugWithField;
+import brightspot.util.MoreStringUtils;
 import brightspot.util.RichTextUtils;
 import com.psddev.cms.db.Content;
 import com.psddev.cms.db.Site;
 import com.psddev.cms.db.ToolUi;
+import com.psddev.cms.ui.form.DynamicPlaceholderMethod;
 import com.psddev.dari.db.Query;
 import com.psddev.dari.db.Recordable;
 import com.psddev.dari.util.Utils;
 import org.apache.commons.lang3.StringUtils;
 
 @ToolUi.FieldDisplayOrder({
-    "name",
-    "firstName",
-    "lastName",
-    "image",
-    "title",
-    "affiliation",
-    "email",
-    "shortBiography",
-    "fullBiography"
+        "name",
+        "firstName",
+        "lastName",
+        "image",
+        "title",
+        "affiliation",
+        "email",
+        "shortBiography",
+        "fullBiography",
+        "seo.title",
+        "seo.suppressSeoDisplayName",
+        "seo.description",
+        "seo.keywords",
+        "seo.robots",
+        "ampPage.ampDisabled"
 })
 @ToolUi.IconName("person")
 @Recordable.DisplayName("Author")
 public class PersonAuthor extends Content implements
+        AlphabeticallySortable,
         Author,
         AuthorPromotable,
         CascadingPageElements,
         DefaultSiteMapItem,
+        HasSiteSearchBoostIndexes,
         HasUrlSlugWithField,
         OpenGraphProfile,
         Page,
@@ -54,8 +68,6 @@ public class PersonAuthor extends Content implements
         SeoWithFields,
         Shareable,
         SocialEntity {
-
-    public static final String PAGE_PROMOTABLE_TYPE = "author";
 
     @Indexed
     @Required
@@ -91,6 +103,9 @@ public class PersonAuthor extends Content implements
     @ToolUi.CssClass("is-half")
     @ToolUi.RichText(toolbar = TinyRichTextToolbar.class)
     private String affiliation;
+
+    @DynamicPlaceholderMethod("getAlphabeticalSortFallback")
+    private String alphabeticalSortValue;
 
     /**
      * @return rich text
@@ -132,9 +147,15 @@ public class PersonAuthor extends Content implements
      * @return rich text
      */
     public String getShortBiography() {
-        return StringUtils.isBlank(shortBiography)
-                ? getShortBiographyPlaceholder()
-                : shortBiography;
+        if (StringUtils.isBlank(shortBiography)) {
+            if (StringUtils.isBlank(fullBiography)) {
+                return "";
+            }
+
+            return RichTextUtils.getFirstBodyParagraph(fullBiography, false);
+        }
+
+        return shortBiography;
     }
 
     public String getEmail() {
@@ -190,16 +211,40 @@ public class PersonAuthor extends Content implements
         this.affiliation = affiliation;
     }
 
+    public String getAlphabeticalSortValue() {
+        return alphabeticalSortValue;
+    }
+
+    public void setAlphabeticalSortValue(String alphabeticalSortValue) {
+        this.alphabeticalSortValue = alphabeticalSortValue;
+    }
+
+    private String getNamePlainText() {
+        return RichTextUtils.richTextToPlainText(getName());
+    }
+
     @Override
     public String getLinkableText() {
         return getName();
+    }
+
+    // --- HasSiteSearchBoostIndexes support ---
+
+    @Override
+    public String getSiteSearchBoostTitle() {
+        return getName();
+    }
+
+    @Override
+    public String getSiteSearchBoostDescription() {
+        return getShortBiography();
     }
 
     // --- HasUrlSlug support ---
 
     @Override
     public String getUrlSlugFallback() {
-        return Utils.toNormalized(getName());
+        return Utils.toNormalized(getNamePlainText());
     }
 
     // --- SeoWithFields support ---
@@ -218,7 +263,7 @@ public class PersonAuthor extends Content implements
 
     @Override
     public String getShareableTitleFallback() {
-        return RichTextUtils.richTextToPlainText(getName());
+        return getNamePlainText();
     }
 
     @Override
@@ -235,7 +280,7 @@ public class PersonAuthor extends Content implements
 
     @Override
     public String getPagePromotableTitleFallback() {
-        return getName();
+        return getNamePlainText();
     }
 
     @Override
@@ -246,11 +291,6 @@ public class PersonAuthor extends Content implements
     @Override
     public String getPagePromotableDescriptionFallback() {
         return getShortBiography();
-    }
-
-    @Override
-    public String getPagePromotableType() {
-        return PAGE_PROMOTABLE_TYPE;
     }
 
     // --- AuthorPromotable support ---
@@ -283,7 +323,7 @@ public class PersonAuthor extends Content implements
 
     @Override
     public String getOpenGraphProfileUsername() {
-        return RichTextUtils.richTextToPlainText(getName());
+        return getNamePlainText();
     }
 
     @Override
@@ -312,6 +352,31 @@ public class PersonAuthor extends Content implements
 
     @Override
     public String getLabel() {
-        return RichTextUtils.richTextToPlainText(getName());
+        return getNamePlainText();
+    }
+
+    // --- AlphabeticallySortable support ---
+
+    private String getAlphabeticalSortFallback() {
+        return RichTextUtils.richTextToPlainText(MoreStringUtils.firstNonBlankRichText(
+                getLastName(),
+                this::parseLastNameFromName,
+                this::getNamePlainText));
+    }
+
+    @Override
+    public String getAlphabeticallySortableIndexValue() {
+        return Optional.ofNullable(alphabeticalSortValue)
+                .filter(val -> !val.isEmpty())
+                .orElseGet(this::getAlphabeticalSortFallback);
+    }
+
+    private String parseLastNameFromName() {
+        String namePlain = getNamePlainText();
+        if (!StringUtils.isBlank(namePlain) && namePlain.contains(" ")) {
+            String[] split = namePlain.split(" ");
+            return split[split.length - 1];
+        }
+        return null;
     }
 }

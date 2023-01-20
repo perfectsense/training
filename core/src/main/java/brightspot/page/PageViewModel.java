@@ -20,6 +20,7 @@ import java.util.stream.Stream;
 
 import brightspot.banner.Banner;
 import brightspot.breadcrumbs.HasBreadcrumbs;
+import brightspot.commenting.CommentingSiteSettings;
 import brightspot.footer.Footer;
 import brightspot.footer.PageFooter;
 import brightspot.head.HeadScripts;
@@ -27,6 +28,7 @@ import brightspot.image.ImageSchemaData;
 import brightspot.image.WebImage;
 import brightspot.image.WebImageAsset;
 import brightspot.l10n.LocaleProvider;
+import brightspot.languagemenu.LanguageMenuSiteSettings;
 import brightspot.logo.ImageLogo;
 import brightspot.logo.Logo;
 import brightspot.permalink.Permalink;
@@ -42,7 +44,6 @@ import brightspot.search.NavigationSearch;
 import brightspot.search.NavigationSearchSettings;
 import brightspot.section.SectionCascadingData;
 import brightspot.seo.Seo;
-import brightspot.stylepackage.StyleThemeModification;
 import brightspot.tag.HasTags;
 import brightspot.util.RichTextUtils;
 import com.google.common.collect.ImmutableList;
@@ -55,7 +56,6 @@ import com.psddev.cms.view.ViewModel;
 import com.psddev.dari.db.Recordable;
 import com.psddev.dari.db.State;
 import com.psddev.dari.util.StorageItem;
-import com.psddev.dari.web.WebRequest;
 import com.psddev.feed.FeedSource;
 import com.psddev.feed.FeedUtils;
 import com.psddev.styleguide.RawHtml;
@@ -64,7 +64,6 @@ import com.psddev.styleguide.facebook.OpenGraphMetaView;
 import com.psddev.styleguide.page.FaviconView;
 import com.psddev.styleguide.page.SeoRobotsMetaView;
 import com.psddev.styleguide.twitter.card.TwitterSummaryLargeImageCardView;
-import com.psddev.theme.ThemeRequest;
 
 public class PageViewModel extends ViewModel<Recordable> {
 
@@ -134,16 +133,6 @@ public class PageViewModel extends ViewModel<Recordable> {
             }
         }
         return metaViews;
-    }
-
-    public CharSequence getKeywords() {
-        // Grab the first 10 keywords, per google recommendation
-        return Optional.ofNullable(model.as(Seo.class))
-                .map(Seo::getSeoKeywords)
-                .orElse(Collections.emptySet())
-                .stream()
-                .limit(10)
-                .collect(Collectors.joining(",", "", ""));
     }
 
     public CharSequence getDescription() {
@@ -220,13 +209,6 @@ public class PageViewModel extends ViewModel<Recordable> {
         return bodyItems;
     }
 
-    public <T> Iterable<T> getStylePackage(Class<T> viewClass) {
-        return Optional.ofNullable(WebRequest.getCurrent().as(ThemeRequest.class).getCurrentTheme())
-                .map(theme -> theme.as(StyleThemeModification.class).getStylePackageOrDefault())
-                .map(stylePackage -> createViews(viewClass, stylePackage))
-                .orElse(null);
-    }
-
     public CharSequence getLanguage() {
         return Optional.ofNullable(LocaleProvider.getModelLocale(currentSite, model))
             .map(Locale::getLanguage)
@@ -287,6 +269,14 @@ public class PageViewModel extends ViewModel<Recordable> {
     public <T> Iterable<T> getHat(Class<T> viewClass) {
 
         return createViews(viewClass, model.as(CascadingPageData.class).getHat(currentSite));
+    }
+
+    public <T> Iterable<T> getLanguageMenu(Class<T> viewClass) {
+
+        return createViews(viewClass,
+                SiteSettings.get(
+                        currentSite,
+                        siteSettings -> siteSettings.as(LanguageMenuSiteSettings.class).getLanguageMenu()));
     }
 
     public CharSequence getSearchAction() {
@@ -562,5 +552,11 @@ public class PageViewModel extends ViewModel<Recordable> {
                 CROPPED_PROMO_IMAGE_SIZE
             )
         );
+    }
+
+    public <T> Iterable<T> getCommenting(Class<T> viewClass) {
+        return createViews(viewClass, SiteSettings.get(
+            currentSite,
+            siteSettings -> siteSettings.as(CommentingSiteSettings.class).getCommentingServices()));
     }
 }

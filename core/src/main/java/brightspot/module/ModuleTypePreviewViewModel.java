@@ -11,7 +11,6 @@ import com.psddev.styleguide.PreviewPageViewExtraStylesField;
 import com.psddev.styleguide.PreviewPageViewFaviconsField;
 import com.psddev.styleguide.PreviewPageViewMainField;
 import com.psddev.styleguide.PreviewPageViewMetaField;
-import com.psddev.styleguide.PreviewPageViewStylePackageField;
 
 public class ModuleTypePreviewViewModel extends ViewModel<SharedModule> implements
     PreviewPageView,
@@ -50,16 +49,6 @@ public class ModuleTypePreviewViewModel extends ViewModel<SharedModule> implemen
     @Override
     public Iterable<? extends PreviewPageViewMetaField> getMeta() {
         return page.getMeta(PreviewPageViewMetaField.class);
-    }
-
-    @Override
-    public Iterable<? extends PreviewPageViewStylePackageField> getStylePackage() {
-        return page.getStylePackage(PreviewPageViewStylePackageField.class);
-    }
-
-    @Override
-    public CharSequence getKeywords() {
-        return page.getKeywords();
     }
 
     @Override
