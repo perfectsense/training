@@ -6,14 +6,14 @@ plugins {
 }
 
 ext {
-    brightspotVersion = '4.2.25'
-    brightspotGradlePluginVersion = '4.2.9'
-    componentLibVersion = '4.2.160'
-    goVersion = '0.10.2'
+    brightspotVersion = '4.5.11.1'
+    brightspotGradlePluginVersion = '4.2.13'
+    componentLibVersion = '4.5.12'
+    goVersion = '1.2.7'
 }
 
 allprojects {
-    group = 'brightspot-training'
+    group = 'com.brightspot.training'
 
     if (project.hasProperty('release')) {
       version = project.release
@@ -67,8 +67,8 @@ subprojects {
     }
 
     node {
-        yarnVersion = '1.12.3'
-        version = '12.18.0'
+        yarnVersion = '1.22.1'
+        version = '12.22.3'
         download = true
     }
 
