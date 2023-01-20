@@ -1,0 +1,60 @@
+bsp-language {
+  display: block;
+}
+
+.LanguagesMenu {
+  border: 1px solid var(--color-header-text);
+  cursor: pointer;
+  margin-left: 22px;
+  padding: 3px 3px 2px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+
+  &-text-link {
+    text-transform: uppercase;
+  }
+
+  a {
+    --color-link-text: var(--color-header-text);
+    --color-link-text-hover: var(--color-header-text);
+  }
+
+  .LanguagesMenu-text {
+    &:extend(.label-5);
+  }
+
+  &-items {
+    &:extend(.label-4);
+
+    background: white;
+    bottom: 30px;
+    box-shadow: 0 -10px 20px 0 rgba(0, 0, 0, 0.1);
+    cursor: initial;
+    left: 0;
+    padding: 10px 15px;
+    position: absolute;
+    right: auto;
+    visibility: hidden;
+
+    &.is-active {
+      visibility: visible;
+    }
+
+    &-item {
+      padding: 10px;
+    }
+  }
+
+  @media @mq-hk {
+    margin: 0;
+
+    &-items {
+      box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.1);
+      bottom: auto;
+      left: auto;
+      right: 0px;
+      top: 35px;
+    }
+  }
+}

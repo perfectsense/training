@@ -1,0 +1,12 @@
+{
+  "_template": "ListicleItem.hbs",
+  "itemIndex": "{{number([1,10])}}",
+  "title": "{{words([10,20])}}",
+  "body": [
+    "{{paragraphs([1,2])}}",
+    {
+      "_include": "/image/ImageEnhancement.json"
+    },
+    "{{paragraphs([1,2])}}"
+  ]
+}

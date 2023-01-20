@@ -1,0 +1,24 @@
+{
+  "_include": "/stat/StatListA.json",
+  "title": "Stat List A - 3 Column",
+  "items": [
+    {
+      "_include": "/stat/StatPromo.json",
+      "statTitlePosition": "right",
+      "title": "M",
+      "description": "{{words(2)}}"
+    },
+    {
+      "_include": "/stat/StatPromo.json",
+      "statTitlePosition": "left",
+      "title": "$",
+      "description": "{{words(2)}}"
+    },
+    {
+      "_include": "/stat/StatPromo.json",
+      "statTitlePosition": "right",
+      "title": "%",
+      "description": "{{words(2)}}"
+    }
+  ]
+}

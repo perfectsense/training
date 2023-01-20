@@ -1,0 +1,20 @@
+<div class="GallerySlide">
+    <div class="GallerySlide-media">
+        {{#with media}}
+            {{#set imageSize="large-2x1"}}
+                {{image}}
+            {{/set}}
+        {{/with}}
+    </div>
+    <div class="GallerySlide-content">
+        {{#with title}}
+            <div class="GallerySlide-title">{{this}}</div>
+        {{/with}}
+        {{#with caption}}
+            <div class="GallerySlide-caption">{{this}}</div>
+        {{/with}}
+        {{#with credit}}
+            <div class="GallerySlide-credit">{{this}}</div>
+        {{/with}}
+    </div>
+</div>

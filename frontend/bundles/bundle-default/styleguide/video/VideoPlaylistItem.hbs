@@ -1,0 +1,33 @@
+<div class="VideoPlaylistItem"
+    {{~#with isCurrent}} is-current{{/with~}}
+    {{~#with contentId}} content-id="{{this}}"{{/with~}}
+    {{~#with url}} url="{{this}}"{{/with~}}>
+    {{#each media}}
+        <div class="VideoPlaylistItem-media">
+            {{#set imageSize="medium-16x9"}}
+                {{this}}
+            {{/set}}
+
+            <div class="VideoPlaylistItem-playIcon">
+                <svg><use xlink:href="#play-icon"></use></svg>
+            </div>
+
+            <div class="VideoPlaylistItem-playingText">
+                {{format "/video/VideoPlayer" "onNowText"}}
+            </div>
+        </div>
+    {{/each}}
+    <div class="VideoPlaylistItem-body">
+        {{#with title}}
+            <div class="VideoPlaylistItem-title">{{this}}</div>
+        {{/with}}
+        {{#with duration}}
+            <div class="VideoPlaylistItem-duration">{{this}}</div>
+        {{/with}}
+    </div>
+    <template>
+        {{#with player}}
+            {{this}}
+        {{/with}}
+    </template>
+</div>

@@ -1,0 +1,7 @@
+{{#with breadcrumbs}}
+    <div class="Page-breadcrumbs">
+        {{~#each this~}}
+            {{~this~}}{{~#unless @last~}}&nbsp;<svg class="chevron"><use xlink:href="#chevron"></use></svg>&nbsp;{{~/unless~}}
+        {{~/each~}}
+    </div>
+{{/with}}

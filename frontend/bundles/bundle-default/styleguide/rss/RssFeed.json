@@ -1,0 +1,19 @@
+{
+  "_template": "RssFeed.hbs",
+  "websitePrimaryUrl": "www.brightspot.com",
+  "feedUrl": "www.brightspot.com/podcast/pivot-with-kara-swisher",
+  "title": "Pivot",
+  "description": "This is the description.",
+  "language": "en",
+  "lastBuildDate": "Mon, 01 Jan 2020 00:00:00 -0500",
+  "generator": "RSS Generator",
+  "copyright": "Copyright 2019",
+  "metadata": {
+    "_include": "/rss/_group/RssFeedMetadata.json"
+  },
+  "items": [
+    {
+      "_include": "/rss/RssFeedItem.json"
+    }
+  ]
+}

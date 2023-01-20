@@ -1,0 +1,28 @@
+{
+  "_include": "/page/Page.json",
+  "pageLead": null,
+  "above": null,
+  "main": [
+    {
+      "_include": "/video/HTML5VideoModule.json"
+    },
+    {
+      "_include": "/brightcove/BrightcoveVideoModule.json"
+    },
+    {
+      "_include": "/youtube/YouTubeVideoModule.json"
+    },
+    {
+      "_include": "/jwplayer/JwVideoModule.json"
+    },
+    {
+      "_include": "/vimeo/VimeoVideoModule.json"
+    },
+    {
+      "_include": "/video/VideoPlaylistModule.json"
+    },
+    {
+      "_include": "/video/VideoPlaylistModule-listOnBottom.json"
+    }
+  ]
+}

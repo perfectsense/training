@@ -1,0 +1,279 @@
+.VideoPlaylistModule {
+  display: block;
+
+  &-description {
+    &:extend(.description-1 all);
+
+    [data-inverse-colors] & {
+      color: var(--color-primary-text-inverse);
+      --color-link-text: var(--color-primary-text-inverse);
+      --color-link-text-hover: var(--color-primary-text-inverse);
+    }
+
+    a {
+      text-decoration: underline;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    margin: -10px 0 20px 0;
+  }
+
+  &-header {
+    text-align: center;
+  }
+
+  &-player {
+    padding-bottom: 20px;
+  }
+
+  &-playlist {
+    position: relative;
+
+    &-items {
+      &-item {
+        border-bottom: 2px solid var(--color-border);
+
+        &:first-of-type {
+          border-top: 2px solid var(--color-border);
+        }
+      }
+    }
+  }
+
+  &-playlistNavigation {
+    display: flex;
+    gap: 10px;
+
+    button {
+      &:extend(.Button all);
+      display: grid;
+      place-items: center;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      padding: 0;
+
+      svg {
+        width: 50%;
+        height: 50%;
+      }
+
+      &[data-scroll-backward] {
+        svg {
+          transform: rotate(90deg);
+        }
+      }
+
+      &[data-scroll-forward] {
+        svg {
+          transform: rotate(-90deg);
+        }
+      }
+    }
+  }
+
+  &-playlistToggle {
+    &:extend(.Button all);
+    display: block;
+    margin: 20px auto 0;
+  }
+
+  &-title {
+    &:extend(.list-title-1 all);
+
+    margin-bottom: 20px;
+
+    [data-inverse-colors] & {
+      color: var(--color-primary-text-inverse);
+    }
+  }
+
+  &:not([data-clipped]) & {
+    &-playlistToggle {
+      display: none;
+    }
+  }
+
+  @media @mq-up-to-md {
+    &-playlistNavigation {
+      display: none;
+    }
+
+    &[data-clipped] &-playlist {
+      .VideoPlaylistModule-playlist-items-item:nth-of-type(n+4) {
+        display: none;
+      }
+    }
+  }
+
+  @media @mq-up-to-lg {
+    &-playlistNavigation {
+      button {
+        position: absolute;
+        top: 50%;
+
+        &[data-scroll-backward] {
+          left: 0;
+        }
+
+        &[data-scroll-forward] {
+          right: 0;
+        }
+      }
+    }
+  }
+
+  @media @mq-md {
+    &-playlist {
+      border-top: 2px solid var(--color-border);
+
+      &-items {
+        display: flex;
+        overflow: scroll;
+        margin-left: 40px;
+        margin-right: 40px;
+
+        &-item {
+          border: none;
+
+          &:first-of-type {
+            border: none;
+          }
+        }
+      }
+    }
+
+    &-playlistToggle {
+      display: none;
+    }
+  }
+
+  @media @mq-lg {
+    --playlistWidth: 144px;
+
+    &:not([data-playlist-bottom]) & {
+      &-body {
+        padding-right: var(--playlistWidth);
+        position: relative;
+
+        .Page-articleBody & {
+          padding-right: 0;
+        }
+      }
+
+      &-player {
+        padding-right: 20px;
+      }
+
+      &-playlist {
+        border-top: none;
+        bottom: 0;
+        display: block;
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: var(--playlistWidth);
+
+        &-items {
+          overflow: auto;
+
+          &-item {
+            border-bottom: 2px solid var(--color-border);
+
+            &:first-of-type {
+              border-bottom: 2px solid var(--color-border);
+              margin-top: -20px;
+            }
+          }
+        }
+      }
+
+      &-playlist {
+        display: flex;
+        flex-direction: column;
+
+        &-items {
+          margin-left: 0;
+          margin-right: 0;
+          margin-bottom: 40px;
+          flex-direction: column;
+        }
+      }
+
+      &-playlistNavigation {
+        place-content: center;
+
+        button[data-scroll-backward] {
+          svg {
+            transform: rotate(180deg);
+          }
+        }
+
+        button[data-scroll-forward] {
+          svg {
+            transform: rotate(0);
+          }
+        }
+      }
+    }
+
+    &[data-playlist-bottom] {
+      .VideoPlaylistModule {
+        &-body {
+          padding-right: 0;
+        }
+
+        &-player {
+          padding-right: 0;
+        }
+
+        &-playlist {
+          border-top: 2px solid var(--color-border);
+
+          &-items {
+            display: flex;
+            position: relative;
+
+            .Page-articleBody & {
+              height: 400px;
+              overflow: auto;
+              position: relative;
+              width: 100%;
+            }
+
+            &-item {
+              border-bottom: none;
+
+              &:first-of-type {
+                border-bottom: none;
+                margin-top: 0;
+              }
+            }
+          }
+        }
+
+        &-playlistNavigation {
+          button {
+            position: absolute;
+            top: 50%;
+
+            &[data-scroll-backward] {
+              left: 0;
+            }
+
+            &[data-scroll-forward] {
+              right: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media @mq-xl {
+    --playlistWidth: 176px;
+  }
+}

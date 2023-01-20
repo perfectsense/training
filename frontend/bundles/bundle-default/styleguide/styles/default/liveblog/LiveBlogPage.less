@@ -1,0 +1,152 @@
+.LiveBlogPage {
+  .Page {
+    &-content {
+      display: grid;
+      justify-content: center;
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+
+    &-headline {
+      &:extend(.page-title-2 all);
+    }
+
+    &-lead {
+      margin-bottom: 20px;
+    }
+
+    &-oneColumn {
+      &:extend(.layoutWidth all);
+    }
+  }
+
+  &-dates {
+    &:extend(.byline-2 all);
+
+    .Page-dateModified {
+      margin-bottom: 5px;
+    }
+
+    margin: 20px 0;
+  }
+
+  &-lede {
+    position: relative;
+
+    &-content {
+      &:extend(.layoutWidth all);
+    }
+  }
+
+  &-pinnedPosts,
+  &-currentPosts {
+    .LiveBlogPost {
+      &:before {
+        border-bottom: 1px solid var(--color-gray);
+        content: '';
+        display: block;
+        margin: 30px -20px;
+      }
+    }
+  }
+
+  &-liveStatus {
+    &:extend(.label-1 all);
+
+    background-color: var(--color-primary);
+    color: var(--color-text-inverse);
+    border-radius: 22px;
+    display: inline-block;
+    margin-bottom: 15px;
+    padding: 4px 10px 3px;
+    text-transform: uppercase;
+  }
+
+  &-whatYouNeedToKnow {
+    background-color: #f0f0f0;
+    margin: 30px 0;
+    padding: 20px;
+
+    &-heading {
+      &:extend(.promo-title-3 all);
+      margin-bottom: 20px;
+    }
+  }
+
+  @media @mq-up-to-lg {
+    &-sideRail {
+      display: none;
+    }
+  }
+
+  @media @mq-md {
+    &-actions {
+      &-wrapper {
+        display: grid;
+        grid-template-columns: 50% 50%;
+      }
+    }
+
+    &-dates {
+      margin: 0;
+    }
+
+    &-pinnedPosts,
+    &-currentPosts {
+      .LiveBlogPost {
+        &:before {
+          margin: 40px 0;
+        }
+      }
+    }
+
+    &-whatYouNeedToKnow {
+      margin: 40px 0;
+    }
+
+    .Page-content {
+      margin-bottom: 40px;
+      margin-top: 40px;
+    }
+  }
+
+  @media @mq-lg {
+    &-layoutWrapper {
+      display: grid;
+      grid-template-columns: auto 300px;
+    }
+
+    &-lede,
+    .Page-oneColumn {
+      max-width: 800px;
+    }
+
+    &-sideRail {
+      border-left: 1px solid var(--color-border);
+    }
+
+    .Page {
+      &-content {
+        margin-bottom: 50px;
+        margin-top: 50px;
+      }
+
+      &-lead {
+        margin-bottom: 40px;
+      }
+    }
+  }
+
+  @media @mq-hk {
+    .Page-content {
+      padding-left: 50px;
+      padding-right: 50px;
+    }
+  }
+
+  @media @mq-xl {
+    &-layoutWrapper {
+      grid-template-columns: auto 360px;
+    }
+  }
+}

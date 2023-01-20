@@ -1,9 +1,0 @@
-{
-  "_template": "/video/VideoPlaylistModule.hbs",
-  "title": "Pork belly bresaola kevin pancetta.",
-  "player": {
-    "_include": "/youtube/YouTubeVideoPlayer.json"
-  },
-  "ctaUrl": "#",
-  "ctaTarget": "_self"
-}

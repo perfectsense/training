@@ -1,0 +1,291 @@
+.Enhancement {
+  // just in case people put two aligned enhancements next to each other
+  clear: both;
+  margin: 30px 0;
+  width: 100%;
+
+  .Carousel {
+    .flickity-button {
+      margin-top: -10px;
+    }
+  }
+
+  .Figure {
+    img {
+      margin: 0 auto;
+    }
+  }
+
+  // center aligning for all social embeds
+  .FacebookEmbed,
+  .FacebookUrl,
+  .InstagramUrl,
+  .InstagramEmbed,
+  .TweetEmbed,
+  .TweetUrl,
+  .twitter-tweet,
+  .fb-post {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    overflow: hidden;
+    text-align: center;
+
+    iframe {
+      width: 100%;
+    }
+  }
+
+  .Quote {
+    blockquote {
+      &:before {
+        content: none;
+      }
+
+      &:after {
+        content: none;
+      }
+    }
+
+    &-attribution {
+      margin: 20px auto 0;
+    }
+  }
+
+  .twitter-tweet {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  &[data-align-fullWidth] {
+    img {
+      max-width: unset;
+      margin-left: -20px;
+      margin-right: -20px;
+      border-radius: 0 !important;
+      width: calc(~'100% + 40px');
+    }
+  }
+
+  &[data-align-full-width] {
+    .Carousel {
+      max-width: unset;
+      margin-left: -20px;
+      margin-right: -20px;
+      width: calc(~'100% + 40px');
+    }
+
+    .CarouselSlide-info {
+      margin-left: 20px;
+    }
+
+    img {
+      width: calc(~'100% + 40px');
+    }
+  }
+
+  &[data-align-portrait-left],
+  &[data-align-portrait-right] {
+    max-width: 330px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  @media @mq-md {
+    margin: 40px 0;
+
+    .Quote,
+    .Quote[data-with-bg] {
+      padding: 40px;
+    }
+
+    &[data-align-left] {
+      float: left;
+      margin-bottom: 10px;
+      margin-right: 40px;
+      margin-top: 10px;
+      max-width: 360px;
+      width: 50%;
+    }
+
+    &[data-align-right] {
+      float: right;
+      margin-bottom: 10px;
+      margin-left: 40px;
+      margin-top: 10px;
+      max-width: 360px;
+      width: 50%;
+    }
+
+    &[data-align-portrait-left] {
+      float: left;
+      max-width: 330px;
+      margin-right: 40px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+
+    &[data-align-portrait-right] {
+      float: right;
+      max-width: 330px;
+      margin-left: 40px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+
+    &[data-align-fullWidth] {
+      img {
+        margin-left: -50px;
+        margin-right: -50px;
+        width: calc(~'100% + 100px');
+      }
+
+      .Figure-content {
+        margin-left: -30px;
+      }
+    }
+
+    &[data-align-full-width] {
+      .Carousel {
+        margin-left: -50px;
+        margin-right: -50px;
+        width: calc(~'100% + 100px');
+      }
+
+      img {
+        width: calc(~'100% + 100px');
+      }
+    }
+  }
+
+  @media @mq-lg {
+    .Carousel {
+      .flickity-button {
+        margin-top: -15px;
+      }
+    }
+
+    &[data-align-fullWidth] {
+      img {
+        .Page-oneColumn & {
+          margin-left: -95px;
+          margin-right: -95px;
+          width: calc(~'100% + 190px');
+        }
+
+        .Page-twoColumn & {
+          margin-left: 0;
+          margin-right: 0;
+          width: 100%;
+        }
+      }
+
+      .Figure-content {
+        .Page-oneColumn & {
+          margin-left: -75px;
+        }
+
+        .Page-twoColumn & {
+          margin-left: 0;
+        }
+      }
+    }
+
+    &[data-align-full-width] {
+      .Carousel {
+        .Page-oneColumn & {
+          margin-left: -95px;
+          margin-right: -95px;
+          width: calc(~'100% + 190px');
+        }
+
+        .Page-twoColumn & {
+          margin-left: 0;
+          margin-right: 0;
+          width: 100%;
+        }
+
+        img {
+          .Page-oneColumn & {
+            width: calc(~'100% + 190px');
+          }
+
+          .Page-twoColumn & {
+            margin-left: 0;
+            margin-right: 0;
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+
+  @media @mq-hk {
+    &[data-align-fullWidth] {
+      img {
+        .Page-oneColumn & {
+          margin-left: -220px;
+          margin-right: -220px;
+          width: calc(~'100% + 440px');
+        }
+      }
+
+
+      .Figure-content {
+        .Page-oneColumn & {
+          margin-left: -200px;
+        }
+      }
+    }
+
+    &[data-align-full-width] {
+      .Carousel {
+        .Page-oneColumn & {
+          margin-left: -220px;
+          margin-right: -220px;
+          width: calc(~'100% + 440px');
+        }
+
+        img {
+          .Page-oneColumn & {
+            width: calc(~'100% + 440px');
+          }
+        }
+      }
+    }
+  }
+
+  @media @mq-xl {
+    &[data-align-fullWidth] {
+      img {
+        .Page-oneColumn & {
+          margin-left: -300px;
+          margin-right: -300px;
+          width: calc(~'100% + 600px');
+        }
+      }
+
+      .Figure-content {
+        .Page-oneColumn & {
+          margin-left: -280px;
+        }
+      }
+    }
+
+    &[data-align-full-width] {
+      .Carousel {
+        .Page-oneColumn & {
+          margin-left: -300px;
+          margin-right: -300px;
+          width: calc(~'100% + 600px');
+        }
+
+        img {
+          .Page-oneColumn & {
+            width: calc(~'100% + 600px');
+          }
+        }
+      }
+    }
+  }
+}

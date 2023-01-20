@@ -1,0 +1,7 @@
+{
+  "_include": "/stat/StatListB.json",
+
+  "title": "Stat List B - Title on Side",
+  "countUpAnimation": true,
+  "listHeaderPosition": "side"
+}

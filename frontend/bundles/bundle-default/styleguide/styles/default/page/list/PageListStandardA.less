@@ -1,0 +1,135 @@
+.PageListStandardA {
+  .PageList {
+    &-items {
+      display: grid;
+      gap: 20px;
+
+      &-item {
+        border-bottom: 1px solid var(--color-list-border);
+        padding-bottom: 20px;
+
+        &:first-of-type {
+          padding-bottom: 30px;
+
+          .PagePromo {
+            &-description {
+              &:extend(.description-1 all);
+            }
+
+            &-title {
+              &:extend(.promo-title-3 all);
+            }
+          }
+        }
+
+        .PagePromo {
+          &-title {
+            &:extend(.promo-title-5 all);
+          }
+        }
+      }
+    }
+  }
+
+  @media @mq-md {
+    .PageList-items {
+      grid-auto-flow: dense;
+      grid-template-columns: repeat(2, 1fr);
+
+      &-item {
+        &:nth-of-type(1) {
+          grid-column: span 2;
+          grid-row: span 1;
+        }
+
+        &:nth-of-type(n + 2):nth-of-type(-n + 5) {
+          grid-column: span 2;
+        }
+
+        &:nth-of-type(n + 6) {
+          border-bottom: none;
+          grid-column: span 1;
+          padding-bottom: 0;
+          padding-top: 10px;
+        }
+      }
+    }
+  }
+
+  @media @mq-lg {
+    .PageList {
+      &-items {
+        grid-template-columns: repeat(12, 1fr);
+
+        &-item {
+          &:nth-of-type(1) {
+            border-bottom: none;
+            grid-column: span 8;
+            grid-row: span 4;
+            padding-bottom: 0;
+          }
+
+          &:nth-of-type(n + 2):nth-of-type(-n + 5) {
+            grid-column: span 4;
+            padding-bottom: 15px;
+            margin-top: -5px;
+
+            .PagePromo {
+              &-byline {
+                margin-top: 5px;
+              }
+
+              &-category {
+                margin-bottom: 5px;
+              }
+            }
+          }
+
+          &:nth-of-type(n + 6) {
+            grid-column: span 6;
+            padding-top: 20px;
+          }
+        }
+      }
+    }
+  }
+
+  @media @mq-hk {
+    .PageList {
+      &-items {
+        &-item {
+          &:nth-of-type(n + 2):nth-of-type(-n + 5) {
+            padding-bottom: 20px;
+            margin-top: 0;
+
+            .PagePromo {
+              &-byline {
+                margin-top: 10px;
+              }
+
+              &-category {
+                margin-bottom: 5px;
+              }
+            }
+          }
+
+          &:nth-of-type(n + 6) {
+            grid-column: span 3;
+          }
+        }
+      }
+    }
+  }
+
+  @media @mq-xl {
+    .PageList {
+      &-items {
+        &-item {
+          &:nth-of-type(1) {
+            margin-right: 10px;
+          }
+        }
+      }
+    }
+  }
+}

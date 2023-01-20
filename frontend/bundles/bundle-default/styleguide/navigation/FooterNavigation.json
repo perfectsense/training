@@ -1,0 +1,23 @@
+{
+  "_template": "/navigation/Navigation.hbs",
+  "items": [
+    {
+      "_include": "/navigation/FooterNavigationItem.json"
+    },
+    {
+      "_include": "/navigation/FooterNavigationItem.json"
+    },
+    {
+      "_include": "/navigation/FooterNavigationItem.json"
+    },
+    {
+      "_include": "/navigation/FooterNavigationItem.json"
+    },
+    {
+      "_include": "/navigation/FooterNavigationItem.json"
+    },
+    {
+      "_include": "/navigation/FooterNavigationItem.json"
+    }
+  ]
+}

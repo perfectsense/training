@@ -1,0 +1,35 @@
+.VideoModule {
+  &-description {
+    &:extend(.description-1 all);
+
+    [data-inverse-colors] & {
+      color: var(--color-primary-text-inverse);
+      --color-link-text: var(--color-primary-text-inverse);
+      --color-link-text-hover: var(--color-primary-text-inverse);
+    }
+
+    a {
+      text-decoration: underline;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    margin: -10px 0 20px 0;
+  }
+
+  &-header {
+    text-align: center;
+  }
+
+  &-title {
+    &:extend(.promo-title-1 all);
+
+    margin-bottom: 20px;
+
+    [data-inverse-colors] & {
+      color: var(--color-primary-text-inverse);
+    }
+  }
+}

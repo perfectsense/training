@@ -1,0 +1,19 @@
+<itunes:image href="{{imageUrl}}"/>
+{{#each categories}}{{this}}{{/each}}
+<itunes:explicit>{{explicit}}</itunes:explicit>
+{{#with title}}<itunes:title>{{this}}</itunes:title>{{/with}}
+{{#with author}}<itunes:author>{{this}}</itunes:author>{{/with}}
+{{#if ownerEmail}}
+    <itunes:owner>
+        <itunes:email>{{ownerEmail}}</itunes:email>
+        {{#if ownerName}}
+            <itunes:name>{{ownerName}}</itunes:name>
+        {{/if}}
+    </itunes:owner>
+{{/if}}
+{{#with type}}<itunes:type>{{this}}</itunes:type>{{/with}}
+{{#if showNewFeedUrl}}
+    {{#with newFeedUrl}}<itunes:new-feed-url>{{this}}</itunes:new-feed-url>{{/with}}
+{{/if}}
+{{#with block}}<itunes:block>{{this}}</itunes:block>{{/with}}
+{{#with complete}}<itunes:complete>{{this}}</itunes:complete>{{/with}}

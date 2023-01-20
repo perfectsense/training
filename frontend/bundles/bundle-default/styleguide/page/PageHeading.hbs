@@ -1,0 +1,29 @@
+<div class="PageHeading" style="--opacityOverlay: {{#with opacityOverlay}}{{this}}{{else}}50{{/with}}%; background-color:{{#with headingBgColor}}{{this}}{{else}}var(--color-callout-bg){{/with}}; --color-heading-text:{{#with headingTextColor}}{{this}}{{else}}{{#or headingBgColor media}}var(--color-text-inverse){{else}}var(--color-primary-text){{/or}}{{/with}};{{#each media}}{{#resize image "xl-4x1"}}background-image: url('{{src}}');{{/resize}}{{/each}}" data-text-align="{{#if headingTextAlign}}{{headingTextAlign}}{{else}}center{{/if}}" {{#or backgroundColor media}}data-with-bg{{/or}} {{#if ../sectionNavigation}} data-with-nav{{/if}}
+    {{~include '/page/PageHeading-attributes.hbs' this~}}
+    >
+    <div class="PageHeading-content-wrapper">
+        <div class="PageHeading-content">
+            {{#with logo}}
+                {{#set imageSize="logo-small"}}
+                    <div class="PageHeading-logo">
+                        {{this}}
+                    </div>
+                {{/set}}
+            {{/with}}
+            {{#if eyebrow}}
+                <div class="PageHeading-eyebrow">{{include "/link/Link.hbs" this body=eyebrow href=eyebrowUrl target=eyebrowTarget}}</div>
+            {{/if}}
+            {{#with pageHeading}}
+                <h1 class="PageHeading-title">{{this}}</h1>
+            {{/with}}
+            {{#with pageSubHeading}}
+                <h2 class="PageHeading-subHeading">{{this}}</h2>
+            {{/with}}
+            {{#if ctaUrl}}
+                <div class="PageHeading-ctaButton">
+                    <a class="Button" href="{{ctaUrl}}" {{#with ctaTarget}} target="{{this}}"{{/with}}>{{#if ctaButtonText}}{{ctaButtonText}}{{else}}{{format "/page/list/PageList" "ctaText"}}{{/if}}</a>
+                </div>
+            {{/if}}
+        </div>
+    </div>
+</div>

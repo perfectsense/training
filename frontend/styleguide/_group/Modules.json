@@ -1,9 +1,9 @@
 [
   {
-    "_template": "/adsense/GoogleAdsenseAdModule.hbs"
+    "_template": "/author/list/AuthorList.hbs"
   },
   {
-    "_template": "/author/list/AuthorList.hbs"
+    "_template": "/download/list/DownloadList.hbs"
   },
   {
     "_template": "/carousel/Carousel.hbs"
@@ -21,6 +21,12 @@
     "_template": "/container/FourColumnContainer.hbs"
   },
   {
+    "_template": "/download/promo/DownloadPromoModule.hbs"
+  },
+  {
+    "_template": "/faq/FaqModule.hbs"
+  },
+  {
     "_template": "/figure/Figure.hbs"
   },
   {
@@ -33,6 +39,9 @@
     "_template": "/iframe/IframeModule.hbs"
   },
   {
+    "_template": "/logo/list/LogoList.hbs"
+  },
+  {
     "_template": "/page/list/PageList.hbs"
   },
   {
@@ -40,6 +49,15 @@
   },
   {
     "_template": "/person/list/PersonList.hbs"
+  },
+  {
+    "_template": "/podcast/list/PodcastEpisodeList.hbs"
+  },
+  {
+    "_template": "/podcast/list/PodcastList.hbs"
+  },
+  {
+    "_template": "/podcast/list/PodcastEpisodeList.hbs"
   },
   {
     "_template": "/quote/Quote.hbs"
@@ -69,9 +87,12 @@
     "_template": "/video/VideoModule.hbs"
   },
   {
+    "_template": "/custom/CustomModule.hbs"
+  },
+  {
     "_template": "/video/VideoPlaylistModule.hbs"
   },
   {
-    "_template": "/dfp/GoogleDfpAdModule.hbs"
+    "_include": "/_group/Ads.json"
   }
 ]

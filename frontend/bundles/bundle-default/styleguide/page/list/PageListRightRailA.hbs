@@ -1,0 +1,32 @@
+{{#if items}}
+<div class="PageListRightRailA" data-module{{include "includes/PageList-attributes.hbs" this}}>
+    {{include "includes/PageList-header.hbs" this}}
+
+    {{#ne hideImage true}}
+        {{#with items.[0]}}
+            <div class="PageList-items-first">
+                {{#eq this._template "/page/promo/PagePromo.hbs"}}
+                    {{include "/link/Link.hbs" this href=url body=media}}
+                {{else}}
+                    {{render this}}
+                {{/eq}}
+            </div>
+        {{/with}}
+    {{/ne}}
+
+    {{#with items}}
+        <ol class="PageList-items" {{#if ../hideListNumbers}}data-no-numbers{{/if}}>
+            {{#each this}}
+                <li class="PageList-items-item">
+                    {{#eq this._template "/page/promo/PagePromo.hbs"}}
+                        {{include "/link/Link.hbs" this href=url body=title}}
+                    {{else}}
+                        {{render this}}
+                    {{/eq}}
+                </li>
+            {{/each}}
+        </ol>
+    {{/with}}
+    {{include "includes/PageList-footer.hbs" this}}
+</div>
+{{/if}}

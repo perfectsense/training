@@ -1,0 +1,41 @@
+.AuthorListA {
+  .PageList-header-title {
+    &:extend(.list-title-3 all);
+  }
+
+  &-items {
+    display: grid;
+    grid-gap: 20px;
+  }
+
+  .PagePromo {
+    &-media {
+      margin-bottom: 0;
+    }
+
+    &-title {
+      &:extend(.promo-title-3 all);
+    }
+  }
+
+  @media @mq-md {
+    &-items {
+      .TwoColumnContainer7030-column:first-of-type & {
+        display: grid;
+        grid-gap: 20px;
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+  }
+
+  @media @mq-lg {
+    &-items {
+      .TwoColumnContainer3070-column:nth-of-type(2) &,
+      .TwoColumnContainer7030-column:first-of-type & {
+        display: grid;
+        grid-gap: 20px;
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+  }
+}

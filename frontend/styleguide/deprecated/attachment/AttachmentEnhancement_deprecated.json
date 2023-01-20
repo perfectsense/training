@@ -1,0 +1,6 @@
+{
+  "_template": "/attachment/AttachmentEnhancement.hbs",
+  "src": "https://www.example.com/files/attachment.pdf",
+  "type": "application/pdf",
+  "_hidden": true
+}

@@ -1,0 +1,10 @@
+<item>
+    <title>{{title}}</title>
+    <enclosure url="{{enclosureUrl}}" length="{{enclosureLength}}" type="{{enclosureType}}"/>
+    {{#with description}}<description><![CDATA[{{this}}]]></description>{{/with}}
+    {{#with pubDate}}<pubDate>{{this}}</pubDate>{{/with}}
+    {{#with link}}<link>{{this}}</link>{{/with}}
+    {{#with guid}}<guid isPermaLink="{{#if guidIsPermalink}}true{{else}}false{{/if}}">{{this}}</guid>{{/with}}
+    {{#with authorEmail}}<author>{{this}}</author>{{/with}}
+    {{#with metadata}}{{this}}{{/with}}
+</item>

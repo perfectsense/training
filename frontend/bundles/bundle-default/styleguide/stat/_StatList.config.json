@@ -1,0 +1,34 @@
+{
+  "styles": {
+    "/stat/StatList.hbs": {
+      "templates": [
+        {
+          "displayName": "Stat List A",
+          "example": "/stat/StatListA.json",
+          "height": 800,
+          "width": 1024,
+          "fields": [
+            "backgroundColor",
+            "inverseColors",
+            "countUpAnimation"
+          ]
+        },
+        {
+          "displayName": "Stat List B",
+          "example": "/stat/StatListB.json",
+          "height": 800,
+          "width": 1024,
+          "fields": [
+            "backgroundColor",
+            "inverseColors",
+            "countUpAnimation",
+            "listTitleSize",
+            "listDescriptionSize",
+            "listHeaderPosition",
+            "textAlign"
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "_template": "/languages/LanguagesMenu.hbs",
+  "currentLanguageCode": "EN",
+  "items": [
+    {
+      "_include": "/languages/LanguagesMenuItem.json"
+    },
+    {
+      "_include": "/languages/LanguagesMenuItem.json",
+      "languageName": "German",
+      "languageCode": "DE"
+    }
+  ]
+}

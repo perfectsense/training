@@ -1,0 +1,16 @@
+<div class="LogoListB" data-module {{include "/page/list/includes/PageList-attributes.hbs" this}}>
+    {{include "/page/list/includes/PageList-header.hbs" this}}
+
+    {{#with items}}
+        <ul class="LogoListB-items">
+            {{#each this}}
+                <li class="LogoListB-items-item">
+                    {{include "/logo/promo/LogoPromo.hbs" this}}
+                </li>
+            {{/each}}
+        </ul>
+    {{/with}}
+    {{#unless listHeaderPosition}}
+        {{include "/page/list/includes/PageList-cta.hbs" this}}
+    {{/unless}}
+</div>

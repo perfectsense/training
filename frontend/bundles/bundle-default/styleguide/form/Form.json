@@ -1,0 +1,366 @@
+{
+  "_template": "/form/Form.hbs",
+  "title": "{{words([5,15])}}",
+  "description": "{{words([15,25])}}",
+  "anchorId": "anchorTest",
+  "items": [
+    {
+      "_template": "/form/fieldset/Fieldset.hbs",
+      "fieldsetColumns": "50-50",
+      "items": [
+        {
+          "_template": "/form/input/TextInput.hbs",
+          "inputName": "test-text-field",
+          "label": "{{words([5,10])}}",
+          "placeholder": "Placeholder text",
+          "required": false
+        },
+        {
+          "_template": "/form/input/TextInput.hbs",
+          "inputName": "test-text-field",
+          "label": "{{words([5,10])}}",
+          "placeholder": "Placeholder text",
+          "required": false
+        }
+      ],
+      "legend": "50 / 50"
+    },
+    {
+      "_template": "/form/fieldset/Fieldset.hbs",
+      "fieldsetColumns": "33-33-33",
+      "items": [
+        {
+          "_template": "/form/input/TextInput.hbs",
+          "inputName": "test-text-field",
+          "label": "{{words([5,10])}}",
+          "placeholder": "Placeholder text",
+          "required": false
+        },
+        {
+          "_template": "/form/input/TextInput.hbs",
+          "inputName": "test-text-field",
+          "label": "{{words([5,10])}}",
+          "placeholder": "Placeholder text",
+          "required": false
+        },
+        {
+          "_template": "/form/input/TextInput.hbs",
+          "inputName": "test-text-field",
+          "label": "{{words([5,10])}}",
+          "placeholder": "Placeholder text",
+          "required": false
+        }
+      ],
+      "legend": "33 / 33 / 33"
+    },
+    {
+      "_template": "/form/fieldset/Fieldset.hbs",
+      "fieldsetColumns": "33-33-33",
+      "items": [
+        {
+          "_template": "/form/fieldset/Fieldset.hbs",
+          "fieldsetColumns": "1",
+          "items": [
+            {
+              "_template": "/form/input/CheckboxInput.hbs",
+              "inputName": "checkboxes",
+              "inputValue": "checkbox-1",
+              "label": "Checkbox 1"
+            },
+            {
+              "_template": "/form/input/CheckboxInput.hbs",
+              "inputName": "checkboxes",
+              "inputValue": "checkbox-2",
+              "label": "Checkbox 2"
+            },
+            {
+              "_template": "/form/input/CheckboxInput.hbs",
+              "inputName": "checkboxes",
+              "inputValue": "checkbox-3",
+              "label": "Checkbox 3"
+            }
+          ],
+          "legend": "Checkboxes"
+        },
+        {
+          "_template": "/form/fieldset/Fieldset.hbs",
+          "fieldsetColumns": "1",
+          "items": [
+            {
+              "_template": "/form/input/CheckboxInput.hbs",
+              "inputName": "checkboxes",
+              "inputValue": "checkbox-1",
+              "label": "Checkbox 1"
+            },
+            {
+              "_template": "/form/input/CheckboxInput.hbs",
+              "inputName": "checkboxes",
+              "inputValue": "checkbox-2",
+              "label": "Checkbox 2"
+            },
+            {
+              "_template": "/form/input/CheckboxInput.hbs",
+              "inputName": "checkboxes",
+              "inputValue": "checkbox-3",
+              "label": "Checkbox 3"
+            }
+          ],
+          "legend": "Checkboxes"
+        },
+        {
+          "_template": "/form/fieldset/Fieldset.hbs",
+          "fieldsetColumns": "1",
+          "items": [
+            {
+              "_template": "/form/input/RadioInput.hbs",
+              "inputName": "radio-buttons",
+              "inputValue": "radio-1",
+              "label": "Radio 1"
+            },
+            {
+              "_template": "/form/input/RadioInput.hbs",
+              "inputName": "radio-buttons",
+              "inputValue": "radio-2",
+              "label": "Radio 2",
+              "checked": true
+            },
+            {
+              "_template": "/form/input/RadioInput.hbs",
+              "inputName": "radio-buttons",
+              "inputValue": "radio-3",
+              "label": "Radio 3"
+            }
+          ],
+          "legend": "Radio Buttons"
+        }
+      ],
+      "legend": "33 / 33 / 33"
+    },
+    {
+      "_template": "/form/fieldset/Fieldset.hbs",
+      "fieldsetColumns": "50-25-25",
+      "items": [
+        {
+          "_template": "/form/input/TextInput.hbs",
+          "inputName": "test-text-field",
+          "label": "Test Text Field",
+          "placeholder": "Placeholder text",
+          "required": false
+        },
+        {
+          "_template": "/form/input/TextInput.hbs",
+          "inputName": "test-text-field",
+          "label": "Test Text Field",
+          "placeholder": "Placeholder text",
+          "required": false
+        },
+        {
+          "_template": "/form/input/TextInput.hbs",
+          "inputName": "test-text-field",
+          "label": "Test Text Field",
+          "placeholder": "Placeholder text",
+          "required": false
+        }
+      ],
+      "legend": "50 / 25 / 25"
+    },
+    {
+      "_template": "/form/fieldset/Fieldset.hbs",
+      "fieldsetColumns": "25-25-50",
+      "items": [
+        {
+          "_template": "/form/input/TextInput.hbs",
+          "inputName": "test-text-field",
+          "label": "Test Text Field",
+          "placeholder": "Placeholder text",
+          "required": false
+        },
+        {
+          "_template": "/form/input/TextInput.hbs",
+          "inputName": "test-text-field",
+          "label": "Test Text Field",
+          "placeholder": "Placeholder text",
+          "required": false
+        },
+        {
+          "_template": "/form/input/TextInput.hbs",
+          "inputName": "test-text-field",
+          "label": "Test Text Field",
+          "placeholder": "Placeholder text",
+          "required": false
+        }
+      ],
+      "legend": "25 / 25 / 50"
+    },
+    {
+      "_template": "/form/fieldset/Fieldset.hbs",
+      "fieldsetColumns": "25-25-25-25",
+      "items": [
+        {
+          "_template": "/form/input/TextInput.hbs",
+          "inputName": "test-text-field",
+          "label": "Test Text Field",
+          "placeholder": "Placeholder text",
+          "required": false
+        },
+        {
+          "_template": "/form/input/TextInput.hbs",
+          "inputName": "test-text-field",
+          "label": "Test Text Field",
+          "placeholder": "Placeholder text",
+          "required": false
+        },
+        {
+          "_template": "/form/input/TextInput.hbs",
+          "inputName": "test-text-field",
+          "label": "Test Text Field",
+          "placeholder": "Placeholder text",
+          "required": false
+        },
+        {
+          "_template": "/form/input/TextInput.hbs",
+          "inputName": "test-text-field",
+          "label": "Test Text Field",
+          "placeholder": "Placeholder text",
+          "required": false
+        }
+      ],
+      "legend": "25 / 25 / 25 / 25"
+    },
+    {
+      "_template": "/form/input/TextInput.hbs",
+      "inputName": "test-text-field",
+      "label": "Test Text Field",
+      "placeholder": "Placeholder text",
+      "required": true
+    },
+    {
+      "_template": "/form/input/EmailInput.hbs",
+      "inputName": "test-email-field",
+      "label": "Test Email Field",
+      "placeholder": "Email Address",
+      "required": true
+    },
+    {
+      "_template": "/form/input/PasswordInput.hbs",
+      "inputName": "test-password-field",
+      "label": "Test Password Field",
+      "required": true
+    },
+    {
+      "_template": "/form/input/PhoneNumberInput.hbs",
+      "inputName": "test-phone-field",
+      "label": "Test Phone Number Field",
+      "placeholder": "Phone Number"
+    },
+    {
+      "_template": "/form/input/TextArea.hbs",
+      "inputName": "text-long-field",
+      "label": "Text Long Field",
+      "placeholder": "Long Text Here",
+      "required": true
+    },
+    {
+      "_template": "/form/fieldset/Fieldset.hbs",
+      "items": [
+        {
+          "_template": "/form/input/RadioInput.hbs",
+          "inputName": "radio-buttons",
+          "inputValue": "radio-1",
+          "label": "Radio 1"
+        },
+        {
+          "_template": "/form/input/RadioInput.hbs",
+          "inputName": "radio-buttons",
+          "inputValue": "radio-2",
+          "label": "Radio 2",
+          "checked": true
+        },
+        {
+          "_template": "/form/input/RadioInput.hbs",
+          "inputName": "radio-buttons",
+          "inputValue": "radio-3",
+          "label": "Radio 3"
+        }
+      ],
+      "legend": "Radio Buttons"
+    },
+    {
+      "_template": "/form/fieldset/Fieldset.hbs",
+      "items": [
+        {
+          "_template": "/form/input/CheckboxInput.hbs",
+          "inputName": "checkboxes",
+          "inputValue": "checkbox-1",
+          "label": "Checkbox 1"
+        },
+        {
+          "_template": "/form/input/CheckboxInput.hbs",
+          "inputName": "checkboxes",
+          "inputValue": "checkbox-2",
+          "label": "Checkbox 2"
+        },
+        {
+          "_template": "/form/input/CheckboxInput.hbs",
+          "inputName": "checkboxes",
+          "inputValue": "checkbox-3",
+          "label": "Checkbox 3"
+        }
+      ],
+      "legend": "Checkboxes"
+    },
+    {
+      "_template": "/form/select/Select.hbs",
+      "label": "Dropdown",
+      "multiple": false,
+      "name": "dropdown",
+      "options": [
+        {
+          "_template": "/form/select/Option.hbs",
+          "label": "Dropdown 1",
+          "value": "dropdown-1"
+        },
+        {
+          "_template": "/form/select/Option.hbs",
+          "label": "Dropdown 2",
+          "value": "dropdown-2"
+        }
+      ],
+      "placeholder": "Select an item",
+      "required": true
+    },
+    {
+      "_template": "/form/fieldset/Fieldset.hbs",
+      "items": [
+        {
+          "_template": "/form/input/CheckboxInput.hbs",
+          "inputName": "terms",
+          "inputValue": "terms",
+          "label": "{{words([5,15])}}"
+        }
+      ]
+    },
+    {
+      "_template": "/form/input/FileInput.hbs",
+      "description": [
+        "{{html('Description Here')}}"
+      ],
+      "inputName": "upload-a-file",
+      "label": [
+        "{{html('Upload a file')}}"
+      ],
+      "labelPlainText": "Upload a file",
+      "multiple": false,
+      "required": false
+    },
+    {
+      "_include": "/form/input/CaptchaInput.json"
+    },
+    {
+      "_template": "/form/input/HiddenInput.hbs",
+      "inputName": "brightspot.form.id",
+      "inputValue": "hash-here"
+    }
+  ],
+  "submissionSuccess": false
+}

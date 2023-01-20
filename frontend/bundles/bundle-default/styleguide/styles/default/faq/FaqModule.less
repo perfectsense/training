@@ -1,0 +1,66 @@
+.FaqModule {
+  background-color: var(--color-module-background);
+
+  &[data-inverse-colors] {
+    --color-primary-text: var(--color-text-inverse);
+  }
+
+  &-container {
+    margin: 0 auto;
+    max-width: 800px;
+
+    &[data-list-header-position='side'] {
+      max-width: none;
+    }
+  }
+
+  &-description {
+    .description-1;
+    color: var(--color-primary-text);
+    margin-top: 20px;
+
+    ol {
+      list-style: decimal;
+      margin: 10px 0;
+      padding: 0 0 0 40px;
+      text-align: left;
+    }
+
+    ul {
+      list-style: disc;
+      margin: 10px 0;
+      padding: 0 0 0 40px;
+      text-align: left;
+    }
+  }
+
+  &-header {
+    color: var(--color-primary-text);
+    margin-bottom: 20px;
+    text-align: center;
+
+    [data-list-header-position="side"] & {
+      text-align: left;
+    }
+
+    @media @mq-md {
+      margin-bottom: 42px;
+    }
+  }
+
+  &-items {
+    > .FaqQuestion {
+      border-top: 2px solid rgba(0, 0, 0, 0.15);
+      color: var(--color-primary-text);
+
+      &:last-of-type {
+        border-bottom: 2px solid rgba(0, 0, 0, 0.15);
+      }
+    }
+  }
+
+  &-title {
+    &:extend(.list-title-1);
+    color: var(--color-primary-text);
+  }
+}

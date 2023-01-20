@@ -1,0 +1,6 @@
+{
+  "_template": "IframeModuleEnhancement.hbs",
+  "item": {
+    "_include": "/iframe/IframeModule.json"
+  }
+}

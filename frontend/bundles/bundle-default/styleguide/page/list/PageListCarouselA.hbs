@@ -1,0 +1,42 @@
+{{#if items}}
+<bsp-listcarousel class="PageListCarouselA" data-module{{include "includes/PageList-attributes.hbs" this}}>
+    {{include "includes/PageList-header.hbs" this}}
+
+    {{#with items}}
+        <div class="PageList-items">
+            {{#each this}}
+                <div class="PageList-items-item">
+                    {{#set lazyLoad=false}}
+                        {{#eq ../../listColumns234 "2"}}
+                            {{#eq this._template "/page/promo/PagePromo.hbs"}}
+                                {{#if ../../hideImages}}
+                                    {{#set imageSize="large-16x9"}}
+                                        {{include "/page/promo/PagePromo.hbs" this media=null imagePositionVertical="top"}}
+                                    {{/set}}
+                                {{else}}
+                                    {{#set imageSize="large-16x9"}}
+                                        {{include "/page/promo/PagePromo.hbs" this imagePositionVertical="top"}}
+                                    {{/set}}
+                                {{/if}}
+                            {{else}}
+                                {{render this}}
+                            {{/eq}}
+                        {{else}}
+                            {{#eq this._template "/page/promo/PagePromo.hbs"}}
+                                {{#if ../../hideImages}}
+                                    {{include "/page/promo/PagePromo.hbs" this media=null imagePositionVertical="top"}}
+                                {{else}}
+                                    {{include "/page/promo/PagePromo.hbs" this imagePositionVertical="top"}}
+                                {{/if}}
+                            {{else}}
+                                {{render this}}
+                            {{/eq}}
+                        {{/eq}}
+                    {{/set}}
+                </div>
+            {{/each}}
+        </div>
+    {{/with}}
+    {{include "includes/PageList-footer.hbs" this}}
+</bsp-listcarousel>
+{{/if}}

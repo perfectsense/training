@@ -31,5 +31,11 @@
   },
   {
     "_template": "/twitter/intent/TwitterTweetButton.hbs"
+  },
+  {
+    "_template": "/twitter/intent/TwitterTweetButton.hbs"
+  },
+  {
+    "_include": "/link/CopyLink.json"
   }
 ]

@@ -1,0 +1,29 @@
+.FourColumnContainer {
+  background-color: var(--color-container-background);
+
+  &-column {
+    margin-bottom: 40px;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+
+  @media @mq-md {
+    &-container {
+      display: grid;
+      grid-gap: 20px;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    &-column {
+      margin-bottom: 0;
+    }
+  }
+
+  @media @mq-lg {
+    &-container {
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+  }
+}

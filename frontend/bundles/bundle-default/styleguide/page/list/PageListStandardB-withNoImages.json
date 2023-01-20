@@ -1,0 +1,5 @@
+{
+  "_include": "/page/list/PageListStandardB.json",
+  "title": "Standard List B - no Images",
+  "hideImages": true
+}

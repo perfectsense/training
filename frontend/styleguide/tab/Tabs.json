@@ -7,6 +7,7 @@
     "_include": "/_group/RichTextElementsSmall.json",
     "_key": 1
   },
+  "anchorId": "anchorTest",
   "tabs": [
     {
       "_include": "TabItem.json"

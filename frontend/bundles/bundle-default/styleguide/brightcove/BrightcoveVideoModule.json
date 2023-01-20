@@ -1,0 +1,7 @@
+{
+  "_template": "/video/VideoModule.hbs",
+  "title": "Lorium Epsom Test video title",
+  "player": {
+    "_include": "/brightcove/BrightcoveVideoPlayer.json"
+  }
+}

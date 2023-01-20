@@ -1,5 +1,0 @@
-{
-  "_include": "/page/promo/PagePromo.json",
-  "_template": "/page/promo/PagePromo.hbs",
-  "_styledTemplate": "/page/promo/PagePromoA.hbs"
-}

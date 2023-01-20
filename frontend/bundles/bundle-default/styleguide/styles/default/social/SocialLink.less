@@ -1,0 +1,45 @@
+// Here we deal with the styling of all our social links. The plain "SocialLink"
+// is used in the navigation, footer and the author page.
+
+// The action bar icons are called "ActionLink" and live in /action-bar
+// This CSS is the same, but it is here because so many sites treat these with a different look
+
+.SocialLink {
+  align-items: center;
+  border: 1px solid var(--color-primary-text);
+  border-radius: 50%;
+  display: flex;
+  height: 30px;
+  justify-content: center;
+  position: relative;
+  width: 30px;
+
+  svg {
+    align-items: center;
+    border: 0;
+    fill: var(--color-primary-text);
+    height: 17px;
+    width: 17px;
+  }
+
+  span {
+    .sr-only;
+  }
+
+  &:hover {
+    border: 1px solid var(--color-link-text-hover);
+    cursor: pointer;
+
+    svg {
+      fill: var(--color-link-text-hover);
+    }
+  }
+
+  // this one svg needs some special treatment. TODO: get a better SVG that does not
+  &[data-social-service='linkedin'] {
+    svg {
+      height: 14px;
+      width: 14px;
+    }
+  }
+}

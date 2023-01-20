@@ -1,16 +1,16 @@
 {
   "_template": "GallerySlide.hbs",
-  "mediaContent": {
+  "media": {
     "_include": "/image/Image.json"
   },
-  "infoTitle": {
+  "title": {
     "_include": "/_group/RichTextElementsTiny.json"
   },
-  "infoDescription": {
+  "caption": {
     "_include": "/_group/RichTextElementsSmall.json",
     "_key": 1
   },
-  "infoAttribution": {
+  "credit": {
     "_include": "/_group/RichTextElementsSmall.json",
     "_key": 1
   },

@@ -1,0 +1,23 @@
+.Figure {
+  p {
+    margin: 0;
+  }
+
+  &-caption,
+  &-credit {
+    display: inline;
+    margin-right: 5px;
+  }
+
+  &-caption {
+    &:extend(.caption-1 all);
+  }
+
+  &-content {
+    margin-top: 10px;
+  }
+
+  &-credit {
+    &:extend(.credit-1 all);
+  }
+}

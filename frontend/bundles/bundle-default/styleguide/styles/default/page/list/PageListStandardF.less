@@ -1,0 +1,37 @@
+.PageListStandardF {
+  .PageList {
+    &-cta {
+      .Button {
+        margin-top: 20px;
+      }
+    }
+
+    &-items {
+      margin-top: 20px;
+
+      &-item {
+        border-top: 2px solid var(--color-list-border);
+        margin-bottom: 20px;
+        padding-top: 20px;
+      }
+    }
+  }
+
+  .PagePromo {
+    &-description {
+      &:extend(.description-2 all);
+    }
+
+    &-title {
+      &:extend(.promo-title-4 all);
+    }
+  }
+
+  @media @mq-lg {
+    .PageList {
+      &-items {
+        margin-top: 0;
+      }
+    }
+  }
+}

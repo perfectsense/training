@@ -16,8 +16,6 @@
   "description": {
     "_include": "/_group/RichTextElementsTiny.json"
   },
-  "downloadLink": "http://example.com",
-  "downloadSize": "5 MB",
   "newsletterDataSource": "",
   "newsletterDataMedium": "",
   "newsletterDataCampaign": "",

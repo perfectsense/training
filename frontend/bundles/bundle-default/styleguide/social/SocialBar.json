@@ -1,0 +1,52 @@
+{
+  "_template": "SocialBar.hbs",
+  "items": [
+    {
+      "_template": "/social/SocialLink.hbs",
+      "href": "https://www.facebook.com/BrightspotCMS/",
+      "socialService": "facebook"
+    },
+    {
+      "_template": "/social/SocialLink.hbs",
+      "href": "https://twitter.com/TeamBrightspot",
+      "socialService": "twitter",
+      "body": "TeamBrightspot"
+    },
+    {
+      "_template": "/social/SocialLink.hbs",
+      "href": "https://www.linkedin.com/company/brightspot",
+      "socialService": "linkedin",
+      "body": "brightspot"
+    },
+    {
+      "_template": "/social/SocialLink.hbs",
+      "href": "#",
+      "socialService": "instagram",
+      "body": "brightspot"
+    },
+    {
+      "_template": "/social/SocialLink.hbs",
+      "href": "#",
+      "socialService": "tiktok",
+      "body": "brightspot"
+    },
+    {
+      "_template": "/social/SocialLink.hbs",
+      "href": "#",
+      "socialService": "pinterest",
+      "body": "brightspot"
+    },
+    {
+      "_template": "/social/SocialLink.hbs",
+      "href": "#",
+      "socialService": "tumblr",
+      "body": "brightspot"
+    },
+    {
+      "_template": "/social/SocialLink.hbs",
+      "href": "mailto:#",
+      "socialService": "mailto",
+      "body": "brightspot"
+    }
+  ]
+}

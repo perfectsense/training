@@ -1,0 +1,18 @@
+<div class="FaqModule" data-module {{include "includes/Faq-attributes.hbs" this}}>
+    <div class="FaqModule-container" {{~#with listHeaderPosition}} data-list-header-position="{{this}}"{{/with~}}>
+        {{#or title description}}
+        <div class="FaqModule-header">
+            {{#with title}}<div class="FaqModule-title">{{this}}</div>{{/with}}
+            {{#with description}}<div class="FaqModule-description">{{this}}</div>{{/with}}
+        </div>
+        {{/or}}
+
+        <div class="FaqModule-items">
+            {{~#each items~}}
+            {{~this~}}
+            {{~/each~}}
+        </div>
+    </div>
+</div>
+{{~#with jsonLinkedData}}
+<script type="application/ld+json">{{this}}</script>{{/with~}}

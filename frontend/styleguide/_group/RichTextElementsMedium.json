@@ -1,7 +1,7 @@
 [
   "Enhancement",
   {
-    "_template": "/adsense/GoogleAdsenseAdModule.hbs"
+    "_template": "/ad/AdRichTextElement.hbs"
   },
   {
     "_template": "/carousel/CarouselEnhancement.hbs"
@@ -13,7 +13,7 @@
     "_template": "/image/ImageEnhancement.hbs"
   },
   {
-    "_template": "/link/Link.hbs"
+    "_template": "/link/LinkEnhancement.hbs"
   },
   {
     "_template": "/page/list/PageListEnhancement.hbs"
@@ -31,10 +31,7 @@
     "_template": "/video/VideoEnhancement.hbs"
   },
   {
-    "_template": "/video/PlaylistEnhancement.hbs"
-  },
-  {
-    "_template": "/dfp/GoogleDfpAdModule.hbs"
+    "_template": "/video/VideoPlaylistEnhancement.hbs"
   },
   {
     "_template": "/attachment/AttachmentEnhancement.hbs"
@@ -43,12 +40,9 @@
     "_template": "/text/RichTextHeading.hbs"
   },
   {
-    "_template": "/htmlmodule/HtmlModule.hbs"
+    "_template": "/htmlmodule/HtmlModuleEnhancement.hbs"
   },
   {
-    "_template": "/iframe/IframeModule.hbs"
-  },
-  {
-    "_template": "/page/list/PageList.hbs"
+    "_template": "/iframe/IframeModuleEnhancement.hbs"
   }
 ]

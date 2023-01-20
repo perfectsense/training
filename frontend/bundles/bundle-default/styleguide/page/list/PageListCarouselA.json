@@ -1,0 +1,13 @@
+{
+  "_template": "/page/list/PageList.hbs",
+  "_styledTemplate": "/page/list/PageListCarouselA.hbs",
+  "title": "Carousel List A",
+  "ctaUrl": "#",
+  "ctaTarget": "_self",
+  "items": [
+    {
+      "_include": "/page/promo/PagePromo.json",
+      "_repeat": 10
+    }
+  ]
+}

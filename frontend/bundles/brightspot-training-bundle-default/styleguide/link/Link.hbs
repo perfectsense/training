@@ -1,6 +1,0 @@
-{{~#if href~}}
-<a class="{{#with className}}{{this}}{{else}}Link{{/with}}" {{#with aria-label}}aria-label="{{this}}"{{/with}} href="{{href}}" {{#with target}} target="{{this}}" {{/with}} {{#with role}} role="{{this}}"
-    {{/with}} {{#with tabIndex}} tabIndex="{{this}}" {{/with}}>{{body}}</a>
-{{~else~}}
-<span class="{{#with className}}{{this}}{{else}}Link{{/with}}">{{body}}</span>
-{{~/if~}}

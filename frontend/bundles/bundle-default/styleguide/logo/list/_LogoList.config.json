@@ -1,0 +1,33 @@
+{
+  "styles": {
+    "/logo/list/LogoList.hbs": {
+      "fields": [
+        "listTitleSize",
+        "listDescriptionSize"
+      ],
+      "templates": [
+        {
+          "displayName": "Logo List A",
+          "example": "/logo/list/LogoListA.json",
+          "height": 800,
+          "width": 1024,
+          "fields": [
+            "backgroundColor",
+            "inverseColors"
+          ]
+        },
+        {
+          "displayName": "Logo List B",
+          "example": "/logo/list/LogoListB.json",
+          "height": 800,
+          "width": 1024,
+          "fields": [
+            "backgroundColor",
+            "inverseColors",
+            "listHeaderPosition"
+          ]
+        }
+      ]
+    }
+  }
+}

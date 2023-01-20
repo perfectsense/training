@@ -1,0 +1,37 @@
+{
+  "styles": {
+    "/page/PageHeading.hbs": {
+      "fields": [
+        "pageHeadingSize",
+        "pageSubHeadingSize"
+      ],
+      "templates": [
+        {
+          "displayName": "Page Heading Default",
+          "example": "/page/PageHeading.json",
+          "height": 800,
+          "width": 1024,
+          "fields": [
+            "headingBgColor",
+            "headingTextColor",
+            "headingTextAlign",
+            "opacityOverlay"
+          ]
+        },
+        {
+          "displayName": "Page Heading with Video background",
+          "example": "/page/PageHeadingVideo.json",
+          "height": 800,
+          "width": 1024,
+          "fields": [
+            "headingTextColor",
+            "headingTextAlign",
+            "backgroundVideo",
+            "fullScreenVideo",
+            "animateOnScroll"
+          ]
+        }
+      ]
+    }
+  }
+}

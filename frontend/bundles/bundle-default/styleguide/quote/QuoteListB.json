@@ -1,0 +1,17 @@
+{
+  "_template": "/quote/QuoteList.hbs",
+  "_styledTemplate": "/quote/QuoteListB.hbs",
+  "title": "Quote List B",
+  "anchorId": "anchorTest",
+  "items": [
+    {
+      "_include": "/quote/Quote.json"
+    },
+    {
+      "_include": "/quote/Quote.json"
+    },
+    {
+      "_include": "/quote/Quote.json"
+    }
+  ]
+}

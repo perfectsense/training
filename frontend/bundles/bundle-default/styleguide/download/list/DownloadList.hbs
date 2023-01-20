@@ -1,0 +1,15 @@
+{{#if items}}
+<div class="DownloadList" data-module{{include "/page/list/includes/PageList-attributes.hbs" this}}>
+    {{include "/page/list/includes/PageList-header.hbs" this}}
+
+    <div class="DownloadList-items">
+        {{#each items}}
+            <div class="DownloadList-items-item">
+                {{this}}
+            </div>
+        {{/each}}
+    </div>
+
+    {{include "/page/list/includes/PageList-footer.hbs" this}}
+</div>
+{{/if}}

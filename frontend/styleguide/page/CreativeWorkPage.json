@@ -12,22 +12,23 @@
   "subHeadline": {
     "_include": "/_group/RichTextElementsTiny.json"
   },
-  "authorUrl": "#",
-  "authorImage": {
-    "_image": true
+  "authors": [
+    {
+      "_include": "/author/Author.json"
+    }
+  ],
+  "source": "Source",
+
+  "sponsored": true,
+  "sponsorLogo": {
+    "_include": "/image/Image.json"
   },
-  "authorName": {
+  "sponsorUrl": "#",
+  "sponsorTarget": "",
+  "sponsorName": {
     "_include": "/_group/RichTextElementsTiny.json"
   },
-  "authorBiography": {
-    "_include": "/_group/RichTextElementsMedium.json"
-  },
-  "contributors": {
-    "_include": "/link/Link.json"
-  },
-  "people": {
-    "_include": "/page/promo/PagePromo.json"
-  },
-  "source": "Source",
+  "sponsorMeaningUrl": "#",
+  "sponsorMeaningTarget": "",
   "_hidden": true
 }

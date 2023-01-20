@@ -1,0 +1,41 @@
+<table class="NewsletterPromo">
+    <tr>
+        <td class="NewsletterPromo-media">
+            <a class="Link" href="{{url}}" target="_blank">
+                {{#each media}}
+                    {{#resize image "medium-4x3"}}
+                        <img class="Image" alt="{{../alt}}"
+                            {{~#with width}} width="{{this}}"{{/with~}}
+                            {{~#with height}} height="{{this}}"{{/with~}}
+                            src="{{src}}"
+                        >
+                    {{/resize}}
+                {{/each}}
+            </a>
+        </td>
+    </tr>
+    {{#with category}}
+    <tr>
+        <td class="NewsletterPromo-category">
+            {{this}}
+        </td>
+    </tr>
+    {{/with}}
+    <tr>
+        <td class="NewsletterPromo-title">
+            <a class="Link" href="{{url}}" target="_blank">{{title}}</a>
+        </td>
+    </tr>
+    {{#with description}}
+    <tr>
+        <td class="NewsletterPromo-description">
+            {{this}}
+        </td>
+    </tr>
+    {{/with}}
+    <tr>
+        <td class="NewsletterPromo-cta">
+            <a class="Button" href="{{url}}" target="_blank">{{format "ctaButtonText"}}</a>
+        </td>
+    </tr>
+</table>

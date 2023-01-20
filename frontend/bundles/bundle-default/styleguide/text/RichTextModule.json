@@ -1,0 +1,15 @@
+{
+  "_template": "RichTextModule.hbs",
+  "title": "{{words}}",
+  "items": [
+    "{{paragraphs([2,3])}}",
+    {
+      "_template": "/image/ImageEnhancement.hbs",
+      "enhancementAlignmentImage": "align-left",
+      "item": {
+        "_include": "/figure/Figure.json"
+      }
+    },
+    "{{paragraphs([1,2])}}"
+  ]
+}

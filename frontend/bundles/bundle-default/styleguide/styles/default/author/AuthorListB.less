@@ -1,0 +1,58 @@
+.AuthorListB {
+  &-items {
+    width: calc(~'100% + 20px');
+
+    &-item {
+      margin-right: 20px;
+      width: calc(~'33.33% - 20px');
+    }
+  }
+
+  .AuthorPromo {
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+
+    .PagePromo {
+      &-media {
+        margin: 0 0 10px 0;
+        width: 100px;
+
+        img {
+          width: 100px;
+        }
+      }
+    }
+  }
+
+  @media @mq-md {
+    .AuthorPromo {
+      &-media {
+        margin: 0 0 20px 0;
+        width: 180px;
+
+        img {
+          width: 180px;
+        }
+      }
+    }
+  }
+
+  @media @mq-lg {
+    &-items {
+      &-item {
+        width: calc(~'25% - 20px');
+      }
+    }
+  }
+
+  @media @mq-xl {
+    &-items {
+      &-item {
+        [data-column-count='5'] & {
+          width: calc(~'20% - 20px');
+        }
+      }
+    }
+  }
+}

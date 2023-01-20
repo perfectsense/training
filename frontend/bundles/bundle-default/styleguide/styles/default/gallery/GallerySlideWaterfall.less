@@ -1,0 +1,38 @@
+.GallerySlideWaterfall {
+  &:extend(.GallerySlide all);
+
+  margin: 40px 0;
+  position: relative;
+
+  &-media {
+    height: auto;
+    padding-bottom: 0;
+
+    background: #333;
+    display: block;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+  }
+
+  &-fullScreenButton {
+    svg {
+      background: black;
+      border-radius: 70%;
+      height: 15px;
+      margin: 10px 10px 0 0;
+      position: absolute;
+      right: 0;
+      width: 15px;
+      z-index: 9;
+    }
+  }
+
+  img {
+    cursor: pointer;
+    left: 0;
+    position: relative;
+    top: 0;
+    transform: none;
+  }
+}

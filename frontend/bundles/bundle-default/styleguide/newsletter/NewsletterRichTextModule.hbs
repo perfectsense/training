@@ -1,0 +1,12 @@
+<table class="NewsletterRTM">
+    {{#with title}}
+    <tr>
+        <td class="NewsletterRTM-title">{{this}}</td>
+    </tr>
+    {{/with}}
+    <tr>
+        <td class="NewsletterRTM-content">
+            {{#each items}}{{this}}{{/each}}
+        </td>
+    </tr>
+</table>

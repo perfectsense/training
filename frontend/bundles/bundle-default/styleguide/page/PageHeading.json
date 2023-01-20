@@ -1,0 +1,13 @@
+{
+  "_template": "/page/PageHeading.hbs",
+
+  "eyebrow": "{{words([1,3])}}",
+  "eyebrowUrl": "#",
+  "eyebrowTarget": "_blank",
+  "pageHeading": "{{words([5,10])}}",
+  "pageSubHeading": "{{words([15,25])}}",
+  "logo": null,
+  "media": {
+    "_include": "/image/Image.json"
+  }
+}

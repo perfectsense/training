@@ -13,7 +13,6 @@
   ],
   "title": "Brightspot Express",
   "description": "Brightspot Express is...",
-  "keywords": "Brightspot, Brightspot Express",
   "canonicalLink": "https://www.brightspot.com/",
   "meta": {
     "_include": "/_group/Metas.json",
@@ -29,11 +28,12 @@
     "_include": "/_group/ExtraScripts.json",
     "_key": 0
   },
-  "stylePackage": {
-    "_include": "StylePackage.json"
-  },
   "extraBodyItems": {
     "_include": "/_group/ExtraBodyItems.json",
+    "_key": 0
+  },
+  "entitlements": {
+    "_include": "/_group/EntitlementProviders.json",
     "_key": 0
   },
   "hat": {
@@ -108,6 +108,13 @@
   },
   "actions": {
     "_include": "/action-bar/ActionBar.json"
+  },
+  "commenting": {
+    "_include": "/_group/Comments.json",
+    "_key": 0
+  },
+  "languages": {
+    "_include": "/languages/LanguagesMenu.json"
   },
   "_hidden": true
 }

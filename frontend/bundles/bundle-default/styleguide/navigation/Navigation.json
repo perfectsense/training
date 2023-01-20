@@ -1,0 +1,15 @@
+  {
+      "_template": "/navigation/Navigation.hbs",
+      "borderColor": "#cc00ff",
+      "items": [
+        {
+          "_include": "/navigation/NavigationItem.json"
+        },
+        {
+          "_include": "/navigation/NavigationItem.json"
+        },
+        {
+          "_include": "/navigation/NavigationItem.json"
+        }
+      ]
+  }

@@ -1,0 +1,54 @@
+.PageListStandardD {
+  .PageList {
+    &-items {
+      display: grid;
+      gap: 20px;
+
+      &-item {
+        border-bottom: 1px solid var(--color-list-border);
+        padding-bottom: 20px;
+
+        &:first-of-type {
+          border-top: 1px solid var(--color-list-border);
+          padding-top: 20px;
+        }
+      }
+    }
+  }
+
+  .PagePromo {
+    &-description {
+      &:extend(.description-2 all);
+    }
+
+    &-title {
+      &:extend(.promo-title-3 all);
+    }
+  }
+
+  @media @mq-md {
+    .PageList {
+      &-items {
+        gap: 30px;
+
+        &-item {
+          padding-bottom: 40px;
+
+          &:first-of-type {
+            padding-top: 30px;
+          }
+        }
+      }
+    }
+  }
+
+  @media @mq-hk {
+    .PageList {
+      &-items {
+        &-item {
+          padding-bottom: 30px;
+        }
+      }
+    }
+  }
+}

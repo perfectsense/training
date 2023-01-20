@@ -1,0 +1,21 @@
+{
+  "_template": "/page/CreativeWorkPage.hbs",
+  "_include": "/page/ContentPage.json",
+  "_hidden": true,
+  "authorUrl": "#",
+  "authorImage": {
+    "_image": true
+  },
+  "authorName": {
+    "_include": "/_group/RichTextElementsTiny.json"
+  },
+  "authorBiography": {
+    "_include": "/_group/RichTextElementsMedium.json"
+  },
+  "contributors": {
+    "_include": "/link/Link.json"
+  },
+  "people": {
+    "_include": "/page/promo/PagePromo.json"
+  }
+}

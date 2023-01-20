@@ -1,0 +1,55 @@
+.RadioInput {
+  --color-disabled: #dddddd;
+
+  svg {
+    color: var(--color-primary-text);
+    flex-shrink: 0;
+    height: 16px;
+    width: 16px;
+  }
+
+  input {
+    opacity: 0;
+    position: absolute;
+    z-index: -1;
+
+    ~.checked {
+      display: none;
+    }
+
+    ~.unchecked {
+      display: block;
+    }
+
+    &:checked {
+      ~.checked {
+        display: block;
+      }
+
+      ~.unchecked {
+        display: none;
+      }
+    }
+
+    &:disabled {
+      ~.checked {
+        display: none;
+      }
+
+      ~.unchecked {
+        color: var(--color-disabled);
+        display: block;
+      }
+    }
+  }
+
+  &-label {
+    display: flex;
+
+    span {
+      &:extend(.label-5 all);
+      font-weight: normal;
+      margin-left: 10px;
+    }
+  }
+}

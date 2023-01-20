@@ -1,5 +1,10 @@
 {
   "_template": "/page/PageHeading.hbs",
+  "ctaButtonText": {
+    "_include": "/_group/RichTextElementsTiny.json"
+  },
+  "ctaTarget": "_self",
+  "ctaUrl": "#",
   "eyebrow": {
     "_include": "/_group/RichTextElementsTiny.json"
   },
@@ -9,7 +14,7 @@
     "_include": "/_group/RichTextElementsTiny.json"
   },
   "pageSubHeading": {
-    "_include": "/_group/RichTextElementsTiny.json"
+    "_include": "/_group/RichTextElementsSmall.json"
   },
   "logo": {
     "_include": "/image/Image.json"

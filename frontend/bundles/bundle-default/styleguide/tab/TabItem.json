@@ -1,0 +1,8 @@
+{
+  "_template": "TabItem.hbs",
+  "title": "{{words([2,3])}}",
+  "id": "{{number([1,10])}}",
+  "content": {
+    "_include": "/page/promo/PagePromoModule.json"
+  }
+}

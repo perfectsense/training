@@ -1,0 +1,10 @@
+{
+    "_template": "GallerySlide.hbs",
+
+    "media": {
+        "_include": "/image/Image.json"
+    },
+    "title": "{{words([5,15])}}",
+    "caption": "{{words([15,25])}}",
+    "credit": "{{words([5,15])}}"
+}

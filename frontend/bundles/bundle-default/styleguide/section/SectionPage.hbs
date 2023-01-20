@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html class="SectionPage" {{~include "/page/Page-htmlAttributes.hbs" this}}>
+{{include "/page/Page-head.hbs" this}}
+
+<body class="Page-body">
+    {{include "/page/Page-header.hbs" this}}
+    {{include "/page/Page-above.hbs" this}}
+
+    <div class="Page-content" {{#unless sectionNavigation}}data-no-nav{{/unless}}>
+        {{#with pageLead}}
+            <div class="Page-pageLead" data-pagelead>{{this}}</div>
+        {{/with}}
+
+        {{#if sectionNavigation}}
+            {{include "/section/SectionNavigation.hbs" this}}
+        {{/if}}
+
+        {{#if aside}}
+                <div class="Page-twoColumn">
+                    <main class="Page-main">
+                    {{#each main}}
+                        {{render this [/page/list/PageList.hbs]="/page/list/PageListStandardD.hbs"}}
+                    {{/each}}
+                    </main>
+                    <aside class="Page-aside">
+                        {{aside}}
+                    </aside>
+                </div>
+        {{else}}
+            {{#with main}}
+                <main class="Page-oneColumn" data-modulewell>
+                    {{#each this}}
+                        {{render this [/page/list/PageList.hbs]="/page/list/PageListStandardD.hbs"}}
+                    {{/each}}
+                </main>
+            {{/with}}
+        {{/if}}
+    </div>
+    </div>
+
+    {{include "/page/Page-below.hbs" this dataClick="below"}}
+    {{include "/page/Page-footer.hbs" this}}
+    {{include "/page/Page-extraBodyItems.hbs" this}}
+</body>
+</html>

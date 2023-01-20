@@ -1,0 +1,28 @@
+{{~#with item~}}
+    <div class="Enhancement" {{#if ../enhancementAlignment}} data-{{../enhancementAlignment}}{{else}}data-align-center{{/if}}>
+        <div class="Enhancement-item">
+            {{!-- little goofy syntax because of the way set works --}}
+            {{#eq ../enhancementAlignment "align-fullWidth"}}
+                {{#set imageSize="xl-1440w-notfixed"}}
+                    {{this}}
+                {{/set}}
+            {{else}}
+                {{#eq ../enhancementAlignment "align-portrait-left"}}
+                    {{#set imageSize="medium-3x4"}}
+                        {{this}}
+                    {{/set}}
+                {{else}}
+                    {{#eq ../enhancementAlignment "align-portrait-right"}}
+                        {{#set imageSize="medium-3x4"}}
+                            {{this}}
+                        {{/set}}
+                    {{else}}
+                        {{#set imageSize="large-16x9"}}
+                            {{this}}
+                        {{/set}}
+                    {{/eq}}
+                {{/eq}}
+            {{/eq}}
+        </div>
+    </div>
+{{~/with~}}

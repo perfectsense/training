@@ -1,0 +1,9 @@
+{
+  "styles": {
+    "/navigation/Navigation.hbs": {
+      "fields": [
+        "navAlignment"
+      ]
+    }
+  }
+}

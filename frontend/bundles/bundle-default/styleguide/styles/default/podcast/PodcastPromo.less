@@ -1,0 +1,50 @@
+.PodcastPromo {
+  align-items: center;
+  background-color: #f9f9f9;
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: 80px 1fr;
+  padding: 30px 20px;
+
+  .PagePromo {
+    &-title {
+      &:extend(.promo-title-2);
+    }
+
+    &-description {
+      &:extend(.description-2);
+    }
+
+    &-ctaLink {
+      margin-top: 20px;
+    }
+  }
+
+  &-topRow {
+    grid-column-start: 2;
+  }
+
+  &-bottomRow {
+    grid-column-end: 3;
+    grid-column-start: 1;
+  }
+
+  .PodcastProviderList {
+    margin-top: 20px;
+  }
+
+  @media @mq-md {
+    align-items: start;
+    row-gap: 10px;
+
+    &-bottomRow {
+      grid-column-start: 2;
+    }
+
+    .PagePromo {
+      &-media {
+        grid-row: span 2;
+      }
+    }
+  }
+}

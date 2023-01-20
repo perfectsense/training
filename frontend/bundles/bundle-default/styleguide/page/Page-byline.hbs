@@ -1,0 +1,13 @@
+<div class="Page-byline">
+    {{~#if datePublished~}}
+        <div class="Page-datePublished">{{~datePublished~}}{{~#if authors~}}&nbsp;&bull;&nbsp;{{~/if~}}</div>
+    {{~/if~}}
+    {{~#with authors~}}
+    <div class="Page-authors">
+        {{~#each this~}}
+            {{~include '/link/Link.hbs' this body=name href=url~}}
+            {{~#and (lt @index (subtract ../this.length 1))}}, {{/and~}}
+        {{~/each~}}
+    </div>
+    {{~/with~}}
+</div>

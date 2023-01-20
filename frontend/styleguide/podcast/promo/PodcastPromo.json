@@ -1,0 +1,22 @@
+{
+  "_template": "/podcast/promo/PodcastPromo.hbs",
+  "category": {
+    "_include": "/_group/RichTextElementsTiny.json"
+  },
+  "categoryUrl": "#",
+  "media": {
+    "_include": "/image/Image.json"
+  },
+  "url": "#",
+  "target": "_self",
+  "title": {
+    "_include": "/_group/RichTextElementsTiny.json"
+  },
+  "description": {
+    "_include": "/_group/RichTextElementsTiny.json"
+  },
+  "providers": {
+    "_include": "/podcast/list/PodcastProviderList.json"
+  },
+  "ctaButtonText": "More about Podcast"
+}

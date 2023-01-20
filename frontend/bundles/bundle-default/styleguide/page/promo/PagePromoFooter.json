@@ -1,0 +1,9 @@
+{
+  "_template": "/page/promo/PagePromoModule.hbs",
+  "_styledTemplate": "/page/promo/PagePromoFooter.hbs",
+  "url": "#",
+  "target": "_self",
+  "title": "{{words([5,10])}}",
+  "description": "{{words([15,25])}}",
+  "ctaButtonText": "{{words(2)}}"
+}

@@ -1,0 +1,15 @@
+<div class="PodcastPromo">
+    {{#set imageSize="small-square"}}
+        {{include "/page/promo/includes/PagePromoMediaWithIcon.hbs" this}}
+    {{/set}}
+
+    <div class="PodcastPromo-topRow">
+        {{include "/page/promo/includes/PagePromoTitle.hbs" this}}
+    </div>
+
+    <div class="PodcastPromo-bottomRow">
+        {{include "/page/promo/includes/PagePromoDescription.hbs" this}}
+        {{#with providers}}{{this}}{{/with}}
+        {{include "/page/promo/includes/PagePromoCtaLink.hbs" this}}
+    </div>
+</div>

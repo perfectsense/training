@@ -14,5 +14,8 @@
       "_include": "Option.json"
     }
   ],
+  "description": {
+    "_include": "/_group/RichTextElementsTiny.json"
+  },
   "_hidden": true
 }

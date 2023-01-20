@@ -1,0 +1,18 @@
+<bsp-faq-question class="FaqQuestion" {{include "includes/Faq-attributes.hbs" this}} {{~#if expandItem}}
+    data-expanded{{/if~}}>
+    <div class="FaqQuestion-header" aria-role="button" role="button">
+        {{~#with question}}
+        <div class="FaqQuestion-title">
+            <span>{{~this~}}</span>
+            <svg class="icon">
+                <use xlink:href="#chevron-down"></use>
+            </svg>
+        </div>
+        {{~/with~}}
+    </div>
+    <div class="FaqQuestion-answer RichTextBody">
+        {{~#with answer~}}
+        {{~this~}}
+        {{~/with~}}
+    </div>
+</bsp-faq-question>

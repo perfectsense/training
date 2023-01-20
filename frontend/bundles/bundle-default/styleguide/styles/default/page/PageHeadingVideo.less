@@ -1,0 +1,130 @@
+.PageHeadingVideo {
+  background-size: cover;
+  color: var(--color-heading-text);
+  display: block;
+  --color-link-text: --color-heading-text;
+  --color-link-text-hover: --color-heading-text;
+  height: 400px;
+  position: relative;
+
+  &[data-full-screen-video] {
+    height: calc(~'100vh - var(--hatHeight) - var(--headerHeight)');
+    left: 0;
+    padding-bottom: 0;
+    position: absolute;
+    top: calc(~'var(--hatHeight) + var(--headerHeight)');
+    width: 100vw;
+
+    video {
+      height: 100%;
+      left: 0;
+      object-fit: cover;
+      position: absolute;
+      top: 0;
+      width: 100%;
+    }
+  }
+
+  &-content {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+    padding: 40px 20px 50px;
+    text-align: center;
+
+    &-wrapper {
+      height: 100%;
+      position: relative;
+      z-index: @z-index-base + 1;
+    }
+  }
+
+  .SocialBar {
+    padding-bottom: 10px;
+    padding-top: 20px;
+
+    &-items {
+      .SocialLink {
+        border-color: var(--color-heading-text);
+
+        svg {
+          fill: var(--color-heading-text);
+        }
+      }
+    }
+  }
+
+  video {
+    height: 100%;
+    left: 0;
+    object-fit: cover;
+    padding-bottom: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: @z-index-base;
+  }
+
+  @media @mq-md {
+    height: 0;
+    padding-bottom: 56.25%;
+
+    &-content {
+      margin: 0 auto;
+      max-width: 600px;
+      padding: 80px 0 90px;
+
+      &-wrapper {
+        border: 0;
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+      }
+    }
+  }
+
+  @media @mq-lg {
+    &-content {
+      max-width: 800px;
+    }
+
+    [data-text-align='left'] & {
+      &-content {
+        align-items: flex-start;
+        margin-left: 0;
+        padding-left: 50px;
+        text-align: left;
+      }
+    }
+
+    [data-text-align='right'] & {
+      &-content {
+        align-items: flex-end;
+        margin-right: 0;
+        padding-right: 50px;
+        text-align: right;
+      }
+    }
+  }
+
+  // custom media query. This is 1240px max content width + 60px of padding on the sides
+  @media only screen and (min-width: 1360px) {
+    [data-text-align='left'] & {
+      &-content {
+        max-width: none;
+        padding-left: calc(~'(100% - 1240px)/ 2');
+      }
+    }
+
+    [data-text-align='left'] & {
+      &-content {
+        max-width: none;
+        padding-right: calc(~'(100% - 1240px)/ 2');
+      }
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "styles": {
+    "/video/VideoPlaylistModule.hbs": {
+      "fields": [
+        "playlistBottom"
+      ],
+      "templates": [
+        {
+          "displayName": "Video Playlist Module",
+          "example": "/video/VideoPlaylistModule.json"
+        }
+      ]
+    }
+  }
+}

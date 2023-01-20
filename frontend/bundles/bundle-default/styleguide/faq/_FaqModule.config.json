@@ -1,0 +1,18 @@
+{
+  "styles": {
+    "/faq/FaqModule.hbs": {
+      "templates": [
+        {
+          "displayName": "FAQ Module",
+          "example": "/faq/FaqModule.json",
+          "height": 500,
+          "width": 800,
+          "fields": ["backgroundColor", "inverseColors", "listHeaderPosition"]
+        }
+      ]
+    },
+    "/faq/FaqQuestion.hbs": {
+      "fields": ["expandItem"]
+    }
+  }
+}

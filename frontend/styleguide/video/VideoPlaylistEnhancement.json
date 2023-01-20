@@ -1,0 +1,17 @@
+{
+  "_template": "/video/VideoPlaylistEnhancement.hbs",
+  "player": {
+    "_include": "/_group/VideoPlayers.json",
+    "_key": 0
+  },
+  "playlist": {
+    "_include": "/video/VideoPlaylistItem.json"
+  },
+  "thumbnail": {
+    "_include": "/image/Image.json"
+  },
+  "title": {
+    "_include": "/_group/RichTextElementsTiny.json"
+  },
+  "_hidden": true
+}

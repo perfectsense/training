@@ -1,0 +1,23 @@
+.LoadMore {
+  display: flex;
+  justify-content: center;
+
+  &-loading {
+    .loading-icon;
+    margin: 0 0 30px;
+  }
+
+  &:not([data-loading]) &-loading {
+    display: none;
+  }
+
+  &[data-loading] button {
+    display: none;
+  }
+
+  button {
+    &:extend(.Button all);
+    background-color: var(--color-primary);
+    border: 1px solid var(--color-primary);
+  }
+}

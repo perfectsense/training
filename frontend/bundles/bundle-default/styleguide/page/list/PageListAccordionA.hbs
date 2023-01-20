@@ -1,0 +1,39 @@
+{{#if items}}
+    <div class="PageListAccordionA" data-module {{include "includes/PageList-attributes.hbs" this}}>
+        {{include "includes/PageList-header.hbs" this}}
+
+        {{#with items}}
+            <div class="PageList-items">
+                {{#each this}}
+                    <div class="PageList-items-item">
+                        {{#eq this._template "/page/promo/PagePromo.hbs"}}
+                            <bsp-accordion class="PagePromo">
+                                <div class="PagePromo-header" data-accordion-header>
+                                    {{#if title}}
+                                        <div class="PagePromo-title">
+                                            {{include "/link/Link.hbs" href=url target=target body=title}}
+                                            <svg class="iconPlus">
+                                                <use xlink:href="#icon-plus"></use>
+                                            </svg>
+                                            <svg class="iconMinus">
+                                                <use xlink:href="#icon-minus"></use>
+                                            </svg>
+                                        </div>
+                                    {{/if}}
+                                </div>
+                                <div class="PagePromo-wrapper" data-accordion-body>
+                                    {{include "../promo/includes/PagePromoDescription.hbs" this}}
+                                    {{include "../promo/includes/PagePromoCtaLink.hbs" this ctaButtonText=(fallback ctaButtonText (format "/page/list/PageList" "ctaText"))}}
+                                </div>
+                            </bsp-accordion>
+                        {{else}}
+                            {{render this}}
+                        {{/eq}}
+                    </div>
+                {{/each}}
+            </div>
+        {{/with}}
+
+        {{include "includes/PageList-footer.hbs" this}}
+    </div>
+{{/if}}

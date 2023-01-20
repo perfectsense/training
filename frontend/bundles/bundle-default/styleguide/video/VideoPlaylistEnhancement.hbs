@@ -1,0 +1,32 @@
+<bsp-video-playlist-module data-module class="VideoPlaylistModule"
+    {{~#with fragmentUri}} fragment-uri="{{this}}"{{/with~}}
+    {{~#with fragmentParams}} fragment-params="{{this}}"{{/with~}}
+    {{~#gt playlist.length 3}} data-clipped{{/gt~}}>
+    {{#or title description}}
+        <div class="VideoPlaylistModule-header">
+            {{#with title}}
+                <div class="VideoPlaylistModule-title">{{this}}</div>
+            {{/with}}
+            {{#with description}}
+                <div class="VideoPlaylistModule-description">{{this}}</div>
+            {{/with}}
+        </div>
+    {{/or}}
+    <div class="VideoPlaylistModule-body">
+        {{#with player}}
+            <div class="VideoPlaylistModule-player">{{this}}</div>
+        {{/with}}
+        {{#with playlist}}
+            <div class="VideoPlaylistModule-playlist">
+                <div class="VideoPlaylistModule-playlist-items">
+                    {{#each this}}
+                        <div class="VideoPlaylistModule-playlist-items-item">
+                            {{include "/video/VideoPlaylistItem.hbs" this isCurrent=(eq @index 0)}}
+                        </div>
+                    {{/each}}
+                </div>
+                <button class="VideoPlaylistModule-playlistToggle" data-click="toggleExpand">{{format "/video/VideoPlayer" "loadMoreText"}}</button>
+            </div>
+        {{/with}}
+    </div>
+</bsp-video-playlist-module>

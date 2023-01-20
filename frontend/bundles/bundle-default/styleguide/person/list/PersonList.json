@@ -1,0 +1,11 @@
+{
+  "_template": "/person/list/PersonList.hbs",
+  "title": "Person List A",
+  "anchorId": "anchorTest",
+  "items": [
+    {
+      "_include": "/person/promo/PersonPromo.json",
+      "_repeat": 10
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "_template": "/video/VideoModule.hbs",
+  "title": "YouTube Video Module",
+  "description": "{{words(20)}}",
+  "player": {
+    "_include": "/youtube/YouTubeVideoPlayer.json"
+  }
+}

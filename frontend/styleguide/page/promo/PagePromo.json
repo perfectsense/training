@@ -21,8 +21,14 @@
     "_include": "/_group/RichTextElementsTiny.json"
   },
   "description": {
-    "_include": "/_group/RichTextElementsTiny.json"
+    "_include": "/_group/RichTextElementsSmall.json"
   },
   "publishDate": "",
+  "sponsored": true,
+  "sponsorUrl": "#",
+  "sponsorTarget": "",
+  "sponsorName": {
+    "_include": "/_group/RichTextElementsTiny.json"
+  },
   "_hidden": true
 }

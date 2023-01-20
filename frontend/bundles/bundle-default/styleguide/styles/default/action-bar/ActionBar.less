@@ -1,0 +1,67 @@
+// Action Bar is used for sharing and actions on content. The "Find us on" bar in the footer is called the Social Bar and is located in /social.
+
+.ActionBar {
+  position: relative;
+
+  &-items {
+    display: grid;
+    grid-auto-flow: column;
+    grid-gap: 5px;
+    grid-template-columns: repeat(auto-fit, 30px);
+    list-style: none;
+
+    [data-social-service='facebook'] {
+      background: #4c67a1;
+      border: none;
+
+      svg {
+        height: 12px;
+        width: 7px;
+      }
+    }
+
+    [data-social-service='linkedin'] {
+      background: #0077b5;
+      border: none;
+
+      svg {
+        height: 12px;
+        width: 7px;
+      }
+    }
+
+    [data-social-service='mailto'],
+    [data-social-service='print'] {
+      svg {
+        width: 18px;
+      }
+    }
+
+    [data-social-service='pinterest'] {
+      border: none;
+
+      svg {
+        height: 30px;
+        width: 30px;
+      }
+    }
+
+    [data-social-service='twitter'] {
+      border: none;
+
+      svg {
+        height: 30px;
+        width: 30px;
+      }
+    }
+
+    [data-social-service='tumblr'] {
+      background: #35465c;
+      border: none;
+
+      svg {
+        fill: #fff;
+      }
+    }
+  }
+}

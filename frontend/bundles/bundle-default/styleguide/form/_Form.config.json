@@ -1,0 +1,11 @@
+{
+  "styles": {
+    "/form/Form.hbs": {
+      "fields": [
+        "backgroundColor",
+        "backgroundImage",
+        "inverseColors"
+      ]
+    }
+  }
+}

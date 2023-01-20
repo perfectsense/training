@@ -3,6 +3,7 @@
   "title": {
     "_include": "/_group/RichTextElementsTiny.json"
   },
+  "anchorId": "anchorTest",
   "items": {
     "_include": "/_group/RichTextElementsLarge.json",
     "_key": 0

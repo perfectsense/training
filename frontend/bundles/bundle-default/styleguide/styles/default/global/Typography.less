@@ -1,0 +1,324 @@
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  background: var(--color-site-bg);
+  color: var(--color-primary-text);
+  font-family: var(--font-1), Arial, Helvetica, sans-serif;
+  font-size: 1.8rem;
+  line-height: 1.2;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  margin: 0;
+}
+
+:root {
+  --page-title-1: 2.8rem;
+  --page-title-2: 2.6rem;
+
+  --list-title-1: 2.6rem;
+  --list-title-2: 2.2rem;
+  --list-title-3: 1.8rem;
+
+  --promo-title-1: 2.6rem;
+  --promo-title-2: 2.2rem;
+  --promo-title-3: 1.8rem;
+  --promo-title-4: 1.8rem;
+  --promo-title-5: 1.8rem;
+  --promo-title-6: 1.4rem;
+
+  --body-1: 1.6rem;
+
+  --subhead-1: 1.8rem;
+
+  --caption-1: 1.3rem;
+
+  --credit-1: 1.3rem;
+
+  --label-1: 1.3rem; // leaving this even though its not descending, as this is in the designs
+  --label-2: 1.6rem;
+  --label-3: 1.6rem;
+  --label-4: 1.6rem;
+  --label-5: 1.4rem;
+  --label-6: 1.2rem;
+
+  --description-1: 1.6rem;
+  --description-2: 1.4rem;
+  --description-3: 1.4rem;
+
+  --byline-1: 1.2rem;
+  --byline-2: 1.4rem;
+
+  --quote-1: 1.8rem;
+  --quote-2: 1.6rem;
+
+  --stat-1: 3.6rem;
+  --stat-2: 2.6rem;
+}
+
+@media @mq-md {
+  :root {
+    --page-title-1: 4.5rem;
+    --page-title-2: 3.6rem;
+
+    --list-title-1: 3.6rem;
+    --list-title-2: 2.4rem;
+
+    --promo-title-1: 3.6rem;
+    --promo-title-2: 2.4rem;
+
+    --subhead-1: 2.6rem;
+
+    --description-1: 1.8rem;
+
+    --quote-1: 2.8rem;
+
+    --stat-1: 4.8rem;
+    --stat-2: 3.6rem;
+  }
+}
+
+@media @mq-lg {
+  :root {
+    --page-title-1: 6.0rem;
+    --page-title-2: 4.5rem;
+
+    --list-title-1: 4.5rem;
+    --list-title-2: 3.2rem;
+    --list-title-3: 2.0rem;
+
+    --promo-title-1: 4.5rem;
+    --promo-title-2: 3.2rem;
+    --promo-title-3: 2.6rem;
+    --promo-title-4: 2.0rem;
+
+    --body-1: 1.8rem;
+
+    --subhead-1: 3.0rem;
+
+    --description-1: 2.0rem;
+    --description-2: 1.6rem;
+
+    --byline-2: 1.6rem;
+
+    --quote-1: 3.6rem;
+    --quote-2: 1.8rem;
+
+    --stat-1: 8.0rem;
+    --stat-2: 6.0rem;
+  }
+}
+
+
+.page-title-1 {
+  font-family: var(--font-1);
+  font-size: var(--page-title-1);
+  font-weight: bold;
+  letter-spacing: -0.5px;
+}
+
+.page-title-2 {
+  font-family: var(--font-1);
+  font-size: var(--page-title-2);
+  font-weight: bold;
+  letter-spacing: -0.5px;
+}
+
+.list-title-1 {
+  font-family: var(--font-1);
+  font-size: var(--list-title-1);
+  font-weight: bold;
+  letter-spacing: -0.5px;
+}
+
+.list-title-2 {
+  font-family: var(--font-1);
+  font-size: var(--list-title-2);
+  font-weight: bold;
+  letter-spacing: -0.5px;
+}
+
+.list-title-3 {
+  font-family: var(--font-1);
+  font-size: var(--list-title-3);
+  font-weight: bold;
+}
+
+.promo-title-1 {
+  font-family: var(--font-1);
+  font-size: var(--promo-title-1);
+  font-weight: bold;
+  letter-spacing: -0.5px;
+}
+
+.promo-title-2 {
+  font-family: var(--font-1);
+  font-size: var(--promo-title-2);
+  font-weight: bold;
+  letter-spacing: -0.5px;
+}
+
+.promo-title-3 {
+  font-family: var(--font-1);
+  font-size: var(--promo-title-3);
+  font-weight: bold;
+}
+
+.promo-title-4 {
+  font-family: var(--font-1);
+  font-size: var(--promo-title-4);
+  font-weight: bold;
+}
+
+.promo-title-5 {
+  font-family: var(--font-1);
+  font-size: var(--promo-title-5);
+  font-weight: bold;
+}
+
+.promo-title-6 {
+  font-family: var(--font-1);
+  font-size: var(--promo-title-6);
+  font-weight: bold;
+}
+
+
+
+.body-1 {
+  font-family: var(--font-1);
+  font-size: var(--body-1);
+  font-weight: 300;
+  line-height: 1.8;
+}
+
+
+
+.subhead-1 {
+  font-family: var(--font-1);
+  font-size: var(--subhead-1);
+  font-weight: 300;
+  line-height: 1.4;
+}
+
+
+
+.caption-1 {
+  font-family: var(--font-1);
+  font-size: var(--caption-1);
+  font-weight: 300;
+}
+
+
+
+.credit-1 {
+  font-family: var(--font-1);
+  font-size: var(--credit-1);
+  font-style: italic;
+  font-weight: 300;
+}
+
+
+
+.label-1 {
+  font-family: var(--font-1);
+  font-size: var(--label-1);
+  font-weight: bold;
+}
+
+.label-2 {
+  font-family: var(--font-1);
+  font-size: var(--label-2);
+  font-weight: bold;
+}
+
+.label-3 {
+  font-family: var(--font-1);
+  font-size: var(--label-3);
+  font-weight: bold;
+}
+
+.label-4 {
+  font-family: var(--font-1);
+  font-size: var(--label-4);
+}
+
+.label-5 {
+  font-family: var(--font-1);
+  font-size: var(--label-5);
+  font-weight: bold;
+}
+
+.label-6 {
+  font-family: var(--font-1);
+  font-size: var(--label-6);
+  font-weight: bold;
+}
+
+
+
+.description-1 {
+  font-family: var(--font-1);
+  font-size: var(--description-1);
+  font-weight: normal;
+  line-height: 1.4;
+}
+
+.description-2 {
+  font-family: var(--font-1);
+  font-size: var(--description-2);
+  font-weight: normal;
+}
+
+.description-3 {
+  font-family: var(--font-1);
+  font-size: var(--description-3);
+  font-weight: normal;
+}
+
+
+
+.byline-1 {
+  font-family: var(--font-1);
+  font-size: var(--byline-1);
+}
+
+.byline-2 {
+  font-family: var(--font-1);
+  font-size: var(--byline-2);
+}
+
+
+
+.quote-1 {
+  font-family: var(--font-2);
+  font-size: var(--quote-1);
+  line-height: 1.4;
+}
+
+.quote-2 {
+  font-family: var(--font-2);
+  font-size: var(--quote-2);
+  font-weight: 300;
+  line-height: 1.8;
+}
+
+.stat-1 {
+  font-family: var(--font-1);
+  font-size: var(--stat-1);
+  font-weight: bold;
+  letter-spacing: -0.5px;
+  line-height: 1.2;
+}
+
+.stat-2 {
+  font-family: var(--font-1);
+  font-size: var(--stat-2);
+  font-weight: bold;
+  letter-spacing: -0.5px;
+  line-height: 1.2;
+}

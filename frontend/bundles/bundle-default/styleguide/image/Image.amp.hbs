@@ -1,0 +1,7 @@
+{{#resize image (fallback (get "imageSize") "large-16x9")}}
+    <amp-img class="Image" alt="{{../alt}}" src="{{src}}"
+        {{~#with srcset}} srcset="{{this}}"{{/with~}}
+        width="{{~#with width}}{{this}}{{/with~}}"
+        height="{{~#with height}}{{this}}{{/with~}}"
+             layout="responsive"></amp-img>
+{{/resize}}

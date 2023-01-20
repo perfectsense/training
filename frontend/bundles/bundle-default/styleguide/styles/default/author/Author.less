@@ -1,0 +1,50 @@
+.Author {
+  background: var(--color-callout-bg);
+  padding: 20px;
+  position: relative;
+
+  &-image {
+    img {
+      border-radius: 100%;
+      flex-shrink: 0;
+      margin-bottom: 20px;
+      margin-right: 20px;
+      width: 80px;
+    }
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  &-name {
+    &:extend(.promo-title-2 all);
+
+    a {
+      --color-link-text: var(--color-primary-text);
+      --color-link-text-hover: var(--color-primary-text);
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    left: 120px;
+    position: absolute;
+    top: 47px;
+  }
+
+  @media @mq-md {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: 80px 1fr;
+    padding: 30px;
+
+    &-name {
+      margin-bottom: 20px;
+      position: relative;
+      left: 0;
+      top: 0;
+    }
+  }
+}

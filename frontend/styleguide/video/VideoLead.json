@@ -8,7 +8,7 @@
     "_key": 1
   },
   "player": {
-    "_include": "/_group/Videos.json",
+    "_include": "/_group/VideoPlayers.json",
     "_key": 0
   },
   "duration": "1 min",

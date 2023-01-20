@@ -1,0 +1,39 @@
+.StatPromo {
+  display: grid;
+  grid-gap: 10px;
+  text-align: center;
+
+  &-description {
+    &:extend(.description-3 all);
+
+    font-weight: bold;
+
+    [data-inverse-colors] & {
+      color: var(--color-text-inverse);
+      --color-link-text: var(--color-text-inverse);
+      --color-link-text-hover: var(--color-text-inverse);
+    }
+  }
+
+  &-title {
+    &:extend(.promo-title-6 all);
+
+    [data-inverse-colors] & {
+      color: var(--color-text-inverse);
+    }
+  }
+
+  &-value {
+    &:extend(.stat-2);
+
+    [data-inverse-colors] & {
+      color: var(--color-text-inverse);
+    }
+  }
+
+  @media @mq-lg {
+    &-value {
+      font-size: 45px;
+    }
+  }
+}

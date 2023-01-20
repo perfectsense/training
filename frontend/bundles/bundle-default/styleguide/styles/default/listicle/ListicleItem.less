@@ -1,0 +1,40 @@
+.ListicleItem {
+  &-index {
+    &:extend(.promo-title-1 all);
+
+    padding: 30px 0;
+    position: relative;
+    z-index: 1;
+    text-align: center;
+
+    &:before {
+      border-top: 1px solid var(--color-border);
+      bottom: 0;
+      content: '';
+      margin: 0 auto;
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 50%;
+      width: 100%;
+      z-index: -1;
+    }
+
+    span {
+      padding: 0 20px;
+      background: #fff;
+    }
+  }
+
+  &-title {
+    &:extend(.promo-title-2 all);
+
+    margin-bottom: 30px;
+  }
+
+  @media @mq-md {
+    &-index {
+      padding: 40px 0;
+    }
+  }
+}

@@ -1,0 +1,9 @@
+:root {
+  --font-1: "Arial";
+  --font-2: "Times";
+}
+
+body {
+  --font-1: "{{#with font1}}{{this}}{{else}}Roboto{{/with}}";
+  --font-2: "{{#with font2}}{{this}}{{else}}Merriweather{{/with}}";
+}

@@ -1,0 +1,29 @@
+.TwoColumnContainer3070 {
+  background-color: var(--color-container-background);
+
+  &-column {
+    margin-bottom: 40px;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+
+  @media @mq-lg {
+    &-container {
+      display: grid;
+      grid-gap: 40px;
+      grid-template-columns: 320px 1fr;
+    }
+
+    &-column {
+      margin-bottom: 0;
+    }
+  }
+
+  @media @mq-hk {
+    &-container {
+      grid-template-columns: 320px 1fr;
+    }
+  }
+}

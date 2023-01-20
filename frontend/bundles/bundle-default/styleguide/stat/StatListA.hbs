@@ -1,0 +1,18 @@
+<{{#if countUpAnimation}}bsp-stat-list{{else}}div{{/if}} class="StatListA" data-module {{include "/page/list/includes/PageList-attributes.hbs" this}}>
+
+    {{#if items}}
+        <div class="StatListA-items" data-column-count="{{items.length}}">
+            {{#each items}}
+                <div class="StatListA-items-item">
+                    {{#if ../countUpAnimation}}
+                        {{include "/stat/StatPromo.hbs" this countUpAnimation=true}}
+                    {{else}}
+                        {{include "/stat/StatPromo.hbs" this}}
+                    {{/if}}
+                </div>
+            {{/each}}
+        </div>
+    {{/if}}
+
+    {{include "/page/list/includes/PageList-footer.hbs" this}}
+</{{#if countUpAnimation}}bsp-stat-list{{else}}div{{/if}}>

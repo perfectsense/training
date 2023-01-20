@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html ⚡ class="ArticlePage" {{~include "/page/Page-htmlAttributes.hbs" this}}>
+    {{include "/page/Page-head.amp.hbs" this}}
+
+    <body class="Page-body">
+        {{include "/page/Page-header.amp.hbs" this}}
+
+        <div class="Page-content">
+            <div class="Page-oneColumn">
+                <main class="Page-main">
+                    {{include "/page/Page-breadcrumbs.hbs" this}}
+
+                    {{include "/page/Page-headline.hbs" this}}
+
+                    {{include "/page/Page-subHeadline.hbs" this}}
+
+                    {{include "/page/Page-lead.hbs" this}}
+
+                    {{include "/page/Page-byline.hbs" this}}
+
+                    {{include "/page/Page-actions.hbs" this}}
+
+                    {{#with galleryBody}}
+                        <div class="Page-articleBody">
+                            {{#set imageSize="medium-4x3"}}
+                                {{this}}
+                            {{/set}}
+                        </div>
+                    {{/with}}
+
+                    <amp-carousel class="ArticlePage-slides" width="840" height="740" layout="responsive" type="slides">
+                        {{#each slides}}
+                            <div class="ArticlePage-slide">
+                                {{include "/gallery/GallerySlide.amp.hbs" this slideNumber=@index numberOfSlides=../slides.length}}
+                            </div>
+                        {{/each}}
+                    </amp-carousel>
+
+                    {{include "/page/Page-tags.hbs" this}}
+
+                    {{include "/page/Page-authorInfo.hbs" this}}
+                </main>
+
+                {{#if aside}}
+                    <aside class="Page-aside">
+                        {{aside}}
+                    </aside>
+                {{/if}}
+            </div>
+        </div>
+
+        {{include "/page/Page-below.amp.hbs" this}}
+        {{include "/page/Page-footer.amp.hbs" this}}
+
+        {{include "/page/Page-extraBodyItems.amp.hbs" this}}
+    </body>
+</html>

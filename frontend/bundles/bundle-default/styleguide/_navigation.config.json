@@ -1,0 +1,532 @@
+{
+  "navigation": [
+    {
+      "displayName": "Globals",
+      "pages": [
+        {
+          "displayName": "Colors",
+          "page": "/_resource/ColorsPage.json"
+        },
+        {
+          "displayName": "Buttons and Interactions",
+          "page": "/_resource/ButtonsPage.json"
+        },
+        {
+          "displayName": "Typography",
+          "page": "/_resource/TypographyPage.json"
+        },
+        {
+          "displayName": "Containers",
+          "page": "/container/Page-withAllContainers.json"
+        }
+      ]
+    },
+    {
+      "displayName": "Enhancements",
+      "pages": [
+        {
+          "displayName": "Attachment Enhancement",
+          "page": "/attachment/AttachmentEnhancement.json"
+        }
+      ]
+    },
+    {
+      "displayName": "Forms",
+      "pages": [
+        {
+          "displayName": "Form",
+          "page": "/form/Form.json"
+        },
+        {
+          "displayName": "Form with Background",
+          "page": "/form/Form-background.json"
+        },
+        {
+          "displayName": "Form with Background Image",
+          "page": "/form/Form-background-image.json"
+        }
+      ]
+    },
+    {
+      "displayName": "FAQ",
+      "pages": [
+        {
+          "displayName": "FAQ Module",
+          "page": "/faq/FaqModule.json"
+        }
+      ]
+    },
+    {
+      "displayName": "Lists - Accordion",
+      "pages": [
+        {
+          "displayName": "Accordion List A",
+          "page": "/page/list/PageListAccordionA.json"
+        }
+      ]
+    },
+    {
+      "displayName": "Lists - Download",
+      "pages": [
+        {
+          "displayName": "Download Promo List",
+          "page": "/download/list/DownloadList.json"
+        }
+      ]
+    },
+    {
+      "displayName": "Lists - Author",
+      "pages": [
+        {
+          "displayName": "Author List A",
+          "page": "/author/list/AuthorListA.json"
+        },
+        {
+          "displayName": "Author List B",
+          "page": "/author/list/AuthorListB.json"
+        },
+        {
+          "displayName": "Author List B  - 4 column",
+          "page": "/author/list/AuthorListB-4column.json"
+        }
+      ]
+    },
+    {
+      "displayName": "Lists - Carousel",
+      "pages": [
+        {
+          "displayName": "Page with Carousel Lists",
+          "page": "/page/list/Page-withCarouselLists.json"
+        },
+        {
+          "displayName": "Carousel List A",
+          "page": "/page/list/PageListCarouselA.json"
+        },
+        {
+          "displayName": "Carousel List B",
+          "page": "/page/list/PageListCarouselB.json"
+        },
+        {
+          "displayName": "Carousel List C",
+          "page": "/page/list/PageListCarouselC.json"
+        },
+        {
+          "displayName": "Carousel List D",
+          "page": "/page/list/PageListCarouselD.json"
+        },
+        {
+          "displayName": "Carousel List E",
+          "page": "/page/list/PageListCarouselE.json"
+        },
+        {
+          "displayName": "Carousel List E - Image Position Left",
+          "page": "/page/list/PageListCarouselE-imagePositionLeft.json"
+        },
+        {
+          "displayName": "Carousel List E - Image Position Right",
+          "page": "/page/list/PageListCarouselE-imagePositionRight.json"
+        }
+      ]
+    },
+    {
+      "displayName": "Lists - Logo",
+      "pages": [
+        {
+          "displayName": "Logo List A",
+          "page": "/logo/list/LogoListA.json"
+        },
+        {
+          "displayName": "Logo List B",
+          "page": "/logo/list/LogoListB.json"
+        },
+        {
+          "displayName": "Logo List B - Header on Side",
+          "page": "/logo/list/LogoListB-headerOnSide.json"
+        }
+      ]
+    },
+    {
+      "displayName": "Lists - Right Rail",
+      "pages": [
+        {
+          "displayName": "Page with Right Rail Lists",
+          "page": "/page/list/Page-withRRLists.json"
+        },
+        {
+          "displayName": "Right Rail List A",
+          "page": "/page/list/PageListRightRailA.json"
+        },
+        {
+          "displayName": "Right Rail List B",
+          "page": "/page/list/PageListRightRailB.json"
+        },
+        {
+          "displayName": "Right Rail List B - with numbers",
+          "page": "/page/list/PageListRightRailB-withNumbers.json"
+        },
+        {
+          "displayName": "Right Rail List C",
+          "page": "/page/list/PageListRightRailC.json"
+        },
+        {
+          "displayName": "Right Rail List D",
+          "page": "/page/list/PageListRightRailD.json"
+        }
+      ]
+    },
+    {
+      "displayName": "Lists - Standard",
+      "pages": [
+        {
+          "displayName": "Page with Standard Lists",
+          "page": "/page/list/Page-withStandardLists.json"
+        },
+        {
+          "displayName": "Standard List A",
+          "page": "/page/list/PageListStandardA.json"
+        },
+        {
+          "displayName": "Standard List B",
+          "page": "/page/list/PageListStandardB.json"
+        },
+        {
+          "displayName": "Standard List B - 2 Column",
+          "page": "/page/list/PageListStandardB-2column.json"
+        },
+        {
+          "displayName": "Standard List B - 4 Column",
+          "page": "/page/list/PageListStandardB-4column.json"
+        },
+        {
+          "displayName": "Standard List B - Header on Side",
+          "page": "/page/list/PageListStandardB-headerOnSide.json"
+        },
+        {
+          "displayName": "Standard List B - with No Images",
+          "page": "/page/list/PageListStandardB-withNoImages.json"
+        },
+        {
+          "displayName": "Standard List C",
+          "page": "/page/list/PageListStandardC.json"
+        },
+        {
+          "displayName": "Standard List D",
+          "page": "/page/list/PageListStandardD.json"
+        },
+        {
+          "displayName": "Standard List E",
+          "page": "/page/list/PageListStandardE.json"
+        },
+        {
+          "displayName": "Standard List F",
+          "page": "/page/list/PageListStandardF.json"
+        },
+        {
+          "displayName": "Standard List F - Header on Side",
+          "page": "/page/list/PageListStandardF-headerOnSide.json"
+        },
+        {
+          "displayName": "Standard List G",
+          "page": "/page/list/PageListStandardG.json"
+        },
+        {
+          "displayName": "Standard List H",
+          "page": "/page/list/PageListStandardH.json"
+        },
+        {
+          "displayName": "Standard List I",
+          "page": "/page/list/PageListStandardI.json"
+        },
+        {
+          "displayName": "Standard List I - 2 Column ",
+          "page": "/page/list/PageListStandardI-2column.json"
+        },
+        {
+          "displayName": "Standard List I - 4 Column",
+          "page": "/page/list/PageListStandardI-4column.json"
+        },
+        {
+          "displayName": "Standard List J",
+          "page": "/page/list/PageListStandardJ.json"
+        },
+        {
+          "displayName": "Standard List K",
+          "page": "/page/list/PageListStandardK.json"
+        },
+        {
+          "displayName": "Standard List L",
+          "page": "/page/list/PageListStandardL.json"
+        }
+      ]
+    },
+    {
+      "displayName": "Lists - Quote",
+      "pages": [
+        {
+          "displayName": "Quote List A",
+          "page": "/quote/QuoteListA.json"
+        },
+        {
+          "displayName": "Quote List B",
+          "page": "/quote/QuoteListB.json"
+        }
+      ]
+    },
+    {
+      "displayName": "Lists - Stat",
+      "pages": [
+        {
+          "displayName": "Stat List A",
+          "page": "/stat/StatListA.json"
+        },
+        {
+          "displayName": "Stat List A - 3 Column",
+          "page": "/stat/StatListA-3column.json"
+        },
+        {
+          "displayName": "Stat List B",
+          "page": "/stat/StatListB.json"
+        },
+        {
+          "displayName": "Stat List B - Header on Side",
+          "page": "/stat/StatListB-titleOnSide.json"
+        }
+      ]
+    },
+    {
+      "displayName": "Promos - Download",
+      "pages": [
+        {
+          "displayName": "Download Promo",
+          "page": "/download/promo/DownloadPromo.json"
+        },
+        {
+          "displayName": "Download Promo Module",
+          "page": "/download/promo/DownloadPromoModule.json"
+        }
+      ]
+    },
+    {
+      "displayName": "Promos - Page",
+      "pages": [
+        {
+          "displayName": "Page with all Promos",
+          "page": "/page/promo/Page-withAllPagePromos.json"
+        },
+        {
+          "displayName": "Promo Module A",
+          "page": "/page/promo/PagePromoModuleA.json"
+        },
+        {
+          "displayName": "Promo Module A - Media Bottom",
+          "page": "/page/promo/PagePromoModuleA-mediaBottom.json"
+        },
+        {
+          "displayName": "Promo Module A - Text Left",
+          "page": "/page/promo/PagePromoModuleA-textLeft.json"
+        },
+        {
+          "displayName": "Promo Module B",
+          "page": "/page/promo/PagePromoModuleB.json"
+        },
+        {
+          "displayName": "Promo Module B - Text Right",
+          "page": "/page/promo/PagePromoModuleB-textRight.json"
+        },
+        {
+          "displayName": "Promo Module B - Text Center",
+          "page": "/page/promo/PagePromoModuleB-textCenter.json"
+        },
+        {
+          "displayName": "Promo Module C",
+          "page": "/page/promo/PagePromoModuleC.json"
+        },
+        {
+          "displayName": "Promo Module C - Media Right",
+          "page": "/page/promo/PagePromoModuleC-mediaRight.json"
+        }
+      ]
+    },
+    {
+      "displayName": "Pages",
+      "pages": [
+        {
+          "displayName": "Article",
+          "page": "/article/ArticlePage.json"
+        },
+        {
+          "displayName": "Article - Sponsored",
+          "page": "/article/ArticlePage-Sponsored.json"
+        },
+        {
+          "displayName": "Article - No Aside",
+          "page": "/article/ArticlePage-NoAside.json"
+        },
+        {
+          "displayName": "Article - Full Width Lead",
+          "page": "/article/ArticlePage-FullWidthLead.json"
+        },
+        {
+          "displayName": "Article - Full Width - No Aside",
+          "page": "/article/ArticlePage-FullWidthLead-NoAside.json"
+        },
+        {
+          "displayName": "Article - Large Lead",
+          "page": "/article/ArticlePage-LargeLead.json"
+        },
+        {
+          "displayName": "Article - Large Lead - No Aside",
+          "page": "/article/ArticlePage-LargeLead-NoAside.json"
+        },
+        {
+          "displayName": "Article - Nested Lead",
+          "page": "/article/ArticlePage-NestedLead.json"
+        },
+        {
+          "displayName": "Article - Nested Lead- No Aside",
+          "page": "/article/ArticlePage-NestedLead-NoAside.json"
+        },
+        {
+          "displayName": "Article - Overlay Lead",
+          "page": "/article/ArticlePage-OverlayLead.json"
+        },
+        {
+          "displayName": "Article - Overlay Lead - No Aside",
+          "page": "/article/ArticlePage-OverlayLead-NoAside.json"
+        },
+        {
+          "displayName": "Article - No Lead",
+          "page": "/article/ArticlePage-NoLead.json"
+        },
+        {
+          "displayName": "Article - No Lead - No Aside",
+          "page": "/article/ArticlePage-NoLead-NoAside.json"
+        },
+        {
+          "displayName": "Article - With Coral Comments",
+          "page": "/article/ArticlePage-WithCoral.json"
+        },
+        {
+          "displayName": "Article - With Disqus Comments",
+          "page": "/article/ArticlePage-WithDisqus.json"
+        },
+        {
+          "displayName": "Author",
+          "page": "/author/AuthorPage.json"
+        },
+        {
+          "displayName": "Blog - Landing Page",
+          "page": "/blog/BlogPage.json"
+        },
+        {
+          "displayName": "Blog - Post Page",
+          "page": "/blog/blogpost/BlogPostPage.json"
+        },
+        {
+          "displayName": "Home Page",
+          "page": "/page/HomePage.json"
+        },
+        {
+          "displayName": "Home Page - Animated",
+          "page": "/page/HomePage-Animated.json"
+        },
+        {
+          "displayName": "Home Page - With Hat",
+          "page": "/page/HomePage-WithHat.json"
+        },
+        {
+          "displayName": "Gallery Page - Carousel",
+          "page": "/gallery/GalleryPage.json"
+        },
+        {
+          "displayName": "Gallery Page - Waterfall",
+          "page": "/gallery/GalleryPage-Waterfall.json"
+        },
+        {
+          "displayName": "Listicle Page",
+          "page": "/listicle/ListiclePage.json"
+        },
+        {
+          "displayName": "Live Blog",
+          "page": "/liveblog/LiveBlogPage.json"
+        },
+        {
+          "displayName": "Person Page",
+          "page": "/person/PersonPage.json"
+        },
+        {
+          "displayName": "Podcast Page",
+          "page": "/podcast/PodcastPage.json"
+        },
+        {
+          "displayName": "Podcast Episode Page",
+          "page": "/podcast/PodcastEpisodePage.json"
+        },
+        {
+          "displayName": "Press Release",
+          "page": "/pressrelease/PressReleasePage.json"
+        },
+        {
+          "displayName": "Search Results Page - No Results",
+          "page": "/search/SearchResultsPage-NoResults.json"
+        },
+        {
+          "displayName": "Search Results Page",
+          "page": "/search/SearchResultsPage.json"
+        },
+        {
+          "displayName": "Section Page",
+          "page": "/section/SectionPage.json"
+        },
+        {
+          "displayName": "Section Page - No Nav",
+          "page": "/section/SectionPage-noNav.json"
+        },
+        {
+          "displayName": "Tag Page",
+          "page": "/tag/TagPage.json"
+        },
+        {
+          "displayName": "Video Test Page",
+          "page": "/page/VideoTestPage.json"
+        }
+      ]
+    },
+    {
+      "displayName": "Pages - Amp",
+      "pages": [
+        {
+          "displayName": "Article - Amp",
+          "page": "/article/ArticlePage-Amp.json"
+        }
+      ]
+    },
+    {
+      "displayName": "Tabs",
+      "pages": [
+        {
+          "displayName": "Tab Module",
+          "page": "/tab/Tabs.json"
+        }
+      ]
+    },
+    {
+      "displayName": "Newsletter",
+      "pages": [
+        {
+          "displayName": "Newsletter",
+          "page": "/newsletter/Newsletter.json"
+        }
+      ]
+    },
+    {
+      "displayName": "Video",
+      "pages": [
+        {
+          "displayName": "Video Playlist Module",
+          "page": "/video/VideoPlaylistModule.json"
+        }
+      ]
+    }
+  ]
+}

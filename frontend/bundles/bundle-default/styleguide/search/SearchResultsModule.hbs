@@ -1,0 +1,133 @@
+<bsp-search-results-module class="SearchResultsModule">
+    {{include "/link/AnchorLink.hbs" this}}
+    <form class="SearchResultsModule-form">
+            <div class="SearchResultsModule-topContainer">
+                <h1 class="SearchResultsModule-pageHeading">{{#if title}}{{title}}{{else}}{{format "searchPageTitle"}}{{/if}}</h1>
+                {{#with description}}
+                    <div class="SearchResultsModule-description">{{this}}</div>
+                {{/with}}
+                <div class="SearchResultsModule-query">
+                    {{#if query}}
+                        <input type="text" class="SearchResultsModule-formInput" name="q" value="{{query}}" aria-label="search" />
+                    {{else}}
+                        <input type="text" class="SearchResultsModule-formInput" name="q" aria-label="search" placeholder={{#if searchInputPlaceholder}}"{{searchInputPlaceholder}}"{{else}}"{{format 'noQueryText'}}"{{/if}} />
+                    {{/if}}
+                    <button type="submit" class="SearchResultsModule-formButton">
+                        <svg><use xlink:href="#icon-magnify"></use></svg><span class="sr-only">{{format "submitLabel"}}</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="SearchResultsModule-ajax">
+                <div class="SearchResultsModule-ajaxContent" data-has-results="{{#or items spotlights}}true{{else}}false{{/or}}">
+                    {{#unless items}}
+                        {{#if query}}
+                            <div class="SearchResultsModule-noResults">{{format "/search/SearchResultsModule" "noResultsText"
+                            searchQuery=query}}</div>
+                        {{else}}
+                            <div class="SearchResultsModule-noResults">{{format "/search/SearchResultsModule" "noQueryText"}}</div>
+                        {{/if}}
+                    {{/unless}}
+
+                    <bsp-search-filters class="SearchResultsModule-filters">
+                        <div class="SearchResultsModule-wrapper" {{#if filters}}data-has-filters{{/if}}>
+                            <span class="SearchResultsModule-count-mobile">
+                                {{{format "/search/SearchResultsModule" "foundCountMobileText" resultsCount=count searchQuery=query}}}
+                            </span>
+                            <!-- ASIDE -->
+                            {{#if filters}}
+                                <aside class="SearchResultsModule-aside">
+                                    <button class="SearchResultsModule-filters-open"><span class="sr-only">{{format "/search/SearchResultsModule" "filtersOpen"}}</span>{{format "/search/SearchResultsModule" "filterTitle"}}<svg class="icon-filter"><use xlink:href="#chevron"></use></svg></button>
+                                    <div class="SearchResultsModule-filters-overlay">
+
+                                        <button class="SearchResultsModule-filters-close"><svg class="close-x"><use xlink:href="#close-x"></use></svg><span class="sr-only">{{format "/search/SearchResultsModule" "filtersClose"}}</span></button>
+
+                                        <div class="SearchResultsModule-filters-title">{{format "/search/SearchResultsModule" "filterTitle"}}<svg class="filter"><use xlink:href="#filter"></use></svg></div>
+
+                                        <!-- List of currently selected filters -->
+                                        <div class="SearchResultsModule-filters-selected">
+                                            <div class="SearchResultsModule-filters-selected-heading">
+                                                <div class="SearchResultsModule-filters-selected-title">{{format "selectedFiltersTitle"}}</div>
+                                                <a class="SearchResultsModule-filters-selected-reset" href="#" title="{{format "selectedFiltersReset"}}">{{format "selectedFiltersReset"}}</a>
+                                            </div>
+                                            <div class="SearchResultsModule-filters-selected-content"></div>
+                                        </div>
+
+                                        <!-- Filters -->
+                                        <div class="SearchResultsModule-filters-content">
+                                            {{#each filters}}
+                                                {{include "/search/SearchFilter.hbs" this}}
+                                            {{/each}}
+                                        </div>
+
+                                        <!-- APPLY button for filters on mobile -->
+                                        <div class="SearchResultsModule-filters-apply">
+                                            <button class="SearchResultsModule-filters-applyButton">APPLY</button>
+                                        </div>
+                                    </div>
+
+                                    <div class="SearchResultsModule-pageAside">
+                                        {{#with aside}} {{this}} {{/with}}
+                                    </div>
+                                </aside>
+                            {{/if}}
+
+                            <!-- MAIN -->
+                            <main class="SearchResultsModule-main">
+                                <div class="SearchResultsModule-results-header">
+                                    {{#if query}}
+                                        <span class="SearchResultsModule-count-desktop">
+                                            {{{format "/search/SearchResultsModule" "foundCountText" resultsCount=count searchQuery=query}}}
+                                        </span>
+                                    {{/if}}
+                                    <div class="SearchResultsModule-results-header-end">
+                                        {{#if sorts}}
+                                            <!-- Sorts -->
+                                            <div class="SearchResultsModule-sorts">
+                                                <div class="Select">
+                                                    <label class="Select-label"><span>{{format "/search/SearchResultsModule" "sortBy"}}</span>
+                                                        <select class="Select-input" name="{{sorts.[0].parameterName}}">
+                                                            {{#each sorts}}
+                                                                {{this}}
+                                                            {{/each}}
+                                                        </select>
+                                                        <svg class="chevron"><use xlink:href="#icon-arrow-down"></use></svg>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        {{/if}}
+                                        </div>
+                                    </div>
+
+                                    {{#with spotlights}}
+                                        <ul class="SearchResultsModule-spotlights">
+                                            {{#each this}}
+                                                <li class="SearchResultsModule-spotlights-item">
+                                                    {{include "/page/promo/PagePromo.hbs" this ctaButtonText=null}}
+                                                </li>
+                                            {{/each}}
+                                        </ul>
+                                    {{/with}}
+
+                                    {{#with items}}
+                                        <ul class="SearchResultsModule-results">
+                                            {{#each this}}
+                                            <li class="SearchResultsModule-results-item">
+                                                {{include "/page/promo/PagePromo.hbs" this}}
+                                            </li>
+                                            {{/each}}
+                                        </ul>
+                                    {{/with}}
+
+                                    {{#if paginate}}
+                                        {{include '/global/Pagination.hbs' this}}
+                                    {{else}}
+                                        {{include '/global/LoadMore.hbs' this}}
+                                    {{/if}}
+                            </main>
+                        </div>
+                    </bsp-search-filters>
+                </div>
+            </div>
+    </form>
+</bsp-search-results-module>

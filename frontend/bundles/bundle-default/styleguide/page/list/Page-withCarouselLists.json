@@ -1,0 +1,27 @@
+{
+  "_include": "/page/Page.json",
+  "pageLead": {
+    "_include": "/page/PageHeading.json",
+    "eyebrow": null,
+    "eyebrowUrl": null,
+    "pageHeading": "Page with Carousel Lists",
+    "pageSubHeading": null
+  },
+  "main": [
+    {
+      "_include": "/page/list/PageListCarouselA.json"
+    },
+    {
+      "_include": "/page/list/PageListCarouselB.json"
+    },
+    {
+      "_include": "/page/list/PageListCarouselC.json"
+    },
+    {
+      "_include": "/page/list/PageListCarouselD.json"
+    },
+    {
+      "_include": "/page/list/PageListCarouselE.json"
+    }
+  ]
+}

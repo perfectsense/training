@@ -1,0 +1,12 @@
+{
+  "styles": {
+    "/text/RichTextModule.hbs": {
+      "templates": [
+        {
+          "displayName": "Rich Text Module",
+          "example": "/text/RichTextModule.json"
+        }
+      ]
+    }
+  }
+}

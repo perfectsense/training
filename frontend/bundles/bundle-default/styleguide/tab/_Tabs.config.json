@@ -1,0 +1,12 @@
+{
+  "styles": {
+    "/tab/Tabs.hbs": {
+      "templates": [
+        {
+          "displayName": "Tabs",
+          "example": "/tab/Tabs.json"
+        }
+      ]
+    }
+  }
+}

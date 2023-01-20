@@ -1,0 +1,33 @@
+<div class="PagePromoModuleB"
+     data-module
+     data-width="full"
+     {{#if imageAspectRatio}}data-aspect-ratio="{{imageAspectRatio}}"{{/if}}
+     data-padding="none"{{include "includes/PagePromoAttributes.hbs" this}}
+     data-has-background>
+
+    {{#if media}}
+        {{#if imageAspectRatio}}
+            {{#set imageSize=imageAspectRatio}}
+                {{include "includes/PagePromoMediaWithIcon.hbs" this}}
+            {{/set}}
+        {{else}}
+            {{#set imageSize=(fallback (get "imageSize") "xl-16x9")}}
+                {{include "includes/PagePromoMediaWithIcon.hbs" this}}
+            {{/set}}
+        {{/if}}
+    {{/if}}
+
+    <div class="PagePromoModuleB-content-wrapper">
+        <div class="PagePromoModuleB-content"{{#if animateOnScroll}} data-animate="fromRight"{{/if}}>
+            {{include "includes/PagePromoCategory.hbs" this}}
+
+            {{include "includes/PagePromoTitle.hbs" this}}
+
+            {{include "includes/PagePromoDescription.hbs" this}}
+
+            {{include "includes/PagePromoByline.hbs" this}}
+
+            {{include "includes/PagePromoButton.hbs" this}}
+        </div>
+    </div>
+</div>

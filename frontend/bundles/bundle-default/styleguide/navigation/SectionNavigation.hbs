@@ -1,0 +1,21 @@
+<bsp-section-nav class="SectionNavigation">
+    <nav class="SectionNavigation-wrapper"{{extraAttributes}}>
+        {{#with items}}
+            <ul class="SectionNavigation-items">
+                {{#each this}}
+                    <li class="SectionNavigation-items-item" {{#if this.isCurrent}}data-current-nav-item{{/if}}>
+                        {{include "/navigation/SectionNavigationItem.hbs" this}}
+                    </li>
+                {{/each}}
+            </ul>
+        {{/with}}
+        {{#with items}}
+            <select class="SectionNavigation-select">
+                {{#each this}}
+                    <option class="SectionNavigation-options" value="{{href}}" {{#if this.isCurrent}}data-current-nav-item{{/if}}>{{text}}</option>
+                {{/each}}
+            </select>
+            <svg class="chevron"><use xlink:href="#icon-arrow-down"></use></svg>
+        {{/with}}
+    </nav>
+</bsp-section-nav>

@@ -1,0 +1,13 @@
+{
+  "_include": "/article/ArticlePage.json",
+
+  "sponsored": true,
+  "sponsorLogo": {
+    "_include": "/image/Image.json"
+  },
+  "sponsorUrl": "#",
+  "sponsorTarget": "",
+  "sponsorName": "Lorem Ipsum",
+  "sponsorMeaningUrl": "#",
+  "sponsorMeaningTarget": ""
+}

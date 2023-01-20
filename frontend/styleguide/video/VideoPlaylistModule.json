@@ -7,12 +7,13 @@
     "_include": "/_group/RichTextElementsSmall.json",
     "_key": 1
   },
+  "anchorId": "anchorTest",
   "player": {
-    "_include": "/_group/Videos.json",
+    "_include": "/_group/VideoPlayers.json",
     "_key": 0
   },
   "playlist": {
-    "_include": "/video/PlaylistItem.json"
+    "_include": "/video/VideoPlaylistItem.json"
   },
   "ctaUrl": "#",
   "ctaTarget": "_self",

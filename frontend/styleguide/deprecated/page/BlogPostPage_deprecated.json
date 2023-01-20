@@ -1,0 +1,11 @@
+{
+  "_template": "/blog/blogpost/BlogPostPage.hbs",
+  "_include": "/article/ArticlePage.json",
+  "_hidden": true,
+  "authorUrl": null,
+  "authorImage": null,
+  "authorName": null,
+  "authorBiography": null,
+  "contributors": null,
+  "people": null
+}

@@ -1,0 +1,14 @@
+{
+    "_template": "/faq/FaqModule.hbs",
+    "title": {
+        "_include": "/_group/RichTextElementsTiny.json"
+    },
+    "description": {
+        "_include": "/_group/RichTextElementsSmall.json"
+    },
+    "items": {
+        "_include": "/_group/FaqItems.json"
+    },
+    "jsonLinkedData": "Data Here",
+    "_hidden": true
+}

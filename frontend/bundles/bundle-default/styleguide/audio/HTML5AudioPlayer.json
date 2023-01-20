@@ -1,0 +1,8 @@
+{
+  "_template": "/audio/HTML5AudioPlayer.hbs",
+  "sources": [
+    {
+      "_include": "/audio/HTML5AudioSource.json"
+    }
+  ]
+}

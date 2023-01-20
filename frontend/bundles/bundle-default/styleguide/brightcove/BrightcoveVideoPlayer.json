@@ -1,0 +1,11 @@
+{
+  "_template": "BrightcoveVideoPlayer.hbs",
+
+  "playerId": "default",
+  "videoTitle": "{{words([5,10])}}",
+  "videoId": "5713586488001",
+  "autoplay": false,
+  "muted": true,
+  "seekSeconds": 10,
+  "account": "104524641001"
+}

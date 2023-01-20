@@ -1,0 +1,10 @@
+{
+  "_template": "Figure.hbs",
+  "anchorId": "anchorTest",
+  "image": {
+    "_image": true
+  },
+  "alt": "{{words([5,15])}}",
+  "caption": "{{words([5,15])}}",
+  "credit": "{{words([5,15])}}"
+}

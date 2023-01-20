@@ -1,0 +1,28 @@
+{
+  "_template": "/navigation/NavigationItem.hbs",
+  "text": "{{words([1,2])}}",
+  "href": "#",
+  "target": "_self",
+  "items": [
+    {
+      "_include": "/navigation/NavigationLink.json",
+      "text": "{{words(1)}}"
+    },
+    {
+      "_include": "/navigation/NavigationLink.json",
+      "text": "{{words(1)}}"
+    },
+    {
+      "_include": "/navigation/NavigationLink.json",
+      "text": "{{words(1)}}"
+    },
+    {
+      "_include": "/navigation/NavigationLink.json",
+      "text": "{{words(1)}}"
+    },
+    {
+      "_include": "/navigation/NavigationLink.json",
+      "text": "{{words(1)}}"
+    }
+  ]
+}

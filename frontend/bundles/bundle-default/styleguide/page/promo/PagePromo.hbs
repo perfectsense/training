@@ -1,0 +1,17 @@
+<div class="PagePromo"{{include "includes/PagePromoAttributes.hbs" this}}>
+    {{#set imageSize=(fallback (get "imageSize") "medium-16x9")}}
+        {{include "includes/PagePromoMediaWithIcon.hbs" this}}
+    {{/set}}
+
+    <div class="PagePromo-content"{{#if animation}} data-animate="{{animation}}"{{/if}}>
+        {{include "includes/PagePromoCategory.hbs" this}}
+
+        {{include "includes/PagePromoTitle.hbs" this}}
+
+        {{include "includes/PagePromoDescription.hbs" this}}
+
+        {{include "includes/PagePromoByline.hbs" this}}
+
+        {{include "includes/PagePromoCtaLink.hbs" this}}
+    </div>
+</div>

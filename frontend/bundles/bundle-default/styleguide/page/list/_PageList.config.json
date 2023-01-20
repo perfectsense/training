@@ -1,0 +1,266 @@
+{
+  "styles": {
+    "/page/list/PageList.hbs": {
+      "fields": [
+        "listTitleSize",
+        "listDescriptionSize"
+      ],
+      "templates": [
+        {
+          "displayName": "Standard - List A",
+          "example": "/page/list/PageListStandardA.json",
+          "height": 800,
+          "width": 1024,
+          "fields": [
+            "backgroundColor",
+            "inverseColors"
+          ]
+        },
+        {
+          "displayName": "Standard - List B",
+          "example": "/page/list/PageListStandardB.json",
+          "height": 800,
+          "width": 1024,
+          "fields": [
+            "hideImages",
+            "listColumns23456",
+            "suppressPagination",
+            "backgroundColor",
+            "inverseColors",
+            "animateOnScroll",
+            "listHeaderPosition"
+          ]
+        },
+        {
+          "displayName": "Standard - List C",
+          "example": "/page/list/PageListStandardC.json",
+          "height": 800,
+          "width": 1024,
+          "fields": [
+            "backgroundColor",
+            "inverseColors"
+          ]
+        },
+        {
+          "displayName": "Standard - List D",
+          "example": "/page/list/PageListStandardD.json",
+          "height": 800,
+          "width": 1024,
+          "fields": [
+            "suppressPagination",
+            "backgroundColor",
+            "inverseColors"
+          ]
+        },
+        {
+          "displayName": "Standard - List E",
+          "example": "/page/list/PageListStandardE.json",
+          "height": 800,
+          "width": 1024,
+          "fields": [
+            "hideDescriptions",
+            "subTitle",
+            "backgroundColor",
+            "inverseColors"
+          ]
+        },
+        {
+          "displayName": "Standard - List F",
+          "example": "/page/list/PageListStandardF.json",
+          "height": 800,
+          "width": 1024,
+          "fields": [
+            "hideDescriptions",
+            "listHeaderPosition",
+            "promoButtonText",
+            "backgroundColor",
+            "inverseColors"
+          ]
+        },
+        {
+          "displayName": "Standard - List G",
+          "example": "/page/list/PageListStandardG.json",
+          "height": 800,
+          "width": 1024,
+          "fields": [
+            "backgroundColor",
+            "inverseColors"
+          ]
+        },
+        {
+          "displayName": "Standard - List H",
+          "example": "/page/list/PageListStandardH.json",
+          "height": 800,
+          "width": 1024,
+          "fields": [
+            "backgroundColor",
+            "inverseColors"
+          ]
+        },
+        {
+          "displayName": "Standard - List I",
+          "example": "/page/list/PageListStandardI.json",
+          "height": 800,
+          "width": 1024,
+          "fields": [
+            "listColumns234",
+            "suppressPagination",
+            "backgroundColor",
+            "inverseColors",
+            "animateOnScroll"
+          ]
+        },
+        {
+          "displayName": "Standard - List J",
+          "example": "/page/list/PageListStandardJ.json",
+          "height": 800,
+          "width": 1024,
+          "fields": [
+            "backgroundColor",
+            "inverseColors"
+          ]
+        },
+        {
+          "displayName": "Standard - List K",
+          "example": "/page/list/PageListStandardK.json",
+          "height": 800,
+          "width": 1024,
+          "fields": [
+            "backgroundColor",
+            "inverseColors"
+          ]
+        },
+        {
+          "displayName": "Standard - List L",
+          "example": "/page/list/PageListStandardL.json",
+          "height": 800,
+          "width": 1024,
+          "fields": [
+            "listColumns234",
+            "backgroundColor",
+            "inverseColors",
+            "imagePositionHorizontal"
+          ]
+        },
+
+
+
+        {
+          "displayName": "Accordion - List A",
+          "example": "/page/list/PageListAccordionA.json",
+          "height": 800,
+          "width": 1024,
+          "fields": [
+            "backgroundColor",
+            "inverseColors"
+          ]
+        },
+
+
+
+        {
+          "displayName": "Carousel - List A",
+          "example": "/page/list/PageListCarouselA.json",
+          "height": 800,
+          "width": 1024,
+          "fields": [
+            "hideImages",
+            "listColumns23456",
+            "backgroundColor",
+            "inverseColors"
+          ]
+        },
+        {
+          "displayName": "Carousel - List B",
+          "example": "/page/list/PageListCarouselB.json",
+          "height": 800,
+          "width": 1024,
+          "fields": [
+            "backgroundColor",
+            "inverseColors"
+          ]
+        },
+        {
+          "displayName": "Carousel - List C",
+          "example": "/page/list/PageListCarouselC.json",
+          "height": 800,
+          "width": 1024,
+          "fields": [
+            "textAlign"
+          ]
+        },
+        {
+          "displayName": "Carousel - List D",
+          "example": "/page/list/PageListCarouselD.json",
+          "height": 500,
+          "width": 400,
+          "fields": [
+            "listColumns56",
+            "backgroundColor",
+            "inverseColors",
+            "listColumns56"
+          ]
+        },
+        {
+          "displayName": "Carousel - List E",
+          "example": "/page/list/PageListCarouselE.json",
+          "height": 800,
+          "width": 1024,
+          "fields": [
+            "hideDescriptions",
+            "carouselSuppressAutoPlay",
+            "carouselSpeed",
+            "imagePositionHorizontal",
+            "backgroundColor",
+            "inverseColors"
+          ]
+        },
+
+
+        {
+          "displayName": "Right Rail - List A",
+          "example": "/page/list/PageListRightRailA.json",
+          "height": 500,
+          "width": 400,
+          "fields": [
+            "hideListNumbers"
+          ]
+        },
+        {
+          "displayName": "Right Rail - List B",
+          "example": "/page/list/PageListRightRailB.json",
+          "height": 500,
+          "width": 400,
+          "fields": [
+            "showListNumbers",
+            "backgroundColor",
+            "inverseColors"
+          ]
+        },
+        {
+          "displayName": "Right Rail - List C",
+          "example": "/page/list/PageListRightRailC.json",
+          "height": 500,
+          "width": 400
+        },
+        {
+          "displayName": "Right Rail - List D",
+          "example": "/page/list/PageListRightRailD.json",
+          "height": 500,
+          "width": 400
+        }
+      ]
+    },
+    "/page/list/PageList.amp.hbs": {
+      "templates": [
+        {
+          "displayName": "List Amp",
+          "example": "/page/list/PageList.amp.json",
+          "template": "/page/list/PageList.amp.hbs",
+          "height": 500,
+          "width": 800
+        }
+      ]
+    }
+  }
+}

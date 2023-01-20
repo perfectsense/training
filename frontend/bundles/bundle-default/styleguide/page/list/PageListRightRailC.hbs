@@ -1,0 +1,21 @@
+{{#if items}}
+<div class="PageListRightRailC" data-module{{include "includes/PageList-attributes.hbs" this}}>
+    {{#if title}}
+        {{include "includes/PageList-header.hbs" this}}
+    {{/if}}
+
+    <div class="PageList-items">
+        {{#each items}}
+            <div class="PageList-items-item">
+                {{#eq this._template "/page/promo/PagePromo.hbs"}}
+                    {{include "/link/Link.hbs" this href=url body=title}}
+                {{else}}
+                    {{render this}}
+                {{/eq}}
+            </div>
+        {{/each}}
+    </div>
+
+    {{include "includes/PageList-footer.hbs" this}}
+</div>
+{{/if}}

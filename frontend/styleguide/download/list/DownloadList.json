@@ -1,0 +1,36 @@
+{
+  "_template": "DownloadList.hbs",
+  "title": {
+    "_include": "/_group/RichTextElementsTiny.json"
+  },
+  "description": {
+    "_include": "/_group/RichTextElementsSmall.json",
+    "_key": 1
+  },
+  "items": [
+    {
+      "_include": "/download/promo/DownloadPromo.json",
+      "_key": 0
+    },
+    {
+      "_include": "/download/promo/DownloadPromo.json",
+      "_key": 1
+    },
+    {
+      "_include": "/download/promo/DownloadPromo.json",
+      "_key": 2
+    },
+    {
+      "_include": "/download/promo/DownloadPromo.json",
+      "_key": 3
+    }
+  ],
+  "ctaButtonText": {
+    "_include": "/_group/RichTextElementsTiny.json"
+  },
+  "ctaUrl": "#",
+  "ctaTarget": "_self",
+  "pagination": {
+    "_include": "/link/Link.json"
+  }
+}

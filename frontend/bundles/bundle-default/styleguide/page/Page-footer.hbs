@@ -1,0 +1,53 @@
+<footer class="Page-footer"{{#if slimFooter}} data-footer-slim{{/if}}>
+    <div class="Page-footer-container">
+        {{#if slimFooter}}
+            <div class="Footer-contentWrapper">
+                {{#with footerLogo}}
+                    <div class="Footer-logo">{{this}}</div>
+                {{/with}}
+                {{#with disclaimer}}
+                    <div class="Footer-disclaimer">{{this}}</div>
+                {{/with}}
+            </div>
+        {{else}}
+            <div class="Page-footer-columns">
+                <div class="Page-footer-column">
+                    {{#with footerLogo}}
+                        {{#set imageSize="logo"}}
+                            <div class="Page-footer-logo">{{this}}</div>
+                        {{/set}}
+                    {{/with}}
+                </div>
+
+                <div class="Page-footer-column">
+                    {{#each footerNavigation}}
+                        <div class="Page-footer-navigation" {{#unless ../footerContent}}data-no-content{{/unless}}>
+                            {{include "/navigation/FooterNavigation.hbs" this}}
+                        </div>
+                    {{/each}}
+                </div>
+
+                {{#with footerContent}}
+                    <div class="Page-footer-column">
+                        <div class="Page-footer-content">
+                            {{#each this}}
+                                {{render this [/page/promo/PagePromoModule.hbs]="/page/promo/PagePromoFooter.hbs"}}
+                            {{/each}}
+                        </div>
+                    </div>
+                {{/with}}
+            </div>
+            {{#or disclaimer social}}
+                <div class="Page-footer-bottom">
+                    {{#with disclaimer}}
+                        <div class="Page-footer-disclaimer">{{this}}</div>
+                    {{/with}}
+
+                    {{#each social}}
+                        {{this}}
+                    {{/each}}
+                </div>
+            {{/or}}
+        {{/if}}
+    </div>
+</footer>

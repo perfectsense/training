@@ -1,0 +1,18 @@
+<div class="CarouselSlide" {{extraAttributes}}>
+    <div class="CarouselSlide-media">
+        {{#with media}}
+            {{#set imageSize=(fallback (get "imageSize") "large-16x9") lazyLoad="flickity"}}
+                {{this}}
+            {{/set}}
+        {{/with}}
+    </div>
+    <div class="CarouselSlide-info">
+        <div>
+            <span class="CarouselSlide-slideCount">{{format "slideCount" slideNumber=(add slideNumber 1) numberOfSlides=numberOfSlides}}</span>:&#32;{{~#with title~}}<span class="CarouselSlide-infoTitle">{{~this~}}</span>{{~/with~}}
+        </div>
+        <div>
+            {{~#if caption~}}<span class="CarouselSlide-infoDescription">{{~caption~}}</span>{{~/if~}}
+            {{~#if credit~}}<span class="CarouselSlide-infoAttribution">{{~credit~}}</span>{{~/if~}}
+        </div>
+    </div>
+</div>

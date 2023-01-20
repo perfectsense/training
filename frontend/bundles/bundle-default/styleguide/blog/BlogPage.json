@@ -1,0 +1,48 @@
+{
+  "_include": "/page/Page.json",
+  "_template": "/blog/BlogPage.hbs",
+  "above": null,
+  "main": [
+    {
+      "_template": "/page/list/PageList.hbs",
+      "title": "List for Blog Page",
+      "items": [
+        {
+          "_include": "/page/promo/PagePromo.json"
+        },
+        {
+          "_include": "/page/promo/PagePromo.json"
+        },
+        {
+          "_include": "/page/promo/PagePromo.json"
+        },
+        {
+          "_include": "/page/promo/PagePromo.json"
+        },
+        {
+          "_include": "/page/promo/PagePromo.json"
+        },
+        {
+          "_include": "/page/promo/PagePromo.json"
+        },
+        {
+          "_include": "/page/promo/PagePromo.json"
+        },
+        {
+          "_include": "/page/promo/PagePromo.json"
+        },
+        {
+          "_include": "/page/promo/PagePromo.json"
+        },
+        {
+          "_include": "/page/promo/PagePromo.json"
+        }
+      ]
+    }
+  ],
+  "aside": [
+    {
+      "_include": "/page/list/PageListRightRailA.json"
+    }
+  ]
+}

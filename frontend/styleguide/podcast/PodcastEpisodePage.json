@@ -1,0 +1,31 @@
+{
+  "_include": "/page/Page.json",
+  "_template": "/podcast/PodcastEpisodePage.hbs",
+  "breadcrumbs": {
+    "_include": "/link/Link.json"
+  },
+  "headline": {
+    "_include": "/_group/RichTextElementsTiny.json"
+  },
+  "subHeadline": {
+    "_include": "/_group/RichTextElementsTiny.json"
+  },
+  "image": {
+    "_include": "/image/Image.json"
+  },
+  "podcast": {
+    "_include": "/podcast/promo/PodcastPromo.json"
+  },
+  "primaryAudio": {
+    "_include": "/audio/HTML5AudioPlayer.json"
+  },
+  "body": {
+    "_include": "/_group/RichTextElementsLarge.json",
+    "_key": 0
+  },
+  "main": [
+    {
+      "_include": "/podcast/list/PodcastEpisodeList.json"
+    }
+  ]
+}

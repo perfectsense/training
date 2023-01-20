@@ -1,0 +1,26 @@
+<div class="FourColumnContainer" data-module{{include "includes/Container-attributes.hbs" this}}>
+    {{include "includes/Container-title.hbs" this}}
+
+    <div class="FourColumnContainer-container">
+        {{#with columnOne}}
+            <div class="FourColumnContainer-column" data-modulewell>
+                {{this}}
+            </div>
+        {{/with}}
+        {{#with columnTwo}}
+            <div class="FourColumnContainer-column" data-modulewell>
+                {{this}}
+            </div>
+        {{/with}}
+        {{#with columnThree}}
+            <div class="FourColumnContainer-column" data-modulewell>
+                {{this}}
+            </div>
+        {{/with}}
+        {{#with columnFour}}
+            <div class="FourColumnContainer-column" data-modulewell>
+                {{this}}
+            </div>
+        {{/with}}
+    </div>
+</div>
