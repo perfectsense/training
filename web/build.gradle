@@ -5,13 +5,9 @@ plugins {
 description = 'Brightspot Training: Web'
 
 dependencies {
-    api project(':brightspot-training-core')
-    api project(':brightspot-training-bundle-default')
-
-    // Solr v6+
-    constraints.api('org.apache.solr:solr-solrj:8.6.1') { force = true }
-    api 'com.psddev:dari-solr-v6'
-    api 'org.apache.solr:solr-solrj'
+    api project(':frontend')
+    api project(':core')
+    api project(':bundle-default')
 
     // Tests
     testImplementation 'com.brightspot.go:lib-model-shared-content-test-utils'
@@ -21,6 +17,7 @@ dependencies {
 }
 
 war {
+    archiveFileName = "brightspot-training-web-${archiveVersion}.war"
     rootSpec.exclude '**/javax.el-api'
     rootSpec.exclude '**/javax.servlet-api-*.jar'
     rootSpec.exclude '**/javax.servlet.jsp-api-*.jar'
@@ -58,7 +55,7 @@ test {
              systemProperties.put('theme.' + bundleProject.name + '.buildDir', themeBuildDir)
              systemProperties.put('theme.' + bundleProject.name + '.compatibilityTestMode', 'warn')
              systemProperties.put('theme.' + bundleProject.name + '.compatibilityExcludedPaths', '_files.json')
-             systemProperties.put(themeCdnCssFilesKey, 'styles/style-2/All.min.css,styles/style-1/All.min.css')
+             systemProperties.put(themeCdnCssFilesKey, 'styles/default/All.min.css')
         }
     }
 }
