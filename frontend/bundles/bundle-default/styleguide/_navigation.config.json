@@ -565,6 +565,10 @@
           "page": "/pressrelease/PressReleasePage.json"
         },
         {
+          "displayName": "Recipe",
+          "page": "/recipe/RecipeArticlePage.json"
+        },
+        {
           "displayName": "Search Results Page - No Results",
           "page": "/search/SearchResultsPage-NoResults.json"
         },

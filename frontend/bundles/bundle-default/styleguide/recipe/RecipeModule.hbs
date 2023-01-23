@@ -1,0 +1,44 @@
+<div class="RecipeModule" data-module>
+    <div class="RecipeModule-content">
+        {{#with title}}
+            <div class="RecipeModule-title">{{this}}</div>
+        {{/with}}
+
+        <div class="RecipeModule-meta">
+            {{#with difficulty}}
+                <div class="RecipeModule-difficulty"><span>{{format "difficulty"}}:</span> {{this}}</div>
+            {{/with}}
+            {{#with totalTime}}
+                <div class="RecipeModule-totalTime"><span>{{format "totalTime"}}:</span> {{this}}</div>
+            {{/with}}
+            {{#with prepTime}}
+                <div class="RecipeModule-prepTime"><span>{{format "prepTime"}}:</span> {{this}}</div>
+            {{/with}}
+            {{#with cookTime}}
+                <div class="RecipeModule-cookTime"><span>{{format "cookTime"}}:</span> {{this}}</div>
+            {{/with}}
+
+            {{#with image}}
+                <div class="RecipeModule-image">
+                    {{#set imageSize="medium-4x3"}}
+                        {{this}}
+                    {{/set}}
+                </div>
+            {{/with}}
+        </div>
+
+        {{#with ingredients}}
+            <div class="RecipeModule-ingredients-heading">{{format "ingredients"}}</div>
+            <div class="RecipeModule-ingredients RichTextBody">
+                {{this}}
+            </div>
+        {{/with}}
+
+        {{#with directions}}
+            <div class="RecipeModule-directions-heading">{{format "directions"}}</div>
+            <div class="RecipeModule-directions RichTextBody">
+                {{this}}
+            </div>
+        {{/with}}
+    </div>
+</div>
