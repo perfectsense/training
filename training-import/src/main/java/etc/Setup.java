@@ -17,6 +17,7 @@ import java.util.UUID;
 import brightspot.article.Article;
 import brightspot.cascading.CascadingStrategyModification;
 import brightspot.cascading.DefaultCascadingStrategy;
+import brightspot.cascading.module.CascadingModuleListAfter;
 import brightspot.cascading.navigation.CascadingNavigationOverride;
 import brightspot.footer.CascadingFooterOverride;
 import brightspot.footer.PageFooter;
@@ -26,6 +27,9 @@ import brightspot.homepage.Homepage;
 import brightspot.image.WebImage;
 import brightspot.l10n.LocaleSettings;
 import brightspot.l10n.SiteLocaleProvider;
+import brightspot.landing.LandingCascadingData;
+import brightspot.landing.TypeSpecificLandingPageElements;
+import brightspot.landing.TypeSpecificLandingPageElementsSettingsModification;
 import brightspot.link.InternalLink;
 import brightspot.logo.CascadingLogoOverride;
 import brightspot.logo.ImageLogo;
@@ -45,11 +49,9 @@ import brightspot.search.SiteSearchPage;
 import brightspot.search.TypeFilter;
 import brightspot.search.sectionsecondaryfilter.SectionSecondaryFilter;
 import brightspot.search.tagfilter.TagFilter;
+import brightspot.section.AllSectionMatch;
 import brightspot.section.SectionPage;
 import brightspot.sort.publishdate.NewestPublishDate;
-import brightspot.stylepackage.BuiltInStyle;
-import brightspot.stylepackage.StylePackage;
-import brightspot.stylepackage.StyleThemeModification;
 import brightspot.task.pipeline.Pipeline;
 import brightspot.task.pipeline.Read;
 import brightspot.task.pipeline.Transform;
@@ -81,12 +83,14 @@ import com.psddev.dari.util.TypeReference;
 import com.psddev.localization.ListAvailableLocaleSetting;
 import com.psddev.localization.LocalizationData;
 import com.psddev.localization.LocalizationSiteSettings;
+import com.psddev.theme.Config;
 import com.psddev.theme.FixedRelease;
 import com.psddev.theme.SharedThemeOption;
 import com.psddev.theme.Theme;
 import com.psddev.theme.ThemeSettings;
 import com.psddev.theme.jar.JarBundle;
 import org.apache.commons.lang3.StringUtils;
+import org.bridj.cpp.std.list;
 
 /**
  * Run this in {@code /_debug/code} on a fresh Docker instance running the training {@code web} war.
@@ -151,6 +155,25 @@ public class Setup {
         site.as(ThemeSettings.class).setThemeOption(build(new SharedThemeOption(), sharedTheme -> {
             sharedTheme.setTheme(theme);
         }));
+
+        // Section landing page elements requires theme for style selection
+        site.as(TypeSpecificLandingPageElementsSettingsModification.class)
+            .getTypeSpecificLandingPageContent()
+            .add(build(new TypeSpecificLandingPageElements(), lpe -> {
+                lpe.getTypes().add(ObjectType.getInstance(SectionPage.class));
+                lpe.as(LandingCascadingData.class).setContent(build(new CascadingModuleListAfter(), after -> {
+                    after.getItems().add(build(new PageListModulePlacementInline(), pageList -> {
+                        pageList.getState().put(buildThemeKey("/page/list/PageList.hbs", theme), "/page/list/PageListStandardH.hbs");
+                        pageList.setItemStream(build(new DynamicPageItemStream(), is -> {
+                            is.setSort(new NewestPublishDate());
+                            is.asQueryBuilderDynamicQueryModifier().setQueryBuilder(build(new AllSectionMatch(), sectionMatch -> {
+                                sectionMatch.setIncludeCurrentSection(true);
+                            }));
+                        }));
+                    }));
+                }));
+            }));
+
         Content.Static.publish(site, site, importUser);
 
         importContent(importUser);
@@ -275,10 +298,6 @@ public class Setup {
                 .orElseThrow(() -> new IllegalArgumentException("JarBundle not found")));
         }));
 
-        theme.as(StyleThemeModification.class).setStylePackage(build(new StylePackage(), stylePackage -> {
-            stylePackage.setBuiltIn(new BuiltInStyle("style-1"));
-        }));
-
         return theme;
     }
 
@@ -368,6 +387,15 @@ public class Setup {
                 path,
                 pathType);
         }
+    }
+
+    private static String buildThemeKey(String template, Theme theme) {
+        String reformattedFile = template
+            .replace("/", ":")
+            .concat("._template");
+
+        String themeId = Config.getInstance(theme, theme.getBundle()).getFieldPrefix();
+        return themeId.concat(reformattedFile);
     }
 
     private static NavigationItem makeSectionNavItem(String sectionName, Site site) {
