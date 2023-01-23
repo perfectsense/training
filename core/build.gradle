@@ -17,6 +17,7 @@ dependencies {
     // Component Lib.
     api 'com.brightspot.go:lib-util-essentials-cms'
     api 'com.psddev.component-lib:materialize'
+    api 'com.psddev.component-lib:util-task-pipeline'
 
     // Third party.
     api 'com.cronutils:cron-utils'
