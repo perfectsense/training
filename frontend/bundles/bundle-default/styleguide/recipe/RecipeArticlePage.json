@@ -1,0 +1,12 @@
+{
+  "_include": "/article/ArticlePage.json",
+  "_template": "RecipeArticlePage.hbs",
+
+  "articleBody": [
+    "{{paragraphs([2,3])}}"
+  ],
+
+  "recipe": {
+    "_include": "/recipe/RecipeModule.json"
+  }
+}
