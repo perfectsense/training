@@ -66,7 +66,7 @@ docker-compose run \
   --rm \
   --volume="$output_dir:/export" \
   tomcat \
-  -c -f /export/tomcat-storage.tar.gz -z -C /servers/tomcat/storage .
+  --exclude='./.cache' -c -f /export/tomcat-storage.tar.gz -z -C /servers/tomcat/storage .
 
 # have to use running container as mysqldump needs running mysql instance to export the database
 docker-compose exec mysql sh -c 'exec /servers/mysql56/bin/mysqldump -uroot -p"$MYSQL_ROOT_PASSWORD" --single-transaction brightspot | gzip --best > /export/mysql.sql.gz'
