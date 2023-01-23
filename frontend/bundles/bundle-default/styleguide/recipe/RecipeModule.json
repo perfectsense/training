@@ -1,0 +1,15 @@
+{
+  "_template": "/recipe/RecipeModule.hbs",
+
+  "title": "{{words([5,10])}}",
+  "image": {
+    "_include": "/image/Image.json"
+  },
+  "difficulty": "Easy",
+  "prepTime": "15 minutes",
+  "inactivePrepTime": "5 minutes",
+  "cookTime": "10 minutes",
+  "totalTime": "20 minutes",
+  "ingredients": "{{html('<ul><li>Fiduh lor vaasu ok odaaturag</li><li>Pimis gul ufdip par metfafihe </li><li>Ena se kapmutjog vinwupid </li><li>Ba zi ov viadu vewgu mokojuguk ovvanuz cu lufme</li><li>Pimis gul ufdip par (metfafihe ceb lakuf urucoror)</li><li>Ej cavsod mahnafen depidug olive</li></ul>')}}",
+  "directions": "{{paragraphs([2,3])}}"
+}
