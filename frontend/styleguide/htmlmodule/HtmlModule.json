@@ -1,5 +1,6 @@
 {
   "_template" : "HtmlModule.hbs",
+  "anchorId": "anchorTest",
   "rawHtml" : "<p> hello <strong> this is strong text </strong> </p>",
   "ampFallbackUrl": "."
 }

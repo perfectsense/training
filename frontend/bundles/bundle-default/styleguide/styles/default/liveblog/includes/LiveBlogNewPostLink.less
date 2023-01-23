@@ -1,0 +1,45 @@
+.LiveBlogNewPostLink {
+  align-items: center;
+  background-color: var(--color-button-bg);
+  border-radius: 17px;
+  color: var(--color-button-text);
+  display: flex;
+  left: 50%;
+  overflow: hidden;
+  position: fixed;
+  top: ~"calc(var(--headerHeight) + var(--hatHeight) + 10px)";
+  transform: translateX(-50%);
+
+  @media @mq-lg {
+    left: ~"calc(50% - 150px)"; // compensates for the aside rail.
+  }
+
+  @media @mq-lg {
+    left: ~"calc(50% - 180px)"; // compensates for the aside rail.
+  }
+
+  a {
+    &:extend(.label-1 all);
+    color: inherit;
+    display: grid;
+    grid-auto-flow: column;
+    grid-gap: 10px;
+    height: 34px;
+    padding: 0 15px;
+    place-items: center;
+
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.1);
+      color: inherit;
+    }
+  }
+
+  svg {
+    height: 10px;
+    width: 10px;
+
+    &.icon-arrow-down {
+      transform: rotate(180deg);
+    }
+  }
+}

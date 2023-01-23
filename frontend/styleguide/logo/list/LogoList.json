@@ -1,0 +1,21 @@
+{
+  "_template": "/logo/list/LogoList.hbs",
+  "title": {
+    "_include": "/_group/RichTextElementsTiny.json"
+  },
+  "description": {
+    "_include": "/_group/RichTextElementsSmall.json",
+    "_key": 1
+  },
+  "anchorId": "anchorTest",
+  "items": [
+    {
+      "_include": "/logo/promo/LogoPromo.json"
+    }
+  ],
+  "ctaButtonText": {
+    "_include": "/_group/RichTextElementsTiny.json"
+  },
+  "ctaUrl": "#",
+  "ctaTarget": "_self"
+}

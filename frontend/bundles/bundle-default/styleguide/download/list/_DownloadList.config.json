@@ -1,0 +1,18 @@
+{
+  "styles": {
+    "/download/list/DownloadList.hbs": {
+      "fields": [
+        "backgroundColor",
+        "inverseColors",
+        "listTitleSize",
+        "listDescriptionSize"
+      ],
+      "templates": [
+        {
+          "displayName": "Download List",
+          "example": "/download/list/DownloadList.json"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "_template": "/stat/StatList.hbs",
+  "_styledTemplate": "/stat/StatListA.hbs",
+
+  "title": "Stat List A",
+  "ctaUrl": "#",
+  "ctaTarget": "_self",
+  "items": [
+    {
+      "_include": "/stat/StatPromo.json",
+      "statTitlePosition": "left",
+      "title": "$",
+      "description": "{{words(2)}}"
+    },
+    {
+      "_include": "/stat/StatPromo.json",
+      "statTitlePosition": "right",
+      "title": "M",
+      "description": "{{words(2)}}"
+    },
+    {
+      "_include": "/stat/StatPromo.json",
+      "statTitlePosition": "left",
+      "title": "$",
+      "description": "{{words(2)}}"
+    },
+    {
+      "_include": "/stat/StatPromo.json",
+      "statTitlePosition": "right",
+      "title": "%",
+      "description": "{{words(2)}}"
+    }
+  ],
+  "countUpAnimation": true
+}

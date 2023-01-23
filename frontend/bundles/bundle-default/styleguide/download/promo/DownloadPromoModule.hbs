@@ -1,0 +1,39 @@
+<div class="DownloadPromoModule" data-module {{include "/page/promo/includes/PagePromoAttributes.hbs" this}}>
+   {{#if media}}
+        {{#if imageAspectRatio}}
+            {{#set imageSize=imageAspectRatio}}
+                <div class="PagePromo-media">
+                    {{~#if url~}}
+                        <a class="Link" {{#with title}}aria-label="{{this}}"{{/with}} href="{{url}}" {{#with target}} target="{{this}}" {{/with}}>{{media}}{{include "/page/promo/includes/PagePromoContentIcons.hbs" this}}</a>
+                        {{~else~}}
+                        <span class="Link">{{media}}{{include "/page/promo/includes/PagePromoContentIcons.hbs" this}}</span>
+                    {{~/if~}}
+                </div>
+            {{/set}}
+        {{else}}
+            {{#set imageSize="large-16x9"}}
+                <div class="PagePromo-media">
+                    {{~#if url~}}
+                        <a class="Link" {{#with title}}aria-label="{{this}}"{{/with}} href="{{url}}" {{#with target}} target="{{this}}" {{/with}}>{{media}}{{include "/page/promo/includes/PagePromoContentIcons.hbs" this}}</a>
+                        {{~else~}}
+                        <span class="Link">{{media}}{{include "/page/promo/includes/PagePromoContentIcons.hbs" this}}</span>
+                    {{~/if~}}
+                </div>
+            {{/set}}
+        {{/if}}
+    {{/if}}
+    <div class="DownloadPromoModule-content">
+        {{include "/page/promo/includes/PagePromoTitle.hbs" this}}
+
+        {{include "/page/promo/includes/PagePromoDescription.hbs" this}}
+
+        {{#if url}}
+            <a class="DownloadPromoModule-link" href="{{url}}">
+                {{include '/attachment/includes/AttachmentIcon.hbs' this}}
+                {{#if ctaText}}
+                    <span class="DownloadPromoModule-link-text">{{ctaText}} {{#if fileTypeDisplayName}}{{fileTypeDisplayName}} {{/if}} {{#if fileSize}}({{fileSize}}){{/if}}</span>
+                {{/if}}
+            </a>
+        {{/if}}
+    </div>
+</div>

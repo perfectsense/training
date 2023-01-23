@@ -8,11 +8,13 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 
 import brightspot.itemstream.ItemStream;
+import brightspot.itemstream.ItemStreamItemWrapper;
 import brightspot.l10n.LocaleProvider;
 import brightspot.module.ModulePlacement;
+import brightspot.module.list.page.AbstractPageListModule;
 import brightspot.module.list.page.DynamicPageItemStream;
 import brightspot.module.list.page.PageItemStreamItem;
-import brightspot.module.list.page.PageListModule;
+import brightspot.module.list.page.PageListModulePlacementInline;
 import com.psddev.cms.db.Site;
 import com.psddev.feed.FeedItem;
 import com.psddev.feed.FeedSource;
@@ -26,27 +28,35 @@ public interface DynamicFeedSource extends FeedSource {
     }
 
     default List<FeedItem> getFeedFromDynamicStream(
-        ItemStream<PageItemStreamItem> itemStream,
+        ItemStream<PageItemStreamItem> defaultPageItemStream,
         List<ModulePlacement> contents,
         Site site) {
-        if (contents != null && !contents.isEmpty()) {
-            Optional<PageListModule> list = contents.stream()
-                .filter(moduleType -> moduleType instanceof PageListModule)
-                .map(moduleType -> (PageListModule) moduleType)
-                .filter(listModule -> listModule.getItemStream() instanceof DynamicPageItemStream)
-                .findFirst();
 
-            if (list.isPresent()) {
-                itemStream = list.get().getItemStream();
+        ItemStream<PageItemStreamItem> itemStream = defaultPageItemStream;
+
+        if (contents != null && !contents.isEmpty()) {
+
+            ItemStream<PageItemStreamItem> contentsItemStream = contents.stream()
+                .filter(modulePlacement -> modulePlacement instanceof PageListModulePlacementInline)
+                .map(modulePlacement -> (PageListModulePlacementInline) modulePlacement)
+                .map(AbstractPageListModule::getItemStream)
+                .filter(Objects::nonNull)
+                .filter(is -> is.isInstantiableTo(DynamicPageItemStream.class))
+                .findFirst()
+                .orElse(null);
+
+            if (contentsItemStream != null) {
+                itemStream = contentsItemStream;
             }
         }
 
         if (itemStream != null) {
             return itemStream.getItems(site, this, 0, itemStream.getItemsPerPage(site, this))
                 .stream()
-                .map(PageItemStreamItem::getItemStreamItem)
-                .filter(Objects::nonNull)
-                .filter(promotable -> promotable.isInstantiableTo(FeedItem.class))
+                .filter(ItemStreamItemWrapper.class::isInstance)
+                .map(ItemStreamItemWrapper.class::cast)
+                .map(ItemStreamItemWrapper::getItemStreamItem)
+                .filter(wrappedObj -> wrappedObj.isInstantiableTo(FeedItem.class))
                 .map(item -> item.as(FeedItem.class))
                 .collect(Collectors.toList());
         }

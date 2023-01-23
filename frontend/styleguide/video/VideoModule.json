@@ -6,7 +6,8 @@
   "description": {
     "_include": "/_group/RichTextElementsSmall.json"
   },
+  "anchorId": "anchorTest",
   "player": {
-    "_include": "/_group/Videos.json"
+    "_include": "/_group/VideoPlayers.json"
   }
 }

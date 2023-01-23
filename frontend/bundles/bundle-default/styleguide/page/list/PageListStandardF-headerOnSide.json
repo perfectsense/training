@@ -1,0 +1,6 @@
+{
+  "_include": "/page/list/PageListStandardF.json",
+  "title": "Standard List F - Header on Side",
+  "listHeaderPosition": "side",
+  "anchorId": "asdf"
+}

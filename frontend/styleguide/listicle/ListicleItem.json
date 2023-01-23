@@ -1,5 +1,6 @@
 {
   "_template": "ListicleItem.hbs",
+  "itemIndex": "",
   "title": {
     "_include": "/_group/RichTextElementsTiny.json"
   },

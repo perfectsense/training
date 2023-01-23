@@ -1,0 +1,70 @@
+.PageListStandardE {
+
+  // cleaner less syntax did not work
+  &[data-inverse-colors] {
+    .PageList {
+      &-items {
+        &-item {
+          > .Link:not(:first-child) {
+            --color-link-text: var(--color-text-inverse);
+            --color-link-text-hover: var(--color-text-inverse);
+          }
+        }
+      }
+    }
+  }
+
+  .PageList {
+    &-items {
+      display: grid;
+      gap: 15px;
+
+      &-item {
+        > .Link:not(:first-child) {
+          &:extend(.promo-title-6 all);
+
+          --color-link-text: var(--color-primary-text);
+          --color-link-text-hover: var(--color-primary-text);
+
+
+
+          border-bottom: 1px solid var(--color-list-border);
+          display: grid;
+          gap: 20px;
+          padding: 15px 0;
+        }
+
+        .PagePromo {
+          &-description {
+            &:extend(.description-2 all);
+          }
+
+          &-title {
+            &:extend(.promo-title-3 all);
+          }
+        }
+      }
+
+      &-title {
+        &:extend(.label-1 all);
+
+        border-bottom: 1px solid var(--color-list-border);
+        color: var(--color-primary);
+        padding: 30px 0 10px 0;
+
+        [data-inverse-colors] & {
+          color: var(--color-text-inverse);
+        }
+      }
+    }
+  }
+
+  @media @mq-lg {
+    .PageList {
+      &-items {
+        gap: 20px;
+        grid-template-columns: .67fr .33fr;
+      }
+    }
+  }
+}

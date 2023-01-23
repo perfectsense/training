@@ -1,7 +1,0 @@
-{
-  "_template": "Image.hbs",
-  "alt": "alt text",
-  "image": {
-    "_image": true
-  }
-}

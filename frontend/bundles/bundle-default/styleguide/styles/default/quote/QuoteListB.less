@@ -1,0 +1,40 @@
+.QuoteListB {
+  .Quote {
+    padding: 20px;
+  }
+
+  &-items {
+    &-item {
+      margin-bottom: 20px;
+
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  @media @mq-lg {
+    // overrides to standard fonts to work well in a grid
+    .Quote {
+      padding: 30px;
+
+      blockquote {
+        font-size: 1.8rem;
+      }
+
+      &-attribution {
+        margin-top: 20px;
+      }
+    }
+
+    &-items {
+      display: grid;
+      grid-gap: 20px;
+      grid-template-columns: 1fr 1fr 1fr;
+
+      &-item {
+        margin: 0;
+      }
+    }
+  }
+}

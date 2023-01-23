@@ -1,0 +1,32 @@
+{{#if items}}
+<div class="PageListStandardJ" data-module data-width="full"{{include "includes/PageList-attributes.hbs" this}}>
+    {{#with items.[0]}}
+        {{#eq this._template "/page/promo/PagePromo.hbs"}}
+            {{#set imageSize="medium-16x9"}}
+                {{#set imageSizeAlt="xl-16x9"}}
+                    {{include "/page/promo/PagePromoModuleB.hbs" this ctaButtonText=(fallback ctaButtonText (format "/page/list/PageList" "ctaText"))}}
+                {{/set}}
+            {{/set}}
+        {{else}}
+            {{render this}}
+        {{/eq}}
+    {{/with}}
+    <div class="PageList-items">
+        {{#each items}}
+            {{#if (gt @index 0)}}
+                {{#if (lt @index 5)}}
+                    <div class="PageList-items-item">
+                        {{#eq this._template "/page/promo/PagePromo.hbs"}}
+                            {{include "/page/promo/PagePromo.hbs" this imagePositionVertical="top" description=null mobileAltLayout="true"}}
+                        {{else}}
+                            {{render this}}
+                        {{/eq}}
+                    </div>
+                {{/if}}
+            {{/if}}
+        {{/each}}
+    </div>
+
+    {{include "includes/PageList-footer.hbs" this}}
+</div>
+{{/if}}

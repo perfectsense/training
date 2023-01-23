@@ -1,0 +1,8 @@
+ plugins {
+    id 'com.github.node-gradle.node'
+    id 'com.github.node-gradle.gulp'
+}
+
+description = 'Brightpot Training: Default Bundle'
+
+apply from: "https://artifactory.psdops.com/psddev-releases/com/psddev/brightspot-gradle-plugins/express-theme/${brightspotGradlePluginVersion}/express-theme.gradle"

@@ -13,6 +13,7 @@
   "media": {
     "_include": "/image/Image.json"
   },
+  "anchorId": "anchorTest",
   "url": "#",
   "target": "_self",
   "category": {
@@ -24,8 +25,14 @@
     "_include": "/_group/RichTextElementsTiny.json"
   },
   "description": {
-    "_include": "/_group/RichTextElementsTiny.json"
+    "_include": "/_group/RichTextElementsSmall.json"
   },
   "publishDate": "",
+  "sponsored": true,
+  "sponsorUrl": "#",
+  "sponsorTarget": "",
+  "sponsorName": {
+    "_include": "/_group/RichTextElementsTiny.json"
+  },
   "_hidden": true
 }

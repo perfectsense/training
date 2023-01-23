@@ -1,0 +1,6 @@
+{
+  "_template": "Zephr.hbs",
+  "_hidden": true,
+  "injectJs": true,
+  "cdnBaseUrl": "brightspot-go-axel-local-testing.cdn.zephr.com"
+}

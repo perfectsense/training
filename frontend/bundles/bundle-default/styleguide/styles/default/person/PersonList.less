@@ -1,0 +1,47 @@
+.PersonList {
+  &-items {
+    display: grid;
+    grid-gap: 20px;
+  }
+
+  .PagePromo {
+    &-media {
+      margin-bottom: 0;
+    }
+
+    &-title {
+      &:extend(.promo-title-3 all);
+    }
+  }
+
+  @media @mq-md {
+    &-items {
+      grid-template-columns: 1fr 1fr;
+
+      .TwoColumnContainer7030-column:first-of-type & {
+        display: grid;
+        grid-gap: 20px;
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+  }
+
+  @media @mq-lg {
+    &-items {
+      grid-template-columns: 1fr 1fr 1fr;
+
+      .TwoColumnContainer3070-column:nth-of-type(2) &,
+      .TwoColumnContainer7030-column:first-of-type & {
+        display: grid;
+        grid-gap: 20px;
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+  }
+
+  @media @mq-xl {
+    &-items {
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+  }
+}

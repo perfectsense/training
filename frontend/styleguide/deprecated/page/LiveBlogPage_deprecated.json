@@ -1,0 +1,11 @@
+{
+  "_template": "/liveblog/LiveBlogPage.hbs",
+  "_include": "/page/CreativeWorkPage.json",
+  "_hidden": true,
+  "authorUrl": null,
+  "authorImage": null,
+  "authorName": null,
+  "authorBiography": null,
+  "contributors": null,
+  "people": null
+}

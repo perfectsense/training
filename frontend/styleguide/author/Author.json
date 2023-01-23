@@ -1,0 +1,14 @@
+{
+  "_template": "/author/Author.hbs",
+  "name": {
+    "_include": "/_group/RichTextElementsTiny.json"
+  },
+  "image": {
+    "_include": "/image/Image.json"
+  },
+  "biography": {
+    "_include": "/_group/RichTextElementsMedium.json"
+  },
+  "url": "#",
+  "_hidden": true
+}

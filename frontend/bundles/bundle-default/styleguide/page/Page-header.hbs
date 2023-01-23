@@ -1,0 +1,52 @@
+<!-- Putting icons here, so we don't have to include in a bunch of -body hbs's -->
+{{include "/page/Page-icons.hbs" this}}
+
+{{#if hat}}
+    <div class="Page-header-hat">
+        {{hat}}
+    </div>
+{{/if}}
+<bsp-header class="Page-header">
+    <div class="Page-header-hamburger-menu">
+        <div class="Page-header-hamburger-menu-wrapper">
+            <div class="Page-header-hamburger-menu-content">
+                {{#each navigation}}
+                    {{include "/navigation/Navigation.hbs" this}}
+                {{/each}}
+                {{#with languages}}
+                <div class="Page-header-languages">{{this}}</div>
+                {{/with}}
+            </div>
+        </div>
+    </div>
+
+    <div class="Page-header-bar">
+        <button class="Page-header-menu-trigger" aria-expanded="false"><svg class="burger-menu"><use xlink:href="#burger-menu"></use></svg><svg class="close-x"><use xlink:href="#close-x"></use></svg><span class="label">{{#with navigationToggle}}{{this}}{{else}}{{format "/page/Page" "menuLabel"}}{{/with}}</span></button>
+
+        {{#with logo}}
+            {{#set imageSize="logo"}}
+                <div class="Page-header-bar-logo">{{this}}</div>
+            {{/set}}
+        {{/with}}
+
+        <div class="Page-header-navigation">
+            {{#with navigation}}
+              {{this}}
+            {{/with}}
+        </div>
+
+        <div class="Page-header-end">
+            {{#with languages}}
+                <div class="Page-header-languages">{{this}}</div>
+            {{/with}}
+            {{#if searchAction}}
+                {{include "/page/Page-searchOverlay.hbs" this}}
+            {{/if}}
+        </div>
+    </div>
+
+    {{#with entitlements}}{{#set headerButtons="true"}}{{this}}{{/set}}{{/with}}
+</bsp-header>
+{{#if banner}}
+    {{banner}}
+{{/if}}

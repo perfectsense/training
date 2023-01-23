@@ -1,5 +1,0 @@
-{
-  "_template" : "HtmlModule.hbs",
-  "rawHtml" : "<p> hello <strong> this is strong text </strong> </p>",
-  "ampFallbackUrl": "."
-}

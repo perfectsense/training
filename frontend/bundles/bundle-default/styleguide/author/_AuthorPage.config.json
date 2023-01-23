@@ -1,0 +1,9 @@
+{
+  "styles": {
+    "/author/AuthorPage.hbs": {
+        "fields": [
+            "suppressCommenting"
+        ]
+    }
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "_include": "/page/promo/PagePromoModuleB.json",
+
+  "imageAspectRatio": "xl-4x1",
+  "textAlign": "center"
+}

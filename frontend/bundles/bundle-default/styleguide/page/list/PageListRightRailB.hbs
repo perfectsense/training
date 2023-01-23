@@ -1,0 +1,20 @@
+{{#if items}}
+<div class="PageListRightRailB" data-module {{include "includes/PageList-attributes.hbs" this}}>
+    {{include "includes/PageList-header.hbs" this}}
+
+    {{#with items}}
+        {{#if ../showListNumbers}}<ol{{else}}<ul{{/if}} class="PageList-items" data-with-borders{{#if ../showListNumbers}} data-with-numbers{{/if}}>
+            {{#each this}}
+            <li class="PageList-items-item">
+                {{#eq this._template "/page/promo/PagePromo.hbs"}}
+                    {{include "/page/promo/PagePromo.hbs" this description=null imagePositionHorizontal="right"}}
+                {{else}}
+                    {{render this}}
+                {{/eq}}
+            </li>
+            {{/each}}
+        {{#if ../showListNumbers}}</ol>{{else}}</ul>{{/if}}
+    {{/with}}
+    {{include "includes/PageList-footer.hbs" this}}
+</div>
+{{/if}}

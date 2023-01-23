@@ -1,0 +1,9 @@
+{
+  "_template": "./GoogleAdsenseAdModule.hbs",
+  "client": "ca-pub-1417247832694614",
+  "slot": "8320618289",
+  "width": 728,
+  "height": 90,
+  "ampEnabled": true,
+  "_hidden": true
+}

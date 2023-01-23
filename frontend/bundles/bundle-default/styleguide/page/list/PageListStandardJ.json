@@ -1,0 +1,23 @@
+{
+  "_template": "/page/list/PageList.hbs",
+  "_styledTemplate": "/page/list/PageListStandardJ.hbs",
+  "title": "Standard List J",
+  "items": [
+    {
+      "_include": "/page/promo/PagePromo.json",
+      "title": "Standard List J"
+    },
+    {
+      "_include": "/page/promo/PagePromo.json"
+    },
+    {
+      "_include": "/page/promo/PagePromo.json"
+    },
+    {
+      "_include": "/page/promo/PagePromo.json"
+    },
+    {
+      "_include": "/page/promo/PagePromo.json"
+    }
+  ]
+}

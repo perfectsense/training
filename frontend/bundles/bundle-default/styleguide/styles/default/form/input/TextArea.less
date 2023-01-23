@@ -1,0 +1,35 @@
+.TextArea {
+  &:extend(.Input all);
+
+  textarea {
+    background-color: white;
+    border: 1px solid var(--color-border);
+    border-radius: 5px;
+    color: var(--color-primary-text);
+    min-height: 130px;
+    padding: 15px;
+    width: 100%;
+
+    &::placeholder {
+      color: var(--color-placeholder);
+      opacity: 1;
+    }
+  }
+
+  label {
+    >span {
+      display: block;
+      padding-bottom: 5px;
+    }
+  }
+
+  &-errors {
+    display: none;
+
+    [data-invalid] & {
+      color: var(--color-invalid);
+      display: block;
+      margin-top: 5px;
+    }
+  }
+}

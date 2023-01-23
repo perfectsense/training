@@ -15,6 +15,12 @@
     "_template": "/form/input/FileInput.hbs"
   },
   {
+    "_include": "/form/input/HiddenCookieInput.json"
+  },
+  {
+    "_include": "/form/input/HiddenDocumentReferrerInput.json"
+  },
+  {
     "_template": "/form/input/HiddenInput.hbs"
   },
   {

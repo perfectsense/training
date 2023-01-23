@@ -1,0 +1,15 @@
+{
+  "_include": "/page/Page.json",
+  "pageLead": {
+    "_include": "/page/PageHeading.json",
+    "eyebrow": null,
+    "eyebrowUrl": null,
+    "pageHeading": "Page with Accordion Lists",
+    "pageSubHeading": null
+  },
+  "main": [
+    {
+      "_include": "/page/list/PageListAccordionA.json"
+    }
+  ]
+}

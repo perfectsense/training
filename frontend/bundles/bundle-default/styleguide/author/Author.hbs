@@ -1,0 +1,25 @@
+<div class="Author">
+    <div class="Author-image">
+        {{#if url}}<a href="{{url}}">{{/if}}
+            {{#each image}}
+                {{#set imageSize="small-square"}}
+                    {{include "/image/Image.hbs" this alt=../name}}
+                {{/set}}
+            {{/each}}
+        {{#if url}}</a>{{/if}}
+    </div>
+
+    <div class="Author-content">
+        {{#if name}}
+            <div class="Author-name">
+                {{#if url}}<a href="{{url}}">{{/if}}{{name}}{{#if url}}</a>{{/if}}
+            </div>
+        {{/if}}
+
+        {{#with biography}}
+            <div class="Author-bio RichTextBody" data-size="small">
+                {{this}}
+            </div>
+        {{/with}}
+    </div>
+</div>

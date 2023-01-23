@@ -64,6 +64,14 @@ public class SiteSearchPageViewModel extends AbstractPageViewModel<SiteSearchPag
     }
 
     @Override
+    public Iterable<? extends PageViewPageSubHeadingField> getPageSubHeading() {
+        return RichTextUtils.buildInlineHtml(
+                model,
+                SiteSearchPage::getDescription,
+                e -> createView(PageViewPageSubHeadingField.class, e));
+    }
+
+    @Override
     public String getQuery() {
         return queryString;
     }
@@ -158,11 +166,6 @@ public class SiteSearchPageViewModel extends AbstractPageViewModel<SiteSearchPag
 
     @Override
     public Iterable<? extends PageViewPageLeadField> getPageLead() {
-        return null;
-    }
-
-    @Override
-    public Iterable<? extends PageViewPageSubHeadingField> getPageSubHeading() {
         return null;
     }
 }

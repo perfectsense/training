@@ -1,0 +1,139 @@
+{{#set leadStyle=(fallback (fallback articleLeadStyle defaultArticleLeadStyle) "standard")}}
+<!DOCTYPE html>
+<html ⚡ class="ArticlePage" {{~include "/page/Page-htmlAttributes.hbs" this}}{{#unless aside}} data-no-aside{{/unless}} data-lead="{{get "leadStyle"}}">
+    {{include "/page/Page-head.amp.hbs" this}}
+
+<body class="Page-body Page-Amp">
+    {{include "/page/Page-header.amp.hbs" this}}
+    {{include "/page/Page-above.amp.hbs" this}}
+
+    <div class="Page-content">
+        {{#unless (eq (get "leadStyle") "nested")}}
+        <div class="ArticlePage-lede">
+            {{#eq (get "leadStyle") "overlay"}}
+                {{#if lead}}
+                    {{#set imageSize="large-square"}}
+                        {{#set imageSizeAlt="xl-16x9"}}
+                            <div class="Page-lead">
+                                {{#with lead}}
+                                    {{this}}
+                                {{/with}}
+
+                                <div class="Page-lead-content">
+                                    {{include "/page/Page-breadcrumbs.amp.hbs" this}}
+                                    {{include "/page/Page-headline.amp.hbs" this}}
+                                    {{include "/page/Page-subHeadline.amp.hbs" this}}
+                                </div>
+                            </div>
+                        {{/set}}
+                    {{/set}}
+                {{/if}}
+
+                <div class="ArticlePage-lede-content">
+                    <div class="ArticlePage-actions-wrapper">
+                        {{include "/page/Page-byline.amp.hbs" this}}
+
+                        {{include "/page/Page-actions.amp.hbs" this}}
+                    </div>
+                {{else}}
+                    <div class="ArticlePage-lede-content">
+                    {{include "/page/Page-breadcrumbs.amp.hbs" this}}
+
+                    {{include "/page/Page-headline.amp.hbs" this}}
+
+                    {{include "/page/Page-subHeadline.amp.hbs" this}}
+
+                    <div class="ArticlePage-actions-wrapper">
+                        {{include "/page/Page-byline.amp.hbs" this}}
+
+                        {{include "/page/Page-actions.amp.hbs" this}}
+                    </div>
+                {{/eq}}
+
+                {{#if aside}}
+                    {{#eq (get "leadStyle") "large"}}
+                        {{#set imageSize="xl-16x9"}}
+                            {{include "/page/Page-lead.amp.hbs" this}}
+                        {{/set}}
+                    {{/eq}}
+                {{/if}}
+            </div>
+            {{#unless aside}}
+                {{#eq (get "leadStyle") "large"}}
+                    {{#set imageSize="xl-24x1"}}
+                        {{include "/page/Page-lead.amp.hbs" this}}
+                    {{/set}}
+                {{/eq}}
+            {{/unless}}
+        </div>
+        {{/unless}}
+        {{#if aside}}<div class="Page-twoColumn">{{else}}<div class="Page-oneColumn" data-modulewell>{{/if}}
+            <main class="Page-main" data-module data-padding="none">
+                {{#if (eq (get "leadStyle") "nested")}}
+                    <div class="ArticlePage-lede">
+                        <div class="ArticlePage-lede-content">
+                            {{include "/page/Page-breadcrumbs.amp.hbs" this}}
+
+                            {{include "/page/Page-headline.amp.hbs" this}}
+
+                            {{include "/page/Page-subHeadline.amp.hbs" this}}
+
+                            <div class="ArticlePage-actions-wrapper">
+                                {{include "/page/Page-byline.amp.hbs" this}}
+
+                                {{include "/page/Page-actions.amp.hbs" this}}
+                            </div>
+                        </div>
+                    </div>
+                    {{#set imageSize="large-16x9"}}
+                        {{include "/page/Page-lead.amp.hbs" this}}
+                    {{/set}}
+                {{else}}
+                    {{#unless (get "leadStyle")}}
+                        {{#set imageSize="large-16x9"}}
+                            {{include "/page/Page-lead.amp.hbs" this}}
+                        {{/set}}
+                    {{else}}
+                        {{#eq (get "leadStyle") "standard"}}
+                            {{#set imageSize="large-16x9"}}
+                                {{include "/page/Page-lead.amp.hbs" this}}
+                            {{/set}}
+                        {{/eq}}
+                    {{/unless}}
+                {{/if}}
+
+                {{#with articleBody}}
+                    <div class="Page-articleBody">
+                        {{#set imageSize="large-16x9"}}
+                            {{this}}
+                        {{/set}}
+                    </div>
+                {{/with}}
+
+                {{#if actions}}
+                <div class="Page-actions-bottom">
+                    {{include "/page/Page-actions.amp.hbs" this}}
+                </div>
+                {{/if}}
+
+                {{include "/page/Page-tags.amp.hbs" this}}
+
+                {{include "/page/Page-authorInfo.amp.hbs" this}}
+            </main>
+
+                {{#with aside}}
+                    <aside class="Page-aside">
+                        {{this}}
+                    </aside>
+                {{/with}}
+        </div>
+    </div>
+
+        {{include "/page/Page-below.amp.hbs" this}}
+        {{include "/page/Page-footer.amp.hbs" this}}
+        {{include "/page/Page-extraBodyItems.amp.hbs" this}}
+
+         {{~#with ampAnalytics}}{{this}}{{/with~}}
+</body>
+</html>
+{{/set}}

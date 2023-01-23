@@ -4,8 +4,9 @@
     "_include": "/_group/RichTextElementsTiny.json"
   },
   "description": {
-    "_include": "/_group/RichTextElementsTiny.json"
+    "_include": "/_group/RichTextElementsSmall.json"
   },
+  "anchorId": "anchorTest",
   "acceptCharset": "utf-8",
   "action": "/form",
   "autocomplete": "on",

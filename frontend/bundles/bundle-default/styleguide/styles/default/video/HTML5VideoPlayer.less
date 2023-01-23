@@ -1,0 +1,52 @@
+.HTML5VideoPlayer {
+  display: block;
+  height: 0;
+  margin: 0 auto;
+  padding-bottom: 56.25%; /* 16:9 */
+  position: relative;
+
+  video {
+    border: 0;
+    cursor: pointer;
+    height: 100%;
+    left: 0;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+
+  &-content {
+    &:extend(.promo-title-4 all);
+
+    margin-top: 10px;
+  }
+
+  &-playIcon {
+    bottom: 20px;
+    cursor: pointer;
+    height: 40px;
+    left: 10px;
+    position: absolute;
+    width: 40px;
+
+    svg {
+      height: 100%;
+      left: 2px;
+      position: absolute;
+      top: 0;
+      width: 100%;
+    }
+  }
+
+  @media @mq-lg {
+    padding-bottom: 52.25%;
+
+    &-playIcon {
+      bottom: 20px;
+      height: 50px;
+      left: 20px;
+      width: 50px;
+    }
+  }
+}

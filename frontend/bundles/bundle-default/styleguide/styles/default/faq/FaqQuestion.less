@@ -1,0 +1,46 @@
+.FaqQuestion {
+  display: block;
+
+  &-answer {
+    .description-3;
+    cursor: default;
+    height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+    transition-property: height, opacity;
+
+    [data-expanded] & {
+      height: auto;
+      opacity: 1;
+      overflow: visible;
+    }
+  }
+
+  &-header {
+    cursor: pointer;
+    padding: 20px 0;
+  }
+
+  &-title {
+    .description-2;
+    display: flex;
+    flex-direction: row;
+    font-weight: bold;
+    justify-content: space-between;
+
+    .icon {
+      margin-left: 20px;
+      margin-top: 10px;
+      width: 14px;
+      height: 8px;
+      flex-shrink: 0;
+      transform: rotate(0deg);
+      transition: transform 0.3s ease;
+
+      [data-expanded] & {
+        transform: rotate(180deg);
+      }
+    }
+  }
+}

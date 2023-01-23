@@ -1,0 +1,54 @@
+.Banner {
+  display: none;
+  background: var(--color-banner-bg);
+  color: var(--color-banner-text);
+  padding: 20px 60px 20px 20px;
+  position: relative;
+  width: 100%;
+
+  &-close {
+    align-items: center;
+    background: none;
+    border: 0;
+    cursor: pointer;
+    right: 10px;
+    top: calc(~'50% - 10px');
+    position: absolute;
+    width: 30px;
+
+    svg {
+      fill: var(--color-banner-text);
+      height: 15px;
+      width: 15px;
+    }
+  }
+
+  &-link {
+    &:extend(.promo-title-4 all);
+    font-weight: 400;
+  }
+
+  a {
+    --color-link-text: var(--color-banner-text);
+    --color-link-text-hover: var(--color-banner-text);
+    text-decoration: underline;
+  }
+
+  &-title {
+    &:extend(.promo-title-4);
+
+  }
+
+  &[data-banner='show'] {
+    display: block;
+  }
+
+  @media @mq-md {
+    padding-left: 40px;
+    padding-right: 80px;
+
+    &-close {
+      right: 30px;
+    }
+  }
+}

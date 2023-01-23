@@ -1,0 +1,7 @@
+{
+  "_include": "/article/ArticlePage.json",
+
+  "commenting": {
+    "_include": "/disqus/DisqusCommenting.json"
+  }
+}

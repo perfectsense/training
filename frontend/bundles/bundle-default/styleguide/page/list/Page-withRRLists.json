@@ -1,0 +1,81 @@
+{
+  "_include": "/page/Page.json",
+  "pageLead": {
+    "_include": "/page/PageHeading.json",
+    "eyebrow": null,
+    "eyebrowUrl": null,
+    "pageHeading": "Page with Right Rail Lists",
+    "pageSubHeading": null
+  },
+  "main": [
+    {
+      "_template": "/container/TwoColumnContainer.hbs",
+      "_styledTemplate": "/container/TwoColumnContainer7030.hbs",
+      "columnOne": {
+        "_template": "/text/RichTextModule.hbs",
+        "items": [
+          "{{html('<div class=\"column-example\">Column One</div>')}}"
+        ]
+      },
+      "columnTwo": {
+        "_include": "/page/list/PageListRightRailA.json"
+      }
+    },
+    {
+
+      "_template": "/container/TwoColumnContainer.hbs",
+      "_styledTemplate": "/container/TwoColumnContainer7030.hbs",
+      "columnOne": {
+        "_template": "/text/RichTextModule.hbs",
+        "items": [
+          "{{html('<div class=\"column-example\">Column One</div>')}}"
+        ]
+      },
+      "columnTwo": {
+        "_include": "/page/list/PageListRightRailB.json"
+      }
+    },
+    {
+
+      "_template": "/container/TwoColumnContainer.hbs",
+      "_styledTemplate": "/container/TwoColumnContainer7030.hbs",
+      "columnOne": {
+        "_template": "/text/RichTextModule.hbs",
+        "items": [
+          "{{html('<div class=\"column-example\">Column One</div>')}}"
+        ]
+      },
+      "columnTwo": {
+        "_include": "/page/list/PageListRightRailB-withNumbers.json"
+      }
+    },
+    {
+
+      "_template": "/container/TwoColumnContainer.hbs",
+      "_styledTemplate": "/container/TwoColumnContainer7030.hbs",
+      "columnOne": {
+        "_template": "/text/RichTextModule.hbs",
+        "items": [
+          "{{html('<div class=\"column-example\">Column One</div>')}}"
+        ]
+      },
+      "columnTwo": {
+        "_include": "/page/list/PageListRightRailC.json"
+      }
+    },
+    {
+
+      "_template": "/container/TwoColumnContainer.hbs",
+      "_styledTemplate": "/container/TwoColumnContainer7030.hbs",
+      "columnOne": {
+        "_template": "/text/RichTextModule.hbs",
+        "items": [
+          "{{html('<div class=\"column-example\">Column One</div>')}}"
+        ]
+      },
+      "columnTwo": {
+        "_include": "/page/list/PageListRightRailD.json"
+      }
+    }
+  ]
+}

@@ -6,6 +6,7 @@
   "description": {
     "_include": "/_group/RichTextElementsTiny.json"
   },
+  "anchorId": "anchorTest",
   "slides": [
     {
       "_include": "/gallery/GallerySlide.json"

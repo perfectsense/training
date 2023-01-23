@@ -1,0 +1,20 @@
+{
+  "_template": "NewsletterList.hbs",
+  "title": "{{words([5,10])}}",
+  "description": "{{words([10,15])}}",
+  "items": [
+    {
+      "_include": "/newsletter/NewsletterPromo.json",
+      "_repeat": 5
+    }
+  ],
+  "newsletterDataSource": "",
+  "newsletterDataMedium": "",
+  "newsletterDataCampaign": "",
+  "newsletterDataContent": "",
+  "isNotUTMCapable": "false",
+  "ctaIsNotUTMCapable": "false",
+  "ctaUrl": "#",
+  "ctaTarget": "_self",
+  "ctaTitle": "Read More"
+}

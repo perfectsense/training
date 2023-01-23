@@ -1,0 +1,64 @@
+{
+  "styles": {
+    "/page/promo/PagePromoModule.hbs": {
+      "fields": [
+        "promoTitleSize",
+        "promoDescriptionSize"
+      ],
+      "templates": [
+        {
+          "displayName": "PagePromo Module A",
+          "example": "/page/promo/PagePromoModuleA.json",
+          "height": 800,
+          "width": 1024,
+          "fields": [
+            "hideCategory",
+            "showByline",
+            "imageAspectRatio",
+            "imagePositionVertical",
+            "textAlign",
+            "backgroundColor",
+            "inverseColors",
+            "animateOnScroll"
+          ]
+        },
+        {
+          "displayName": "PagePromo Module B",
+          "example": "/page/promo/PagePromoModuleB.json",
+          "height": 800,
+          "width": 1024,
+          "fields": [
+            "hideCategory",
+            "showByline",
+            "imageAspectRatio",
+            "textAlign",
+            "animateOnScroll"
+          ]
+        },
+        {
+          "displayName": "PagePromo Module C",
+          "example": "/page/promo/PagePromoModuleC.json",
+          "height": 800,
+          "width": 1024,
+          "fields": [
+            "hideCategory",
+            "showByline",
+            "imageAspectRatio",
+            "imagePositionHorizontal",
+            "imageWidth",
+            "backgroundColor",
+            "inverseColors",
+            "animateOnScroll"
+          ]
+        },
+        {
+          "displayName": "PagePromo for Footer",
+          "example": "/page/promo/PagePromoFooter.json",
+          "height": 500,
+          "width": 400,
+          "hidden": true
+        }
+      ]
+    }
+  }
+}

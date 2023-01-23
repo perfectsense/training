@@ -16,7 +16,6 @@ import brightspot.rte.SmallRichTextToolbar;
 import brightspot.util.RichTextUtils;
 import com.psddev.cms.db.Content;
 import com.psddev.cms.db.ToolUi;
-import com.psddev.theme.StyleEmbeddedContentCreator;
 
 public class PageFooter extends Content implements Footer {
 
@@ -33,7 +32,6 @@ public class PageFooter extends Content implements Footer {
     @DisplayName("Contents")
     @Embedded
     @Types({ PagePromoModulePlacementInline.class})
-    @ToolUi.EmbeddedContentCreatorClass(StyleEmbeddedContentCreator.class)
     private List<ModulePlacement> content;
 
     @ToolUi.RichText(toolbar = SmallRichTextToolbar.class)

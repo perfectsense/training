@@ -1,0 +1,32 @@
+<div class="RadioInput">
+    {{~#with errors}}
+        <div class="RadioInput-errors">
+            {{~this~}}
+        </div>
+    {{/with~}}
+
+    <label class="RadioInput-label">
+        <input type="radio"
+            {{~#with checked}} checked{{/with}}
+            {{~#with inputName}} name="{{this}}"{{else}} name="textinput"{{/with}}
+            {{~#with inputValue}} value="{{this}}"{{/with}}
+            {{~#with disabled}} disabled{{/with}}>
+
+            <svg class="unchecked">
+                <use xlink:href="#icon-radio-off"></use>
+            </svg>
+            <svg class="checked">
+                <use xlink:href="#icon-radio-on"></use>
+            </svg>
+
+            <span>
+                {{label}}
+            </span>
+
+            {{~#with description}}
+                <div class="RadioInput-description">
+                    {{~this~}}
+                </div>
+            {{/with~}}
+    </label>
+</div>

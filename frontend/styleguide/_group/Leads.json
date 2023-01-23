@@ -6,18 +6,9 @@
     "_template": "/figure/Figure.hbs"
   },
   {
-    "_template": "/video/HTML5VideoPlayer.hbs"
-  },
-  {
-    "_template": "/youtube/YouTubeVideoPlayer.hbs"
-  },
-  {
-    "_template": "/vimeo/VimeoVideoPlayer.hbs"
+    "_include": "/page/PageHeading.json"
   },
   {
     "_template": "/video/VideoLead.hbs"
-  },
-  {
-    "_include": "/page/PageHeading.json"
   }
 ]

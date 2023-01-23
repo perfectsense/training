@@ -1,0 +1,48 @@
+<bsp-gallery-page-carousel class="GalleryPageModalCarousel" tabindex="-1">
+  <div class="GalleryPageModalCarousel-topBar">
+        {{#with headline}}
+        <div class="GalleryPageModalCarousel-title">{{this}}</div>
+        {{/with}}
+        <a href="#" class="GalleryPageModalCarousel-closeButton"><svg class="icon icon-close-x"><use xlink:href="#close-x"></use></svg></a>
+  </div>
+  <div class="GalleryPageModalCarousel-wrapper">
+   <div class="GalleryPageModalCarousel-slides">
+       {{#each slides}}
+           <div class="GalleryPageModalCarousel-slide" id="slide-{{add @index 1}}">
+               {{#set imageSize="xl-1440h-notfixed"}}
+                   {{media}}
+               {{/set}}
+           </div>
+       {{/each}}
+   </div>
+
+    <div class="GalleryPageModalCarousel-content">
+        <div class="GalleryPageModalCarousel-slides">
+            {{#each slides}}
+                <div class="GalleryPageModalCarousel-slide" data-slide-id="slide-{{@index}}">
+                    {{#with title}}
+                        <div class="GalleryPageModalCarousel-title">
+                            {{~add @index 1}} {{format "/gallery/GalleryPageModalCarousel" "countOfLabel"}} {{../../slides.length~}}:&nbsp;{{this~}}
+                        </div>
+                    {{/with}}
+
+                    {{#with caption}}
+                        <div class="GalleryPageModalCarousel-caption">
+                            {{~this~}}
+                        </div>
+                    {{/with}}
+
+                    {{#with credit}}
+                        <div class="GalleryPageModalCarousel-credit">
+                            {{~this~}}
+                        </div>
+                    {{/with}}
+                </div>
+            {{/each}}
+        </div>
+        <div class="GalleryPageModalCarousel-actions">
+            {{actions}}
+        </div>
+    </div>
+  </div>
+</bsp-gallery-page-carousel>

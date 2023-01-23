@@ -1,9 +1,0 @@
-<bsp-carousel class="Carousel">
-    <div class="Carousel-slides">
-        {{#each slides}}
-            <div class="Carousel-slide">
-                {{include "/carousel/CarouselSlide.hbs" this slideNumber=@index numberOfSlides=../slides.length}}
-            </div>
-        {{/each}}
-    </div>
-</bsp-carousel>

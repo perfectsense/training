@@ -1,0 +1,14 @@
+{
+  "_template": "/author/promo/AuthorPromo.hbs",
+  "media": {
+    "_template": "/image/Image.hbs",
+    "image": {
+      "_image": true
+    }
+  },
+  "publicationUrl": "#",
+  "publicationTitle": "{{words([2,5])}}",
+  "name": "{{name}}",
+  "jobTitle": "{{words([2,5])}}",
+  "url": "#"
+}

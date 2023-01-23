@@ -1,0 +1,12 @@
+{
+  "styles": {
+    "/person/list/PersonList.hbs": {
+      "templates": [
+        {
+          "displayName": "Person List",
+          "example": "/person/list/PersonList.json"
+        }
+      ]
+    }
+  }
+}

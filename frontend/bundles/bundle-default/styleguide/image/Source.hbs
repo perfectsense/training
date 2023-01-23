@@ -1,0 +1,15 @@
+{{#resize image (fallback (get "imageSize") "large-16x9")}}
+    {{#or webpSrcset webpSrc}}{{! WEBP filetype}}
+        {{~#if webpSrcset}}
+            {{include "/image/SourceTag.hbs" this src=webpSrcset type="image/webp"}}
+        {{~else}}
+            {{~#if webpSrc}}
+                {{include "/image/SourceTag.hbs" this src=webpSrc type="image/webp"}}
+            {{/if}}
+        {{/if}}
+    {{/or}}
+
+    {{#unless altFormatsOnly}}
+        {{include "/image/SourceTag.hbs" this}}
+    {{/unless}}
+{{/resize}}

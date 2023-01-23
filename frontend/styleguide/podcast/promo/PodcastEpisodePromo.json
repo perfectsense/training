@@ -1,0 +1,18 @@
+{
+  "_template": "/podcast/promo/PodcastEpisodePromo.hbs",
+  "media": {
+    "_include": "/image/Image.json"
+  },
+  "publishDate": "",
+  "title": {
+    "_include": "/_group/RichTextElementsTiny.json"
+  },
+  "url": "#",
+  "target": "_self",
+  "description": {
+    "_include": "/_group/RichTextElementsTiny.json"
+  },
+  "primaryPodcastMedia": {
+    "_include": "/audio/HTML5AudioPlayer.json"
+  }
+}

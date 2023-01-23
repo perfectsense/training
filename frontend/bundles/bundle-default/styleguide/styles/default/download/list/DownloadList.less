@@ -1,0 +1,33 @@
+.DownloadList {
+  &:extend(.PageListAbstract all);
+  display: block;
+
+  &[data-inverse-colors] {
+    --color-link-text: var(--color-text-inverse);
+    --color-link-text-hover: var(--color-text-inverse);
+    --color-primary-text: var(--color-text-inverse);
+
+    svg {
+      fill: var(--color-text-inverse);
+    }
+  }
+
+  &-items {
+    display: grid;
+    grid-gap: 20px;
+    row-gap: 40px;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media @mq-md {
+    &-items {
+      display: grid;
+    }
+  }
+
+  @media @mq-lg {
+    &-items {
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+  }
+}

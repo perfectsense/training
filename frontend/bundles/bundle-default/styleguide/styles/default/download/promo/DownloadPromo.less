@@ -1,0 +1,37 @@
+.DownloadPromo {
+  display: inline-block;
+
+  .PagePromo {
+    &-description {
+      margin-top: 0px;
+      padding-bottom: 10px;
+    }
+
+    &-media {
+      margin: 0;
+      padding-bottom: 20px;
+    }
+
+    &-title {
+      &:extend(.promo-title-4 all);
+
+      padding-bottom: 10px;
+    }
+  }
+
+  &-link {
+    &:extend(.promo-title-6 all);
+    cursor: pointer;
+    display: grid;
+    grid-template-columns: 0.08fr 0.92fr;
+
+    svg {
+      height: 25px;
+      width: 30px;
+    }
+
+    &-text {
+      margin-top: 3px;
+    }
+  }
+}

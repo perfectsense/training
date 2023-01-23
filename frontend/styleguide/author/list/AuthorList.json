@@ -3,6 +3,7 @@
   "title": {
     "_include": "/_group/RichTextElementsTiny.json"
   },
+  "anchorId": "anchorTest",
   "items": [
     {
       "_include": "/author/promo/AuthorPromo.json",

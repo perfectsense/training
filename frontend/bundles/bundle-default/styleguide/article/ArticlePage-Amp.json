@@ -1,0 +1,111 @@
+{
+  "_include": "/page/Page.amp.json",
+  "_template": "/article/ArticlePage.amp.hbs",
+
+  "dateExpired": "{{date}}",
+  "dateExpiredISO": "2018-02-19T17:44:23+00:00",
+  "datePublished": "{{date}}",
+  "datePublishedISO": "2016-02-19T16:43:22+00:00",
+  "dateModified": "{{date}}",
+  "dateModifiedISO": "2016-02-19T17:44:23+00:00",
+  "headline": "{{words([5,10])}}",
+  "subHeadline": "{{words([5,10])}}",
+  "authors": [
+    {
+      "_include": "/author/Author.json",
+      "_repeat": 3
+    }
+  ],
+  "aside": [
+    {
+      "_template": "/page/list/PageList.amp.hbs",
+      "title": "{{words([1,3])}}",
+      "items": [
+        {
+          "_include": "/page/promo/PagePromo.json",
+          "_template": "/page/promo/PagePromo.amp.hbs"
+        },
+        {
+          "_include": "/page/promo/PagePromo.json",
+          "_template": "/page/promo/PagePromo.amp.hbs"
+        },
+        {
+          "_include": "/page/promo/PagePromo.json",
+          "_template": "/page/promo/PagePromo.amp.hbs"
+        },
+        {
+          "_include": "/page/promo/PagePromo.json",
+          "_template": "/page/promo/PagePromo.amp.hbs"
+        },
+        {
+          "_include": "/page/promo/PagePromo.json",
+          "_template": "/page/promo/PagePromo.amp.hbs"
+        }
+      ]
+    }
+  ],
+
+  "breadcrumbs": [
+    {
+        "_include": "/link/Link.json",
+        "_template": "/link/Link.amp.hbs"
+    },
+    {
+      "_include": "/link/Link.json",
+      "_template": "/link/Link.amp.hbs"
+    }
+  ],
+
+  "lead": {
+    "_include": "/figure/Figure.json",
+    "_template": "/figure/Figure.amp.hbs"
+  },
+
+  "articleBody": {
+    "_template": "/article/RichTextArticleBody.amp.hbs",
+    "body": [
+      "{{paragraphs([2,5])}}",
+      {
+        "_template": "/image/ImageEnhancement.amp.hbs",
+
+        "item": {
+          "_include": "/figure/Figure.json",
+          "_template": "/figure/Figure.amp.hbs"
+        },
+        "inline": false
+      },
+      "{{paragraphs([2,5])}}",
+      {
+        "_template": "/blockquote/BlockQuote.amp.hbs",
+
+        "item": {
+          "_include": "/quote/Quote.json",
+          "_template": "/quote/Quote.amp.hbs"
+        },
+        "inline": false
+      },
+      "{{paragraphs([2,5])}}"
+    ]
+  },
+
+  "updatesCorrections": "{{words([5,10])}}",
+
+  "tags": [
+    {
+      "_include": "/link/Link.json",
+      "_template": "/link/Link.amp.hbs"
+    },
+    {
+      "_include": "/link/Link.json",
+      "_template": "/link/Link.amp.hbs"
+    },
+    {
+      "_include": "/link/Link.json",
+      "_template": "/link/Link.amp.hbs"
+    },
+    {
+      "_include": "/link/Link.json",
+      "_template": "/link/Link.amp.hbs"
+    }
+  ]
+}

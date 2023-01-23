@@ -1,0 +1,7 @@
+{{#with tags}}
+    <div class="Page-tags">
+        {{#each this}}
+            <a class="Button" data-size="small" data-style="pill" data-theme="secondary" href="{{href}}" {{#with target}} target="{{this}}"{{/with}}>{{body}}</a>
+        {{/each}}
+    </div>
+{{/with}}

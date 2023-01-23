@@ -1,7 +1,0 @@
-{
-  "styles": {
-    "/quote/Quote.hbs": {
-      "fields": ["backgroundColor","inverseColors"]
-    }
-  }
-}

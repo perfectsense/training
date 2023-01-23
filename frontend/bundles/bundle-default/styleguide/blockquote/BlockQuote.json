@@ -1,0 +1,6 @@
+{
+  "_template": "BlockQuote.hbs",
+  "quote": "{{words([10,15])}}",
+  "attribution": "{{words([5,15])}}",
+  "_hidden": true
+}

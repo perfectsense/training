@@ -1,0 +1,9 @@
+{
+  "_template": "/languages/LanguagesMenuItem.hbs",
+
+  "languageName": "Spanish",
+  "languageCode": "ES",
+  "target": "",
+  "url": "#",
+  "_styledTemplate": "/languages/LanguagesMenuItem.hbs"
+}

@@ -1,0 +1,10 @@
+{
+  "styles": {
+    "/gallery/GalleryPage.hbs": {
+        "fields": [
+            "galleryPageStyle",
+            "suppressCommenting"
+        ]
+    }
+  }
+}

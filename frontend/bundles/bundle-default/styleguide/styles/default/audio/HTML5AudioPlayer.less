@@ -1,0 +1,37 @@
+.HTML5AudioPlayer {
+  align-items: center;
+  display: flex;
+
+  [data-not-playing] {
+    svg {
+      height: 35px;
+      left: -5px;
+      position: relative;
+      top: -1px;
+      width: 31px;
+    }
+  }
+
+  [data-if-playing] {
+    svg {
+      width: 19px;
+      height: 16px;
+    }
+  }
+
+  &[playing] {
+    [data-not-playing] {
+      display: none;
+    }
+  }
+
+  &:not([playing]) {
+    [data-if-playing] {
+      display: none;
+    }
+  }
+
+  &-duration {
+    margin-left: 14px;
+  }
+}

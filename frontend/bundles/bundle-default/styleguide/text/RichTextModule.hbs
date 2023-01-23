@@ -1,0 +1,7 @@
+<div class="RichTextModule" data-module>
+    {{include "/link/AnchorLink.hbs" this}}
+    {{#with title}}
+        <div class="RichTextModule-title">{{this}}</div>
+    {{/with}}
+    {{include "/text/RichTextModule-items.hbs" this}}
+</div>

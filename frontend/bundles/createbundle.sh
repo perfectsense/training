@@ -5,7 +5,7 @@ set -e -u
 brightspotVersion=""
 goVersion=""
 name=""
-bundle=frontend-bundle-default
+bundle=
 version=""
 
 ARTIFACTORY="https://artifactory.psdops.com/psddev-releases"
@@ -73,29 +73,31 @@ mkdir -p $DIR/$name
 echo "Download bundle https://artifactory.psdops.com/psddev-releases/com/brightspot/go/$bundle/$version/$bundle-${version}.tar"
 curl -SL  https://artifactory.psdops.com/psddev-releases/com/brightspot/go/$bundle/$version/$bundle-${version}.tar | tar -xf - -C $DIR/$name/ --strip-components=1
 
-sed -i "" "s/${bundle}/${name}/g" ${DIR}/${name}/package.json
+sed -i "" "s/brightspot-theme-core/${name}/g" ${DIR}/${name}/package.json
 
 echo "# DO NOT REMOVE - Required for JarBundleInitializer to find bundle" > "${DIR}/${name}/.brightspot-theme.properties"
 
-gradle=${DIR}/${name}/build.gradle
-echo "output $gradle"
+# Only for Gradle projects
+if [ -f "../../build.gradle" ]; then
+    gradle=${DIR}/${name}/build.gradle
+    echo "output $gradle"
 
-echo " plugins {" > $gradle
-echo "    id 'com.github.node-gradle.node'" >> $gradle
-echo "    id 'com.github.node-gradle.gulp'" >> $gradle
-echo "}" >> $gradle
-echo "" >> $gradle
-echo "description = '${name}'" >> $gradle
-echo "" >> $gradle
-echo 'apply from: "https://artifactory.psdops.com/psddev-releases/com/psddev/brightspot-gradle-plugins/express-theme/${brightspotGradlePluginVersion}/express-theme.gradle"' >> $gradle
+    echo " plugins {" > $gradle
+    echo "    id 'com.github.node-gradle.node'" >> $gradle
+    echo "    id 'com.github.node-gradle.gulp'" >> $gradle
+    echo "}" >> $gradle
+    echo "" >> $gradle
+    echo "description = '${name}'" >> $gradle
+    echo "" >> $gradle
+    echo 'apply from: "https://artifactory.psdops.com/psddev-releases/com/psddev/brightspot-gradle-plugins/express-theme/${brightspotGradlePluginVersion}/express-theme.gradle"' >> $gradle
 
-# Update settings.gradle
-awk "FNR==NR{ if (/include\(/) p=NR; next} 1; FNR==p{ print \"include(':${name}')\" }" ../../settings.gradle ../../settings.gradle > ../../settings.gradle.tmp
-awk "FNR==NR{ if (/project\(/) p=NR; next} 1; FNR==p{ print \"project(':${name}').projectDir = file('frontend/bundles/${name}')\" }" ../../settings.gradle.tmp ../../settings.gradle.tmp > ../../settings.gradle
-rm ../../settings.gradle.tmp
+    awk "FNR==NR{ if (/include\(/) p=NR; next} 1; FNR==p{ print \"include(':${name}')\" }" ../../settings.gradle ../../settings.gradle > ../../settings.gradle.tmp
+    awk "FNR==NR{ if (/project\(/) p=NR; next} 1; FNR==p{ print \"project(':${name}').projectDir = file('frontend/bundles/${name}')\" }" ../../settings.gradle.tmp ../../settings.gradle.tmp > ../../settings.gradle
+    rm ../../settings.gradle.tmp
 
-# Update site/build.gradle
-awk "FNR==NR{ if (/    api project\(/) p=NR; next} 1; FNR==p{ print \"    api project(':${name}')\" }" ../../web/build.gradle ../../web/build.gradle > ../../web/build.gradle.tmp
-mv ../../web/build.gradle.tmp ../../web/build.gradle
+    # Update site/build.gradle
+    awk "FNR==NR{ if (/    api project\(/) p=NR; next} 1; FNR==p{ print \"    api project(':${name}')\" }" ../../web/build.gradle ../../web/build.gradle > ../../web/build.gradle.tmp
+    mv ../../web/build.gradle.tmp ../../web/build.gradle
+fi
 
 echo "$bundle has been created, rebuild your project."

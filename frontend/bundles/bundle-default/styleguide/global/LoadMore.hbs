@@ -1,0 +1,8 @@
+{{#if nextPage}}
+<bsp-load-more data-url="{{nextPage}}" class="LoadMore">
+    <span class="LoadMore-loading"></span>
+    <button>
+        {{format "loadMoreText"}}
+    </button>
+</bsp-load-more>
+{{/if}}

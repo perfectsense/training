@@ -1,0 +1,55 @@
+<head>
+    <meta charset="{{#with charset}}{{this}}{{else}}UTF-8{{/with}}">
+
+    {{#with webFontLink}}
+        <link href="{{this}}" rel="stylesheet">
+    {{/with}}
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family={{#with font1}}{{this}}{{else}}Roboto{{/with}}:300,400,700|{{#with font2}}{{this}}{{else}}Merriweather{{/with}}:300,400,700">
+
+    {{#eq _env "styleguide"}}
+        <style amp-custom>
+            {{include "/global/Colors.amp.hbs" this}}
+            {{include "/global/Typography.amp.hbs" this}}
+            {{ampCustom}}
+        </style>
+        <script src="/styles/amp/Amp.min.js" async></script>
+    {{else}}
+         <style amp-custom>
+            {{include "/global/Colors.amp.hbs" this}}
+            {{include "/global/Typography.amp.hbs" this}}
+            {{include "/styles/amp/Amp.min.css.hbs"}}
+            {{ampCustom}}
+        </style>
+    {{/eq}}
+
+    {{~#with jsonLinkedData}}<script type="application/ld+json">{{this}}</script>{{/with~}}
+
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+
+    {{~#with title}}<title>{{this}}</title>{{/with~}}
+    {{~#with description}}<meta name="description" content="{{this}}">{{/with~}}
+    {{~#with canonicalLink}}<link rel="canonical" href="{{this}}">{{/with~}}
+    <meta name="viewport" content="{{#with viewport}}{{this}}{{else}}width=device-width,minimum-scale=1,initial-scale=1{{/with}}">
+
+    {{~#with contentId}}<meta name="brightspot.contentId" content="{{this}}">{{/with~}}
+
+    {{~#with meta}}{{this}}{{/with~}}
+    {{~#with favicons}}{{this}}{{/with}}
+
+    {{~#with manifestLink}}<link rel="manifest" href="{{this}}">{{/with}}
+
+    {{~#with feedLink}}{{this}}{{/with~}}
+
+    <link rel="preload" as="script" href="https://cdn.ampproject.org/v0.js">
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+   	<script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
+
+    {{#eq _env "styleguide"}}
+        <script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
+        <script async custom-element="amp-accordion" src="https://cdn.ampproject.org/v0/amp-accordion-0.1.js"></script>
+        <script async custom-element="amp-social-share" src="https://cdn.ampproject.org/v0/amp-social-share-0.1.js"></script>
+    {{/eq}}
+
+    {{~#with dssScripts}}{{this}}{{/with~}}
+</head>

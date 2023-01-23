@@ -1,0 +1,21 @@
+<div class="GallerySlide" data-slide-index="{{slideNumber}}">
+    <div class="GallerySlide-media">
+        {{#with media}}
+            {{#set imageSize=(fallback (get "imageSize") "xl-16x9") lazyLoad="flickity"}}
+                {{this}}
+            {{/set}}
+        {{/with}}
+    </div>
+    <div class="GallerySlide-info">
+        <span class="GallerySlide-slideCount">
+            <span class="GallerySlide-currentSlide">{{add slideNumber 1}}</span>/<span class="GallerySlide-slidesLength">{{numberOfSlides}}{{#if title}}:&nbsp;{{/if}}</span>
+        </span>
+
+        {{~#with title~}}<span class="GallerySlide-title">{{~this~}}</span>{{~/with~}}
+
+         <div class="GallerySlide-content">
+            {{~#with caption~}}<span class="GallerySlide-caption">{{this}}</span>{{~/with~}}
+            {{~#with credit~}}&nbsp;<span class="GallerySlide-credit">{{this}}</span>{{~/with~}}
+        </div>
+    </div>
+</div>

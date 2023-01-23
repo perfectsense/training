@@ -1,0 +1,162 @@
+.Page-footer {
+  --color-link-text: var(--color-footer-text);
+  --color-primary-text: var(--color-footer-text);
+  align-items: center;
+  background: var(--color-footer-bg);
+  color: var(--color-footer-text);
+  display: flex;
+  justify-content: space-between;
+  padding: 50px;
+  .layoutWidth();
+
+  &-container {
+    width: 100%;
+  }
+
+  &-columns {
+    display: flex;
+    flex-shrink: 0;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+
+    & > div {
+      flex: 1;
+
+      &:nth-child(1) {
+        flex: 100%;
+        width: 100%;
+      }
+
+      &:nth-child(2) {
+        padding-top: 10px;
+      }
+
+      &:nth-child(3) {
+        flex: 100%;
+        width: 100%;
+        padding-top: 40px;
+      }
+    }
+  }
+
+  &-bottom {
+    border-top: 1px solid var(--color-border);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 30px;
+    padding-top: 20px;
+    margin-bottom: 10px;
+  }
+
+  &-disclaimer {
+    &:extend(.label-5 all);
+
+    color: var(--color-footer-text);
+    font-weight: normal;
+    margin-bottom: 20px;
+
+    a {
+      color: var(--color-primary);
+    }
+  }
+
+  &-logo {
+    img {
+      height: auto;
+      width: 250px;
+      margin-bottom: 30px;
+    }
+  }
+
+  @media @mq-md {
+    flex-direction: row;
+
+    &-content {
+      text-align: left;
+      max-width: 290px;
+    }
+
+    &-logo {
+      img {
+        width: 300px;
+      }
+    }
+
+    &-disclaimer {
+      margin-bottom: 20px;
+    }
+
+    &-bottom {
+      margin-top: 50px;
+    }
+
+    &-columns {
+      align-items: flex-start;
+      flex-direction: row;
+
+      & > div {
+        flex: 1;
+
+        &:nth-child(1) {
+          flex: 100%;
+          width: 100%;
+        }
+
+        &:nth-child(2) {
+          padding-top: 10px;
+        }
+
+        &:nth-child(3) {
+          flex: 1;
+          max-width: 250px;
+          margin-left: 40px;
+          padding-top: 10px;
+          width: 250px;
+        }
+      }
+    }
+  }
+
+  @media @mq-lg {
+    &-bottom {
+      flex-direction: row;
+    }
+
+    &-disclaimer {
+      margin-bottom: 0px;
+    }
+
+    &-columns {
+      & > div {
+        &:nth-child(3) {
+          max-width: 280px;
+          width: 280px;
+        }
+      }
+    }
+  }
+
+  @media @mq-xl {
+    &-columns {
+      &>div {
+        &:nth-child(1) {
+          flex: 1;
+          margin-right: 100px;
+          max-width: 300px;
+        }
+
+        &:nth-child(2) {
+          padding-top: 0;
+        }
+
+        &:nth-child(3) {
+          max-width: 300px;
+          padding-top: 0;
+          width: 300px;
+        }
+      }
+    }
+  }
+}

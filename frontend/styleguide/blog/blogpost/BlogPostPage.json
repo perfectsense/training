@@ -2,8 +2,5 @@
   "_wrapper": false,
   "_include": "/article/ArticlePage.json",
   "_template": "BlogPostPage.hbs",
-  "blogNavigation": {
-    "_include": "/navigation/Navigation.json"
-  },
   "_hidden": true
 }

@@ -1,0 +1,16 @@
+{
+  "_include": "/page/Page.json",
+  "_template": "/section/SectionPage.hbs",
+  "above": null,
+  "sectionNavigation": {
+    "_include": "/navigation/SectionNavigation.json"
+  },
+  "main": [
+    {
+      "_include": "/page/list/PageListStandardA.json"
+    },
+    {
+      "_include": "/carousel/Carousel.json"
+    }
+  ]
+}

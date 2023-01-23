@@ -1,9 +1,0 @@
-{
-  "styles": {
-    "/navigation/NavigationItem.hbs": {
-      "fields": [
-        "navColumns"
-      ]
-    }
-  }
-}

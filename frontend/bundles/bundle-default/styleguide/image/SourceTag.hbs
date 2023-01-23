@@ -1,0 +1,11 @@
+<source
+    {{~#with (get "mediaQuery")}} media="{{this}}"{{/with~}}
+    {{~#with type}} type="{{this}}" {{/with~}}
+    {{~#with width}} width="{{this}}"{{/with~}}
+    {{~#with height}} height="{{this}}"{{/with~}}
+    {{~#eq (get "lazyLoad") "flickity"}}
+        {{~#with src}} data-flickity-lazyload-srcset="{{this}}"{{/with~}}
+    {{else~}}
+        {{~#with src}} srcset="{{this}}"{{/with~}}
+    {{/eq}}
+/>

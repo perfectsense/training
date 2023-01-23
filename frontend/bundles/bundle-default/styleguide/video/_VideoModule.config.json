@@ -1,0 +1,12 @@
+{
+  "styles": {
+    "/video/VideoModule.hbs": {
+      "templates": [
+        {
+          "displayName": "Video Module",
+          "example": "/video/VideoModule.json"
+        }
+      ]
+    }
+  }
+}

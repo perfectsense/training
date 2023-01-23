@@ -1,0 +1,9 @@
+{
+  "_template": "/languages/LanguagesMenu.hbs",
+  "currentLanguageCode": "",
+  "items": [
+    {
+      "_include": "/languages/LanguagesMenuItem.json"
+    }
+  ]
+}

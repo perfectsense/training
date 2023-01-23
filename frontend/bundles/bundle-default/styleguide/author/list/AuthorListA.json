@@ -1,0 +1,13 @@
+{
+  "_template": "/author/list/AuthorList.hbs",
+  "_styledTemplate": "/author/list/AuthorListA.hbs",
+  "listTitleSize": "1",
+  "title": "{{words([5,10])}}",
+  "anchorId": "anchorTest",
+  "items": [
+    {
+      "_include": "/author/promo/AuthorPromo.json",
+      "_repeat": 10
+    }
+  ]
+}

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html class="ArticlePage" "/page/Page-htmlAttributes.hbs" this}}>
+{{!-- This page still has ArticlePage as the class name, as it is identical to the Article Page, so just
+      used all the same HTML and CSS vs extending. There is a bsp-gallery-page wrapper around the entire
+      page if you need to write custom CSS against things --}}
+{{include "/page/Page-head.hbs" this}}
+
+<body class="Page-body">
+    {{include "/page/Page-header.hbs" this}}
+    {{include "/page/Page-above.hbs" this}}
+
+    <bsp-gallery-page class="Page-content" data-gallery-style="{{#with galleryPageStyle}}{{this}}{{else}}carousel{{/with}}">
+        <div class="ArticlePage-lede">
+                <div class="ArticlePage-lede-content">
+                {{include "/page/Page-breadcrumbs.hbs" this}}
+                {{include "/page/Page-headline.hbs" this}}
+                {{include "/page/Page-subHeadline.hbs" this}}
+                {{include "/page/Page-lead.hbs" this}}
+                {{include "/page/Page-byline.hbs" this}}
+                {{include "/page/Page-actions.hbs" this}}
+            </div>
+        </div>
+        <div class="Page-twoColumn">
+            <main class="Page-main">
+                {{#with galleryBody}}
+                    <div class="Page-articleBody RichTextBody">
+                        {{#set imageSize="medium-4x3"}}
+                            {{this}}
+                        {{/set}}
+                    </div>
+                {{/with}}
+
+                {{#if (eq galleryPageStyle "waterfall")}}
+                    {{#with slides}}
+                        {{#each this}}
+                            {{#set tabIndex="true"}}
+                                {{include "/gallery/GallerySlideWaterfall.hbs" this slideNumber=@index numberOfSlides=../slides.length}}
+                            {{/set}}
+                        {{/each}}
+                    {{/with}}
+                {{else}}
+                    {{#with slides}}
+                        <bsp-carousel class="Carousel">
+                            {{#each this}}
+                                <div class="Carousel-slide" id="slide-{{@index}}">
+                                    {{include "/gallery/GallerySlide.hbs" this slideNumber=@index numberOfSlides=../../slides.length}}
+                                </div>
+                            {{/each}}
+                        </bsp-carousel>
+                    {{/with}}
+                {{/if}}
+
+                <div class="Page-actions-bottom">
+                    {{include "/page/Page-actions.hbs" this}}
+                </div>
+
+                {{include "/page/Page-tags.hbs" this}}
+
+                {{include "/page/Page-commenting.hbs" this}}
+            </main>
+
+            {{#if aside}}
+                <aside class="Page-aside">
+                    {{#each aside}}
+                        {{#set imagePositionVertical="top"}}
+                            {{render this
+                                            [/page/promo/PagePromo.hbs]="/page/promo/PagePromo.hbs"
+                                            [/page/list/PageList.hbs]="/page/list/PageListRightRailA.hbs"
+                            }}
+                        {{/set}}
+                    {{/each}}
+                </aside>
+            {{/if}}
+        </div>
+    </bsp-gallery-page>
+
+    {{include "/page/Page-below.hbs" this}}
+    {{include "/page/Page-footer.hbs" this}}
+    {{include "./GalleryPageModalCarousel.hbs" this}}
+    {{include "/page/Page-extraBodyItems.hbs" this}}
+</body>
+</html>

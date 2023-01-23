@@ -1,0 +1,162 @@
+.RichTextElements {
+  // underline links inside paragraphs and lists, but not in the base
+  // as it underlines enhancements which we do not want underlined
+  > p,
+  > ul,
+  > ol,
+  p > ul,
+  p > ol,
+  h2,
+  h3 {
+    a {
+      text-decoration: underline;
+
+      &.Button {
+        color: var(--color-button-text);
+
+        :hover {
+          color: var(--color-button-hover-text);
+          text-decoration: none;
+        }
+      }
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+
+  > a {
+    text-decoration: underline;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  // fixing lists and lists of lists, but trying not to affect Enhancements that might
+  // have list markup in them
+  > ul,
+  p > ul {
+    list-style: disc;
+    margin: 20px 0;
+    padding: 0 0 0 20px;
+
+    li {
+      padding: 0 0 20px 20px;
+    }
+
+    li > ul {
+      list-style: circle;
+      padding: 20px 0 0 20px;
+
+      li:last-of-type {
+        padding: 0 0 0 20px;
+      }
+
+      li > ul {
+        list-style: square;
+        padding: 20px 0 0 20px;
+
+        li:last-of-type {
+          padding: 0 0 0 20px;
+        }
+
+        li > ul {
+          list-style: disc;
+          padding: 20px 0 0 20px;
+        }
+      }
+    }
+
+
+    li > ol {
+      list-style: decimal;
+      padding: 20px 0 0 20px;
+    }
+  }
+
+  > ol,
+  p > ol {
+    list-style: decimal;
+    margin: 20px 0;
+    padding: 0 0 0 20px;
+
+    li {
+      padding: 0 0 20px 20px;
+    }
+
+    li > ul {
+      list-style: disc;
+      padding: 20px 0 0 20px;
+
+      li:last-of-type {
+        padding: 0 0 0 20px;
+      }
+    }
+
+    li > ol {
+      list-style: lower-alpha;
+      padding: 20px 0 0 20px;
+
+      li:last-of-type {
+        padding: 0 0 0 20px;
+      }
+
+      li > ol {
+        list-style: lower-roman;
+        padding: 20px 0 0 20px;
+      }
+    }
+  }
+
+  > p {
+    margin: 20px 0;
+
+    &:first-of-type {
+      margin-top: 0;
+    }
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+
+  table {
+    width: 100%;
+    border: 1px solid var(--color-border);
+
+    @media @mq-up-to-lg {
+      min-width: 940px;
+    }
+
+    tbody {
+      tr {
+        margin-bottom: 10px;
+
+        &:last-of-type {
+          td {
+            padding-bottom: 0;
+          }
+        }
+      }
+
+      td {
+        padding: 0 15px;
+        border: 1px solid var(--color-border);
+        background-clip: padding-box;
+        min-height: 50px;
+        height: 50px;
+        position: relative;
+
+        &:first-child {
+          border-left: 0;
+        }
+
+        &:last-child {
+          border-right: 0;
+        }
+      }
+    }
+  }
+}

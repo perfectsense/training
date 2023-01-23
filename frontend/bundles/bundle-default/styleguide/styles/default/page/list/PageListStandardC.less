@@ -1,0 +1,125 @@
+.PageListStandardC {
+  .PageList {
+    &-items {
+      display: grid;
+      gap: 40px;
+
+      &-item {
+        &:nth-of-type(1) {
+          .PagePromo {
+            &-description {
+              &:extend(.description-2 all);
+            }
+
+            &-title {
+              &:extend(.promo-title-2 all);
+            }
+          }
+        }
+
+        &:not(:nth-of-type(1)) {
+          .PagePromo {
+            &-title {
+              &:extend(.promo-title-4 all);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media @mq-md {
+    .PageList {
+      &-items {
+        grid-auto-flow: dense;
+        grid-column-gap: 20px;
+        grid-row-gap: 40px;
+        grid-template-columns: repeat(2, 1fr);
+
+        &-item {
+          &:nth-of-type(1) {
+            grid-column: span 2;
+            grid-row: span 1;
+          }
+
+          &:not(:nth-of-type(1)) {
+            grid-row: span 2;
+          }
+        }
+      }
+    }
+
+    .PagePromo {
+      &-byline {
+        margin-top: 15px;
+      }
+
+      &-media {
+        margin-bottom: 15px;
+      }
+    }
+  }
+
+  @media @mq-lg {
+    .PageList {
+      &-items {
+        grid-row-gap: 20px;
+        grid-template-columns: repeat(12, 1fr);
+
+        &-item {
+          &:nth-of-type(1) {
+            border-bottom: none;
+            grid-column: span 8;
+            grid-row: span 4;
+            padding-bottom: 0;
+
+            .PagePromo {
+              &-description {
+                margin-top: 15px;
+              }
+            }
+          }
+
+          &:not(:nth-of-type(1)) {
+            grid-column: span 4;
+
+            .PagePromo {
+              &-byline {
+                margin-top: 10px;
+              }
+
+              &-description {
+                margin-top: 10px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media @mq-hk {
+    .PageList {
+      &-items {
+        grid-row-gap: 40px;
+
+        .TwoColumnContainer7030 & {
+          grid-row-gap: 20px;
+        }
+      }
+    }
+  }
+
+  @media @mq-xl {
+    .PageList {
+      &-items {
+        grid-column-gap: 40px;
+
+        .TwoColumnContainer7030 & {
+          grid-column-gap: 20px;
+          grid-row-gap: 40px;
+        }
+      }
+    }
+  }
+}

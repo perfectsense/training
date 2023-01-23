@@ -1,0 +1,17 @@
+[
+  {
+    "_template": "/brightcove/BrightcoveVideoPlayer.hbs"
+  },
+  {
+    "_template": "/video/HTML5VideoPlayer.hbs"
+  },
+  {
+    "_template": "/vimeo/VimeoVideoPlayer.hbs"
+  },
+  {
+    "_template": "/jwplayer/JwVideoPlayer.hbs"
+  },
+  {
+    "_template": "/youtube/YouTubeVideoPlayer.hbs"
+  }
+]

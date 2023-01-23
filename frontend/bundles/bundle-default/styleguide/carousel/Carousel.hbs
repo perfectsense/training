@@ -1,0 +1,12 @@
+<bsp-carousel class="Carousel" data-module>
+    {{include "/link/AnchorLink.hbs" this}}
+    <div class="Carousel-slides">
+        {{#set imageSize=(fallback (get "imageSize") "xl-16x9")}}
+            {{#each slides}}
+                <div class="Carousel-slide">
+                    {{include "/carousel/CarouselSlide.hbs" this slideNumber=@index numberOfSlides=../slides.length}}
+                </div>
+            {{/each}}
+        {{/set}}
+    </div>
+</bsp-carousel>

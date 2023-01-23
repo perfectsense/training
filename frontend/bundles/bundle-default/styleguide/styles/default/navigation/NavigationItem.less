@@ -1,0 +1,248 @@
+.NavigationItem {
+  position: relative;
+
+  &-more {
+    cursor: pointer;
+    height: 56px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 50px;
+
+    button {
+      &:extend(.NotButton all);
+
+      height: 100%;
+      position: relative;
+      width: 100%;
+    }
+
+    svg {
+      fill: var(--color-header-text);
+      height: 17px;
+      position: absolute;
+      right: 0;
+      top: 20px;
+      width: 11px;
+
+      [data-item-click="true"] & {
+        transform: rotate(180deg);
+        top: 16px;
+      }
+    }
+  }
+
+  &-items {
+    display: none;
+    padding: 0 0 15px 0;
+
+    [data-item-click="true"] & {
+      display: block;
+    }
+  }
+
+  // These are the top level items in the navigation
+  &-text {
+    &:extend(.label-2 all);
+
+    color: var(--color-header-text);
+    --color-link-text: var(--color-header-text);
+    --color-link-text-hover: var(--color-header-text);
+    display: flex;
+    justify-content: space-between;
+
+    a,
+    span {
+      display: block;
+      padding: 20px 0;
+      width: 100%;
+      margin-bottom: -5px;
+      border-bottom: 5px solid transparent;
+      transition: all 0.1s ease;
+      word-break: keep-all;
+    }
+
+    a.Button {
+      --color-link-text: var(--color-button-text);
+      border-bottom-width: 1px;
+      display: inline-block;
+      padding: 0 25px;
+      margin: 15px 0;
+      width: auto;
+    }
+  }
+
+  // temporary treatment for Grouped subnav until we have a design
+  .NavigationGroup {
+    > span.NavigationLink {
+      &:hover {
+        background: none;
+      }
+    }
+
+    &-items {
+      padding-left: 10px;
+    }
+  }
+
+  // These are the subnav items
+  .NavigationLink {
+    &:extend(.label-2 all);
+
+    --color-link-text: var(--color-header-text);
+    --color-link-text-hover: var(--color-primary);
+    display: block;
+    padding: 15px;
+    width: 100%;
+
+    &-description {
+      &:extend(.description-2 all);
+
+      display: block;
+      margin-top: 5px;
+    }
+  }
+
+  @media @mq-hk {
+    align-items: center;
+    display: flex;
+    height: 100%;
+
+    &-items {
+      background: var(--color-header-bg);
+      box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.1);
+      border-top: 0;
+      display: grid;
+      left: -30px;
+      padding: 15px 0;
+      position: absolute;
+      top: var(--headerHeight);
+      min-width: 300px;
+      word-break: keep-all;
+      overflow: hidden;
+      visibility: hidden;
+      z-index: @z-index-header + 1;
+      width: auto;
+
+      &[data-columns='2'] {
+        grid-template-columns: 1fr 1fr;
+        width: 520px;
+
+        // in case we want borders between menu columns, this is an easy way
+        //
+        // &:before {
+        //   background: var(--color-header-border);
+        //   bottom: 30px;
+        //   content: '';
+        //   left: 260px;
+        //   position: absolute;
+        //   top: 30px;
+        //   width: 1px;
+        // }
+      }
+
+      &[data-columns='3'] {
+        grid-template-columns: 1fr 1fr 1fr;
+        width: 780px;
+
+        // in case we want borders between menu columns, this is an easy way
+        //
+        // &:before {
+        //   background: var(--color-header-border);
+        //   bottom: 30px;
+        //   content: '';
+        //   left: 260px;
+        //   position: absolute;
+        //   top: 30px;
+        //   width: 1px;
+        // }
+
+        // &:after {
+        //   background: var(--color-header-border);
+        //   bottom: 30px;
+        //   content: '';
+        //   left: 520px;
+        //   position: absolute;
+        //   top: 30px;
+        //   width: 1px;
+        // }
+      }
+
+      &[data-open-direction='left'] {
+        position: fixed;
+        left: unset;
+        right: 20px;
+
+        :root[data-header-hat=true] & {
+          top: calc(~'var(--headerHeight) + var(--hatHeight)');
+        }
+      }
+
+      [data-item-hover] & {
+        overflow: initial;
+        visibility: visible;
+      }
+
+      &-item {
+        padding: 0 20px;
+        position: relative;
+
+        .NavigationLink {
+          --color-link-text-hover: var(--color-header-text);
+          padding-left: 20px;
+          padding-right: 20px;
+
+          &:hover {
+            background: var(--color-header-secondary-bg)
+          }
+        }
+      }
+    }
+
+    &-more {
+      border-left: 0;
+      height: 100%;
+      width: auto;
+      right: 15px;
+
+      svg {
+        height: 17px;
+        left: unset;
+        position: relative;
+        top: 0px;
+      }
+    }
+
+    &-text {
+      a,
+      span {
+        margin-left: 10px;
+        margin-right: 10px;
+        padding: 10px 0;
+
+        .has-menu & {
+          padding: 10px 25px 10px 0px;
+        }
+
+        &:hover,
+        [data-item-hover] & {
+          border-bottom: 5px solid var(--color-primary);
+
+          &.Button {
+            border-bottom-width: 1px;
+          }
+        }
+
+        [data-toggle-header="hamburger-menu"] & {
+          border-bottom: 0;
+          padding: 20px;
+        }
+      }
+
+      a.Button {
+        margin-left: 20px;
+        margin-right: 20px;
+      }
+    }
+  }
+}

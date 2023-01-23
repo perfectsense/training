@@ -1,0 +1,14 @@
+{
+  "_template": "ItunesFeedItemMetadata.hbs",
+  "title": "Episode 1 iTunes Title",
+  "summary": "This is the summary.",
+  "subtitle": "This is the subtitle.",
+  "author": "John Smith",
+  "duration": 550,
+  "imageUrl": "",
+  "explicit": true,
+  "episodeType": "full",
+  "episodeNumber": 1,
+  "seasonNumber": 2,
+  "block": "No"
+}

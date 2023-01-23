@@ -1,0 +1,45 @@
+.Fieldset {
+  border: 0;
+  padding: 0;
+
+  &-description {
+    &:extend(.description-2);
+    padding-bottom: 20px;
+  }
+
+  &-title {
+    &:extend(.label-1);
+    padding-bottom: 20px;
+  }
+
+  &-items {
+    display: grid;
+    grid-template-columns: 1fr;
+
+    &-item {
+      margin-bottom: 15px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .Form-fieldsetColumns (@code, @style) {
+    &[data-fieldset-lgcolumns='@{code}'] {
+      > .Fieldset-items {
+          grid-gap: 10px;
+          grid-template-columns: @style;
+        }
+      }
+
+  }
+
+  @media @mq-lg {
+    .Form-fieldsetColumns('50-50', 1fr 1fr);
+    .Form-fieldsetColumns('33-33-33', 1fr 1fr 1fr);
+    .Form-fieldsetColumns('50-25-25', 2fr 1fr 1fr);
+    .Form-fieldsetColumns('25-25-50', 1fr 1fr 2fr);
+    .Form-fieldsetColumns('25-25-25-25', 1fr 1fr 1fr 1fr);
+  }
+}

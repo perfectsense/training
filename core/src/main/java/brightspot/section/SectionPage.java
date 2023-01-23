@@ -14,11 +14,12 @@ import brightspot.cascading.CascadingPageElements;
 import brightspot.image.WebImageAsset;
 import brightspot.landing.LandingCascadingData;
 import brightspot.landing.LandingPageElements;
+import brightspot.module.HasModularSearchIndexFields;
 import brightspot.module.ModulePlacement;
 import brightspot.module.list.page.DynamicPageItemStream;
-import brightspot.module.list.page.PageListModulePlacementInline;
 import brightspot.page.ModulePageLead;
 import brightspot.page.Page;
+import brightspot.page.PageHeading;
 import brightspot.page.TypeSpecificCascadingPageElements;
 import brightspot.permalink.AbstractPermalinkRule;
 import brightspot.permalink.Permalink;
@@ -26,6 +27,7 @@ import brightspot.promo.page.PagePromotableWithOverrides;
 import brightspot.rss.DynamicFeedSource;
 import brightspot.rte.SmallRichTextToolbar;
 import brightspot.rte.TinyRichTextToolbar;
+import brightspot.search.boost.HasSiteSearchBoostIndexes;
 import brightspot.search.modifier.exclusion.SearchExcludable;
 import brightspot.seo.SeoWithFields;
 import brightspot.share.Shareable;
@@ -34,9 +36,14 @@ import brightspot.urlslug.HasUrlSlug;
 import brightspot.util.MoreStringUtils;
 import brightspot.util.RichTextUtils;
 import com.psddev.cms.db.Content;
+import com.psddev.cms.db.ContentEditDrawerItem;
 import com.psddev.cms.db.Site;
 import com.psddev.cms.db.ToolUi;
 import com.psddev.cms.ui.ToolLocalization;
+import com.psddev.cms.ui.content.place.GroupedPlace;
+import com.psddev.cms.ui.content.place.Place;
+import com.psddev.cms.ui.content.place.Placeable;
+import com.psddev.cms.ui.content.place.PlaceableTarget;
 import com.psddev.dari.db.Recordable;
 import com.psddev.dari.util.Utils;
 import com.psddev.feed.FeedItem;
@@ -49,7 +56,13 @@ import com.psddev.suggestions.SuggestionsInitField;
     "parent",
     "sectionCascading.sectionNavigation",
     "lead",
-    "landingCascading.content"
+    "landingCascading.content",
+    "seo.title",
+    "seo.suppressSeoDisplayName",
+    "seo.description",
+    "seo.keywords",
+    "seo.robots",
+    "ampPage.ampDisabled"
 })
 @Recordable.DisplayName("Section")
 @SuggestionsInitField("displayName")
@@ -57,21 +70,23 @@ import com.psddev.suggestions.SuggestionsInitField;
 public class SectionPage extends Content implements
     Anchorage,
     CascadingPageElements,
+    ContentEditDrawerItem,
     DynamicFeedSource,
     DefaultSiteMapItem,
     HasBreadcrumbs,
+    HasModularSearchIndexFields,
+    HasSiteSearchBoostIndexes,
     HasUrlSlug,
     LandingPageElements,
     Page,
     PagePromotableWithOverrides,
+    PlaceableTarget,
     SearchExcludable,
     Section,
     SectionPageElements,
     SeoWithFields,
     Shareable,
     TypeSpecificCascadingPageElements {
-
-    public static final String PROMOTABLE_TYPE = "section";
 
     @Required
     @Indexed
@@ -90,7 +105,7 @@ public class SectionPage extends Content implements
 
     // @ToolUi.EmbeddedContentCreatorClass(StyleEmbeddedContentCreator.class)
     @ToolUi.NoteHtml("<span data-dynamic-html='${content.leadNoteHtml}'></span>")
-    private ModulePageLead lead;
+    private ModulePageLead lead = new PageHeading().as(ModulePageLead.class);
 
     public String getLeadNoteHtml() {
         return ToolLocalization.text(
@@ -154,23 +169,7 @@ public class SectionPage extends Content implements
     public List<ModulePlacement> getContents() {
         return Optional.ofNullable(as(LandingCascadingData.class)
             .getContent(as(Site.ObjectModification.class).getOwner()))
-            .orElseGet(this::defaultContents);
-    }
-
-    public List<ModulePlacement> defaultContents() {
-        AllSectionMatch sectionMatch = new AllSectionMatch();
-        sectionMatch.setIncludeCurrentSection(true);
-
-        DynamicPageItemStream itemStream = new DynamicPageItemStream();
-        itemStream.asQueryBuilderDynamicQueryModifier().setQueryBuilder(sectionMatch);
-
-        PageListModulePlacementInline listModule = new PageListModulePlacementInline();
-        listModule.setItemStream(itemStream);
-
-        List<ModulePlacement> contents = new ArrayList<>();
-        contents.add(listModule);
-
-        return contents;
+            .orElseGet(ArrayList::new);
     }
 
     // --- HasBreadcrumbs support ---
@@ -180,6 +179,18 @@ public class SectionPage extends Content implements
         List<Section> ancestors = getSectionAncestors();
         Collections.reverse(ancestors);
         return ancestors;
+    }
+
+    // --- HasSiteSearchBoostIndexes support ---
+
+    @Override
+    public String getSiteSearchBoostTitle() {
+        return getDisplayName();
+    }
+
+    @Override
+    public String getSiteSearchBoostDescription() {
+        return getDescription();
     }
 
     // --- Linkable Support ---
@@ -211,6 +222,14 @@ public class SectionPage extends Content implements
         return anchors;
     }
 
+    // --- HasModularSearchIndexFields support ---
+
+    @Override
+    public Set<String> getModularSearchChildPaths() {
+        // ignore inherited contents
+        return Collections.singleton("landingCascading.content/items");
+    }
+
     // --- HasUrlSlug support ---
 
     @Override
@@ -235,8 +254,8 @@ public class SectionPage extends Content implements
     @Override
     public String getLabel() {
         return MoreStringUtils.firstNonBlank(
-                getInternalName(),
-                this::getSectionDisplayNamePlainText);
+            getInternalName(),
+            this::getSectionDisplayNamePlainText);
     }
 
     // --- Section support ---
@@ -285,11 +304,6 @@ public class SectionPage extends Content implements
         return getDescription();
     }
 
-    @Override
-    public String getPagePromotableType() {
-        return PROMOTABLE_TYPE;
-    }
-
     // --- FeedElement Support ---
 
     @Override
@@ -330,5 +344,12 @@ public class SectionPage extends Content implements
     @Override
     public String createPermalink(Site site) {
         return AbstractPermalinkRule.create(site, this, SectionPrefixPermalinkRule.class);
+    }
+
+    @Override
+    public List<Place> getPlaceableTargetPlaces(Placeable content) {
+        return Collections.singletonList(
+                new GroupedPlace(content, this, "Contents", getContents())
+        );
     }
 }

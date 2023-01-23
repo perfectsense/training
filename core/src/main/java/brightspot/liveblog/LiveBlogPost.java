@@ -1,21 +1,19 @@
 package brightspot.liveblog;
 
 import java.util.Date;
-import java.util.Map;
-import java.util.Objects;
 import java.util.Optional;
 import java.util.UUID;
-import java.util.stream.Collectors;
 
+import brightspot.actionbar.HasActionBar;
 import brightspot.anchor.AnchorLinkable;
 import brightspot.author.HasAuthorsWithField;
-import brightspot.image.WebImage;
 import brightspot.image.WebImageAsset;
 import brightspot.permalink.Permalink;
 import brightspot.promo.page.PagePromotableWithOverrides;
 import brightspot.rte.LargeRichTextToolbar;
 import brightspot.rte.TinyRichTextToolbar;
 import brightspot.rte.image.ImageRichTextElement;
+import brightspot.search.boost.HasSiteSearchBoostIndexes;
 import brightspot.share.Shareable;
 import brightspot.util.RichTextUtils;
 import brightspot.util.Truncate;
@@ -32,7 +30,6 @@ import com.psddev.cms.ui.ToolRequest;
 import com.psddev.dari.web.WebRequest;
 import com.psddev.feed.FeedItem;
 import org.apache.commons.lang3.StringUtils;
-import org.jsoup.nodes.Attribute;
 
 @ToolUi.ExcludeFromGlobalSearch
 @ToolUi.CssClass("is-inGrid")
@@ -42,7 +39,9 @@ public class LiveBlogPost extends Content implements
         ContentEditWidgetDisplay,
         ContentEditPublishRedirectUrlSupplier,
         FeedItem,
+        HasActionBar,
         HasAuthorsWithField,
+        HasSiteSearchBoostIndexes,
         Managed,
         RtcEvent,
         PagePromotableWithOverrides,
@@ -199,6 +198,18 @@ public class LiveBlogPost extends Content implements
         return getPostUrl(site);
     }
 
+    // --- HasSiteSearchBoostIndexes support ---
+
+    @Override
+    public String getSiteSearchBoostTitle() {
+        return getHeadline();
+    }
+
+    @Override
+    public String getSiteSearchBoostDescription() {
+        return getPagePromotableDescription();
+    }
+
     // --- Linkable support ---
 
     @Override
@@ -262,24 +273,11 @@ public class LiveBlogPost extends Content implements
     }
 
     @Override
-    public WebImage getPagePromotableImageFallback() {
+    public WebImageAsset getPagePromotableImageFallback() {
 
         if (!StringUtils.isBlank(body)) {
 
-            return RichTextUtils.documentFromRichText(body).select(ImageRichTextElement.TAG_NAME)
-                    .stream()
-                    .map(e -> {
-
-                        Map<String, String> attributes = e.attributes().asList().stream().collect(Collectors.toMap(
-                                Attribute::getKey, Attribute::getValue));
-                        ImageRichTextElement imageRTE = new ImageRichTextElement();
-                        imageRTE.fromAttributes(attributes);
-                        imageRTE.fromBody(e.html());
-                        return imageRTE.getImage();
-                    })
-                    .filter(Objects::nonNull)
-                    .findFirst()
-                    .orElse(null);
+            return ImageRichTextElement.getFirstImageFromRichText(body);
         }
 
         return null;

@@ -1,0 +1,49 @@
+{{#if items}}
+<div class="PageListStandardA" data-module {{include "includes/PageList-attributes.hbs" this}}>
+    {{include "includes/PageList-header.hbs" this}}
+
+    <div class="PageList-items">
+        <div class="PageList-items-item">
+            {{#with items.[0]}}
+                {{#eq this._template "/page/promo/PagePromo.hbs"}}
+                    {{#set imageSize="large-16x9"}}
+                        {{include "/page/promo/PagePromo.hbs" this}}
+                    {{/set}}
+                {{else}}
+                    {{render this}}
+                {{/eq}}
+            {{/with}}
+        </div>
+        {{#each items}}
+            {{#if (gt @index 0)}}
+                {{#if (lt @index 5)}}
+                    <div class="PageList-items-item">
+                        {{#eq this._template "/page/promo/PagePromo.hbs"}}
+                            {{include "/page/promo/PagePromo.hbs" this media=null authorName=null description=null}}
+                        {{else}}
+                            {{render this}}
+                        {{/eq}}
+                    </div>
+                {{/if}}
+            {{/if}}
+        {{/each}}
+        {{#each items}}
+            {{#if (gt @index 4)}}
+                {{#if (lt @index 9)}}
+                    <div class="PageList-items-item">
+                        {{#eq _template "/page/promo/PagePromo.hbs"}}
+                            {{#set imageSize="medium-4x3"}}
+                                {{include "/page/promo/PagePromo.hbs" this description=null mobileAltLayout="true"}}
+                            {{/set}}
+                        {{else}}
+                            {{render this}}
+                        {{/eq}}
+                    </div>
+                {{/if}}
+            {{/if}}
+        {{/each}}
+    </div>
+
+    {{include "includes/PageList-footer.hbs" this}}
+</div>
+{{/if}}

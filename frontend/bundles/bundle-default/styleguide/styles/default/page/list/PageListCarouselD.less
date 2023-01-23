@@ -1,0 +1,44 @@
+.PageListCarouselD {
+  .PageList-items {
+    &:after {
+      content: 'flickity';
+      display: none;
+    }
+
+    &-item {
+      margin-right: 20px;
+      max-width: 140px;
+      width: 40%;
+    }
+  }
+
+  .PagePromo {
+    &-title {
+      text-align: center;
+    }
+  }
+
+  @media @mq-md {
+    .PageList-items {
+      width: calc(~'100% + 20px');
+
+      &-item {
+        margin-right: 20px;
+        max-width: none;
+        width: calc(~'25% - 20px');
+      }
+    }
+  }
+
+  @media @mq-lg {
+    .PageList-items {
+      &-item {
+        width: calc(~'(100% / 6) - 20px');
+
+        [data-column-count="5"]& {
+          width: calc(~'20% - 20px');
+        }
+      }
+    }
+  }
+}

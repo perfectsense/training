@@ -1,0 +1,20 @@
+<div class="GallerySlideWaterfall" data-slide-index="{{slideNumber}}">
+    <a href="#" class="GallerySlideWaterfall-fullScreenButton">
+        <svg class="icon icon-icon-fullscreen"><use xlink:href="#icon-fullscreen"></use></svg>
+    </a>
+    <div class="GallerySlideWaterfall-media">
+        {{#with media}}
+            {{#set imageSize=(fallback (get "imageSize") "xl-16x9") lazyLoad=false}}
+                {{this}}
+            {{/set}}
+        {{/with}}
+    </div>
+    <div class="GallerySlideWaterfall-info">
+        {{~#with title~}}<span class="GallerySlideWaterfall-title">{{~this~}}</span>{{~/with~}}
+
+         <div class="GallerySlideWaterfall-content">
+            {{~#with caption~}}<span class="GallerySlideWaterfall-caption">{{this}}</span>{{~/with~}}
+            {{~#with credit~}}&nbsp;<span class="GallerySlideWaterfall-credit">{{this}}</span>{{~/with~}}
+        </div>
+    </div>
+</div>

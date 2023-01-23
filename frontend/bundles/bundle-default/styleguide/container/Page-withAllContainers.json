@@ -1,0 +1,175 @@
+{
+  "_include": "/page/Page.json",
+  "pageLead": null,
+  "navigation": null,
+  "main": [
+    {
+      "_template": "/container/OneColumnContainer.hbs",
+      "_styledTemplate": "/container/OneColumnContainer.hbs",
+      "title": "One Column Container",
+      "showContainerTitle": true,
+      "columnOne": [
+        {
+          "_template": "/text/RichTextModule.hbs",
+
+          "items": [
+            "{{html('<div class=\"column-example\" style=\"border: 1px solid gray; padding: 20px;\">Column One</div>')}}"
+          ]
+        }
+      ]
+    },
+    {
+      "_template": "/container/TwoColumnContainer.hbs",
+      "_styledTemplate": "/container/TwoColumnContainer3070.hbs",
+      "title": "Two Column Container 30/70",
+      "backgroundColor": "#F0F0F0",
+      "inverseColors": true,
+      "showContainerTitle": true,
+      "columnOne": [
+        {
+          "_template": "/text/RichTextModule.hbs",
+
+          "items": [
+            "{{html('<div class=\"column-example\" style=\"border: 1px solid gray; padding: 20px;\">Column One</div>')}}"
+          ]
+        }
+      ],
+      "columnTwo": [
+        {
+          "_template": "/text/RichTextModule.hbs",
+
+          "items": [
+            "{{html('<div class=\"column-example\" style=\"border: 1px solid gray; padding: 20px;\">Column Two</div>')}}"
+          ]
+        }
+      ]
+    },
+    {
+      "_template": "/container/TwoColumnContainer.hbs",
+      "_styledTemplate": "/container/TwoColumnContainer5050.hbs",
+      "title": "Two Column Container 50/50",
+      "showContainerTitle": true,
+      "columnOne": [
+        {
+          "_template": "/text/RichTextModule.hbs",
+
+          "items": [
+            "{{html('<div class=\"column-example\" style=\"border: 1px solid gray; padding: 20px;\">Column One</div>')}}"
+          ]
+        }
+      ],
+      "columnTwo": [
+        {
+          "_template": "/text/RichTextModule.hbs",
+
+          "items": [
+            "{{html('<div class=\"column-example\" style=\"border: 1px solid gray; padding: 20px;\">Column Two</div>')}}"
+          ]
+        }
+      ]
+    },
+    {
+      "_template": "/container/TwoColumnContainer.hbs",
+      "_styledTemplate": "/container/TwoColumnContainer7030.hbs",
+      "showContainerTitle": true,
+      "title": "Two Column Container 70/30",
+      "backgroundColor": "#F0F0F0",
+      "inverseColors": true,
+      "columnOne": [
+        {
+          "_template": "/text/RichTextModule.hbs",
+
+          "items": [
+            "{{html('<div class=\"column-example\" style=\"border: 1px solid gray; padding: 20px;\">Column One</div>')}}"
+          ]
+        }
+      ],
+      "columnTwo": [
+        {
+          "_template": "/text/RichTextModule.hbs",
+
+          "items": [
+            "{{html('<div class=\"column-example\" style=\"border: 1px solid gray; padding: 20px;\">Column Two</div>')}}"
+          ]
+        }
+      ]
+    },
+    {
+      "_template": "/container/ThreeColumnContainer.hbs",
+      "_styledTemplate": "/container/ThreeColumnContainer.hbs",
+      "title": "Three Column Container",
+      "showContainerTitle": true,
+      "columnOne": [
+        {
+          "_template": "/text/RichTextModule.hbs",
+
+          "items": [
+            "{{html('<div class=\"column-example\" style=\"border: 1px solid gray; padding: 20px;\">Column One</div>')}}"
+          ]
+        }
+      ],
+      "columnTwo": [
+        {
+          "_template": "/text/RichTextModule.hbs",
+
+          "items": [
+            "{{html('<div class=\"column-example\" style=\"border: 1px solid gray; padding: 20px;\">Column Two</div>')}}"
+          ]
+        }
+      ],
+      "columnThree": [
+        {
+          "_template": "/text/RichTextModule.hbs",
+
+          "items": [
+            "{{html('<div class=\"column-example\" style=\"border: 1px solid gray; padding: 20px;\">Column Three</div>')}}"
+          ]
+        }
+      ]
+    },
+    {
+      "_template": "/container/FourColumnContainer.hbs",
+      "_styledTemplate": "/container/FourColumnContainer.hbs",
+      "title": "Four Column Container",
+      "backgroundColor": "#F0F0F0",
+      "inverseColors": true,
+      "showContainerTitle": true,
+      "columnOne": [
+        {
+          "_template": "/text/RichTextModule.hbs",
+
+          "items": [
+            "{{html('<div class=\"column-example\" style=\"border: 1px solid gray; padding: 20px;\">Column One</div>')}}"
+          ]
+        }
+      ],
+      "columnTwo": [
+        {
+          "_template": "/text/RichTextModule.hbs",
+
+          "items": [
+            "{{html('<div class=\"column-example\" style=\"border: 1px solid gray; padding: 20px;\">Column Two</div>')}}"
+          ]
+        }
+      ],
+      "columnThree": [
+        {
+          "_template": "/text/RichTextModule.hbs",
+
+          "items": [
+            "{{html('<div class=\"column-example\" style=\"border: 1px solid gray; padding: 20px;\">Column Three</div>')}}"
+          ]
+        }
+      ],
+      "columnFour": [
+        {
+          "_template": "/text/RichTextModule.hbs",
+
+          "items": [
+            "{{html('<div class=\"column-example\" style=\"border: 1px solid gray; padding: 20px;\">Column Four</div>')}}"
+          ]
+        }
+      ]
+    }
+  ]
+}

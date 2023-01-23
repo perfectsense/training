@@ -1,0 +1,11 @@
+{
+  "_template": "/navigation/NavigationItem.hbs",
+  "text": "{{words([1,2])}}",
+  "items": [
+    {
+      "_include": "/navigation/NavigationLink.json",
+      "description": null,
+      "_repeat": 3
+    }
+  ]
+}

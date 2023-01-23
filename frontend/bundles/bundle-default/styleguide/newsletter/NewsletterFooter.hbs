@@ -1,0 +1,31 @@
+<table class="NewsletterFooter">
+    {{#with links}}
+    <tr>
+        <td class="NewsletterFooter-links">
+            {{this}}
+        </td>
+    </tr>
+    {{/with}}
+    {{#with social}}
+        <tr>
+            <td class="NewsletterFooter-social">
+                {{#each this}}
+                    <div class="SocialBar">
+                        {{#with items}}
+                            <ul class="SocialBar-items">
+                                {{#each this}}
+                                    <li class="SocialBar-items-item">{{this}}</li>
+                                {{/each}}
+                            </ul>
+                        {{/with}}
+                    </div>
+                {{/each}}
+            </td>
+        </tr>
+    {{/with}}
+    <tr>
+        <td class="NewsletterFooter-disclaimer">
+            {{body}}
+        </td>
+    </tr>
+</table>

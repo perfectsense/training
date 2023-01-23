@@ -1,0 +1,84 @@
+.PageListStandardH {
+  .PageList-items {
+    display: grid;
+    grid-row-gap: 20px;
+
+    &-item {
+      padding-bottom: 20px;
+
+      &:nth-of-type(1) {
+        border-bottom: none;
+
+        .PagePromo {
+          &-description {
+            &:extend(.description-1 all);
+          }
+
+          &-media {
+            margin-left: 0;
+          }
+
+          &-title {
+            &:extend(.promo-title-2 all);
+          }
+        }
+      }
+    }
+  }
+
+  @media @mq-only-sm {
+    .PageList-items {
+      &-item {
+        border-bottom: 1px solid var(--color-list-border);
+        padding-bottom: 20px;
+
+        &:nth-of-type(1) {
+          border-bottom: none;
+          padding-bottom: 30px;
+        }
+
+        .PagePromo {
+          &-media {
+            margin-left: 14px;
+          }
+        }
+      }
+    }
+  }
+
+  @media @mq-md {
+    .PageList-items {
+      grid-column-gap: 20px;
+      grid-row-gap: 40px;
+      grid-template-columns: repeat(2, 1fr);
+
+      &-item {
+        padding-bottom: 0;
+
+        &:nth-of-type(1) {
+          grid-column: span 2;
+          grid-row: span 1;
+        }
+      }
+    }
+  }
+
+  @media @mq-lg {
+    .PageList-items {
+      grid-template-columns: repeat(12, 1fr);
+
+      &-item {
+        &:nth-of-type(1) {
+          border-bottom: none;
+          grid-column: span 6;
+          grid-row: span 2;
+          padding-bottom: 0;
+        }
+
+        &:nth-of-type(n + 2):nth-of-type(-n + 5) {
+          grid-column: span 3;
+        }
+      }
+    }
+  }
+}

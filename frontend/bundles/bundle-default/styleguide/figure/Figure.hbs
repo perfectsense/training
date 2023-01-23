@@ -1,0 +1,17 @@
+<figure class="Figure">
+    {{include "/link/AnchorLink.hbs" this}}
+    {{#set imageSize=(fallback (get "imageSize") "large-16x9")}}
+        {{include "/image/Image.hbs" this}}
+    {{/set}}
+
+    {{#or caption credit}}
+        <div class="Figure-content">
+            {{~#with caption~}}
+                <figcaption class="Figure-caption">{{~this~}}</figcaption>
+            {{~/with~}}
+            {{~#with credit~}}
+                <div class="Figure-credit">{{~this~}}</div>
+            {{~/with~}}
+        </div>
+    {{/or}}
+</figure>

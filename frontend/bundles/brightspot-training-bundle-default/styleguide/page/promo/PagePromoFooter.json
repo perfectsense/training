@@ -1,9 +1,0 @@
-{
-  "_template": "/page/promo/PagePromoModule.hbs",
-  "_styledTemplate": "/page/promo/PagePromoFooter.hbs",
-  "url": "#",
-  "target": "_self",
-  "title": "Bacon ipsum dolor amet",
-  "description": "Burgdoggen sausage boudin, chuck kielbasa picanha cow tenderloin. Picanha flank pastrami kielbasa prosciutto frankfurter. ",
-  "ctaButtonText": "Read More"
-}

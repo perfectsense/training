@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+    <head>
+        <title></title>
+        {{#eq _env "styleguide"}}
+            <script src="/newsletter/NewsletterEmbed.min.js" async></script>
+            <script src="/newsletter/NewsletterInline.min.js" async></script>
+        {{else}}
+            {{!-- This <style> tag will be inlined and removed --}}
+            <style data-inline="true">{{include "/newsletter/NewsletterInline.min.css.hbs"}}</style>
+
+            {{!-- Supported media queries in this <style> tag will not be inlined or removed --}}
+            <style data-inline="false">{{include "/newsletter/NewsletterEmbed.min.css.hbs"}}</style>
+        {{/eq}}
+    </head>
+
+    <body style="padding:0; margin:0">
+        {{include "/newsletter/NewsletterIcons.hbs" this}}
+
+        <table class="Newsletter" border="0" cellpadding="0" cellspacing="0" style="margin: 0; padding: 0" width="100%">
+            <tr>
+                <td class="Newsletter-content" align="center" valign="top" width="590">
+                    {{#with above}}
+                        <table class="NewsletterAbove">
+                            <tr>
+                                <td>
+                                    {{this}}
+                                </td>
+                            </tr>
+                        </table>
+                    {{/with}}
+                    {{#with banner}}
+                        {{this}}
+                    {{/with}}
+                    {{#with header}}
+                        {{this}}
+                    {{/with}}
+                    {{#each main}}
+                        {{this}}
+                    {{/each}}
+                    {{#with footer}}
+                        {{this}}
+                    {{/with}}
+                </td>
+            </tr>
+        </table>
+    </body>
+</html>

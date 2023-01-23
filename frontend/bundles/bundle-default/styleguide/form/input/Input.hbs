@@ -1,0 +1,24 @@
+<div class="Input">
+    {{~#with errors}}
+        <div class="Input-errors">
+            {{~this~}}
+        </div>
+    {{/with~}}
+
+    <label class="Input-label">
+        <span>
+            {{label}}
+        </span>
+
+        <input class="Input-input" type="text"
+               name="{{inputName}}"
+               placeholder="{{placeholder}}"
+               value="{{inputValue}}">
+
+        {{~#with description}}
+            <div class="Input-description">
+                {{~this~}}
+            </div>
+        {{/with~}}
+    </label>
+</div>

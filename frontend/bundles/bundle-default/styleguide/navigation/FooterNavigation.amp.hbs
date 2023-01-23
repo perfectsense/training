@@ -1,0 +1,11 @@
+<nav class="FooterNavigation">
+    {{#with items}}
+        <ul class="FooterNavigation-items">
+            {{#each this}}
+                <li class="FooterNavigation-items-item">
+                    {{include "/navigation/FooterNavigationItem.amp.hbs" this}}
+                </li>
+            {{/each}}
+        </ul>
+    {{/with}}
+</nav>

@@ -1,0 +1,96 @@
+.RichTextBody {
+  &:extend(.RichTextElements all);
+
+  &[data-size='small'] {
+    .description-2;
+  }
+
+  h2 {
+    .promo-title-1;
+
+    [data-size='small'] & {
+      .promo-title-2;
+    }
+  }
+
+  h3 {
+    .promo-title-2;
+
+    [data-size='small'] & {
+      .promo-title-3;
+    }
+  }
+
+  .cms-textAlign-center {
+    text-align: center;
+  }
+
+  .cms-textAlign-right {
+    text-align: right;
+  }
+
+  // just in case we have giant enhancements aligned
+  &:after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+
+  // not setting this on the parent as it messes up some enhancements
+  > p,
+  > ul,
+  > ol,
+  p > ul,
+  p > ol {
+    .body-1;
+  }
+
+  .VideoPlaylistModule {
+    margin: 30px 0 !important; // need to override data-module rules since this reuses the same HTML as non enhancement
+
+    &-description {
+      &:extend(.description-2 all);
+    }
+
+    &-title {
+      &:extend(.list-title-2 all);
+    }
+  }
+
+  @media @mq-md {
+    .VideoPlaylistModule {
+      margin: 40px 0 !important; // need to override data-module rules since this reuses the same HTML as non enhancement
+    }
+  }
+
+  @media @mq-lg {
+    .VideoPlaylistModule {
+      [data-module] & {
+        margin-bottom: 0;
+      }
+
+      &-player {
+        padding-right: 0;
+      }
+
+      &-playlist {
+        border-top: 2px solid var(--color-border);
+
+        &-items {
+          display: flex;
+          position: relative;
+          width: 100%;
+
+          &-item {
+            border-bottom: none;
+
+            &:first-of-type {
+              border-bottom: none;
+              margin-top: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}

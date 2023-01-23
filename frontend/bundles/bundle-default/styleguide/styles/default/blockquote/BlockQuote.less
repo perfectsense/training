@@ -1,0 +1,19 @@
+.BlockQuote {
+  &:extend(.body-1 all);
+  border-left: 3px solid var(--color-button-border);
+  padding-left: 20px;
+
+  &[data-with-bg] {
+    padding: 20px;
+  }
+
+  &[data-inverse-colors] {
+    --color-primary-text: var(--color-text-inverse);
+  }
+
+  &-attribution {
+    &:extend(.byline-1 all);
+
+    margin: 15px auto 0;
+  }
+}

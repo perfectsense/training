@@ -1,0 +1,13 @@
+{
+  "styles": {
+    "/quote/Quote.hbs": {
+      "fields": ["backgroundColor","inverseColors"],
+      "templates": [
+        {
+          "displayName": "Quote",
+          "example": "/quote/Quote.json"
+        }
+      ]
+    }
+  }
+}

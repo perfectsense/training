@@ -2,7 +2,7 @@
 trap "exit 1" TERM
 export TOP_PID=$$
 
-materializeVersion="3.0.1"
+materializeVersion="3.0.2"
 
 # Parameters
 artifact=""
@@ -572,6 +572,12 @@ function materialize() {
   local realVersion="${3}"
   local destinationDirectory="${4}"
 
+  # Check if destination directory exists.
+  if [ ! -d ${destinationDirectory} ]; then
+    echo -e "Unable to materialize ${groupId}:${artifactId}:${realVersion}. Destination directory '${destinationDirectory}' not found!"
+    return 1
+  fi
+
   echo "${INFO} Materializing ${groupId}:${artifactId}:${realVersion} into ${destinationDirectory}"
 
   local now
@@ -1016,7 +1022,7 @@ if [[ ${frontendDependencyDetected} == "true" ]]; then
     echo "project ${project}"
     IFS=""
     coreDependency="dependencies {"
-    coreNewDependency="dependencies {\r\n    api project(':${project}-frontend')"
+    coreNewDependency="dependencies {\r\n    api project(':frontend')"
     frontendDependency="api 'com.brightspot.go:frontend'"
 
     cd core
@@ -1029,10 +1035,10 @@ if [[ ${frontendDependencyDetected} == "true" ]]; then
     grep -rl "${coreDependency}" build.gradle | xargs sed -i '' -e "s/${coreDependency}/""${coreNewDependency}""/"
     cd ..
 
-    siteNewInclude="include(':${project}-frontend')"
+    siteNewInclude="include(':frontend')"
     awk 'FNR==NR{ if (/include\(/) p=NR; next} 1; FNR==p{ print "'${siteNewInclude}'" }' settings.gradle settings.gradle > tmp && mv tmp settings.gradle
 
-    siteNewProject="project(':${project}-frontend').projectDir"
+    siteNewProject="project(':frontend').projectDir"
     siteNewProject2="="
     siteNewProject3="file('frontend')"
     awk 'FNR==NR{ if (/project\(/) p=NR; next} 1; FNR==p{ print "'${siteNewProject}'" " " "'${siteNewProject2}'" " " "'${siteNewProject3}'"  }' settings.gradle settings.gradle > tmp && mv tmp settings.gradle

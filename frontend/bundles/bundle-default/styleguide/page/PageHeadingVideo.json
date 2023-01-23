@@ -1,0 +1,22 @@
+{
+  "_template": "/page/PageHeading.hbs",
+  "_styledTemplate": "/page/PageHeadingVideo.hbs",
+
+  "eyebrow": "Eyebrow",
+  "eyebrowUrl": "#",
+  "eyebrowTarget": "_blank",
+  "pageHeading": "This is the Page Heading",
+  "pageSubHeading": "Optional Description text.  ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.",
+  "logo": {
+    "_include": "/image/Image.json"
+  },
+  "media": {
+    "_include": "/image/Image.json"
+  },
+  "backgroundVideo": {
+    "_include": "/video/HTML5VideoPlayer.json"
+  },
+  "fullScreenVideo": true,
+  "headingTextAlign": "left",
+  "headingTextColor": "white"
+}

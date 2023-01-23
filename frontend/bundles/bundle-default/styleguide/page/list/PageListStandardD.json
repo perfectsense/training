@@ -1,0 +1,38 @@
+{
+  "_template": "/page/list/PageList.hbs",
+  "_styledTemplate": "/page/list/PageListStandardD.hbs",
+  "title": "Standard List D",
+  "description": "{{words(20)}}",
+  "pagination": [
+    {
+      "_template": "/link/Link.hbs",
+      "body": "Previous Page",
+      "href": ""
+    },
+    {
+      "_template": "/link/Link.hbs",
+      "body": "Next Page",
+      "href": "#"
+    }
+  ],
+  "items": [
+    {
+      "_include": "/page/promo/PagePromo.json"
+    },
+    {
+      "_include": "/page/promo/PagePromo.json"
+    },
+    {
+      "_include": "/page/promo/PagePromo.json"
+    },
+    {
+      "_include": "/page/promo/PagePromo.json"
+    },
+    {
+      "_include": "/page/promo/PagePromo.json"
+    },
+    {
+      "_include": "/page/promo/PagePromo.json"
+    }
+  ]
+}

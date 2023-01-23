@@ -1,0 +1,676 @@
+{
+  "fields": {
+    "articleLeadStyle": {
+      "displayName": "Choose article lead style",
+      "type": "text",
+      "cms.ui.dropDown": true,
+      "values": [
+        {
+          "label": "Standard",
+          "value": "standard"
+        },
+        {
+          "label": "Large",
+          "value": "large"
+        },
+        {
+          "label": "Overlay",
+          "value": "overlay"
+        },
+        {
+          "label": "Nested",
+          "value": "nested"
+        },
+        {
+          "label": "Full Width",
+          "value": "full"
+        }
+      ]
+    },
+    "animateOnScroll": {
+      "displayName": "Animate this module on scroll?",
+      "type": "boolean"
+    },
+    "backgroundColor": {
+      "displayName": "Choose a background color",
+      "type": "color"
+    },
+    "backgroundImage": {
+      "displayName": "Choose a background image",
+      "type": "record",
+      "groups": "brightspot.image.WebImage"
+    },
+    "backgroundVideo": {
+      "displayName": "Choose a background video",
+      "type": "record",
+      "cms.ui.note": "Set the Background Video",
+      "groups": "brightspot.video.Video"
+    },
+    "carouselSuppressAutoPlay": {
+      "displayName": "Stop the carousel from automatically transitioning",
+      "type": "boolean"
+    },
+    "carouselSpeed": {
+      "displayName": "Set the duration between carousel slides in seconds.",
+      "type": "number"
+    },
+    "countUpAnimation": {
+      "type": "boolean",
+      "cms.ui.note": "Count up animation when Stat List comes into view? (must use integers in value field)"
+    },
+    "enhancementAlignment": {
+      "displayName": "Choose enhancement alignment",
+      "type": "text",
+      "cms.ui.dropDown": true,
+      "values": [
+        {
+          "label": "Center Alignment",
+          "value": "align-center"
+        },
+        {
+          "label": "Left Alignment",
+          "value": "align-left"
+        },
+        {
+          "label": "Right Alignment",
+          "value": "align-right"
+        },
+        {
+          "label": "Full Width",
+          "value": "align-full-width"
+        }
+      ]
+    },
+    "enhancementAlignmentImage": {
+      "displayName": "Choose enhancement alignment",
+      "type": "text",
+      "cms.ui.dropDown": true,
+      "values": [
+        {
+          "label": "Landscape Image - Center Alignment",
+          "value": "align-center"
+        },
+        {
+          "label": "Landscape Image - Left Alignment",
+          "value": "align-left"
+        },
+        {
+          "label": "Landscape Image - Right Alignment",
+          "value": "align-right"
+        },
+        {
+          "label": "Landscape Image - Full Width",
+          "value": "align-fullWidth"
+        },
+        {
+          "label": "Portrait Image - Center Alignment",
+          "value": "align-portrait-center"
+        },
+        {
+          "label": "Portrait Image - Left Alignment",
+          "value": "align-portrait-left"
+        },
+        {
+          "label": "Portrait Image - Right Alignment",
+          "value": "align-portrait-right"
+        }
+      ]
+    },
+    "expandItem": {
+      "displayName": "Check to expand this item by default.",
+      "type": "boolean"
+    },
+    "fieldsetColumns": {
+      "displayName": "Number of columns for this field set",
+      "type": "text",
+      "cms.ui.text": true,
+      "cms.ui.dropDown": true,
+      "values": [{
+          "label": "Full Width",
+          "value": "1"
+        },
+        {
+          "label": "50 / 50",
+          "value": "50-50"
+        },
+        {
+          "label": "33 / 33 / 33",
+          "value": "33-33-33"
+        },
+        {
+          "label": "50 / 25 / 25",
+          "value": "50-25-25"
+        },
+        {
+          "label": "25 / 25 / 50",
+          "value": "25-25-50"
+        },
+        {
+          "label": "25 / 25 / 25 / 25",
+          "value": "25-25-25-25"
+        }
+      ]
+    },
+    "fullScreenVideo": {
+      "displayName": "Full screen video vs 16:9 ratio?",
+      "type": "boolean"
+    },
+    "galleryPageStyle": {
+      "displayName": "Set the style of the Gallery page",
+      "type": "text",
+      "cms.ui.dropDown": true,
+      "values": [
+        {
+          "label": "Default (Carousel)",
+          "value": "carousel"
+        },
+        {
+          "label": "Waterfall",
+          "value": "waterfall"
+        }
+      ]
+    },
+    "headingBgColor": {
+      "displayName": "Heading Background Color",
+      "type": "color"
+    },
+    "headingTextColor": {
+      "displayName": "Heading Text Color",
+      "type": "color"
+    },
+    "headingTextAlign": {
+      "displayName": "Heading Text Alignment",
+      "type": "text",
+      "cms.ui.dropDown": true,
+      "values": [
+        {
+          "label": "Center",
+          "value": "center"
+        },
+        {
+          "label": "Left",
+          "value": "left"
+        },
+        {
+          "label": "Right",
+          "value": "right"
+        }
+      ]
+    },
+    "hideImage": {
+      "type": "boolean"
+    },
+    "hideImages": {
+      "type": "boolean"
+    },
+    "hideAuthor": {
+      "type": "boolean"
+    },
+    "hideAuthors": {
+      "type": "boolean"
+    },
+    "hideCategory": {
+      "type": "boolean"
+    },
+    "hideCategories": {
+      "type": "boolean"
+    },
+    "hideDate": {
+      "type": "boolean"
+    },
+    "hideDates": {
+      "type": "boolean"
+    },
+    "hideDescription": {
+      "type": "boolean"
+    },
+    "hideDescriptions": {
+      "type": "boolean"
+    },
+    "hideListNumbers": {
+      "type": "boolean"
+    },
+    "hideTitles": {
+      "type": "boolean"
+    },
+    "statTitlePosition": {
+      "cms.ui.note": "Position the stat title to the left or right of the value field",
+      "type": "text",
+      "cms.ui.dropDown": true,
+      "values": [
+        {
+          "label": "Right",
+          "value": "right"
+        },
+        {
+          "label": "Left",
+          "value": "left"
+        }
+      ]
+    },
+    "imageAspectRatio": {
+      "type": "text",
+      "cms.ui.dropDown": true,
+      "values": [
+        {
+          "label": "16x9",
+          "value": "xl-16x9"
+        },
+        {
+          "label": "2.4x1",
+          "value": "xl-24x1"
+        },
+        {
+          "label": "4x1",
+          "value": "xl-4x1"
+        },
+        {
+          "label": "4x3",
+          "value": "xl-4x3"
+        },
+        {
+          "label": "3x4 (portrait)",
+          "value": "large-3x4"
+        },
+        {
+          "label": "1x1 (square)",
+          "value": "large-square"
+        }
+      ]
+
+    },
+    "imagePositionVertical": {
+      "type": "text",
+      "cms.ui.dropDown": true,
+      "values": [
+        {
+          "label": "Top",
+          "value": "top"
+        },
+        {
+          "label": "Bottom",
+          "value": "bottom"
+        }
+      ]
+    },
+    "imagePositionHorizontal": {
+      "type": "text",
+      "cms.ui.dropDown": true,
+      "values": [
+        {
+          "label": "Left",
+          "value": "left"
+        },
+        {
+          "label": "Right",
+          "value": "right"
+        }
+      ]
+    },
+    "imageWidth": {
+      "type": "text",
+      "cms.ui.dropDown": true,
+      "values": [
+        {
+          "label": "66%",
+          "value": "66"
+        },
+        {
+          "label": "50%",
+          "value": "50"
+        }
+      ]
+    },
+    "inverseColors": {
+      "displayName": "Change Primary Text Color to Primary Inverse Text color (set in theme colors)",
+      "type": "boolean"
+    },
+    "listHeaderPosition": {
+      "displayName": "Choose the position of the list header",
+      "type": "text",
+      "cms.ui.dropDown": true,
+      "cms.ui.placeholder": "Default",
+      "values": [
+        {
+          "label": "Side",
+          "value": "side"
+        }
+      ]
+    },
+    "listDescriptionSize": {
+      "type": "text",
+      "cms.ui.dropDown": true,
+      "cms.ui.placeholder": "Default",
+      "values": [
+        {
+          "label": "Description 1 (Large)",
+          "value": "1"
+        },
+        {
+          "label": "Description 2 (Medium)",
+          "value": "2"
+        },
+        {
+          "label": "Description 3 (Small)",
+          "value": "3"
+        }
+      ]
+    },
+    "listTitleSize": {
+      "type": "text",
+      "cms.ui.dropDown": true,
+      "cms.ui.placeholder": "Default",
+      "values": [
+        {
+          "label": "ListTitle-1 (Large)",
+          "value": "1"
+        },
+        {
+          "label": "ListTitle2 (Medium)",
+          "value": "2"
+        },
+        {
+          "label": "ListTitle3 (Small)",
+          "value": "3"
+        }
+      ]
+    },
+    "navColumns": {
+      "displayName": "Choose how many navigation dropdown columns you would like",
+      "type": "text",
+      "cms.ui.dropDown": true,
+      "values": [
+        {
+          "label": "2",
+          "value": "2"
+        },
+        {
+          "label": "3",
+          "value": "3"
+        }
+      ]
+    },
+    "navAlignment": {
+      "displayName": "Choose how to align the navigation within the header",
+      "type": "text",
+      "cms.ui.dropDown": true,
+      "values": [
+        {
+          "label": "Right",
+          "value": "right"
+        },
+        {
+          "label": "Center",
+          "value": "center"
+        },
+        {
+          "label": "Left",
+          "value": "left"
+        }
+      ]
+    },
+    "listColumns234": {
+      "displayName": "Choose how many columns would you like",
+      "type": "text",
+      "cms.ui.dropDown": true,
+      "values": [
+        {
+          "label": "2",
+          "value": "2"
+        },
+        {
+          "label": "3",
+          "value": "3"
+        },
+        {
+          "label": "4",
+          "value": "4"
+        }
+      ]
+    },
+    "listColumns45": {
+      "displayName": "Choose how many columns you would like",
+      "type": "text",
+      "cms.ui.dropDown": true,
+      "values": [
+        {
+          "label": "4",
+          "value": "4"
+        },
+        {
+          "label": "5",
+          "value": "5"
+        }
+      ]
+    },
+    "listColumns56": {
+      "displayName": "Choose how many columns you would like",
+      "type": "text",
+      "cms.ui.dropDown": true,
+      "values": [
+        {
+          "label": "5",
+          "value": "5"
+        },
+        {
+          "label": "6",
+          "value": "6"
+        }
+      ]
+    },
+    "listColumns23456": {
+      "displayName": "Choose how many columns would you like",
+      "type": "text",
+      "cms.ui.dropDown": true,
+      "values": [
+        {
+          "label": "2",
+          "value": "2"
+        },
+        {
+          "label": "3",
+          "value": "3"
+        },
+        {
+          "label": "4",
+          "value": "4"
+        },
+        {
+          "label": "5",
+          "value": "5"
+        },
+        {
+          "label": "6",
+          "value": "6"
+        }
+      ]
+    },
+    "mobileCarousel": {
+      "type": "boolean",
+      "displayName": "Should this list carousel on mobile screen sizes?"
+    },
+    "opacityOverlay": {
+      "displayName": "Set the opacity value for the overlay, number from 0 to 100",
+      "type": "text"
+    },
+    "pageHeadingSize": {
+      "type": "text",
+      "cms.ui.dropDown": true,
+      "cms.ui.placeholder": "Default",
+      "values": [
+        {
+          "label": "PageTitle1 (Large)",
+          "value": "1"
+        },
+        {
+          "label": "PageTitle2 (Small)",
+          "value": "2"
+        }
+      ]
+    },
+    "pageSubHeadingSize": {
+      "type": "text",
+      "cms.ui.dropDown": true,
+      "cms.ui.placeholder": "Default",
+      "values": [
+        {
+          "label": "Description 1 (Large)",
+          "value": "1"
+        },
+        {
+          "label": "Description 2 (Medium)",
+          "value": "2"
+        },
+        {
+          "label": "Description 3 (Small)",
+          "value": "3"
+        }
+      ]
+    },
+    "playlistBottom": {
+      "type": "boolean",
+      "displayName": "Position playlist below the player?"
+    },
+    "promoButtonText": {
+      "displayName": "Text to be used for the call to action button on promos in this list",
+      "type": "text"
+    },
+    "promoDescriptionSize": {
+      "type": "text",
+      "cms.ui.dropDown": true,
+      "cms.ui.placeholder": "Default",
+      "values": [
+        {
+          "label": "Promo Description 1 (Large)",
+          "value": "1"
+        },
+        {
+          "label": "Promo Description 2 (Medium)",
+          "value": "2"
+        },
+        {
+          "label": "Promo Description 3 (Small)",
+          "value": "3"
+        }
+      ]
+    },
+    "promoTitleSize": {
+      "type": "text",
+      "cms.ui.dropDown": true,
+      "cms.ui.placeholder": "Default",
+      "values": [
+        {
+          "label": "PromoTitle1 (XXLarge)",
+          "value": "1"
+        },
+        {
+          "label": "PromoTitle2 (XLarge)",
+          "value": "2"
+        },
+        {
+          "label": "PromoTitle3 (Large)",
+          "value": "3"
+        },
+        {
+          "label": "PromoTitle4 (Medium)",
+          "value": "4"
+        },
+        {
+          "label": "PromoTitle5 (Small)",
+          "value": "5"
+        },
+        {
+          "label": "PromoTitle6 (XSmall)",
+          "value": "6"
+        }
+      ]
+    },
+    "searchFormBackgroundColor": {
+      "displayName": "Search Form Background Color",
+      "type": "color",
+      "cms.ui.note": "Configure the background color behind main search field and search filters"
+    },
+    "sectionNavAlign": {
+      "displayName": "Choose Section Nav Alignment",
+      "type": "text",
+      "cms.ui.dropDown": true,
+      "values": [
+        {
+          "label": "Center",
+          "value": "center"
+        },
+        {
+          "label": "Left",
+          "value": "left"
+        },
+        {
+          "label": "Right",
+          "value": "right"
+        }
+      ]
+    },
+    "sectionNavBgColor": {
+      "displayName": "Section Nav Background Color",
+      "type": "color"
+    },
+    "sectionNavInsidePageHeading": {
+      "type": "boolean",
+      "displayName": "Position Section Navigation inside the Page Heading?"
+    },
+    "sectionNavTextColor": {
+      "displayName": "Section Nav Text Color",
+      "type": "color"
+    },
+    "sectionNavTextHoverColor": {
+      "displayName": "Section Nav Text Hover Color",
+      "type": "color"
+    },
+    "showAsButton": {
+      "type": "boolean",
+      "displayName": "Should this nav item show up as a button?"
+    },
+    "showListNumbers": {
+      "type": "boolean",
+      "displayName": "Should this list show list numbers?"
+    },
+    "showContainerTitle": {
+      "type": "boolean",
+      "displayName": "Check to have this container show the title"
+    },
+    "showByline": {
+      "type": "boolean",
+      "displayName": "Should this module show the byline?"
+    },
+    "subTitle": {
+      "displayName": "Set Subtitle text",
+      "type": "text"
+    },
+    "suppressPagination": {
+      "type": "boolean",
+      "displayName": "Prevent pagination controls from displaying on this list"
+    },
+    "suppressCommenting": {
+      "type": "boolean",
+      "displayName": "Suppress commenting on this one page"
+    },
+    "textAlign": {
+      "displayName": "Text Alignment",
+      "type": "text",
+      "cms.ui.dropDown": true,
+      "values": [
+        {
+          "label": "left",
+          "value": "left"
+        },
+        {
+          "label": "center",
+          "value": "center"
+        },
+        {
+          "label": "right",
+          "value": "right"
+        }
+      ]
+    }
+  }
+}

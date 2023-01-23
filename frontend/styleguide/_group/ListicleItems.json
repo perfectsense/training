@@ -1,0 +1,8 @@
+[
+  {
+    "_template": "/listicle/ListicleItem.hbs"
+  },
+  {
+    "_include": "/_group/Ads.json"
+  }
+]

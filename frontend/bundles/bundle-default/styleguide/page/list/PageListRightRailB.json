@@ -1,0 +1,22 @@
+{
+  "_template": "/page/list/PageList.hbs",
+  "_styledTemplate": "/page/list/PageListRightRailB.hbs",
+  "title": "Right Rail List B",
+  "ctaUrl": "#",
+  "ctaTarget": "_self",
+  "description": "{{words([10,15])}}",
+  "items": [
+    {
+      "_include": "/page/promo/PagePromo.json"
+    },
+    {
+      "_include": "/page/promo/PagePromo.json"
+    },
+    {
+      "_include": "/page/promo/PagePromo.json"
+    },
+    {
+      "_include": "/page/promo/PagePromo.json"
+    }
+  ]
+}

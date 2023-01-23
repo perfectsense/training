@@ -1,5 +1,6 @@
 {
   "_template": "Quote.hbs",
+  "anchorId": "anchorTest",
   "quote": {
     "_include": "/_group/RichTextElementsTiny.json"
   },

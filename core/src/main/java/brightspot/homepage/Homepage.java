@@ -1,16 +1,16 @@
 package brightspot.homepage;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.LinkedHashSet;
 import java.util.List;
-import java.util.Optional;
 import java.util.Set;
 
 import brightspot.anchor.AnchorLinkable;
 import brightspot.anchor.Anchorage;
 import brightspot.cascading.CascadingPageElements;
+import brightspot.module.HasModularSearchIndexFields;
 import brightspot.module.ModulePlacement;
-import brightspot.page.ModulePageLead;
 import brightspot.page.Page;
 import brightspot.permalink.AbstractPermalinkRule;
 import brightspot.permalink.Permalink;
@@ -19,28 +19,40 @@ import brightspot.seo.SeoWithFields;
 import brightspot.share.Shareable;
 import brightspot.site.DefaultSiteMapItem;
 import com.psddev.cms.db.Content;
+import com.psddev.cms.db.ContentEditDrawerItem;
 import com.psddev.cms.db.Site;
 import com.psddev.cms.db.ToolUi;
+import com.psddev.cms.ui.content.place.GroupedPlace;
+import com.psddev.cms.ui.content.place.Place;
+import com.psddev.cms.ui.content.place.Placeable;
+import com.psddev.cms.ui.content.place.PlaceableTarget;
 import com.psddev.feed.FeedItem;
 import com.psddev.theme.StyleEmbeddedContentCreator;
 import org.apache.commons.text.StringEscapeUtils;
 
 @ToolUi.IconName("home")
+@ToolUi.FieldDisplayOrder({
+        "seo.title",
+        "seo.suppressSeoDisplayName",
+        "seo.description",
+        "seo.keywords",
+        "seo.robots",
+        "ampPage.ampDisabled"
+})
 public class Homepage extends Content implements
     Anchorage,
     CascadingPageElements,
+    ContentEditDrawerItem,
     DynamicFeedSource,
     DefaultSiteMapItem,
+    HasModularSearchIndexFields,
     Page,
+    PlaceableTarget,
     SeoWithFields,
     Shareable {
 
     @Required
     private String internalName;
-
-    // @ToolUi.EmbeddedContentCreatorClass(StyleEmbeddedContentCreator.class)
-    @Embedded
-    private ModulePageLead lead;
 
     @DisplayName("Contents")
     @ToolUi.EmbeddedContentCreatorClass(StyleEmbeddedContentCreator.class)
@@ -53,14 +65,6 @@ public class Homepage extends Content implements
 
     public void setInternalName(String internalName) {
         this.internalName = internalName;
-    }
-
-    public ModulePageLead getLead() {
-        return lead;
-    }
-
-    public void setLead(ModulePageLead lead) {
-        this.lead = lead;
     }
 
     public List<ModulePlacement> getContent() {
@@ -77,11 +81,6 @@ public class Homepage extends Content implements
     @Override
     public Set<AnchorLinkable> getAnchors() {
         Set<AnchorLinkable> anchors = new LinkedHashSet<>();
-
-        // adding the anchor(s) of the lead
-        Optional.ofNullable(getLead())
-            .map(Anchorage::getAnchorsForObject)
-            .ifPresent(anchors::addAll);
 
         // adding the anchor(s) of the content
         getContent().stream()
@@ -128,6 +127,15 @@ public class Homepage extends Content implements
         return AbstractPermalinkRule.create(site, this, (s) -> "/");
     }
 
+    // --- HasModularSearchIndexFields support ---
+
+    @Override
+    public Set<String> getModularSearchChildPaths() {
+        return Collections.singleton("content");
+    }
+
+    // --- Recordable support ---
+
     @Override
     public String getLabel() {
         return getInternalName();
@@ -143,5 +151,14 @@ public class Homepage extends Content implements
     @Override
     public String getSeoDescriptionFallback() {
         return null;
+    }
+
+    // --- PlaceableTarget support ---
+
+    @Override
+    public List<Place> getPlaceableTargetPlaces(Placeable content) {
+        return Collections.singletonList(
+                new GroupedPlace(content, this, "Contents", getContent())
+        );
     }
 }

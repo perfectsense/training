@@ -1,0 +1,6 @@
+{
+  "_include": "/page/HomePage.json",
+  "hat": {
+    "_include": "/page/PageHeaderTextHat.json"
+  }
+}

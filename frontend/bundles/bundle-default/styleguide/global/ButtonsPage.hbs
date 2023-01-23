@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html class="ButtonsPage" itemscope
+    itemtype="http://schema.org/WebPage">
+{{include "/page/Page-head.hbs" this}}
+{{include "/page/Page-icons.hbs" this}}
+
+<body class="Page-body">
+    <style type="text/css">
+        .Page-body {
+            padding-top: 0;
+        }
+
+        h2 {
+            border-bottom: 1px solid gray;
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+        }
+
+        .ButtonsWrapper {
+            max-width: 1000px;
+            padding: 40px;
+        }
+
+        .ButtonsPage {
+            display: block;
+            margin: 0 0 20px;
+            padding: 10px;
+        }
+
+        .ButtonsPage-block {
+            padding: 20px 20px 20px 0;
+            display: block;
+            border-radius: 5px;
+        }
+
+        .ButtonsPage-block button {
+            margin-bottom: 20px;
+            margin-right: 20px;
+        }
+
+        .ButtonsPage-block-subTitle {
+            margin-bottom: 10px;
+        }
+
+        .ButtonsPage-arrows-wrapper {
+            position: relative;
+            min-height: 87px;
+            max-width: 114px;
+        }
+
+        .ButtonsPage-arrows-wrapper .flickity-prev-next-button {
+            top: 50%;
+        }
+
+        .ButtonsPage .ButtonsPage-container .flickity-prev-next-button.previous {
+            left: 10px;
+        }
+
+        .ButtonsPage .ButtonsPage-container .flickity-prev-next-button.next {
+            right: 10px;
+        }
+    </style>
+
+    <div class="Page-content">
+        <div class="ButtonsWrapper">
+            <h2 class="page-title-2">Go Buttons & Links</h2>
+            <div class="ButtonsPage-container">
+                <div class="ButtonsPage-section">
+                    <div class="ButtonsPage-block">
+                        <h3 class="ButtonsPage-block-subTitle title-6">Primary Buttons</h3>
+                        <div>
+                            <button class="Button" style="--button-border-radius: 0px">Button Square</button>
+                            <button class="Button" style="--button-border-radius: 5px">Button Rounded</button>
+                            <button class="Button">Button Pill</button>
+                        </div>
+                        <div>
+                            <button class="Button" disabled style="--button-border-radius: 0px">Button Square Disabled</button>
+                            <button class="Button" style="--button-border-radius: 5px" disabled>Button Rounded Disabled</button>
+                            <button class="Button" disabled>Button Pill Disabled</button>
+                        </div>
+                    </div>
+                    <div class="ButtonsPage-block">
+                        <h3 class="ButtonsPage-block-subTitle title-6">Primary Buttons - small</h3>
+                        <div>
+                            <button class="Button" data-size="small" style="--button-border-radius: 0px">Button Small Square</button>
+                            <button class="Button" data-size="small" style="--button-border-radius: 5px">Button Small Rounded</button>
+                            <button class="Button" data-size="small" >Button Small Pill</button>
+                        </div>
+                        <div>
+                            <button class="Button" data-size="small" style="--button-border-radius: 0px" disabled>Button Small Square Disabled</button>
+                            <button class="Button" data-size="small" style="--button-border-radius: 5px" disabled>Button Small Rounded Disabled</button>
+                            <button class="Button" data-size="small" disabled>Button Small Pill Disabled</button>
+                        </div>
+                    </div>
+                    <div class="ButtonsPage-block">
+                        <h3 class="ButtonsPage-block-subTitle title-6">Secondary Buttons</h3>
+                        <div>
+                            <button class="Button" data-theme="secondary" style="--button-border-radius: 0px">Button Secondary Square</button>
+                            <button class="Button" data-theme="secondary" style="--button-border-radius: 5px">Button Secondary Rounded</button>
+                            <button class="Button" data-theme="secondary">Button Secondary Pill</button>
+                        </div>
+                        <div>
+                            <button class="Button" data-theme="secondary" style="--button-border-radius: 0px" disabled>Button Secondary Square Disabled</button>
+                            <button class="Button" data-theme="secondary" style="--button-border-radius: 5px" disabled>Button Secondary Rounded Disabled</button>
+                            <button class="Button" data-theme="secondary" disabled>Button Secondary Pill Disabled</button>
+                        </div>
+                    </div>
+                    <div class="ButtonsPage-block">
+                        <h3 class="ButtonsPage-block-subTitle title-6">Secondary Buttons - small</h3>
+                        <div>
+                            <button class="Button" data-theme="secondary" data-size="small" style="--button-border-radius: 0px">Button Secondary Square Small</button>
+                            <button class="Button" data-theme="secondary" data-size="small" style="--button-border-radius: 5px">Button Secondary Rounded Small</button>
+                            <button class="Button" data-theme="secondary" data-size="small">Button Secondary Pill Small</button>
+                        </div>
+                        <div>
+                            <button class="Button" data-theme="secondary" data-size="small" style="--button-border-radius: 0px" disabled>Button Secondary Square Disabled Small</button>
+                            <button class="Button" data-theme="secondary" data-size="small" style="--button-border-radius: 5px" disabled>Button Secondary Rounded Disabled Small</button>
+                            <button class="Button" data-theme="secondary" data-size="small" disabled>Button Secondary Pill Disabled Small</button>
+                        </div>
+                    </div>
+
+                    <div class="ButtonsPage-block">
+                        <h3 class="ButtonsPage-block-subTitle title-6">Action Bar</h3>
+                        <div class="ActionBar">
+                            <ul class="ActionBar-items">
+                                <li class="ActionBar-items-item">
+                                    <a class="ActionLink" rel="noreferrer"
+                                        href="https://www.facebook.com/BrightspotCMS/" target="_blank"
+                                        data-social-service="facebook">
+                                        <svg>
+                                            <use xlink:href="#mono-icon-facebook"></use>
+                                        </svg>
+                                        <span class="sr-only">facebook</span>
+                                    </a>
+                                </li>
+                                <li class="SocialBar-items-item">
+                                    <a class="ActionLink" rel="noreferrer" href="https://twitter.com/TeamBrightspot"
+                                        target="_blank" data-social-service="twitter">
+                                        <svg>
+                                            <use xlink:href="#mono-icon-twitter"></use>
+                                        </svg>
+                                        <span class="sr-only">twitter</span>
+                                    </a>
+                                </li>
+                                <li class="SocialBar-items-item">
+                                    <a class="ActionLink" rel="noreferrer" href="mailto:#" target="_blank"
+                                        data-social-service="mailto">
+                                        <svg>
+                                            <use xlink:href="#mono-icon-mailto"></use>
+                                        </svg>
+                                        <span class="sr-only">mailto</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ButtonsPage-section">
+                    <div class="ButtonsPage-block">
+                        <h3 class="ButtonsPage-block-subTitle title-6">Standard Body and Links</h3>
+                        <div class="RichTextBody">
+                            <p>Lorem ipsum dolor sit amet, <a class="Link" href="#">consectetur adipiscing elit.</a> Donec gravida
+                            lacinia odio at ultricies. <b>Nulla <a class="Link" href="#">facilisi</a></b>. Quisque eleifend.</p>
+                        </div>
+                    </div>
+
+                    <div class="ButtonsPage-block" data-pagelead>
+                        <h3 class="ButtonsPage-block-subTitle title-6">Arrows</h3>
+                        <div class="bg-img">
+                            <div class="ButtonsPage-arrows-wrapper">
+                                <button class="flickity-button flickity-prev-next-button previous" type="button"
+                                    aria-label="Previous"><svg class="flickity-button-icon" viewBox="0 0 100 100">
+                                        <path d="M 10,50 L 60,100 L 70,90 L 30,50  L 70,10 L 60,0 Z" class="arrow">
+                                        </path>
+                                    </svg></button>
+                                <button class="flickity-button flickity-prev-next-button next" type="button"
+                                    aria-label="Next"><svg class="flickity-button-icon"
+                                        viewBox="0 0 100 100">
+                                        <path d="M 10,50 L 60,100 L 70,90 L 30,50  L 70,10 L 60,0 Z" class="arrow"
+                                            transform="translate(100, 100) rotate(180) "></path>
+                                    </svg></button>
+                            </div>
+
+                            <div class="ButtonsPage-arrows-wrapper">
+                                <button class="flickity-button flickity-prev-next-button previous" type="button"
+                                    aria-label="Previous" disabled><svg class="flickity-button-icon" viewBox="0 0 100 100">
+                                        <path d="M 10,50 L 60,100 L 70,90 L 30,50  L 70,10 L 60,0 Z" class="arrow">
+                                        </path>
+                                    </svg></button>
+                                <button class="flickity-button flickity-prev-next-button next" type="button"
+                                    aria-label="Next" disabled><svg class="flickity-button-icon"
+                                        viewBox="0 0 100 100">
+                                        <path d="M 10,50 L 60,100 L 70,90 L 30,50  L 70,10 L 60,0 Z" class="arrow"
+                                            transform="translate(100, 100) rotate(180) "></path>
+                                    </svg></button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="ButtonsPage-block">
+                        <h3 class="ButtonsPage-block-subTitle title-6">Arrows - Secondary</h3>
+                        <div class="ButtonsPage-arrows-wrapper" data-theme="secondary">
+                            <button class="flickity-button flickity-prev-next-button previous" type="button"
+                                aria-label="Previous"><svg class="flickity-button-icon" viewBox="0 0 100 100">
+                                    <path d="M 10,50 L 60,100 L 70,90 L 30,50  L 70,10 L 60,0 Z" class="arrow"></path>
+                                </svg></button>
+                            <button class="flickity-button flickity-prev-next-button next" type="button"
+                                aria-label="Next"><svg class="flickity-button-icon" viewBox="0 0 100 100">
+                                    <path d="M 10,50 L 60,100 L 70,90 L 30,50  L 70,10 L 60,0 Z" class="arrow"
+                                        transform="translate(100, 100) rotate(180) "></path>
+                                </svg></button>
+                        </div>
+                        <div class="ButtonsPage-arrows-wrapper" data-theme="secondary">
+                                <button class="flickity-button flickity-prev-next-button previous" type="button"
+                                    aria-label="Previous" disabled><svg class="flickity-button-icon" viewBox="0 0 100 100">
+                                        <path d="M 10,50 L 60,100 L 70,90 L 30,50  L 70,10 L 60,0 Z" class="arrow">
+                                        </path>
+                                    </svg></button>
+                                <button class="flickity-button flickity-prev-next-button next" type="button"
+                                    aria-label="Next" disabled><svg class="flickity-button-icon"
+                                        viewBox="0 0 100 100">
+                                        <path d="M 10,50 L 60,100 L 70,90 L 30,50  L 70,10 L 60,0 Z" class="arrow"
+                                            transform="translate(100, 100) rotate(180) "></path>
+                                    </svg></button>
+                            </div>
+                    </div>
+
+
+                    <div class="ButtonsPage-block">
+                        <h3 class="ButtonsPage-block-subTitle title-6">Accordion Controls</h3>
+                        <div class="ButtonsPage-arrows-wrapper">
+                            <svg class="iconPlus">
+                                <use xlink:href="#icon-plus"></use>
+                            </svg>
+                            <svg class="iconMinus" style="margin-left: 20px;">
+                                <use xlink:href="#icon-minus"></use>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

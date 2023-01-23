@@ -1,0 +1,67 @@
+// Set of rules for a normal data-module directly in a modulewell
+[data-module] {
+  background-color: var(--color-module-background);
+
+  [data-modulewell] > & {
+    .layoutWidth();
+    margin-bottom: 40px;
+    margin-top: 40px;
+
+    &[data-has-background] {
+      margin-top: 0;
+      padding-top: 40px;
+      padding-bottom: 40px;
+      margin-bottom: 0;
+    }
+
+    &[data-padding='none'] {
+      margin-bottom: 0;
+      margin-top: 0;
+      padding-bottom: 0;
+      padding-top: 0;
+    }
+
+    &[data-width='full'] {
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+    }
+
+    @media @mq-lg {
+      margin-top: 80px;
+      margin-bottom: 80px;
+
+      &[data-has-background] {
+        padding-top: 80px;
+        padding-bottom: 80px;
+      }
+
+      &[data-padding='none'] {
+        margin-bottom: 0;
+        margin-top: 0;
+        padding-bottom: 0;
+        padding-top: 0;
+      }
+    }
+  }
+}
+
+// Set of rules for when a module is inside of a container (including two column layout). The container already gives it outside spacing
+[data-modulewell] [data-modulewell] [data-module],
+.Page-twoColumn .Page-main [data-module]  {
+  padding-left: 0; // to override layout widths
+  padding-right: 0; // to override layout widths
+  margin-bottom: 40px;
+  margin-top: 0;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  @media @mq-lg {
+    margin-bottom: 80px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "_template": "/podcast/promo/PodcastProviderPromo.hbs",
+  "media": {
+    "_include": "/image/Image.json"
+  },
+  "url": "#",
+  "target": "_self",
+  "title": "Provider"
+}

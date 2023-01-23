@@ -3,12 +3,6 @@
   "_include": "/page/CreativeWorkPage.json",
   "_template": "PressReleasePage.hbs",
 
-  "authorUrl": null,
-  "authorImage": null,
-  "authorName": null,
-  "authorBiography": null,
-  "contributors": null,
-
   "lead": {
     "_include": "/_group/Leads.json",
     "_key": 0

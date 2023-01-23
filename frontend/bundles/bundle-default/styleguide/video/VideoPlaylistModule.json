@@ -1,0 +1,85 @@
+{
+  "_template": "/video/VideoPlaylistModule.hbs",
+  "title": "Video Playlist Module",
+  "anchorId": "anchorTest",
+  "description": "{{words(20)}}",
+  "player": {
+    "_include": "/video/HTML5VideoPlayer.json"
+  },
+  "playlist": [
+    {
+      "_include": "/video/VideoPlaylistItem.json"
+    },
+    {
+      "_include": "/video/VideoPlaylistItem.json",
+      "player": {
+        "_include": "/video/HTML5VideoPlayer.json",
+        "sources": [
+          {
+              "_template": "HTML5VideoPlayerSource.hbs",
+              "src": "ttp://media.w3.org/2010/05/sintel/trailer.mp4",
+              "type": "video/mp4"
+          },
+          {
+              "_template": "HTML5VideoPlayerSource.hbs",
+              "src": "http://media.w3.org/2010/05/sintel/trailer.ogv",
+              "type": "video/ogg"
+          }
+      ]
+      },
+      "duration": "5 min",
+      "url": "#",
+      "target": "_self",
+      "title": "{{words(10)}}",
+      "description": "{{words(20)}}"
+    },
+    {
+      "_include": "/video/VideoPlaylistItem.json",
+      "player": {
+        "_include": "/brightcove/BrightcoveVideoPlayer.json"
+      },
+      "title": "Brightcove Player"
+    },
+    {
+      "_include": "/video/VideoPlaylistItem.json",
+      "player": {
+        "_include": "/jwplayer/JwVideoPlayer.json",
+        "videoUuid": "34892"
+      },
+      "title": "JW Player"   
+    },
+    {
+      "_include": "/video/VideoPlaylistItem.json",
+      "player": {
+        "_include": "/youtube/YouTubeVideoPlayer.json"
+      }
+    },
+    {
+      "_include": "/video/VideoPlaylistItem.json"
+    },
+    {
+      "_include": "/video/VideoPlaylistItem.json",
+      "player": {
+        "_include": "/youtube/YouTubeVideoPlayer.json"
+      }
+    },
+    {
+      "_include": "/video/VideoPlaylistItem.json",
+      "player": {
+        "_include": "/vimeo/VimeoVideoPlayer.json"
+      }
+    },
+    {
+      "_include": "/video/VideoPlaylistItem.json"
+    },
+    {
+      "_include": "/video/VideoPlaylistItem.json",
+      "player": {
+        "_include": "/vimeo/VimeoVideoPlayer.json"
+      }
+    }
+  ],
+  "ctaUrl": "#",
+  "ctaTarget": "_self",
+  "_hidden": true
+}

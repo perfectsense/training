@@ -1,9 +1,0 @@
-{
-  "_include": "/page/Page.json",
-  "_template": "/blog/BlogPage.hbs",
-  "main": [
-    {
-      "_include": "/page/list/PageListH.json"
-    }
-  ]
-}

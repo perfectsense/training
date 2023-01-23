@@ -1,0 +1,5 @@
+{
+  "_include": "/video/VideoPlaylistModule.json",
+  "title": "Video Playlist Module - Playlist on Bottom",
+  "playlistBottom": true
+}

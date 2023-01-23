@@ -1,0 +1,10 @@
+{
+  "_template": "/author/Author.hbs",
+  "name": "{{words([2, 3])}}",
+  "image": {
+    "_include": "/image/Image.json"
+  },
+  "biography": "{{words}}",
+  "url": "#",
+  "_hidden": true
+}

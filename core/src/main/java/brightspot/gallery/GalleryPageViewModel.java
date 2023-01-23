@@ -12,13 +12,19 @@ import java.util.Optional;
 import brightspot.author.AuthoringPageViewModel;
 import brightspot.imageitemstream.ImageItemStream;
 import brightspot.l10n.CurrentLocale;
+import brightspot.link.Link;
+import brightspot.link.Target;
 import brightspot.page.AbstractContentPageViewModel;
 import brightspot.page.CurrentPageViewModel;
 import brightspot.page.PageViewModel;
+import brightspot.sponsoredcontent.ContentSponsor;
+import brightspot.sponsoredcontent.Sponsor;
+import brightspot.sponsoredcontent.SponsoredContentSiteSettings;
 import brightspot.update.LastUpdatedProvider;
 import brightspot.util.DateTimeUtils;
 import brightspot.util.RichTextUtils;
 import com.psddev.cms.db.Site;
+import com.psddev.cms.db.SiteSettings;
 import com.psddev.cms.page.CurrentSite;
 import com.psddev.cms.view.PageEntryView;
 import com.psddev.cms.view.ViewResponse;
@@ -34,11 +40,13 @@ import com.psddev.styleguide.gallery.GalleryPageViewSlidesField;
 import com.psddev.styleguide.link.LinkView;
 import com.psddev.styleguide.page.CreativeWorkPageViewAuthorBiographyField;
 import com.psddev.styleguide.page.CreativeWorkPageViewAuthorNameField;
-import com.psddev.styleguide.page.CreativeWorkPageViewContributorsField;
+import com.psddev.styleguide.page.CreativeWorkPageViewAuthorsField;
 import com.psddev.styleguide.page.CreativeWorkPageViewHeadlineField;
-import com.psddev.styleguide.page.CreativeWorkPageViewPeopleField;
+import com.psddev.styleguide.page.CreativeWorkPageViewSponsorLogoField;
+import com.psddev.styleguide.page.CreativeWorkPageViewSponsorNameField;
 import com.psddev.styleguide.page.CreativeWorkPageViewSubHeadlineField;
 import com.psddev.styleguide.page.PageViewPageSubHeadingField;
+import com.psddev.styleguide.page.promo.PagePromoView;
 
 @JsonLdType("ImageGallery")
 public class GalleryPageViewModel extends AbstractContentPageViewModel<Gallery> implements
@@ -132,6 +140,71 @@ public class GalleryPageViewModel extends AbstractContentPageViewModel<Gallery> 
     }
 
     @Override
+    public Iterable<? extends CreativeWorkPageViewSponsorLogoField> getSponsorLogo() {
+        return createViews(
+                CreativeWorkPageViewSponsorLogoField.class,
+                Optional.ofNullable(model.getSponsor())
+                        .map(ContentSponsor::getLogo)
+                        .orElse(null)
+        );
+    }
+
+    @Override
+    public CharSequence getSponsorMeaningTarget() {
+        return SiteSettings.get(
+                site,
+                s -> Optional.ofNullable(s.as(SponsoredContentSiteSettings.class).getSponsoredContentMeaningLink())
+                        .map(Link::getTarget)
+                        .map(Target::getValue)
+                        .orElse(null));
+    }
+
+    @Override
+    public CharSequence getSponsorMeaningUrl() {
+        return SiteSettings.get(
+                site,
+                s -> Optional.ofNullable(s.as(SponsoredContentSiteSettings.class).getSponsoredContentMeaningLink())
+                        .map(link -> link.getLinkUrl(site))
+                        .orElse(null));
+    }
+
+    @Override
+    public Iterable<? extends CreativeWorkPageViewSponsorNameField> getSponsorName() {
+        return Optional.ofNullable(model.getSponsor())
+                .map(sponsor -> RichTextUtils.buildInlineHtml(
+                        sponsor,
+                        ContentSponsor::getDisplayName,
+                        e -> createView(CreativeWorkPageViewSponsorNameField.class, e)))
+                .orElse(null);
+    }
+
+    @Override
+    public CharSequence getSponsorTarget() {
+        return Optional.ofNullable(model.getSponsor())
+                .filter(Sponsor.class::isInstance)
+                .map(Sponsor.class::cast)
+                .map(Sponsor::getCallToAction)
+                .map(Link::getTarget)
+                .map(Target::getValue)
+                .orElse(null);
+    }
+
+    @Override
+    public CharSequence getSponsorUrl() {
+        return Optional.ofNullable(model.getSponsor())
+                .filter(Sponsor.class::isInstance)
+                .map(Sponsor.class::cast)
+                .map(Sponsor::getCallToAction)
+                .map(link -> link.getLinkUrl(site))
+                .orElse(null);
+    }
+
+    @Override
+    public Boolean getSponsored() {
+        return model.getSponsor() != null;
+    }
+
+    @Override
     public Iterable<? extends CreativeWorkPageViewSubHeadlineField> getSubHeadline() {
         return RichTextUtils.buildInlineHtml(
                 model,
@@ -208,6 +281,13 @@ public class GalleryPageViewModel extends AbstractContentPageViewModel<Gallery> 
     // Authoring Entity
 
     @Override
+    public Iterable<? extends CreativeWorkPageViewAuthorsField> getAuthors() {
+        return authoringPage.getAuthors(CreativeWorkPageViewAuthorsField.class);
+    }
+
+    /* DEPRECATED KEYS BELOW */
+
+    @Override
     public Iterable<? extends CreativeWorkPageViewAuthorBiographyField> getAuthorBiography() {
         return authoringPage.getAuthorBiography(CreativeWorkPageViewAuthorBiographyField.class);
     }
@@ -228,12 +308,12 @@ public class GalleryPageViewModel extends AbstractContentPageViewModel<Gallery> 
     }
 
     @Override
-    public Iterable<? extends CreativeWorkPageViewContributorsField> getContributors() {
-        return authoringPage.getContributors(CreativeWorkPageViewContributorsField.class);
+    public Iterable<? extends LinkView> getContributors() {
+        return authoringPage.getContributors(LinkView.class);
     }
 
     @Override
-    public Iterable<? extends CreativeWorkPageViewPeopleField> getPeople() {
-        return authoringPage.getAuthors(CreativeWorkPageViewPeopleField.class);
+    public Iterable<? extends PagePromoView> getPeople() {
+        return authoringPage.getAuthors(PagePromoView.class);
     }
 }

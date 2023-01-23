@@ -1,0 +1,12 @@
+{
+  "_template": "/PreviewPage.hbs",
+  "title": "Brightspot Theme Preview Page",
+  "extraScripts": null,
+  "extraStyles": {
+    "_template": "/page/ExternalStyle.hbs",
+    "href": "/PreviewPage.css"
+  },
+  "main": {
+    "_delegate": true
+  }
+}

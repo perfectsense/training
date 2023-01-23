@@ -1,0 +1,41 @@
+<div class="TextArea">
+    {{~#with errors}}
+        <div class="TextArea-errors">
+            {{~this~}}
+        </div>
+    {{/with~}}
+
+    <label class="TextArea-label">
+        <span>
+            {{label}}
+            {{#if required}}&nbsp;
+                <span class="TextArea-label-required">
+                    {{format "/form/Form" "requiredLabel"}}
+                </span>
+            {{/if}}
+        </span>
+
+        <textarea class="TextArea-input"
+                {{~#with inputName}} name="{{this}}"{{else}} name="textarea"{{/with}}
+                {{~#with autocomplete}} autocomplete="{{this}}"{{/with}}
+                {{~#with autofocus}} autofocus{{/with}}
+                {{~#with disabled}} disabled{{/with}}
+                {{~#with maxlength}} maxlength="{{this}}"{{/with}}
+                {{~#with minlength}} minlength="{{this}}"{{/with}}
+                {{~#with placeholder}} placeholder="{{this}}"{{/with}}
+                {{~#with readonly}} readonly{{/with}}
+                {{~#with required}} required{{/with}}
+                {{~#with spellcheck}} spellcheck{{/with}}>
+
+            {{~inputValue~}}
+        </textarea>
+
+        {{~#with description}}
+            <div class="TextArea-description">
+                {{~this~}}
+            </div>
+        {{/with~}}
+
+        <div class="TextInput-errors"></div>
+    </label>
+</div>

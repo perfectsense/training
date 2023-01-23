@@ -1,0 +1,211 @@
+{
+  "_include": "/page/Page.json",
+  "_template": "/search/SearchResultsPage.hbs",
+  "above": {
+    "_include": "/dfp/GoogleDfpAdModule.json"
+  },
+  "title": "Search Results",
+  "description": "{{words([10,15])}}",
+  "query": "{{words([2,5])}}",
+  "filters": [
+    {
+      "_template": "/search/SearchFilter.hbs",
+      "heading": "{{words([1,2])}}",
+      "items": [
+        {
+          "_include": "/search/SearchFilterInput.json",
+          "url": "#",
+          "label": "All"
+        },
+        {
+          "_include": "/search/SearchFilterInput.json",
+          "url": "#",
+          "label": "{{words([1,2])}}",
+          "count": 1234,
+          "selected": true
+        },
+        {
+          "_include": "/search/SearchFilterInput.json",
+          "url": "#",
+          "label": "{{words([1,2])}}",
+          "count": 567
+        },
+        {
+          "_include": "/search/SearchFilterInput.json",
+          "url": "#",
+          "label": "{{words([1,2])}}",
+          "count": 89
+        }
+      ]
+    },
+    {
+      "_template": "/search/SearchFilter.hbs",
+      "heading": "{{words([1,2])}}",
+      "items": [
+        {
+          "_include": "/search/SearchFilterInput.json",
+          "url": "#",
+          "label": "{{words([1,2])}}"
+        },
+        {
+          "_include": "/search/SearchFilterInput.json",
+          "url": "#",
+          "label": "{{words([1,2])}}",
+          "count": 1337,
+          "selected": true
+        },
+        {
+          "_include": "/search/SearchFilterInput.json",
+          "url": "#",
+          "label": "{{words([1,2])}}",
+          "count": 567
+        },
+        {
+          "_include": "/search/SearchFilterInput.json",
+          "url": "#",
+          "label": "{{words([1,2])}}",
+          "count": 89
+        }
+      ]
+    },
+    {
+      "_template": "/search/SearchFilter.hbs",
+      "heading": "{{words([1,2])}}",
+      "items": [
+        {
+          "_include": "/search/SearchFilterInput.json",
+          "url": "#",
+          "label": "All"
+        },
+        {
+          "_include": "/search/SearchFilterInput.json",
+          "url": "#",
+          "label": "{{words([1,2])}}",
+          "count": 1337
+        },
+        {
+          "_include": "/search/SearchFilterInput.json",
+          "url": "#",
+          "label": "{{words([1,2])}}",
+          "count": 567
+        },
+        {
+          "_include": "/search/SearchFilterInput.json",
+          "url": "#",
+          "label": "{{words([1,2])}}",
+          "count": 89,
+          "selected": true
+        }
+      ]
+    },
+    {
+      "_template": "/search/SearchFilter.hbs",
+      "heading": "{{words([1,2])}}",
+      "items": [
+        {
+          "_include": "/search/SearchFilterInput.json",
+          "url": "#",
+          "label": "All"
+        },
+        {
+          "_include": "/search/SearchFilterInput.json",
+          "url": "#",
+          "label": "{{words([1,2])}}",
+          "count": 1337
+        },
+        {
+          "_include": "/search/SearchFilterInput.json",
+          "url": "#",
+          "label": "{{words([1,2])}}",
+          "count": 567
+        }
+      ]
+    },
+    {
+      "_template": "/search/SearchFilter.hbs",
+      "heading": "{{words([1,2])}}",
+      "items": [
+        {
+          "_include": "/search/SearchFilterInput.json",
+          "url": "#",
+          "label": "All"
+        },
+        {
+          "_include": "/search/SearchFilterInput.json",
+          "url": "#",
+          "label": "{{words([1,2])}}",
+          "count": 1337
+        },
+        {
+          "_include": "/search/SearchFilterInput.json",
+          "url": "#",
+          "label": "{{words([1,2])}}",
+          "count": 567
+        }
+      ]
+    },
+    {
+      "_template": "/search/SearchFilter.hbs",
+      "heading": "Date",
+      "items": [
+        {
+          "_include": "/search/SearchFilterInput.json",
+          "url": "#",
+          "label": "Any Time"
+        },
+        {
+          "_include": "/search/SearchFilterInput.json",
+          "url": "#",
+          "label": "Past Hour",
+          "count": 12
+        },
+        {
+          "_include": "/search/SearchFilterInput.json",
+          "url": "#",
+          "label": "Past Day",
+          "count": 34
+        },
+        {
+          "_include": "/search/SearchFilterInput.json",
+          "url": "#",
+          "label": "Past Month",
+          "count": 56
+        },
+        {
+          "_include": "/search/SearchFilterInput.json",
+          "url": "#",
+          "label": "Past Year",
+          "count": 789
+        }
+      ]
+    }
+  ],
+  "sorts": [
+    {
+      "_include": "/search/SearchSortInput.json",
+      "url": "#",
+      "label": "Relevance",
+      "parameterValue": "relevant",
+      "selected": true
+    },
+    {
+      "_include": "/search/SearchSortInput.json",
+      "url": "#",
+      "label": "Newest",
+      "parameterValue": "newest"
+    },
+    {
+      "_include": "/search/SearchSortInput.json",
+      "url": "#",
+      "label": "Oldest",
+      "parameterValue": "oldest"
+    }
+  ],
+  "count": 123456,
+  "spotlights": null,
+  "results": null,
+  "pageNumber": 1,
+  "pageCount": 123,
+  "nextPage": "#",
+  "aside": null
+}

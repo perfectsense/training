@@ -1,0 +1,86 @@
+.PageList-Amp {
+  &:extend(.PageListAbstract all);
+
+  &-header {
+    &-description {
+      .description-1;
+
+      [data-inverse-colors] & {
+        color: var(--color-primary-text-inverse);
+        --color-link-text: var(--color-primary-text-inverse);
+        --color-link-text-hover: var(--color-primary-text-inverse);
+      }
+
+      a {
+        text-decoration: underline;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+
+      margin: -10px 0 20px 0;
+    }
+
+    &-title {
+      --font: var(--font-list-title);
+      .title-2;
+
+      margin-bottom: 20px;
+      color: var(--color-list-title);
+
+      [data-inverse-colors] & {
+        color: var(--color-primary-text-inverse);
+      }
+    }
+  }
+
+  &-items {
+    list-style: none;
+
+    &[data-with-numbers] & {
+      counter-reset: list-counter;
+    }
+
+    &-item {
+      margin-bottom: 20px;
+
+      [data-with-borders] & {
+        border-bottom: 1px solid var(--color-list-border);
+        margin-top: 20px;
+        padding-bottom: 20px;
+
+        &:first-of-type {
+          margin-top: 0;
+        }
+      }
+
+      [data-with-numbers] & {
+        counter-increment: list-counter;
+        padding: 0 10px 20px 40px;
+        position: relative;
+
+        &:before {
+          content: counter(list-counter);
+          color: var(--color-list-border);
+          display: block;
+          font-size: 2.4rem;
+          font-weight: bold;
+          left: 10px;
+          height: 25px;
+          line-height: 25px;
+          margin-right: 5px;
+          position: absolute;
+          top: calc(~'50% - 23px');
+          width: 30px;
+        }
+
+        &:nth-of-type(n+10) {
+          &:before {
+            left: 3px;
+          }
+        }
+      }
+    }
+  }
+}

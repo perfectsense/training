@@ -1,0 +1,13 @@
+{
+  "_template": "/page/list/PageList.amp.hbs",
+
+  "title": "Page List for Amp",
+  "description": "{{words(20)}}",
+  "ctaUrl": "#",
+  "ctaTarget": "_self",
+  "items": [
+    {
+      "_include": "/page/promo/PagePromo.json"
+    }
+  ]
+}

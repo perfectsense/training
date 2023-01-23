@@ -1,0 +1,5 @@
+{{include "/link/AnchorLink.hbs" this}}
+{{#if showContainerTitle}}
+    {{#with title}}<div class="Container-title">{{this}}</div>{{/with}}
+    {{#with description}}<div class="Container-description">{{this}}</div>{{/with}}
+{{/if}}

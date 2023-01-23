@@ -11,9 +11,5 @@
   "tags": {
     "_include": "/link/Link.json"
   },
-  "comments": {
-    "_include": "/_group/Comments.json",
-    "_key": 0
-  },
   "_hidden": true
 }

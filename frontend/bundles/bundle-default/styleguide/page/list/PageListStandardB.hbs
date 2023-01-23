@@ -1,0 +1,50 @@
+{{#if items}}
+<bsp-list-loadmore data-module class="PageListStandardB"{{include "includes/PageList-attributes.hbs" this}}>
+    {{include "includes/PageList-header.hbs" this}}
+
+    {{#with items}}
+        <div class="PageList-items" data-list-loadmore-items>
+            {{#each this}}
+                <div class="PageList-items-item">
+                    {{#eq ../../listColumns23456 "2"}}
+                        {{#eq this._template "/page/promo/PagePromo.hbs"}}
+                            {{#set imageSize="large-16x9"}}
+                                {{#if ../../hideImages}}
+                                    {{include "/page/promo/PagePromo.hbs" this mobileAltLayout="true" imagePositionVertical="top" animateOnScroll=../../animateOnScroll animation="fromBottom" media=null}}
+                                {{else}}
+                                    {{include "/page/promo/PagePromo.hbs" this imagePositionVertical="top" animateOnScroll=../../animateOnScroll animation="fromBottom"}}
+                                {{/if}}
+                            {{/set}}
+                        {{else}}
+                            {{render this}}
+                        {{/eq}}
+                    {{else}}
+                        {{#eq ../../listColumns23456 "4"}}
+                            {{#eq this._template "/page/promo/PagePromo.hbs"}}
+                                {{#if ../../hideImages}}
+                                    {{include "/page/promo/PagePromo.hbs" this mobileAltLayout="true" imagePositionVertical="top" animateOnScroll=../../animateOnScroll animation="fromBottom" media=null}}
+                                {{else}}
+                                    {{include "/page/promo/PagePromo.hbs" this mobileAltLayout="true" imagePositionVertical="top" description=null animateOnScroll=../../animateOnScroll animation="fromBottom"}}
+                                {{/if}}
+                            {{else}}
+                                {{render this}}
+                            {{/eq}}
+                        {{else}}
+                            {{#eq this._template "/page/promo/PagePromo.hbs"}}
+                                {{#if ../../hideImages}}
+                                    {{include "/page/promo/PagePromo.hbs" this mobileAltLayout="true" imagePositionVertical="top" animateOnScroll=../../animateOnScroll animation="fromBottom" media=null}}
+                                {{else}}
+                                    {{include "/page/promo/PagePromo.hbs" this mobileAltLayout="true" imagePositionVertical="top" animateOnScroll=../../animateOnScroll animation="fromBottom"}}
+                                {{/if}}
+                            {{else}}
+                                {{render this}}
+                            {{/eq}}
+                        {{/eq}}
+                    {{/eq}}
+                </div>
+            {{/each}}
+        </div>
+    {{/with}}
+    {{include "includes/PageList-footer.hbs" this canPaginate=true}}
+</bsp-list-loadmore>
+{{/if}}

@@ -1,0 +1,34 @@
+{
+    "_template": "Carousel.hbs",
+    "title": "A Captivating Gallery Title",
+    "anchorId": "anchorTest",
+    "slides": [
+        {
+            "_include": "/gallery/GallerySlide.json"
+        },
+        {
+            "_include": "/gallery/GallerySlide.json"
+        },
+        {
+            "_include": "/gallery/GallerySlide.json"
+        },
+        {
+            "_include": "/gallery/GallerySlide.json"
+        },
+        {
+            "_include": "/gallery/GallerySlide.json"
+        },
+        {
+            "_include": "/gallery/GallerySlide.json"
+        },
+        {
+            "_include": "/gallery/GallerySlide.json"
+        },
+        {
+            "_include": "/gallery/GallerySlide.json"
+        },
+        {
+            "_include": "/gallery/GallerySlide.json"
+        }
+    ]
+}

@@ -1,0 +1,61 @@
+.LogoListA {
+  .LogoPromo {
+    .PagePromo-media {
+      img {
+        height: auto;
+        margin: 0 auto;
+        max-height: 150px;
+        width: auto;
+      }
+    }
+  }
+
+  &-items {
+    height: 150px;
+    width: 100%;
+
+    &-item {
+      height: 100%;
+      margin-right: 10px;
+      width: 40%;
+    }
+  }
+
+  .flickity-prev-next-button {
+    top: 50%;
+  }
+
+    @media @mq-md {
+    &-items {
+      width: calc(~'100% + 20px');
+
+      &-item {
+        margin-right: 20px;
+        width: calc(~'33.333% - 20px');
+      }
+    }
+  }
+
+  @media @mq-lg {
+    &-items {
+      &-item {
+        width: calc(~'25% - 20px');
+      }
+    }
+  }
+
+  @media @mq-xl {
+    &-items {
+      &-item {
+        margin-right: 30px;
+        width: calc(~'20% - 20px');
+      }
+    }
+
+    .flickity-prev-next-button {
+      &.next {
+        right: -40px;
+      }
+    }
+  }
+}

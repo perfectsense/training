@@ -1,0 +1,10 @@
+{{#if href~}}
+<a aria-label="home page" href="{{href}}" {{#with target}} target="{{this}}" {{/with}} {{extraAttributes}}>
+    {{~/if}}
+    {{#resize image "logo"}}
+        <img class="PageLogo-image" src="{{src}}" alt="{{../alt}}" {{~#with srcset}} srcset="{{this}}" {{/with~}}
+        {{~#with width}} width="{{this}}" {{/with~}} {{~#with height}} height="{{this}}" {{/with~}} />
+    {{/resize}}
+    {{#if href~}}
+</a>
+{{~/if}}

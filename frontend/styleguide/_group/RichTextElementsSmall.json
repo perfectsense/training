@@ -1,6 +1,6 @@
 [
   "Enhancement",
   {
-    "_template": "/link/Link.hbs"
+    "_template": "/link/LinkEnhancement.hbs"
   }
 ]

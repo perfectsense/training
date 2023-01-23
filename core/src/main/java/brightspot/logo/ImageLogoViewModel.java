@@ -10,6 +10,7 @@ import com.psddev.cms.db.Site;
 import com.psddev.cms.image.ImageSize;
 import com.psddev.cms.page.CurrentSite;
 import com.psddev.cms.view.ViewModel;
+import com.psddev.cms.view.ViewResponse;
 import com.psddev.styleguide.page.PageLogoView;
 
 public class ImageLogoViewModel
@@ -18,6 +19,14 @@ public class ImageLogoViewModel
 
     @CurrentSite
     protected Site site;
+
+    protected Optional<Link> logoLink;
+
+    @Override
+    protected void onCreate(ViewResponse response) {
+        super.onCreate(response);
+        this.logoLink = Optional.ofNullable(model.getLink());
+    }
 
     @Override
     public Map<String, ?> getImage() {
@@ -36,14 +45,14 @@ public class ImageLogoViewModel
 
     @Override
     public CharSequence getHref() {
-        return Optional.ofNullable(model.getLink())
+        return logoLink
             .map(link -> link.getLinkUrl(site))
             .orElse(null);
     }
 
     @Override
     public CharSequence getTarget() {
-        return Optional.ofNullable(model.getLink())
+        return logoLink
             .map(Link::getTarget)
             .map(Target::getValue)
             .orElse(null);

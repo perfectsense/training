@@ -1,0 +1,155 @@
+.PageListCarouselE {
+  display: block;
+
+  &-items {
+    display: grid;
+    grid-gap: 30px;
+  }
+
+  &-slides {
+    display: grid;
+
+    &-item {
+      grid-column: 1;
+      grid-row: 1;
+
+      &:not([data-active]) {
+        opacity: 0;
+      }
+    }
+  }
+
+  &-navigation {
+    display: grid;
+    grid-gap: 20px;
+  }
+
+  &-progress {
+    border-radius: 2px;
+    height: 4px;
+    margin-bottom: 8px;
+    overflow: hidden;
+    position: relative;
+
+    &:after {
+      background-color: var(--color-primary);
+      border-radius: inherit;
+      content: '';
+      height: 100%;
+      left: 0;
+      position: absolute;
+      top: 0;
+      transform: translateX(-100%);
+      width: 100%;
+    }
+  }
+
+  &:not([data-carousel-auto-play]) & {
+    &-progress {
+      display: none;
+    }
+  }
+
+  &-navigation-item[data-active] & {
+    &-progress {
+      &:after {
+        animation: fillHorizontal var(--carouselSpeed) linear 0s;
+        animation-fill-mode: forwards;
+      }
+    }
+  }
+
+  &[data-paused] & {
+    &-progress:after {
+      animation-play-state: paused;
+    }
+  }
+
+  .PagePromoC {
+    .PagePromo {
+      &-title {
+        &:extend(.promo-title-4 all);
+      }
+    }
+  }
+
+  @media @mq-md {
+    &-navigation {
+      grid-gap: 30px;
+    }
+
+    &:not([data-image-position]) & {
+      &-navigation {
+        grid-auto-flow: column;
+      }
+    }
+
+    &[data-image-position="right"] & {
+      &-slides {
+        grid-column: 2;
+      }
+    }
+
+    &[data-image-position] & {
+      &-items {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-auto-flow: column dense;
+      }
+
+      &-navigation {
+        grid-auto-rows: min-content;
+
+        &-item {
+          display: grid;
+          grid-auto-flow: column;
+          grid-gap: 20px;
+        }
+      }
+
+      &-progress {
+        height: 100%;
+        width: 4px;
+      }
+
+      &-navigation-item[data-active] .PageListCarouselE-progress {
+        &:after {
+          animation: fillVertical var(--carouselSpeed) linear 0s;
+          transform: translateY(-100%);
+        }
+      }
+    }
+  }
+
+  @media @mq-lg {
+    &[data-image-position] & {
+      &-items {
+        grid-template-columns: 2fr 1fr;
+      }
+    }
+
+    &[data-image-position="right"] & {
+      &-items {
+        grid-template-columns: 1fr 2fr;
+      }
+    }
+  }
+}
+
+@keyframes fillVertical {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes fillHorizontal {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}

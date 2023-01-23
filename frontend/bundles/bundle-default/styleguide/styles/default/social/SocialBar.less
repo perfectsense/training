@@ -1,0 +1,12 @@
+// Social Bar is used in the footer and is a "Find us on" vs the regular share bar,
+// which is Action Bar and is located in /action-bar
+
+.SocialBar {
+  &-items {
+    display: grid;
+    grid-gap: 20px;
+    grid-auto-flow: column;
+    grid-template-columns: repeat(auto-fit, 30px);
+    list-style: none;
+  }
+}

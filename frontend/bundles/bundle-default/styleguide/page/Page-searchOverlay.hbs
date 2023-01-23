@@ -1,0 +1,29 @@
+<bsp-search-overlay class="SearchOverlay">
+    <div class="SearchOverlay-search-overlay">
+      <form class="SearchOverlay-search-form" action="{{searchAction}}#nt=navsearch" novalidate="" autocomplete="off">
+          <label class="SearchOverlay-search-label">
+              <input placeholder="{{format "/page/Page" "searchInputPlaceholder"}}" type="text" class="SearchOverlay-search-input" name="q" required="true">
+              <span class="sr-only">
+                  {{format "/page/Page" "searchInputLabel"}}
+              </span>
+            <button type="submit" class="SearchOverlay-search-submit">
+                <svg>
+                    <use xlink:href="#icon-magnify"></use>
+                </svg>
+                <span class="sr-only">{{format "/page/Page" "searchSubmitLabel"}}</span>
+            </button>
+          </label>
+      </form>
+     </div>
+    <button class="SearchOverlay-search-button">
+        <svg class="icon-magnify">
+            <use xlink:href="#icon-magnify"></use>
+        </svg>
+        <span class="sr-only">
+            {{format "/page/Page" "searchButtonLabel"}}
+        </span>
+        <svg class="close-x">
+            <use xlink:href="#close-x"></use>
+        </svg>
+    </button>
+</bsp-search-overlay>

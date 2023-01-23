@@ -1,0 +1,55 @@
+/**
+ * As much as we can we want to reuse media queries across all the sites
+ */
+
+// ------------------- Standard screen sizes where we change the site layout --------------------
+@sm-width: 568px;
+@sm-max-width: (@md-width - 1); // some sites have mobile-specific styling
+@md-width: 768px;
+@md-max-width: (@lg-width - 1);
+@lg-width: 1024px;
+@lg-max-width: (@xl-width - 1);
+@hk-width: 1280px; // husky
+@xl-width: 1440px;
+
+@sm-max: (@md-width - 1px);
+@md-max: (@lg-width - 1px);
+
+// ------------------- Shortcuts for most used media queries----------------------
+@mq-sm: ~'only screen and (min-width: @{sm-width})';
+@mq-only-sm: ~'only screen and (max-width: @{sm-max-width})';
+@mq-md: ~'only screen and (min-width: @{md-width})';
+@mq-only-md: ~'only screen and (min-width: @{md-width}) and (max-width: @{md-max-width})';
+@mq-lg: ~'only screen and (min-width: @{lg-width})';
+@mq-only-lg: ~'only screen and (min-width: @{lg-width}) and (max-width: @{lg-max-width})';
+@mq-hk: ~'only screen and (min-width: @{hk-width})';
+@mq-xl: ~'only screen and (min-width: @{xl-width})';
+@mq-up-to-md: ~"only screen and (max-width: @{sm-max})";
+@mq-up-to-lg: ~"only screen and (max-width: @{md-max})";
+
+// ----- Sizes (used in conjuction with util breakpoints) -----
+body:before {
+  .sr-only;
+  content: 'mq-xs';
+  visibility: hidden;
+
+  @media @mq-sm {
+    content: 'mq-sm';
+  }
+
+  @media @mq-md {
+    content: 'mq-md';
+  }
+
+  @media @mq-lg {
+    content: 'mq-lg';
+  }
+
+  @media @mq-hk {
+    content: 'mq-hk';
+}
+
+  @media @mq-xl {
+    content: 'mq-xl';
+  }
+}

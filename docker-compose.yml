@@ -36,6 +36,8 @@ services:
       - storage-data:/var/www/localhost/htdocs/storage
   mysql:
     image: brightspot/mysql:mysql5.6
+    ports:
+      - 3306:3306
     volumes:
       - mysql-data:/var/lib/mysql
       - mysql-logs:/var/log/mysql

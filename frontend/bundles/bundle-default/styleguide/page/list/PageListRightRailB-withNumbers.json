@@ -1,0 +1,20 @@
+{
+  "_template": "/page/list/PageList.hbs",
+  "_styledTemplate": "/page/list/PageListRightRailB.hbs",
+  "title": "Right Rail List B - With Numbers",
+  "items": [
+    {
+      "_include": "/page/promo/PagePromo.json"
+    },
+    {
+      "_include": "/page/promo/PagePromo.json"
+    },
+    {
+      "_include": "/page/promo/PagePromo.json"
+    },
+    {
+      "_include": "/page/promo/PagePromo.json"
+    }
+  ],
+  "showListNumbers": true
+}

@@ -1,0 +1,105 @@
+.PageListCarouselB {
+  .PageList {
+    &-header {
+      &-title {
+        &:extend(.list-title-2 all);
+      }
+    }
+
+    &-items {
+      &:after {
+        content: 'flickity';
+        display: none;
+      }
+
+      &-item {
+        margin-right: 20px;
+        max-width: 400px;
+        width: 80%;
+      }
+    }
+  }
+
+  .flickity {
+    &-button {
+      height: 20px;
+      width: 20px;
+
+      svg {
+        height: 10px;
+        top: -4px;
+        width: 10px;
+      }
+    }
+
+    &-prev-next-button {
+      display: none;
+    }
+  }
+
+  .PagePromo {
+    &-title {
+      &:extend(.promo-title-6 all);
+    }
+
+    &[data-align-left] {
+      .PagePromo-media {
+        margin: 0 15px 0 0;
+        width: 90px;
+      }
+    }
+  }
+
+  @media @mq-md {
+    .flickity-prev-next-button {
+      display: block;
+      top: 50%;
+    }
+
+    .PageList-items {
+      width: calc(~'100% + 20px');
+
+      &-item {
+        margin-right: 20px;
+        max-width: none;
+        width: calc(~'50% - 20px');
+      }
+    }
+  }
+
+  @media @mq-lg {
+    .PageList-items {
+      &-item {
+        width: calc(~'33.333% - 20px');
+      }
+    }
+  }
+
+  @media @mq-hk {
+    .PageList-items {
+      &-item {
+        width: calc(~'25% - 20px');
+      }
+    }
+
+    .flickity {
+      &-button {
+        height: 30px;
+        top: 35%;
+        width: 30px;
+
+        svg {
+          height: 12px;
+          top: -1px;
+          width: 12px;
+        }
+      }
+
+      &-prev-next-button {
+        &.previous {
+          left: -60px;
+        }
+      }
+    }
+  }
+}

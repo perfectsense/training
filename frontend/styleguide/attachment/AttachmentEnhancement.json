@@ -4,8 +4,14 @@
   "title": {
     "_include": "/_group/RichTextElementsTiny.json"
   },
-  "src": "https://www.example.com/files/attachment.pdf",
-  "type": "application/pdf",
+  "description": {
+    "_include": "/_group/RichTextElementsTiny.json"
+  },
+  "url": "https://www.example.com/files/attachment.pdf",
   "fileName": "attachment.pdf",
+  "fileTypeDisplayName": "PDF",
+  "iconType": "PDF",
+  "mimeType": "application/pdf",
+  "fileSize": "2mb",
   "_hidden": true
 }

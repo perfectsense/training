@@ -1,0 +1,48 @@
+{
+  "_include": "/page/Page.json",
+  "pageLead": {
+    "_include": "/page/PageHeading.json",
+    "eyebrow": null,
+    "eyebrowUrl": null,
+    "pageHeading": "Page with Standard Lists",
+    "pageSubHeading": null
+  },
+  "main": [
+    {
+      "_include": "/page/list/PageListStandardA.json"
+    },
+    {
+      "_include": "/page/list/PageListStandardB.json"
+    },
+    {
+      "_include": "/page/list/PageListStandardC.json"
+    },
+    {
+      "_include": "/page/list/PageListStandardD.json"
+    },
+    {
+      "_include": "/page/list/PageListStandardE.json"
+    },
+    {
+      "_include": "/page/list/PageListStandardF.json"
+    },
+    {
+      "_include": "/page/list/PageListStandardG.json"
+    },
+    {
+      "_include": "/page/list/PageListStandardH.json"
+    },
+    {
+      "_include": "/page/list/PageListStandardI.json"
+    },
+    {
+      "_include": "/page/list/PageListStandardJ.json"
+    },
+    {
+      "_include": "/page/list/PageListStandardK.json"
+    },
+    {
+      "_include": "/page/list/PageListStandardL.json"
+    }
+  ]
+}

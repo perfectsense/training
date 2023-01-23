@@ -1,0 +1,36 @@
+.PageListRightRailD {
+  .PageList {
+    &-header {
+      margin-bottom: 30px;
+
+      &-title {
+        &:extend(.list-title-2 all);
+        margin-bottom: 10px;
+      }
+
+      &-description {
+        &:extend(.description-2 all);
+        margin-bottom: 10px;
+      }
+    }
+
+    &-items {
+      display: grid;
+      grid-gap: 20px;
+    }
+
+    &-cta {
+      .Button {
+        margin-left: 0;
+      }
+    }
+  }
+
+  @media @mq-only-md {
+    .PageList {
+      &-items {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  }
+}

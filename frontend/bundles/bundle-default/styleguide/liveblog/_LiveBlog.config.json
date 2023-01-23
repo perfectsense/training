@@ -1,0 +1,9 @@
+{
+  "styles": {
+    "/liveblog/LiveBlogPage.hbs": {
+        "fields": [
+            "suppressCommenting"
+        ]
+    }
+  }
+}

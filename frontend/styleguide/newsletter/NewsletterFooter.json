@@ -9,12 +9,6 @@
       "_repeat": 4
     }
   ],
-  "extraLinks": [
-    {
-      "_include": "/link/Link.json",
-      "_repeat": 4
-    }
-  ],
   "social": {
     "_include": "/social/SocialBar.json"
   },

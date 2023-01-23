@@ -1,5 +1,7 @@
 package brightspot.person;
 
+import java.util.Optional;
+
 import brightspot.cascading.CascadingPageElements;
 import brightspot.image.WebImage;
 import brightspot.image.WebImageAsset;
@@ -12,36 +14,48 @@ import brightspot.promo.person.PersonPromotable;
 import brightspot.rte.MediumRichTextToolbar;
 import brightspot.rte.SmallRichTextToolbar;
 import brightspot.rte.TinyRichTextToolbar;
+import brightspot.search.boost.HasSiteSearchBoostIndexes;
 import brightspot.search.modifier.exclusion.SearchExcludable;
+import brightspot.search.sortalphabetical.AlphabeticallySortable;
 import brightspot.seo.SeoWithFields;
 import brightspot.share.Shareable;
 import brightspot.site.DefaultSiteMapItem;
 import brightspot.social.SocialEntity;
 import brightspot.urlslug.HasUrlSlugWithField;
+import brightspot.util.MoreStringUtils;
 import brightspot.util.RichTextUtils;
 import com.psddev.cms.db.Content;
 import com.psddev.cms.db.Site;
 import com.psddev.cms.db.ToolUi;
+import com.psddev.cms.ui.form.DynamicPlaceholderMethod;
 import com.psddev.dari.db.Recordable;
 import com.psddev.dari.util.Utils;
 import org.apache.commons.lang3.StringUtils;
 
 @ToolUi.FieldDisplayOrder({
-    "name",
-    "firstName",
-    "lastName",
-    "image",
-    "title",
-    "affiliation",
-    "email",
-    "shortBiography",
-    "fullBiography"
+        "name",
+        "firstName",
+        "lastName",
+        "image",
+        "title",
+        "affiliation",
+        "email",
+        "shortBiography",
+        "fullBiography",
+        "seo.title",
+        "seo.suppressSeoDisplayName",
+        "seo.description",
+        "seo.keywords",
+        "seo.robots",
+        "ampPage.ampDisabled"
 })
 @ToolUi.IconName("person")
 @Recordable.DisplayName("Person")
 public class PersonPage extends Content implements
+        AlphabeticallySortable,
         CascadingPageElements,
         DefaultSiteMapItem,
+        HasSiteSearchBoostIndexes,
         HasUrlSlugWithField,
         OpenGraphProfile,
         Page,
@@ -90,16 +104,17 @@ public class PersonPage extends Content implements
     @ToolUi.RichText(toolbar = TinyRichTextToolbar.class)
     private String affiliation;
 
-    /**
-     * @return rich text
-     */
+    @DynamicPlaceholderMethod("getAlphabeticalSortFallback")
+    private String alphabeticalSortValue;
+
     public String getName() {
         return name;
     }
 
-    /**
-     * @return rich text
-     */
+    public void setName(String name) {
+        this.name = name;
+    }
+
     public String getFirstName() {
         return firstName;
     }
@@ -108,9 +123,6 @@ public class PersonPage extends Content implements
         this.firstName = firstName;
     }
 
-    /**
-     * @return rich text
-     */
     public String getLastName() {
         return lastName;
     }
@@ -119,33 +131,14 @@ public class PersonPage extends Content implements
         this.lastName = lastName;
     }
 
-    /**
-     * @return rich text
-     */
-    public String getFullBiography() {
-        return fullBiography;
-    }
-
-    /**
-     * @return rich text
-     */
-    public String getShortBiography() {
-        return StringUtils.isBlank(shortBiography)
-                ? getShortBiographyPlaceholder()
-                : shortBiography;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
     public WebImage getImage() {
         return image;
     }
 
-    /**
-     * @return rich text
-     */
+    public void setImage(WebImage image) {
+        this.image = image;
+    }
+
     public String getTitle() {
         return title;
     }
@@ -154,20 +147,26 @@ public class PersonPage extends Content implements
         this.title = title;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setImage(WebImage image) {
-        this.image = image;
+    public String getEmail() {
+        return email;
     }
 
     public void setEmail(String email) {
         this.email = email;
     }
 
+    public String getFullBiography() {
+        return fullBiography;
+    }
+
     public void setFullBiography(String fullBiography) {
         this.fullBiography = fullBiography;
+    }
+
+    public String getShortBiography() {
+        return StringUtils.isBlank(shortBiography)
+                ? getShortBiographyPlaceholder()
+                : shortBiography;
     }
 
     public void setShortBiography(String shortBiography) {
@@ -193,6 +192,25 @@ public class PersonPage extends Content implements
         return getName();
     }
 
+    // --- HasSiteSearchBoostIndexes support ---
+
+    @Override
+    public String getSiteSearchBoostTitle() {
+        return getName();
+    }
+
+    @Override
+    public String getSiteSearchBoostDescription() {
+        return getShortBiography();
+    }
+
+    // --- HasUrlSlug support ---
+
+    @Override
+    public String getUrlSlugFallback() {
+        return Utils.toNormalized(getNamePlainText());
+    }
+
     // --- Directory.Item support ---
 
     @Override
@@ -200,18 +218,11 @@ public class PersonPage extends Content implements
         return AbstractPermalinkRule.create(site, this, DefaultPermalinkRule.class);
     }
 
-    // --- HasUrlSlug support ---
-
-    @Override
-    public String getUrlSlugFallback() {
-        return Utils.toNormalized(getName());
-    }
-
     // --- OpenGraphProfile support ---
 
     @Override
     public String getOpenGraphProfileUsername() {
-        return RichTextUtils.richTextToPlainText(getName());
+        return getNamePlainText();
     }
 
     @Override
@@ -232,13 +243,13 @@ public class PersonPage extends Content implements
     // --- PagePromotable support ---
 
     @Override
-    public String getPagePromotableTitleFallback() {
-        return getName();
+    public String getPagePromotableType() {
+        return PAGE_PROMOTABLE_TYPE;
     }
 
     @Override
-    public WebImage getPagePromotableImageFallback() {
-        return getImage();
+    public String getPagePromotableTitleFallback() {
+        return getNamePlainText();
     }
 
     @Override
@@ -247,8 +258,8 @@ public class PersonPage extends Content implements
     }
 
     @Override
-    public String getPagePromotableType() {
-        return PAGE_PROMOTABLE_TYPE;
+    public WebImageAsset getPagePromotableImageFallback() {
+        return getImage();
     }
 
     // --- Person support ---
@@ -289,7 +300,7 @@ public class PersonPage extends Content implements
 
     @Override
     public String getLabel() {
-        return RichTextUtils.richTextToPlainText(getName());
+        return getNamePlainText();
     }
 
     // --- SeoWithFields support ---
@@ -308,7 +319,7 @@ public class PersonPage extends Content implements
 
     @Override
     public String getShareableTitleFallback() {
-        return RichTextUtils.richTextToPlainText(getName());
+        return getNamePlainText();
     }
 
     @Override
@@ -319,5 +330,34 @@ public class PersonPage extends Content implements
     @Override
     public WebImageAsset getShareableImageFallback() {
         return getImage();
+    }
+
+    private String getNamePlainText() {
+        return RichTextUtils.richTextToPlainText(getName());
+    }
+
+    // --- AlphabeticallySortable support ---
+
+    private String getAlphabeticalSortFallback() {
+        return RichTextUtils.richTextToPlainText(MoreStringUtils.firstNonBlankRichText(
+                getLastName(),
+                this::parseLastNameFromName,
+                this::getNamePlainText));
+    }
+
+    @Override
+    public String getAlphabeticallySortableIndexValue() {
+        return Optional.ofNullable(alphabeticalSortValue)
+                .filter(val -> !val.isEmpty())
+                .orElseGet(this::getAlphabeticalSortFallback);
+    }
+
+    private String parseLastNameFromName() {
+        String namePlain = getNamePlainText();
+        if (!StringUtils.isBlank(namePlain) && namePlain.contains(" ")) {
+            String[] split = namePlain.split(" ");
+            return split[split.length - 1];
+        }
+        return null;
     }
 }

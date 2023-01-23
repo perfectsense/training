@@ -1,0 +1,372 @@
+.PagePromo {
+  color: var(--color-primary-text);
+
+  &[data-align-bottom] {
+    display: flex;
+    flex-direction: column;
+
+    .PagePromo-media {
+      margin: 20px 0 0;
+      order: 2;
+    }
+  }
+
+  &[data-align-left] {
+    display: flex;
+
+    .PagePromo-media {
+      flex-shrink: 0;
+      margin: 0 20px 0 0;
+      width: 90px;
+    }
+  }
+
+  &[data-align-right] {
+    display: flex;
+    justify-content: space-between;
+
+    .PagePromo-content {
+      order: 1;
+    }
+
+    .PagePromo-media {
+      flex-shrink: 0;
+      margin: 0 0 0 20px;
+      order: 2;
+      width: 90px;
+    }
+  }
+
+  &[data-inverse-colors],
+  [data-inverse-colors] & {
+    --color-link-text: var(--color-text-inverse);
+    --color-link-text-hover: var(--color-text-inverse);
+    --color-primary-text: var(--color-text-inverse);
+  }
+
+  &-author {
+    &:extend(.byline-1 all);
+    --color-link-text: var(--color-primary-text);
+    --color-link-text-hover: var(--color-primary-text);
+
+    [data-hide-authors='true'] & {
+      display: none;
+    }
+
+    a {
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &-button {
+    margin-top: 20px;
+  }
+
+  &-byline {
+    color: var(--color-primary-text);
+    display: flex;
+    margin-top: 10px;
+
+    span.dot {
+      height: 12px;
+      line-height: 12px;
+      position: relative;
+      top: 2px;
+
+      [data-hide-authors='true'] &,
+      [data-hide-dates='true'] & {
+        display: none;
+      }
+    }
+
+    [data-hide-authors='true'][data-hide-dates='true'] & {
+      display: none;
+    }
+  }
+
+  &-category {
+    &:extend(.label-1 all);
+    color: var(--color-link-text);
+    margin-bottom: 5px;
+
+    [data-hide-categories='true'] & {
+      display: none;
+    }
+  }
+
+  &-ctaLink {
+    margin-top: 10px;
+
+    a {
+      &:extend(.label-3 all);
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    svg {
+      height: 15px;
+      margin-left: 2px;
+      margin-bottom: 2px;
+      width: 21px;
+    }
+  }
+
+  &-description {
+    &:extend(.description-3 all);
+    color: var(--color-primary-text);
+    margin-top: 10px;
+
+    a {
+      text-decoration: underline;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+
+    > ul,
+    p > ul {
+      list-style: disc;
+      margin: 10px;
+
+      li > ul {
+        list-style: circle;
+        margin: 10px -20px 20px 0;
+
+        li > ul {
+          list-style: square;
+          margin: 10px -20px 20px 0;
+        }
+      }
+
+      li > ol {
+        list-style: decimal;
+        margin: 10px -20px 20px 0;
+      }
+    }
+
+    > ol,
+    p > ol {
+      list-style: decimal;
+      margin: 10px;
+
+      li > ol {
+        list-style: lower-alpha;
+        margin: 10px -20px 20px 0;
+
+        li > ol {
+          list-style: lower-roman;
+          margin: 10px -20px 20px 0;
+        }
+      }
+
+      li > ul {
+        list-style: disc;
+        margin: 10px -20px 20px 0;
+      }
+    }
+
+    [data-hide-descriptions='true'] & {
+      display: none;
+    }
+  }
+
+  &-date {
+    &:extend(.byline-1 all);
+
+    [data-hide-dates='true'] & {
+      display: none;
+    }
+  }
+
+  &-media {
+    margin-bottom: 20px;
+    position: relative;
+
+    .Link {
+      display: block;
+
+      &-icon {
+        bottom: 10px;
+        height: 30px;
+        left: 10px;
+        position: absolute;
+        width: 30px;
+
+        svg {
+          height: 100%;
+          fill: var(--color-text-inverse);
+          left: 0;
+          position: absolute;
+          top: 0;
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  &-sponsoredBy {
+    &:extend(.byline-1 all);
+    align-items: center;
+    display: flex;
+    font-weight: bold;
+
+    &-logo,
+    &-text {
+      display: inline-block;
+    }
+
+    &-logo {
+      img {
+        max-width: 100px;
+      }
+    }
+
+    &-text {
+      margin-right: 5px;
+    }
+  }
+
+  &-title {
+    &:extend(.promo-title-5 all);
+    color: var(--color-primary-text);
+    --color-link-text: var(--color-primary-text);
+    --color-link-text-hover: var(--color-primary-text);
+  }
+
+  // Duplication of attribute selector to increase specificity
+  [data-promo-title-size][data-promo-title-size="1"] & {
+    &-title {
+      &:extend(.promo-title-1 all);
+    }
+  }
+
+  // Duplication of attribute selector to increase specificity
+  [data-promo-title-size][data-promo-title-size="2"] & {
+    &-title {
+      &:extend(.promo-title-2 all);
+    }
+  }
+
+  // Duplication of attribute selector to increase specificity
+  [data-promo-title-size][data-promo-title-size="3"] & {
+    &-title {
+      &:extend(.promo-title-3 all);
+    }
+  }
+
+  // Duplication of attribute selector to increase specificity
+  [data-promo-title-size][data-promo-title-size="4"] & {
+    &-title {
+      &:extend(.promo-title-4 all);
+    }
+  }
+
+  // Duplication of attribute selector to increase specificity
+  [data-promo-title-size][data-promo-title-size="5"] & {
+    &-title {
+      &:extend(.promo-title-5 all);
+    }
+  }
+
+  // Duplication of attribute selector to increase specificity
+  [data-promo-title-size][data-promo-title-size="6"] & {
+    &-title {
+      &:extend(.promo-title-6 all);
+    }
+  }
+
+  // Duplication of attribute selector to increase specificity
+  [data-promo-description-size][data-promo-description-size="1"] & {
+    &-description {
+      &:extend(.description-1 all);
+    }
+  }
+
+  // Duplication of attribute selector to increase specificity
+  [data-promo-description-size][data-promo-description-size="2"] & {
+    &-description {
+      &:extend(.description-2 all);
+    }
+  }
+
+  // Duplication of attribute selector to increase specificity
+  [data-promo-description-size][data-promo-description-size="3"] & {
+    &-description {
+      &:extend(.description-3 all);
+    }
+  }
+
+  @media @mq-md {
+    &[data-align-left],
+    &[data-align-right] {
+      .PagePromo-media {
+        width: 250px;
+      }
+    }
+  }
+
+  @media @mq-lg {
+    &-button {
+      margin-top: 30px;
+    }
+
+    &-media {
+      .Link {
+        &-icon {
+          bottom: 20px;
+          height: 50px;
+          left: 20px;
+          width: 50px;
+        }
+      }
+    }
+  }
+
+  @media @mq-hk {
+    &[data-align-left],
+    &[data-align-right] {
+      .PagePromo-media {
+        width: 340px;
+      }
+    }
+  }
+
+  @media @mq-xl {
+    &[data-align-left],
+    &[data-align-right] {
+      .PagePromo-media {
+        width: 400px;
+      }
+    }
+  }
+
+  @media @mq-up-to-md {
+    // TODO: See if there is a cleaner method for this, rather than repeating styles
+    &[data-mobile-alt-layout="true"] {
+      display: block;
+
+      .PagePromo-media {
+        display: block;
+        float: right;
+        margin-left: 20px;
+        margin-bottom: 20px;
+        max-width: 90px;
+        order: initial;
+
+        .Link {
+          &-icon {
+            bottom: 5px;
+            height: 18px;
+            left: 5px;
+            width: 18px;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "_template": "PullQuote.hbs",
+  "quote": "{{words([15,25])}}",
+  "attribution": "{{words([5,15])}}",
+  "_hidden": true,
+  "inverseColors": true,
+  "backgroundColor": "black"
+}

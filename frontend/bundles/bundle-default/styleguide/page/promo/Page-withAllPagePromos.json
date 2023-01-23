@@ -1,0 +1,42 @@
+{
+  "_include": "/page/Page.json",
+
+  "main": [
+    {
+      "_include": "/page/promo/PagePromoModuleA.json",
+      "category": "PagePromo Module A"
+    },
+    {
+      "_include": "PagePromoModuleA-mediaBottom.json",
+      "category": "PagePromo Module A - Media Bottom"
+    },
+    {
+      "_include": "PagePromoModuleA-textLeft.json",
+      "category": "PagePromo Module A - Text Left"
+    },
+    {
+      "_include": "/page/promo/PagePromoModuleB.json",
+      "category": "PagePromo Module B"
+    },
+    {
+      "_include": "/page/promo/PagePromoModuleB-Banner.json",
+      "category": "PagePromo Module B - 4x1 Image"
+    },
+    {
+      "_include": "/page/promo/PagePromoModuleB-textCenter.json",
+      "category": "PagePromo Module B - Text Center"
+    },
+    {
+      "_include": "/page/promo/PagePromoModuleB-textRight.json",
+      "category": "PagePromo Module B - Text Right"
+    },
+    {
+      "_include": "/page/promo/PagePromoModuleC.json",
+      "category": "PagePromo Module C"
+    },
+    {
+      "_include": "/page/promo/PagePromoModuleC-mediaRight.json",
+      "category": "PagePromo Module C - Image on Right"
+    }
+  ]
+}

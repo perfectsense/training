@@ -16,11 +16,6 @@
       "_include": "/social/SocialLink.json"
     }
   ],
-  "promos": [
-    {
-      "_include": "/page/promo/PagePromo.json"
-    }
-  ],
   "contentId": "a123",
   "iconUrl": "https://example.com/url/to/icon",
   "isCurrent": true,

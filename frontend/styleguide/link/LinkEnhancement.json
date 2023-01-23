@@ -1,0 +1,10 @@
+{
+  "_template": "LinkEnhancement.hbs",
+  "href": "#",
+  "target": "_self",
+  "body": {
+    "_include": "/_group/RichTextElementsTiny.json"
+  },
+  "contentId": "a123",
+  "_hidden": true
+}

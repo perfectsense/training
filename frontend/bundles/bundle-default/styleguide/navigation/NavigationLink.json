@@ -1,0 +1,11 @@
+{
+    "_template": "/navigation/NavigationLink.hbs",
+    "href": "#",
+    "target": "_self",
+    "text": "{{words([2,2])}}",
+    "description": "{{words([2,3])}}",
+    "contentId": "a123",
+    "iconUrl": "",
+    "status": "2",
+    "count": 3
+}

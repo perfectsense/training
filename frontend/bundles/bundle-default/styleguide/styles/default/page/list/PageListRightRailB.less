@@ -1,0 +1,58 @@
+.PageListRightRailB {
+  .PageList {
+    &-header {
+      margin-bottom: 30px;
+
+      &-title {
+        &:extend(.list-title-2 all);
+        margin-bottom: 10px;
+      }
+
+      &-description {
+        &:extend(.description-2 all);
+        margin-bottom: 10px;
+      }
+    }
+
+    &-items {
+      counter-reset: number;
+      display: grid;
+      grid-gap: 20px;
+
+      &-item {
+        border-bottom: 1px solid var(--color-list-border);
+        display: grid;
+        padding-bottom: 20px;
+      }
+
+      .PagePromo-title {
+        &:extend(.promo-title-6 all);
+      }
+
+      &[data-with-numbers] {
+        .PageList-items-item {
+          grid-template-columns: 20px auto;
+
+          &:before {
+            counter-increment: number;
+            content: counter(number)'\a0';
+            font-weight: 300;
+            margin-right: 10px;
+            position: relative;
+            top: -2px;
+          }
+        }
+      }
+    }
+
+    &-cta {
+      .Button {
+        margin-left: 0;
+      }
+    }
+  }
+
+  .PagePromo[data-align-right] .PagePromo-media {
+    width: 90px;
+  }
+}

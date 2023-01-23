@@ -1,0 +1,17 @@
+<div class="VideoModule" data-module>
+    {{include "/link/AnchorLink.hbs" this}}
+    {{#or title description}}
+        <div class="VideoModule-header">
+            {{#with title}}
+                <div class="VideoModule-title">{{this}}</div>
+            {{/with}}
+            {{#with description}}
+                <div class="VideoModule-description">{{this}}</div>
+            {{/with}}
+        </div>
+    {{/or}}
+
+    {{#with player}}
+        <div class="VideoModule-player">{{this}}</div>
+    {{/with}}
+</div>

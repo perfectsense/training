@@ -1,0 +1,24 @@
+{{#if items}}
+<bsp-listcarousel class="PageListCarouselB" data-module{{include "includes/PageList-attributes.hbs" this}}>
+    {{include "includes/PageList-header.hbs" this}}
+
+    {{#with items}}
+        <div class="PageList-items">
+            {{#each this}}
+                <div class="PageList-items-item">
+                    {{#set lazyLoad=false}}
+                        {{#set imageSize="small-16x9"}}
+                            {{#eq this._template "/page/promo/PagePromo.hbs"}}
+                                {{include "/page/promo/PagePromo.hbs" this imagePositionHorizontal="left" category=null authorName=null publishDate=null description=null}}
+                            {{else}}
+                                {{render this}}
+                            {{/eq}}
+                        {{/set}}
+                    {{/set}}
+                </div>
+            {{/each}}
+        </div>
+    {{/with}}
+    {{include "includes/PageList-footer.hbs" this}}
+</bsp-listcarousel>
+{{/if}}

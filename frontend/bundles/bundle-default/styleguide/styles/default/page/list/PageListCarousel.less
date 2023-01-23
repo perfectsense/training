@@ -1,0 +1,51 @@
+bsp-listcarousel {
+  display: block;
+  height: auto;
+  position: relative;
+
+  .flickity-prev-next-button {
+    display: none;
+    top: calc(~'50% - 20px');
+
+    &.next {
+      right: 5px;
+    }
+
+    &.previous {
+      left: 5px;
+    }
+
+    &:disabled {
+      background: none;
+      opacity: 0.5;
+    }
+  }
+
+  [class$="-items-item"] {
+    display: none;
+
+    &:first-of-type {
+      display: block;
+    }
+  }
+
+  .flickity-enabled {
+    [class$="-items-item"] {
+      display: block;
+    }
+  }
+
+  @media @mq-md {
+    .flickity-prev-next-button {
+      display: block;
+
+      &.next {
+        right: -20px;
+      }
+
+      &.previous {
+        left: -40px;
+      }
+    }
+  }
+}

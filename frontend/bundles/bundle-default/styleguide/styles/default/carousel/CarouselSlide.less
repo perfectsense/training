@@ -1,0 +1,49 @@
+.CarouselSlide {
+  &-count {
+    &:extend(.label-4);
+
+    margin-top: 10px;
+  }
+
+  &-content {
+    margin-top: 5px;
+  }
+
+  &-caption,
+  &-credit {
+    &:extend(.caption-1 all);
+
+    // sometimes we get p tags here
+    p {
+      display: inline;
+    }
+  }
+
+  &-divider {
+    margin: 0 5px;
+  }
+
+  &-info {
+    &:extend(.caption-1);
+
+    div {
+      margin-top: 10px;
+    }
+  }
+
+  &-infoAttribution,
+  &-infoDescription {
+    // sometimes we get p tags here
+    p {
+      display: inline;
+    }
+  }
+
+  &-infoAttribution {
+    font-style: italic;
+
+    &:before {
+      content: "\00a0 ";
+    }
+  }
+}

@@ -1,0 +1,31 @@
+:root {
+  --hatHeight: 0px;
+
+  &[data-header-hat=true] {
+    --hatHeight: 40px;
+  }
+}
+
+.Hat {
+  background-color: var(--color-hat-bg);
+  color: var(--color-hat-text);
+  --color-link-text: --color-hat-text;
+  --color-link-text-hover: --color-hat-text;
+  display: flex;
+  align-items: center;
+  height: var(--hatHeight);
+  padding: 0 20px;
+  width: 100%;
+
+  .RichTextBody {
+    .promo-title-6;
+
+    h2, h3 {
+      .promo-title-5;
+    }
+  }
+
+  @media @mq-md {
+    padding: 0 50px;
+  }
+}

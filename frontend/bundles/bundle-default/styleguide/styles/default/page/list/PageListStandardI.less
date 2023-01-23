@@ -1,0 +1,126 @@
+.PageListStandardI {
+  .PageList {
+    &-items {
+      display: grid;
+      gap: 20px;
+
+      &-item {
+        border-bottom: 1px solid var(--color-border);
+        padding-bottom: 20px;
+
+        &:first-of-type {
+          border-bottom: none;
+          padding-bottom: 0;
+
+          .PagePromoModuleA {
+            &[data-align-top] {
+              padding-bottom: 10px;
+            }
+
+            .PagePromo {
+              &-content {
+                text-align: center;
+              }
+
+              &-description {
+                &:extend(.description-2 all);
+              }
+
+              &-title {
+                &:extend(.promo-title-2 all);
+              }
+            }
+
+            [data-column-count="4"]&,
+            [data-column-count="5"]&,
+            [data-column-count="6"]& {
+              .PagePromo {
+                &-title {
+                  &:extend(.promo-title-5 all);
+                }
+              }
+            }
+          }
+        }
+
+        &:not(:nth-of-type(1)) {
+          .PagePromo {
+            &-description {
+              &:extend(.description-2 all);
+            }
+
+            &-title {
+              &:extend(.promo-title-4 all);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media @mq-md {
+    .PageList-items {
+      &-item {
+        border-bottom: none;
+        padding-bottom: 0;
+
+        &:first-of-type {
+          grid-column: span 12;
+
+          .PagePromoModuleA {
+            &[data-align-top] {
+              padding-bottom: 0;
+            }
+          }
+        }
+
+        &:not(:nth-of-type(1)) {
+          grid-column: span 4;
+        }
+      }
+
+      [data-column-count="2"]&,
+      [data-column-count="4"]& {
+        &-item {
+          &:first-of-type {
+            grid-column: span 12;
+          }
+
+          &:not(:nth-of-type(1)) {
+            grid-column: span 6;
+          }
+        }
+      }
+    }
+  }
+
+  @media @mq-lg {
+    .PageList-items {
+      [data-column-count="2"]& {
+        &-item {
+          &:not(:nth-of-type(1)) {
+            grid-column: span 6;
+          }
+        }
+      }
+
+      [data-column-count="4"]& {
+        &-item {
+          &:not(:nth-of-type(1)) {
+            grid-column: span 3;
+          }
+        }
+      }
+
+      &-item {
+        &:first-of-type {
+          .PagePromoModuleA {
+            &[data-align-top] {
+              padding-bottom: 10px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

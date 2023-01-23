@@ -1,0 +1,179 @@
+.PageList {
+  &-cta,
+  &-nextPage {
+    display: flex;
+    justify-content: center;
+
+
+    .Button {
+      margin: 20px auto 0;
+    }
+  }
+
+  &-header {
+    margin-bottom: 20px;
+
+    .PageList-cta {
+      display: block;
+
+      .Button {
+        margin: 30px 0 0 0;
+      }
+    }
+
+    &-description {
+      &:extend(.description-1 all);
+      &:extend(.RichTextElements all);
+      color: var(--color-primary-text);
+
+      [data-inverse-colors] & {
+        --color-primary-text: var(--color-text-inverse);
+        --color-link-text: var(--color-text-inverse);
+        --color-link-text-hover: var(--color-text-inverse);
+      }
+    }
+
+    &-title {
+      &:extend(.list-title-1 all);
+
+      color: var(--color-primary-text);
+      margin-bottom: 10px;
+
+      [data-inverse-colors] & {
+        --color-primary-text: var(--color-text-inverse);
+      }
+    }
+  }
+
+  // Duplication of attribute selector to increase specificity
+  [data-list-title-size][data-list-title-size="1"] & {
+    &-header {
+      &-title {
+        &:extend(.list-title-1 all);
+      }
+    }
+  }
+
+  // Duplication of attribute selector to increase specificity
+  [data-list-title-size][data-list-title-size="2"] & {
+    &-header {
+      &-title {
+        &:extend(.list-title-2 all);
+      }
+    }
+  }
+
+  // Duplication of attribute selector to increase specificity
+  [data-list-title-size][data-list-title-size="3"] & {
+    &-header {
+      &-title {
+        &:extend(.list-title-3 all);
+      }
+    }
+  }
+
+  // Duplication of attribute selector to increase specificity
+  [data-list-description-size][data-list-description-size="1"] & {
+    &-header {
+      &-description {
+        &:extend(.description-1 all);
+      }
+    }
+  }
+
+  // Duplication of attribute selector to increase specificity
+  [data-list-description-size][data-list-description-size="2"] & {
+    &-header {
+      &-description {
+        &:extend(.description-2 all);
+      }
+    }
+  }
+
+  // Duplication of attribute selector to increase specificity
+  [data-list-description-size][data-list-description-size="3"] & {
+    &-header {
+      &-description {
+        &:extend(.description-3 all);
+      }
+    }
+  }
+
+  &-nextPage {
+    display: none;
+
+    &-loading {
+      .loading-icon;
+
+      display: none;
+      margin: 30px 0 0;
+
+      [data-list-loadmore='loading'] & {
+        display: inline-block;
+      }
+    }
+
+    [data-list-loadmore='loading'] & {
+      .Button {
+        display: none;
+      }
+    }
+
+    [data-show-loadmore] & {
+      display: flex;
+    }
+  }
+
+  @media @mq-md {
+    &-cta,
+    &-nextPage {
+      .Button {
+        margin: 30px auto 0;
+      }
+    }
+
+    &-header {
+      &-title {
+        margin-bottom: 15px;
+      }
+    }
+  }
+
+  @media @mq-lg {
+    &-header {
+      margin-bottom: 30px;
+
+      &-title {
+        margin-bottom: 20px;
+      }
+    }
+  }
+}
+
+// all the styles for list header position on side, any list can get this treatment if we want by
+// adding the FE field for it in _PageList.config.json
+[data-list-header-position='side'] {
+  .PageList-footer {
+    display: none;
+  }
+}
+
+@media @mq-lg {
+  [data-list-header-position='side'] {
+    display: grid;
+    column-gap: 40px;
+    grid-template-columns: 300px 1fr;
+
+    .PageList-footer {
+      display: none;
+    }
+  }
+}
+
+@media @mq-xl {
+  [data-list-header-position='side'] {
+    display: grid;
+    column-gap: 40px;
+    grid-template-columns: 320px 1fr;
+  }
+}

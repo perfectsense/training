@@ -1,0 +1,14 @@
+<div class="PagePromoFooter"{{include "includes/PagePromoAttributes.hbs" this}}>
+    <div class="PagePromoFooter-content">
+        {{include "includes/PagePromoTitle.hbs" this}}
+        {{include "includes/PagePromoDescription.hbs" this}}
+
+        {{#if ctaButtonText}}
+            {{#if url}}
+                <div class="PagePromo-cta">
+                    <a class="Button" data-style="pill" href="{{url}}"{{#with target}} target="{{this}}"{{/with}}>{{ctaButtonText}}</a>
+                </div>
+            {{/if}}
+        {{/if}}
+    </div>
+</div>

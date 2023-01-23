@@ -1,0 +1,61 @@
+.SectionNavigation {
+  background: var(--color-callout-bg, transparent);
+  display: block;
+  position: relative;
+
+  select {
+    &:extend(.label-3 all);
+
+    appearance: none;
+    background: var(--color-callout-bg, transparent);
+    border: none;
+    color: var(--color-primary-text);
+    position: relative;
+    padding: 20px;
+    width: 100%;
+  }
+
+  svg {
+    fill: var(--color-primary-text);
+    height: 6px;
+    pointer-events: none;
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 10px;
+  }
+
+  &-items {
+    display: none;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    max-width: 1240px;
+    padding-left: 0px;
+
+    &-item {
+      flex-shrink: 0;
+      border-bottom: 0;
+      margin-right: 10px;
+      padding-bottom: 10px;
+      padding-left: 15px;
+
+      &:last-of-type {
+        margin-right: 0;
+        border-bottom: 0;
+      }
+    }
+  }
+
+  @media @mq-md {
+    select,svg {
+      display: none;
+    }
+
+    &-items {
+      display: flex;
+    }
+  }
+}

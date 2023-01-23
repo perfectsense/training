@@ -1,22 +1,6 @@
 {
+  "_wrapper": false,
+  "_include": "/page/Page.json",
   "_template": "BlogPage.hbs",
-  "_include": "/page/ContentPage.json",
-  "blogDescription": "{{paragraphs([1, 3])}}",
-  "blogLead": {
-    "_include": "/_group/Leads.json",
-    "_key": 0
-  },
-  "posts": [
-    {
-      "_include": "/page/promo/PagePromo.json"
-    }
-  ],
-  "blogNavigation": {
-    "_include": "/navigation/Navigation.json"
-  },
-  "previousPage": "#",
-  "pageNumber": 1,
-  "pageCount": 123,
-  "nextPage": "#",
   "_hidden": true
 }

@@ -1,0 +1,35 @@
+<bsp-page-heading-video class="PageHeadingVideo" style="--color-heading-text:{{#with headingTextColor}}{{this}}{{else}}{{#or backgroundVideo media}}var(--color-primary-text-inverse){{else}}var(--color-primary-text){{/or}}{{/with}};{{#each media}}{{#resize image "xl-4x3"}}background-image: url('{{src}}');{{/resize}}{{/each}}" data-text-align="{{#if headingTextAlign}}{{headingTextAlign}}{{else}}center{{/if}}" {{#or backgroundVideo media}}data-with-bg{{/or}} {{#if ../sectionNavigation}} data-with-nav{{/if}}{{#if fullScreenVideo}}data-full-screen-video{{/if}} data-animate-on-scroll
+    {{~include '/page/PageHeading-attributes.hbs' this~}}
+    >
+    {{#each backgroundVideo}}
+        <video id="PageHeadingVideo-video"
+            {{#if poster}}{{#resize poster "large-16x9"}} poster="{{src}}" {{/resize}}{{/if}}
+            playsinline autoplay muted loop>
+            {{#with sources}}`
+            {{#each this}}
+            {{this}}
+            {{/each}}
+            {{/with}}
+        </video>
+    {{/each}}
+    <div class="PageHeadingVideo-content-wrapper">
+        <div class="PageHeadingVideo-content">
+            {{#with logo}}
+                {{#set imageSize="logo-small"}}
+                    <div class="PageHeading-logo">
+                        {{this}}
+                    </div>
+                {{/set}}
+            {{/with}}
+            {{#if eyebrow}}
+                <div class="PageHeading-eyebrow">{{include "/link/Link.hbs" this body=eyebrow href=eyebrowUrl target=eyebrowTarget}}</div>
+            {{/if}}
+            {{#with pageHeading}}
+                <h1 class="PageHeading-title">{{this}}</h1>
+            {{/with}}
+            {{#with pageSubHeading}}
+                <h2 class="PageHeading-subHeading">{{this}}</h2>
+            {{/with}}
+        </div>
+    </div>
+</bsp-page-heading-video>

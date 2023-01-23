@@ -1,0 +1,12 @@
+{
+  "styles": {
+    "/podcast/list/PodcastList.hbs": {
+      "templates": [
+        {
+          "displayName": "Podcast List",
+          "example": "/podcast/list/PodcastList.json"
+        }
+      ]
+    }
+  }
+}

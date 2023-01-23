@@ -1,0 +1,56 @@
+{{#if items}}
+<div class="PageListStandardI" data-module{{include "includes/PageList-attributes.hbs" this}}>
+    <div class="PageList-items">
+        <div class="PageList-items-item">
+            {{#with items.[0]}}
+                {{#eq this._template "/page/promo/PagePromo.hbs"}}
+                    {{#set imageSize="xl-16x9"}}
+                        {{#eq ../imagePositionVertical "top"}}
+                            {{include "/page/promo/PagePromoModuleA.hbs" this imagePositionVertical="top"}}
+                        {{else}}
+                            {{include "/page/promo/PagePromoModuleA.hbs" this imagePositionVertical="bottom"}}
+                        {{/eq}}
+                    {{/set}}
+                {{else}}
+                    {{render this}}
+                {{/eq}}
+            {{/with}}
+        </div>
+        {{#each items}}
+            {{#if (gt @index 0)}}
+                <div class="PageList-items-item">
+                    {{#eq ../listColumns234 "2"}}
+                        {{#eq this._template "/page/promo/PagePromo.hbs"}}
+                            {{#set imageSize="large-16x9"}}
+                                {{include "/page/promo/PagePromo.hbs" this mobileAltLayout="true" imagePositionVertical="top" description=null}}
+                            {{/set}}
+                        {{else}}
+                            {{render this}}
+                        {{/eq}}
+                    {{else}}
+                        {{#eq ../listColumns234 "4"}}
+                            {{#eq this._template "/page/promo/PagePromo.hbs"}}
+                                {{#set imageSize="medium-16x9"}}
+                                    {{include "/page/promo/PagePromo.hbs" this mobileAltLayout="true" imagePositionVertical="top" description=null}}
+                                {{/set}}
+                            {{else}}
+                                {{render this}}
+                            {{/eq}}
+                        {{else}}
+                            {{#eq this._template "/page/promo/PagePromo.hbs"}}
+                                {{#set imageSize="medium-16x9"}}
+                                    {{include "/page/promo/PagePromo.hbs" this mobileAltLayout="true" imagePositionVertical="top" description=null}}
+                                {{/set}}
+                            {{else}}
+                                {{render this}}
+                            {{/eq}}
+                        {{/eq}}
+                    {{/eq}}
+                </div>
+            {{/if}}
+        {{/each}}
+    </div>
+
+    {{include "includes/PageList-footer.hbs" this}}
+</div>
+{{/if}}

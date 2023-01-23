@@ -1,0 +1,30 @@
+.FooterNavigationItem {
+  a,
+  span {
+    &:extend(.label-2);
+
+    display: block;
+    margin-bottom: 15px;
+    word-break: keep-all;
+  }
+
+  .NavigationLink {
+    &-description {
+      &:extend(.description-3);
+    }
+
+    &-text {
+      &:extend(.label-2);
+
+      margin-bottom: 0px;
+    }
+  }
+
+  &-items {
+    &-item {
+      .SocialLink {
+        display: flex;
+      }
+    }
+  }
+}

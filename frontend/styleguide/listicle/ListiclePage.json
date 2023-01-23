@@ -3,11 +3,13 @@
   "_hidden": true,
   "_include": "/page/CreativeWorkPage.json",
   "_template": "ListiclePage.hbs",
-  "pageLead": {
-    "_include": "/_group/Leads.json"
+  "lead": {
+    "_include": "/_group/Leads.json",
+    "_key": 1
   },
   "items": {
-    "_template": "ListicleItem.hbs"
+    "_include": "/_group/ListicleItems.json",
+    "_key": 0
   },
   "intro": {
     "_include": "/_group/RichTextElementsLarge.json"

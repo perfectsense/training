@@ -1,0 +1,12 @@
+{
+  "styles": {
+    "/search/SearchModule.hbs": {
+      "templates": [
+        {
+          "displayName": "Search Module",
+          "example": "/search/SearchModule.json"
+        }
+      ]
+    }
+  }
+}

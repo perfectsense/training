@@ -1,0 +1,25 @@
+<bsp-tabs class="Tabs" data-widget="Tabs" data-module {{include "/page/list/includes/PageList-attributes.hbs" this}}>
+    {{include "/page/list/includes/PageList-header.hbs" this}}
+    <div class="Tabs-container" data-module-container>
+        {{#with tabs}}
+            <div class="Tabs-tabsRow">
+                <ul class="Tabs-tabs">
+                    {{#each this}}
+                        <li>
+                            <a class="Tabs-tab" href="#{{id}}" data-tab {{~#eq @index 0}} data-visible{{/eq~}}>
+                                {{~title~}}
+                            </a>
+                        </li>
+                    {{/each}}
+                </ul>
+            </div>
+        {{/with}}
+        <div class="Tabs-content">
+            {{#each tabs}}
+                <div class="Tabs-panel" id="{{id}}" data-tab-panel {{~#eq @index 0}} data-visible{{/eq~}}>
+                    {{~this~}}
+                </div>
+            {{/each}}
+        </div>
+    </div>
+</bsp-tabs>

@@ -1,0 +1,11 @@
+:root {
+    {{~#eq defaultButtonStyle "rounded"}}
+        --button-border-radius:5px;
+    {{else}}
+        {{~#eq defaultButtonStyle "square"}}
+            --button-border-radius:0;
+        {{else}}
+            --button-border-radius:40px;
+        {{/eq~}}
+    {{/eq~}}
+}

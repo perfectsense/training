@@ -1,0 +1,27 @@
+<div class="Promo-Amp" {{extraAttributes}} {{include "includes/PromoAttributes.amp.hbs" this}}>
+    {{#with media}}
+    <div class="Promo-Amp-media">
+        {{#set imageSize='small'}}
+            {{include "/link/Link.amp.hbs" aria-label=../title href=../url target=../target body=this}}
+        {{/set}}
+    </div>
+    {{/with}}
+
+    <div class="Promo-Amp-content">
+        {{#with category}}
+        <div class="Promo-Amp-category">
+            {{include "/link/Link.amp.hbs" href=../categoryUrl target=../target body=this}}
+        </div>
+        {{/with}}
+
+        {{#with title}}
+        <div class="Promo-Amp-title">
+            {{include "/link/Link.amp.hbs" href=../url target=../target body=this}}
+        </div>
+        {{/with}}
+
+        {{#with date}}
+            <div class="Promo-date">{{this}}</div>
+        {{/with}}
+    </div>
+</div>

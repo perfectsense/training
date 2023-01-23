@@ -1,9 +1,0 @@
-{
-  "styles": {
-    "/article/ArticlePage.hbs": {
-        "fields": [
-            "articleLeadStyle"
-        ]
-    }
-  }
-}

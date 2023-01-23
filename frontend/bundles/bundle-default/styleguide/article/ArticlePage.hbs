@@ -1,0 +1,176 @@
+{{#set leadStyle=(fallback (fallback articleLeadStyle defaultArticleLeadStyle) "standard")}}
+<!DOCTYPE html>
+<html class="ArticlePage" {{~include "/page/Page-htmlAttributes.hbs" this}}{{#unless aside}} data-no-aside{{/unless}} data-lead="{{get "leadStyle"}}">
+    {{include "/page/Page-head.hbs" this}}
+
+    <body class="Page-body">
+        {{include "/page/Page-header.hbs" this}}
+        {{include "/page/Page-above.hbs" this}}
+        {{include "/page/Page-sponsoredBanner.hbs" this}}
+
+        <div class="Page-content">
+            {{#unless (eq (get "leadStyle") "nested")}}
+                <div class="ArticlePage-lede">
+                    {{#eq (get "leadStyle") "overlay"}}
+                        {{#if lead}}
+                            {{#set imageSize="large-square"}}
+                                {{#set imageSizeAlt="xl-24x1"}}
+                                    <div class="Page-lead">
+                                        {{#with lead}}
+                                            {{this}}
+                                        {{/with}}
+                                        <div class="Page-lead-content">
+                                            {{include "/page/Page-breadcrumbs.hbs" this}}
+                                            {{include "/page/Page-headline.hbs" this}}
+                                            {{include "/page/Page-subHeadline.hbs" this}}
+                                        </div>
+                                    </div>
+                                {{/set}}
+                            {{/set}}
+                        {{/if}}
+
+                    {{else}}
+                        <div class="ArticlePage-lede-content">
+                            {{include "/page/Page-breadcrumbs.hbs" this}}
+
+                            {{include "/page/Page-headline.hbs" this}}
+
+                            {{include "/page/Page-subHeadline.hbs" this}}
+
+                            <div class="ArticlePage-actions-wrapper">
+                                {{include "/page/Page-byline.hbs" this}}
+
+                                {{include "/page/Page-sponsoredBy.hbs" this}}
+
+                                {{include "/page/Page-actions.hbs" this}}
+                            </div>
+                    {{/eq}}
+                        </div>
+                    {{#eq (get "leadStyle") "full"}}
+                        {{#set imageSize="xl-24x1"}}
+                            {{include "/page/Page-lead.hbs" this}}
+                        {{/set}}
+                    {{/eq}}
+                    {{#eq (get "leadStyle") "large"}}
+                        {{#set imageSize="xl-24x1"}}
+                            {{include "/page/Page-lead.hbs" this}}
+                        {{/set}}
+                    {{/eq}}
+                </div>
+            {{/unless}}
+            {{#if aside}}<div class="Page-twoColumn">{{else}}<div class="Page-oneColumn" data-modulewell>{{/if}}
+                <main class="Page-main" data-module data-padding="none">
+                    {{#if (eq (get "leadStyle") "nested")}}
+                        <div class="ArticlePage-lede">
+                            <div class="ArticlePage-lede-content">
+                                {{include "/page/Page-breadcrumbs.hbs" this}}
+
+                                {{include "/page/Page-headline.hbs" this}}
+
+                                {{include "/page/Page-subHeadline.hbs" this}}
+
+                                <div class="ArticlePage-actions-wrapper">
+                                    {{include "/page/Page-byline.hbs" this}}
+
+                                    {{include "/page/Page-sponsoredBy.hbs" this}}
+
+                                    {{include "/page/Page-actions.hbs" this}}
+                                </div>
+                            </div>
+                        </div>
+                        {{#set imageSize="large-16x9"}}
+                            {{include "/page/Page-lead.hbs" this}}
+                        {{/set}}
+                    {{else}}
+                        {{#if (eq (get "leadStyle") "overlay")}}
+                            <div class="ArticlePage-lede-content">
+                                <div class="ArticlePage-actions-wrapper">
+                                    {{include "/page/Page-byline.hbs" this}}
+
+                                    {{include "/page/Page-sponsoredBy.hbs" this}}
+
+                                    {{include "/page/Page-actions.hbs" this}}
+                                </div>
+                            </div>
+                        {{/if}}
+                        {{#unless (get "leadStyle")}}
+                            {{#set imageSize="large-16x9"}}
+                                {{include "/page/Page-lead.hbs" this}}
+                            {{/set}}
+                        {{else}}
+                            {{#eq (get "leadStyle") "standard"}}
+                                {{#set imageSize="large-16x9"}}
+                                    {{include "/page/Page-lead.hbs" this}}
+                                {{/set}}
+                            {{/eq}}
+                        {{/unless}}
+                    {{/if}}
+
+                    <div class="Page-articleBody">
+                            {{#with intro}}
+                                <div class="Page-articleBody-intro RichTextBody">
+                                {{this}}
+                                </div>
+                            {{/with}}
+
+                                {{#with items}}
+                                    <div class="Page-articleBody-items">
+                                        {{#each this~}}
+                                            <div class="Page-articleBody-items-item">
+                                                {{#eq this._template "/listicle/ListicleItem.hbs"}}
+                                                    {{include "/listicle/ListicleItem.hbs" this}}
+                                                {{else}}
+                                                    {{render this}}
+                                                {{/eq}}
+                                            </div>
+                                        {{~/each}}
+                                    </div>
+                                {{/with}}
+
+                            {{#with articleBody}}
+                                <div class="RichTextArticleBody RichTextBody">
+                                    {{this}}
+                                </div>
+                            {{/with}}
+
+                            {{#with attributionBody}}
+                                <div class="RichTextArticleBody RichTextBody">
+                                    {{this}}
+                                </div>
+                            {{/with}}
+                    </div>
+
+                    {{#if actions}}
+                        <div class="Page-actions-bottom">
+                            {{include "/page/Page-actions.hbs" this}}
+                        </div>
+                    {{/if}}
+
+                    {{include "/page/Page-tags.hbs" this}}
+
+                    {{include "/page/Page-authorInfo.hbs" this}}
+
+                    {{include "/page/Page-commenting.hbs" this}}
+                </main>
+
+                {{#if aside}}
+                    <aside class="Page-aside">
+                        {{#each aside}}
+                            {{#set imagePositionVertical="top"}}
+                                {{render this
+                                    [/page/promo/PagePromo.hbs]="/page/promo/PagePromo.hbs"
+                                    [/page/list/PageList.hbs]="/page/list/PageListRightRailA.hbs"
+                                }}
+                            {{/set}}
+                        {{/each}}
+                    </aside>
+                {{/if}}
+            </div>
+        </div>
+
+        {{include "/page/Page-below.hbs" this}}
+        {{include "/page/Page-footer.hbs" this}}
+        {{include "/page/Page-extraBodyItems.hbs" this}}
+    </body>
+</html>
+{{/set}}

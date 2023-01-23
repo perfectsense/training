@@ -1,0 +1,59 @@
+.Input {
+  &-description {
+    &:extend(.description-3);
+    margin-top: 10px;
+  }
+
+  &-input {
+    &:extend(.label-4 all);
+    background-color: white;
+    border: solid 1px var(--color-border);
+    border-radius: 5px;
+    color: var(--color-input-text);
+    height: 50px;
+    padding: 15px;
+    width: 100%;
+
+    &::placeholder {
+      color: var(--color-placeholder);
+      opacity: 1;
+    }
+
+    [data-invalid] &  {
+      border: solid 1px var(--color-invalid);
+      color: var(--color-invalid);
+
+      ~svg {
+        fill: var(--color-invalid);
+      }
+
+      &:focus {
+        border: solid 1px var(--color-invalid);
+      }
+    }
+
+    &:focus {
+      border: solid 1px var(--color-primary);
+    }
+  }
+
+  label {
+    > span {
+      &:extend(.label-1);
+      display: block;
+      padding-bottom: 10px;
+      text-transform: none;
+    }
+  }
+
+  &-errors {
+    &:extend(.label-4 all);
+    display: none;
+
+    [data-invalid] & {
+      color: var(--color-invalid);
+      display: block;
+      margin-top: 5px;
+    }
+  }
+}

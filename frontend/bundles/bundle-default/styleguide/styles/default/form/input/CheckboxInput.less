@@ -1,0 +1,47 @@
+.CheckboxInput {
+  input {
+    appearance: none;
+    background-color: #fff;
+    border: 1px solid var(--color-primary-text);
+    border-radius: 0;
+    display: inline-block;
+    padding: 6px;
+    position: relative;
+    top: 2px;
+
+    &:active,
+    &:checked {
+      background: #fff;
+
+      &:after {
+        border-bottom: 1px solid var(--color-primary);
+        border-right: 1px solid var(--color-primary);
+        content: '';
+        height: 10px;
+        left: 4px;
+        position: absolute;
+        top: 0;
+        transform: rotate(37deg);
+        width: 4px;
+      }
+    }
+
+    &:disabled {
+      background: var(--color-secondary-text);
+      border: 1px solid var(--color-border);
+
+      &:after {
+        border: none;
+      }
+    }
+  }
+
+  &-label {
+    span {
+      &:extend(.label-5 all);
+
+      font-weight: normal;
+      margin-left: 10px;
+    }
+  }
+}

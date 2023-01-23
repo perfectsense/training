@@ -1,0 +1,15 @@
+<div class="PodcastProviderList">
+    <div class="PodcastProviderList-title">
+        {{format "/podcast/providers/PodcastProviders" "providerListTitle"}}
+    </div>
+
+    {{#with items}}
+        <ul class="PodcastProviderList-items">
+            {{#each this}}
+                <li class="PodcastProviderList-items-item">
+                    {{this}}
+                </li>
+            {{/each}}
+        </ul>
+    {{/with}}
+</div>

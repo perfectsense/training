@@ -1,0 +1,10 @@
+<div id="googleAd{{adIndex}}" data-module class="GoogleDfpAd"
+    {{~#with hideOnMobile}} data-hide-on-mobile="{{this}}"{{/with~}}
+    {{~#with hideOnDesktop}} data-hide-on-desktop="{{this}}"{{/with~}}
+    {{~#with slot}} data-slot-name="{{this}}"{{/with~}}
+    {{~#with sizes}} data-slot-sizes="{{this}}"{{/with~}}
+    {{~#with adSizeMaps}} data-slot-adSizeMap="{{this}}"{{/with~}}
+    {{~#with targetingMap}} data-targeting-data="{{this}}"{{/with}}
+    {{~#with outOfPage}} data-out-of-page="{{this}}"{{/with}}>
+    <span class="GoogleDfpAd-placeholder"></span>
+</div>

@@ -13,9 +13,8 @@ import com.psddev.dari.db.Recordable;
 @Recordable.Embedded
 public class TypeSpecificPageElements extends Record implements CascadingPageElements {
 
-    @ToolUi.Tab("Page Overrides")
+    @ToolUi.Tab("Overrides")
     @Where("groups = " + Page.INTERNAL_NAME + " and isAbstract = false")
-    @ToolUi.DropDown
     @CollectionMinimum(1)
     public Set<ObjectType> types;
 

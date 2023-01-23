@@ -1,0 +1,42 @@
+{
+  "_template": "/page/list/PageList.hbs",
+  "_styledTemplate": "/page/list/PageListStandardH.hbs",
+  "title": "Standard List H",
+  "description": "{{words(20)}}",
+  "ctaUrl": "#",
+  "ctaTarget": "_self",
+  "items": [
+    {
+      "_include": "/page/promo/PagePromo.json",
+      "type": "video"
+    },
+    {
+      "_include": "/page/promo/PagePromo.json"
+    },
+    {
+      "_include": "/page/promo/PagePromo.json"
+    },
+    {
+      "_include": "/page/promo/PagePromo.json"
+    },
+    {
+      "_include": "/page/promo/PagePromo.json"
+    },
+    {
+      "_include": "/page/promo/PagePromo.json",
+      "type": "video"
+    },
+    {
+      "_include": "/page/promo/PagePromo.json"
+    },
+    {
+      "_include": "/page/promo/PagePromo.json"
+    },
+    {
+      "_include": "/page/promo/PagePromo.json"
+    },
+    {
+      "_include": "/page/promo/PagePromo.json"
+    }
+  ]
+}

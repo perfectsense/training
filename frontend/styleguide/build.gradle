@@ -1,7 +1,0 @@
-description = 'Styleguide'
-
-jar {
-    from '.'
-    into 'styleguide'
-    exclude '/build'
-}

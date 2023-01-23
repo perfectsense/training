@@ -1,0 +1,12 @@
+{
+  "_template": "BrightcoveVideoPlayer.hbs",
+  "playerId": "",
+  "videoTitle": {
+    "_include": "/_group/RichTextElementsTiny.json"
+  },
+  "videoId": "",
+  "autoplay": false,
+  "muted": true,
+  "seekSeconds": 10,
+  "account": ""
+}

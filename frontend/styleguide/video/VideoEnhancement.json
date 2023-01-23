@@ -1,7 +1,8 @@
 {
   "_template": "/video/VideoEnhancement.hbs",
+  "anchorId": "anchorTest",
   "player": {
-    "_include": "/_group/Videos.json",
+    "_include": "/_group/VideoPlayers.json",
     "_key": 0
   },
   "thumbnail": {

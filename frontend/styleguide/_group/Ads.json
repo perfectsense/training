@@ -1,0 +1,8 @@
+[
+  {
+    "_template": "/dfp/GoogleDfpAdModule.hbs"
+  },
+  {
+    "_template": "/adsense/GoogleAdsenseAdModule.hbs"
+  }
+]

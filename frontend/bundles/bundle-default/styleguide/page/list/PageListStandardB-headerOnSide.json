@@ -1,0 +1,48 @@
+{
+  "_template": "/page/list/PageList.hbs",
+  "_styledTemplate": "/page/list/PageListStandardB.hbs",
+  "title": "Standard List B - Header on Side",
+  "description": "{{words([10,20])}}",
+  "pagination": [
+    {
+      "_template": "/link/Link.hbs",
+      "body": "Previous Page",
+      "href": ""
+    },
+    {
+      "_template": "/link/Link.hbs",
+      "body": "Next Page",
+      "href": "#"
+    }
+  ],
+  "items": [
+    {
+      "_include": "/page/promo/PagePromo.json"
+    },
+    {
+      "_include": "/page/promo/PagePromo.json"
+    },
+    {
+      "_include": "/page/promo/PagePromo.json"
+    },
+    {
+      "_include": "/page/promo/PagePromo.json"
+    },
+    {
+      "_include": "/page/promo/PagePromo.json"
+    },
+    {
+      "_include": "/page/promo/PagePromo.json"
+    },
+    {
+      "_include": "/page/promo/PagePromo.json"
+    },
+    {
+      "_include": "/page/promo/PagePromo.json"
+    }
+  ],
+  "listHeaderPosition": "side",
+  "ctaUrl": "#",
+  "ctaTarget": "_self",
+  "ctaButtonText": "{{words(2)}}"
+}

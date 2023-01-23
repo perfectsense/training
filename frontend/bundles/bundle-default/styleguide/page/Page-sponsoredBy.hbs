@@ -1,0 +1,16 @@
+{{#if sponsored}}
+    <div class="Page-sponsoredBy">
+        <span class="Page-sponsoredBy-text">{{format "/page/Page" "sponsorBy"}}</span>
+        {{#if sponsorLogo}}
+            {{#set imageSize="logo-small"}}
+                <span class="Page-sponsoredBy-logo">
+                    {{include "/link/Link.hbs" href=sponsorUrl target=sponsorTarget body=sponsorLogo}}
+                </span>
+            {{/set}}
+        {{else}}
+            <span class="Page-sponsoredBy-logo">
+                {{include "/link/Link.hbs" href=sponsorUrl target=sponsorTarget body=sponsorName}}
+            </span>
+        {{/if}}
+    </div>
+{{/if}}

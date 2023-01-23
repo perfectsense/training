@@ -1,0 +1,14 @@
+<bsp-listcarousel class="LogoListA" data-module {{include "/page/list/includes/PageList-attributes.hbs" this}}>
+    {{include "/page/list/includes/PageList-header.hbs" this}}
+
+    {{#with items}}
+        <ul class="LogoListA-items">
+            {{#each this}}
+                <li class="LogoListA-items-item">
+                    {{include "/logo/promo/LogoPromo.hbs" this}}
+                </li>
+            {{/each}}
+        </ul>
+    {{/with}}
+    {{include "/page/list/includes/PageList-cta.hbs" this}}
+</bsp-listcarousel>

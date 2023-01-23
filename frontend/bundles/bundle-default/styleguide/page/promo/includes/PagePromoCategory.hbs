@@ -1,0 +1,11 @@
+{{#if sponsored}}
+    <div class="PagePromo-category">
+        {{format "/page/promo/PagePromo" "sponsorLabel"}}
+    </div>
+{{else}}
+    {{#if category}}
+        <div class="PagePromo-category">
+            {{include "/link/Link.hbs" href=categoryUrl target=target body=category}}
+        </div>
+    {{/if}}
+{{/if}}

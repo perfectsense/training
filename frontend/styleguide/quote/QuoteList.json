@@ -3,9 +3,13 @@
   "title": {
     "_include": "/_group/RichTextElementsTiny.json"
   },
+  "anchorId": "anchorTest",
   "items": {
     "_include": "/quote/Quote.json"
   },
   "ctaUrl": "#",
-  "ctaTarget": "_self"
+  "ctaTarget": "_self",
+  "ctaButtonText": {
+    "_include": "/_group/RichTextElementsTiny.json"
+  }
 }
