@@ -1,3 +1,5 @@
+/* eslint-disable no-undef */
+
 const styleguide = require('@brightspot/styleguide')
 const webpack = require('webpack')
 const merge = require('webpack-merge')
@@ -17,24 +19,24 @@ module.exports = merge(
             {
               loader: 'css-loader',
               options: {
-                sourceMap: true
-              }
+                sourceMap: true,
+              },
             },
             {
               loader: 'postcss-loader',
               options: {
-                sourceMap: true
-              }
+                sourceMap: true,
+              },
             },
             {
               loader: 'less-loader',
               options: {
-                sourceMap: true
-              }
-            }
-          ]
-        }
-      ]
-    }
+                sourceMap: true,
+              },
+            },
+          ],
+        },
+      ],
+    },
   })
 )

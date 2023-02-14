@@ -1,3 +1,5 @@
+/* eslint-disable no-undef */
+
 module.exports = function (api) {
   api.cache(true)
 
@@ -5,18 +7,18 @@ module.exports = function (api) {
     [
       '@babel/preset-env',
       {
-        useBuiltIns: false
-      }
-    ]
+        useBuiltIns: false,
+      },
+    ],
   ]
   const plugins = [
     '@babel/plugin-proposal-class-properties',
     '@babel/plugin-syntax-dynamic-import',
-    '@babel/plugin-transform-runtime'
+    '@babel/plugin-transform-runtime',
   ]
 
   return {
     presets,
-    plugins
+    plugins,
   }
 }

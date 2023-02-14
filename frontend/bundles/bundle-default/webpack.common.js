@@ -1,3 +1,5 @@
+/* eslint-disable no-undef */
+
 const CopyPlugin = require('copy-webpack-plugin')
 const ESLintPlugin = require('eslint-webpack-plugin')
 const path = require('path')
@@ -10,14 +12,14 @@ module.exports = {
       './styleguide/newsletter/NewsletterInline.js',
     'newsletter/NewsletterEmbed.min.js':
       './styleguide/newsletter/NewsletterEmbed.js',
-    'styles/amp/Amp.min.js': './styleguide/styles/amp/Amp.js'
+    'styles/amp/Amp.min.js': './styleguide/styles/amp/Amp.js',
   },
 
   output: {
     path: path.resolve(__dirname, './build/styleguide'),
     chunkFilename: '[id].[contenthash].js',
     filename: '[name]',
-    publicPath: '/'
+    publicPath: '/',
   },
 
   plugins: [
@@ -25,16 +27,15 @@ module.exports = {
       patterns: [
         {
           from: 'node_modules/@webcomponents/webcomponentsjs/bundles/*.js',
-          to: 'webcomponents-loader/bundles/[name][ext]'
+          to: 'webcomponents-loader/bundles/[name][ext]',
         },
         {
-          from:
-            'node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js',
-          to: 'webcomponents-loader/'
-        }
-      ]
+          from: 'node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js',
+          to: 'webcomponents-loader/',
+        },
+      ],
     }),
-    new ESLintPlugin()
+    new ESLintPlugin(),
   ],
 
   module: {
@@ -42,15 +43,15 @@ module.exports = {
       // Split out large binary files into separate chunks.
       {
         test: /\.(png|jpg|gif|svg|eot|ttf|woff|woff2)$/,
-        type: 'asset'
+        type: 'asset',
       },
 
       // Transpile JS.
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        use: ['babel-loader']
-      }
-    ]
-  }
+        use: ['babel-loader'],
+      },
+    ],
+  },
 }
