@@ -6,8 +6,18 @@
     &-item {
       border-bottom: 1px solid var(--color-list-border);
       padding-bottom: 20px;
+
+      &:not(:first-child) {
+        .PagePromo {
+          &-title {
+            &:extend(.promo-title-6 all);
+          }
+        }
+      }
     }
   }
+
+
 
   @media @mq-md {
     .PageList-items {
