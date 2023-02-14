@@ -1,0 +1,13 @@
+{
+  "_template": "/page/list/PageList.hbs",
+  "_styledTemplate": "/page/list/PageListStandardM.hbs",
+  "title": "Standard List M",
+  "ctaUrl": "#",
+  "ctaTarget": "_self",
+  "items": [
+    {
+      "_include": "/page/promo/PagePromo.json",
+      "_repeat": 9
+    }
+  ]
+}
