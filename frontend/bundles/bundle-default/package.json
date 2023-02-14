@@ -1,7 +1,10 @@
 {
-  "name": "brightspot-training-bundle-default",
+  "name": "brightspot-theme-core",
   "version": "1.0.0-SNAPSHOT",
   "private": true,
+  "engines": {
+    "node": "16.11.0"
+  },
   "devDependencies": {
     "@babel/core": "7.14.8",
     "@babel/eslint-parser": "7.14.7",
@@ -9,8 +12,8 @@
     "@babel/plugin-syntax-dynamic-import": "7.0.0",
     "@babel/plugin-transform-runtime": "7.11.5",
     "@babel/preset-env": "7.1.6",
-    "@brightspot/styleguide": "4.5.5-rc.1",
     "@vimeo/player": "2.16.2",
+    "@brightspot/styleguide": "4.5.10",
     "autoprefixer": "9.8.6",
     "babel-loader": "8.0.4",
     "capitalize": "1.0.0",
@@ -36,7 +39,6 @@
     "pa11y-ci": "2.1.1",
     "patch-package": "6.4.7",
     "postcss": "8.3.6",
-    "postcss-focus": "4.0.0",
     "postcss-loader": "6.1.1",
     "prettier": "2.7.1",
     "style-loader": "3.2.1",
@@ -51,16 +53,13 @@
     "@babel/runtime": "7.14.8",
     "@webcomponents/webcomponentsjs": "2.5.0",
     "flickity": "2.2.2",
-    "gulp-sass": "^4.1.0",
     "hoverintent": "1.0.1",
     "picturefill": "3.0.2",
-    "postcss-amp": "1.1.0",
-    "postcss-remove-media-query-ranges": "1.0.3",
     "sanitize.css": "7.0.1"
   },
   "scripts": {
-    "build": "yarn run eslint \"styleguide/**/*.js\" && webpack --config webpack.prod.js && node node_modules/@brightspot/styleguide/build/bundle -b build/styleguide -o build/theme.zip",
-    "format": "yarn run eslint \"styleguide/**/*.js\" --fix",
+    "build": "yarn run eslint . && webpack --config webpack.prod.js && node node_modules/@brightspot/styleguide/build/bundle -b build/styleguide -o build/theme.zip",
+    "format": "yarn run eslint . --fix",
     "profile": "webpack --config webpack.profile.js",
     "server:styleguide": "webpack serve --config webpack.dev.js",
     "postinstall": "patch-package"

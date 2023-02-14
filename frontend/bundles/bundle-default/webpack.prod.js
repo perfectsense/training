@@ -1,3 +1,5 @@
+/* globals __dirname */
+
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const path = require('path')
 const merge = require('webpack-merge')
@@ -7,7 +9,7 @@ module.exports = merge(require('./webpack.common.js'), {
 
   plugins: [
     new MiniCssExtractPlugin({
-      filename: pathData => {
+      filename: (pathData) => {
         if (
           pathData.chunk.name === 'newsletter/NewsletterInline.min.js' ||
           pathData.chunk.name === 'newsletter/NewsletterEmbed.min.js'
@@ -20,8 +22,8 @@ module.exports = merge(require('./webpack.common.js'), {
             return pathData.chunk.name.replace('.js', '') + '.css'
           }
         }
-      }
-    })
+      },
+    }),
   ],
 
   module: {
@@ -32,8 +34,8 @@ module.exports = merge(require('./webpack.common.js'), {
           MiniCssExtractPlugin.loader,
           'css-loader',
           'postcss-loader',
-          'less-loader'
-        ]
+          'less-loader',
+        ],
       },
       {
         test: path.resolve(
@@ -44,8 +46,8 @@ module.exports = merge(require('./webpack.common.js'), {
           MiniCssExtractPlugin.loader,
           'css-loader',
           'postcss-loader',
-          'less-loader'
-        ]
+          'less-loader',
+        ],
       },
       {
         test: path.resolve(
@@ -56,8 +58,8 @@ module.exports = merge(require('./webpack.common.js'), {
           MiniCssExtractPlugin.loader,
           'css-loader',
           'postcss-loader',
-          'less-loader'
-        ]
+          'less-loader',
+        ],
       },
       {
         test: path.resolve(__dirname, './styleguide/styles/amp/Amp.less'),
@@ -65,9 +67,9 @@ module.exports = merge(require('./webpack.common.js'), {
           MiniCssExtractPlugin.loader,
           'css-loader',
           'postcss-loader',
-          'less-loader'
-        ]
-      }
-    ]
-  }
+          'less-loader',
+        ],
+      },
+    ],
+  },
 })
