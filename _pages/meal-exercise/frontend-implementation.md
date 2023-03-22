@@ -19,7 +19,7 @@ Inside the bundle directory (`frontend/bundles/bundle-default/styleguide`) we wi
 - MealCourse.json
 - MealCourse.properties
 
-And then inside the `styles/style-1` folder, we create a folder named `meal` with less files:
+And then inside the `styles/default` folder, we create a folder named `meal` with less files:
 - All.less
 - MealCourse.less
 - MealPage.less
@@ -64,28 +64,28 @@ These properties files allows us to localize some of the section headings instea
 
 ## All.less
 
-Complete example: <https://github.com/perfectsense/training/blob/exercise/meal/frontend/bundles/bundle-default/styleguide/styles/style-1/meal/All.less>
+Complete example: <https://github.com/perfectsense/training/blob/exercise/meal/frontend/bundles/bundle-default/styleguide/styles/default/meal/All.less>
 
 We create these files as aggregation files so it’s easier to layer the includes vs having one GIANT include file. So this file just includes the Meal less files and then we include it later in the global `All.less`.
 
 
 ## MealPage.less
 
-Complete example: <https://github.com/perfectsense/training/blob/exercise/meal/frontend/bundles/bundle-default/styleguide/styles/style-1/meal/MealPage.less>
+Complete example: <https://github.com/perfectsense/training/blob/exercise/meal/frontend/bundles/bundle-default/styleguide/styles/default/meal/MealPage.less>
 
 Styling for our main MealPage. Content width comes from the data attributes of `data-modulewell` and `data-module` that are in the HTML. Those are concepts that exist in Go that allow all pages and modules to be the same widths and provide vertical spacing between modules. Some of the styles, such as Page-headline come from Page.less since we are just reusing those elements. Here we style things such as the individual area headings, the description and the lead. Note in the lead, instead of using the `data-modulewell` and `data-module` attributes, which not only provide width but vertical spacing, we use a mixin to provide the width. We don’t want extra vertical spacing that comes from using the module concepts here. Also note the media query we use. We use LESS variables for media queries.
 
 
 ## MealCourse.less
 
-Complete example: <https://github.com/perfectsense/training/blob/exercise/meal/frontend/bundles/bundle-default/styleguide/styles/style-1/meal/MealCourse.less>
+Complete example: <https://github.com/perfectsense/training/blob/exercise/meal/frontend/bundles/bundle-default/styleguide/styles/default/meal/MealCourse.less>
 
 Styling for the MealCourse. Note the use of CSS vars for the border colors. We want to use such concepts to keep colors consistent. We also style the accordion that expands recipes here. The JS that we used in the handlebars sets and resets data attributes, so we style those here to show and hide each recipe, as well as flipping the chevron up and down. Writing CSS based on data attributes is how we want to style our JS written code rather than writing styles directly in JS. We get the styling of each Recipe from the RecipeModule itself as we reuse that element, but we do a slight override to get rid of it’s default border, as that would be too many borders. If there was a LOT of a difference in the rendering of this RecipeModule vs the original element, we would create another variation of RecipeModule to use in the MealCourse, but with this example, we do not need to go that far, as there are only 2 CSS overrides. We wouldn’t want like 40 here though.
 
 
 ## Root All.less
 
-Complete example: <https://github.com/perfectsense/training/blob/exercise/meal/frontend/bundles/bundle-default/styleguide/styles/style-1/All.less#L77>
+Complete example: <https://github.com/perfectsense/training/blob/exercise/meal/frontend/bundles/bundle-default/styleguide/styles/default/All.less#L77>
 
 We also need to add an association for the styles we set into the bundle’s parent Less file. **NOTE THE DIFFERENCE IN LOCATION OF THIS FILE**. This adds all the styles we just created to the main CSS for the website. Don’t confuse this with the `All.less` file in the meal directory we created earlier: that one includes all the specific meal less files; this one includes all the `All.less` files across all features.
 
