@@ -33,5 +33,6 @@
   },
   "main": {
     "_delegate": true
-  }
+  },
+  "_include": "/event/Address.json"
 }

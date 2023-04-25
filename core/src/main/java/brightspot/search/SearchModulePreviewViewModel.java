@@ -75,4 +75,34 @@ public class SearchModulePreviewViewModel extends ViewModel<SearchQueryModule> i
     public CharSequence getCanonicalLink() {
         return page.getCanonicalLink();
     }
+
+    @Override
+    public CharSequence getCity() {
+        return null;
+    }
+
+    @Override
+    public CharSequence getCountry() {
+        return null;
+    }
+
+    @Override
+    public CharSequence getLocationCoords() {
+        return null;
+    }
+
+    @Override
+    public CharSequence getState() {
+        return null;
+    }
+
+    @Override
+    public CharSequence getStreet() {
+        return null;
+    }
+
+    @Override
+    public CharSequence getZip() {
+        return null;
+    }
 }

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html class="Page" {{~include "/page/Page-htmlAttributes.hbs" this}}>
+<head>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"/>
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
+</head>
+{{include "/page/Page-head.hbs" this}}
+
+<body class="Page-body">
+{{include "/page/Page-header.hbs" this}}
+{{include "/page/Page-above.hbs" this}}
+
+<div class="Page-content">
+    {{#with pageLead}}
+        <div class="Page-pageLead" data-pagelead>{{this}}</div>
+    {{/with}}
+    <div id="event">
+        <div id="details">
+            {{#with details}}
+                {{this}}
+            {{/with}}
+        </div>
+        <div id="dates">
+            {{#with startDate}}{{this}}{{/with}}
+            {{#with endDate}}{{this}}{{/with}}
+        </div>
+        <div id="image">
+            {{#each image}}
+                {{include "/image/Image.hbs" this}}
+            {{/each}}
+        </div>
+        {{#each address}}
+            {{street}}
+            {{city}}
+            {{state}}
+            {{country}}
+            {{zip}}
+            <div id="mapid" style="height:250px;"></div>
+            <script>
+            var mymap = L.map('mapid').setView([{{locationCoords}}], 12);
+            L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+}).addTo(mymap);
+            var marker = L.marker([{{locationCoords}}]).addTo(mymap);
+
+            </script>
+        {{/each}}
+    </div>
+</div>
+{{include "/page/Page-below.hbs" this}}
+{{include "/page/Page-footer.hbs" this}}
+{{include "/page/Page-extraBodyItems.hbs" this}}
+</body>
+</html>

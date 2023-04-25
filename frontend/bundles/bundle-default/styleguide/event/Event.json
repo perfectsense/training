@@ -1,0 +1,12 @@
+{
+  "_template": "Event.hbs",
+  "_include": "/page/Page.json",
+  "details": "..",
+  "startDate": "..",
+  "endDate": "..",
+  "image": {
+    "_include": "/image/Image.json"
+  },
+  "address": {
+  }
+}

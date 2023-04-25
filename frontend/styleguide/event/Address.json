@@ -1,0 +1,9 @@
+{
+  "_template": "Address.hbs",
+  "city": "",
+  "country": "",
+  "state": "",
+  "street": "",
+  "zip": "",
+  "locationCoords": "40.6892, -74.0445"
+}

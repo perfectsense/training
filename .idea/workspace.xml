@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="0fdd7986-3ce9-438b-9818-952dbc2a10f1" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/core/src/main/java/brightspot/filteringrequests/RequestRedirectFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/src/main/java/brightspot/filteringrequests/RequestRedirectSiteSettingsModification.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/src/main/java/brightspot/nasa/IngestGlobalSettings.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/src/main/java/brightspot/nasa/IngestedImageModification.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/src/main/java/brightspot/nasa/NasaImageIngester.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/src/main/java/brightspot/nasa/NasaIngesterGlobalSettingsModification.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/src/main/java/brightspot/nasa/RssClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/bundles/bundle-default/styleguide/event/Address.hbs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/bundles/bundle-default/styleguide/event/Address.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/styleguide/event/Address.hbs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/brightspot/module/ModuleTypePreviewViewModel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/brightspot/search/SearchModulePreviewViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/brightspot/search/SearchModulePreviewViewModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/bundles/bundle-default/styleguide/_wrapper.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/bundles/bundle-default/styleguide/_wrapper.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/styleguide/_wrapper.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/styleguide/_wrapper.json" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="brightspot-training" type="f1a62948:ProjectNode" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="FormatOnSaveOptions">
+    <option name="myRunOnSave" value="true" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2NjkvRcQbg00dBHjzb3kqWj8dQ7" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;develop&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/danielmackey/Documents/training/core/src/main/java/brightspot/FilteringRequests&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.IDE.editor.colors&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/core/src/main/java/brightspot/FilteringRequests" />
+      <recent name="$PROJECT_DIR$/frontend/bundles/bundle-default" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/frontend/bundles/bundle-default" />
+      <recent name="$PROJECT_DIR$/frontend/bundles/bundle-default/styleguide" />
+      <recent name="$PROJECT_DIR$/core/src/main/java/brightspot" />
+      <recent name="$PROJECT_DIR$/frontend/styleguide" />
+    </key>
+    <key name="ExtractSuperBase.RECENT_KEYS">
+      <recent name="brightspot.event" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="Docker" type="Remote">
+      <option name="USE_SOCKET_TRANSPORT" value="true" />
+      <option name="SERVER_MODE" value="false" />
+      <option name="SHMEM_ADDRESS" />
+      <option name="HOST" value="localhost" />
+      <option name="PORT" value="5005" />
+      <option name="AUTO_RESTART" value="false" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="5005" />
+        <option name="LOCAL" value="false" />
+      </RunnerSettings>
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="0fdd7986-3ce9-438b-9818-952dbc2a10f1" name="Changes" comment="" />
+      <created>1680185110132</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1680185110132</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="dependencySupport" implementationName="java:com.google.protobuf:protobuf-java" />
+    <option featureType="dependencySupport" implementationName="java:com.google.cloud:google-cloud-storage" />
+    <option featureType="dependencySupport" implementationName="java:io.grpc:grpc-api" />
+    <option featureType="dependencySupport" implementationName="java:com.amazonaws:aws-java-sdk-core" />
+    <option featureType="dependencySupport" implementationName="java:io.projectreactor:reactor-core" />
+    <option featureType="dependencySupport" implementationName="java:javax.ws.rs:javax.ws.rs-api" />
+    <option featureType="dependencySupport" implementationName="java:com.amazonaws:aws-java-sdk-s3" />
+    <option featureType="dependencySupport" implementationName="java:javax.validation:validation-api" />
+    <option featureType="dependencySupport" implementationName="java:com.azure:azure-core" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/core/src/main/java/brightspot/nasa/NasaImageIngester.java</url>
+          <line>28</line>
+          <properties class="brightspot.nasa.NasaImageIngester" method="doRepeatingTask">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="26" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/core/src/main/java/brightspot/filteringrequests/RequestRedirectFilter.java</url>
+          <line>19</line>
+          <properties class="brightspot.filteringrequests.RequestRedirectFilter" method="doRequest">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="31" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
