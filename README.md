@@ -77,7 +77,7 @@ docker-compose start    # start the Brightspot Docker container
 docker-compose down -v  # permanently destroy the Brightspot Docker container and all data
 ```
 
-Further instructions and tips can be found at the [Brightspot Docker container site](https://hub.docker.com/r/brightspot/brightspot).
+Further instructions and tips can be found at the [Brightspot Docker container site](https://hub.docker.com/r/brightspot/tomcat).
 
 ### Accessing the CMS
 
