@@ -1,4 +1,4 @@
-FROM brightspot/solr:8
+FROM brightspot/solr:8.9
 
 # Restore solr into container. To back up (execute from project root):
 ADD ./data/solr.tar.gz /var/solr/data/collection1/data
