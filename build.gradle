@@ -70,7 +70,7 @@ subprojects {
     }
 
     node {
-        version = '16.11.0'
+        version = '16.13.2'
         yarnVersion = '1.22.19'
         download = true
     }

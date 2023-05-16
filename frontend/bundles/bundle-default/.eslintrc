@@ -7,6 +7,11 @@
         "eslint:recommended",
         "plugin:prettier/recommended"
     ],
+    "ignorePatterns": [
+        ".gradle",
+        "build",
+        "node_modules"
+    ],
     "parser": "@babel/eslint-parser",
     "parserOptions": {
         "allowImportExportEverywhere": true
