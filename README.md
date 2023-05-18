@@ -119,12 +119,12 @@ npm install --global yarn
 ### Building the project
 
 The first time you build the Styleguide application you will need to run from the 
-`frontend/bundles/brightspot-training-bundle-default/` directory of the project:
+`frontend/bundles/bundle-default/` directory of the project:
 ```console
 yarn
 ```
 
-After that, run from the `frontend/bundles/brightspot-training-bundle-default/` directory of the project:
+After that, run from the `frontend/bundles/bundle-default/` directory of the project:
 ```console
 yarn server:styleguide
 ```
