@@ -43,7 +43,7 @@ services:
       - mysql-logs:/var/log/mysql
       - ./etc/docker/data:/docker-entrypoint-initdb.d:ro
   greenmail:
-    image: greenmail/standalone:1.5.14
+    image: greenmail/standalone:1.6.14
     ports:
       - 3025:3025
       - 3110:3110
