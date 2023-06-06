@@ -142,6 +142,16 @@
             "imagePositionHorizontal"
           ]
         },
+        {
+          "displayName": "Standard - List N",
+          "example": "/page/list/PageListStandardN.json",
+          "height": 800,
+          "width": 1024,
+          "fields": [
+            "backgroundColor",
+            "inverseColors"
+          ]
+        },
 
 
 
