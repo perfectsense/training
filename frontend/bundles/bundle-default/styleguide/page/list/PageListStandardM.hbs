@@ -2,13 +2,12 @@
 <div class="PageListStandardM" data-module{{include "includes/PageList-attributes.hbs" this}}>
     {{include "includes/PageList-header.hbs" this}}
 
+    {{#set enableZoomImage=true imageSize="xl-16x9"}}
     <div class="PageList-items">
         <div class="PageList-items-item">
             {{#with items.[0]}}
                 {{#eq this._template "/page/promo/PagePromo.hbs"}}
-                    {{#set imageSize="large-16x9"}}
-                        {{include "/page/promo/PagePromo.hbs" this}}
-                    {{/set}}
+                    {{include "/page/promo/PagePromo.hbs" this}}
                 {{else}}
                     {{render this}}
                 {{/eq}}
@@ -26,6 +25,7 @@
             {{/if}}
         {{/each}}
     </div>
+    {{/set}}
 
     {{include "includes/PageList-footer.hbs" this}}
 </div>
