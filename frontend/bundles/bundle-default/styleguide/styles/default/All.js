@@ -21,6 +21,7 @@ import { GalleryPage } from '../../gallery/GalleryPage'
 import { GoogleDfp } from '../../dfp/GoogleDfp'
 import { HiddenCookieInput } from '../../form/input/HiddenCookieInput.js'
 import { HiddenDocumentReferrerInput } from '../../form/input/HiddenDocumentReferrerInput.js'
+import { ImageZoom } from '../../image/ImageZoom.js'
 import { ModuleAnimations } from '../../util/ModuleAnimations'
 import { PageHeadingVideo } from '../../page/PageHeadingVideo'
 import { PageListAutoRotate } from '../../page/list/PageListAutoRotate'
@@ -57,6 +58,7 @@ function registerCustomElements() {
     HiddenDocumentReferrerInput
   )
   window.customElements.define('bsp-html5player', HTML5VideoPlayer)
+  window.customElements.define('bsp-imagezoom', ImageZoom)
   window.customElements.define('bsp-jw-player', JwVideoPlayer)
   window.customElements.define('bsp-language', LanguageMenu)
   window.customElements.define('bsp-load-more', LoadMore)
