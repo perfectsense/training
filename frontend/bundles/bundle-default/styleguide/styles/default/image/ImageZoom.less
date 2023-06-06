@@ -1,0 +1,80 @@
+
+bsp-imagezoom {
+    display: block;
+    position: relative;
+
+    picture {
+        position: relative;
+
+        &.clone {
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: inline-block;
+            z-index: 2;
+
+            .bsp-imagezoom__button {
+                position: absolute;
+                top: 2px;
+                right: 2px;
+                width: 23px;
+                height: 23px;
+                z-index: 6;
+                opacity: 0.3;
+                border-radius: 0;
+                background-color: white;
+                cursor: pointer;
+
+                &:before {
+                    content: '+';
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    font-size: 20px;
+                    line-height: 1;
+                }
+
+                &:hover {
+                    opacity: 1;
+                }
+            }
+
+            img {
+                transition: width 300ms ease-in-out, height 150ms ease-in-out;
+            }
+        }
+    }
+
+    &[data-zoomed] {
+        picture.clone {
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 4;
+            display: block;
+            width: 100vw;
+            height: 100vh;
+            background-color: rgba(255, 255, 255, 0.7);
+
+            .bsp-imagezoom__button {
+                top: 2vh;
+                right: 2vw;
+                opacity: 1;
+
+                &:before {
+                    content: '×';
+                }
+            }
+
+            img {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 90vw;
+                height: auto;
+            }
+        }
+    }
+}
