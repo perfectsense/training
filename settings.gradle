@@ -28,6 +28,10 @@ brightspot {
         componentLib = '4.5.17'
         java = 11
     }
+
+    dependencySubstitutions = [
+        'javax.inject:javax.inject': 'org.glassfish.hk2.external:javax.inject:_'
+    ]
 }
 
 include(':core')
