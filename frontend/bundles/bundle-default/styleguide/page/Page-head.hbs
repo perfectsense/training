@@ -54,7 +54,7 @@
         var head = document.getElementsByTagName('head')[0];
         if (!window.CSS || !window.CSS.supports || !window.CSS.supports('--fake-var', 0)) {
             var script = document.createElement('script');
-            script.setAttribute('src', "{{cdn '/util/IEPolyfills.js'}}");
+            script.setAttribute('src', "{{cdn '/util/IEPolyfills.min.js'}}");
             script.setAttribute('type', 'text/javascript');
             script.async = false;
             head.appendChild(script);
