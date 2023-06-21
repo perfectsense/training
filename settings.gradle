@@ -1,8 +1,34 @@
+pluginManagement {
+    repositories {
+        gradlePluginPortal() {
+            content {
+                excludeGroupByRegex 'com\\.brightspot($|\\..+)'
+                excludeGroupByRegex 'com\\.psddev($|\\..+)'
+            }
+        }
+        maven {
+            url 'https://artifactory.psdops.com/public'
+        }
+    }
+}
+
 plugins {
     id "com.gradle.enterprise" version "3.1.1"
+    id 'com.brightspot.gradle' version '1.0.0-rc12'
 }
 
 rootProject.name = 'brightspot-training'
+
+brightspot {
+    projectGroup = 'com.brightspot-training'
+
+    versions {
+        brightspot = '4.5.11.1'
+        brightspotGo = '1.2.7'
+        componentLib = '4.5.17'
+        java = 11
+    }
+}
 
 include(':core')
 include(':web')
@@ -14,28 +40,9 @@ project(':web').projectDir = file('web')
 project(':frontend').projectDir = file('frontend')
 project(':bundle-default').projectDir = file('frontend/bundles/bundle-default')
 
-// -- Gradle Cache Server -- //
-
-def gradleCacheUrl = "https://cache.gradle.psdops.com/cache/"
-def gradleCacheUsername = System.getenv('GRADLE_CACHE_USERNAME')
-def gradleCachePassword = System.getenv('GRADLE_CACHE_PASSWORD')
-boolean isCiServer = gradleCacheUsername != null
-
-buildCache {
-  if (gradleCacheUrl != null) {
-    local {
-      enabled = !isCiServer
+gradleEnterprise {
+    buildScan {
+        termsOfServiceUrl = "https://gradle.com/terms-of-service"
+        termsOfServiceAgree = "yes"
     }
-    remote(HttpBuildCache) {
-      push = isCiServer
-      url = gradleCacheUrl
-      allowUntrustedServer = true
-      if (gradleCacheUsername != null && gradleCachePassword != null) {
-        credentials {
-            username = gradleCacheUsername
-            password = gradleCachePassword
-        }
-      }
-    }
-  }
 }
