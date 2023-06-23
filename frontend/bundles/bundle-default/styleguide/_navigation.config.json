@@ -256,6 +256,10 @@
         {
           "displayName": "Standard List L",
           "page": "/page/list/PageListStandardL.json"
+        },
+        {
+          "displayName": "Standard List M",
+          "page": "/page/list/PageListStandardM.json"
         }
       ]
     },
