@@ -504,6 +504,7 @@ dependencies {
     // Brightspot
     implementation 'com.psddev:adobe-stock'
     implementation 'com.psddev:ap'
+    implementation 'com.psddev:aws-ses'
     implementation 'com.psddev:brightcove'
     implementation 'com.psddev:cms-api'
     implementation 'com.psddev:cms-db'
@@ -513,6 +514,7 @@ dependencies {
     implementation 'com.psddev:conversation'
     implementation 'com.psddev:dam'
     implementation 'com.psddev:dam-cloudconvert'
+    implementation 'com.psddev:dari-aws'
     implementation 'com.psddev:dari-db'
     implementation 'com.psddev:dari-mysql'
     implementation 'com.psddev:dari-util'
@@ -560,6 +562,8 @@ dependencies {
     implementation 'com.psddev.component-lib:util-settings-enforcer'
 
     // Third party.
+    implementation 'com.amazonaws:aws-java-sdk-rekognition'
+    implementation 'com.amazonaws:aws-java-sdk-sts'
     implementation 'net.jthink:jaudiotagger'
     implementation 'org.ahocorasick:ahocorasick'
     implementation 'org.apache.commons:commons-lang3'
@@ -573,5 +577,3 @@ dependencies {
 
     // END com.brightspot.go:pack-enterprise-corporate
 }
-
-apply from: file("host.gradle")

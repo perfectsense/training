@@ -1,9 +1,0 @@
-dependencies {
-    // Brightspot
-    implementation 'com.psddev:aws-ses'
-    implementation 'com.psddev:dari-aws'
-
-    // Third party.
-    implementation 'com.amazonaws:aws-java-sdk-rekognition'
-    implementation 'com.amazonaws:aws-java-sdk-sts'
-}
