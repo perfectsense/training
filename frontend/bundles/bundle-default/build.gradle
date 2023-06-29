@@ -23,5 +23,5 @@ node {
 }
 
 dependencies {
-    sharedTest 'com.psddev.component-lib:shared-frontend-unit-tests'
+    sharedTest 'com.brightspot.shared-tests:pack-standard-frontend-unit-tests'
 }

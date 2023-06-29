@@ -189,7 +189,6 @@ dependencies {
     implementation 'com.brightspot.go:lib-model-url-slug'
     implementation 'com.brightspot.go:lib-model-web-image-asset'
     implementation 'com.brightspot.go:lib-util-area-disabler'
-    implementation 'com.brightspot.go:lib-util-auto-dependency-test'
     implementation 'com.brightspot.go:lib-util-build-info'
     implementation 'com.brightspot.go:lib-util-c3'
     implementation 'com.brightspot.go:lib-util-cms-search-site-owner-filter'
@@ -571,7 +570,7 @@ dependencies {
     implementation 'xml-apis:xml-apis'
 
     // Test.
-    testRuntimeOnly 'com.psddev.component-lib:test-utils'
+    sharedTest 'com.brightspot.shared-tests:pack-standard-backend-unit-tests'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-api'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
 
