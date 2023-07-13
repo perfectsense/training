@@ -43,6 +43,9 @@
     },
     {
       "_include": "/page/list/PageListStandardL.json"
+    },
+    {
+      "_include": "/page/list/PageListStandardN.json"
     }
   ]
 }

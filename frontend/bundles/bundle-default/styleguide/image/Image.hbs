@@ -1,3 +1,5 @@
+
+{{#if (get "enableZoomImage")}}<bsp-imagezoom>{{/if}}
 <picture>
     {{!-- You can suffix imageSizes with "Alt" for automatic assignment of crop, or set imageSizeAlt otherwise--}}
     {{#set imageSize=(fallback (get "imageSizeAlt") (concat (fallback (get "imageSize") "medium-4x3") "Alt"))}}
@@ -12,3 +14,5 @@
     {{/set}}
     {{include "/image/ImageTag.hbs" this}}
 </picture>
+
+{{#if (get "enableZoomImage")}}</bsp-imagezoom>{{/if}}
