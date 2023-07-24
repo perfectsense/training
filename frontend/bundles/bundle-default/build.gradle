@@ -8,11 +8,10 @@ bundle {
     yarnBuildCommand = 'build'
     styleguideOutputDir = 'styleguide'
     zipOutputPath = 'theme.zip'
+
+    // for CdnCssTest
     cdnCssFiles = [
         'styles/default/All.min.css'
-    ]
-    compatibilityTestExcludedPaths = [
-        '_files.json'
     ]
 }
 
