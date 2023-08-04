@@ -1,3 +1,7 @@
+plugins {
+    id 'com.brightspot.java-core'
+}
+
 description = 'Brightspot Training: Core'
 
 dependencies {
@@ -185,7 +189,6 @@ dependencies {
     api 'com.brightspot.go:lib-model-url-slug'
     api 'com.brightspot.go:lib-model-web-image-asset'
     api 'com.brightspot.go:lib-util-area-disabler'
-    api 'com.brightspot.go:lib-util-auto-dependency-test'
     api 'com.brightspot.go:lib-util-build-info'
     api 'com.brightspot.go:lib-util-c3'
     api 'com.brightspot.go:lib-util-cms-search-site-owner-filter'
@@ -500,6 +503,7 @@ dependencies {
     // Brightspot
     api 'com.psddev:adobe-stock'
     api 'com.psddev:ap'
+    api 'com.psddev:aws-ses'
     api 'com.psddev:brightcove'
     api 'com.psddev:cms-api'
     api 'com.psddev:cms-db'
@@ -509,6 +513,7 @@ dependencies {
     api 'com.psddev:conversation'
     api 'com.psddev:dam'
     api 'com.psddev:dam-cloudconvert'
+    api 'com.psddev:dari-aws'
     api 'com.psddev:dari-db'
     api 'com.psddev:dari-mysql'
     api 'com.psddev:dari-util'
@@ -556,6 +561,8 @@ dependencies {
     api 'com.psddev.component-lib:util-settings-enforcer'
 
     // Third party.
+    api 'com.amazonaws:aws-java-sdk-rekognition'
+    api 'com.amazonaws:aws-java-sdk-sts'
     api 'net.jthink:jaudiotagger'
     api 'org.ahocorasick:ahocorasick'
     api 'org.apache.commons:commons-lang3'
@@ -563,16 +570,9 @@ dependencies {
     api 'xml-apis:xml-apis'
 
     // Test.
-    testRuntimeOnly 'com.psddev.component-lib:test-utils'
+    sharedTest 'com.brightspot.shared-tests:pack-standard-backend-unit-tests'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-api'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
 
     // END com.brightspot.go:pack-enterprise-corporate
-}
-
-apply from: file("host.gradle")
-
-project.afterEvaluate {
-
-    jar.dependsOn(test)
 }

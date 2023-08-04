@@ -7,7 +7,7 @@ const path = require('path')
 module.exports = {
   entry: {
     'styles/default/All.min.js': './styleguide/styles/default/All.js',
-    'util/IEPolyfills.js': './styleguide/util/IEPolyfills.js',
+    'util/IEPolyfills.min.js': './styleguide/util/IEPolyfills.js',
     'newsletter/NewsletterInline.min.js':
       './styleguide/newsletter/NewsletterInline.js',
     'newsletter/NewsletterEmbed.min.js':

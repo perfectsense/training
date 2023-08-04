@@ -1,8 +1,26 @@
- plugins {
-    id 'com.github.node-gradle.node'
-    id 'com.github.node-gradle.gulp'
+plugins {
+    id 'com.brightspot.bundle'
 }
 
 description = 'Brightpot Training: Default Bundle'
 
-apply from: "https://artifactory.psdops.com/psddev-releases/com/psddev/brightspot-gradle-plugins/express-theme/${brightspotGradlePluginVersion}/express-theme.gradle"
+bundle {
+    yarnBuildCommand = 'build'
+    styleguideOutputDir = 'styleguide'
+    zipOutputPath = 'theme.zip'
+
+    // for CdnCssTest
+    cdnCssFiles = [
+        'styles/default/All.min.css'
+    ]
+}
+
+node {
+    version = '16.13.2'
+    yarnVersion = '1.22.19'
+    download = true
+}
+
+dependencies {
+    sharedTest 'com.brightspot.shared-tests:pack-standard-frontend-unit-tests'
+}

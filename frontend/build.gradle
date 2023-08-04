@@ -1,16 +1,5 @@
 plugins {
-    id 'war'
-    id 'com.github.node-gradle.node'
-    id 'com.github.node-gradle.gulp'
+    id 'com.brightspot.viewgen'
 }
 
 description = 'Brightspot Training: Frontend'
-
-dependencies {
-
-    // Third Party
-    api 'org.slf4j:slf4j-api'
-    api 'org.slf4j:slf4j-jdk14'
-}
-
-apply from: "https://artifactory.psdops.com/psddev-releases/com/psddev/brightspot-gradle-plugins/express-frontend/${brightspotGradlePluginVersion}/express-frontend.gradle"

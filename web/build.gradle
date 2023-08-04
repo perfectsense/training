@@ -1,61 +1,22 @@
 plugins {
-    id 'war'
+    id 'com.brightspot.war'
 }
 
 description = 'Brightspot Training: Web'
 
 dependencies {
-    api project(':frontend')
-    api project(':core')
-    api project(':bundle-default')
+    implementation project(':frontend')
+    implementation project(':core')
+    implementation project(':bundle-default')
+
+    // for expansion into the war
+    compileOnly 'com.psddev:cms-tool-ui'
 
     // Tests
-    testImplementation 'com.brightspot.go:lib-model-shared-content-test-utils'
-    testImplementation 'com.brightspot.go:lib-util-gradle-dynamic-test'
-    testImplementation 'com.psddev.component-lib:test-utils'
-    testImplementation 'com.psddev:styleguide-codegen'
-}
-
-war {
-    archiveName = "brightspot-training-web-${version}.war"
-    rootSpec.exclude '**/javax.el-api'
-    rootSpec.exclude '**/javax.servlet-api-*.jar'
-    rootSpec.exclude '**/javax.servlet.jsp-api-*.jar'
-    rootSpec.exclude '**/mysql-connector-java-*.jar'
-    rootSpec.exclude '**/slf4j-api-*.jar'
-    rootSpec.exclude '**/slf4j-jdk14-*.jar'
-}
-
-if (!System.getProperty("dependencies")) {
-    apply from: "https://artifactory.psdops.com/psddev-releases/com/psddev/brightspot-gradle-plugins/express-site/${brightspotGradlePluginVersion}/express-site.gradle"
-}
-
-task unzipUtilGradleDynamicTest(type: Copy) {
-    dependsOn enhanceClasses
-    dependsOn modifyClasses
-
-    def classesPath = configurations.testCompileClasspath.find {it.path.contains('gradle-dynamic-test') }
-    def classesDir = file(classesPath)
-
-    def outputDir = file("${buildDir}/test-classes")
-
-    from fileTree(classesDir)
-    into outputDir
-}
-
-test {
-    dependsOn unzipUtilGradleDynamicTest
-
-    project.rootProject.allprojects.each {
-        if (it.name.contains('-bundle-')) {
-             def bundleProject = it
-             def themeBuildDir = bundleProject.buildDir.absolutePath + '/styleguide'
-             def themeCdnCssFilesKey = 'theme.' + bundleProject.name + '.cdnCssFiles'
-
-             systemProperties.put('theme.' + bundleProject.name + '.buildDir', themeBuildDir)
-             systemProperties.put('theme.' + bundleProject.name + '.compatibilityTestMode', 'warn')
-             systemProperties.put('theme.' + bundleProject.name + '.compatibilityExcludedPaths', '_files.json')
-             systemProperties.put(themeCdnCssFilesKey, 'styles/default/All.min.css')
-        }
+    sharedTest 'com.brightspot.go:lib-util-gradle-dynamic-test'
+    sharedTest 'com.brightspot.shared-tests:pack-standard-backend-integration-tests'
+    testRuntimeClasspath('com.brightspot.go:lib-util-auto-dependency-test') {
+        exclude group: 'com.psddev.component-lib', module: 'test-utils'
     }
+
 }
