@@ -4,8 +4,8 @@ plugins {
 
 bundle {
     yarnBuildCommand = 'build'
-    styleguideOutputDir = "styleguide"
-    zipOutputPath = "theme.zip"
+    styleguideOutputDir = 'styleguide'
+    zipOutputPath = 'theme.zip'
 
     // for CdnCssTest
     cdnCssFiles = [
@@ -14,8 +14,8 @@ bundle {
 }
 
 node {
-    yarnVersion = '1.22.19'
     version = '16.13.2'
+    yarnVersion = '1.22.19'
     download = true
 }
 
