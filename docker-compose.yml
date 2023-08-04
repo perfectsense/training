@@ -13,7 +13,7 @@ services:
       - $HOME/.aws/credentials:/etc/aws/credentials:cached
       - storage-data:/servers/tomcat/storage
     environment:
-      - ROOT_WAR=/code/web/build/libs/brightspot-training-web-1.0.0-SNAPSHOT.war
+      - ROOT_WAR=/code/web/build/libs/web.war
       - CONTEXT_PROPERTIES=/code/docker-context.properties
       - LOGGING_PROPERTIES=/code/docker-logging.properties
       - AWS_PROFILE=psd-training
