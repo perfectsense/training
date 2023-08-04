@@ -82,21 +82,39 @@ if [ -f "../../build.gradle" ]; then
     gradle=${DIR}/${name}/build.gradle
     echo "output $gradle"
 
-    echo " plugins {" > $gradle
-    echo "    id 'com.github.node-gradle.node'" >> $gradle
-    echo "    id 'com.github.node-gradle.gulp'" >> $gradle
-    echo "}" >> $gradle
-    echo "" >> $gradle
-    echo "description = '${name}'" >> $gradle
-    echo "" >> $gradle
-    echo 'apply from: "https://artifactory.psdops.com/psddev-releases/com/psddev/brightspot-gradle-plugins/express-theme/${brightspotGradlePluginVersion}/express-theme.gradle"' >> $gradle
+    cat << EOF > "$gradle"
+plugins {
+    id 'com.brightspot.bundle'
+}
+
+bundle {
+    yarnBuildCommand = 'build'
+    styleguideOutputDir = "styleguide"
+    zipOutputPath = "theme.zip"
+
+    // for CdnCssTest
+    cdnCssFiles = [
+        'styles/default/All.min.css'
+    ]
+}
+
+node {
+    yarnVersion = '1.22.19'
+    version = '16.11.0'
+    download = true
+}
+
+dependencies {
+    sharedTest 'com.brightspot.shared-tests:pack-standard-frontend-unit-tests'
+}
+EOF
 
     awk "FNR==NR{ if (/include\(/) p=NR; next} 1; FNR==p{ print \"include(':${name}')\" }" ../../settings.gradle ../../settings.gradle > ../../settings.gradle.tmp
     awk "FNR==NR{ if (/project\(/) p=NR; next} 1; FNR==p{ print \"project(':${name}').projectDir = file('frontend/bundles/${name}')\" }" ../../settings.gradle.tmp ../../settings.gradle.tmp > ../../settings.gradle
     rm ../../settings.gradle.tmp
 
     # Update site/build.gradle
-    awk "FNR==NR{ if (/    api project\(/) p=NR; next} 1; FNR==p{ print \"    api project(':${name}')\" }" ../../web/build.gradle ../../web/build.gradle > ../../web/build.gradle.tmp
+    awk "FNR==NR{ if (/    implementation project\(/) p=NR; next} 1; FNR==p{ print \"    implementation project(':${name}')\" }" ../../web/build.gradle ../../web/build.gradle > ../../web/build.gradle.tmp
     mv ../../web/build.gradle.tmp ../../web/build.gradle
 fi
 
