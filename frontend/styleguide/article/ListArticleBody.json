@@ -1,9 +1,0 @@
-{
-  "_template": "ListArticleBody.hbs",
-  "items": [
-    {
-      "_include": "/article/ListArticleBodyItem.json"
-    }
-  ],
-  "_hidden": true
-}

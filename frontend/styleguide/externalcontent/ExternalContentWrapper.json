@@ -2,16 +2,16 @@
   "_template": "ExternalContentWrapper.hbs",
   "item": [
     {
-      "_include": "/externalcontent/ExternalContent.json"
+      "_template": "/externalcontent/ExternalContent.hbs"
     },
     {
-      "_include": "/facebook/FacebookUrl.json"
+      "_template": "/facebook/FacebookUrl.hbs"
     },
     {
-      "_include": "/instagram/InstagramUrl.json"
+      "_template": "/instagram/InstagramUrl.hbs"
     },
     {
-      "_include": "/twitter/TweetUrl.json"
+      "_template": "/twitter/TweetUrl.hbs"
     }
   ]
 }

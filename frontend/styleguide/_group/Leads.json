@@ -6,7 +6,7 @@
     "_template": "/figure/Figure.hbs"
   },
   {
-    "_include": "/page/PageHeading.json"
+    "_template": "/page/PageHeading.hbs"
   },
   {
     "_template": "/video/VideoLead.hbs"

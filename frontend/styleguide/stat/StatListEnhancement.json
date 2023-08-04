@@ -1,0 +1,6 @@
+{
+  "_template": "StatListEnhancement.hbs",
+  "item": {
+    "_template": "/stat/StatList.hbs"
+  }
+}

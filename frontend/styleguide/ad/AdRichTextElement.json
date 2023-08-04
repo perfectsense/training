@@ -2,10 +2,10 @@
   "_template": "AdRichTextElement.hbs",
   "ad": [
     {
-      "_include": "/adsense/GoogleAdsenseAdModule.json"
+      "_template": "/adsense/GoogleAdsenseAdModule.hbs"
     },
     {
-      "_include": "/dfp/GoogleDfpAdModule.json"
+      "_template": "/dfp/GoogleDfpAdModule.hbs"
     }
   ]
 }

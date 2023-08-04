@@ -2,6 +2,5 @@
   "_template": "ExternalScript.hbs",
   "src": "",
   "async": false,
-  "defer": false,
-  "_hidden": true
+  "defer": false
 }

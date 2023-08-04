@@ -1,5 +1,0 @@
-{
-  "_include": "/community/affinity/AffinityButton.json",
-  "_template": "FollowButton.hbs",
-  "_hidden": true
-}

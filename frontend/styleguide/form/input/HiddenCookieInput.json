@@ -1,6 +1,5 @@
 {
   "_template": "HiddenCookieInput.hbs",
-  "inputName": "inputName",
-  "cookieName": "cookieName",
-  "_hidden": true
+  "inputName": "",
+  "cookieName": ""
 }

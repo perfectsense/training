@@ -2,16 +2,16 @@
   "_template": "/attachment/AttachmentEnhancement.hbs",
   "target": "_self",
   "title": {
-    "_include": "/_group/RichTextElementsTiny.json"
+    "_include": "/_group/RichTextElementsTiny.json",
+    "_key": 0
   },
   "description": {
-    "_include": "/_group/RichTextElementsTiny.json"
+    "_include": "/_group/RichTextElementsTiny.json",
+    "_key": 0
   },
   "url": "https://www.example.com/files/attachment.pdf",
   "fileName": "attachment.pdf",
   "fileTypeDisplayName": "PDF",
   "iconType": "PDF",
-  "mimeType": "application/pdf",
-  "fileSize": "2mb",
-  "_hidden": true
+  "fileSize": "2mb"
 }

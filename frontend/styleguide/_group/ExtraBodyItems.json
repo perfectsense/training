@@ -1,6 +1,8 @@
 [
   {
-    "_template": "/link/Link.hbs",
-    "body": null
+    "_template": "/page/ExternalScript.hbs"
+  },
+  {
+    "_template": "/page/InlineScript.hbs"
   }
 ]

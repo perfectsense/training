@@ -1,16 +1,13 @@
 {
   "_template": "VideoPlayer.hbs",
-  "playerId": "1",
-  "videoTitle": "{{words([2,6])}}",
-  "videoId": "XXXXXX",
+  "playerId": "",
+  "videoTitle": "",
+  "videoId": "",
   "autoplay": false,
-  "muted": true,
+  "muted": false,
   "seekSeconds": 0,
   "liveVideo": false,
-  "extraAttributes": [
-    {
-      "_include": "/dfp/GoogleDfpVideoAttribute.json"
-    }
-  ],
-  "_hidden": true
+  "extraAttributes": {
+    "_template": "/dfp/GoogleDfpVideoAttribute.hbs"
+  }
 }

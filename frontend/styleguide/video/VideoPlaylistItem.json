@@ -1,26 +1,25 @@
 {
   "_template": "/video/VideoPlaylistItem.hbs",
   "media": {
-    "_include": "/image/Image.json"
+    "_template": "/image/Image.hbs"
   },
   "player": {
     "_include": "/_group/VideoPlayers.json",
     "_key": 0
   },
-  "date": "2019-04-11T08:35:03-0700",
-  "duration": "1 min",
-  "url": "#",
-  "target": "_self",
-  "type": "Type",
+  "date": "",
+  "duration": "",
+  "type": "",
   "title": {
-    "_include": "/_group/RichTextElementsTiny.json"
+    "_include": "/_group/RichTextElementsTiny.json",
+    "_key": 0
   },
   "description": {
-    "_include": "/_group/RichTextElementsSmall.json"
+    "_include": "/_group/RichTextElementsSmall.json",
+    "_key": 0
   },
-  "contentId": "a123",
+  "contentId": "",
   "companions": {
-    "_include": "/video/CompanionContentItem.json"
-  },
-  "_hidden": true
+    "_template": "/video/CompanionContentItem.hbs"
+  }
 }

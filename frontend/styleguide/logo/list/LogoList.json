@@ -1,21 +1,21 @@
 {
   "_template": "/logo/list/LogoList.hbs",
   "title": {
-    "_include": "/_group/RichTextElementsTiny.json"
+    "_include": "/_group/RichTextElementsTiny.json",
+    "_key": 0
   },
   "description": {
     "_include": "/_group/RichTextElementsSmall.json",
-    "_key": 1
+    "_key": 0
   },
-  "anchorId": "anchorTest",
-  "items": [
-    {
-      "_include": "/logo/promo/LogoPromo.json"
-    }
-  ],
+  "anchorId": "",
+  "items": {
+    "_template": "/logo/promo/LogoPromo.hbs"
+  },
   "ctaButtonText": {
-    "_include": "/_group/RichTextElementsTiny.json"
+    "_include": "/_group/RichTextElementsTiny.json",
+    "_key": 0
   },
-  "ctaUrl": "#",
-  "ctaTarget": "_self"
+  "ctaUrl": "",
+  "ctaTarget": ""
 }

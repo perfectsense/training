@@ -9,6 +9,5 @@
     "items": {
         "_include": "/_group/FaqItems.json"
     },
-    "jsonLinkedData": "Data Here",
-    "_hidden": true
+    "jsonLinkedData": ""
 }

@@ -1,14 +1,15 @@
 {
   "_template": "NavigationGroup.hbs",
   "title": {
-    "_include": "/_group/RichTextElementsTiny.json"
+    "_include": "/_group/RichTextElementsTiny.json",
+    "_key": 0
   },
-  "items": [
+  "items":[
     {
-      "_include": "NavigationLink.json"
+      "_template": "NavigationLink.hbs"
     },
     {
-      "_include": "/social/SocialLink.json"
+      "_template": "/social/SocialLink.hbs"
     }
   ]
 }

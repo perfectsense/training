@@ -5,5 +5,8 @@
   },
   {
     "_template": "/rte/PlainTextLink.hbs"
+  },
+  {
+    "_template": "/rte/TextSubstitution.hbs"
   }
 ]

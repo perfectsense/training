@@ -1,6 +1,6 @@
 {
   "_template": "/page/promo/PagePromoEnhancement.hbs",
   "item": {
-    "_include": "/page/promo/PagePromo.json"
+    "_template": "/page/promo/PagePromoModule.hbs"
   }
 }

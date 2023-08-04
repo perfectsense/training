@@ -2,7 +2,8 @@
   "_template": "ListicleItem.hbs",
   "itemIndex": "",
   "title": {
-    "_include": "/_group/RichTextElementsTiny.json"
+    "_include": "/_group/RichTextElementsTiny.json",
+    "_key": 0
   },
   "body": {
     "_include": "/_group/RichTextElementsLarge.json",

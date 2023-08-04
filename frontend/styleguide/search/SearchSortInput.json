@@ -1,8 +1,8 @@
 {
   "_template": "SearchSortInput.hbs",
-  "url": "#",
-  "label": "Relevant",
-  "selected": true,
-  "parameterName": "sort",
-  "parameterValue": "relevant"
+  "url": "",
+  "label": "",
+  "selected": false,
+  "parameterName": "",
+  "parameterValue": ""
 }

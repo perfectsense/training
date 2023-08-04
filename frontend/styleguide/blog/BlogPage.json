@@ -1,6 +1,5 @@
 {
   "_wrapper": false,
   "_include": "/page/Page.json",
-  "_template": "BlogPage.hbs",
-  "_hidden": true
+  "_template": "BlogPage.hbs"
 }

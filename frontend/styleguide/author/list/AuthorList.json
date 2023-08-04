@@ -1,15 +1,21 @@
 {
   "_template": "/author/list/AuthorList.hbs",
   "title": {
-    "_include": "/_group/RichTextElementsTiny.json"
+    "_include": "/_group/RichTextElementsTiny.json",
+    "_key": 0
   },
-  "anchorId": "anchorTest",
-  "items": [
-    {
-      "_include": "/author/promo/AuthorPromo.json",
-      "_repeat": 24
-    }
-  ],
-  "ctaUrl": "#",
-  "ctaTarget": "_self"
+  "description": {
+    "_include": "/_group/RichTextElementsSmall.json",
+    "_key": 0
+  },
+  "anchorId": "",
+  "items": {
+    "_template": "/author/promo/AuthorPromo.hbs"
+  },
+  "ctaButtonText": {
+    "_include": "/_group/RichTextElementsTiny.json",
+    "_key": 0
+  },
+  "ctaUrl": "",
+  "ctaTarget": ""
 }

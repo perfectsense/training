@@ -1,13 +1,14 @@
 {
   "_template": "./NewsletterHeader.hbs",
   "description": {
-    "_include": "/_group/RichTextElementsSmall.json"
+    "_include": "/_group/RichTextElementsSmall.json",
+    "_key": 0
   },
   "media": {
-    "_include": "/image/Image.json"
+    "_template": "/image/Image.hbs"
   },
-  "title": "Edweek Update",
-  "publishDate": "November 11, 2020",
+  "title": "",
+  "publishDate": "",
   "newsletterDataSource": "",
   "newsletterDataMedium": "",
   "newsletterDataCampaign": "",

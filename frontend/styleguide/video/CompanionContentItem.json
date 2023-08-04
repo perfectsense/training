@@ -1,15 +1,14 @@
 {
   "_template": "/video/CompanionContentItem.hbs",
   "media": {
-    "_include": "/image/Image.json"
+    "_template": "/image/Image.hbs"
   },
-  "date": "2019-04-11T08:35:03-0700",
-  "url": "#",
-  "category": "Category",
-  "categoryUrl": "#",
-  "type": "Type",
-  "title": "Title",
-  "timeStamp": "8675309",
-  "description": "Description",
-  "_hidden": true
+  "date": "",
+  "url": "",
+  "category": "",
+  "categoryUrl": "",
+  "type": "",
+  "title": "",
+  "timeStamp": "",
+  "description": ""
 }

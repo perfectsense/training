@@ -1,13 +1,10 @@
 {
   "_template": "/search/SearchFilter.hbs",
   "heading": {
-    "_include": "/_group/RichTextElementsTiny.json"
+    "_include": "/_group/RichTextElementsTiny.json",
+    "_key": 0
   },
-  "items": [
-    { "_include": "/search/SearchFilterInput.json", "label": "All", "selected": true },
-    { "_include": "/search/SearchFilterInput.json", "label": "Articles", "count": 1234 },
-    { "_include": "/search/SearchFilterInput.json", "label": "Photos", "count": 567 },
-    { "_include": "/search/SearchFilterInput.json", "label": "Videos", "count": 89 }
-  ],
-  "_hidden": true
+  "items": {
+    "_template": "/search/SearchFilterInput.hbs"
+  }
 }

@@ -18,6 +18,9 @@
     "_template": "/google-analytics/GoogleAnalyticsScript.hbs"
   },
   {
+    "_template": "/google-analytics4/GoogleAnalytics4Script.hbs"
+  },
+  {
     "_template": "/twitter/widgets/TwitterWidgetsJavaScript.hbs"
   }
 ]

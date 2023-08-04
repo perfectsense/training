@@ -1,10 +1,9 @@
 {
   "_template": "MailToLink.hbs",
-  "email": "test@test.com",
-  "cc": "testcc@test.com",
-  "bcc": "testbcc@test.com",
-  "subject": "Subject",
-  "emailBody": "Email Body",
-  "linkBody": "Email",
-  "_hidden": true
+  "email": "",
+  "cc": "",
+  "bcc": "",
+  "subject": "",
+  "emailBody": "",
+  "linkBody": ""
 }

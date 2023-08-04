@@ -1,16 +1,14 @@
 {
   "_template": "./NewsletterFooter.hbs",
   "body": {
-    "_include": "/_group/RichTextElementsSmall.json"
+    "_include": "/_group/RichTextElementsSmall.json",
+    "_key": 0
   },
-  "links": [
-    {
-      "_include": "/link/Link.json",
-      "_repeat": 4
-    }
-  ],
+  "links": {
+    "_template": "/newsletter/NewsletterNavigationLink.hbs"
+  },
   "social": {
-    "_include": "/social/SocialBar.json"
+    "_template": "/social/SocialBar.hbs"
   },
   "newsletterDataSource": "",
   "newsletterDataMedium": "",

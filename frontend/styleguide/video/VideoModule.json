@@ -1,13 +1,21 @@
 {
   "_template": "VideoModule.hbs",
   "title": {
-    "_include": "/_group/RichTextElementsTiny.json"
+    "_include": "/_group/RichTextElementsTiny.json",
+    "_key": 0
   },
   "description": {
-    "_include": "/_group/RichTextElementsSmall.json"
+    "_include": "/_group/RichTextElementsSmall.json",
+    "_key": 0
   },
   "anchorId": "anchorTest",
   "player": {
-    "_include": "/_group/VideoPlayers.json"
-  }
+    "_include": "/_group/VideoPlayers.json",
+    "_key": 0
+  },
+  "ctaButtonText": {
+    "_include": "/_group/RichTextElementsTiny.json"
+  },
+  "ctaUrl": "",
+  "ctaTarget": ""
 }

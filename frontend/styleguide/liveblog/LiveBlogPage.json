@@ -9,20 +9,17 @@
     "_include": "/_group/RichTextElementsLarge.json",
     "_key": 0
   },
-  "pinnedPosts": [
-    {
-      "_include": "LiveBlogPost.json"
-    }
-  ],
-  "currentPosts": [
-    {
-      "_include": "LiveBlogPost.json"
-    }
-  ],
+  "pinnedPosts": {
+    "_template": "LiveBlogPost.hbs"
+  },
+  "currentPosts": {
+    "_template": "LiveBlogPost.hbs"
+  },
   "fragment": false,
-  "postsEndpoint": "/posts",
-  "liveEvent": true,
+  "postsEndpoint": "",
+  "liveEvent": false,
   "whatYouNeedToKnow": {
-    "_include": "/_group/RichTextElementsLarge.json"
+    "_include": "/_group/RichTextElementsLarge.json",
+    "_key": 0
   }
 }

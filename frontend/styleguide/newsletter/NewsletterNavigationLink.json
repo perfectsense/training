@@ -1,0 +1,10 @@
+{
+  "_template": "NewsletterNavigationLink.hbs",
+  "href": "",
+  "target": "_self",
+  "body": {
+    "_include": "/_group/RichTextElementsTiny.json",
+    "_key": 0
+  },
+  "contentId": ""
+}

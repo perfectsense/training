@@ -1,6 +1,5 @@
 {
-  "_template": "HTML5AudioSource.hbs",
-
+  "_template": "/audio/HTML5AudioSource.hbs",
   "src": "",
   "type": ""
 }

@@ -1,34 +1,38 @@
 {
   "_template": "/page/promo/PagePromo.hbs",
   "authorName": {
-    "_include": "/_group/RichTextElementsTiny.json"
+    "_include": "/_group/RichTextElementsTiny.json",
+    "_key": 0
   },
-  "authorUrl": "#",
+  "authorUrl": "",
   "authorImage": {
-    "_include": "/image/Image.json"
+    "_template": "/image/Image.hbs"
   },
   "media": {
-    "_include": "/image/Image.json"
+    "_template": "/image/Image.hbs"
   },
-  "url": "#",
-  "target": "_self",
+  "url": "",
+  "target": "",
   "category": {
-    "_include": "/_group/RichTextElementsTiny.json"
+    "_include": "/_group/RichTextElementsTiny.json",
+    "_key": 0
   },
-  "categoryUrl": "#",
-  "type": "Type",
+  "categoryUrl": "",
+  "type": "",
   "title": {
-    "_include": "/_group/RichTextElementsTiny.json"
+    "_include": "/_group/RichTextElementsTiny.json",
+    "_key": 0
   },
   "description": {
-    "_include": "/_group/RichTextElementsSmall.json"
+    "_include": "/_group/RichTextElementsSmall.json",
+    "_key": 0
   },
   "publishDate": "",
-  "sponsored": true,
-  "sponsorUrl": "#",
+  "sponsored": false,
+  "sponsorUrl": "",
   "sponsorTarget": "",
   "sponsorName": {
     "_include": "/_group/RichTextElementsTiny.json"
   },
-  "_hidden": true
+  "sponsorDisplayText": ""
 }

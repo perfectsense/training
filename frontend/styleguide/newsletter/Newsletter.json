@@ -1,7 +1,6 @@
 {
   "_wrapper": false,
   "_template": "/newsletter/Newsletter.hbs",
-  "_hidden": false,
   "language": "",
   "charset": "",
   "newsletterDataSource": "",

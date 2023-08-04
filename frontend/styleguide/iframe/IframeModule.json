@@ -1,10 +1,10 @@
 {
   "_template": "IframeModule.hbs",
-  "anchorId": "anchorTest",
-  "url": "#",
-  "height": 600,
-  "width": 720,
+  "anchorId": "",
+  "url": "",
+  "height": 100,
+  "width": 100,
   "name": "",
   "sandbox": "",
-  "style": "width:100%"
+  "style": ""
 }

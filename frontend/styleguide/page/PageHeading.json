@@ -6,20 +6,23 @@
   "ctaTarget": "_self",
   "ctaUrl": "#",
   "eyebrow": {
-    "_include": "/_group/RichTextElementsTiny.json"
+    "_include": "/_group/RichTextElementsTiny.json",
+    "_key": 0
   },
   "eyebrowUrl": "",
   "eyebrowTarget": "",
   "pageHeading": {
-    "_include": "/_group/RichTextElementsTiny.json"
+    "_include": "/_group/RichTextElementsTiny.json",
+    "_key": 0
   },
   "pageSubHeading": {
-    "_include": "/_group/RichTextElementsSmall.json"
+    "_include": "/_group/RichTextElementsSmall.json",
+    "_key": 0
   },
   "logo": {
-    "_include": "/image/Image.json"
+    "_template": "/image/Image.hbs"
   },
   "media": {
-    "_include": "/image/Image.json"
+    "_template": "/image/Image.hbs"
   }
 }

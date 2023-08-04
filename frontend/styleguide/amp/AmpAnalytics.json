@@ -1,6 +1,5 @@
 {
   "_template": "AmpAnalytics.amp.hbs",
   "type": "comscore",
-  "json": "JSON TEST",
-  "_hidden": true
+  "json": ""
 }

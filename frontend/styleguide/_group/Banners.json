@@ -1,5 +1,8 @@
 [
   {
     "_template": "/banner/Banner.hbs"
+  },
+  {
+    "_template": "/banner/RichTextBreakingNewsBanner.hbs"
   }
 ]

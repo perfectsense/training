@@ -2,34 +2,27 @@
   "_template": "PreviewPage.hbs",
   "language": "",
   "extraStyles": {
-    "_include": "/_group/ExtraStyles.json"
+    "_include": "/_group/ExtraStyles.json",
+    "_key":  0
   },
-  "title": "Brightspot Express Component Preview",
-  "description": "Brightspot Express is...",
-  "canonicalLink": "https://www.brightspot.com/",
+  "title": "",
+  "description": "",
+  "canonicalLink": "",
   "meta": {
-    "_include": "/_group/Metas.json"
+    "_include": "/_group/Metas.json",
+    "_key": 0
   },
-  "manifestLink": "/manifest.json",
-  "favicons": [
-    {
-      "_include": "/page/Favicon.json",
-      "rel": "apple-touch-icon",
-      "href": "/apple-touch-icon.png"
-    },
-    {
-      "_include": "/page/Favicon.json"
-    },
-    {
-      "_include": "/page/Favicon.json",
-      "href": "/favicon-16x16.png"
-    }
-  ],
+  "manifestLink": "",
+  "favicons": {
+    "_template": "/page/Favicon.hbs"
+  },
   "extraScripts": {
-    "_include": "/_group/ExtraScripts.json"
+    "_include": "/_group/ExtraScripts.json",
+    "_key":  0
   },
   "extraBodyItems": {
-    "_include": "/_group/ExtraBodyItems.json"
+    "_include": "/_group/ExtraBodyItems.json",
+    "_key": 0
   },
   "main": {
     "_delegate": true

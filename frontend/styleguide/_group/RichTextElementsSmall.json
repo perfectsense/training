@@ -2,5 +2,8 @@
   "Enhancement",
   {
     "_template": "/link/LinkEnhancement.hbs"
+  },
+  {
+    "_template": "/rte/TextSubstitution.hbs"
   }
 ]

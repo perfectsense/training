@@ -1,0 +1,6 @@
+{
+  "_template": "/person/list/PersonListEnhancement.hbs",
+  "item": {
+    "_template": "/person/list/PersonList.hbs"
+  }
+}

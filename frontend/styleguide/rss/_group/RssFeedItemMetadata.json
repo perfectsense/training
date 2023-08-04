@@ -1,5 +1,5 @@
 [
   {
-    "_include": "/rss/itunes/ItunesFeedItemMetadata.json"
+    "_template": "/rss/itunes/ItunesFeedItemMetadata.hbs"
   }
 ]

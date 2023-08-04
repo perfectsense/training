@@ -1,0 +1,6 @@
+{
+  "_template": "/product/promo/ProductPromoEnhancement.hbs",
+  "item": {
+    "_template": "/product/promo/ProductPromoModule.hbs"
+  }
+}

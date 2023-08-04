@@ -1,9 +1,8 @@
 {
   "_template": "LinkedInShareButton.hbs",
-  "url": "https://brightspot.com",
-  "title": "New CMS changes world!",
-  "summary": "Summary",
-  "source": "brightspot",
-  "body": "LinkedIn",
-  "_hidden": true
+  "url": "",
+  "title": "",
+  "summary": "",
+  "source": "",
+  "body": ""
 }

@@ -1,42 +1,38 @@
 {
   "_template": "PageList.hbs",
   "title": {
-    "_include": "/_group/RichTextElementsTiny.json"
+    "_include": "/_group/RichTextElementsTiny.json",
+    "_key": 0
   },
   "description": {
     "_include": "/_group/RichTextElementsSmall.json",
-    "_key": 1
+    "_key": 0
   },
   "anchorId": "anchorTest",
   "items": [
     {
-      "_include": "/page/promo/PagePromo.json",
-      "_key": 0
+      "_template": "/page/promo/PagePromo.hbs"
     },
     {
-      "_include": "/iframe/IframeModule.json",
-      "_key": 0
+      "_template": "/iframe/IframeModule.hbs"
     },
     {
-      "_include": "/htmlmodule/HtmlModule.json",
-      "_key": 1
+      "_template": "/htmlmodule/HtmlModule.hbs"
     },
     {
-      "_include": "/adsense/GoogleAdsenseAdModule.json",
-      "_key": 2
+      "_template": "/adsense/GoogleAdsenseAdModule.hbs"
     },
     {
-      "_include": "/dfp/GoogleDfpAdModule.json",
-      "_key": 2
+      "_template": "/dfp/GoogleDfpAdModule.hbs"
     }
   ],
   "ctaButtonText": {
-    "_include": "/_group/RichTextElementsTiny.json"
+    "_include": "/_group/RichTextElementsTiny.json",
+    "_key": 0
   },
-  "ctaUrl": "#",
-  "ctaTarget": "_self",
+  "ctaUrl": "",
+  "ctaTarget": "",
   "pagination": {
-    "_include": "/link/Link.json"
-  },
-  "_hidden": true
+    "_template": "/link/PaginationLink.hbs"
+  }
 }

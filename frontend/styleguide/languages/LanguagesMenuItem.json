@@ -1,9 +1,8 @@
 {
   "_template": "/languages/LanguagesMenuItem.hbs",
-
   "languageName": "",
   "languageCode": "",
   "target": "",
-  "url": "#",
+  "url": "",
   "_styledTemplate": "/languages/LanguagesMenuItem.hbs"
 }

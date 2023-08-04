@@ -51,6 +51,9 @@
     "_template": "/person/list/PersonList.hbs"
   },
   {
+    "_template": "/person/promo/PersonPromoModule.hbs"
+  },
+  {
     "_template": "/podcast/list/PodcastEpisodeList.hbs"
   },
   {
@@ -58,6 +61,12 @@
   },
   {
     "_template": "/podcast/list/PodcastEpisodeList.hbs"
+  },
+  {
+    "_template": "/product/list/ProductList.hbs"
+  },
+  {
+    "_template": "/product/promo/ProductPromoModule.hbs"
   },
   {
     "_template": "/quote/Quote.hbs"
