@@ -1,0 +1,22 @@
+{
+  "styles": {
+    "/container/OneColumnContainer.hbs": {
+      "fields": [
+        "showContainerTitle",
+        "headerTextAlign",
+        "backgroundColor",
+        "inverseColors",
+        "modulePaddingTop",
+        "modulePaddingBottom"
+      ],
+      "templates": [
+        {
+          "displayName": "One Column Container",
+          "example": "/container/OneColumnContainer.json",
+          "height": 768,
+          "width": 1024
+        }
+      ]
+    }
+  }
+}

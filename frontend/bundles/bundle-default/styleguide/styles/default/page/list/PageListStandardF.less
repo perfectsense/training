@@ -8,12 +8,19 @@
 
     &-items {
       margin-top: 20px;
+      display: grid;
+      grid-gap: 20px;
 
       &-item {
         border-top: 2px solid var(--color-list-border);
-        margin-bottom: 20px;
         padding-top: 20px;
       }
+    }
+  }
+
+  &[data-item-display-style="card"] {
+    .PagePromo {
+      padding: 20px;
     }
   }
 
@@ -27,10 +34,79 @@
     }
   }
 
+  @media @mq-sm {
+    &:where(
+      [data-column-count='2'],
+      [data-column-count='3'],
+      [data-column-count='4'],
+      [data-column-count='5'],
+      [data-column-count='6']
+      ) {
+      .PageList {
+        &-items {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+    }
+  }
+
+  @media @mq-md {
+    &:where(
+      [data-column-count='3']
+      ) {
+      .PageList {
+        &-items {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+    }
+
+    &:where(
+      [data-column-count='5'],
+      [data-column-count='6']
+      ) {
+      .PageList {
+        &-items {
+          grid-template-columns: repeat(4, 1fr);
+        }
+      }
+    }
+  }
+
   @media @mq-lg {
     .PageList {
       &-items {
         margin-top: 0;
+      }
+    }
+
+    &:where(
+      [data-column-count='4']
+      ) {
+      .PageList {
+        &-items {
+          grid-template-columns: repeat(4, 1fr);
+        }
+      }
+    }
+
+    &:where(
+      [data-column-count='5']
+      ) {
+      .PageList {
+        &-items {
+          grid-template-columns: repeat(5, 1fr);
+        }
+      }
+    }
+
+    &:where(
+      [data-column-count='6']
+      ) {
+      .PageList {
+        &-items {
+          grid-template-columns: repeat(6, 1fr);
+        }
       }
     }
   }

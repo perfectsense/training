@@ -1,5 +1,4 @@
-/* eslint-disable no-undef */
-
+/* eslint-disable */
 const merge = require('webpack-merge')
 
 const BundleAnalyzerPlugin =

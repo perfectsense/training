@@ -1,8 +1,8 @@
 {
   "_template": "/author/list/AuthorList.hbs",
   "_styledTemplate": "/author/list/AuthorListA.hbs",
-  "listTitleSize": "1",
-  "title": "{{words([5,10])}}",
+  "title": "Author List A",
+  "description": "{{words([15,10])}}",
   "anchorId": "anchorTest",
   "items": [
     {

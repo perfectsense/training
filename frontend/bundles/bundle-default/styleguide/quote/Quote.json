@@ -5,6 +5,5 @@
   "attribution": "{{words([5,15])}}",
   "image": {
       "_include": "/image/Image.json"
-  },
-  "backgroundColor": "#f0f0f0"
+  }
 }

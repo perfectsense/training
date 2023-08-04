@@ -1,19 +1,4 @@
 {
-  "_template": "/quote/QuoteList.hbs",
-  "_styledTemplate": "/quote/QuoteListA.hbs",
-  "title": "Quote List A",
-  "anchorId": "anchorTest",
-  "items": [
-    {
-      "_include": "/quote/Quote.json"
-    },
-    {
-      "_include": "/quote/Quote.json"
-    },
-    {
-      "_include": "/quote/Quote.json"
-    }
-  ],
-  "ctaUrl": "#",
-  "ctaButtonText": "Read More"
+  "_include": "/quote/QuoteList.json",
+  "_styledTemplate": "/quote/QuoteListA.hbs"
 }

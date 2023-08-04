@@ -1,18 +1,22 @@
 {
   "styles": {
     "/faq/FaqModule.hbs": {
+      "fields": [
+        "backgroundColor",
+        "inverseColors",
+        "listHeaderPosition",
+        "headerTextAlign",
+        "modulePaddingTop",
+        "modulePaddingBottom"
+      ],
       "templates": [
         {
           "displayName": "FAQ Module",
           "example": "/faq/FaqModule.json",
           "height": 500,
-          "width": 800,
-          "fields": ["backgroundColor", "inverseColors", "listHeaderPosition"]
+          "width": 800
         }
       ]
-    },
-    "/faq/FaqQuestion.hbs": {
-      "fields": ["expandItem"]
     }
   }
 }

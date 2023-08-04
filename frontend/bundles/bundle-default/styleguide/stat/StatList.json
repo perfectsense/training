@@ -1,0 +1,14 @@
+{
+  "_template": "/stat/StatList.hbs",
+  "title": "Stat List",
+  "description": "{{words([5,8])}}",
+  "ctaUrl": "#",
+  "ctaTarget": "_self",
+  "items": [
+    {
+      "_include": "/stat/StatPromo.json"
+    }
+  ],
+  "countUpAnimation": true,
+  "anchorId": "asdf"
+}

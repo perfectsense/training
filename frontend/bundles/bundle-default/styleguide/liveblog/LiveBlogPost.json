@@ -1,7 +1,7 @@
 {
   "_template": "/liveblog/LiveBlogPost.hbs",
   "authors": {
-    "_include": "/link/Link.json"
+    "_include": "/author/Author.json"
   },
   "postId": "postuuid",
   "headline": "{{words([5,10])}}",

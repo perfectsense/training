@@ -1,16 +1,55 @@
 import { LoadMore } from '../global/LoadMore'
-import { throttle } from '../util/Throttle'
+import { SearchActiveFilters } from './includes/SearchActiveFilters'
+import { SearchFilter } from './SearchFilter'
+import { SearchFilterDropdown } from './SearchFilterDropdown'
+import { SearchFilters } from './SearchFilters'
+import { SearchFiltersMobile } from './SearchFiltersMobile'
+import { SearchSorts } from './includes/SearchSorts'
 
-export class SearchResultsModule extends window.HTMLElement {
+export class SearchResultsModule extends HTMLElement {
+  filterStates = []
+
+  static #state = {
+    READY: 'ready',
+    SEARCHING: 'searching',
+  }
+
   connectedCallback() {
+    this.registerComponents()
     this.cacheElements()
-    this.handleFormSubmit()
     this.handleSearchInput()
-    this.checkInputValue()
+    this.searchForm.addEventListener('submit', this)
+    this.addEventListener('click', this)
+    this.addEventListener(LoadMore.events.loadedContent, this)
+    this.state = SearchResultsModule.#state.READY
+  }
 
-    this.addEventListener(LoadMore.events.loadedContent, () =>
-      this.handleLoadMore(event)
-    )
+  get state() {
+    return this.getAttribute('data-state')
+  }
+
+  set state(state) {
+    this.setAttribute('data-state', state)
+  }
+
+  handleClick(event) {
+    if (event.target.matches('[data-action="clearAllFilters"]')) {
+      this.clearFilters()
+    }
+  }
+
+  handleEvent(event) {
+    switch (event.type) {
+      case 'click':
+        this.handleClick(event)
+        break
+      case 'submit':
+        this.handleFormSubmit(event)
+        break
+      case LoadMore.events.loadedContent:
+        this.handleLoadMore(event)
+        break
+    }
   }
 
   handleLoadMore(event) {
@@ -35,51 +74,47 @@ export class SearchResultsModule extends window.HTMLElement {
     }
   }
 
-  handleFormSubmit() {
-    this.searchForm.addEventListener('submit', (e) => {
-      e.preventDefault()
-      this.searchInput && this.searchInput.blur()
+  handleFormSubmit(event) {
+    event.preventDefault()
+    this.submitSearch()
+  }
 
-      const formUrl = new URLSearchParams(
-        new FormData(this.searchForm)
-      ).toString()
-      const ajaxUrl = window.location.pathname + '?' + formUrl
-      window.history.replaceState({}, document.title, ajaxUrl)
-
-      this.loadingTimeout = setTimeout(() => {
-        this.clearSearchForm()
-      }, 1000)
-
-      this.getNewSearch(ajaxUrl).then((response) => {
-        clearTimeout(this.loadingTimeout)
-
-        this.clearSearchForm()
-        this.renderSearchResults(response)
-
-        document.body.dispatchEvent(
-          new CustomEvent('Search:onSearchUpdate', {
-            detail: {
-              responseMarkup: response,
-            },
-          })
-        )
-      })
+  clearFilters() {
+    this.querySelectorAll(
+      '.SearchFilterInput input[name][type="checkbox"]'
+    ).forEach((input) => {
+      input.checked = false
     })
   }
 
-  /* External API to submit the search, which just triggers this event, which kicks
-     off the Ajax stuffs */
   submitSearch() {
-    let submitEvent
-
-    if (typeof Event === 'function') {
-      submitEvent = new Event('submit', { cancelable: true })
-    } else {
-      submitEvent = document.createEvent('Event')
-      submitEvent.initEvent('submit', true, true)
+    if (this.state === SearchResultsModule.#state.SEARCHING) {
+      return
     }
 
-    this.searchForm.dispatchEvent(submitEvent)
+    this.state = SearchResultsModule.#state.SEARCHING
+
+    // Store filter UI states to allow them to be restored after search is performed
+    this.filterStates = [...this.querySelectorAll('bsp-search-filter')].map(
+      (filter) => filter.state
+    )
+
+    if (this.searchInput && this.searchInput === document.activeElement) {
+      this.searchInput.blur()
+    }
+
+    const formUrl = new URLSearchParams(
+      new FormData(this.searchForm)
+    ).toString()
+
+    const ajaxUrl = window.location.pathname + '?' + formUrl
+
+    window.history.replaceState({}, document.title, ajaxUrl)
+
+    this.getNewSearch(ajaxUrl).then((response) => {
+      this.renderSearchResults(response)
+      this.state = SearchResultsModule.#state.READY
+    })
   }
 
   getNewSearch(apiUrl) {
@@ -97,48 +132,27 @@ export class SearchResultsModule extends window.HTMLElement {
     })
   }
 
-  clearSearchForm() {
-    this.searchResults.innerHTML = ''
-  }
-
-  checkInputValue() {
-    if (!this.searchInput) return
-
-    if (this.searchInput.value.length === 0) {
-      this.searchForm.setAttribute('data-has-value', false)
-    } else {
-      this.searchForm.setAttribute('data-has-value', true)
-    }
-  }
-
   handleSearchInput() {
-    this.searchInput &&
-      this.searchInput.addEventListener(
-        'keyup',
-        throttle(250, () => {
-          this.checkInputValue()
-        })
-      )
-
     this.clearButton &&
       this.clearButton.addEventListener('click', () => {
         this.searchInput.value = ''
         this.searchInput.focus()
-        this.checkInputValue()
       })
   }
 
   renderSearchResults(response) {
     // filter HTML response
-    const filterDiv = document.createElement('div')
-    filterDiv.innerHTML = response
-    const searchResultsFromResponse = filterDiv.querySelector(
+    const parser = new DOMParser()
+    const newDocument = parser.parseFromString(response, 'text/html')
+
+    const searchResultsFromResponse = newDocument.querySelector(
       '.SearchResultsModule-ajax'
     ).innerHTML
 
     if (searchResultsFromResponse) {
       this.searchResults.innerHTML = searchResultsFromResponse
     }
+
     this.dispatchRendered()
   }
 
@@ -159,5 +173,20 @@ export class SearchResultsModule extends window.HTMLElement {
     this.clearButton = this.searchForm.querySelector(
       '.SearchResultsModule-clearInputButton'
     )
+  }
+
+  registerComponents() {
+    this.registerComponent('bsp-search-active-filters', SearchActiveFilters)
+    this.registerComponent('bsp-search-filter', SearchFilter)
+    this.registerComponent('bsp-search-filter-drowpdown', SearchFilterDropdown)
+    this.registerComponent('bsp-search-filters', SearchFilters)
+    this.registerComponent('bsp-search-filters-mobile', SearchFiltersMobile)
+    this.registerComponent('bsp-search-sorts', SearchSorts)
+  }
+
+  registerComponent(name, Constructor) {
+    if (!customElements.get(name)) {
+      customElements.define(name, Constructor)
+    }
   }
 }

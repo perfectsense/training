@@ -1,7 +1,7 @@
 {
   "_template": "/video/VideoModule.hbs",
-  "title": "JW Player Video Module",
+  "title": "",
   "player": {
-    "_include": "/jwplayer/JwVideoPlayer.json"
+    "_template": "/jwplayer/JwVideoPlayer.hbs"
   }
 }

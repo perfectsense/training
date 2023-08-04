@@ -1,0 +1,6 @@
+{
+  "_template": "/person/list/PersonListEnhancement.hbs",
+  "item": {
+    "_include": "PersonList.json"
+  }
+}

@@ -74,3 +74,41 @@ Handlebars.registerHelper('inArray', function (needle, haystack) {
 
   return false
 })
+
+// For Search Results. Count the number of selected filters.
+Handlebars.registerHelper('countSelected', function (context) {
+  let count = 0
+
+  // For Search Results Page and Search Results Module contexts
+  if (context.filters) {
+    const length = context.filters.length
+
+    for (let i = 0; i < length; i++) {
+      count += Handlebars.helpers.countSelected(context.filters[i])
+    }
+
+    return count
+  }
+
+  // For Search Filter contexts
+  if (context.items) {
+    const length = context.items.length
+
+    for (let i = 0; i < length; i++) {
+      if (context.items[i].selected) count++
+    }
+
+    return count
+  }
+
+  // For Search Filters array contexts
+  if (context.length) {
+    const length = context.length
+
+    for (let i = 0; i < length; i++) {
+      count += Handlebars.helpers.countSelected(context[i])
+    }
+  }
+
+  return count
+})

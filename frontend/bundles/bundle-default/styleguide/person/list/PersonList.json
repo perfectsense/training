@@ -1,11 +1,15 @@
 {
   "_template": "/person/list/PersonList.hbs",
-  "title": "Person List A",
+  "title": "{{words([4,8])}}",
+  "description": "{{words([10,12])}}",
   "anchorId": "anchorTest",
   "items": [
     {
       "_include": "/person/promo/PersonPromo.json",
       "_repeat": 10
     }
-  ]
+  ],
+  "ctaButtonText": "{{words([1, 2])}}",
+  "ctaUrl": "#",
+  "ctaTarget": "_self"
 }

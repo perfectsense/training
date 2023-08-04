@@ -1,17 +1,9 @@
 <div class="PagePromoModuleA" data-module {{include "includes/PagePromoAttributes.hbs" this}}{{#if animateOnScroll}}  data-animate="fromBottom" {{/if}}>
     {{include "/link/AnchorLink.hbs" this}}
 
-    {{#if media}}
-        {{#if imageAspectRatio}}
-            {{#set imageSize=imageAspectRatio}}
-                {{include "includes/PagePromoMediaWithIcon.hbs" this}}
-            {{/set}}
-        {{else}}
-            {{#set imageSize="xl-16x9"}}
-                {{include "includes/PagePromoMediaWithIcon.hbs" this}}
-            {{/set}}
-        {{/if}}
-    {{/if}}
+    {{#set imageSize=(fallback imageAspectRatio "xl-16x9")}}
+        {{include "includes/PagePromoMediaWithIcon.hbs" this}}
+    {{/set}}
 
     <div class="PagePromoModuleA-content">
         {{include "includes/PagePromoCategory.hbs" this}}

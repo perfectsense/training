@@ -4,7 +4,10 @@
       "fields": [
         "backgroundColor",
         "backgroundImage",
-        "inverseColors"
+        "inverseColors",
+        "moduleHeaderPosition",
+        "moduleTitleSize",
+        "moduleDescriptionSize"
       ]
     }
   }

@@ -1,32 +1,20 @@
 .RichTextBody {
   &:extend(.RichTextElements all);
 
-  &[data-size='small'] {
-    .description-2;
-  }
-
   h2 {
-    .promo-title-1;
-
-    [data-size='small'] & {
-      .promo-title-2;
-    }
+    .promo-title-2;
   }
 
   h3 {
-    .promo-title-2;
-
-    [data-size='small'] & {
-      .promo-title-3;
-    }
+    .promo-title-3;
   }
 
-  .cms-textAlign-center {
-    text-align: center;
+  h4 {
+    .promo-title-4;
   }
 
-  .cms-textAlign-right {
-    text-align: right;
+  h5 {
+    .promo-title-5;
   }
 
   // just in case we have giant enhancements aligned

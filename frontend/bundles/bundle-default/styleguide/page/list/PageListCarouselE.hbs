@@ -1,16 +1,16 @@
 {{#if items}}
-<bsp-list-auto-rotate class="PageListCarouselE" data-module{{include "includes/PageList-attributes.hbs" this}}
+<bsp-list-auto-rotate class="PageListCarouselE" data-module data-width="alternative"{{include "includes/PageList-attributes.hbs" this}}
     {{~#with (fallback carouselSpeed '5')}} data-carousel-speed="{{this}}"{{/with~}}
     {{~#unless carouselSuppressAutoPlay}} data-carousel-auto-play{{/unless~}}
     {{~#with imagePositionHorizontal}} data-image-position="{{this}}"{{/with~}}>
-    {{include "includes/PageList-header.hbs" this}}
+    {{include "/global/ModuleHeader.hbs" this}}
 
     <div class="PageListCarouselE-items">
         <div class="PageListCarouselE-slides" data-slides>
             {{#each items}}
             <div class="PageListCarouselE-slides-item" data-slide {{~#if @first}} data-active{{/if}}>
-                {{#set imageSize="xl-16x9"}}
-                     {{#eq this._template "/page/promo/PagePromo.hbs"}}
+                {{#set imageSize="lg-16x9"}}
+                    {{#eq this._template "/page/promo/PagePromo.hbs"}}
                         {{include "/link/Link.hbs" this href=url body=media}}
                     {{else}}
                         {{render this}}

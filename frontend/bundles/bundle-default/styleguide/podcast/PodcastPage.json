@@ -13,7 +13,7 @@
   "body": "{{html('<p>Hor bodwo lub onumiskav noflur oghuje niteg wis kawocdo eheodi omlogga loso piiwe zoc. Dabfuwoz muc gis jarej etgi busdalwuj basvaztos Emily Hall taclimoco riwe mes Steve Bailey. Pitaw nu boniz lifbip Billy Brown vinecwah idocovwo Tom Walsh sures Sallie Dennis ri urusotul umce vowo fefehfe. Zurien ej aweraz ubsah re tanisi cadtosu ben fim cainimo Roger Huff nar ocaurha.</p>')}}",
   "aside": [
     {
-      "_include": "/page/list/PageListRightRailA.json"
+      "_include": "/podcast/list/PodcastListC.json"
     }
   ],
   "main": [
@@ -23,7 +23,7 @@
   ],
   "below": [
     {
-      "_include": "/page/list/PageListStandardB.json",
+      "_include": "/page/list/PageListStandardD.json",
       "listColumns234": "4",
       "items": [
         {

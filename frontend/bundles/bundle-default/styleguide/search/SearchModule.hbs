@@ -1,4 +1,4 @@
-<div class="SearchModule" data-module>
+<div class="SearchModule" data-module {{~include '/global/ModuleAttributes.hbs' this}}>
     {{include "/link/AnchorLink.hbs" this}}
     <form class="SearchModule-form" action={{searchAction}}>
         <input type="text" class="SearchModule-formInput" name="q" aria-label="search" placeholder="{{placeholder}}" />

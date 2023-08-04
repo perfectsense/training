@@ -1,25 +1,4 @@
 {
-  "_template": "/page/list/PageList.hbs",
-  "_styledTemplate": "/page/list/PageListRightRailD.hbs",
-  "title": "Page List Right Rail D",
-  "ctaUrl": "#",
-  "description": "{{words([10,15])}}",
-  "ctaTarget": "_self",
-  "items": [
-    {
-      "_include": "/page/promo/PagePromo.json"
-    },
-    {
-      "_include": "/page/promo/PagePromo.json"
-    },
-    {
-      "_include": "/page/promo/PagePromo.json"
-    },
-    {
-      "_include": "/page/promo/PagePromo.json"
-    },
-    {
-      "_include": "/page/promo/PagePromo.json"
-    }
-  ]
+  "_include": "/page/list/PageList.json",
+  "_styledTemplate": "/page/list/PageListRightRailD.hbs"
 }

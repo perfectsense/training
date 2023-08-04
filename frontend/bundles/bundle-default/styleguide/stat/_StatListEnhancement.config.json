@@ -1,0 +1,10 @@
+{
+  "styles": {
+    "/stat/StatListEnhancement.hbs": {
+      "inline": true,
+      "fields": [
+        "enhancementAlignmentNoFullWidth"
+      ]
+    }
+  }
+}

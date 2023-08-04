@@ -8,5 +8,7 @@
   },
   "name": "Person Name",
   "jobTitle": "Person Title Here",
-  "url": "#"
+  "url": "#",
+  "target": "_self",
+  "description": "{{words([15,25])}}"
 }

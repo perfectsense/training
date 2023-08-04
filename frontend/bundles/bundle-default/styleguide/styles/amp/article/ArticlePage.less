@@ -46,8 +46,7 @@
       justify-content: center;
     }
 
-    .Page-headline,
-    .Page-subHeadline {
+    .Page-headline {
       text-align: center;
     }
 
@@ -72,8 +71,8 @@
 
   &[data-lead='overlay'] {
     .Page-breadcrumbs a {
-      --color-link-text: var(--color-primary-text-inverse);
-      --color-link-text-hover: var(--color-primary-text-inverse);
+      --color-link-text: var(--color-text-inverse);
+      --color-link-text-hover: var(--color-text-inverse);
     }
 
     .Page-content {
@@ -82,11 +81,6 @@
 
     .Page-headline {
       margin: 0 auto 20px;
-      max-width: 1440px;
-    }
-
-    .Page-subHeadline {
-      margin: 0 auto;
       max-width: 1440px;
     }
 
@@ -105,7 +99,7 @@
       }
 
       &-content {
-        color: var(--color-primary-text-inverse);
+        color: var(--color-text-inverse);
         display: flex;
         flex-direction: column;
         justify-content: center;

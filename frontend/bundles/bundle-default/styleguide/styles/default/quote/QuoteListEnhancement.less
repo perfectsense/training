@@ -1,0 +1,20 @@
+.QuoteListEnhancement {
+  .ModuleHeader {
+    &-title {
+      &:extend(.list-title-3 all);
+    }
+
+    &-description {
+      &:extend(.description-2 all);
+    }
+  }
+
+  @media @mq-lg {
+    .Enhancement[data-align-left] &,
+    .Enhancement[data-align-right] & {
+      .QuoteListB-items {
+        grid-template-columns: 1fr;
+      }
+    }
+  }
+}

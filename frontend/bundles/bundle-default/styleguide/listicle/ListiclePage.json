@@ -17,14 +17,14 @@
 
   "breadcrumbs": [
     {
-      "_include": "/link/Link.json",
+      "_include": "/page/BreadcrumbLink.json",
       "_repeat": 2
     }
   ],
 
   "tags": [
     {
-      "_include": "/link/Link.json",
+      "_include": "/tag/TagLink.json",
       "_repeat": 2
     }
   ],

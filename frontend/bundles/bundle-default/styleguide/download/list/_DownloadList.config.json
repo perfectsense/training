@@ -5,7 +5,19 @@
         "backgroundColor",
         "inverseColors",
         "listTitleSize",
-        "listDescriptionSize"
+        "listDescriptionSize",
+        "headerTextAlign",
+        "ctaAlignment",
+        "itemDisplayStyle",
+        "itemBackgroundColor",
+        "itemBackgroundImage",
+        "itemTextColor",
+        "itemTitleAlignment",
+        "itemDescriptionAlignment",
+        "itemCtaAlignment",
+        "itemImageAspectRatio",
+        "modulePaddingTop",
+        "modulePaddingBottom"
       ],
       "templates": [
         {

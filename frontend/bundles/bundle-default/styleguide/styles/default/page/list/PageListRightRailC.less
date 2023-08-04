@@ -1,32 +1,38 @@
 .PageListRightRailC {
-  .PageList {
-    &-header {
-      margin-bottom: 30px;
+  .ModuleHeader {
+    margin-bottom: 30px;
 
-      &-title {
-        &:extend(.list-title-2 all);
-        margin-bottom: 10px;
-      }
-
-      &-description {
-        &:extend(.description-2 all);
-        margin-bottom: 10px;
-      }
+    &-title {
+      &:extend(.list-title-2 all);
+      margin-bottom: 10px;
     }
 
+    &-description {
+      &:extend(.description-2 all);
+      margin-bottom: 10px;
+    }
+  }
+
+  .PageList {
     &-items {
       display: grid;
       grid-gap: 20px;
 
       &-item {
         border-bottom: 1px solid var(--color-list-border);
-        color: var(--color-primary-text);
-        --color-link-text: var(--color-primary-text);
-        --color-link-text-hover: var(--color-primary-text);
         padding-bottom: 20px;
 
-        .Link {
-          &:extend(.promo-title-6);
+        .PagePromo {
+          &-description,
+          &-media,
+          &-category,
+          &-byline {
+            display: none;
+          }
+
+          &-title {
+            &:extend(.promo-title-6 all);
+          }
         }
       }
     }

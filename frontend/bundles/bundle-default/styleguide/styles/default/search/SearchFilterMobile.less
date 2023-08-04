@@ -1,0 +1,26 @@
+.SearchFilterMobile {
+  border-top: 1px solid var(--color-border);
+
+  &-content {
+    display: block;
+    margin-bottom: 20px;
+  }
+
+  &-heading {
+    &:extend(.label-3 all);
+    padding: 14px 0;
+  }
+
+  &-items {
+    list-style: none;
+
+    &-item {
+      margin-bottom: 10px;
+      padding-left: 3px;
+
+      &:last-of-type {
+        margin: 0;
+      }
+    }
+  }
+}

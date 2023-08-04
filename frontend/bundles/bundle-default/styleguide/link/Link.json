@@ -1,7 +1,0 @@
-{
-    "_template": "Link.hbs",
-    "href": "#",
-    "target": "_self",
-    "body": "{{words([2,5])}}",
-    "contentId": "a123"
-}

@@ -1,0 +1,133 @@
+.ProductList {
+  .PageList {
+    &-items {
+      display: grid;
+      gap: 20px;
+    }
+  }
+
+  &[data-item-has-background-color],
+  &[data-item-has-border-color] {
+    .ProductPromo {
+      padding: 20px;
+    }
+  }
+
+  &[data-item-has-background-color] {
+    .ProductPromo {
+      background-color: var(--color-item-background);
+    }
+  }
+
+  &[data-item-has-border-color] {
+    .ProductPromo {
+      border: 1px solid var(--color-item-border);
+    }
+  }
+
+  @media @mq-up-to-md {
+    .PageList {
+      &-items {
+        &-item {
+          border-bottom: 1px solid var(--color-list-border);
+          padding-bottom: 20px;
+
+          &:first-of-type {
+            padding-bottom: 30px;
+          }
+        }
+      }
+    }
+
+    .ProductPromo {
+      .PagePromo {
+        &-media {
+          width: 90px;
+          float: right;
+          margin-bottom: 20px;
+          margin-left: 20px;
+
+          img {
+            width: 90px;
+            height: 90px;
+            object-fit: cover;
+          }
+        }
+      }
+    }
+  }
+
+  @media @mq-md {
+    .PageList {
+      &-items {
+        grid-template-columns: repeat(2, 1fr);
+        row-gap: 30px;
+
+        [data-column-count='3']& {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+    }
+  }
+
+  @media @mq-lg {
+    .PageList {
+      &-items {
+        grid-template-columns:repeat(4, 1fr);
+
+        [data-column-count='2']& {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        [data-column-count='3']& {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+    }
+  }
+
+  .Page-aside & {
+    .ModuleHeader {
+      &-title {
+        &:extend(.list-title-2 all);
+      }
+
+      &-description {
+        &:extend(.description-2 all);
+      }
+    }
+
+    .PageList {
+      &-items {
+        grid-template-columns: 1fr;
+        row-gap: 20px;
+
+        &-item {
+          border-bottom: 1px solid var(--color-list-border);
+          padding-bottom: 20px;
+
+          &:first-of-type {
+            padding-bottom: 30px;
+          }
+        }
+      }
+    }
+
+    .ProductPromo {
+      .PagePromo {
+        &-media {
+          width: 90px;
+          float: right;
+          margin-bottom: 20px;
+          margin-left: 20px;
+
+          img {
+            width: 90px;
+            height: 90px;
+            object-fit: cover;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="ArticlePage" "/page/Page-htmlAttributes.hbs" this}}>
+<html class="ArticlePage" {{include "/page/Page-htmlAttributes.hbs" this}} {{#unless aside}}data-no-aside{{/unless}}>
 {{!-- This page still has ArticlePage as the class name, as it is identical to the Article Page, so just
       used all the same HTML and CSS vs extending. There is a bsp-gallery-page wrapper around the entire
       page if you need to write custom CSS against things --}}
@@ -8,6 +8,7 @@
 <body class="Page-body">
     {{include "/page/Page-header.hbs" this}}
     {{include "/page/Page-above.hbs" this}}
+    {{include "/page/Page-sponsoredBanner.hbs" this}}
 
     <bsp-gallery-page class="Page-content" data-gallery-style="{{#with galleryPageStyle}}{{this}}{{else}}carousel{{/with}}">
         <div class="ArticlePage-lede">
@@ -17,10 +18,11 @@
                 {{include "/page/Page-subHeadline.hbs" this}}
                 {{include "/page/Page-lead.hbs" this}}
                 {{include "/page/Page-byline.hbs" this}}
+                {{include "/page/Page-sponsoredBy.hbs" this}}
                 {{include "/page/Page-actions.hbs" this}}
             </div>
         </div>
-        <div class="Page-twoColumn">
+        {{#if aside}}<div class="Page-twoColumn">{{else}}<div class="Page-oneColumn" data-modulewell>{{/if}}
             <main class="Page-main">
                 {{#with galleryBody}}
                     <div class="Page-articleBody RichTextBody">

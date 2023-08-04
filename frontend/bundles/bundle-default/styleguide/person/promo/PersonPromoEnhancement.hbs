@@ -1,0 +1,45 @@
+{{#each item}}
+    {{#if (and (not ../_styledTemplate) this._styledTemplate)}}
+        {{this}}
+    {{else}}
+        <div class="Enhancement"
+            {{~#with ../enhancementAlignmentNoFullWidth}} data-{{this}}{{/with~}}
+            >
+            <div class="PersonPromoEnhancement"
+                {{~#with ../enhancementAlignmentNoFullWidth}} data-{{this}}{{/with~}}
+                >
+                {{include "/link/AnchorLink.hbs" this}}
+                {{#set imageSize="small-square"}}
+                    <div class="PagePromo-media">
+                        {{#if media}}
+                            {{~#if url~}}
+                                <a class="Link" {{#with name}}aria-label="{{this}}"{{/with}} href="{{url}}">{{media}}</a>
+                            {{~else~}}
+                                <span class="Link">{{media}}</span>
+                            {{~/if~}}
+                        {{/if}}
+                    </div>
+                {{/set}}
+
+                <div class="PersonPromoEnhancement-contentTop">
+                    {{include "/page/promo/includes/PagePromoTitle.hbs" this title=name}}
+
+                    {{#if jobTitle}}
+                        <div class="PagePromo-label">
+                            {{include "/link/Link.hbs" href=url body=jobTitle}}
+                        </div>
+                    {{/if}}
+                </div>
+                <div class="PersonPromoEnhancement-contentBottom">
+                    {{#with description}}
+                        <div class="PagePromo-description">
+                            {{this}}
+                        </div>
+                    {{/with}}
+
+                    {{include "/page/promo/includes/PagePromoCtaLink.hbs" this}}
+                </div>
+            </div>
+        </div>
+    {{/if}}
+{{/each}}

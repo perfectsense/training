@@ -22,7 +22,9 @@
                     {{#eq ../listColumns234 "2"}}
                         {{#eq this._template "/page/promo/PagePromo.hbs"}}
                             {{#set imageSize="large-16x9"}}
-                                {{include "/page/promo/PagePromo.hbs" this mobileAltLayout="true" imagePositionVertical="top" description=null}}
+                                {{#set sizes="(max-width: 1024px) 100vw, 1024px"}}
+                                    {{include "/page/promo/PagePromo.hbs" this mobileAltLayout="true" imagePositionVertical="top" description=null}}
+                                {{/set}}
                             {{/set}}
                         {{else}}
                             {{render this}}

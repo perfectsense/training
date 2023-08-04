@@ -17,14 +17,14 @@
 
   "breadcrumbs": [
     {
-      "_include": "/link/Link.json",
+      "_include": "/page/BreadcrumbLink.json",
       "_repeat": 2
     }
   ],
 
   "tags": [
     {
-      "_include": "/link/Link.json",
+      "_include": "/tag/TagLink.json",
       "_repeat": 2
     }
   ],
@@ -33,95 +33,92 @@
     "_include": "/figure/Figure.json"
   },
 
-  "articleBody": {
-    "_template": "/article/RichTextArticleBody.hbs",
-    "body": [
-      "{{paragraphs([2,3])}}",
-      {
-        "_template": "/image/ImageEnhancement.hbs",
-        "enhancementAlignmentImage": "align-left",
-        "item": {
-          "_include": "/figure/Figure.json"
-        }
-      },
-      "{{paragraphs([2,3])}}",
-      {
-        "_template": "/image/ImageEnhancement.hbs",
-        "enhancementAlignmentImage": "align-right",
-        "item": {
-          "_include": "/figure/Figure.json"
-        }
-      },
-      "{{paragraphs([2,3])}}",
-      {
-        "_template": "/image/ImageEnhancement.hbs",
-        "enhancementAlignmentImage": "align-fullWidth",
-        "item": {
-          "_include": "/figure/Figure.json"
-        }
-      },
-      "{{paragraphs([2,3])}}",
-      {
-        "_template": "/image/ImageEnhancement.hbs",
-        "enhancementAlignmentImage": "align-portrait-right",
-        "item": {
-          "_include": "/figure/Figure.json"
-        }
-      },
-      "{{paragraphs([2,3])}}",
-      {
-        "_template": "/image/ImageEnhancement.hbs",
-        "enhancementAlignmentImage": "align-portrait-left",
-        "item": {
-          "_include": "/figure/Figure.json"
-        }
-      },
-      "{{paragraphs([2,3])}}",
-      {
-        "_template": "/carousel/CarouselEnhancement.hbs",
-        "item": {
-          "_include": "/carousel/Carousel.json"
-        }
-      },
-      "{{paragraphs([2,3])}}",
-      {
-        "_include": "/pullquote/PullQuote.json",
-        "enhancementAlignment": "align-left"
-      },
-      "{{paragraphs([2,3])}}",
-      {
-        "_template": "/image/ImageEnhancement.hbs",
-        "item": {
-          "_include": "/figure/Figure.json"
-        }
-      },
-      "{{paragraphs([2,3])}}",
-      {
-        "_include": "/youtube/YouTubeVideoEnhancement.json"
-      },
-      "{{paragraphs([2,3])}}",
-      {
-        "_template": "/video/VideoEnhancement.hbs",
-        "player": [
-            {
-            "_template": "/video/HTML5VideoPlayer.hbs",
-            "playerId": "fbb951909b1b446688ae7d58bf535ada6",
-            "sources": [
-                {
-                "_template": "/video/HTML5VideoPlayerSource.hbs",
-                "src": "https://brightspot-brightspot.s3.amazonaws.com/bsp/42/1d/060762bc408ebec5932f9e66407b/pexels-videos-1851190.mp4",
-                "type": "video/mp4"
-                }
-            ],
-            "videoId": "s3:42/1d/060762bc408ebec5932f9e66407b/pexels-videos-1851190.mp4",
-            "videoTitle": "{{words([10,20])}}"
-            }
-        ],
-        "title": "{{words(5)}}"
-      },
-      "{{paragraphs([2,3])}}"
-    ]
-  },
+  "articleBody": [
+    "{{paragraphs([2,3])}}",
+    {
+      "_template": "/image/ImageEnhancement.hbs",
+      "enhancementAlignmentImage": "align-left",
+      "item": {
+        "_include": "/figure/Figure.json"
+      }
+    },
+    "{{paragraphs([2,3])}}",
+    {
+      "_template": "/image/ImageEnhancement.hbs",
+      "enhancementAlignmentImage": "align-right",
+      "item": {
+        "_include": "/figure/Figure.json"
+      }
+    },
+    "{{paragraphs([2,3])}}",
+    {
+      "_template": "/image/ImageEnhancement.hbs",
+      "enhancementAlignmentImage": "align-fullWidth",
+      "item": {
+        "_include": "/figure/Figure.json"
+      }
+    },
+    "{{paragraphs([2,3])}}",
+    {
+      "_template": "/image/ImageEnhancement.hbs",
+      "enhancementAlignmentImage": "align-portrait-right",
+      "item": {
+        "_include": "/figure/Figure.json"
+      }
+    },
+    "{{paragraphs([2,3])}}",
+    {
+      "_template": "/image/ImageEnhancement.hbs",
+      "enhancementAlignmentImage": "align-portrait-left",
+      "item": {
+        "_include": "/figure/Figure.json"
+      }
+    },
+    "{{paragraphs([2,3])}}",
+    {
+      "_template": "/carousel/CarouselEnhancement.hbs",
+      "item": {
+        "_include": "/carousel/Carousel.json"
+      }
+    },
+    "{{paragraphs([2,3])}}",
+    {
+      "_include": "/pullquote/PullQuote.json",
+      "enhancementAlignment": "align-left"
+    },
+    "{{paragraphs([2,3])}}",
+    {
+      "_template": "/image/ImageEnhancement.hbs",
+      "item": {
+        "_include": "/figure/Figure.json"
+      }
+    },
+    "{{paragraphs([2,3])}}",
+    {
+      "_include": "/youtube/YouTubeVideoEnhancement.json"
+    },
+    "{{paragraphs([2,3])}}",
+    {
+      "_template": "/video/VideoEnhancement.hbs",
+      "player": [
+          {
+          "_template": "/video/HTML5VideoPlayer.hbs",
+          "playerId": "fbb951909b1b446688ae7d58bf535ada6",
+          "sources": [
+              {
+              "_template": "/video/HTML5VideoPlayerSource.hbs",
+              "src": "https://brightspot-brightspot.s3.amazonaws.com/bsp/42/1d/060762bc408ebec5932f9e66407b/pexels-videos-1851190.mp4",
+              "type": "video/mp4"
+              }
+          ],
+          "videoId": "s3:42/1d/060762bc408ebec5932f9e66407b/pexels-videos-1851190.mp4",
+          "videoTitle": "{{words([10,20])}}"
+          }
+      ],
+      "title": "{{words(5)}}"
+    },
+    "{{paragraphs([2,3])}}"
+  ],
 
   "aside": [
     {

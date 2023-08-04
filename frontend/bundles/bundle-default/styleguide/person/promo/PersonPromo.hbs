@@ -12,12 +12,21 @@
     {{/set}}
 
     <div class="PersonPromo-content">
-        {{include "/page/promo/includes/PagePromoTitle.hbs" this title=name}}
+        <div class="PersonPromo-contentTop">
+            {{include "/page/promo/includes/PagePromoTitle.hbs" this title=name}}
 
-        {{#if jobTitle}}
-            <div class="PagePromo-label">
-                {{include "/link/Link.hbs" href=url body=jobTitle}}
-            </div>
-        {{/if}}
+            {{#if jobTitle}}
+                <div class="PagePromo-label">
+                    {{include "/link/Link.hbs" href=url body=jobTitle}}
+                </div>
+            {{/if}}
+        </div>
+        <div class="PersonPromo-contentBottom">
+            {{#with description}}
+                <div class="PagePromo-description">
+                    {{this}}
+                </div>
+            {{/with}}
+        </div>
     </div>
 </div>

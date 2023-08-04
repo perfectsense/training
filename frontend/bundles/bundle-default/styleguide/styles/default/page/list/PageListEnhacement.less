@@ -1,0 +1,146 @@
+.PageListEnhacement {
+  .ModuleHeader {
+    margin-bottom: 30px;
+
+    &-title {
+      &:extend(.list-title-3 all);
+      margin-bottom: 10px;
+      color: var(--color-primary-text);
+    }
+  }
+
+  .PageList {
+    &-items {
+      &-item {
+        &:not(:last-child) {
+          &:after {
+            content: '';
+            display: block;
+            margin: 20px 0;
+            border-bottom: 1px solid var(--color-border);
+
+            [data-inverse-colors] & {
+              border-bottom-color: var(--color-text-inverse);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .PagePromo {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+
+    &-title {
+      &:extend(.promo-title-6 all);
+    }
+
+    &-content {
+      flex-grow: 1;
+    }
+
+    &-media {
+      flex-shrink: 0;
+      margin-bottom: 0;
+
+      img {
+        width: 90px;
+        height: 90px;
+        object-fit: cover;
+      }
+
+      .Link {
+        &-icon {
+          bottom: 0.5em;
+          left: 0.5em;
+          width: 1em;
+          height: 1em;
+        }
+      }
+    }
+  }
+
+  &[data-image-position="right"] .PagePromo {
+    &-media {
+      order: 1;
+    }
+  }
+
+  @media @mq-md {
+    &[data-desktop-layout="grid"]:not([data-align-left], [data-align-right]) {
+      .PagePromo {
+        flex-direction: column;
+
+        &-media {
+          img {
+            width: auto;
+            height: auto;
+          }
+        }
+      }
+
+      .PageList {
+        &-items {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          grid-gap: 20px;
+          grid-row-gap: 40px;
+
+          &-item {
+            &:after {
+              content: none;
+            }
+          }
+        }
+      }
+    }
+
+    &:not([data-align-left], [data-align-right]) {
+      .PagePromo {
+        &-media {
+          img {
+            width: 160px;
+          }
+        }
+
+        &-title {
+          &:extend(.promo-title-5 all);
+        }
+
+        &-category {
+          margin-bottom: 10px;
+        }
+      }
+    }
+
+    &:not([data-desktop-layout="grid"]):not([data-align-left], [data-align-right]) {
+      .PagePromo {
+        &-media {
+          img {
+            width: 160px;
+          }
+        }
+      }
+    }
+
+    &[data-align-left] {
+      float: left;
+      margin-bottom: 10px;
+      margin-right: 40px;
+      margin-top: 10px;
+      max-width: 360px;
+      width: 50%;
+    }
+
+    &[data-align-right] {
+      float: right;
+      margin-bottom: 10px;
+      margin-left: 40px;
+      margin-top: 10px;
+      max-width: 360px;
+      width: 50%;
+    }
+  }
+}

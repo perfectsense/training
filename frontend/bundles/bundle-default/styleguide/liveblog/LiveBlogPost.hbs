@@ -27,7 +27,7 @@
         <div class="LiveBlogPost-info">
             {{#with authors}}
                 <div class="LiveBlogPost-byline">
-                {{~format 'authorBy'}}&#32;{{#each this}}{{this}}{{#unless @last}},&#32;{{/unless}}{{/each~}}
+                {{~format 'authorBy'}}&#32;{{#each this}}{{include "/link/Link.hbs" href=url body=name}}{{#unless @last}},&#32;{{/unless}}{{/each~}}
                 </div>
             {{/with}}
 

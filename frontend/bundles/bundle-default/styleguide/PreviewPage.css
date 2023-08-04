@@ -7,8 +7,8 @@
   padding: 40px;
 }
 
-.PreviewPage .Page-main>.Form {
-  max-width: 800px;
-  margin: auto;
-  padding: 60px;
+.PagePromoEnhancementA,
+.PagePromoEnhancementB,
+.PagePromoEnhancementC {
+  padding: 0 40px;
 }

@@ -1,6 +1,6 @@
 {{#if items}}
 <div class="PageListRightRailB" data-module {{include "includes/PageList-attributes.hbs" this}}>
-    {{include "includes/PageList-header.hbs" this}}
+    {{include "/global/ModuleHeader.hbs" this}}
 
     {{#with items}}
         {{#if ../showListNumbers}}<ol{{else}}<ul{{/if}} class="PageList-items" data-with-borders{{#if ../showListNumbers}} data-with-numbers{{/if}}>

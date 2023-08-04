@@ -1,4 +1,4 @@
-/* eslint-disable no-undef */
+/* globals __dirname */
 
 const CopyPlugin = require('copy-webpack-plugin')
 const ESLintPlugin = require('eslint-webpack-plugin')

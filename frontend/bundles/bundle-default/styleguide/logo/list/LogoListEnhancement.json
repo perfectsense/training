@@ -1,0 +1,6 @@
+{
+  "_template": "/logo/list/LogoListEnhancement.hbs",
+  "item": {
+    "_include": "LogoList.json"
+  }
+}

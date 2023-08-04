@@ -1,0 +1,22 @@
+{
+  "styles": {
+    "/container/FourColumnContainer.hbs": {
+      "fields": [
+        "showContainerTitle",
+        "headerTextAlign",
+        "backgroundColor",
+        "inverseColors",
+        "modulePaddingTop",
+        "modulePaddingBottom"
+      ],
+      "templates": [
+        {
+          "displayName": "Four Column Container",
+          "example": "/container/FourColumnContainer.json",
+          "height": 768,
+          "width": 1024
+        }
+      ]
+    }
+  }
+}

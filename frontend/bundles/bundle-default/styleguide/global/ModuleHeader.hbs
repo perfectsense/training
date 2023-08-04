@@ -1,0 +1,20 @@
+{{!-- if list header position is side, we want the anchor inside the header not above it --}}
+{{#ne (fallback moduleHeaderPosition listHeaderPosition) 'side'}}
+    {{include "/link/AnchorLink.hbs" this}}
+{{/ne}}
+{{#or title description}}
+    <div class="ModuleHeader">
+        {{#eq (fallback moduleHeaderPosition listHeaderPosition) 'side'}}
+            {{include "/link/AnchorLink.hbs" this}}
+        {{/eq}}
+        {{#if title}}
+            <div class="ModuleHeader-title">{{title}}</div>
+        {{/if}}
+        {{#if description}}
+            <div class="ModuleHeader-description">{{description}}</div>
+        {{/if}}
+        {{#eq (fallback moduleHeaderPosition listHeaderPosition) 'side'}}
+            {{include "/page/list/includes/PageList-cta.hbs" this}}
+        {{/eq}}
+    </div>
+{{/or}}

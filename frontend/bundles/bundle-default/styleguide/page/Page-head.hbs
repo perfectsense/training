@@ -3,6 +3,8 @@
 
     {{~#with meta}}{{this}}{{/with~}}
 
+    {{~#with languageVariantLinks}}{{this}}{{/with~}}
+
     <style type="text/css">{{include "/global/Colors.hbs" this}}</style>
     <style type="text/css">{{include "/global/LinkButton.hbs" this}}</style>
     <style type="text/css">{{include "/global/Typography.hbs" this}}</style>
@@ -22,6 +24,7 @@
         <link data-cssvarsponyfill="true" class="Webpack-css" rel="stylesheet" href="{{cdn '/styles/default/All.min.css'}}">
     {{/if}}
 
+    {{~#with extraLinks}}{{this}}{{/with~}}
     {{~#with extraStyles}}{{this}}{{/with~}}
 
     <meta name="viewport" content="{{#with viewport}}{{this}}{{else}}width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=5{{/with}}">
@@ -80,9 +83,11 @@
 
     {{~#with extraScripts}}{{this}}{{/with~}}
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
     <script>
         var link = document.createElement('link');
-        link.setAttribute('href', '//fonts.googleapis.com/css?family={{#with font1}}{{this}}{{else}}Roboto{{/with}}:300,400,700|{{#with font2}}{{this}}{{else}}Merriweather{{/with}}:300,400,700');
+        link.setAttribute('href', '//fonts.googleapis.com/css?family={{#with font1}}{{this}}{{else}}Roboto{{/with}}:300,400,700|{{#with font2}}{{this}}{{else}}Merriweather{{/with}}:300,400,700&display=swap');
         var relList = link.relList;
 
         if (relList && relList.supports('preload')) {
@@ -98,4 +103,5 @@
     </script>
 
     {{#with entitlements}}{{#set head="true"}}{{this}}{{/set}}{{/with}}
+    {{#with tagManagerHead}}{{this}}{{/with}}
 </head>

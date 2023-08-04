@@ -12,13 +12,15 @@
             {{/set}}
         {{else}}
             {{#set imageSize="large-16x9"}}
-                <div class="PagePromo-media">
-                    {{~#if url~}}
-                        <a class="Link" {{#with title}}aria-label="{{this}}"{{/with}} href="{{url}}" {{#with target}} target="{{this}}" {{/with}}>{{media}}{{include "/page/promo/includes/PagePromoContentIcons.hbs" this}}</a>
-                        {{~else~}}
-                        <span class="Link">{{media}}{{include "/page/promo/includes/PagePromoContentIcons.hbs" this}}</span>
-                    {{~/if~}}
-                </div>
+                {{#set sizes="(max-width: 1024px) 100vw, 1024px"}}
+                    <div class="PagePromo-media">
+                        {{~#if url~}}
+                            <a class="Link" {{#with title}}aria-label="{{this}}"{{/with}} href="{{url}}" {{#with target}} target="{{this}}" {{/with}}>{{media}}{{include "/page/promo/includes/PagePromoContentIcons.hbs" this}}</a>
+                            {{~else~}}
+                            <span class="Link">{{media}}{{include "/page/promo/includes/PagePromoContentIcons.hbs" this}}</span>
+                        {{~/if~}}
+                    </div>
+                {{/set}}
             {{/set}}
         {{/if}}
     {{/if}}

@@ -1,0 +1,32 @@
+{
+  "styles": {
+    "/podcast/promo/PodcastPromo.hbs": {
+      "templates": [
+        {
+          "displayName": "Podcast Promo A",
+          "example": "/podcast/promo/PodcastPromoA.json",
+          "height": 800,
+          "width": 1024
+        },
+        {
+          "displayName": "Podcast Promo B",
+          "example": "/podcast/promo/PodcastPromoB.json",
+          "height": 800,
+          "width": 1024
+        },
+        {
+          "displayName": "Podcast Promo C",
+          "example": "/podcast/promo/PodcastPromoC.json",
+          "height": 800,
+          "width": 1024
+        },
+        {
+          "displayName": "Podcast Promo D",
+          "example": "/podcast/promo/PodcastPromoD.json",
+          "height": 800,
+          "width": 1024
+        }
+      ]
+    }
+  }
+}

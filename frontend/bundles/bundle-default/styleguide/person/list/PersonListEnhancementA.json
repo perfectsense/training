@@ -1,0 +1,4 @@
+{
+  "_include": "/person/list/PersonListEnhancement.json",
+  "_styledTemplate": "/person/list/PersonListEnhancementA.hbs"
+}

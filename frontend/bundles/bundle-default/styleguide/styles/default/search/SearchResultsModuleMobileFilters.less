@@ -1,0 +1,83 @@
+.SearchResultsModuleMobileFilters {
+  display: contents;
+
+  dialog {
+    background-color: var(--color-site-bg);
+    border: 0;
+    color: var(--color-primary-text);
+    height: 100%;
+    position: fixed;
+    width: 100%;
+    margin: 0;
+    max-width: 100%;
+    max-height: 100%;
+    padding: 0;
+    overflow: hidden;
+    flex-direction: column;
+
+    &[open] {
+      display: flex;
+    }
+  }
+
+  &-count {
+    &:extend(.search-results-message-1 all);
+  }
+
+  &-header {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    padding: 20px;
+  }
+
+  &-dismissButton {
+    .NotButton;
+    margin-left: auto;
+    display: grid;
+
+    // Increase the target area of the button but
+    // add a negative margin-right to maintain
+    // visual alignment
+    padding: 10px;
+    margin-right: -10px;
+
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  &-filters {
+    min-height: 0;
+    padding: 0 20px 20px;
+    overflow: auto;
+  }
+
+  &-footer {
+    padding: 20px;
+    background-color: var(--color-callout-bg);
+    display: flex;
+  }
+
+  &-clearFilters {
+    &:extend(a all);
+    .description-3;
+    text-decoration: underline;
+    cursor: pointer;
+    background: none;
+    border: 0;
+    padding: 0;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  &-applyFilters {
+    margin-left: auto;
+    &:extend(.Button all);
+    &:extend(.Button[data-size="small"] all);
+    &:extend(.Button[data-theme="secondary"] all);
+  }
+}

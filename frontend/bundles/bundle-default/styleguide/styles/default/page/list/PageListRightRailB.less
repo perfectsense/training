@@ -1,19 +1,19 @@
 .PageListRightRailB {
-  .PageList {
-    &-header {
-      margin-bottom: 30px;
+  .ModuleHeader {
+    margin-bottom: 30px;
 
-      &-title {
-        &:extend(.list-title-2 all);
-        margin-bottom: 10px;
-      }
-
-      &-description {
-        &:extend(.description-2 all);
-        margin-bottom: 10px;
-      }
+    &-title {
+      &:extend(.list-title-2 all);
+      margin-bottom: 10px;
     }
 
+    &-description {
+      &:extend(.description-2 all);
+      margin-bottom: 10px;
+    }
+  }
+
+  .PageList {
     &-items {
       counter-reset: number;
       display: grid;
@@ -34,6 +34,7 @@
           grid-template-columns: 20px auto;
 
           &:before {
+            color: var(--color-primary-text);
             counter-increment: number;
             content: counter(number)'\a0';
             font-weight: 300;
@@ -52,6 +53,26 @@
     }
   }
 
+  .PagePromo {
+    &-media {
+      align-self: flex-start;
+
+      .Link {
+        &-icon {
+          width: 20px;
+          height: 20px;
+          left: 5px;
+          bottom: 5px;
+        }
+      }
+    }
+
+    &-content {
+      flex-grow: 1;
+    }
+  }
+
+  .PagePromo[data-image-align-horizontal] .PagePromo-media,
   .PagePromo[data-align-right] .PagePromo-media {
     width: 90px;
   }

@@ -39,5 +39,8 @@
       }
     }
   ],
+  "ctaButtonText": "{{words([1, 2])}}",
+  "ctaTarget": "_blank",
+  "ctaUrl": "#",
   "_hidden": true
 }

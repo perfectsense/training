@@ -3,7 +3,11 @@
     "/page/list/PageList.hbs": {
       "fields": [
         "listTitleSize",
-        "listDescriptionSize"
+        "listDescriptionSize",
+        "backgroundColor",
+        "inverseColors",
+        "modulePaddingTop",
+        "modulePaddingBottom"
       ],
       "templates": [
         {
@@ -12,8 +16,11 @@
           "height": 800,
           "width": 1024,
           "fields": [
-            "backgroundColor",
-            "inverseColors"
+            "itemImageAspectRatio",
+            "itemTitleAlignment",
+            "itemBylineAlignment",
+            "itemCategoryAlignment",
+            "itemDescriptionAlignment"
           ]
         },
         {
@@ -22,11 +29,20 @@
           "height": 800,
           "width": 1024,
           "fields": [
+            "itemDisplayStyle",
+            "itemBackgroundColor",
+            "itemBackgroundImage",
+            "itemTextColor",
+            "itemAccentColor",
+            "itemImageAlignment",
+            "itemImageAspectRatio",
+            "itemTitleAlignment",
+            "itemBylineAlignment",
+            "itemCategoryAlignment",
+            "itemDescriptionAlignment",
             "hideImages",
             "listColumns23456",
             "suppressPagination",
-            "backgroundColor",
-            "inverseColors",
             "animateOnScroll",
             "listHeaderPosition"
           ]
@@ -37,8 +53,11 @@
           "height": 800,
           "width": 1024,
           "fields": [
-            "backgroundColor",
-            "inverseColors"
+            "itemImageAspectRatio",
+            "itemTitleAlignment",
+            "itemBylineAlignment",
+            "itemCategoryAlignment",
+            "itemDescriptionAlignment"
           ]
         },
         {
@@ -47,9 +66,17 @@
           "height": 800,
           "width": 1024,
           "fields": [
-            "suppressPagination",
-            "backgroundColor",
-            "inverseColors"
+            "itemBackgroundColor",
+            "itemBackgroundImage",
+            "itemDisplayStyle",
+            "itemTextColor",
+            "itemImageAlignment",
+            "itemImageAspectRatio",
+            "itemTitleAlignment",
+            "itemBylineAlignment",
+            "itemCategoryAlignment",
+            "itemDescriptionAlignment",
+            "suppressPagination"
           ]
         },
         {
@@ -60,8 +87,10 @@
           "fields": [
             "hideDescriptions",
             "subTitle",
-            "backgroundColor",
-            "inverseColors"
+            "itemTitleAlignment",
+            "itemBylineAlignment",
+            "itemCategoryAlignment",
+            "itemDescriptionAlignment"
           ]
         },
         {
@@ -70,11 +99,18 @@
           "height": 800,
           "width": 1024,
           "fields": [
+            "itemBackgroundColor",
+            "itemBackgroundImage",
+            "itemDisplayStyle",
+            "itemTextColor",
             "hideDescriptions",
             "listHeaderPosition",
+            "listColumns23456",
             "promoButtonText",
-            "backgroundColor",
-            "inverseColors"
+            "itemTitleAlignment",
+            "itemBylineAlignment",
+            "itemCategoryAlignment",
+            "itemDescriptionAlignment"
           ]
         },
         {
@@ -83,8 +119,16 @@
           "height": 800,
           "width": 1024,
           "fields": [
-            "backgroundColor",
-            "inverseColors"
+            "itemBackgroundColor",
+            "itemBackgroundImage",
+            "itemDisplayStyle",
+            "itemTextColor",
+            "itemImageAlignment",
+            "itemImageAspectRatio",
+            "itemTitleAlignment",
+            "itemBylineAlignment",
+            "itemCategoryAlignment",
+            "itemDescriptionAlignment"
           ]
         },
         {
@@ -93,8 +137,15 @@
           "height": 800,
           "width": 1024,
           "fields": [
-            "backgroundColor",
-            "inverseColors"
+            "itemImageAspectRatio",
+            "itemDisplayStyle",
+            "itemTextColor",
+            "itemBackgroundColor",
+            "itemBackgroundImage",
+            "itemTitleAlignment",
+            "itemBylineAlignment",
+            "itemCategoryAlignment",
+            "itemDescriptionAlignment"
           ]
         },
         {
@@ -105,9 +156,12 @@
           "fields": [
             "listColumns234",
             "suppressPagination",
-            "backgroundColor",
-            "inverseColors",
-            "animateOnScroll"
+            "animateOnScroll",
+            "itemImageAspectRatio",
+            "itemTitleAlignment",
+            "itemBylineAlignment",
+            "itemCategoryAlignment",
+            "itemDescriptionAlignment"
           ]
         },
         {
@@ -116,8 +170,10 @@
           "height": 800,
           "width": 1024,
           "fields": [
-            "backgroundColor",
-            "inverseColors"
+            "itemTitleAlignment",
+            "itemBylineAlignment",
+            "itemCategoryAlignment",
+            "itemDescriptionAlignment"
           ]
         },
         {
@@ -126,8 +182,11 @@
           "height": 800,
           "width": 1024,
           "fields": [
-            "backgroundColor",
-            "inverseColors"
+            "itemImageAspectRatio",
+            "itemTitleAlignment",
+            "itemBylineAlignment",
+            "itemCategoryAlignment",
+            "itemDescriptionAlignment"
           ]
         },
         {
@@ -137,37 +196,103 @@
           "width": 1024,
           "fields": [
             "listColumns234",
-            "backgroundColor",
-            "inverseColors",
-            "imagePositionHorizontal"
+            "imagePositionHorizontal",
+            "itemImageAspectRatio",
+            "itemTitleAlignment",
+            "itemBylineAlignment",
+            "itemCategoryAlignment",
+            "itemDescriptionAlignment"
           ]
         },
-
-
-
+        {
+          "displayName": "Standard - List M",
+          "example": "/page/list/PageListStandardM.json",
+          "height": 800,
+          "width": 1024,
+          "fields": [
+            "headerTextAlign",
+            "itemDisplayStyle",
+            "itemTextAlignment",
+            "itemImageAlignment",
+            "itemImageAspectRatio",
+            "itemTitleAlignment",
+            "itemBylineAlignment",
+            "itemCategoryAlignment",
+            "itemDescriptionAlignment",
+            "itemTextColor",
+            "itemBackgroundColor",
+            "itemBackgroundImage",
+            "listColumns23456",
+            "suppressPagination",
+            "animateOnScroll",
+            "listHeaderPosition"
+          ]
+        },
+        {
+          "displayName": "Standard - List N",
+          "example": "/page/list/PageListStandardN.json",
+          "height": 800,
+          "width": 1024,
+          "fields": [
+            "headerTextAlign",
+            "itemImageAspectRatio",
+            "itemDisplayStyle",
+            "itemTextAlignment",
+            "itemTitleAlignment",
+            "itemBylineAlignment",
+            "itemCategoryAlignment",
+            "itemDescriptionAlignment",
+            "itemTextColor",
+            "itemBackgroundColor",
+            "itemBackgroundImage",
+            "listColumns23456",
+            "suppressPagination",
+            "animateOnScroll",
+            "listHeaderPosition"
+          ]
+        },
+        {
+          "displayName": "Standard - List O",
+          "example": "/page/list/PageListStandardO.json",
+          "height": 800,
+          "width": 1024,
+          "fields": [
+            "headerTextAlign",
+            "itemTextAlignment",
+            "itemTitleAlignment",
+            "itemBylineAlignment",
+            "itemCategoryAlignment",
+            "itemDescriptionAlignment",
+            "itemImageAspectRatio",
+            "listColumns23456",
+            "suppressPagination",
+            "animateOnScroll",
+            "listHeaderPosition"
+          ]
+        },
         {
           "displayName": "Accordion - List A",
           "example": "/page/list/PageListAccordionA.json",
           "height": 800,
-          "width": 1024,
-          "fields": [
-            "backgroundColor",
-            "inverseColors"
-          ]
+          "width": 1024
         },
-
-
-
         {
           "displayName": "Carousel - List A",
           "example": "/page/list/PageListCarouselA.json",
           "height": 800,
           "width": 1024,
           "fields": [
+            "itemDisplayStyle",
+            "itemBackgroundColor",
+            "itemBackgroundImage",
+            "itemTextColor",
             "hideImages",
             "listColumns23456",
-            "backgroundColor",
-            "inverseColors"
+            "itemImageAspectRatio",
+            "itemTitleAlignment",
+            "itemBylineAlignment",
+            "itemCategoryAlignment",
+            "itemDescriptionAlignment"
           ]
         },
         {
@@ -176,8 +301,16 @@
           "height": 800,
           "width": 1024,
           "fields": [
-            "backgroundColor",
-            "inverseColors"
+            "itemDisplayStyle",
+            "itemBackgroundColor",
+            "itemBackgroundImage",
+            "itemTextColor",
+            "itemImageAlignment",
+            "itemImageAspectRatio",
+            "itemTitleAlignment",
+            "itemBylineAlignment",
+            "itemCategoryAlignment",
+            "itemDescriptionAlignment"
           ]
         },
         {
@@ -186,7 +319,11 @@
           "height": 800,
           "width": 1024,
           "fields": [
-            "textAlign"
+            "textAlign",
+            "itemTitleAlignment",
+            "itemBylineAlignment",
+            "itemCategoryAlignment",
+            "itemDescriptionAlignment"
           ]
         },
         {
@@ -195,10 +332,16 @@
           "height": 500,
           "width": 400,
           "fields": [
+            "itemDisplayStyle",
+            "itemBackgroundColor",
+            "itemBackgroundImage",
+            "itemTextColor",
             "listColumns56",
-            "backgroundColor",
-            "inverseColors",
-            "listColumns56"
+            "itemImageAspectRatio",
+            "itemTitleAlignment",
+            "itemBylineAlignment",
+            "itemCategoryAlignment",
+            "itemDescriptionAlignment"
           ]
         },
         {
@@ -211,19 +354,20 @@
             "carouselSuppressAutoPlay",
             "carouselSpeed",
             "imagePositionHorizontal",
-            "backgroundColor",
-            "inverseColors"
+            "itemTitleAlignment",
+            "itemBylineAlignment",
+            "itemCategoryAlignment",
+            "itemDescriptionAlignment"
           ]
         },
-
-
         {
           "displayName": "Right Rail - List A",
           "example": "/page/list/PageListRightRailA.json",
           "height": 500,
           "width": 400,
           "fields": [
-            "hideListNumbers"
+            "hideListNumbers",
+            "itemTitleAlignment"
           ]
         },
         {
@@ -233,21 +377,35 @@
           "width": 400,
           "fields": [
             "showListNumbers",
-            "backgroundColor",
-            "inverseColors"
+            "itemImageAlignment",
+            "itemImageAspectRatio",
+            "itemTitleAlignment",
+            "itemBylineAlignment",
+            "itemCategoryAlignment",
+            "itemDescriptionAlignment"
           ]
         },
         {
           "displayName": "Right Rail - List C",
           "example": "/page/list/PageListRightRailC.json",
           "height": 500,
-          "width": 400
+          "width": 400,
+          "fields": [
+            "itemTitleAlignment"
+          ]
         },
         {
           "displayName": "Right Rail - List D",
           "example": "/page/list/PageListRightRailD.json",
           "height": 500,
-          "width": 400
+          "width": 400,
+          "fields": [
+            "itemImageAspectRatio",
+            "itemTitleAlignment",
+            "itemBylineAlignment",
+            "itemCategoryAlignment",
+            "itemDescriptionAlignment"
+          ]
         }
       ]
     },

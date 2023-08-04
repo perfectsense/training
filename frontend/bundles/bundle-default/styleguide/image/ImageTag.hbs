@@ -6,13 +6,13 @@
         {{else~}}
             {{~#with srcset}} srcset="{{this}}"{{/with~}}
         {{/eq~}}
-
+        {{~#if (get "sizes")}} sizes="{{get "sizes"}}"{{/if~}}
         {{~#with width}} width="{{this}}"{{/with~}}
         {{~#with height}} height="{{this}}"{{/with~}}
         {{~#if (get "tabIndex")}} tabindex="0"{{/if~}}
         {{~#if (get "rolePresentation")}} role="presentation"{{/if~}}
         {{~#eq (get "lazyLoad") "flickity"}}
-            {{~#with src}} data-flickity-lazyload="{{this}}"{{/with~}}
+            {{~#with src}} data-flickity-lazyload="{{this}}" src="{{svgPlaceholder ../width ../height}}"{{/with~}}
         {{else~}}
             {{~#with src}} src="{{this}}"{{/with~}}
             {{~#ne (get "lazyLoad") false}} loading="lazy"{{/ne~}}

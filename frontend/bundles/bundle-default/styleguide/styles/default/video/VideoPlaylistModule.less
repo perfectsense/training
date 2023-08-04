@@ -1,28 +1,21 @@
 .VideoPlaylistModule {
   display: block;
+  color: var(--color-primary-text);
 
-  &-description {
-    &:extend(.description-1 all);
-
-    [data-inverse-colors] & {
-      color: var(--color-primary-text-inverse);
-      --color-link-text: var(--color-primary-text-inverse);
-      --color-link-text-hover: var(--color-primary-text-inverse);
-    }
-
-    a {
-      text-decoration: underline;
-
-      &:hover {
-        text-decoration: underline;
-      }
-    }
-
-    margin: -10px 0 20px 0;
+  [data-inverse-colors] & {
+    color: var(--color-text-inverse);
+    --color-link-text: var(--color-text-inverse);
+    --color-link-text-hover: var(--color-text-inverse);
   }
 
-  &-header {
-    text-align: center;
+  .PageList {
+    &-header {
+      text-align: center;
+
+      &-description {
+        margin: -10px 0 20px 0;
+      }
+    }
   }
 
   &-player {
@@ -87,7 +80,7 @@
     margin-bottom: 20px;
 
     [data-inverse-colors] & {
-      color: var(--color-primary-text-inverse);
+      color: var(--color-text-inverse);
     }
   }
 

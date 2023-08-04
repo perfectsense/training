@@ -1,6 +1,12 @@
 .PersonPromo {
+  display: grid;
+  grid-template-columns: 80px auto;
+  gap: 10px 20px;
   align-items: center;
-  display: flex;
+
+  [data-item-image-alignment="right"] & {
+    grid-template-columns: auto 80px;
+  }
 
   &-content {
     width: 100%;
@@ -8,13 +14,16 @@
 
   .PagePromo {
     &-media {
-      flex-shrink: 0;
-      margin-right: 20px;
-      width: 80px;
+      margin-bottom: 0;
+      align-self: flex-start;
 
       img {
-        border-radius: 100%;
-        width: 80px;
+        clip-path: circle();
+        width: 100%;
+
+        [data-item-image-aspect-ratio]:not([data-item-image-aspect-ratio$="circle"]) & {
+          clip-path: none;
+        }
       }
     }
 
@@ -22,11 +31,78 @@
       &:extend(.promo-title-5 all);
       padding-bottom: 10px;
     }
+
+    &-label {
+      &:extend(.description-3 all);
+      margin-top: -5px;
+
+      .Link {
+        color: var(--color-primary-text);
+      }
+
+      [data-item-title-alignment="left"] & {
+        text-align: left;
+      }
+
+      [data-item-title-alignment="center"] & {
+          text-align: center;
+      }
+
+      [data-item-title-alignment="right"] & {
+          text-align: right;
+      }
+    }
   }
 
   .Link {
     &-icon {
       display: none;
+    }
+  }
+
+  [data-item-display-style="card"] & {
+    padding: 20px;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: var(--color-site-bg);
+    box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.1);
+    min-height: 100%;
+
+    .PagePromo {
+      &-media {
+        align-self: unset;
+      }
+    }
+  }
+
+  [data-item-has-background-color] & {
+    background-color: var(--color-item-background);
+  }
+
+  [data-item-has-background-image] & {
+    background-image: var(--item-background-image);
+    background-size: cover;
+  }
+
+  [data-item-has-text-color] & {
+    --color-primary-text: var(--color-item-text);
+    --color-link-text: var(--color-item-text);
+    --color-link-text-hover: var(--color-item-text);
+  }
+
+  @media @mq-up-to-md {
+    &-content {
+      display: contents;
+    }
+
+    &-contentBottom {
+      grid-column: span 2;
+    }
+  }
+
+  @media @mq-md {
+    [data-item-image-alignment="right"] & {
+      grid-template-columns: auto 120px;
     }
   }
 }

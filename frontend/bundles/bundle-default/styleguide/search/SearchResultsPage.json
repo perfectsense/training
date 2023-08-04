@@ -3,21 +3,17 @@
   "above": null,
   "spotlights": [
     {
-      "_include": "/page/promo/PagePromoModule.json"
-    },
-    {
-      "_include": "/page/promo/PagePromoModule.json"
-    },
-    {
-      "_include": "/page/promo/PagePromoModule.json"
+      "_include": "/page/promo/PagePromoModuleSearchSpotlight.json"
     }
   ],
   "results": [
     {
-      "_include": "/page/promo/PagePromo.json"
+      "_include": "/page/promo/PagePromo.json",
+      "media": null
     },
     {
-      "_include": "/page/promo/PagePromo.json"
+      "_include": "/page/promo/PagePromo.json",
+      "description": "{{words(5)}}"
     },
     {
       "_include": "/page/promo/PagePromo.json"

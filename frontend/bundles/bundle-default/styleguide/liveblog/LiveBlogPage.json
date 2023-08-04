@@ -15,7 +15,7 @@
   ],
 
   "blogLead": {
-    "_include": "/figure/Figure.json"
+    "_include": "/carousel/Carousel.json"
   },
   "blogBody": [
     "{{paragraphs([2,3])}}"

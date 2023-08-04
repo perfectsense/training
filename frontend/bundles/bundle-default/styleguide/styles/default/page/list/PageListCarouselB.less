@@ -1,11 +1,9 @@
 .PageListCarouselB {
-  .PageList {
-    &-header {
-      &-title {
-        &:extend(.list-title-2 all);
-      }
-    }
+  .ModuleHeader {
+    &:extend(.list-title-2 all);
+  }
 
+  .PageList {
     &-items {
       &:after {
         content: 'flickity';
@@ -38,15 +36,51 @@
   }
 
   .PagePromo {
+    display: flex;
+    gap: 15px;
+
     &-title {
       &:extend(.promo-title-6 all);
     }
 
+    &-media {
+      width: 90px;
+      align-self: flex-start;
+
+      .Link {
+        &-icon {
+          width: 20px;
+          height: 20px;
+          left: 5px;
+          bottom: 5px;
+        }
+      }
+    }
+
+    &-content {
+      flex-grow: 1;
+    }
+
+    &[data-image-align-horizontal],
     &[data-align-left] {
       .PagePromo-media {
-        margin: 0 15px 0 0;
         width: 90px;
       }
+    }
+  }
+
+  &[data-item-display-style="card"] {
+    .PageList {
+      &-items {
+        &-item {
+          min-height: 100%;
+          display: grid;
+        }
+      }
+    }
+
+    .PagePromo {
+      padding: 20px;
     }
   }
 
@@ -63,6 +97,15 @@
         margin-right: 20px;
         max-width: none;
         width: calc(~'50% - 20px');
+      }
+    }
+
+    .PagePromo {
+      &[data-image-align-horizontal],
+      &[data-align-left] {
+        .PagePromo-media {
+          width: 90px;
+        }
       }
     }
   }

@@ -1,0 +1,29 @@
+.ProductListEnhancement {
+  .ModuleHeader {
+    &-title {
+      &:extend(.list-title-3);
+    }
+
+    &-description {
+      &:extend(.description-2);
+    }
+  }
+
+  @media @mq-md {
+    .Enhancement:is([data-align-left], [data-align-right]) & {
+      .PageList {
+        &-items {
+          grid-template-columns: 1fr;
+        }
+      }
+    }
+  }
+
+  @media @mq-lg {
+    .PageList {
+      &-items {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  }
+}

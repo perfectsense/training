@@ -1,0 +1,30 @@
+{
+  "_template": "/search/SearchFilter.hbs",
+  "heading": "{{words([1,2])}}",
+  "items": [
+    {
+      "_include": "/search/SearchFilterInput.json",
+      "url": "#",
+      "label": "All"
+    },
+    {
+      "_include": "/search/SearchFilterInput.json",
+      "url": "#",
+      "label": "{{words([1,2])}}",
+      "count": 1234,
+      "selected": true
+    },
+    {
+      "_include": "/search/SearchFilterInput.json",
+      "url": "#",
+      "label": "{{words([1,2])}}",
+      "count": 567
+    },
+    {
+      "_include": "/search/SearchFilterInput.json",
+      "url": "#",
+      "label": "{{words([1,2])}}",
+      "count": 89
+    }
+  ]
+}

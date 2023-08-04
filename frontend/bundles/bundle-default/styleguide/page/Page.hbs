@@ -12,7 +12,17 @@
         {{/with}}
 
         {{#with main}}
-            <main class="Page-oneColumn" data-modulewell>{{this}}</main>
+            <main class="Page-oneColumn" data-modulewell>
+                {{#each this}}
+                    {{#eq @index 0}}
+                        {{#set lazyLoad=false}}
+                            {{this}}
+                        {{/set}}
+                    {{else}}
+                        {{this}}
+                    {{/eq}}
+                {{/each}}
+            </main>
         {{/with}}
     </div>
 

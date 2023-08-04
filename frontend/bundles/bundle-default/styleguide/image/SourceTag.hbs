@@ -8,4 +8,5 @@
     {{else~}}
         {{~#with src}} srcset="{{this}}"{{/with~}}
     {{/eq}}
+    {{~#if (get "sizes")}} sizes="{{get "sizes"}}"{{/if~}}
 />

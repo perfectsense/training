@@ -1,0 +1,79 @@
+.PersonPromoEnhancement {
+  display: grid;
+  grid-template-columns: 90px auto;
+  gap: 20px;
+  align-items: center;
+
+  &-contentTop,
+  &-contentBottom {
+    width: 100%;
+  }
+
+  &-contentBottom {
+    grid-column: span 2;
+  }
+
+  .PagePromo {
+    &-media {
+      margin-bottom: 0;
+      margin-right: 0;
+
+      img {
+        border-radius: 50%;
+      }
+
+    }
+
+    &-title {
+      &:extend(.promo-title-5 all);
+      margin-bottom: 10px;
+    }
+
+    &-label {
+      &:extend(.description-3 all);
+      margin-top: -5px;
+
+      .Link {
+        color: var(--color-primary-text);
+      }
+    }
+
+    &-description {
+      &:extend(.description-2 all);
+      margin-top: 0px;
+    }
+
+    &-ctaLink {
+      margin-top: 19px;
+    }
+  }
+
+  .Link {
+    &-icon {
+      display: none;
+    }
+  }
+
+  @media @mq-md {
+    &:not([data-align-right], [data-align-left]) {
+      grid-template-columns: 120px auto;
+      row-gap: 10px;
+
+      .PagePromo {
+        &-media {
+          grid-row: span 2;
+
+          img {
+            width: 120px;
+          }
+        }
+      }
+    }
+
+    &:not([data-align-right], [data-align-left]) & {
+      &-contentBottom {
+        grid-column: initial;
+      }
+    }
+  }
+}

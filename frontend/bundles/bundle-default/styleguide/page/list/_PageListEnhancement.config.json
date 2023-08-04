@@ -1,10 +1,29 @@
 {
   "styles": {
     "/page/list/PageListEnhancement.hbs": {
-        "inline": true,
-        "fields": [
-            "enhancementAlignment"
-        ]
+      "inline": true,
+      "fields": [
+        "enhancementAlignmentNoFullWidth",
+        "pageListEnahncementDesktopLayout",
+        "hideDescriptions"
+      ],
+      "templates": [
+        {
+          "displayName": "Page List Enhancement A",
+          "example": "/page/list/PageListEnhancementA.json",
+          "height": 800,
+          "width": 1024,
+          "fields": [
+            "imagePositionHorizontal"
+          ]
+        },
+        {
+          "displayName": "Page List Enhancement B",
+          "example": "/page/list/PageListEnhancementB.json",
+          "height": 800,
+          "width": 1024
+        }
+      ]
     }
   }
 }

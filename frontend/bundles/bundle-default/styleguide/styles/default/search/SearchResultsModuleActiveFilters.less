@@ -1,0 +1,50 @@
+.SearchResultsModuleActiveFilters {
+  display: block;
+  background-color: var(--color-callout-bg);
+  padding: 20px;
+
+  &-header {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 14px;
+  }
+
+  &-title {
+    .label-5;
+  }
+
+  &-clearFilters {
+    margin-left: auto;
+    &:extend(a all);
+    .label-1;
+    cursor: pointer;
+    background: none;
+    border: 0;
+    padding: 0;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &-items {
+    display: grid;
+    gap: 10px;
+  }
+
+  &-item {
+    .description-3;
+    display: flex;
+    gap: 10px;
+
+    button {
+      .NotButton;
+      margin-left: auto;
+
+      svg {
+        width: 10px;
+        height: 10px;
+      }
+    }
+  }
+}

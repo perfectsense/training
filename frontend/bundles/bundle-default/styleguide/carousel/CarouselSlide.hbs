@@ -8,7 +8,7 @@
     </div>
     <div class="CarouselSlide-info">
         <div>
-            <span class="CarouselSlide-slideCount">{{format "slideCount" slideNumber=(add slideNumber 1) numberOfSlides=numberOfSlides}}</span>:&#32;{{~#with title~}}<span class="CarouselSlide-infoTitle">{{~this~}}</span>{{~/with~}}
+            <span class="CarouselSlide-slideCount">{{format "/carousel/CarouselSlide" "slideCount" slideNumber=(add slideNumber 1) numberOfSlides=numberOfSlides}}</span>:&#32;{{~#with title~}}<span class="CarouselSlide-infoTitle">{{~this~}}</span>{{~/with~}}
         </div>
         <div>
             {{~#if caption~}}<span class="CarouselSlide-infoDescription">{{~caption~}}</span>{{~/if~}}

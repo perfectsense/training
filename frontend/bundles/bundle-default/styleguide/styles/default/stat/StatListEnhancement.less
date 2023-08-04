@@ -1,0 +1,26 @@
+.StatListEnhancement {
+  .PageList {
+    &-header {
+      text-align: center;
+
+      &-title {
+        .list-title-3;
+      }
+
+      &-description {
+        .description-2;
+      }
+    }
+  }
+
+  @media @mq-md {
+    [data-align-left] &,
+    [data-align-right] & {
+      .StatList {
+        &-items {
+          grid-template-columns: 1fr;
+        }
+      }
+    }
+  }
+}

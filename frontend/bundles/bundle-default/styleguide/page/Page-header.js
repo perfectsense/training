@@ -147,7 +147,9 @@ export class PageHeader extends window.HTMLElement {
 
   closeSearch() {
     document.body.removeAttribute('data-toggle-header')
-    this.searchOverlay.removeAttribute('data-toggle-header')
+    if (this.searchOverlay) {
+      this.searchOverlay.removeAttribute('data-toggle-header')
+    }
   }
 
   isMenuOpen() {

@@ -1,0 +1,24 @@
+{
+  "styles": {
+    "/person/list/PersonListEnhancement.hbs": {
+      "inline": true,
+      "fields": [
+        "enhancementAlignmentNoFullWidth"
+      ],
+      "templates": [
+        {
+          "displayName": "Person List Enhancement A",
+          "example": "/person/list/PersonListEnhancementA.json",
+          "height": 400,
+          "width": 768
+        },
+        {
+          "displayName": "Person List Enhancement B",
+          "example": "/person/list/PersonListEnhancementB.json",
+          "height": 400,
+          "width": 768
+        }
+      ]
+    }
+  }
+}

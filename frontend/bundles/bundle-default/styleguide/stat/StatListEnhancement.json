@@ -1,0 +1,6 @@
+{
+  "_template": "/stat/StatListEnhancement.hbs",
+  "item": {
+    "_include": "StatList.json"
+  }
+}

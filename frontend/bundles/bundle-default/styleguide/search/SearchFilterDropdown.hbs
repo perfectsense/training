@@ -1,0 +1,31 @@
+{{!-- Alternative layout for SearchFilter --}}
+<bsp-search-filter-drowpdown class="SearchFilterDropdown"
+    {{~#with heading}} data-heading="{{this}}"{{/with~}}
+    >
+    <button class="SearchFilterDropdown-button" type="button">
+        {{~heading~}}
+        {{#with (countSelected this)}}
+            {{~#gt this 0}}
+                {{include '/global/Badge.hbs' content=this}}
+            {{/gt}}
+        {{/with}}
+        <svg class="chevron"><use xlink:href="#icon-arrow-down"></use></svg>
+    </button>
+    <div class="SearchFilterDropdown-content">
+        <ul class="SearchFilterDropdown-items">
+            {{~#each items~}}
+                <li class="SearchFilterDropdown-items-item">
+                    {{include "/search/SearchFilterInput.hbs" this}}
+                </li>
+            {{~/each~}}
+        </ul>
+        <div class="SearchFilterDropdown-footer">
+            <button class="SearchFilterDropdown-clearFilters" type="submit">
+                {{format "/search/SearchResultsModule" "filtersClear"}}
+            </button>
+            <button class="SearchFilterDropdown-applyFilters" type="submit">
+                {{format "/search/SearchResultsModule" "done"}}
+            </button>
+        </div>
+    </div>
+</bsp-search-filter-drowpdown>

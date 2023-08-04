@@ -1,0 +1,54 @@
+.PersonListEnhancement {
+  .ModuleHeader {
+    &-title {
+      &:extend(.list-title-3 all);
+    }
+
+    &-description {
+      &:extend(.description-2 all);
+    }
+  }
+
+  .PagePromo {
+    &-description {
+      .description-2;
+    }
+  }
+
+  @media @mq-up-to-md {
+    .PersonPromo {
+      grid-template-columns: 80px 1fr;
+    }
+  }
+
+  @media @mq-md {
+    &:is([data-align-left], [data-align-right]) {
+      .PersonList {
+        &-items {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      .PersonPromo {
+        grid-template-columns: 80px 1fr;
+
+        &-content {
+          display: contents;
+        }
+
+        &-contentBottom {
+          grid-column: 1 / -1;
+        }
+      }
+
+      .PageList-cta,
+      .PageList-nextPage {
+        justify-content: flex-start;
+
+        .Button {
+          margin-left: 0;
+        }
+      }
+    }
+  }
+}

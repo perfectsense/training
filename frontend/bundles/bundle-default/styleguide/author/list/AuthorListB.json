@@ -1,7 +1,8 @@
 {
   "_template": "/author/list/AuthorList.hbs",
   "_styledTemplate": "/author/list/AuthorListB.hbs",
-  "title": "{{words([5,10])}}",
+  "title": "Author List B",
+  "description": "{{words([15,10])}}",
   "items": [
     {
       "_include": "/author/promo/AuthorPromo.json",

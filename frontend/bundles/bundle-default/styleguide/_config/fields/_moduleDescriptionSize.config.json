@@ -1,0 +1,23 @@
+{
+  "fields": {
+    "moduleDescriptionSize": {
+      "type": "text",
+      "cms.ui.dropDown": true,
+      "cms.ui.placeholder": "Default",
+      "values": [
+        {
+          "label": "Description 1 (Large)",
+          "value": "1"
+        },
+        {
+          "label": "Description 2 (Medium)",
+          "value": "2"
+        },
+        {
+          "label": "Description 3 (Small)",
+          "value": "3"
+        }
+      ]
+    }
+  }
+}

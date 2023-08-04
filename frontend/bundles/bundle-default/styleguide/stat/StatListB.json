@@ -1,21 +1,11 @@
 {
-  "_template": "/stat/StatList.hbs",
+  "_include": "/stat/StatList.json",
   "_styledTemplate": "/stat/StatListB.hbs",
-
   "title": "Stat List B",
-  "description": "{{words(20)}}",
-  "ctaUrl": "#",
-  "ctaTarget": "_self",
   "items": [
     {
-      "_include": "/stat/StatPromo.json"
-    },
-    {
-      "_include": "/stat/StatPromo.json"
-    },
-    {
-      "_include": "/stat/StatPromo.json"
+      "_include": "/stat/StatPromo.json",
+      "_repeat": 3
     }
-  ],
-  "anchorId": "asdf"
+  ]
 }

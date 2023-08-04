@@ -1,0 +1,14 @@
+{
+  "styles": {
+    "/carousel/Carousel.hbs": {
+      "fields": [
+        "backgroundColor",
+        "inverseColors",
+        "modulePaddingTop",
+        "modulePaddingBottom",
+        "headerTextAlign",
+        "itemTextAlignment"
+      ]
+    }
+  }
+}

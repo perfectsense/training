@@ -14,10 +14,48 @@
         {
           "displayName": "Typography",
           "page": "/_resource/TypographyPage.json"
+        }
+      ]
+    },
+    {
+      "displayName": "Container",
+      "pages": [
+        {
+          "displayName": "One Column Container",
+          "page": "/container/OneColumnContainer.json"
         },
         {
-          "displayName": "Containers",
-          "page": "/container/Page-withAllContainers.json"
+          "displayName": "Two Column Container 50/50",
+          "page": "/container/TwoColumnContainer5050.json"
+        },
+        {
+          "displayName": "Two Column Container 30/70",
+          "page": "/container/TwoColumnContainer3070.json"
+        },
+        {
+          "displayName": "Two Column Container 70/30",
+          "page": "/container/TwoColumnContainer7030.json"
+        },
+        {
+          "displayName": "Three Column Container",
+          "page": "/container/ThreeColumnContainer.json"
+        },
+        {
+          "displayName": "Four Column Container",
+          "page": "/container/FourColumnContainer.json"
+        }
+      ]
+    },
+    {
+      "displayName": "Banners",
+      "pages": [
+        {
+          "displayName": "Banner",
+          "page": "/banner/Banner.json"
+        },
+        {
+          "displayName": "Rich Text Breaking News Banner",
+          "page": "/banner/RichTextBreakingNewsBanner.json"
         }
       ]
     },
@@ -27,6 +65,54 @@
         {
           "displayName": "Attachment Enhancement",
           "page": "/attachment/AttachmentEnhancement.json"
+        },
+        {
+          "displayName": "Page List Enhancement A",
+          "page": "/page/list/PageListEnhancementA.json"
+        },
+        {
+          "displayName": "Page List Enhancement B",
+          "page": "/page/list/PageListEnhancementB.json"
+        },
+        {
+          "displayName": "Logo List Enhancement",
+          "page": "/logo/list/LogoListEnhancement.json"
+        },
+        {
+          "displayName": "Person List Enhancement A",
+          "page": "/person/list/PersonListEnhancementA.json"
+        },
+        {
+          "displayName": "Person List Enhancement B",
+          "page": "/person/list/PersonListEnhancementB.json"
+        },
+        {
+          "displayName": "Person Promo Enhancement",
+          "page": "/person/promo/PersonPromoEnhancement.json"
+        },
+        {
+          "displayName": "Page Promo Enhancement A",
+          "page": "/page/promo/PagePromoEnhancementA.json"
+        },
+        {
+          "displayName": "Page Promo Enhancement B",
+          "page": "/page/promo/PagePromoEnhancementB.json"
+        },
+        {
+          "displayName": "Page Promo Enhancement C",
+          "page": "/page/promo/PagePromoEnhancementC.json"
+        },
+        {
+          "displayName": "Podcast Episode List Enhancement",
+          "page": "/podcast/list/PodcastEpisodeListEnhancement.json"
+        },
+        {
+          "displayName": "Quote List Enhancement",
+          "page": "/quote/QuoteListEnhancement.json"
+        },
+        {
+          "displayName": "Stat List Enhancement",
+          "page": "/stat/StatListEnhancement.json"
         }
       ]
     },
@@ -36,14 +122,6 @@
         {
           "displayName": "Form",
           "page": "/form/Form.json"
-        },
-        {
-          "displayName": "Form with Background",
-          "page": "/form/Form-background.json"
-        },
-        {
-          "displayName": "Form with Background Image",
-          "page": "/form/Form-background-image.json"
         }
       ]
     },
@@ -84,20 +162,12 @@
         {
           "displayName": "Author List B",
           "page": "/author/list/AuthorListB.json"
-        },
-        {
-          "displayName": "Author List B  - 4 column",
-          "page": "/author/list/AuthorListB-4column.json"
         }
       ]
     },
     {
       "displayName": "Lists - Carousel",
       "pages": [
-        {
-          "displayName": "Page with Carousel Lists",
-          "page": "/page/list/Page-withCarouselLists.json"
-        },
         {
           "displayName": "Carousel List A",
           "page": "/page/list/PageListCarouselA.json"
@@ -117,14 +187,6 @@
         {
           "displayName": "Carousel List E",
           "page": "/page/list/PageListCarouselE.json"
-        },
-        {
-          "displayName": "Carousel List E - Image Position Left",
-          "page": "/page/list/PageListCarouselE-imagePositionLeft.json"
-        },
-        {
-          "displayName": "Carousel List E - Image Position Right",
-          "page": "/page/list/PageListCarouselE-imagePositionRight.json"
         }
       ]
     },
@@ -138,10 +200,6 @@
         {
           "displayName": "Logo List B",
           "page": "/logo/list/LogoListB.json"
-        },
-        {
-          "displayName": "Logo List B - Header on Side",
-          "page": "/logo/list/LogoListB-headerOnSide.json"
         }
       ]
     },
@@ -149,20 +207,12 @@
       "displayName": "Lists - Right Rail",
       "pages": [
         {
-          "displayName": "Page with Right Rail Lists",
-          "page": "/page/list/Page-withRRLists.json"
-        },
-        {
           "displayName": "Right Rail List A",
           "page": "/page/list/PageListRightRailA.json"
         },
         {
           "displayName": "Right Rail List B",
           "page": "/page/list/PageListRightRailB.json"
-        },
-        {
-          "displayName": "Right Rail List B - with numbers",
-          "page": "/page/list/PageListRightRailB-withNumbers.json"
         },
         {
           "displayName": "Right Rail List C",
@@ -175,12 +225,43 @@
       ]
     },
     {
-      "displayName": "Lists - Standard",
+      "displayName": "Lists - Person",
       "pages": [
         {
-          "displayName": "Page with Standard Lists",
-          "page": "/page/list/Page-withStandardLists.json"
+          "displayName": "Person List",
+          "page": "/person/list/PersonList.json"
+        }
+      ]
+    },
+    {
+      "displayName": "Lists - Podcast",
+      "pages": [
+        {
+          "displayName": "Podcast List A",
+          "page": "/podcast/list/PodcastListA.json"
         },
+        {
+          "displayName": "Podcast List B",
+          "page": "/podcast/list/PodcastListB.json"
+        },
+        {
+          "displayName": "Podcast List C",
+          "page": "/podcast/list/PodcastListC.json"
+        }
+      ]
+    },
+    {
+      "displayName": "Lists - Podcast Episode",
+      "pages": [
+        {
+          "displayName": "Podcast Episode List",
+          "page": "/podcast/list/PodcastEpisodeList.json"
+        }
+      ]
+    },
+    {
+      "displayName": "Lists - Standard",
+      "pages": [
         {
           "displayName": "Standard List A",
           "page": "/page/list/PageListStandardA.json"
@@ -188,22 +269,6 @@
         {
           "displayName": "Standard List B",
           "page": "/page/list/PageListStandardB.json"
-        },
-        {
-          "displayName": "Standard List B - 2 Column",
-          "page": "/page/list/PageListStandardB-2column.json"
-        },
-        {
-          "displayName": "Standard List B - 4 Column",
-          "page": "/page/list/PageListStandardB-4column.json"
-        },
-        {
-          "displayName": "Standard List B - Header on Side",
-          "page": "/page/list/PageListStandardB-headerOnSide.json"
-        },
-        {
-          "displayName": "Standard List B - with No Images",
-          "page": "/page/list/PageListStandardB-withNoImages.json"
         },
         {
           "displayName": "Standard List C",
@@ -222,10 +287,6 @@
           "page": "/page/list/PageListStandardF.json"
         },
         {
-          "displayName": "Standard List F - Header on Side",
-          "page": "/page/list/PageListStandardF-headerOnSide.json"
-        },
-        {
           "displayName": "Standard List G",
           "page": "/page/list/PageListStandardG.json"
         },
@@ -238,14 +299,6 @@
           "page": "/page/list/PageListStandardI.json"
         },
         {
-          "displayName": "Standard List I - 2 Column ",
-          "page": "/page/list/PageListStandardI-2column.json"
-        },
-        {
-          "displayName": "Standard List I - 4 Column",
-          "page": "/page/list/PageListStandardI-4column.json"
-        },
-        {
           "displayName": "Standard List J",
           "page": "/page/list/PageListStandardJ.json"
         },
@@ -256,6 +309,18 @@
         {
           "displayName": "Standard List L",
           "page": "/page/list/PageListStandardL.json"
+        },
+        {
+          "displayName": "Standard List M",
+          "page": "/page/list/PageListStandardM.json"
+        },
+        {
+          "displayName": "Standard List N",
+          "page": "/page/list/PageListStandardN.json"
+        },
+        {
+          "displayName": "Standard List O",
+          "page": "/page/list/PageListStandardO.json"
         }
       ]
     },
@@ -280,16 +345,8 @@
           "page": "/stat/StatListA.json"
         },
         {
-          "displayName": "Stat List A - 3 Column",
-          "page": "/stat/StatListA-3column.json"
-        },
-        {
           "displayName": "Stat List B",
           "page": "/stat/StatListB.json"
-        },
-        {
-          "displayName": "Stat List B - Header on Side",
-          "page": "/stat/StatListB-titleOnSide.json"
         }
       ]
     },
@@ -310,40 +367,81 @@
       "displayName": "Promos - Page",
       "pages": [
         {
-          "displayName": "Page with all Promos",
-          "page": "/page/promo/Page-withAllPagePromos.json"
-        },
-        {
           "displayName": "Promo Module A",
           "page": "/page/promo/PagePromoModuleA.json"
-        },
-        {
-          "displayName": "Promo Module A - Media Bottom",
-          "page": "/page/promo/PagePromoModuleA-mediaBottom.json"
-        },
-        {
-          "displayName": "Promo Module A - Text Left",
-          "page": "/page/promo/PagePromoModuleA-textLeft.json"
         },
         {
           "displayName": "Promo Module B",
           "page": "/page/promo/PagePromoModuleB.json"
         },
         {
-          "displayName": "Promo Module B - Text Right",
-          "page": "/page/promo/PagePromoModuleB-textRight.json"
-        },
-        {
-          "displayName": "Promo Module B - Text Center",
-          "page": "/page/promo/PagePromoModuleB-textCenter.json"
-        },
-        {
           "displayName": "Promo Module C",
           "page": "/page/promo/PagePromoModuleC.json"
         },
         {
-          "displayName": "Promo Module C - Media Right",
-          "page": "/page/promo/PagePromoModuleC-mediaRight.json"
+          "displayName": "Promo Module Search Spotlight",
+          "page": "/page/promo/PagePromoModuleSearchSpotlight.json"
+        }
+      ]
+    },
+    {
+      "displayName": "Promos - Person",
+      "pages": [
+        {
+          "displayName": "Person Promo",
+          "page": "/person/promo/PersonPromo.json"
+        },
+        {
+          "displayName": "Person Promo Module",
+          "page": "/person/promo/PersonPromoModule.json"
+        }
+      ]
+    },
+    {
+      "displayName": "Promos - Podcast",
+      "pages": [
+        {
+          "displayName": "Podcast Promo A",
+          "page": "/podcast/promo/PodcastPromoA.json"
+        },
+        {
+          "displayName": "Podcast Promo B",
+          "page": "/podcast/promo/PodcastPromoB.json"
+        },
+        {
+          "displayName": "Podcast Promo C",
+          "page": "/podcast/promo/PodcastPromoC.json"
+        },
+        {
+          "displayName": "Podcast Promo D",
+          "page": "/podcast/promo/PodcastPromoD.json"
+        }
+      ]
+    },
+    {
+      "displayName": "Promos - Podcast Episode",
+      "pages": [
+        {
+          "displayName": "Podcast Episode",
+          "page": "/podcast/promo/PodcastEpisodePromo.json"
+        }
+      ]
+    },
+    {
+      "displayName": "Quote",
+      "pages": [
+        {
+          "displayName": "Quote",
+          "page": "/quote/Quote.json"
+        }
+      ]
+    },
+    {
+      "displayName": "Search",
+      "pages": [
+        {
+          "displayName": "Search Module",
+          "page": "/search/SearchModule.json"
         }
       ]
     },
@@ -471,8 +569,12 @@
           "page": "/search/SearchResultsPage-NoResults.json"
         },
         {
-          "displayName": "Search Results Page",
-          "page": "/search/SearchResultsPage.json"
+          "displayName": "Search Results Page A",
+          "page": "/search/SearchResultsPageA.json"
+        },
+        {
+          "displayName": "Search Results Page B",
+          "page": "/search/SearchResultsPageB.json"
         },
         {
           "displayName": "Section Page",
@@ -502,10 +604,56 @@
       ]
     },
     {
+      "displayName": "Gallery",
+      "pages": [
+        {
+          "displayName": "Gallery Module",
+          "page": "/carousel/Carousel.json"
+        }
+      ]
+    },
+    {
+      "displayName": "Product",
+      "pages": [
+        {
+          "displayName": "Product List",
+          "page": "/product/list/ProductList.json"
+        },
+        {
+          "displayName": "Product List Carousel",
+          "page": "/product/list/ProductListCarousel.json"
+        },
+        {
+          "displayName": "Product List Enhancement",
+          "page": "/product/list/ProductListEnhancement.json"
+        },
+        {
+          "displayName": "Product Promo Module 50/50",
+          "page": "/product/promo/ProductPromoModule.json"
+        },
+        {
+          "displayName": "Product Promo Module 70/30",
+          "page": "/product/promo/ProductPromoModule7030.json"
+        },
+        {
+          "displayName": "Product Promo Enhancement 50/50",
+          "page": "/product/promo/ProductPromoEnhancement5050.json"
+        },
+        {
+          "displayName": "Product Promo Enhancement 30/70",
+          "page": "/product/promo/ProductPromoEnhancement3070.json"
+        },
+        {
+          "displayName": "Product Promo Enhancement 70/30",
+          "page": "/product/promo/ProductPromoEnhancement7030.json"
+        }
+      ]
+    },
+    {
       "displayName": "Tabs",
       "pages": [
         {
-          "displayName": "Tab Module",
+          "displayName": "Tabs Module",
           "page": "/tab/Tabs.json"
         }
       ]
@@ -522,6 +670,10 @@
     {
       "displayName": "Video",
       "pages": [
+        {
+          "displayName": "Video Module",
+          "page": "/video/VideoModule.json"
+        },
         {
           "displayName": "Video Playlist Module",
           "page": "/video/VideoPlaylistModule.json"

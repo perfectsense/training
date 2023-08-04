@@ -1,0 +1,23 @@
+{
+  "fields": {
+    "moduleTitleSize": {
+      "type": "text",
+      "cms.ui.dropDown": true,
+      "cms.ui.placeholder": "Default",
+      "values": [
+        {
+          "label": "Title 1 (Large)",
+          "value": "1"
+        },
+        {
+          "label": "Title 2 (Medium)",
+          "value": "2"
+        },
+        {
+          "label": "Title 3 (Small)",
+          "value": "3"
+        }
+      ]
+    }
+  }
+}

@@ -12,4 +12,25 @@
     margin-bottom: 20px;
     color: var(--color-list-title);
   }
+
+  [data-header-text-align="left"] & {
+    &-title,
+    &-description {
+      text-align: left;
+    }
+  }
+
+  [data-header-text-align="center"] & {
+    &-title,
+    &-description {
+      text-align: center;
+    }
+  }
+
+  [data-header-text-align="right"] & {
+    &-title,
+    &-description {
+      text-align: right;
+    }
+  }
 }

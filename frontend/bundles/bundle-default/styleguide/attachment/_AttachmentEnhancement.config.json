@@ -3,7 +3,7 @@
     "/attachment/AttachmentEnhancement.hbs": {
         "inline": true,
         "fields": [
-            "enhancementAlignment"
+            "enhancementAlignmentNoFullWidth"
         ]
     }
   }

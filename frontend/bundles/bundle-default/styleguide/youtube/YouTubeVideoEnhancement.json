@@ -1,7 +1,7 @@
 {
-    "_template": "/video/VideoEnhancement.hbs",
-    "title": "YouTube Video Enhancement",
-    "player": {
-        "_include": "/youtube/YouTubeVideoPlayer.json"
-    }
+  "_template": "/video/VideoEnhancement.hbs",
+  "title": "YouTube Video Enhancement",
+  "player": {
+    "_include": "/youtube/YouTubeVideoPlayer.json"
+  }
 }

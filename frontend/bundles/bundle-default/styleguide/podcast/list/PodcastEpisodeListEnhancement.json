@@ -1,0 +1,6 @@
+{
+  "_template": "/podcast/list/PodcastEpisodeListEnhancement.hbs",
+  "item": {
+    "_include": "/podcast/list/PodcastEpisodeList.json"
+  }
+}

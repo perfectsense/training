@@ -1,6 +1,13 @@
 {
   "styles": {
     "/video/VideoModule.hbs": {
+      "fields": [
+        "backgroundColor",
+        "inverseColors",
+        "headerTextAlign",
+        "modulePaddingTop",
+        "modulePaddingBottom"
+      ],
       "templates": [
         {
           "displayName": "Video Module",

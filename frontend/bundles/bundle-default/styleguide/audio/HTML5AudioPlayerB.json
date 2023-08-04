@@ -1,0 +1,10 @@
+{
+  "_template": "/audio/HTML5AudioPlayer.hbs",
+  "_styledTemplate": "/audio/HTML5AudioPlayerB.hbs",
+  "sources": [
+    {
+      "_include": "/audio/HTML5AudioSource.json"
+    }
+  ],
+  "_hidden": true
+}

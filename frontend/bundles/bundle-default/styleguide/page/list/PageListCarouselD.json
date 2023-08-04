@@ -1,14 +1,4 @@
 {
-  "_template": "/page/list/PageList.hbs",
-  "_styledTemplate": "/page/list/PageListCarouselD.hbs",
-  "title": "Carousel List D",
-  "description": "{{words([15,30])}}",
-  "ctaUrl": "#",
-  "ctaTarget": "_self",
-  "items": [
-    {
-      "_include": "/page/promo/PagePromo.json",
-      "_repeat": 14
-    }
-  ]
+  "_include": "/page/list/PageList.json",
+  "_styledTemplate": "/page/list/PageListCarouselD.hbs"
 }

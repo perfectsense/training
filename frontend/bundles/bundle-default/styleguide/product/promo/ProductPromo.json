@@ -1,0 +1,15 @@
+{
+  "_template": "/product/promo/ProductPromo.hbs",
+  "title": "{{words}}",
+  "description": "{{words}}",
+  "price": "From $249.00 USD",
+  "compareAtPrice": "$300.00",
+  "media": {
+    "_include": "/image/Image.json"
+  },
+  "category": "{{words([1,2])}}",
+  "categoryUrl": "#",
+  "ctaButtonText": "Buy Now",
+  "url": "#",
+  "options": "{{words}}"
+}

@@ -7,7 +7,7 @@
       ],
       "templates": [
         {
-          "displayName": "PagePromo Module A",
+          "displayName": "Promo Module A",
           "example": "/page/promo/PagePromoModuleA.json",
           "height": 800,
           "width": 1024,
@@ -19,15 +19,20 @@
             "textAlign",
             "backgroundColor",
             "inverseColors",
-            "animateOnScroll"
+            "animateOnScroll",
+            "modulePaddingTop",
+            "modulePaddingBottom"
           ]
         },
         {
-          "displayName": "PagePromo Module B",
+          "displayName": "Promo Module B",
           "example": "/page/promo/PagePromoModuleB.json",
           "height": 800,
           "width": 1024,
           "fields": [
+            "gradientOverlayStyle",
+            "backgroundColor",
+            "useDefaultColors",
             "hideCategory",
             "showByline",
             "imageAspectRatio",
@@ -36,7 +41,7 @@
           ]
         },
         {
-          "displayName": "PagePromo Module C",
+          "displayName": "Promo Module C",
           "example": "/page/promo/PagePromoModuleC.json",
           "height": 800,
           "width": 1024,
@@ -45,14 +50,35 @@
             "showByline",
             "imageAspectRatio",
             "imagePositionHorizontal",
+            "textAlign",
             "imageWidth",
             "backgroundColor",
+            "inverseColors",
+            "animateOnScroll",
+            "modulePaddingTop",
+            "modulePaddingBottom"
+          ]
+        },
+        {
+          "displayName": "Promo Module Search Spotight",
+          "example": "/page/promo/PagePromoModuleSearchSpotlight.json",
+          "height": 800,
+          "width": 1024,
+          "fields": [
+            "flagText",
+            "flagBackgroundColor",
+            "hideCategory",
+            "showByline",
+            "imageAspectRatio",
+            "imageWidth",
+            "backgroundColor",
+            "borderColor",
             "inverseColors",
             "animateOnScroll"
           ]
         },
         {
-          "displayName": "PagePromo for Footer",
+          "displayName": "Promo for Footer",
           "example": "/page/promo/PagePromoFooter.json",
           "height": 500,
           "width": 400,

@@ -1,0 +1,25 @@
+.PodcastListB {
+  &:extend(.ListAbstract all);
+  display: block;
+
+  &-items {
+    display: grid;
+    grid-gap: 20px;
+    row-gap: 40px;
+    grid-template-columns: 1fr;
+    margin: 0;
+  }
+
+
+  @media @mq-sm {
+    &[data-item-image-alignment="right"] .PodcastPromoB {
+        grid-template-columns: 1fr 150px;
+    }
+  }
+
+  @media @mq-md {
+    &[data-item-image-alignment="right"] .PodcastPromoB {
+      grid-template-columns: 1fr 300px;
+    }
+  }
+}

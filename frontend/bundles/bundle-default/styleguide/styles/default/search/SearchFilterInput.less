@@ -1,10 +1,8 @@
 .SearchFilterInput {
-  align-items: baseline;
-  display: flex;
+  &:extend(.CheckboxInput all);
 
   &-count {
     &:extend(.label-4 all);
-
-    margin-left: 5px;
+    word-break: keep-all;
   }
 }
