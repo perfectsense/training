@@ -1,0 +1,6 @@
+package brightspot.itemstream.podcast;
+
+import brightspot.util.TypeStateValueAdapter;
+
+public class DynamicPodcastEpisodeItemStreamAllMatchAdapter extends TypeStateValueAdapter<DynamicPodcastEpisodeItemStreamAllMatch, brightspot.module.list.podcast.DynamicPodcastEpisodeItemStreamAllMatch> {
+}
