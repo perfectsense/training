@@ -20,12 +20,12 @@ public class TagPageAssociatedContentWidget extends AssociatedContentWidget {
     @Override
     protected Set<ObjectType> getAssociatedTypes() {
         return Optional.of(HasTags.class)
-                .map(ClassFinder::findConcreteClasses)
-                .map(targetClasses -> targetClasses
-                        .stream()
-                        .map(ObjectType::getInstance)
-                        .collect(Collectors.toSet()))
-                .orElseGet(HashSet::new);
+            .map(ClassFinder::findConcreteClasses)
+            .map(targetClasses -> targetClasses
+                .stream()
+                .map(ObjectType::getInstance)
+                .collect(Collectors.toSet()))
+            .orElseGet(HashSet::new);
     }
 
     @Override

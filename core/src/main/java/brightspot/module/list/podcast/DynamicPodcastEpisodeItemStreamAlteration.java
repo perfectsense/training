@@ -2,9 +2,6 @@ package brightspot.module.list.podcast;
 
 import brightspot.itemstream.DateRangeMatch;
 import brightspot.itemstream.DynamicQuerySort;
-import brightspot.itemstream.podcast.DynamicPodcastEpisodeItemStreamAllMatch;
-import brightspot.itemstream.podcast.DynamicPodcastEpisodeItemStreamAnyMatch;
-import brightspot.itemstream.podcast.DynamicPodcastEpisodeItemStreamNoneMatch;
 import brightspot.podcast.PodcastMatch;
 import brightspot.query.QueryBuilder;
 import brightspot.query.QueryBuilderDynamicQueryModifier;

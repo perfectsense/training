@@ -9,6 +9,9 @@ public class RichTextHatViewModel extends ViewModel<RichTextHat> implements Page
 
     @Override
     public Iterable<? extends PageHeaderTextHatViewTextField> getText() {
-        return RichTextUtils.buildHtml(model, RichTextHat::getText, e -> createView(PageHeaderTextHatViewTextField.class, e));
+        return RichTextUtils.buildHtml(
+            model,
+            RichTextHat::getText,
+            e -> createView(PageHeaderTextHatViewTextField.class, e));
     }
 }

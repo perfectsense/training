@@ -3,18 +3,23 @@ package brightspot.blog;
 import java.time.Instant;
 import java.util.Date;
 import java.util.Locale;
-import java.util.Map;
 import java.util.Optional;
 
 import brightspot.author.AuthoringPageViewModel;
 import brightspot.l10n.CurrentLocale;
+import brightspot.link.Link;
+import brightspot.link.Target;
 import brightspot.page.AbstractContentPageViewModel;
 import brightspot.page.CurrentPageViewModel;
 import brightspot.page.PageViewModel;
+import brightspot.sponsoredcontent.ContentSponsor;
+import brightspot.sponsoredcontent.Sponsor;
+import brightspot.sponsoredcontent.SponsoredContentSiteSettings;
 import brightspot.update.LastUpdatedProvider;
 import brightspot.util.DateTimeUtils;
 import brightspot.util.RichTextUtils;
 import com.psddev.cms.db.Site;
+import com.psddev.cms.db.SiteSettings;
 import com.psddev.cms.page.CurrentSite;
 import com.psddev.cms.view.PageEntryView;
 import com.psddev.cms.view.jsonld.JsonLdNode;
@@ -23,9 +28,6 @@ import com.psddev.styleguide.article.ArticlePageViewArticleBodyField;
 import com.psddev.styleguide.article.ArticlePageViewLeadField;
 import com.psddev.styleguide.blog.blogpost.BlogPostPageView;
 import com.psddev.styleguide.gallery.GalleryPageView;
-import com.psddev.styleguide.link.LinkView;
-import com.psddev.styleguide.page.CreativeWorkPageViewAuthorBiographyField;
-import com.psddev.styleguide.page.CreativeWorkPageViewAuthorNameField;
 import com.psddev.styleguide.page.CreativeWorkPageViewAuthorsField;
 import com.psddev.styleguide.page.CreativeWorkPageViewHeadlineField;
 import com.psddev.styleguide.page.CreativeWorkPageViewSponsorLogoField;
@@ -33,10 +35,9 @@ import com.psddev.styleguide.page.CreativeWorkPageViewSponsorNameField;
 import com.psddev.styleguide.page.CreativeWorkPageViewSubHeadlineField;
 import com.psddev.styleguide.page.PageViewMainField;
 import com.psddev.styleguide.page.PageViewPageSubHeadingField;
-import com.psddev.styleguide.page.promo.PagePromoView;
 
 public class BlogPostPageViewModel extends AbstractContentPageViewModel<BlogPostPage>
-        implements BlogPostPageView, PageEntryView {
+    implements BlogPostPageView, PageEntryView {
 
     @Override
     public Iterable<? extends PageViewMainField> getMain() {
@@ -62,9 +63,9 @@ public class BlogPostPageViewModel extends AbstractContentPageViewModel<BlogPost
     @Override
     public Iterable<? extends ArticlePageViewArticleBodyField> getArticleBody() {
         return RichTextUtils.buildHtml(
-                model,
-                BlogPostPage::getBody,
-                e -> createView(ArticlePageViewArticleBodyField.class, e));
+            model,
+            BlogPostPage::getBody,
+            e -> createView(ArticlePageViewArticleBodyField.class, e));
     }
 
     @Override
@@ -80,25 +81,25 @@ public class BlogPostPageViewModel extends AbstractContentPageViewModel<BlogPost
     @Override
     public CharSequence getDateModified() {
         return DateTimeUtils.format(model.getUpdateDate(), BlogPostPageView.class, DATE_FORMAT_KEY, currentSite,
-                locale, DEFAULT_DATE_FORMAT);
+            locale, DEFAULT_DATE_FORMAT);
     }
 
     @JsonLdNode("dateModified")
     @Override
     public CharSequence getDateModifiedISO() {
         return Optional.ofNullable(ObjectUtils.firstNonNull(
-                        LastUpdatedProvider.getMostRecentUpdateDate(model),
-                        model.getPublishDate()))
-                .map(Date::toInstant)
-                .map(Instant::toString)
-                .orElse(null);
+                LastUpdatedProvider.getMostRecentUpdateDate(model),
+                model.getPublishDate()))
+            .map(Date::toInstant)
+            .map(Instant::toString)
+            .orElse(null);
     }
 
     @Override
     public CharSequence getDatePublished() {
         // Plain text
         return DateTimeUtils.format(model.getPublishDate(), GalleryPageView.class, DATE_FORMAT_KEY, currentSite,
-                locale, PageViewModel.DEFAULT_DATE_FORMAT
+            locale, PageViewModel.DEFAULT_DATE_FORMAT
         );
     }
 
@@ -106,17 +107,17 @@ public class BlogPostPageViewModel extends AbstractContentPageViewModel<BlogPost
     @Override
     public CharSequence getDatePublishedISO() {
         return Optional.ofNullable(model.getPublishDate())
-                .map(Date::toInstant)
-                .map(Instant::toString)
-                .orElse(null);
+            .map(Date::toInstant)
+            .map(Instant::toString)
+            .orElse(null);
     }
 
     @Override
     public Iterable<? extends CreativeWorkPageViewHeadlineField> getHeadline() {
         return RichTextUtils.buildInlineHtml(
-                model,
-                BlogPostPage::getHeadline,
-                e -> createView(CreativeWorkPageViewHeadlineField.class, e));
+            model,
+            BlogPostPage::getHeadline,
+            e -> createView(CreativeWorkPageViewHeadlineField.class, e));
     }
 
     @Override
@@ -126,82 +127,85 @@ public class BlogPostPageViewModel extends AbstractContentPageViewModel<BlogPost
 
     @Override
     public Iterable<? extends CreativeWorkPageViewSponsorLogoField> getSponsorLogo() {
-        return null;
+        return createViews(
+            CreativeWorkPageViewSponsorLogoField.class,
+            Optional.ofNullable(model.getSponsor())
+                .map(ContentSponsor::getLogo)
+                .orElse(null)
+        );
     }
 
     @Override
     public CharSequence getSponsorMeaningTarget() {
-        return null;
+        return SiteSettings.get(
+            currentSite,
+            s -> Optional.ofNullable(s.as(SponsoredContentSiteSettings.class).getSponsoredContentMeaningLink())
+                .map(Link::getTarget)
+                .map(Target::getValue)
+                .orElse(null));
     }
 
     @Override
     public CharSequence getSponsorMeaningUrl() {
+        return SiteSettings.get(
+            currentSite,
+            s -> Optional.ofNullable(s.as(SponsoredContentSiteSettings.class).getSponsoredContentMeaningLink())
+                .map(link -> link.getLinkUrl(currentSite))
+                .orElse(null));
+    }
+
+    @Override
+    public CharSequence getSponsorDisplayText() {
         return null;
     }
 
     @Override
     public Iterable<? extends CreativeWorkPageViewSponsorNameField> getSponsorName() {
-        return null;
+        return Optional.ofNullable(model.getSponsor())
+            .map(sponsor -> RichTextUtils.buildInlineHtml(
+                sponsor,
+                ContentSponsor::getDisplayName,
+                e -> createView(CreativeWorkPageViewSponsorNameField.class, e)))
+            .orElse(null);
     }
 
     @Override
     public CharSequence getSponsorTarget() {
-        return null;
+        return Optional.ofNullable(model.getSponsor())
+            .filter(Sponsor.class::isInstance)
+            .map(Sponsor.class::cast)
+            .map(Sponsor::getCallToAction)
+            .map(Link::getTarget)
+            .map(Target::getValue)
+            .orElse(null);
     }
 
     @Override
     public CharSequence getSponsorUrl() {
-        return null;
+        return Optional.ofNullable(model.getSponsor())
+            .filter(Sponsor.class::isInstance)
+            .map(Sponsor.class::cast)
+            .map(Sponsor::getCallToAction)
+            .map(link -> link.getLinkUrl(currentSite))
+            .orElse(null);
     }
 
     @Override
     public Boolean getSponsored() {
-        return null;
+        return model.getSponsor() != null;
     }
 
     @Override
     public Iterable<? extends CreativeWorkPageViewSubHeadlineField> getSubHeadline() {
         return RichTextUtils.buildInlineHtml(
-                model,
-                BlogPostPage::getSubheadline,
-                e -> createView(CreativeWorkPageViewSubHeadlineField.class, e));
+            model,
+            BlogPostPage::getSubheadline,
+            e -> createView(CreativeWorkPageViewSubHeadlineField.class, e));
     }
 
     @Override
     public Iterable<? extends PageViewPageSubHeadingField> getPageSubHeading() {
         // TODO this should not be present on view
         return null;
-    }
-
-    /* DEPRECATED KEYS BELOW */
-
-    @Override
-    public Iterable<? extends CreativeWorkPageViewAuthorBiographyField> getAuthorBiography() {
-        return authoringPage.getAuthorBiography(CreativeWorkPageViewAuthorBiographyField.class);
-    }
-
-    @Override
-    public Map<String, ?> getAuthorImage() {
-        return authoringPage.getAuthorImageAttributes();
-    }
-
-    @Override
-    public Iterable<? extends CreativeWorkPageViewAuthorNameField> getAuthorName() {
-        return authoringPage.getAuthorName(CreativeWorkPageViewAuthorNameField.class);
-    }
-
-    @Override
-    public CharSequence getAuthorUrl() {
-        return authoringPage.getAuthorUrl();
-    }
-
-    @Override
-    public Iterable<? extends LinkView> getContributors() {
-        return authoringPage.getContributors(LinkView.class);
-    }
-
-    @Override
-    public Iterable<? extends PagePromoView> getPeople() {
-        return authoringPage.getAuthors(PagePromoView.class);
     }
 }

@@ -9,6 +9,8 @@ import com.psddev.cms.db.ToolUi;
 import com.psddev.cms.tool.ToolPageContext;
 import com.psddev.cms.ui.LocalizationContext;
 import com.psddev.cms.ui.ToolLocalization;
+import com.psddev.cms.ui.form.EditablePlaceholder;
+import com.psddev.cms.ui.form.Placeholder;
 import com.psddev.dari.db.Recordable;
 
 @Recordable.DisplayName("Automatic")
@@ -17,7 +19,8 @@ public class AutomaticLiveEventOption extends LiveEventOption {
 
     private static final int DEFAULT_HOURS_BEFORE_NOT_LIVE = 24;
 
-    @ToolUi.Placeholder(value = DEFAULT_HOURS_BEFORE_NOT_LIVE + "", editable = true)
+    @Placeholder(DEFAULT_HOURS_BEFORE_NOT_LIVE + "")
+    @EditablePlaceholder
     private Integer hoursBeforeBlogIsNotLive;
 
     public String isLiveEventNote(ToolPageContext page) {
@@ -25,8 +28,8 @@ public class AutomaticLiveEventOption extends LiveEventOption {
         final int numberOfHoursBeforeNotLive = getHoursBeforeBlogIsNotLive();
 
         return ToolLocalization.text(new LocalizationContext(
-                getClass(),
-                ImmutableMap.of("hours", numberOfHoursBeforeNotLive)), "note.isLiveEvent");
+            getClass(),
+            ImmutableMap.of("hours", numberOfHoursBeforeNotLive)), "note.isLiveEvent");
     }
 
     // --- LiveEventOption support ---
@@ -46,8 +49,8 @@ public class AutomaticLiveEventOption extends LiveEventOption {
 
     public int getHoursBeforeBlogIsNotLive() {
         return hoursBeforeBlogIsNotLive != null
-                ? hoursBeforeBlogIsNotLive
-                : DEFAULT_HOURS_BEFORE_NOT_LIVE;
+            ? hoursBeforeBlogIsNotLive
+            : DEFAULT_HOURS_BEFORE_NOT_LIVE;
     }
 
     public void setHoursBeforeBlogIsNotLive(Integer hoursBeforeBlogIsNotLive) {

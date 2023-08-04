@@ -35,39 +35,40 @@ import com.psddev.dari.util.Utils;
 import org.apache.commons.lang3.StringUtils;
 
 @ToolUi.FieldDisplayOrder({
-        "name",
-        "firstName",
-        "lastName",
-        "image",
-        "title",
-        "affiliation",
-        "email",
-        "shortBiography",
-        "fullBiography",
-        "seo.title",
-        "seo.suppressSeoDisplayName",
-        "seo.description",
-        "seo.keywords",
-        "seo.robots",
-        "ampPage.ampDisabled"
+    "name",
+    "firstName",
+    "lastName",
+    "hasUrlSlug.urlSlug",
+    "image",
+    "title",
+    "affiliation",
+    "email",
+    "shortBiography",
+    "fullBiography",
+    "seo.title",
+    "seo.suppressSeoDisplayName",
+    "seo.description",
+    "seo.keywords",
+    "seo.robots",
+    "ampPage.ampDisabled"
 })
 @ToolUi.IconName("person")
 @Recordable.DisplayName("Author")
 public class PersonAuthor extends Content implements
-        AlphabeticallySortable,
-        Author,
-        AuthorPromotable,
-        CascadingPageElements,
-        DefaultSiteMapItem,
-        HasSiteSearchBoostIndexes,
-        HasUrlSlugWithField,
-        OpenGraphProfile,
-        Page,
-        PagePromotableWithOverrides,
-        SearchExcludable,
-        SeoWithFields,
-        Shareable,
-        SocialEntity {
+    AlphabeticallySortable,
+    Author,
+    AuthorPromotable,
+    CascadingPageElements,
+    DefaultSiteMapItem,
+    HasSiteSearchBoostIndexes,
+    HasUrlSlugWithField,
+    OpenGraphProfile,
+    Page,
+    PagePromotableWithOverrides,
+    SearchExcludable,
+    SeoWithFields,
+    Shareable,
+    SocialEntity {
 
     @Indexed
     @Required
@@ -199,8 +200,8 @@ public class PersonAuthor extends Content implements
 
     public String getShortBiographyPlaceholder() {
         return StringUtils.isBlank(fullBiography)
-                ? ""
-                : RichTextUtils.getFirstBodyParagraph(fullBiography);
+            ? ""
+            : RichTextUtils.getFirstBodyParagraph(fullBiography);
     }
 
     public String getAffiliation() {
@@ -313,10 +314,10 @@ public class PersonAuthor extends Content implements
     @Override
     public PagePromotable getAuthorPromotablePublication(Site site) {
         return Query.from(PagePromotable.class)
-                .where(HasAuthorsData.class.getName() + "/" + HasAuthorsData.AUTHORING_ENTITIES_FIELD + " = ?", this)
-                .and("cms.content.publishDate != missing")
-                .sortDescending("cms.content.publishDate")
-                .first();
+            .where(HasAuthorsData.class.getName() + "/" + HasAuthorsData.AUTHORING_ENTITIES_FIELD + " = ?", this)
+            .and("cms.content.publishDate != missing")
+            .sortDescending("cms.content.publishDate")
+            .first();
     }
 
     // --- OpenGraphProfile support ---
@@ -359,16 +360,16 @@ public class PersonAuthor extends Content implements
 
     private String getAlphabeticalSortFallback() {
         return RichTextUtils.richTextToPlainText(MoreStringUtils.firstNonBlankRichText(
-                getLastName(),
-                this::parseLastNameFromName,
-                this::getNamePlainText));
+            getLastName(),
+            this::parseLastNameFromName,
+            this::getNamePlainText));
     }
 
     @Override
     public String getAlphabeticallySortableIndexValue() {
         return Optional.ofNullable(alphabeticalSortValue)
-                .filter(val -> !val.isEmpty())
-                .orElseGet(this::getAlphabeticalSortFallback);
+            .filter(val -> !val.isEmpty())
+            .orElseGet(this::getAlphabeticalSortFallback);
     }
 
     private String parseLastNameFromName() {

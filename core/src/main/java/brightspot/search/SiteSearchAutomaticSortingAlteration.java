@@ -10,11 +10,11 @@ import com.psddev.dari.db.Alteration;
 public class SiteSearchAutomaticSortingAlteration extends Alteration<SiteSearchAutomaticSorting> {
 
     @Types({
-            Relevance.class,
-            NewestPublishDate.class,
-            OldestPublishDate.class,
-            AlphabeticalAscendingDynamicQuerySort.class,
-            AlphabeticalDescendingDynamicQuerySort.class
+        Relevance.class,
+        NewestPublishDate.class,
+        OldestPublishDate.class,
+        AlphabeticalAscendingDynamicQuerySort.class,
+        AlphabeticalDescendingDynamicQuerySort.class
     })
     private DynamicQuerySort sortBy;
 

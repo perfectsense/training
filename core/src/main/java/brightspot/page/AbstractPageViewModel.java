@@ -32,12 +32,15 @@ import com.psddev.styleguide.page.PageViewFooterContentField;
 import com.psddev.styleguide.page.PageViewFooterLogoField;
 import com.psddev.styleguide.page.PageViewFooterNavigationField;
 import com.psddev.styleguide.page.PageViewHatField;
+import com.psddev.styleguide.page.PageViewLanguageVariantLinksField;
 import com.psddev.styleguide.page.PageViewLanguagesField;
 import com.psddev.styleguide.page.PageViewLogoField;
 import com.psddev.styleguide.page.PageViewMetaField;
 import com.psddev.styleguide.page.PageViewNavigationField;
 import com.psddev.styleguide.page.PageViewSectionNavigationField;
 import com.psddev.styleguide.page.PageViewSocialField;
+import com.psddev.styleguide.page.PageViewTagManagerBodyField;
+import com.psddev.styleguide.page.PageViewTagManagerHeadField;
 
 /**
  * Note:  This a port/refactor of the current page view model pattern in use across Express (and ultimately
@@ -221,6 +224,16 @@ public abstract class AbstractPageViewModel<M extends Recordable> extends ViewMo
         return page.getTitle();
     }
 
+    @Override
+    public Iterable<? extends PageViewTagManagerHeadField> getTagManagerHead() {
+        return page.getTagManager(PageViewTagManagerHeadField.class);
+    }
+
+    @Override
+    public Iterable<? extends PageViewTagManagerBodyField> getTagManagerBody() {
+        return page.getTagManager(PageViewTagManagerBodyField.class);
+    }
+
     @JsonLdNode("url")
     public CharSequence getCanonicalUrl() {
         return page.getCanonicalLink();
@@ -236,9 +249,14 @@ public abstract class AbstractPageViewModel<M extends Recordable> extends ViewMo
         return page.getLanguageMenu(PageViewLanguagesField.class);
     }
 
+    @Override
+    public Iterable<? extends PageViewLanguageVariantLinksField> getLanguageVariantLinks() {
+        return page.languageVariantLinks(PageViewLanguageVariantLinksField.class);
+    }
+
     public Iterable<? extends PageViewEntitlementsField> getEntitlements() {
         EntitlementProvider entitlementProvider = SiteSettings.get(getSite(), siteSettings -> siteSettings.as(
-                EntitlementsSiteSettings.class).getEntitlementProvider());
+            EntitlementsSiteSettings.class).getEntitlementProvider());
         return createViews(PageViewEntitlementsField.class, entitlementProvider);
     }
 }

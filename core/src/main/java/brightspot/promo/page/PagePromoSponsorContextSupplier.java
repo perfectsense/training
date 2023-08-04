@@ -19,11 +19,11 @@ public class PagePromoSponsorContextSupplier implements PageElementSupplier<Page
     public Iterable<PagePromoSponsorContext> get(Site site, Object object) {
 
         Sponsor sponsor = Optional.ofNullable(object)
-                .filter(HasSponsor.class::isInstance)
-                .map(HasSponsor.class::cast)
-                .map(HasSponsor::getSponsor)
-                .map(contentSponsor -> contentSponsor.as(Sponsor.class))
-                .orElse(null);
+            .filter(HasSponsor.class::isInstance)
+            .map(HasSponsor.class::cast)
+            .map(HasSponsor::getSponsor)
+            .map(contentSponsor -> contentSponsor.as(Sponsor.class))
+            .orElse(null);
 
         if (sponsor == null) {
             return null;
@@ -32,16 +32,21 @@ public class PagePromoSponsorContextSupplier implements PageElementSupplier<Page
         WebImageAsset logo = sponsor.getLogo();
         Link callToAction = sponsor.getCallToAction();
         Function<Recordable, String> displayNameFunction = parentObject -> parentObject.as(ContentSponsor.class)
-                .getDisplayName();
+            .getDisplayName();
+        String sponsorDisplayText = getSponsorDisplayText(site, sponsor);
 
         PagePromoSponsorContext pagePromoSponsorContext = new PagePromoSponsorContext();
         pagePromoSponsorContext.setParentObject(sponsor);
         pagePromoSponsorContext.setLogo(logo);
         pagePromoSponsorContext.setCallToAction(callToAction);
         pagePromoSponsorContext.setDisplayNameFunction(displayNameFunction);
+        pagePromoSponsorContext.setSponsorDisplayText(sponsorDisplayText);
 
         return ImmutableList.of(pagePromoSponsorContext);
 
     }
 
+    private String getSponsorDisplayText(Site site, Sponsor sponsor) {
+        return sponsor.getSponsorDisplayTextWithFallback(site);
+    }
 }

@@ -33,39 +33,40 @@ import com.psddev.dari.util.Utils;
 import org.apache.commons.lang3.StringUtils;
 
 @ToolUi.FieldDisplayOrder({
-        "name",
-        "firstName",
-        "lastName",
-        "image",
-        "title",
-        "affiliation",
-        "email",
-        "shortBiography",
-        "fullBiography",
-        "seo.title",
-        "seo.suppressSeoDisplayName",
-        "seo.description",
-        "seo.keywords",
-        "seo.robots",
-        "ampPage.ampDisabled"
+    "name",
+    "firstName",
+    "lastName",
+    "hasUrlSlug.urlSlug",
+    "image",
+    "title",
+    "affiliation",
+    "email",
+    "shortBiography",
+    "fullBiography",
+    "seo.title",
+    "seo.suppressSeoDisplayName",
+    "seo.description",
+    "seo.keywords",
+    "seo.robots",
+    "ampPage.ampDisabled"
 })
 @ToolUi.IconName("person")
 @Recordable.DisplayName("Person")
 public class PersonPage extends Content implements
-        AlphabeticallySortable,
-        CascadingPageElements,
-        DefaultSiteMapItem,
-        HasSiteSearchBoostIndexes,
-        HasUrlSlugWithField,
-        OpenGraphProfile,
-        Page,
-        PagePromotableWithOverrides,
-        Person,
-        PersonPromotable,
-        SearchExcludable,
-        SeoWithFields,
-        Shareable,
-        SocialEntity {
+    AlphabeticallySortable,
+    CascadingPageElements,
+    DefaultSiteMapItem,
+    HasSiteSearchBoostIndexes,
+    HasUrlSlugWithField,
+    OpenGraphProfile,
+    Page,
+    PagePromotableWithOverrides,
+    Person,
+    PersonPromotable,
+    SearchExcludable,
+    SeoWithFields,
+    Shareable,
+    SocialEntity {
 
     public static final String PAGE_PROMOTABLE_TYPE = "person";
 
@@ -165,8 +166,8 @@ public class PersonPage extends Content implements
 
     public String getShortBiography() {
         return StringUtils.isBlank(shortBiography)
-                ? getShortBiographyPlaceholder()
-                : shortBiography;
+            ? getShortBiographyPlaceholder()
+            : shortBiography;
     }
 
     public void setShortBiography(String shortBiography) {
@@ -175,8 +176,8 @@ public class PersonPage extends Content implements
 
     public String getShortBiographyPlaceholder() {
         return StringUtils.isBlank(fullBiography)
-                ? ""
-                : RichTextUtils.getFirstBodyParagraph(fullBiography);
+            ? ""
+            : RichTextUtils.getFirstBodyParagraph(fullBiography);
     }
 
     public String getAffiliation() {
@@ -296,6 +297,11 @@ public class PersonPage extends Content implements
         return getImage();
     }
 
+    @Override
+    public String getPersonPromotableDescription() {
+        return getShortBiography();
+    }
+
     // --- Recordable support ---
 
     @Override
@@ -340,16 +346,16 @@ public class PersonPage extends Content implements
 
     private String getAlphabeticalSortFallback() {
         return RichTextUtils.richTextToPlainText(MoreStringUtils.firstNonBlankRichText(
-                getLastName(),
-                this::parseLastNameFromName,
-                this::getNamePlainText));
+            getLastName(),
+            this::parseLastNameFromName,
+            this::getNamePlainText));
     }
 
     @Override
     public String getAlphabeticallySortableIndexValue() {
         return Optional.ofNullable(alphabeticalSortValue)
-                .filter(val -> !val.isEmpty())
-                .orElseGet(this::getAlphabeticalSortFallback);
+            .filter(val -> !val.isEmpty())
+            .orElseGet(this::getAlphabeticalSortFallback);
     }
 
     private String parseLastNameFromName() {

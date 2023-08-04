@@ -96,17 +96,18 @@ public class StandardAppleNewsArticleSubstitution extends StandardAppleNewsArtic
         Set<StandardAppleNewsSection> appleNewsSections = Optional.of(allSections)
             .map(sections -> sections.stream()
                 .map(section -> AppleNewsSectionMappingPage
-                        .getAppleNewsSectionBySection(
-                                this.as(Site.ObjectModification.class).getOwner(),
-                                section))
+                    .getAppleNewsSectionBySection(
+                        this.as(Site.ObjectModification.class).getOwner(),
+                        section))
                 .filter(Objects::nonNull)
                 .filter(appleNewsSection -> appleNewsSection.isInstantiableTo(StandardAppleNewsSection.class))
                 .map(appleNewsSection -> appleNewsSection.as(StandardAppleNewsSection.class))
                 .filter(Objects::nonNull)
                 .collect(Collectors.toSet()))
+            .filter(sections -> !sections.isEmpty())
             .orElseGet(() -> Optional.ofNullable(AppleNewsChannelSiteSettings.get(
-                as(Site.ObjectModification.class).getOwner(),
-                AppleNewsChannelSiteSettings::getDefaultChannel))
+                    as(Site.ObjectModification.class).getOwner(),
+                    AppleNewsChannelSiteSettings::getDefaultChannel))
                 .map(AppleNewsChannel::getAllSections)
                 .flatMap(sections -> StreamSupport.stream(sections.spliterator(), false)
                     .filter(AppleNewsSection::isDefaultSection)
@@ -114,9 +115,9 @@ public class StandardAppleNewsArticleSubstitution extends StandardAppleNewsArtic
                 .filter(section -> section.isInstantiableTo(StandardAppleNewsSection.class))
                 .map(section -> section.as(StandardAppleNewsSection.class))
                 .map(section -> new HashSet<>(Collections.singletonList(section)))
-                .orElse(null));
+                .orElseGet(HashSet::new));
 
-        if (appleNewsSections != null) {
+        if (!appleNewsSections.isEmpty()) {
 
             this.setSections(new ArrayList<>(appleNewsSections));
         }

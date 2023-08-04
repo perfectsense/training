@@ -35,7 +35,7 @@ import com.psddev.theme.Theme;
 import com.psddev.theme.ThemeSettings;
 
 public class NewsletterSubstitution extends Newsletter implements Substitution, MailchimpTemplateProvider,
-        SailthruTemplateProvider {
+    SailthruTemplateProvider {
 
     @Override
     public String getMailchimpTemplateUrl() {
@@ -59,7 +59,7 @@ public class NewsletterSubstitution extends Newsletter implements Substitution, 
         }
 
         StandardMailchimpClientConfiguration configuration = new StandardMailchimpClientConfiguration(
-            getId(),
+            settings.getId(),
             settings.getEndpoint(),
             settings.getApiKey(),
             lastChanged.toInstant());
@@ -71,33 +71,33 @@ public class NewsletterSubstitution extends Newsletter implements Substitution, 
         Site site = WebRequest.getCurrent().as(ToolRequest.class).getCurrentSite();
         Theme theme = SiteSettings.get(site, s -> s.as(ThemeSettings.class).getTheme());
         Path rootPath = Optional.ofNullable(theme.getBundle())
-                .map(Bundleable::getRootDirectory)
-                .orElse(null);
+            .map(Bundleable::getRootDirectory)
+            .orElse(null);
         return generateHtml(this, PageEntryView.class, theme, rootPath);
     }
 
     @Override
     public SailthruClient getSailthruClient() {
         Site site = WebRequest.isAvailable()
-                ? WebRequest.getCurrent().as(ToolRequest.class).getCurrentSite()
-                : this.as(Site.ObjectModification.class).getOwner();
+            ? WebRequest.getCurrent().as(ToolRequest.class).getCurrentSite()
+            : this.as(Site.ObjectModification.class).getOwner();
         SailthruApiSettings settings = SiteSettings.get(
-                site,
-                siteSettings -> siteSettings.as(SailthruSiteSettings.class).getSettings());
+            site,
+            siteSettings -> siteSettings.as(SailthruSiteSettings.class).getSettings());
         Date lastChanged = SiteSettings.get(
-                site,
-                siteSettings -> siteSettings.as(SailthruSiteSettings.class).getLastChanged());
+            site,
+            siteSettings -> siteSettings.as(SailthruSiteSettings.class).getLastChanged());
         if (settings == null || lastChanged == null) {
 
             return null;
         }
 
         StandardSailthruClientConfiguration configuration = new StandardSailthruClientConfiguration(
-                getId(),
-                "https://api.sailthru.com",
-                settings.getApiKey(),
-                settings.getApiSecret(),
-                lastChanged.toInstant());
+            settings.getId(),
+            "https://api.sailthru.com",
+            settings.getApiKey(),
+            settings.getApiSecret(),
+            lastChanged.toInstant());
         return ApiClientManager.getApiClient(configuration);
     }
 
@@ -133,13 +133,14 @@ public class NewsletterSubstitution extends Newsletter implements Substitution, 
             if (renderer != null) {
                 if (theme != null) {
                     ViewOutput result = renderer
-                            .render(viewModel, PathViewTemplateLoader.getInstance(theme.getId(), null, themeRootPath));
+                        .render(viewModel, PathViewTemplateLoader.getInstance(theme.getId(), null, themeRootPath));
                     return result.get();
                 } else {
                     throw new SailthruInternalException("Could not generate HTML for Sailthru: Theme not found!");
                 }
             } else {
-                throw new SailthruInternalException("Could not generate HTML for Sailthru: Could not create ViewRenderer!");
+                throw new SailthruInternalException(
+                    "Could not generate HTML for Sailthru: Could not create ViewRenderer!");
             }
         } else {
             throw new SailthruInternalException("Could not generate HTML for Sailthru: ViewModel not found!");

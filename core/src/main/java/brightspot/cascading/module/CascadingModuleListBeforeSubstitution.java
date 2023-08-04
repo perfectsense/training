@@ -10,7 +10,8 @@ import com.psddev.cms.ui.content.place.Placeable;
 import com.psddev.dari.db.Recordable;
 import com.psddev.dari.util.Substitution;
 
-public class CascadingModuleListBeforeSubstitution extends CascadingModuleListBefore implements GroupedPlaceItem, Substitution {
+public class CascadingModuleListBeforeSubstitution extends CascadingModuleListBefore
+    implements GroupedPlaceItem, Substitution {
 
     @Override
     public List<Place> getGroupedPlaceItemPlaces(Placeable source, Recordable target) {

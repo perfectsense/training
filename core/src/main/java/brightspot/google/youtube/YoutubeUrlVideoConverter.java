@@ -32,7 +32,11 @@ public class YoutubeUrlVideoConverter extends ExternalItemConverter<YouTubeVideo
 
         if (!youtubeTags.isEmpty() && WebRequest.isAvailable()) {
             Site site = WebRequest.getCurrent().as(ToolRequest.class).getCurrentSite();
-            youtubeUrlVideo.as(HasTagsWithFieldData.class).setTags(Query.from(Tag.class).where("tag.getTagDisplayNamePlainText = ?", youtubeTags).and(site != null ? site.itemsPredicate() : null).selectAll());
+            youtubeUrlVideo.as(HasTagsWithFieldData.class)
+                .setTags(Query.from(Tag.class)
+                    .where("tag.getTagDisplayNamePlainText = ?", youtubeTags)
+                    .and(site != null ? site.itemsPredicate() : null)
+                    .selectAll());
         }
         return Collections.singletonList(youtubeUrlVideo);
     }

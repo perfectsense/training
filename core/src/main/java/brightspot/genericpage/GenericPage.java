@@ -16,10 +16,11 @@ import brightspot.mediatype.HasMediaTypeWithOverride;
 import brightspot.mediatype.MediaType;
 import brightspot.module.HasModularSearchIndexFields;
 import brightspot.module.ModulePlacement;
+import brightspot.module.SharedModulePagePlacement;
+import brightspot.module.SharedModulePlacementTypes;
 import brightspot.page.ModulePageLead;
 import brightspot.page.Page;
 import brightspot.page.PageHeading;
-import brightspot.page.TypeSpecificCascadingPageElements;
 import brightspot.permalink.AbstractPermalinkRule;
 import brightspot.permalink.Permalink;
 import brightspot.promo.page.PagePromotableWithOverrides;
@@ -40,6 +41,7 @@ import com.psddev.cms.db.Content;
 import com.psddev.cms.db.ContentEditDrawerItem;
 import com.psddev.cms.db.Site;
 import com.psddev.cms.db.ToolUi;
+import com.psddev.cms.ui.form.Note;
 import com.psddev.dari.db.Recordable;
 import com.psddev.feed.FeedItem;
 import com.psddev.theme.StyleEmbeddedContentCreator;
@@ -75,10 +77,10 @@ public class GenericPage extends Content implements
     PagePromotableWithOverrides,
     SearchExcludable,
     SeoWithFields,
-    Shareable,
-    TypeSpecificCascadingPageElements {
+    Shareable {
 
     @Required
+    @Indexed
     @ToolUi.CssClass("is-half")
     @ToolUi.RichText(toolbar = TinyRichTextToolbar.class)
     private String displayName;
@@ -90,12 +92,14 @@ public class GenericPage extends Content implements
     private String description;
 
     // @ToolUi.EmbeddedContentCreatorClass(StyleEmbeddedContentCreator.class)
-    @ToolUi.Note("If a Lead is added, it will appear before the content.")
+    @Note("If a Lead is added, it will appear before the content.")
     private ModulePageLead lead = new PageHeading().as(ModulePageLead.class);
 
-    @DisplayName("Contents")
+    @DisplayName("Content")
     @ToolUi.EmbeddedContentCreatorClass(StyleEmbeddedContentCreator.class)
     @Embedded
+    @ToolUi.AddShared(sharedClass = SharedModulePagePlacement.class, field = "shared")
+    @SharedModulePlacementTypes(types = SharedModulePagePlacement.class)
     private List<ModulePlacement> contents;
 
     public String getInternalName() {
@@ -257,14 +261,14 @@ public class GenericPage extends Content implements
 
     @Override
     public String getPagePromotableCategoryFallback() {
-        return Optional.ofNullable(asHasSectionData().getSectionParent())
+        return Optional.ofNullable(getSectionParent())
             .map(Section::getSectionDisplayNameRichText)
             .orElse(null);
     }
 
     @Override
     public String getPagePromotableCategoryUrlFallback(Site site) {
-        return Optional.ofNullable(asHasSectionData().getSectionParent())
+        return Optional.ofNullable(getSectionParent())
             .map(section -> section.getLinkableUrl(site))
             .orElse(null);
     }

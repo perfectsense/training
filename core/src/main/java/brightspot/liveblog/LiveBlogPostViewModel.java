@@ -48,41 +48,41 @@ public class LiveBlogPostViewModel extends ViewModel<LiveBlogPost> implements Li
     @Override
     public Iterable<? extends LiveBlogPostViewBodyField> getBody() {
         return RichTextUtils.buildHtml(model, LiveBlogPost::getBody,
-                e -> createView(LiveBlogPostViewBodyField.class, e));
+            e -> createView(LiveBlogPostViewBodyField.class, e));
     }
 
     @Override
     public CharSequence getPostedDate() {
 
         return Optional.ofNullable(model.getPublishDate())
-                .map(date -> DateTimeUtils.format(date, LiveBlogPostView.class,
-                        DATE_FORMAT_KEY, currentSite, locale, DEFAULT_DATE_FORMAT))
-                .orElse(null);
+            .map(date -> DateTimeUtils.format(date, LiveBlogPostView.class,
+                DATE_FORMAT_KEY, currentSite, locale, DEFAULT_DATE_FORMAT))
+            .orElse(null);
     }
 
     @Override
     public Number getPostedDateTimestamp() {
 
         return Optional.ofNullable(model.getPublishDate())
-                .map(Date::getTime)
-                .orElse(null);
+            .map(Date::getTime)
+            .orElse(null);
     }
 
     @Override
     public CharSequence getUpdateDate() {
 
         return Optional.ofNullable(model.getUpdateDateOverride())
-                .map(date -> DateTimeUtils.format(date, LiveBlogPostView.class,
-                        DATE_FORMAT_KEY, currentSite, locale, DEFAULT_DATE_FORMAT))
-                .orElse(null);
+            .map(date -> DateTimeUtils.format(date, LiveBlogPostView.class,
+                DATE_FORMAT_KEY, currentSite, locale, DEFAULT_DATE_FORMAT))
+            .orElse(null);
     }
 
     @Override
     public Number getUpdateDateTimestamp() {
 
         return Optional.ofNullable(model.getUpdateDateOverride())
-                .map(Date::getTime)
-                .orElse(null);
+            .map(Date::getTime)
+            .orElse(null);
     }
 
     @Override
@@ -98,7 +98,7 @@ public class LiveBlogPostViewModel extends ViewModel<LiveBlogPost> implements Li
     @Override
     public Iterable<? extends LiveBlogPostViewHeadlineField> getHeadline() {
         return RichTextUtils.buildInlineHtml(model, LiveBlogPost::getHeadline,
-                e -> createView(LiveBlogPostViewHeadlineField.class, e));
+            e -> createView(LiveBlogPostViewHeadlineField.class, e));
     }
 
     @Override

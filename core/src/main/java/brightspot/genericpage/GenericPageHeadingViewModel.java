@@ -22,9 +22,9 @@ public class GenericPageHeadingViewModel extends AbstractPageHeadingViewModel<Ge
     @Override
     public PageHeading getPageHeadingObject() {
         return Optional.ofNullable(model.getLead())
-                .filter(PageHeading.class::isInstance)
-                .map(PageHeading.class::cast)
-                .orElse(null);
+            .filter(PageHeading.class::isInstance)
+            .map(PageHeading.class::cast)
+            .orElse(null);
     }
 
     @Override

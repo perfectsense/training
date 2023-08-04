@@ -2,6 +2,8 @@ package brightspot.page;
 
 import java.util.List;
 
+import brightspot.banner.Banner;
+import brightspot.banner.CascadingBanner;
 import brightspot.cascading.Cascading;
 import brightspot.cascading.CascadingPageElement;
 import brightspot.cascading.CascadingPageElements;
@@ -12,6 +14,8 @@ import brightspot.footer.CascadingFooter;
 import brightspot.footer.Footer;
 import brightspot.hat.CascadingHat;
 import brightspot.hat.Hat;
+import brightspot.image.CascadingWebImage;
+import brightspot.image.WebImage;
 import brightspot.logo.CascadingLogo;
 import brightspot.logo.Logo;
 import brightspot.module.ModulePlacement;
@@ -41,6 +45,10 @@ public class CascadingPageData extends Modification<Object> {
     @CascadingPageElement
     private CascadingLogo ampLogo;
 
+    @ToolUi.Cluster("Logos & Icons")
+    @CascadingPageElement
+    private CascadingWebImage defaultPromoImage;
+
     @ToolUi.Cluster(LAYOUT_CLUSTER_NAME)
     @CascadingPageElement
     private CascadingHat hat;
@@ -48,6 +56,10 @@ public class CascadingPageData extends Modification<Object> {
     @ToolUi.Cluster(LAYOUT_CLUSTER_NAME)
     @CascadingPageElement
     private CascadingNavigation navigation;
+
+    @ToolUi.Cluster(LAYOUT_CLUSTER_NAME)
+    @CascadingPageElement
+    private CascadingBanner banner;
 
     @ToolUi.Cluster(LAYOUT_CLUSTER_NAME)
     @CascadingPageElement
@@ -81,8 +93,18 @@ public class CascadingPageData extends Modification<Object> {
 
     public Logo getAmpLogo(Site site) {
         return as(CascadingPageElementsModification.class)
-                .get(site, CascadingPageData.class,
-                        CascadingPageData::getCascadingAmpLogo);
+            .get(site, CascadingPageData.class,
+                CascadingPageData::getCascadingAmpLogo);
+    }
+
+    public Cascading<WebImage> getCascadingDefaultPromoImage() {
+        return defaultPromoImage;
+    }
+
+    public WebImage getDefaultPromoImage(Site site) {
+        return as(CascadingPageElementsModification.class)
+            .get(site, CascadingPageData.class,
+                CascadingPageData::getCascadingDefaultPromoImage);
     }
 
     public Cascading<Hat> getCascadingHat() {
@@ -103,6 +125,15 @@ public class CascadingPageData extends Modification<Object> {
         return as(CascadingPageElementsModification.class)
             .get(site, CascadingPageData.class,
                 CascadingPageData::getCascadingNavigation);
+    }
+
+    public CascadingBanner getCascadingBanner() {
+        return banner;
+    }
+
+    public List<Banner> getBanners(Site site) {
+        return as(CascadingPageElementsModification.class)
+            .get(site, CascadingPageData.class, CascadingPageData::getCascadingBanner);
     }
 
     public Cascading<Footer> getCascadingFooter() {
@@ -167,6 +198,10 @@ public class CascadingPageData extends Modification<Object> {
 
     public void setAside(CascadingModuleList aside) {
         this.aside = aside;
+    }
+
+    public void setBanner(CascadingBanner banner) {
+        this.banner = banner;
     }
 
     public void setNavigation(CascadingNavigation navigation) {

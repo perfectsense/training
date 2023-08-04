@@ -35,6 +35,7 @@ import brightspot.section.Section;
 import brightspot.seo.SeoWithFields;
 import brightspot.share.Shareable;
 import brightspot.site.DefaultSiteMapItem;
+import brightspot.sort.publishdate.NewestPublishDate;
 import brightspot.util.MoreStringUtils;
 import brightspot.util.RichTextUtils;
 import com.psddev.cms.db.Content;
@@ -42,42 +43,43 @@ import com.psddev.cms.db.Site;
 import com.psddev.cms.db.ToolUi;
 import com.psddev.cms.ui.form.DynamicPlaceholderMethod;
 import com.psddev.cms.ui.form.EditablePlaceholder;
+import com.psddev.cms.ui.form.Note;
 import com.psddev.dari.db.Recordable;
 import com.psddev.feed.FeedItem;
 
 @Recordable.DisplayName("Blog")
 @ToolUi.FieldDisplayOrder({
-        "displayName",
-        "internalName",
-        "description",
-        "lead",
-        "landingCascading.content",
-        "hasSectionWithField.section",
-        "seo.title",
-        "seo.suppressSeoDisplayName",
-        "seo.description",
-        "seo.keywords",
-        "seo.robots",
-        "ampPage.ampDisabled"
+    "displayName",
+    "internalName",
+    "description",
+    "lead",
+    "hasSectionWithField.section",
+    "landingCascading.content",
+    "seo.title",
+    "seo.suppressSeoDisplayName",
+    "seo.description",
+    "seo.keywords",
+    "seo.robots",
+    "ampPage.ampDisabled"
 })
 public class BlogPage extends Content implements
-        Anchorage,
-        Blog,
-        CascadingPageElements,
-        DynamicFeedSource,
-        DefaultSiteMapItem,
-        HasBreadcrumbs,
-        HasMediaTypeWithOverride,
-        HasSectionWithField,
-        HasSiteSearchBoostIndexes,
-        LandingPageElements,
-        Page,
-        PagePromotableWithOverrides,
-        SearchExcludable,
-        Section,
-        SeoWithFields,
-        Shareable,
-        TypeSpecificCascadingPageElements {
+    Anchorage,
+    Blog,
+    CascadingPageElements,
+    DynamicFeedSource,
+    DefaultSiteMapItem,
+    HasBreadcrumbs,
+    HasMediaTypeWithOverride,
+    HasSectionWithField,
+    HasSiteSearchBoostIndexes,
+    LandingPageElements,
+    Page,
+    PagePromotableWithOverrides,
+    SearchExcludable,
+    Section,
+    SeoWithFields,
+    Shareable,
+    TypeSpecificCascadingPageElements {
 
     @Required
     @Indexed
@@ -92,7 +94,7 @@ public class BlogPage extends Content implements
     @ToolUi.RichText(toolbar = SmallRichTextToolbar.class)
     private String description;
 
-    @ToolUi.Note("If a Lead is added, it will appear before the content.")
+    @Note("If a Lead is added, it will appear before the content.")
     private ModulePageLead lead;
 
     public String getDisplayName() {
@@ -130,7 +132,7 @@ public class BlogPage extends Content implements
     public List<ModulePlacement> getContents() {
         return Optional.ofNullable(as(LandingCascadingData.class)
                 .getContent(as(Site.ObjectModification.class).getOwner()))
-                .orElseGet(ArrayList::new);
+            .orElseGet(ArrayList::new);
     }
 
     public String getDisplayNamePlainText() {
@@ -184,6 +186,8 @@ public class BlogPage extends Content implements
 
         DynamicPageItemStream itemStream = new DynamicPageItemStream();
         itemStream.asQueryBuilderDynamicQueryModifier().setQueryBuilder(blogMatch);
+
+        itemStream.setSort(new NewestPublishDate());
 
         return getFeedFromDynamicStream(itemStream, getContents(), site);
     }
@@ -241,8 +245,8 @@ public class BlogPage extends Content implements
     @Override
     public String getPagePromotableType() {
         return Optional.ofNullable(getPrimaryMediaType())
-                .map(MediaType::getIconName)
-                .orElse(null);
+            .map(MediaType::getIconName)
+            .orElse(null);
     }
 
     @Override
@@ -257,16 +261,16 @@ public class BlogPage extends Content implements
 
     @Override
     public String getPagePromotableCategoryFallback() {
-        return Optional.ofNullable(asHasSectionData().getSectionParent())
-                .map(Section::getSectionDisplayNameRichText)
-                .orElse(null);
+        return Optional.ofNullable(getSectionParent())
+            .map(Section::getSectionDisplayNameRichText)
+            .orElse(null);
     }
 
     @Override
     public String getPagePromotableCategoryUrlFallback(Site site) {
-        return Optional.ofNullable(asHasSectionData().getSectionParent())
-                .map(section -> section.getLinkableUrl(site))
-                .orElse(null);
+        return Optional.ofNullable(getSectionParent())
+            .map(section -> section.getLinkableUrl(site))
+            .orElse(null);
     }
 
     // --- Anchorable Support ---
@@ -278,14 +282,14 @@ public class BlogPage extends Content implements
 
         // adding the anchor(s) of the lead
         Optional.ofNullable(getLead())
-                .map(Anchorage::getAnchorsForObject)
-                .ifPresent(anchors::addAll);
+            .map(Anchorage::getAnchorsForObject)
+            .ifPresent(anchors::addAll);
 
         // adding the anchor(s) of the content
         getContents().stream()
-                .map(Anchorage::getAnchorsForObject)
-                .flatMap(Set::stream)
-                .forEach(anchors::add);
+            .map(Anchorage::getAnchorsForObject)
+            .flatMap(Set::stream)
+            .forEach(anchors::add);
 
         return anchors;
     }

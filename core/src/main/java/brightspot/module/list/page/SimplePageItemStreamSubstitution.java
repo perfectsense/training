@@ -28,10 +28,10 @@ public class SimplePageItemStreamSubstitution extends SimplePageItemStream imple
                 PagePromotable item = getItems().get(j);
 
                 places.add(new SelectablePlace(
-                        target,
-                        item.getState().getId().toString() + "+index" + j,
-                        SPAN.with(tool.toHtml(item.getState().getType()), text(": "), tool.toHtml(item)),
-                        () -> getItems().set(j, (PagePromotable) source)));
+                    target,
+                    item.getState().getId().toString() + "+index" + j,
+                    SPAN.with(tool.toHtml(item.getState().getType()), text(": "), tool.toHtml(item)),
+                    () -> getItems().set(j, (PagePromotable) source)));
             }
 
             return places;

@@ -11,6 +11,8 @@ import brightspot.anchor.Anchorage;
 import brightspot.cascading.CascadingPageElements;
 import brightspot.module.HasModularSearchIndexFields;
 import brightspot.module.ModulePlacement;
+import brightspot.module.SharedModulePagePlacement;
+import brightspot.module.SharedModulePlacementTypes;
 import brightspot.page.Page;
 import brightspot.permalink.AbstractPermalinkRule;
 import brightspot.permalink.Permalink;
@@ -28,16 +30,15 @@ import com.psddev.cms.ui.content.place.Placeable;
 import com.psddev.cms.ui.content.place.PlaceableTarget;
 import com.psddev.feed.FeedItem;
 import com.psddev.theme.StyleEmbeddedContentCreator;
-import org.apache.commons.text.StringEscapeUtils;
 
 @ToolUi.IconName("home")
 @ToolUi.FieldDisplayOrder({
-        "seo.title",
-        "seo.suppressSeoDisplayName",
-        "seo.description",
-        "seo.keywords",
-        "seo.robots",
-        "ampPage.ampDisabled"
+    "seo.title",
+    "seo.suppressSeoDisplayName",
+    "seo.description",
+    "seo.keywords",
+    "seo.robots",
+    "ampPage.ampDisabled"
 })
 public class Homepage extends Content implements
     Anchorage,
@@ -54,9 +55,11 @@ public class Homepage extends Content implements
     @Required
     private String internalName;
 
-    @DisplayName("Contents")
+    @DisplayName("Content")
     @ToolUi.EmbeddedContentCreatorClass(StyleEmbeddedContentCreator.class)
     @Embedded
+    @ToolUi.AddShared(sharedClass = SharedModulePagePlacement.class, field = "shared")
+    @SharedModulePlacementTypes(types = SharedModulePagePlacement.class)
     private List<ModulePlacement> content;
 
     public String getInternalName() {
@@ -93,7 +96,7 @@ public class Homepage extends Content implements
 
     @Override
     public String getLinkableText() {
-        return StringEscapeUtils.escapeHtml4(getInternalName());
+        return null;
     }
 
     @Override
@@ -158,7 +161,7 @@ public class Homepage extends Content implements
     @Override
     public List<Place> getPlaceableTargetPlaces(Placeable content) {
         return Collections.singletonList(
-                new GroupedPlace(content, this, "Contents", getContent())
+            new GroupedPlace(content, this, "Content", getContent())
         );
     }
 }

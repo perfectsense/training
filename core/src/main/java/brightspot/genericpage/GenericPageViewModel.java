@@ -20,9 +20,9 @@ public class GenericPageViewModel extends AbstractPageViewModel<GenericPage> imp
     @Override
     public Iterable<? extends PageViewPageHeadingField> getPageHeading() {
         return RichTextUtils.buildInlineHtml(
-                model,
-                GenericPage::getDisplayName,
-                e -> createView(PageViewPageHeadingField.class, e));
+            model,
+            GenericPage::getDisplayName,
+            e -> createView(PageViewPageHeadingField.class, e));
     }
 
     @Override
@@ -32,6 +32,9 @@ public class GenericPageViewModel extends AbstractPageViewModel<GenericPage> imp
 
     @Override
     public Iterable<? extends PageViewPageSubHeadingField> getPageSubHeading() {
-        return RichTextUtils.buildHtml(model, GenericPage::getDescription, e -> createView(PageViewPageSubHeadingField.class, e));
+        return RichTextUtils.buildHtml(
+            model,
+            GenericPage::getDescription,
+            e -> createView(PageViewPageSubHeadingField.class, e));
     }
 }

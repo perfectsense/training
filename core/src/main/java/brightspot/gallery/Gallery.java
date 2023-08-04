@@ -15,6 +15,7 @@ import brightspot.cascading.CascadingPageElements;
 import brightspot.homepage.Homepage;
 import brightspot.image.WebImage;
 import brightspot.image.WebImageAsset;
+import brightspot.image.WebImagePlacement;
 import brightspot.imageitemstream.AdvancedImageItemStream;
 import brightspot.imageitemstream.ExistingImageItemStream;
 import brightspot.imageitemstream.ExistingImageItemStreamProvider;
@@ -32,12 +33,17 @@ import brightspot.promo.page.PagePromotableWithOverrides;
 import brightspot.rte.LargeRichTextToolbar;
 import brightspot.rte.TinyRichTextToolbar;
 import brightspot.rte.carousel.CarouselRichTextElement;
+import brightspot.rte.image.ImageRichTextElement;
 import brightspot.search.boost.HasSiteSearchBoostIndexes;
 import brightspot.search.modifier.exclusion.SearchExcludable;
+import brightspot.section.HasSecondarySectionsWithField;
 import brightspot.section.HasSection;
 import brightspot.section.HasSectionWithField;
 import brightspot.section.Section;
 import brightspot.section.SectionPrefixPermalinkRule;
+import brightspot.seo.EnhancedSeoBodyDynamicNote;
+import brightspot.seo.EnhancedSeoHeadlineDynamicNote;
+import brightspot.seo.EnhancedSeoWithFields;
 import brightspot.seo.SeoWithFields;
 import brightspot.share.Shareable;
 import brightspot.site.DefaultSiteMapItem;
@@ -55,9 +61,11 @@ import com.psddev.cms.tool.SearchResultSelectionGeneratable;
 import com.psddev.cms.ui.content.Suggestible;
 import com.psddev.cms.ui.content.place.Placeable;
 import com.psddev.cms.ui.content.place.PlaceableTarget;
+import com.psddev.cms.ui.form.DynamicNoteClass;
 import com.psddev.dari.db.ObjectType;
 import com.psddev.dari.db.Query;
 import com.psddev.dari.db.Recordable;
+import com.psddev.dari.util.ObjectUtils;
 import com.psddev.dari.util.StorageItem;
 
 @ToolUi.FieldDisplayOrder({
@@ -67,6 +75,7 @@ import com.psddev.dari.util.StorageItem;
     "body",
     "items",
     "hasSectionWithField.section",
+    "hasSecondarySectionsWithField.secondarySections",
     "hasTags.tags",
     "seo.title",
     "seo.suppressSeoDisplayName",
@@ -80,36 +89,39 @@ import com.psddev.dari.util.StorageItem;
 @ToolUi.IconName(Gallery.ICON_NAME)
 @Recordable.PreviewField("getPreviewFile")
 @ToolUi.FieldDisplayPreview({
-        "pagePromotable.promoImage",
-        "title",
-        "description",
-        "hasSectionWithField.section",
-        "hasTags.tags",
-        "cms.content.updateDate",
-        "cms.content.updateUser" })
+    "pagePromotable.promoImage",
+    "title",
+    "description",
+    "hasSectionWithField.section",
+    "hasTags.tags",
+    "cms.content.updateDate",
+    "cms.content.updateUser" })
 public class Gallery extends Content implements
-        CascadingPageElements,
-        ExistingImageItemStreamProvider,
-        DefaultSiteMapItem,
-        HasAuthorsWithField,
-        HasBreadcrumbs,
-        HasMediaTypeWithOverride,
-        HasSectionWithField,
-        HasSiteSearchBoostIndexes,
-        HasSponsorWithField,
-        HasTagsWithField,
-        Interchangeable,
-        Page,
-        PagePromotableWithOverrides,
-        Placeable,
-        SearchExcludable,
-        SearchResultSelectionGeneratable,
-        Shareable,
-        SeoWithFields,
-        Suggestible {
+    CascadingPageElements,
+    EnhancedSeoWithFields,
+    ExistingImageItemStreamProvider,
+    DefaultSiteMapItem,
+    HasAuthorsWithField,
+    HasBreadcrumbs,
+    HasMediaTypeWithOverride,
+    HasSecondarySectionsWithField,
+    HasSectionWithField,
+    HasSiteSearchBoostIndexes,
+    HasSponsorWithField,
+    HasTagsWithField,
+    Interchangeable,
+    Page,
+    PagePromotableWithOverrides,
+    Placeable,
+    SearchExcludable,
+    SearchResultSelectionGeneratable,
+    Shareable,
+    SeoWithFields,
+    Suggestible {
 
     public static final String ICON_NAME = "photo_library";
 
+    @DynamicNoteClass(EnhancedSeoHeadlineDynamicNote.class)
     @Indexed
     @Required
     @ToolUi.RichText(toolbar = TinyRichTextToolbar.class)
@@ -119,6 +131,7 @@ public class Gallery extends Content implements
     @ToolUi.RichText(toolbar = TinyRichTextToolbar.class)
     private String description;
 
+    @DynamicNoteClass(EnhancedSeoBodyDynamicNote.class)
     @ToolUi.RichText(inline = false, toolbar = LargeRichTextToolbar.class)
     private String body;
 
@@ -180,6 +193,20 @@ public class Gallery extends Content implements
             .orElse(null);
     }
 
+    // --- EnhancedSeoWithFields support ---
+
+    @Override
+    public List<String> getEnhancedSeoBodyAllImageAltTexts(String body) {
+        List<ImageRichTextElement> iRtes = ImageRichTextElement.getImageEnhancementsFromRichText(body);
+        if (ObjectUtils.isBlank(iRtes)) {
+            return null;
+        }
+        return iRtes.stream()
+            .filter(Objects::nonNull)
+            .map(rte -> rte.as(WebImagePlacement.class).getWebImageAltText())
+            .collect(Collectors.toList());
+    }
+
     // --- HasBreadcrumbs support ---
 
     @Override
@@ -233,16 +260,16 @@ public class Gallery extends Content implements
 
     @Override
     public String getPagePromotableCategoryFallback() {
-        return Optional.ofNullable(asHasSectionData().getSectionParent())
-                .map(Section::getSectionDisplayNameRichText)
-                .orElse(null);
+        return Optional.ofNullable(getSectionParent())
+            .map(Section::getSectionDisplayNameRichText)
+            .orElse(null);
     }
 
     @Override
     public String getPagePromotableCategoryUrlFallback(Site site) {
-        return Optional.ofNullable(asHasSectionData().getSectionParent())
-                .map(section -> section.getLinkableUrl(site))
-                .orElse(null);
+        return Optional.ofNullable(getSectionParent())
+            .map(section -> section.getLinkableUrl(site))
+            .orElse(null);
     }
 
     // --- Recordable support ---
@@ -285,14 +312,14 @@ public class Gallery extends Content implements
     @Override
     public List<String> getSuggestibleFields() {
         return Stream.of(
-                "seo.title",
-                "seo.description",
-                "pagePromotable.promoTitle",
-                "pagePromotable.promoDescription",
-                "pagePromotable.promoImage",
-                "shareable.shareTitle",
-                "shareable.shareDescription",
-                "shareable.shareImage"
+            "seo.title",
+            "seo.description",
+            "pagePromotable.promoTitle",
+            "pagePromotable.promoDescription",
+            "pagePromotable.promoImage",
+            "shareable.shareTitle",
+            "shareable.shareDescription",
+            "shareable.shareImage"
         ).collect(Collectors.toList());
     }
 
@@ -360,21 +387,21 @@ public class Gallery extends Content implements
         List<PlaceableTarget> targets = new ArrayList<>();
 
         targets.add(Query.from(Homepage.class)
-                .where("cms.site.owner = ?", as(Site.ObjectModification.class).getOwner())
-                .first());
+            .where("cms.site.owner = ?", as(Site.ObjectModification.class).getOwner())
+            .first());
         targets.addAll(this.as(HasTags.class)
-                .getTags()
-                .stream()
-                .filter(PlaceableTarget.class::isInstance)
-                .filter(tag -> !tag.isHiddenTag())
-                .map(PlaceableTarget.class::cast)
-                .collect(Collectors.toSet()));
+            .getTags()
+            .stream()
+            .filter(PlaceableTarget.class::isInstance)
+            .filter(tag -> !tag.isHiddenTag())
+            .map(PlaceableTarget.class::cast)
+            .collect(Collectors.toSet()));
         targets.addAll(this.as(HasSection.class)
-                .getSectionAncestors()
-                .stream()
-                .filter(PlaceableTarget.class::isInstance)
-                .map(PlaceableTarget.class::cast)
-                .collect(Collectors.toSet()));
+            .getSectionAncestors()
+            .stream()
+            .filter(PlaceableTarget.class::isInstance)
+            .map(PlaceableTarget.class::cast)
+            .collect(Collectors.toSet()));
 
         return targets;
     }
@@ -426,10 +453,10 @@ public class Gallery extends Content implements
         // - PagePromoModulePlacementInline
         // - CarouselRichTextElement
         return ImmutableList.of(
-                getState().getTypeId(), // enable dragging and dropping as itself from the shelf
-                ObjectType.getInstance(CarouselRichTextElement.class).getId(),
-                ObjectType.getInstance(PagePromo.class).getId(),
-                ObjectType.getInstance(PagePromoModulePlacementInline.class).getId()
+            getState().getTypeId(), // enable dragging and dropping as itself from the shelf
+            ObjectType.getInstance(CarouselRichTextElement.class).getId(),
+            ObjectType.getInstance(PagePromo.class).getId(),
+            ObjectType.getInstance(PagePromoModulePlacementInline.class).getId()
         );
     }
 }

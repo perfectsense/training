@@ -12,6 +12,7 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 import brightspot.ad.injection.rte.SupportsAdInjection;
+import brightspot.apple.news.v2.displaycontrol.AppleNewsDisplaySettings;
 import brightspot.author.HasAuthorsWithField;
 import brightspot.breadcrumbs.HasBreadcrumbs;
 import brightspot.cascading.CascadingPageElements;
@@ -19,6 +20,7 @@ import brightspot.commenting.HasCommenting;
 import brightspot.commenting.coral.HasCoralPageMetadata;
 import brightspot.commenting.disqus.HasDisqusPageMetadata;
 import brightspot.embargo.Embargoable;
+import brightspot.google.drive.docs.GoogleDocumentImport;
 import brightspot.homepage.Homepage;
 import brightspot.image.WebImage;
 import brightspot.image.WebImageAsset;
@@ -27,6 +29,7 @@ import brightspot.l10n.LocaleProvider;
 import brightspot.link.InternalLink;
 import brightspot.mediatype.HasMediaTypeWithOverride;
 import brightspot.mediatype.MediaType;
+import brightspot.microsoft.drives.conversion.document.MicrosoftDocumentImport;
 import brightspot.module.list.page.PagePromo;
 import brightspot.module.promo.page.PagePromoModulePlacementInline;
 import brightspot.opengraph.article.OpenGraphArticle;
@@ -70,6 +73,7 @@ import com.psddev.cms.db.Interchangeable;
 import com.psddev.cms.db.Site;
 import com.psddev.cms.db.SiteSettings;
 import com.psddev.cms.db.ToolUi;
+import com.psddev.cms.ui.ToolRequest;
 import com.psddev.cms.ui.content.Suggestible;
 import com.psddev.cms.ui.content.place.Placeable;
 import com.psddev.cms.ui.content.place.PlaceableTarget;
@@ -79,77 +83,80 @@ import com.psddev.dari.db.Query;
 import com.psddev.dari.db.Recordable;
 import com.psddev.dari.util.ObjectUtils;
 import com.psddev.dari.util.Utils;
+import com.psddev.dari.web.WebRequest;
 import com.psddev.feed.FeedItem;
 import com.psddev.sitemap.NewsSiteMapItem;
 import com.psddev.sitemap.SiteMapEntry;
 import com.psddev.sitemap.SiteMapNews;
 import com.psddev.sitemap.SiteMapSettingsModification;
 import com.psddev.suggestions.Suggestable;
-import com.psddev.theme.StyleEmbeddedContentCreator;
 import org.apache.commons.lang3.StringUtils;
 
 @ToolUi.FieldDisplayOrder({
-        "headline",
-        "subheadline",
-        "hasUrlSlug.urlSlug",
-        "hasAuthorsWithField.authors",
-        "lead",
-        "body",
-        "hasSectionWithField.section",
-        "hasTags.tags",
-        "embargoable.embargo",
-        "seo.title",
-        "seo.suppressSeoDisplayName",
-        "seo.description",
-        "seo.keywords",
-        "seo.robots",
-        "seo.focusKeyWord",
-        "seo.getFocusKeywordDensity",
-        "seo.disableSeoRecommendations",
-        "ampPage.ampDisabled"
+    "headline",
+    "subheadline",
+    "hasUrlSlug.urlSlug",
+    "hasAuthorsWithField.authors",
+    "lead",
+    "body",
+    "hasSectionWithField.section",
+    "hasSecondarySectionsWithField.secondarySections",
+    "hasTags.tags",
+    "embargoable.embargo",
+    "seo.title",
+    "seo.suppressSeoDisplayName",
+    "seo.description",
+    "seo.keywords",
+    "seo.robots",
+    "seo.focusKeyWord",
+    "seo.getFocusKeywordDensity",
+    "seo.disableSeoRecommendations",
+    "ampPage.ampDisabled"
 })
 @Recordable.LabelFields("headline")
 @ToolUi.IconName("subject")
 @ToolUi.FieldDisplayPreview({
-        "headline",
-        "subheadline",
-        "hasAuthorsWithField.authors",
-        "hasSectionWithField.section",
-        "hasTags.tags",
-        "cms.content.updateDate",
-        "cms.content.updateUser" })
+    "headline",
+    "subheadline",
+    "hasAuthorsWithField.authors",
+    "hasSectionWithField.section",
+    "hasTags.tags",
+    "cms.content.updateDate",
+    "cms.content.updateUser" })
 public class Article extends Content implements
-        CascadingPageElements,
-        ContentEditDrawerItem,
-        Embargoable,
-        EnhancedSeoWithFields,
-        DefaultSiteMapItem,
-        FeedItem,
-        HasAuthorsWithField,
-        HasBreadcrumbs,
-        HasCommenting,
-        HasCoralPageMetadata,
-        HasDisqusPageMetadata,
-        HasMediaTypeWithOverride,
-        HasSecondarySectionsWithField,
-        HasSectionWithField,
-        HasSiteSearchBoostIndexes,
-        HasSponsorWithField,
-        HasTagsWithField,
-        HasUrlSlugWithField,
-        Interchangeable,
-        NewsSiteMapItem,
-        OpenGraphArticle,
-        Page,
-        PagePromotableWithOverrides,
-        Placeable,
-        QuickCreateSource,
-        SearchExcludable,
-        Shareable,
-        SharedContent,
-        Suggestable,
-        Suggestible,
-        SupportsAdInjection {
+    CascadingPageElements,
+    ContentEditDrawerItem,
+    Embargoable,
+    EnhancedSeoWithFields,
+    DefaultSiteMapItem,
+    FeedItem,
+    GoogleDocumentImport,
+    HasAuthorsWithField,
+    HasBreadcrumbs,
+    HasCommenting,
+    HasCoralPageMetadata,
+    HasDisqusPageMetadata,
+    HasMediaTypeWithOverride,
+    HasSecondarySectionsWithField,
+    HasSectionWithField,
+    HasSiteSearchBoostIndexes,
+    HasSponsorWithField,
+    HasTagsWithField,
+    HasUrlSlugWithField,
+    Interchangeable,
+    MicrosoftDocumentImport,
+    NewsSiteMapItem,
+    OpenGraphArticle,
+    Page,
+    PagePromotableWithOverrides,
+    Placeable,
+    QuickCreateSource,
+    SearchExcludable,
+    Shareable,
+    SharedContent,
+    Suggestable,
+    Suggestible,
+    SupportsAdInjection {
 
     @Indexed
     @Required
@@ -164,7 +171,6 @@ public class Article extends Content implements
     @ToolUi.RichText(inline = false, toolbar = LargeRichTextToolbar.class, lines = 10)
     private String body;
 
-    @ToolUi.EmbeddedContentCreatorClass(StyleEmbeddedContentCreator.class)
     private ArticleLead lead;
 
     public String getFullBody() {
@@ -196,8 +202,6 @@ public class Article extends Content implements
     /**
      * @return rich text
      */
-    @Indexed
-    @ToolUi.Hidden
     public String getBody() {
         return body;
     }
@@ -273,37 +277,37 @@ public class Article extends Content implements
     @Override
     public WebImageAsset getPagePromotableImageFallback() {
         return Optional.ofNullable(getLead())
-                .map(ArticleLead::getArticleLeadImage)
-                .orElseGet(() -> ImageRichTextElement.getFirstImageFromRichText(getFullBody()));
+            .map(ArticleLead::getArticleLeadImage)
+            .orElseGet(() -> ImageRichTextElement.getFirstImageFromRichText(getFullBody()));
     }
 
     @Override
     public String getPagePromotableType() {
         return Optional.ofNullable(getPrimaryMediaType())
-                .map(MediaType::getIconName)
-                .orElse(null);
+            .map(MediaType::getIconName)
+            .orElse(null);
     }
 
     @Override
     public String getPagePromotableCategoryFallback() {
         return Optional.ofNullable(asHasSectionData().getSectionParent())
-                .map(Section::getSectionDisplayNameRichText)
-                .orElse(null);
+            .map(Section::getSectionDisplayNameRichText)
+            .orElse(null);
     }
 
     @Override
     public String getPagePromotableCategoryUrlFallback(Site site) {
         return Optional.ofNullable(asHasSectionData().getSectionParent())
-                .map(section -> section.getLinkableUrl(site))
-                .orElse(null);
+            .map(section -> section.getLinkableUrl(site))
+            .orElse(null);
     }
 
     public String getReadDuration() {
         long characterCount = Optional.ofNullable(getFullBody())
-                .map(RichTextUtils::stripRichTextElements)
-                .map(RichTextUtils::richTextToPlainText)
-                .map(String::length)
-                .orElse(0);
+            .map(RichTextUtils::stripRichTextElements)
+            .map(RichTextUtils::richTextToPlainText)
+            .map(String::length)
+            .orElse(0);
 
         // TODO: localization needed. This implementation is highly dependent on language!
         // Average adult reading time given: 275 wpm. Average number of characters per English
@@ -332,26 +336,26 @@ public class Article extends Content implements
     @Override
     public List<String> getOpenGraphArticleAuthorUrls(Site site) {
         return Optional.ofNullable(asHasAuthorsWithFieldData().getAuthors())
-                .flatMap(authors -> Optional.ofNullable(authors.stream()))
-                .orElseGet(Stream::empty)
-                .map(author -> Permalink.getPermalink(site, author))
-                .filter(Objects::nonNull)
-                .collect(Collectors.toList());
+            .flatMap(authors -> Optional.ofNullable(authors.stream()))
+            .orElseGet(Stream::empty)
+            .map(author -> Permalink.getPermalink(site, author))
+            .filter(Objects::nonNull)
+            .collect(Collectors.toList());
     }
 
     @Override
     public String getOpenGraphArticleSection() {
         return Optional.ofNullable(asHasSectionData().getSectionParent())
-                .map(Section::getSectionDisplayNamePlainText)
-                .orElse(null);
+            .map(Section::getSectionDisplayNamePlainText)
+            .orElse(null);
     }
 
     @Override
     public List<String> getOpenGraphArticleTags() {
         return getTags()
-                .stream()
-                .map(Tag::getTagDisplayNamePlainText)
-                .collect(Collectors.toList());
+            .stream()
+            .map(Tag::getTagDisplayNamePlainText)
+            .collect(Collectors.toList());
     }
 
     // --- Recordable support ---
@@ -407,20 +411,20 @@ public class Article extends Content implements
         }
 
         Locale locale = ObjectUtils.firstNonNull(
-                LocaleProvider.getModelLocale(site, this),
-                LocaleProvider.DEFAULT_LOCALE);
+            LocaleProvider.getModelLocale(site, this),
+            LocaleProvider.DEFAULT_LOCALE);
 
         SiteMapEntry siteMapEntry = new SiteMapEntry();
         siteMapEntry.setUpdateDate(
-                ObjectUtils.firstNonNull(
-                        LastUpdatedProvider.getMostRecentUpdateDate(getState()),
-                        getState().as(Content.ObjectModification.class).getPublishDate()
-                )
+            ObjectUtils.firstNonNull(
+                LastUpdatedProvider.getMostRecentUpdateDate(getState()),
+                getState().as(Content.ObjectModification.class).getPublishDate()
+            )
         );
         siteMapEntry.setPermalink(SiteSettings.get(
-                site,
-                f -> f.as(SiteMapSettingsModification.class).getSiteMapDefaultUrl()
-                        + StringUtils.prependIfMissing(sitePermalinkPath, "/")));
+            site,
+            f -> f.as(SiteMapSettingsModification.class).getSiteMapDefaultUrl()
+                + StringUtils.prependIfMissing(sitePermalinkPath, "/")));
 
         SiteMapNews siteMapNews = new SiteMapNews();
         siteMapNews.setName(site != null ? site.getName() : "Global");
@@ -428,13 +432,13 @@ public class Article extends Content implements
         siteMapNews.setLanguage(locale.getISO3Language());
         siteMapNews.setPublicationDate(this.getPublishDate());
         siteMapNews.setTitle(ObjectUtils.firstNonBlank(
-                getSeoTitle(),
-                RichTextUtils.richTextToPlainText(this.getHeadline())
+            getSeoTitle(),
+            RichTextUtils.richTextToPlainText(this.getHeadline())
         ));
         List<String> keywords = getTags()
-                .stream()
-                .map(Tag::getTagDisplayNamePlainText)
-                .collect(Collectors.toList());
+            .stream()
+            .map(Tag::getTagDisplayNamePlainText)
+            .collect(Collectors.toList());
 
         if (!ObjectUtils.isBlank(keywords)) {
             if (keywords.size() > 10) {
@@ -470,9 +474,9 @@ public class Article extends Content implements
     @Override
     public String getFullContentEncoded() {
         return Optional.ofNullable(getFullBody())
-                .map(RichTextUtils::stripRichTextElements)
-                .map(RichTextUtils::richTextToPlainText)
-                .orElse(null);
+            .map(RichTextUtils::stripRichTextElements)
+            .map(RichTextUtils::richTextToPlainText)
+            .orElse(null);
     }
 
     // --- Directory.Item support ---
@@ -487,11 +491,11 @@ public class Article extends Content implements
     @Override
     public String getSuggestableText() {
         return Optional.ofNullable(RichTextUtils.richTextToPlainText(getHeadline())).orElse("") + " "
-                + Optional.ofNullable(RichTextUtils.richTextToPlainText(getSubheadline())).orElse("") + " "
-                + Optional.ofNullable(getFullBody())
-                .map(RichTextUtils::stripRichTextElements)
-                .map(RichTextUtils::richTextToPlainText)
-                .orElse("");
+            + Optional.ofNullable(RichTextUtils.richTextToPlainText(getSubheadline())).orElse("") + " "
+            + Optional.ofNullable(getFullBody())
+            .map(RichTextUtils::stripRichTextElements)
+            .map(RichTextUtils::richTextToPlainText)
+            .orElse("");
     }
 
     // --- Suggestible support ---
@@ -499,14 +503,14 @@ public class Article extends Content implements
     @Override
     public List<String> getSuggestibleFields() {
         return Stream.of(
-                "seo.title",
-                "seo.description",
-                "pagePromotable.promoTitle",
-                "pagePromotable.promoDescription",
-                "pagePromotable.promoImage",
-                "shareable.shareTitle",
-                "shareable.shareDescription",
-                "shareable.shareImage"
+            "seo.title",
+            "seo.description",
+            "pagePromotable.promoTitle",
+            "pagePromotable.promoDescription",
+            "pagePromotable.promoImage",
+            "shareable.shareTitle",
+            "shareable.shareDescription",
+            "shareable.shareImage"
         ).collect(Collectors.toList());
     }
 
@@ -517,17 +521,25 @@ public class Article extends Content implements
             return null;
         }
         return iRtes.stream()
-                .filter(Objects::nonNull)
-                .map(rte -> rte.as(WebImagePlacement.class).getWebImageAltText())
-                .collect(Collectors.toList());
+            .filter(Objects::nonNull)
+            .map(rte -> rte.as(WebImagePlacement.class).getWebImageAltText())
+            .collect(Collectors.toList());
     }
 
     // --- QuickCreateSource support ---
 
     @Override
     public Class<ArticleQuickCreateTarget> getTargetClass() {
-
-        return ArticleQuickCreateTarget.class;
+        Site site = null;
+        if (WebRequest.isAvailable()) {
+            site = WebRequest.getCurrent().as(ToolRequest.class).getCurrentSite();
+        }
+        if (SiteSettings.get(
+            site,
+            siteSettings -> siteSettings.as(AppleNewsDisplaySettings.class).isAppleNewsEnabled())) {
+            return ArticleQuickCreateTarget.class;
+        }
+        return null;
     }
 
     // --- Placeable support ---
@@ -537,27 +549,27 @@ public class Article extends Content implements
         List<PlaceableTarget> targets = new ArrayList<>();
 
         targets.add(Query.from(Homepage.class)
-                .where("cms.site.owner = ?", as(Site.ObjectModification.class).getOwner())
-                .first());
+            .where("cms.site.owner = ?", as(Site.ObjectModification.class).getOwner())
+            .first());
         targets.addAll(this.as(HasTags.class)
-                .getTags()
-                .stream()
-                .filter(PlaceableTarget.class::isInstance)
-                .filter(tag -> !tag.isHiddenTag())
-                .map(PlaceableTarget.class::cast)
-                .collect(Collectors.toSet()));
+            .getTags()
+            .stream()
+            .filter(PlaceableTarget.class::isInstance)
+            .filter(tag -> !tag.isHiddenTag())
+            .map(PlaceableTarget.class::cast)
+            .collect(Collectors.toSet()));
         targets.addAll(this.as(HasSection.class)
-                .getSectionAncestors()
-                .stream()
-                .filter(PlaceableTarget.class::isInstance)
-                .map(PlaceableTarget.class::cast)
-                .collect(Collectors.toSet()));
+            .getSectionAncestors()
+            .stream()
+            .filter(PlaceableTarget.class::isInstance)
+            .map(PlaceableTarget.class::cast)
+            .collect(Collectors.toSet()));
         targets.addAll(this.as(HasSecondarySections.class)
-                .getSecondarySections()
-                .stream()
-                .filter(PlaceableTarget.class::isInstance)
-                .map(PlaceableTarget.class::cast)
-                .collect(Collectors.toSet()));
+            .getSecondarySections()
+            .stream()
+            .filter(PlaceableTarget.class::isInstance)
+            .map(PlaceableTarget.class::cast)
+            .collect(Collectors.toSet()));
 
         return targets;
     }
@@ -609,10 +621,10 @@ public class Article extends Content implements
         // - PagePromoModulePlacementInline
         // - LinkRichTextElement
         return ImmutableList.of(
-                getState().getTypeId(), // enable dragging and dropping as itself from the shelf
-                ObjectType.getInstance(PagePromo.class).getId(),
-                ObjectType.getInstance(PagePromoModulePlacementInline.class).getId(),
-                ObjectType.getInstance(LinkRichTextElement.class).getId()
+            getState().getTypeId(), // enable dragging and dropping as itself from the shelf
+            ObjectType.getInstance(PagePromo.class).getId(),
+            ObjectType.getInstance(PagePromoModulePlacementInline.class).getId(),
+            ObjectType.getInstance(LinkRichTextElement.class).getId()
         );
     }
 }

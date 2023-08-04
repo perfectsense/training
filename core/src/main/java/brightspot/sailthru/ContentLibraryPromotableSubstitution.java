@@ -33,25 +33,25 @@ public class ContentLibraryPromotableSubstitution extends Record implements Subs
         PagePromotable pagePromotable = (PagePromotable) this;
 
         Site site = WebRequest.isAvailable()
-                ? WebRequest.getCurrent().as(ToolRequest.class).getCurrentSite()
-                : pagePromotable.as(Site.ObjectModification.class).getOwner();
+            ? WebRequest.getCurrent().as(ToolRequest.class).getCurrentSite()
+            : pagePromotable.as(Site.ObjectModification.class).getOwner();
         SailthruApiSettings settings = SiteSettings.get(
-                site,
-                siteSettings -> siteSettings.as(SailthruSiteSettings.class).getSettings());
+            site,
+            siteSettings -> siteSettings.as(SailthruSiteSettings.class).getSettings());
         Date lastChanged = SiteSettings.get(
-                site,
-                siteSettings -> siteSettings.as(SailthruSiteSettings.class).getLastChanged());
+            site,
+            siteSettings -> siteSettings.as(SailthruSiteSettings.class).getLastChanged());
         if (settings == null || lastChanged == null) {
 
             return null;
         }
 
         StandardSailthruClientConfiguration configuration = new StandardSailthruClientConfiguration(
-                pagePromotable.getState().getId(),
-                "https://api.sailthru.com",
-                settings.getApiKey(),
-                settings.getApiSecret(),
-                lastChanged.toInstant());
+            settings.getId(),
+            "https://api.sailthru.com",
+            settings.getApiKey(),
+            settings.getApiSecret(),
+            lastChanged.toInstant());
         return ApiClientManager.getApiClient(configuration);
     }
 
@@ -64,25 +64,25 @@ public class ContentLibraryPromotableSubstitution extends Record implements Subs
             b.setDate(pagePromotable.getPagePromotableDate());
             b.setAuthor(AuthoringPageViewModel.getPrimaryAuthorName(pagePromotable));
             b.setFullImage(Optional.ofNullable(pagePromotable.getPagePromotableImage())
-                    .map(WebImageAsset::getWebImageAssetFile)
-                    .map(SailthruImageSizes.FULL.getImageSize()::toAttributes)
-                    .map(attr -> attr.get("src"))
-                    .orElse(null));
+                .map(WebImageAsset::getWebImageAssetFile)
+                .map(SailthruImageSizes.FULL.getImageSize()::toAttributes)
+                .map(attr -> attr.get("src"))
+                .orElse(null));
             b.setThumbnailImage(Optional.ofNullable(pagePromotable.getPagePromotableImage())
-                    .map(WebImageAsset::getWebImageAssetFile)
-                    .map(SailthruImageSizes.THUMBNAIL.getImageSize()::toAttributes)
-                    .map(attr -> attr.get("src"))
-                    .orElse(null));
+                .map(WebImageAsset::getWebImageAssetFile)
+                .map(SailthruImageSizes.THUMBNAIL.getImageSize()::toAttributes)
+                .map(attr -> attr.get("src"))
+                .orElse(null));
             b.setSiteName(Optional.ofNullable(site).map(Site::getSeoDisplayName).orElse(null));
             List<String> tags = new ArrayList<>();
             Optional.ofNullable(pagePromotable.getPagePromotableCategory()).ifPresent(tags::add);
             Optional.of(pagePromotable)
-                    .filter(HasTags.class::isInstance)
-                    .map(HasTags.class::cast)
-                    .map(HasTags::getTags)
-                    .ifPresent(allTags -> tags.addAll(allTags.stream()
-                            .map(Tag::getTagDisplayNamePlainText)
-                            .collect(Collectors.toList())));
+                .filter(HasTags.class::isInstance)
+                .map(HasTags.class::cast)
+                .map(HasTags::getTags)
+                .ifPresent(allTags -> tags.addAll(allTags.stream()
+                    .map(Tag::getTagDisplayNamePlainText)
+                    .collect(Collectors.toList())));
             b.setTags(tags);
         });
     }

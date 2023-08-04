@@ -6,7 +6,7 @@ import com.psddev.styleguide.page.ContentPageViewBreadcrumbsField;
 import com.psddev.styleguide.page.ContentPageViewTagsField;
 
 public abstract class AbstractContentPageViewModel<M extends Recordable> extends AbstractPageViewModel<M> implements
-        ContentPageView {
+    ContentPageView {
 
     @Override
     public Iterable<? extends ContentPageViewBreadcrumbsField> getBreadcrumbs() {

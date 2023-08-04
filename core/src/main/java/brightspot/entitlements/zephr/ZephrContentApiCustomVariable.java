@@ -9,9 +9,8 @@ import java.lang.annotation.Target;
 import com.psddev.dari.db.ObjectField;
 
 /**
- * An annotation to mark a content model field as something that should be included in
- * the {@link ZephrContentApi} response.
- * Intended primarily to be used by Editorial Content Types to extend data passed in API.
+ * An annotation to mark a content model field as something that should be included in the {@link ZephrContentApi}
+ * response. Intended primarily to be used by Editorial Content Types to extend data passed in API.
  */
 @Documented
 @Retention(RetentionPolicy.RUNTIME)

@@ -18,17 +18,17 @@ public class PagePromoSubstitution extends PagePromo implements GroupedPlaceItem
     @Override
     public List<Place> getGroupedPlaceItemPlaces(Placeable source, Recordable target) {
         return source instanceof PagePromotable ? Collections.singletonList(
-                new SelectablePlace(
-                        target,
-                        this,
-                        () -> {
-                            setItem(ObjectUtils.build(new InternalPagePromoItem(), l -> l.setItem((PagePromotable) source)));
-                            setTitleOverride(null);
-                            setDescriptionOverride(null);
-                            setImageOverride(null);
-                            setCategoryOverride(null);
-                        }
-                )
+            new SelectablePlace(
+                target,
+                this,
+                () -> {
+                    setItem(ObjectUtils.build(new InternalPagePromoItem(), l -> l.setItem((PagePromotable) source)));
+                    setTitleOverride(null);
+                    setDescriptionOverride(null);
+                    setImageOverride(null);
+                    setCategoryOverride(null);
+                }
+            )
         ) : null;
     }
 }

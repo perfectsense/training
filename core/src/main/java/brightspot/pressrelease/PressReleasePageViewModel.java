@@ -3,7 +3,6 @@ package brightspot.pressrelease;
 import java.time.Instant;
 import java.util.Date;
 import java.util.Locale;
-import java.util.Map;
 import java.util.Optional;
 
 import brightspot.author.AuthoringPageViewModel;
@@ -16,24 +15,20 @@ import brightspot.util.DateTimeUtils;
 import brightspot.util.RichTextUtils;
 import com.psddev.cms.view.PageEntryView;
 import com.psddev.dari.util.ObjectUtils;
-import com.psddev.styleguide.link.LinkView;
-import com.psddev.styleguide.page.CreativeWorkPageViewAuthorBiographyField;
-import com.psddev.styleguide.page.CreativeWorkPageViewAuthorNameField;
 import com.psddev.styleguide.page.CreativeWorkPageViewAuthorsField;
 import com.psddev.styleguide.page.CreativeWorkPageViewHeadlineField;
 import com.psddev.styleguide.page.CreativeWorkPageViewSponsorLogoField;
 import com.psddev.styleguide.page.CreativeWorkPageViewSponsorNameField;
 import com.psddev.styleguide.page.CreativeWorkPageViewSubHeadlineField;
 import com.psddev.styleguide.page.PageViewPageSubHeadingField;
-import com.psddev.styleguide.page.promo.PagePromoView;
 import com.psddev.styleguide.pressrelease.PressReleasePageView;
 import com.psddev.styleguide.pressrelease.PressReleasePageViewArticleBodyField;
 import com.psddev.styleguide.pressrelease.PressReleasePageViewAttributionBodyField;
 import com.psddev.styleguide.pressrelease.PressReleasePageViewLeadField;
 
 public class PressReleasePageViewModel extends AbstractContentPageViewModel<PressRelease> implements
-        PressReleasePageView,
-        PageEntryView {
+    PressReleasePageView,
+    PageEntryView {
 
     private static final String DATE_FORMAT_KEY = "dateFormat";
 
@@ -47,59 +42,59 @@ public class PressReleasePageViewModel extends AbstractContentPageViewModel<Pres
     public CharSequence getDateModified() {
         // Plain text
         return DateTimeUtils.format(
-                LastUpdatedProvider.getMostRecentUpdateDate(model), PressReleasePageView.class,
-                DATE_FORMAT_KEY, page.getSite(), locale, PageViewModel.DEFAULT_DATE_FORMAT
+            LastUpdatedProvider.getMostRecentUpdateDate(model), PressReleasePageView.class,
+            DATE_FORMAT_KEY, page.getSite(), locale, PageViewModel.DEFAULT_DATE_FORMAT
         );
     }
 
     @Override
     public CharSequence getDateModifiedISO() {
         return Optional.ofNullable(ObjectUtils.firstNonNull(
-                        LastUpdatedProvider.getMostRecentUpdateDate(model),
-                        model.getPublishDate()))
-                .map(Date::toInstant)
-                .map(Instant::toString)
-                .orElse(null);
+                LastUpdatedProvider.getMostRecentUpdateDate(model),
+                model.getPublishDate()))
+            .map(Date::toInstant)
+            .map(Instant::toString)
+            .orElse(null);
     }
 
     @Override
     public CharSequence getDatePublished() {
         // Plain text
         return DateTimeUtils.format(model.getPublishDate(), PressReleasePageView.class, DATE_FORMAT_KEY, page.getSite(),
-                locale, PageViewModel.DEFAULT_DATE_FORMAT
+            locale, PageViewModel.DEFAULT_DATE_FORMAT
         );
     }
 
     @Override
     public CharSequence getDatePublishedISO() {
         return Optional.ofNullable(model.getPublishDate())
-                .map(Date::toInstant)
-                .map(Instant::toString)
-                .orElse(null);
+            .map(Date::toInstant)
+            .map(Instant::toString)
+            .orElse(null);
     }
 
     @Override
     public Iterable<? extends CreativeWorkPageViewHeadlineField> getHeadline() {
         return RichTextUtils.buildInlineHtml(
-                model,
-                PressRelease::getHeadline,
-                e -> createView(CreativeWorkPageViewHeadlineField.class, e));
+            model,
+            PressRelease::getHeadline,
+            e -> createView(CreativeWorkPageViewHeadlineField.class, e));
     }
 
     @Override
     public Iterable<? extends CreativeWorkPageViewSubHeadlineField> getSubHeadline() {
         return RichTextUtils.buildInlineHtml(
-                model,
-                PressRelease::getSubheadline,
-                e -> createView(CreativeWorkPageViewSubHeadlineField.class, e));
+            model,
+            PressRelease::getSubheadline,
+            e -> createView(CreativeWorkPageViewSubHeadlineField.class, e));
     }
 
     @Override
     public Iterable<? extends PressReleasePageViewArticleBodyField> getArticleBody() {
         return RichTextUtils.buildHtml(
-                model,
-                PressRelease::getBody,
-                e -> createView(PressReleasePageViewArticleBodyField.class, e));
+            model,
+            PressRelease::getBody,
+            e -> createView(PressReleasePageViewArticleBodyField.class, e));
     }
 
     @Override
@@ -138,6 +133,11 @@ public class PressReleasePageViewModel extends AbstractContentPageViewModel<Pres
     }
 
     @Override
+    public CharSequence getSponsorDisplayText() {
+        return null;
+    }
+
+    @Override
     public Iterable<? extends CreativeWorkPageViewSponsorNameField> getSponsorName() {
         return null;
     }
@@ -160,37 +160,5 @@ public class PressReleasePageViewModel extends AbstractContentPageViewModel<Pres
     @Override
     public Iterable<? extends CreativeWorkPageViewAuthorsField> getAuthors() {
         return null;
-    }
-
-    /* DEPRECATED KEYS BELOW */
-
-    @Override
-    public Iterable<? extends CreativeWorkPageViewAuthorBiographyField> getAuthorBiography() {
-        return authoringPage.getAuthorBiography(CreativeWorkPageViewAuthorBiographyField.class);
-    }
-
-    @Override
-    public Map<String, ?> getAuthorImage() {
-        return authoringPage.getAuthorImageAttributes();
-    }
-
-    @Override
-    public Iterable<? extends CreativeWorkPageViewAuthorNameField> getAuthorName() {
-        return authoringPage.getAuthorName(CreativeWorkPageViewAuthorNameField.class);
-    }
-
-    @Override
-    public CharSequence getAuthorUrl() {
-        return authoringPage.getAuthorUrl();
-    }
-
-    @Override
-    public Iterable<? extends LinkView> getContributors() {
-        return authoringPage.getContributors(LinkView.class);
-    }
-
-    @Override
-    public Iterable<? extends PagePromoView> getPeople() {
-        return authoringPage.getAuthors(PagePromoView.class);
     }
 }

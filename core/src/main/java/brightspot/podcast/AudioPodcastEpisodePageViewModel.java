@@ -20,8 +20,9 @@ import com.psddev.styleguide.podcast.PodcastEpisodePageViewPodcastField;
 import com.psddev.styleguide.podcast.PodcastEpisodePageViewPrimaryAudioField;
 import com.psddev.styleguide.podcast.PodcastEpisodePageViewSubHeadlineField;
 
-public class AudioPodcastEpisodePageViewModel extends AbstractPageViewModel<AudioPodcastEpisodePage> implements PageEntryView,
-        PodcastEpisodePageView {
+public class AudioPodcastEpisodePageViewModel extends AbstractPageViewModel<AudioPodcastEpisodePage>
+    implements PageEntryView,
+    PodcastEpisodePageView {
 
     @Override
     public Iterable<? extends PageViewMainField> getMain() {
@@ -46,8 +47,8 @@ public class AudioPodcastEpisodePageViewModel extends AbstractPageViewModel<Audi
     @Override
     public Iterable<? extends PodcastEpisodePageViewBodyField> getBody() {
         return RichTextUtils.buildHtml(
-                model, AudioPodcastEpisodePage::getBody,
-                e -> createView(PodcastEpisodePageViewBodyField.class, e));
+            model, AudioPodcastEpisodePage::getBody,
+            e -> createView(PodcastEpisodePageViewBodyField.class, e));
     }
 
     @Override
@@ -58,16 +59,16 @@ public class AudioPodcastEpisodePageViewModel extends AbstractPageViewModel<Audi
     @Override
     public Iterable<? extends PodcastEpisodePageViewHeadlineField> getHeadline() {
         return RichTextUtils.buildInlineHtml(
-                model, AudioPodcastEpisodePage::getTitle,
-                e -> createView(PodcastEpisodePageViewHeadlineField.class, e));
+            model, AudioPodcastEpisodePage::getTitle,
+            e -> createView(PodcastEpisodePageViewHeadlineField.class, e));
     }
 
     @Override
     public Iterable<? extends PodcastEpisodePageViewImageField> getImage() {
         return Optional.ofNullable(model)
-                .map(AudioPodcastEpisodePage::getPodcastEpisodeCoverImage)
-                .map(coverArt -> createViews(PodcastEpisodePageViewImageField.class, coverArt))
-                .orElse(null);
+            .map(AudioPodcastEpisodePage::getPodcastEpisodeCoverImage)
+            .map(coverArt -> createViews(PodcastEpisodePageViewImageField.class, coverArt))
+            .orElse(null);
     }
 
     @Override
@@ -83,16 +84,16 @@ public class AudioPodcastEpisodePageViewModel extends AbstractPageViewModel<Audi
     @Override
     public Iterable<? extends PodcastEpisodePageViewPrimaryAudioField> getPrimaryAudio() {
         return Optional.ofNullable(model)
-                .map(AudioPodcastEpisodePage::getPrimaryAudio)
-                .map(audio -> createViews(PodcastEpisodePageViewPrimaryAudioField.class, audio))
-                .orElse(null);
+            .map(AudioPodcastEpisodePage::getPrimaryAudio)
+            .map(audio -> createViews(PodcastEpisodePageViewPrimaryAudioField.class, audio))
+            .orElse(null);
     }
 
     @Override
     public Iterable<? extends PodcastEpisodePageViewSubHeadlineField> getSubHeadline() {
         return RichTextUtils.buildInlineHtml(
-                model,
-                AudioPodcastEpisodePage::getDescription,
-                e -> createView(PodcastEpisodePageViewSubHeadlineField.class, e));
+            model,
+            AudioPodcastEpisodePage::getDescription,
+            e -> createView(PodcastEpisodePageViewSubHeadlineField.class, e));
     }
 }

@@ -8,11 +8,11 @@ import com.psddev.dari.db.ObjectType;
  * {@link ZephrContentApiCustomVariableObjectFieldModification metadata}.
  */
 public class ZephrContentApiCustomVariableProcessor
-        implements ObjectField.AnnotationProcessor<ZephrContentApiCustomVariable> {
+    implements ObjectField.AnnotationProcessor<ZephrContentApiCustomVariable> {
 
     @Override
     public void process(
-            ObjectType type, ObjectField field, ZephrContentApiCustomVariable annotation) {
+        ObjectType type, ObjectField field, ZephrContentApiCustomVariable annotation) {
         field.as(ZephrContentApiCustomVariableObjectFieldModification.class).setZephrCustomVariable(annotation.value());
     }
 }

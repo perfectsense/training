@@ -17,9 +17,12 @@ public class PagePromoAuthorContextSupplier implements PageElementSupplier<PageP
         context.setBylineLinkUrl(AuthoringPageViewModel.getPrimaryAuthorUrl(site, object));
         context.setBylineText(AuthoringPageViewModel.getPrimaryAuthorName(object));
         context.setAuthors(
-                AuthoringPageViewModel.getAuthors(object)
+            AuthoringPageViewModel.getAuthors(object)
                 .stream()
-                .map(author -> new PagePromoAuthor(author.getName(), AuthoringPageViewModel.getAuthorUrl(site, author), author.getImage()))
+                .map(author -> new PagePromoAuthor(
+                    author.getName(),
+                    AuthoringPageViewModel.getAuthorUrl(site, author),
+                    author.getImage()))
                 .collect(Collectors.toList())
         );
 

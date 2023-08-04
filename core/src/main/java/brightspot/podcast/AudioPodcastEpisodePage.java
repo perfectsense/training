@@ -1,6 +1,7 @@
 package brightspot.podcast;
 
 import java.time.Duration;
+import java.util.Objects;
 import java.util.Optional;
 
 import brightspot.audio.Audio;
@@ -13,17 +14,18 @@ import com.psddev.dari.util.StorageItem;
 @ToolUi.IconName("settings_voice")
 @Recordable.DisplayName("Podcast Episode")
 @ToolUi.FieldDisplayOrder({
-    "hasPodcastWithField.podcast",
-    "episodeNumber",
     "title",
     "description",
     "hasUrlSlug.urlSlug",
-    "primaryAudio",
     "coverImageOverride",
     "body",
-    "landingCascading.content",
+    "primaryAudio",
+    "hasPodcastWithField.podcast",
+    "episodeNumber",
+    "hasSecondarySectionsWithField.secondarySections",
     "hasTags.tags",
     "embargoable.embargo",
+    "landingCascading.content",
     "seo.title",
     "seo.suppressSeoDisplayName",
     "seo.description",
@@ -32,12 +34,12 @@ import com.psddev.dari.util.StorageItem;
     "ampPage.ampDisabled"
 })
 @ToolUi.FieldDisplayPreview({
-        "title",
-        "description",
-        "hasSectionWithField.section",
-        "hasTags.tags",
-        "cms.content.updateDate",
-        "cms.content.updateUser" })
+    "title",
+    "description",
+    "hasSectionWithField.section",
+    "hasTags.tags",
+    "cms.content.updateDate",
+    "cms.content.updateUser" })
 public class AudioPodcastEpisodePage extends AbstractPodcastEpisodePage {
 
     private Audio primaryAudio;
@@ -62,7 +64,10 @@ public class AudioPodcastEpisodePage extends AbstractPodcastEpisodePage {
             .filter(AudioFile.class::isInstance)
             .map(AudioFile.class::cast)
             .map(AudioFile::getItems)
-            .flatMap(sources -> sources.stream().map(AudioStorageItemWrapper::getFile).findFirst())
+            .flatMap(sources -> sources.stream()
+                .map(AudioStorageItemWrapper::getFile)
+                .filter(Objects::nonNull)
+                .findFirst())
             .map(StorageItem::getSecurePublicUrl)
             .orElse(null);
     }

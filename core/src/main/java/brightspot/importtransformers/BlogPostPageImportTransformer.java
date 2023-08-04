@@ -1,28 +1,21 @@
 package brightspot.importtransformers;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Optional;
 import java.util.Set;
 
-import brightspot.author.Author;
-import brightspot.author.PersonAuthor;
-import brightspot.blog.BlogPage;
+import brightspot.blog.BlogPostLead;
 import brightspot.blog.BlogPostPage;
-import brightspot.image.ImageLead;
-import brightspot.image.ImageLeadSubstitution;
-import brightspot.image.WebImage;
 import brightspot.importapi.ImportTransformer;
-import brightspot.importapi.ImportingDatabase;
-import brightspot.importtransformers.richtext.BodyElement;
-import brightspot.importtransformers.richtext.BodyTransformUtil;
-import brightspot.tag.TagPage;
-import com.psddev.cms.db.Site;
-import com.psddev.dari.db.Database;
-import com.psddev.dari.db.Query;
-import com.psddev.dari.util.Utils;
+import brightspot.importapi.element.ImportElement;
+import brightspot.importtransformers.element.ImportElementUtil;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.google.common.base.Preconditions;
+import com.psddev.cms.db.Seo;
+import com.psddev.dari.db.Predicate;
+import com.psddev.dari.util.ObjectUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -31,164 +24,174 @@ public class BlogPostPageImportTransformer extends ImportTransformer<BlogPostPag
 
     private static final Logger LOGGER = LoggerFactory.getLogger(BlogPostPageImportTransformer.class);
 
+    private static final String BLOG_FIELD = "blog";
+    private static final String HEADLINE_FIELD = "headline";
+    private static final String SUB_HEADLINE_FIELD = "subheadline";
+    private static final String LEAD_IMAGE_FIELD = "leadImage";
+    private static final String LEAD_VIDEO_FIELD = "leadVideo";
+    private static final String BODY_FIELD = "body";
+    private static final String AUTHORS_FIELD = "authors";
+    private static final String TAGS_FIELD = "tags";
+
+    private static final String PROMO_IMAGE_FIELD = "promoImage";
+    private static final String PROMO_DESCRIPTION_FIELD = "promoDescription";
+    private static final String SEO_TITLE_FIELD = "seoTitle";
+    private static final String SEO_DESCRIPTION_FIELD = "seoDescription";
+    private static final String SEO_KEYWORDS_FIELD = "seoKeywords";
+
+    @JsonProperty(BLOG_FIELD)
+    private BlogPageImportTransformer blogReference;
+
+    @JsonProperty(HEADLINE_FIELD)
     private String headline;
 
+    @JsonProperty(SUB_HEADLINE_FIELD)
     private String subheadline;
 
-    private String leadUrl;
+    @JsonProperty(LEAD_IMAGE_FIELD)
+    private WebImageImportTransformer imageReference;
 
-    private String blog;
+    @JsonProperty(LEAD_VIDEO_FIELD)
+    private VideoImportTransformer videoReference;
 
-    private List<BodyElement> body;
+    @JsonProperty(BODY_FIELD)
+    private List<ImportElement> bodyElements;
 
-    private Set<String> authors;
+    @JsonProperty(AUTHORS_FIELD)
+    private List<PersonAuthorImportTransformer> authorReferences;
 
-    private Set<String> tags;
+    @JsonProperty(TAGS_FIELD)
+    private List<TagPageImportTransformer> tagReferences;
+
+    @JsonProperty(PROMO_IMAGE_FIELD)
+    private WebImageImportTransformer promoImageReference;
+
+    @JsonProperty(PROMO_DESCRIPTION_FIELD)
+    private String promoDescription;
+
+    @JsonProperty(SEO_TITLE_FIELD)
+    private String seoTitle;
+
+    @JsonProperty(SEO_DESCRIPTION_FIELD)
+    private String seoDescription;
+
+    @JsonProperty(SEO_KEYWORDS_FIELD)
+    private Set<String> seoKeywords;
+
+    @Override
+    public String getExternalId() {
+        return ObjectUtils.firstNonBlank(this.externalId, this.getIdAsString(), this.headline);
+    }
+
+    @Override
+    public BlogPostPage transform() throws Exception {
+
+        Preconditions.checkArgument(
+            StringUtils.isNotBlank(this.getHeadline()),
+            "headline not provided for BlogPage with externalId [" + this.getExternalId() + "]");
+
+        BlogPostPage blogPostPage = (BlogPostPage) this.createNewObject();
+
+        if (this.getBlogReference() != null) {
+            Optional.ofNullable(this.getBlogReference().findOrCreate(this))
+                .ifPresent(blog -> blogPostPage.asHasBlogWithFieldData().setBlog(blog));
+        }
+
+        blogPostPage.setHeadline(ImportElementUtil.processInlineRichText(this.getHeadline(), this));
+        blogPostPage.setSubheadline(ImportElementUtil.processInlineRichText(this.getSubheadline(), this));
+
+        Optional.ofNullable(ImportTransformerUtil.retrieveLead(
+                this.getVideoReference(),
+                this.getImageReference(),
+                this))
+            .map(BlogPostLead.class::cast)
+            .ifPresent(blogPostPage::setLead);
+
+        blogPostPage.setBody(ImportElementUtil.createBody(this.getBodyElements(), this));
+
+        blogPostPage.asHasAuthorsWithFieldData()
+            .setAuthors(ImportTransformerUtil.retrieveAuthors(this.getAuthorReferences(), this));
+
+        blogPostPage.asHasTagsWithFieldData()
+            .setTags(ImportTransformerUtil.retrieveTags(this.getTagReferences(), this));
+
+        ImportTransformerUtil.setPromoImage(blogPostPage, this.getPromoImageReference(), this);
+        blogPostPage.asPagePromotableWithOverridesData()
+            .setPromoDescription(ImportElementUtil.processInlineRichText(this.getPromoDescription(), this));
+
+        blogPostPage.asSeoWithFieldsData().setTitle(this.getSeoTitle());
+        blogPostPage.asSeoWithFieldsData().setDescription(this.getSeoDescription());
+        blogPostPage.as(Seo.ObjectModification.class).setKeywords(this.getSeoKeywords());
+
+        return blogPostPage;
+    }
+
+    @Override
+    public Predicate getUniqueFieldPredicate() {
+        return null;
+    }
+
+    public BlogPageImportTransformer getBlogReference() {
+        return blogReference;
+    }
 
     public String getHeadline() {
         return headline;
-    }
-
-    public void setHeadline(String headline) {
-        this.headline = headline;
     }
 
     public String getSubheadline() {
         return subheadline;
     }
 
-    public void setSubheadline(String subheadline) {
-        this.subheadline = subheadline;
+    public WebImageImportTransformer getImageReference() {
+        return imageReference;
     }
 
-    public String getLeadUrl() {
-        return leadUrl;
+    public VideoImportTransformer getVideoReference() {
+        return videoReference;
     }
 
-    public void setLeadUrl(String leadUrl) {
-        this.leadUrl = leadUrl;
-    }
-
-    public String getBlog() {
-        return blog;
-    }
-
-    public void setBlog(String blogPage) {
-        this.blog = blogPage;
-    }
-
-    public List<BodyElement> getBody() {
-        if (body == null) {
-            body = new ArrayList<>();
+    public List<ImportElement> getBodyElements() {
+        if (bodyElements == null) {
+            bodyElements = new ArrayList<>();
         }
-        return body;
+        return bodyElements;
     }
 
-    public void setBody(List<BodyElement> body) {
-        this.body = body;
+    public List<PersonAuthorImportTransformer> getAuthorReferences() {
+        if (authorReferences == null) {
+            authorReferences = new ArrayList<>();
+        }
+        return authorReferences;
     }
 
-    public Set<String> getAuthors() {
-        if (authors == null) {
-            authors = new HashSet<>();
+    public List<TagPageImportTransformer> getTagReferences() {
+        if (tagReferences == null) {
+            tagReferences = new ArrayList<>();
         }
-        return authors;
+        return tagReferences;
     }
 
-    public void setAuthors(Set<String> authors) {
-        this.authors = authors;
+    public WebImageImportTransformer getPromoImageReference() {
+        return promoImageReference;
     }
 
-    public Set<String> getTags() {
-        if (tags == null) {
-            tags = new HashSet<>();
-        }
-        return tags;
+    public String getPromoDescription() {
+        return promoDescription;
     }
 
-    public void setTags(Set<String> tags) {
-        this.tags = tags;
+    public String getSeoTitle() {
+        return seoTitle;
     }
 
-    @Override
-    public BlogPostPage transform() throws Exception {
+    public String getSeoDescription() {
+        return seoDescription;
+    }
 
-        BlogPostPage blogPostPage = new BlogPostPage();
-
-        blogPostPage.setHeadline(headline);
-        blogPostPage.setSubheadline(subheadline);
-
-        Optional.ofNullable(this.getBody())
-                .map(b -> BodyTransformUtil.transform(body, this))
-                .ifPresent(blogPostPage::setBody);
-
-        if (!StringUtils.isBlank(leadUrl)) {
-            WebImage image = findByExternalId(WebImage.class, leadUrl, (url) -> {
-                try {
-                    WebImage w = new WebImage();
-                    w.setFile(createStorageItemFromUrl(url));
-                    return w;
-                } catch (IOException ex) {
-                    return null;
-                }
-            });
-            if (image != null) {
-                ImageLead imageLead = new ImageLead();
-                imageLead.setImage(image);
-                blogPostPage.setLead(imageLead.as(ImageLeadSubstitution.class));
-            }
+    public Set<String> getSeoKeywords() {
+        if (seoKeywords == null) {
+            seoKeywords = new HashSet<>();
         }
-
-        Site site = ((ImportingDatabase) Database.Static.getDefault()).getSite();
-
-        if (blog != null) {
-            BlogPage blog = findByExternalId(BlogPage.class, this.blog, (bp) -> {
-                String displayName = Utils.toLabel(bp);
-                BlogPage b = Query.from(BlogPage.class).where("displayName = ?", displayName)
-                        .and("cms.site.owner = ?", site).first();
-                if (b == null) {
-                    b = new BlogPage();
-                    b.setDisplayName(displayName);
-                }
-                return b;
-            });
-            blogPostPage.asHasBlogWithFieldData().setBlog(blog);
-        }
-
-        if (authors != null) {
-            List<Author> authorList = new ArrayList<>();
-            for (String authorName : authors) {
-                PersonAuthor author = findByExternalId(PersonAuthor.class, authorName, (an) -> {
-                    String displayName = Utils.toLabel(an);
-                    PersonAuthor a = Query.from(PersonAuthor.class).where("name = ?", displayName)
-                            .and("cms.site.owner = ?", site).first();
-                    if (a == null) {
-                        a = new PersonAuthor();
-                        a.setName(displayName);
-                    }
-                    return a;
-                });
-                authorList.add(author);
-            }
-            blogPostPage.asHasAuthorsWithFieldData().setAuthors(authorList);
-        }
-
-        if (tags != null) {
-            for (String tagName : tags) {
-                TagPage tag = findByExternalId(TagPage.class, tagName, (tn) -> {
-                    String displayName = Utils.toLabel(tn);
-                    TagPage t = Query.from(TagPage.class).where("tag.getTagDisplayNamePlainText = ?", displayName)
-                            .and("cms.site.owner = ?", site).first();
-                    if (t == null) {
-                        t = new TagPage();
-                        t.setDisplayName(displayName);
-                    }
-                    return t;
-                });
-                blogPostPage.getTags().add(tag);
-            }
-        }
-
-        return blogPostPage;
+        return seoKeywords;
     }
 }

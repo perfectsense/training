@@ -18,12 +18,14 @@ import brightspot.commenting.HasCommenting;
 import brightspot.commenting.coral.HasCoralPageMetadata;
 import brightspot.commenting.disqus.HasDisqusPageMetadata;
 import brightspot.embargo.Embargoable;
+import brightspot.google.drive.docs.GoogleDocumentImport;
 import brightspot.image.WebImageAsset;
 import brightspot.image.WebImagePlacement;
 import brightspot.l10n.LocaleProvider;
 import brightspot.link.InternalLink;
 import brightspot.mediatype.HasMediaTypeWithOverride;
 import brightspot.mediatype.MediaType;
+import brightspot.microsoft.drives.conversion.document.MicrosoftDocumentImport;
 import brightspot.module.list.page.PagePromo;
 import brightspot.module.promo.page.PagePromoModulePlacementInline;
 import brightspot.opengraph.article.OpenGraphArticle;
@@ -49,6 +51,7 @@ import brightspot.seo.SeoWithFields;
 import brightspot.share.Shareable;
 import brightspot.sharedcontent.SharedContent;
 import brightspot.site.DefaultSiteMapItem;
+import brightspot.sponsoredcontent.HasSponsorWithField;
 import brightspot.tag.HasTagsWithField;
 import brightspot.tag.Tag;
 import brightspot.update.LastUpdatedProvider;
@@ -74,62 +77,65 @@ import com.psddev.sitemap.SiteMapEntry;
 import com.psddev.sitemap.SiteMapNews;
 import com.psddev.sitemap.SiteMapSettingsModification;
 import com.psddev.suggestions.Suggestable;
-import com.psddev.theme.StyleEmbeddedContentCreator;
 import org.apache.commons.lang3.StringUtils;
 
 @ToolUi.FieldDisplayOrder({
-        "hasBlogWithField.blog",
-        "headline",
-        "subheadline",
-        "hasUrlSlug.urlSlug",
-        "hasAuthorsWithField.authors",
-        "lead",
-        "body",
-        "hasTags.tags",
-        "embargoable.embargo",
-        "seo.title",
-        "seo.suppressSeoDisplayName",
-        "seo.description",
-        "seo.keywords",
-        "seo.robots",
-        "seo.focusKeyWord",
-        "seo.getFocusKeywordDensity",
-        "seo.disableSeoRecommendations",
-        "ampPage.ampDisabled"
+    "hasBlogWithField.blog",
+    "headline",
+    "subheadline",
+    "hasUrlSlug.urlSlug",
+    "hasAuthorsWithField.authors",
+    "lead",
+    "body",
+    "hasSecondarySectionsWithField.secondarySections",
+    "hasTags.tags",
+    "embargoable.embargo",
+    "seo.title",
+    "seo.suppressSeoDisplayName",
+    "seo.description",
+    "seo.keywords",
+    "seo.robots",
+    "seo.focusKeyWord",
+    "seo.getFocusKeywordDensity",
+    "seo.disableSeoRecommendations",
+    "ampPage.ampDisabled"
 })
 @Recordable.DisplayName("Blog Post")
 @ToolUi.IconName("rate_review")
 public class BlogPostPage extends Content implements
-        CascadingPageElements,
-        ContentEditDrawerItem,
-        Embargoable,
-        EnhancedSeoWithFields,
-        DefaultSiteMapItem,
-        FeedItem,
-        HasAuthorsWithField,
-        HasBlogWithField,
-        HasBreadcrumbs,
-        HasCommenting,
-        HasCoralPageMetadata,
-        HasDisqusPageMetadata,
-        HasMediaTypeWithOverride,
-        HasSecondarySectionsWithField,
-        HasSection,
-        HasSiteSearchBoostIndexes,
-        HasTagsWithField,
-        HasUrlSlugWithField,
-        Interchangeable,
-        NewsSiteMapItem,
-        OpenGraphArticle,
-        Page,
-        PagePromotableWithOverrides,
-        SearchExcludable,
-        SeoWithFields,
-        Shareable,
-        SharedContent,
-        Suggestable,
-        Suggestible,
-        SupportsAdInjection, Recordable {
+    CascadingPageElements,
+    ContentEditDrawerItem,
+    Embargoable,
+    EnhancedSeoWithFields,
+    DefaultSiteMapItem,
+    FeedItem,
+    GoogleDocumentImport,
+    HasAuthorsWithField,
+    HasBlogWithField,
+    HasBreadcrumbs,
+    HasCommenting,
+    HasCoralPageMetadata,
+    HasDisqusPageMetadata,
+    HasMediaTypeWithOverride,
+    HasSecondarySectionsWithField,
+    HasSection,
+    HasSiteSearchBoostIndexes,
+    HasSponsorWithField,
+    HasTagsWithField,
+    HasUrlSlugWithField,
+    Interchangeable,
+    MicrosoftDocumentImport,
+    NewsSiteMapItem,
+    OpenGraphArticle,
+    Page,
+    PagePromotableWithOverrides,
+    SearchExcludable,
+    SeoWithFields,
+    Shareable,
+    SharedContent,
+    Suggestable,
+    Suggestible,
+    SupportsAdInjection, Recordable {
 
     @Indexed
     @Required
@@ -144,7 +150,6 @@ public class BlogPostPage extends Content implements
     @DynamicNoteClass(EnhancedSeoBodyDynamicNote.class)
     private String body;
 
-    @ToolUi.EmbeddedContentCreatorClass(StyleEmbeddedContentCreator.class)
     private BlogPostLead lead;
 
     public String getFullBody() {
@@ -245,26 +250,26 @@ public class BlogPostPage extends Content implements
     @Override
     public List<String> getOpenGraphArticleAuthorUrls(Site site) {
         return Optional.ofNullable(asHasAuthorsWithFieldData().getAuthors())
-                .flatMap(authors -> Optional.ofNullable(authors.stream()))
-                .orElseGet(Stream::empty)
-                .map(author -> Permalink.getPermalink(site, author))
-                .filter(Objects::nonNull)
-                .collect(Collectors.toList());
+            .flatMap(authors -> Optional.ofNullable(authors.stream()))
+            .orElseGet(Stream::empty)
+            .map(author -> Permalink.getPermalink(site, author))
+            .filter(Objects::nonNull)
+            .collect(Collectors.toList());
     }
 
     @Override
     public String getOpenGraphArticleSection() {
         return Optional.ofNullable(asHasSectionData().getSectionParent())
-                .map(Section::getSectionDisplayNamePlainText)
-                .orElse(null);
+            .map(Section::getSectionDisplayNamePlainText)
+            .orElse(null);
     }
 
     @Override
     public List<String> getOpenGraphArticleTags() {
         return getTags()
-                .stream()
-                .map(Tag::getTagDisplayNamePlainText)
-                .collect(Collectors.toList());
+            .stream()
+            .map(Tag::getTagDisplayNamePlainText)
+            .collect(Collectors.toList());
     }
 
     // --- Directory.Item support ---
@@ -301,20 +306,20 @@ public class BlogPostPage extends Content implements
         }
 
         Locale locale = ObjectUtils.firstNonNull(
-                LocaleProvider.getModelLocale(site, this),
-                LocaleProvider.DEFAULT_LOCALE);
+            LocaleProvider.getModelLocale(site, this),
+            LocaleProvider.DEFAULT_LOCALE);
 
         SiteMapEntry siteMapEntry = new SiteMapEntry();
         siteMapEntry.setUpdateDate(
-                ObjectUtils.firstNonNull(
-                        LastUpdatedProvider.getMostRecentUpdateDate(getState()),
-                        getState().as(Content.ObjectModification.class).getPublishDate()
-                )
+            ObjectUtils.firstNonNull(
+                LastUpdatedProvider.getMostRecentUpdateDate(getState()),
+                getState().as(Content.ObjectModification.class).getPublishDate()
+            )
         );
         siteMapEntry.setPermalink(SiteSettings.get(
-                site,
-                f -> f.as(SiteMapSettingsModification.class).getSiteMapDefaultUrl()
-                        + StringUtils.prependIfMissing(sitePermalinkPath, "/")));
+            site,
+            f -> f.as(SiteMapSettingsModification.class).getSiteMapDefaultUrl()
+                + StringUtils.prependIfMissing(sitePermalinkPath, "/")));
 
         SiteMapNews siteMapNews = new SiteMapNews();
         siteMapNews.setName(site != null ? site.getName() : "Global");
@@ -322,13 +327,13 @@ public class BlogPostPage extends Content implements
         siteMapNews.setLanguage(locale.getISO3Language());
         siteMapNews.setPublicationDate(this.getPublishDate());
         siteMapNews.setTitle(ObjectUtils.firstNonBlank(
-                getSeoTitle(),
-                RichTextUtils.richTextToPlainText(this.getHeadline())
+            getSeoTitle(),
+            RichTextUtils.richTextToPlainText(this.getHeadline())
         ));
         List<String> keywords = getTags()
-                .stream()
-                .map(Tag::getTagDisplayNamePlainText)
-                .collect(Collectors.toList());
+            .stream()
+            .map(Tag::getTagDisplayNamePlainText)
+            .collect(Collectors.toList());
 
         if (!ObjectUtils.isBlank(keywords)) {
             if (keywords.size() > 10) {
@@ -347,11 +352,11 @@ public class BlogPostPage extends Content implements
     @Override
     public String getSuggestableText() {
         return Optional.ofNullable(RichTextUtils.richTextToPlainText(getHeadline())).orElse("") + " "
-                + Optional.ofNullable(RichTextUtils.richTextToPlainText(getSubheadline())).orElse("") + " "
-                + Optional.ofNullable(getFullBody())
-                .map(RichTextUtils::stripRichTextElements)
-                .map(RichTextUtils::richTextToPlainText)
-                .orElse("");
+            + Optional.ofNullable(RichTextUtils.richTextToPlainText(getSubheadline())).orElse("") + " "
+            + Optional.ofNullable(getFullBody())
+            .map(RichTextUtils::stripRichTextElements)
+            .map(RichTextUtils::richTextToPlainText)
+            .orElse("");
     }
 
     // --- Suggestible support ---
@@ -359,14 +364,14 @@ public class BlogPostPage extends Content implements
     @Override
     public List<String> getSuggestibleFields() {
         return Stream.of(
-                "seo.title",
-                "seo.description",
-                "pagePromotable.promoTitle",
-                "pagePromotable.promoDescription",
-                "pagePromotable.promoImage",
-                "shareable.shareTitle",
-                "shareable.shareDescription",
-                "shareable.shareImage"
+            "seo.title",
+            "seo.description",
+            "pagePromotable.promoTitle",
+            "pagePromotable.promoDescription",
+            "pagePromotable.promoImage",
+            "shareable.shareTitle",
+            "shareable.shareDescription",
+            "shareable.shareImage"
         ).collect(Collectors.toList());
     }
 
@@ -392,37 +397,37 @@ public class BlogPostPage extends Content implements
     @Override
     public WebImageAsset getPagePromotableImageFallback() {
         return Optional.ofNullable(getLead())
-                .map(BlogPostLead::getBlogPostLeadImage)
-                .orElseGet(() -> ImageRichTextElement.getFirstImageFromRichText(getFullBody()));
+            .map(BlogPostLead::getBlogPostLeadImage)
+            .orElseGet(() -> ImageRichTextElement.getFirstImageFromRichText(getFullBody()));
     }
 
     @Override
     public String getPagePromotableType() {
         return Optional.ofNullable(getPrimaryMediaType())
-                .map(MediaType::getIconName)
-                .orElse(null);
+            .map(MediaType::getIconName)
+            .orElse(null);
     }
 
     @Override
     public String getPagePromotableCategoryFallback() {
         return Optional.ofNullable(asHasSectionData().getSectionParent())
-                .map(Section::getSectionDisplayNameRichText)
-                .orElse(null);
+            .map(Section::getSectionDisplayNameRichText)
+            .orElse(null);
     }
 
     @Override
     public String getPagePromotableCategoryUrlFallback(Site site) {
         return Optional.ofNullable(asHasSectionData().getSectionParent())
-                .map(section -> section.getLinkableUrl(site))
-                .orElseGet(null);
+            .map(section -> section.getLinkableUrl(site))
+            .orElseGet(null);
     }
 
     public String getReadDuration() {
         long characterCount = Optional.ofNullable(getFullBody())
-                .map(RichTextUtils::stripRichTextElements)
-                .map(RichTextUtils::richTextToPlainText)
-                .map(String::length)
-                .orElse(0);
+            .map(RichTextUtils::stripRichTextElements)
+            .map(RichTextUtils::richTextToPlainText)
+            .map(String::length)
+            .orElse(0);
 
         // TODO: localization needed. This implementation is highly dependent on language!
         // Average adult reading time given: 275 wpm. Average number of characters per English
@@ -458,9 +463,9 @@ public class BlogPostPage extends Content implements
     @Override
     public String getFullContentEncoded() {
         return Optional.ofNullable(getFullBody())
-                .map(RichTextUtils::stripRichTextElements)
-                .map(RichTextUtils::richTextToPlainText)
-                .orElse(null);
+            .map(RichTextUtils::stripRichTextElements)
+            .map(RichTextUtils::richTextToPlainText)
+            .orElse(null);
     }
 
     // --- Enhanced SEO support ---
@@ -472,9 +477,9 @@ public class BlogPostPage extends Content implements
             return null;
         }
         return iRtes.stream()
-                .filter(Objects::nonNull)
-                .map(image -> image.as(WebImagePlacement.class).getWebImageAltText())
-                .collect(Collectors.toList());
+            .filter(Objects::nonNull)
+            .map(image -> image.as(WebImagePlacement.class).getWebImageAltText())
+            .collect(Collectors.toList());
     }
 
     // --- Section support ---
@@ -535,9 +540,9 @@ public class BlogPostPage extends Content implements
         // - PagePromoModulePlacementInline
         // - LinkRichTextElement
         return ImmutableList.of(
-                ObjectType.getInstance(PagePromo.class).getId(),
-                ObjectType.getInstance(PagePromoModulePlacementInline.class).getId(),
-                ObjectType.getInstance(LinkRichTextElement.class).getId()
+            ObjectType.getInstance(PagePromo.class).getId(),
+            ObjectType.getInstance(PagePromoModulePlacementInline.class).getId(),
+            ObjectType.getInstance(LinkRichTextElement.class).getId()
         );
     }
 }

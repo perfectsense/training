@@ -32,18 +32,22 @@ import brightspot.search.modifier.exclusion.SearchExcludable;
 import brightspot.seo.SeoWithFields;
 import brightspot.share.Shareable;
 import brightspot.site.DefaultSiteMapItem;
+import brightspot.sort.publishdate.NewestPublishDate;
+import brightspot.taxon.TaxonParentExtension;
 import brightspot.urlslug.HasUrlSlug;
 import brightspot.util.MoreStringUtils;
 import brightspot.util.RichTextUtils;
 import com.psddev.cms.db.Content;
 import com.psddev.cms.db.ContentEditDrawerItem;
 import com.psddev.cms.db.Site;
+import com.psddev.cms.db.Taxon;
 import com.psddev.cms.db.ToolUi;
 import com.psddev.cms.ui.ToolLocalization;
 import com.psddev.cms.ui.content.place.GroupedPlace;
 import com.psddev.cms.ui.content.place.Place;
 import com.psddev.cms.ui.content.place.Placeable;
 import com.psddev.cms.ui.content.place.PlaceableTarget;
+import com.psddev.dari.db.Query;
 import com.psddev.dari.db.Recordable;
 import com.psddev.dari.util.Utils;
 import com.psddev.feed.FeedItem;
@@ -86,6 +90,7 @@ public class SectionPage extends Content implements
     SectionPageElements,
     SeoWithFields,
     Shareable,
+    TaxonParentExtension,
     TypeSpecificCascadingPageElements {
 
     @Required
@@ -168,7 +173,7 @@ public class SectionPage extends Content implements
 
     public List<ModulePlacement> getContents() {
         return Optional.ofNullable(as(LandingCascadingData.class)
-            .getContent(as(Site.ObjectModification.class).getOwner()))
+                .getContent(as(Site.ObjectModification.class).getOwner()))
             .orElseGet(ArrayList::new);
     }
 
@@ -292,6 +297,27 @@ public class SectionPage extends Content implements
         return getPagePromotableImageFallback();
     }
 
+    // --- TaxonForNow support ---
+
+    @Override
+    public TaxonParentExtension getTaxonParent() {
+        return Optional.ofNullable(getParent())
+            .filter(TaxonParentExtension.class::isInstance)
+            .map(TaxonParentExtension.class::cast)
+            .orElse(null);
+    }
+
+    @Override
+    public Query<? extends Taxon> getTaxonChildrenQuery() {
+        return Query.from(Taxon.class)
+            .where(
+                HasSectionData.class.getName() + "/" + HasSectionData.PARENT_FIELD + " = ?",
+                this)
+            .and("cms.content.draft = missing OR cms.content.draft = true")
+            .and("cms.content.trashed = missing OR cms.content.trashed = true")
+            .and("cms.workflow.currentState = missing OR cms.workflow.currentState != missing");
+    }
+
     // --- Promotable Support ---
 
     @Override
@@ -331,6 +357,8 @@ public class SectionPage extends Content implements
         DynamicPageItemStream itemStream = new DynamicPageItemStream();
         itemStream.asQueryBuilderDynamicQueryModifier().setQueryBuilder(sectionMatch);
 
+        itemStream.setSort(new NewestPublishDate());
+
         return getFeedFromDynamicStream(itemStream, getContents(), site);
     }
 
@@ -349,7 +377,7 @@ public class SectionPage extends Content implements
     @Override
     public List<Place> getPlaceableTargetPlaces(Placeable content) {
         return Collections.singletonList(
-                new GroupedPlace(content, this, "Contents", getContents())
+            new GroupedPlace(content, this, "Content", getContents())
         );
     }
 }

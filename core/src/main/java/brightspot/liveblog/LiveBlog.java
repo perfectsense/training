@@ -4,16 +4,19 @@ import java.time.Instant;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Objects;
 import java.util.Optional;
 import java.util.UUID;
 import java.util.stream.Collectors;
 
 import brightspot.author.HasAuthorsWithField;
+import brightspot.cascading.CascadingPageElements;
 import brightspot.commenting.HasCommenting;
 import brightspot.commenting.coral.HasCoralPageMetadata;
 import brightspot.commenting.disqus.HasDisqusPageMetadata;
 import brightspot.embargo.Embargoable;
 import brightspot.image.WebImageAsset;
+import brightspot.image.WebImagePlacement;
 import brightspot.liveblog.wyntk.WhatYouNeedToKnowOption;
 import brightspot.mediatype.HasMediaTypeWithOverride;
 import brightspot.mediatype.MediaType;
@@ -22,11 +25,14 @@ import brightspot.permalink.AbstractPermalinkRule;
 import brightspot.promo.page.PagePromotableWithOverrides;
 import brightspot.rss.DynamicFeedSource;
 import brightspot.rte.LargeRichTextToolbar;
-import brightspot.rte.SmallRichTextToolbar;
 import brightspot.rte.TinyRichTextToolbar;
+import brightspot.rte.image.ImageRichTextElement;
 import brightspot.search.modifier.exclusion.SearchExcludable;
+import brightspot.section.HasSecondarySectionsWithField;
 import brightspot.section.HasSectionWithField;
-import brightspot.seo.SeoWithFields;
+import brightspot.seo.EnhancedSeoBodyDynamicNote;
+import brightspot.seo.EnhancedSeoHeadlineDynamicNote;
+import brightspot.seo.EnhancedSeoWithFields;
 import brightspot.share.Shareable;
 import brightspot.site.DefaultSiteMapItem;
 import brightspot.sponsoredcontent.HasSponsorWithField;
@@ -38,59 +44,69 @@ import com.psddev.cms.db.Content;
 import com.psddev.cms.db.ContentEditDrawerItem;
 import com.psddev.cms.db.Site;
 import com.psddev.cms.db.ToolUi;
+import com.psddev.cms.ui.form.DynamicNoteClass;
+import com.psddev.cms.ui.form.EditablePlaceholder;
+import com.psddev.cms.ui.form.Placeholder;
 import com.psddev.dari.db.Query;
 import com.psddev.dari.util.ObjectUtils;
 import com.psddev.dari.util.Utils;
 import com.psddev.feed.FeedItem;
 
 @ToolUi.FieldDisplayOrder({
-        "headline",
-        "subheadline",
-        "hasUrlSlug.urlSlug",
-        "hasAuthorsWithField.authors",
-        "lead",
-        "whatYouNeedToKnow",
-        "body",
-        "hasSectionWithField.section",
-        "hasTags.tags",
-        "embargoable.embargo",
-        "seo.title",
-        "seo.suppressSeoDisplayName",
-        "seo.description",
-        "seo.keywords",
-        "seo.robots",
-        "ampPage.ampDisabled"
+    "headline",
+    "subheadline",
+    "hasUrlSlug.urlSlug",
+    "hasAuthorsWithField.authors",
+    "lead",
+    "whatYouNeedToKnow",
+    "body",
+    "hasSectionWithField.section",
+    "hasSecondarySectionsWithField.secondarySections",
+    "hasTags.tags",
+    "embargoable.embargo",
+    "seo.title",
+    "seo.suppressSeoDisplayName",
+    "seo.description",
+    "seo.keywords",
+    "seo.robots",
+    "seo.focusKeyWord",
+    "seo.getFocusKeywordDensity",
+    "seo.disableSeoRecommendations",
+    "ampPage.ampDisabled"
 })
 @ToolUi.IconName("question_answer")
 public class LiveBlog extends Content implements
-        ContentEditDrawerItem,
-        DefaultSiteMapItem,
-        DynamicFeedSource,
-        Embargoable,
-        FeedItem,
-        HasAuthorsWithField,
-        HasCommenting,
-        HasCoralPageMetadata,
-        HasDisqusPageMetadata,
-        HasMediaTypeWithOverride,
-        HasSectionWithField,
-        HasSponsorWithField,
-        HasTagsWithField,
-        HasUrlSlugWithField,
-        ILiveBlog<LiveBlogPost>,
-        Page,
-        PagePromotableWithOverrides,
-        SearchExcludable,
-        SeoWithFields,
-        Shareable {
+    CascadingPageElements,
+    ContentEditDrawerItem,
+    DefaultSiteMapItem,
+    DynamicFeedSource,
+    EnhancedSeoWithFields,
+    Embargoable,
+    FeedItem,
+    HasAuthorsWithField,
+    HasCommenting,
+    HasCoralPageMetadata,
+    HasDisqusPageMetadata,
+    HasMediaTypeWithOverride,
+    HasSecondarySectionsWithField,
+    HasSectionWithField,
+    HasSponsorWithField,
+    HasTagsWithField,
+    HasUrlSlugWithField,
+    ILiveBlog<LiveBlogPost>,
+    Page,
+    PagePromotableWithOverrides,
+    SearchExcludable,
+    Shareable {
 
     private static final int DEFAULT_CURRENT_POSTS_COUNT = 1000;
 
     @Required
+    @DynamicNoteClass(EnhancedSeoHeadlineDynamicNote.class)
     @ToolUi.RichText(toolbar = TinyRichTextToolbar.class)
     private String headline;
 
-    @ToolUi.RichText(toolbar = SmallRichTextToolbar.class)
+    @ToolUi.RichText(toolbar = TinyRichTextToolbar.class)
     private String subheadline;
 
     @ToolUi.CssClass("is-minimal")
@@ -100,9 +116,11 @@ public class LiveBlog extends Content implements
     private WhatYouNeedToKnowOption whatYouNeedToKnow;
 
     @ToolUi.Tab("Overrides")
-    @ToolUi.Placeholder(value = DEFAULT_CURRENT_POSTS_COUNT + "", editable = true)
+    @Placeholder(DEFAULT_CURRENT_POSTS_COUNT + "")
+    @EditablePlaceholder
     private Integer currentPostsCount;
 
+    @DynamicNoteClass(EnhancedSeoBodyDynamicNote.class)
     @ToolUi.RichText(inline = false, toolbar = LargeRichTextToolbar.class, lines = 10)
     private String body;
 
@@ -329,6 +347,20 @@ public class LiveBlog extends Content implements
         return getDynamicFeedLanguage(site);
     }
 
+    // --- EnhancedSeoWithFields support ---
+
+    @Override
+    public List<String> getEnhancedSeoBodyAllImageAltTexts(String body) {
+        List<ImageRichTextElement> iRtes = ImageRichTextElement.getImageEnhancementsFromRichText(body);
+        if (ObjectUtils.isBlank(iRtes)) {
+            return null;
+        }
+        return iRtes.stream()
+            .filter(Objects::nonNull)
+            .map(rte -> rte.as(WebImagePlacement.class).getWebImageAltText())
+            .collect(Collectors.toList());
+    }
+
     // --- FeedItem support ---
 
     @Override
@@ -415,18 +447,6 @@ public class LiveBlog extends Content implements
         return getPagePromotableDescriptionFallback();
     }
 
-    @Override
-    public String getSeoTitle() {
-
-        return getHeadline();
-    }
-
-    @Override
-    public String getSeoDescription() {
-
-        return getSubheadline();
-    }
-
     // --- Shareable support ---
 
     @Override
@@ -449,8 +469,8 @@ public class LiveBlog extends Content implements
 
     public int getCurrentPostsCount() {
         return currentPostsCount != null
-                ? currentPostsCount
-                : DEFAULT_CURRENT_POSTS_COUNT;
+            ? currentPostsCount
+            : DEFAULT_CURRENT_POSTS_COUNT;
     }
 
     public void setCurrentPostsCount(Integer currentPostsCount) {

@@ -8,12 +8,12 @@ import brightspot.pressrelease.PressReleaseLead;
 import com.psddev.dari.util.Substitution;
 
 public class ImageLeadSubstitution extends ImageLead implements
-        ArticleLead,
-        BlogPostLead,
-        ListicleLead,
-        LiveBlogLead,
-        PressReleaseLead,
-        Substitution {
+    ArticleLead,
+    BlogPostLead,
+    ListicleLead,
+    LiveBlogLead,
+    PressReleaseLead,
+    Substitution {
 
     @Override
     public WebImage getArticleLeadImage() {

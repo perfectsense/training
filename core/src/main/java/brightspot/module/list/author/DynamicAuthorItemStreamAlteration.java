@@ -12,11 +12,11 @@ import com.psddev.dari.db.Recordable;
 public class DynamicAuthorItemStreamAlteration extends Alteration<DynamicAuthorItemStream> {
 
     @Recordable.Types({
-            NewestPublishDate.class,
-            OldestPublishDate.class,
-            AlphabeticalAscendingDynamicQuerySort.class,
-            AlphabeticalDescendingDynamicQuerySort.class,
-            PageViews.class
+        NewestPublishDate.class,
+        OldestPublishDate.class,
+        AlphabeticalAscendingDynamicQuerySort.class,
+        AlphabeticalDescendingDynamicQuerySort.class,
+        PageViews.class
     })
     private DynamicQuerySort sort;
 

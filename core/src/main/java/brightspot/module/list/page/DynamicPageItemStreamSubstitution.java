@@ -28,14 +28,14 @@ import com.psddev.dari.web.WebRequest;
 import static com.psddev.dari.html.Nodes.*;
 
 public class DynamicPageItemStreamSubstitution extends DynamicPageItemStream implements
-        Substitution,
-        GroupedPlaceItem,
-        LocaleDynamicQueryModifiable,
-        MemoizationDynamicQueryModifiable,
-        PagePromotableDynamicQueryModifiable,
-        PathedOnlyQueryModifiableWithField,
-        SiteItemsQueryModifiableWithField,
-        SponsorDynamicQueryModifiable {
+    Substitution,
+    GroupedPlaceItem,
+    LocaleDynamicQueryModifiable,
+    MemoizationDynamicQueryModifiable,
+    PagePromotableDynamicQueryModifiable,
+    PathedOnlyQueryModifiableWithField,
+    SiteItemsQueryModifiableWithField,
+    SponsorDynamicQueryModifiable {
 
     @Override
     public List<Place> getGroupedPlaceItemPlaces(Placeable source, Recordable target) {
@@ -45,7 +45,7 @@ public class DynamicPageItemStreamSubstitution extends DynamicPageItemStream imp
             ToolRequest tool = WebRequest.getCurrent().as(ToolRequest.class);
             List<PageItemStreamItem> pinned = getPinnedItems();
             places.add(new SelectablePlace(target, getState().getId().toString(), "New Pin", () ->
-                    pinned.add(createPromo((PagePromotable) source))));
+                pinned.add(createPromo((PagePromotable) source))));
 
             for (int i = 0, l = pinned.size(); i < l; ++i) {
                 int j = i;
@@ -53,10 +53,10 @@ public class DynamicPageItemStreamSubstitution extends DynamicPageItemStream imp
 
                 if (!(item instanceof DynamicResult)) {
                     places.add(new SelectablePlace(
-                            target,
-                            item.getState().getId().toString() + "+index" + j,
-                            SPAN.with(tool.toHtml(item.getState().getType()), text(": "), tool.toHtml(item)),
-                            () -> pinned.set(j, createPromo((PagePromotable) source))));
+                        target,
+                        item.getState().getId().toString() + "+index" + j,
+                        SPAN.with(tool.toHtml(item.getState().getType()), text(": "), tool.toHtml(item)),
+                        () -> pinned.set(j, createPromo((PagePromotable) source))));
                 }
             }
         }
@@ -65,13 +65,13 @@ public class DynamicPageItemStreamSubstitution extends DynamicPageItemStream imp
 
         if (user != null) {
             getQuery(user.getCurrentSetSite(), target)
-                    .select(0, getItemsPerPage())
-                    .getItems()
-                    .stream()
-                    .map(State::getInstance)
-                    .map(State::getLabel)
-                    .map(UnselectablePlace::new)
-                    .forEach(places::add);
+                .select(0, getItemsPerPage())
+                .getItems()
+                .stream()
+                .map(State::getInstance)
+                .map(State::getLabel)
+                .map(UnselectablePlace::new)
+                .forEach(places::add);
         }
 
         return places;
@@ -79,7 +79,9 @@ public class DynamicPageItemStreamSubstitution extends DynamicPageItemStream imp
 
     private PagePromo createPromo(PagePromotable promotable) {
         return ObjectUtils.build(
-                new PagePromo(),
-                pagePromo -> pagePromo.setItem(ObjectUtils.build(new InternalPagePromoItem(), l -> l.setItem(promotable))));
+            new PagePromo(),
+            pagePromo -> pagePromo.setItem(ObjectUtils.build(
+                new InternalPagePromoItem(),
+                l -> l.setItem(promotable))));
     }
 }

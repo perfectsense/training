@@ -7,6 +7,7 @@ import brightspot.image.WebImageAsset;
 import brightspot.rte.LargeRichTextToolbar;
 import brightspot.rte.TinyRichTextToolbar;
 import brightspot.rte.image.ImageRichTextElement;
+import brightspot.seo.EnhancedSeoTextProvider;
 import brightspot.util.RichTextUtils;
 import com.psddev.cms.db.ToolUi;
 import com.psddev.dari.db.Record;
@@ -14,7 +15,9 @@ import com.psddev.dari.db.Recordable;
 
 @Recordable.Embedded
 @Recordable.DisplayName("Rich Text")
-public class RichTextListicleItem extends Record implements ListicleItem {
+public class RichTextListicleItem extends Record implements
+    EnhancedSeoTextProvider,
+    ListicleItem {
 
     @ToolUi.RichText(toolbar = TinyRichTextToolbar.class)
     private String heading;
@@ -37,6 +40,15 @@ public class RichTextListicleItem extends Record implements ListicleItem {
     public void setBody(String body) {
         this.body = body;
     }
+
+    // --- EnhancedSeoTextProvider support ---
+
+    @Override
+    public String getEnhancedSeoBodyText() {
+        return getBody();
+    }
+
+    // --- ListicleItem support ---
 
     /**
      * Returns the first image within the listicle item.

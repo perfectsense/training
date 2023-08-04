@@ -6,7 +6,6 @@ import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 import java.util.Locale;
-import java.util.Map;
 import java.util.Optional;
 
 import brightspot.author.AuthoringPageViewModel;
@@ -37,21 +36,18 @@ import com.psddev.styleguide.gallery.GalleryPageView;
 import com.psddev.styleguide.gallery.GalleryPageViewGalleryBodyField;
 import com.psddev.styleguide.gallery.GalleryPageViewPaginationField;
 import com.psddev.styleguide.gallery.GalleryPageViewSlidesField;
-import com.psddev.styleguide.link.LinkView;
-import com.psddev.styleguide.page.CreativeWorkPageViewAuthorBiographyField;
-import com.psddev.styleguide.page.CreativeWorkPageViewAuthorNameField;
+import com.psddev.styleguide.link.PaginationLinkView;
 import com.psddev.styleguide.page.CreativeWorkPageViewAuthorsField;
 import com.psddev.styleguide.page.CreativeWorkPageViewHeadlineField;
 import com.psddev.styleguide.page.CreativeWorkPageViewSponsorLogoField;
 import com.psddev.styleguide.page.CreativeWorkPageViewSponsorNameField;
 import com.psddev.styleguide.page.CreativeWorkPageViewSubHeadlineField;
 import com.psddev.styleguide.page.PageViewPageSubHeadingField;
-import com.psddev.styleguide.page.promo.PagePromoView;
 
 @JsonLdType("ImageGallery")
 public class GalleryPageViewModel extends AbstractContentPageViewModel<Gallery> implements
-        GalleryPageView,
-        PageEntryView {
+    GalleryPageView,
+    PageEntryView {
 
     private static final String DATE_FORMAT_KEY = "dateFormat";
 
@@ -94,24 +90,26 @@ public class GalleryPageViewModel extends AbstractContentPageViewModel<Gallery> 
     public CharSequence getDateModified() {
         // Plain text
         return DateTimeUtils.format(model.getUpdateDate(), GalleryPageView.class, DATE_FORMAT_KEY, site,
-                locale, PageViewModel.DEFAULT_DATE_FORMAT
+            locale, PageViewModel.DEFAULT_DATE_FORMAT
         );
     }
 
     @JsonLdNode("dateModified")
     @Override
     public CharSequence getDateModifiedISO() {
-        return Optional.ofNullable(ObjectUtils.firstNonNull(LastUpdatedProvider.getMostRecentUpdateDate(model), model.getPublishDate()))
-                .map(Date::toInstant)
-                .map(Instant::toString)
-                .orElse(null);
+        return Optional.ofNullable(ObjectUtils.firstNonNull(
+                LastUpdatedProvider.getMostRecentUpdateDate(model),
+                model.getPublishDate()))
+            .map(Date::toInstant)
+            .map(Instant::toString)
+            .orElse(null);
     }
 
     @Override
     public CharSequence getDatePublished() {
         // Plain text
         return DateTimeUtils.format(model.getPublishDate(), GalleryPageView.class, DATE_FORMAT_KEY, site,
-                locale, PageViewModel.DEFAULT_DATE_FORMAT
+            locale, PageViewModel.DEFAULT_DATE_FORMAT
         );
     }
 
@@ -119,17 +117,17 @@ public class GalleryPageViewModel extends AbstractContentPageViewModel<Gallery> 
     @Override
     public CharSequence getDatePublishedISO() {
         return Optional.ofNullable(model.getPublishDate())
-                .map(Date::toInstant)
-                .map(Instant::toString)
-                .orElse(null);
+            .map(Date::toInstant)
+            .map(Instant::toString)
+            .orElse(null);
     }
 
     @Override
     public Iterable<? extends CreativeWorkPageViewHeadlineField> getHeadline() {
         return RichTextUtils.buildInlineHtml(
-                model,
-                Gallery::getTitle,
-                e -> createView(CreativeWorkPageViewHeadlineField.class, e));
+            model,
+            Gallery::getTitle,
+            e -> createView(CreativeWorkPageViewHeadlineField.class, e));
     }
 
     @Override
@@ -142,61 +140,70 @@ public class GalleryPageViewModel extends AbstractContentPageViewModel<Gallery> 
     @Override
     public Iterable<? extends CreativeWorkPageViewSponsorLogoField> getSponsorLogo() {
         return createViews(
-                CreativeWorkPageViewSponsorLogoField.class,
-                Optional.ofNullable(model.getSponsor())
-                        .map(ContentSponsor::getLogo)
-                        .orElse(null)
+            CreativeWorkPageViewSponsorLogoField.class,
+            Optional.ofNullable(model.getSponsor())
+                .map(ContentSponsor::getLogo)
+                .orElse(null)
         );
     }
 
     @Override
     public CharSequence getSponsorMeaningTarget() {
         return SiteSettings.get(
-                site,
-                s -> Optional.ofNullable(s.as(SponsoredContentSiteSettings.class).getSponsoredContentMeaningLink())
-                        .map(Link::getTarget)
-                        .map(Target::getValue)
-                        .orElse(null));
+            site,
+            s -> Optional.ofNullable(s.as(SponsoredContentSiteSettings.class).getSponsoredContentMeaningLink())
+                .map(Link::getTarget)
+                .map(Target::getValue)
+                .orElse(null));
     }
 
     @Override
     public CharSequence getSponsorMeaningUrl() {
         return SiteSettings.get(
-                site,
-                s -> Optional.ofNullable(s.as(SponsoredContentSiteSettings.class).getSponsoredContentMeaningLink())
-                        .map(link -> link.getLinkUrl(site))
-                        .orElse(null));
+            site,
+            s -> Optional.ofNullable(s.as(SponsoredContentSiteSettings.class).getSponsoredContentMeaningLink())
+                .map(link -> link.getLinkUrl(site))
+                .orElse(null));
+    }
+
+    @Override
+    public CharSequence getSponsorDisplayText() {
+        return Optional.ofNullable(model.getSponsor())
+            .filter(Sponsor.class::isInstance)
+            .map(Sponsor.class::cast)
+            .map(sponsor -> sponsor.getSponsorDisplayTextWithFallback(site))
+            .orElse(null);
     }
 
     @Override
     public Iterable<? extends CreativeWorkPageViewSponsorNameField> getSponsorName() {
         return Optional.ofNullable(model.getSponsor())
-                .map(sponsor -> RichTextUtils.buildInlineHtml(
-                        sponsor,
-                        ContentSponsor::getDisplayName,
-                        e -> createView(CreativeWorkPageViewSponsorNameField.class, e)))
-                .orElse(null);
+            .map(sponsor -> RichTextUtils.buildInlineHtml(
+                sponsor,
+                ContentSponsor::getDisplayName,
+                e -> createView(CreativeWorkPageViewSponsorNameField.class, e)))
+            .orElse(null);
     }
 
     @Override
     public CharSequence getSponsorTarget() {
         return Optional.ofNullable(model.getSponsor())
-                .filter(Sponsor.class::isInstance)
-                .map(Sponsor.class::cast)
-                .map(Sponsor::getCallToAction)
-                .map(Link::getTarget)
-                .map(Target::getValue)
-                .orElse(null);
+            .filter(Sponsor.class::isInstance)
+            .map(Sponsor.class::cast)
+            .map(Sponsor::getCallToAction)
+            .map(Link::getTarget)
+            .map(Target::getValue)
+            .orElse(null);
     }
 
     @Override
     public CharSequence getSponsorUrl() {
         return Optional.ofNullable(model.getSponsor())
-                .filter(Sponsor.class::isInstance)
-                .map(Sponsor.class::cast)
-                .map(Sponsor::getCallToAction)
-                .map(link -> link.getLinkUrl(site))
-                .orElse(null);
+            .filter(Sponsor.class::isInstance)
+            .map(Sponsor.class::cast)
+            .map(Sponsor::getCallToAction)
+            .map(link -> link.getLinkUrl(site))
+            .orElse(null);
     }
 
     @Override
@@ -207,9 +214,9 @@ public class GalleryPageViewModel extends AbstractContentPageViewModel<Gallery> 
     @Override
     public Iterable<? extends CreativeWorkPageViewSubHeadlineField> getSubHeadline() {
         return RichTextUtils.buildInlineHtml(
-                model,
-                Gallery::getDescription,
-                e -> createView(CreativeWorkPageViewSubHeadlineField.class, e));
+            model,
+            Gallery::getDescription,
+            e -> createView(CreativeWorkPageViewSubHeadlineField.class, e));
     }
 
     @Override
@@ -231,17 +238,17 @@ public class GalleryPageViewModel extends AbstractContentPageViewModel<Gallery> 
             return null;
         }
 
-        List<LinkView> pagination = new ArrayList<>();
+        List<PaginationLinkView> pagination = new ArrayList<>();
 
         if (pageIndex > 1) {
-            pagination.add(new LinkView.Builder()
+            pagination.add(new PaginationLinkView.Builder()
                 .body(Collections.singleton(PlainText.of("Previous Page")))
                 .href("?page=" + (pageIndex - 1))
                 .build());
         }
 
         if (itemStream.hasItems(site, model, offset + limit, limit)) {
-            pagination.add(new LinkView.Builder()
+            pagination.add(new PaginationLinkView.Builder()
                 .body(Collections.singleton(PlainText.of("Next Page")))
                 .href("?page=" + (pageIndex + 1))
                 .build());
@@ -283,37 +290,5 @@ public class GalleryPageViewModel extends AbstractContentPageViewModel<Gallery> 
     @Override
     public Iterable<? extends CreativeWorkPageViewAuthorsField> getAuthors() {
         return authoringPage.getAuthors(CreativeWorkPageViewAuthorsField.class);
-    }
-
-    /* DEPRECATED KEYS BELOW */
-
-    @Override
-    public Iterable<? extends CreativeWorkPageViewAuthorBiographyField> getAuthorBiography() {
-        return authoringPage.getAuthorBiography(CreativeWorkPageViewAuthorBiographyField.class);
-    }
-
-    @Override
-    public Map<String, ?> getAuthorImage() {
-        return authoringPage.getAuthorImageAttributes();
-    }
-
-    @Override
-    public Iterable<? extends CreativeWorkPageViewAuthorNameField> getAuthorName() {
-        return authoringPage.getAuthorName(CreativeWorkPageViewAuthorNameField.class);
-    }
-
-    @Override
-    public CharSequence getAuthorUrl() {
-        return authoringPage.getAuthorUrl();
-    }
-
-    @Override
-    public Iterable<? extends LinkView> getContributors() {
-        return authoringPage.getContributors(LinkView.class);
-    }
-
-    @Override
-    public Iterable<? extends PagePromoView> getPeople() {
-        return authoringPage.getAuthors(PagePromoView.class);
     }
 }
