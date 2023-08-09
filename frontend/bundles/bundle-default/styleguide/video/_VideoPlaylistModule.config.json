@@ -2,7 +2,12 @@
   "styles": {
     "/video/VideoPlaylistModule.hbs": {
       "fields": [
-        "playlistBottom"
+        "playlistBottom",
+        "backgroundColor",
+        "inverseColors",
+        "headerTextAlign",
+        "modulePaddingTop",
+        "modulePaddingBottom"
       ],
       "templates": [
         {

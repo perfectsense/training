@@ -1,0 +1,23 @@
+<bsp-search-sorts class="SearchResultsModuleSorts">
+    {{#each sorts}}
+        {{!-- It is expected that one sort option is always selected --}}
+        {{#if selected}}
+            <label>{{format "/search/SearchResultsModule" "sortBy"}}
+            <div class="SearchResultsModuleSorts-controlContainer">
+                <button class="SearchResultsModuleSorts-control" type="button">
+                    {{~#with label~}}
+                        <span class="SearchResultsModuleSorts-controlText">{{this}}</span>
+                    {{~/with~}}
+                    <svg><use xlink:href="#icon-arrow-down"></use></svg>
+                </button>
+                <dialog>
+                    {{#each ../sorts}}
+                        {{this}}
+                    {{/each}}
+                </dialog>
+            </div>
+            </label>
+            <input type="hidden" name="{{parameterName}}" value="{{parameterValue}}">
+        {{/if}}
+    {{/each}}
+</bsp-search-sorts>

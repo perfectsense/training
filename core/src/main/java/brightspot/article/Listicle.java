@@ -21,6 +21,7 @@ import brightspot.commenting.disqus.HasDisqusPageMetadata;
 import brightspot.embargo.Embargoable;
 import brightspot.homepage.Homepage;
 import brightspot.image.WebImageAsset;
+import brightspot.image.WebImagePlacement;
 import brightspot.l10n.LocaleProvider;
 import brightspot.link.InternalLink;
 import brightspot.mediatype.HasMediaTypeWithOverride;
@@ -45,7 +46,9 @@ import brightspot.section.HasSection;
 import brightspot.section.HasSectionWithField;
 import brightspot.section.Section;
 import brightspot.section.SectionPrefixPermalinkRule;
-import brightspot.seo.SeoWithFields;
+import brightspot.seo.EnhancedSeoHeadlineDynamicNote;
+import brightspot.seo.EnhancedSeoListicleDynamicNote;
+import brightspot.seo.EnhancedSeoWithFields;
 import brightspot.share.Shareable;
 import brightspot.sharedcontent.SharedContent;
 import brightspot.site.DefaultSiteMapItem;
@@ -69,6 +72,7 @@ import com.psddev.cms.ui.ToolLocalization;
 import com.psddev.cms.ui.content.Suggestible;
 import com.psddev.cms.ui.content.place.Placeable;
 import com.psddev.cms.ui.content.place.PlaceableTarget;
+import com.psddev.cms.ui.form.DynamicNoteClass;
 import com.psddev.dari.db.ObjectType;
 import com.psddev.dari.db.Query;
 import com.psddev.dari.db.Recordable;
@@ -80,85 +84,89 @@ import com.psddev.sitemap.SiteMapEntry;
 import com.psddev.sitemap.SiteMapNews;
 import com.psddev.sitemap.SiteMapSettingsModification;
 import com.psddev.suggestions.Suggestable;
-import com.psddev.theme.StyleEmbeddedContentCreator;
 import org.apache.commons.lang3.StringUtils;
 
 @ToolUi.FieldDisplayOrder({
-        "headline",
-        "subheadline",
-        "hasUrlSlug.urlSlug",
-        "hasAuthorsWithField.authors",
-        "lead",
-        "intro",
-        "items",
-        "hasSectionWithField.section",
-        "hasTags.tags",
-        "embargoable.embargo",
-        "seo.title",
-        "seo.suppressSeoDisplayName",
-        "seo.description",
-        "seo.keywords",
-        "seo.robots",
-        "ampPage.ampDisabled"
+    "headline",
+    "subheadline",
+    "hasUrlSlug.urlSlug",
+    "hasAuthorsWithField.authors",
+    "lead",
+    "intro",
+    "items",
+    "hasSectionWithField.section",
+    "hasSecondarySectionsWithField.secondarySections",
+    "hasTags.tags",
+    "embargoable.embargo",
+    "seo.title",
+    "seo.suppressSeoDisplayName",
+    "seo.description",
+    "seo.keywords",
+    "seo.robots",
+    "seo.focusKeyWord",
+    "seo.getFocusKeywordDensity",
+    "seo.disableSeoRecommendations",
+    "ampPage.ampDisabled"
 })
 @ToolUi.IconName("format_list_numbered")
 @ToolUi.FieldDisplayPreview({
-        "headline",
-        "subheadline",
-        "hasAuthorsWithField.authors",
-        "hasSectionWithField.section",
-        "hasTags.tags",
-        "cms.content.updateDate",
-        "cms.content.updateUser" })
+    "headline",
+    "subheadline",
+    "hasAuthorsWithField.authors",
+    "hasSectionWithField.section",
+    "hasTags.tags",
+    "cms.content.updateDate",
+    "cms.content.updateUser" })
 public class Listicle extends Content implements
-        CascadingPageElements,
-        ContentEditDrawerItem,
-        Embargoable,
-        DefaultSiteMapItem,
-        FeedItem,
-        HasAuthorsWithField,
-        HasBreadcrumbs,
-        HasCommenting,
-        HasCoralPageMetadata,
-        HasDisqusPageMetadata,
-        HasMediaTypeWithOverride,
-        HasSecondarySectionsWithField,
-        HasSectionWithField,
-        HasSiteSearchBoostIndexes,
-        HasSponsorWithField,
-        HasTagsWithField,
-        HasUrlSlugWithField,
-        Interchangeable,
-        NewsSiteMapItem,
-        OpenGraphArticle,
-        Page,
-        PagePromotableWithOverrides,
-        Placeable,
-        SearchExcludable,
-        SeoWithFields,
-        Shareable,
-        SharedContent,
-        Suggestable,
-        Suggestible,
-        SupportsViewBasedAdInjection {
+    CascadingPageElements,
+    ContentEditDrawerItem,
+    Embargoable,
+    EnhancedSeoWithFields,
+    DefaultSiteMapItem,
+    FeedItem,
+    HasAuthorsWithField,
+    HasBreadcrumbs,
+    HasCommenting,
+    HasCoralPageMetadata,
+    HasDisqusPageMetadata,
+    HasMediaTypeWithOverride,
+    HasSecondarySectionsWithField,
+    HasSectionWithField,
+    HasSiteSearchBoostIndexes,
+    HasSponsorWithField,
+    HasTagsWithField,
+    HasUrlSlugWithField,
+    Interchangeable,
+    NewsSiteMapItem,
+    OpenGraphArticle,
+    Page,
+    PagePromotableWithOverrides,
+    Placeable,
+    SearchExcludable,
+    Shareable,
+    SharedContent,
+    Suggestable,
+    Suggestible,
+    SupportsViewBasedAdInjection {
 
     public static final String TAB_OVERRIDES = "Overrides";
 
+    @DynamicNoteClass(EnhancedSeoHeadlineDynamicNote.class)
     @Indexed
     @Required
-    @ToolUi.NoteHtml("<span data-dynamic-html=\"${content.getSeoTitleNoteHtml()}\"></span>")
     @ToolUi.RichText(toolbar = TinyRichTextToolbar.class)
     private String headline;
 
     @ToolUi.RichText(toolbar = TinyRichTextToolbar.class)
     private String subheadline;
 
-    @ToolUi.EmbeddedContentCreatorClass(StyleEmbeddedContentCreator.class)
     private ListicleLead lead;
 
+    @DynamicNoteClass(EnhancedSeoListicleDynamicNote.class)
     @ToolUi.RichText(inline = false, toolbar = LargeRichTextToolbar.class, lines = 10)
     private String intro;
 
+    @DynamicNoteClass(EnhancedSeoListicleDynamicNote.class)
     private List<ListicleItem> items;
 
     /**
@@ -211,6 +219,20 @@ public class Listicle extends Content implements
 
     public void setItems(List<ListicleItem> items) {
         this.items = items;
+    }
+
+    // --- EnhancedSeoWithFields support ---
+
+    @Override
+    public List<String> getEnhancedSeoBodyAllImageAltTexts(String body) {
+        List<ImageRichTextElement> iRtes = ImageRichTextElement.getImageEnhancementsFromRichText(body);
+        if (ObjectUtils.isBlank(iRtes)) {
+            return null;
+        }
+        return iRtes.stream()
+            .filter(Objects::nonNull)
+            .map(rte -> rte.as(WebImagePlacement.class).getWebImageAltText())
+            .collect(Collectors.toList());
     }
 
     // --- HasBreadcrumbs support ---
@@ -272,15 +294,15 @@ public class Listicle extends Content implements
     @Override
     public WebImageAsset getPagePromotableImageFallback() {
         return Optional.ofNullable(getLead())
-                .map(ListicleLead::getListicleLeadImage)
-                .orElseGet(() -> Optional.ofNullable(getIntro())
-                        .map(ImageRichTextElement::getFirstImageFromRichText)
-                        .orElseGet(() -> getItems()
-                                .stream()
-                                .map(ListicleItem::getFirstImage)
-                                .filter(Objects::nonNull)
-                                .findFirst()
-                                .orElse(null)));
+            .map(ListicleLead::getListicleLeadImage)
+            .orElseGet(() -> Optional.ofNullable(getIntro())
+                .map(ImageRichTextElement::getFirstImageFromRichText)
+                .orElseGet(() -> getItems()
+                    .stream()
+                    .map(ListicleItem::getFirstImage)
+                    .filter(Objects::nonNull)
+                    .findFirst()
+                    .orElse(null)));
     }
 
     @Override
@@ -292,35 +314,35 @@ public class Listicle extends Content implements
 
     @Override
     public String getPagePromotableCategoryFallback() {
-        return Optional.ofNullable(asHasSectionData().getSectionParent())
-                .map(Section::getSectionDisplayNameRichText)
-                .orElse(null);
+        return Optional.ofNullable(getSectionParent())
+            .map(Section::getSectionDisplayNameRichText)
+            .orElse(null);
     }
 
     @Override
     public String getPagePromotableCategoryUrlFallback(Site site) {
-        return Optional.ofNullable(asHasSectionData().getSectionParent())
-                .map(section -> section.getLinkableUrl(site))
-                .orElse(null);
+        return Optional.ofNullable(getSectionParent())
+            .map(section -> section.getLinkableUrl(site))
+            .orElse(null);
     }
 
     /**
-     * Gets the total number of plain text characters from the {@link Listicle} intro as well as each {@link
-     * ListicleItem}
+     * Gets the total number of plain text characters from the {@link Listicle} intro as well as each
+     * {@link ListicleItem}
      *
      * @return A {@link String} displaying the time to read in minutes, minimum 1 minute
      */
     public String getReadDuration() {
         long characterCount = Optional.ofNullable(getIntro())
-                .map(RichTextUtils::richTextToPlainText)
-                .map(RichTextUtils::stripRichTextElements)
-                .map(String::length)
-                .orElse(0);
+            .map(RichTextUtils::richTextToPlainText)
+            .map(RichTextUtils::stripRichTextElements)
+            .map(String::length)
+            .orElse(0);
 
         characterCount += getItems()
-                .stream()
-                .mapToLong(ListicleItem::getTextCharacterCount)
-                .sum();
+            .stream()
+            .mapToLong(ListicleItem::getTextCharacterCount)
+            .sum();
 
         // TODO: localization needed. This implementation is highly dependent on language!
         // Average adult reading time given: 275 wpm. Average number of characters per English
@@ -345,26 +367,26 @@ public class Listicle extends Content implements
     @Override
     public List<String> getOpenGraphArticleAuthorUrls(Site site) {
         return Optional.ofNullable(asHasAuthorsWithFieldData().getAuthors())
-                .flatMap(authors -> Optional.ofNullable(authors.stream()))
-                .orElseGet(Stream::empty)
-                .map(author -> Permalink.getPermalink(site, author))
-                .filter(Objects::nonNull)
-                .collect(Collectors.toList());
+            .flatMap(authors -> Optional.ofNullable(authors.stream()))
+            .orElseGet(Stream::empty)
+            .map(author -> Permalink.getPermalink(site, author))
+            .filter(Objects::nonNull)
+            .collect(Collectors.toList());
     }
 
     @Override
     public String getOpenGraphArticleSection() {
-        return Optional.ofNullable(asHasSectionData().getSectionParent())
-                .map(Section::getSectionDisplayNamePlainText)
-                .orElse(null);
+        return Optional.ofNullable(getSectionParent())
+            .map(Section::getSectionDisplayNamePlainText)
+            .orElse(null);
     }
 
     @Override
     public List<String> getOpenGraphArticleTags() {
         return getTags()
-                .stream()
-                .map(Tag::getTagDisplayNamePlainText)
-                .collect(Collectors.toList());
+            .stream()
+            .map(Tag::getTagDisplayNamePlainText)
+            .collect(Collectors.toList());
     }
 
     // --- Recordable support ---
@@ -420,20 +442,20 @@ public class Listicle extends Content implements
         }
 
         Locale locale = ObjectUtils.firstNonNull(
-                LocaleProvider.getModelLocale(site, this),
-                LocaleProvider.DEFAULT_LOCALE);
+            LocaleProvider.getModelLocale(site, this),
+            LocaleProvider.DEFAULT_LOCALE);
 
         SiteMapEntry siteMapEntry = new SiteMapEntry();
         siteMapEntry.setUpdateDate(
-                ObjectUtils.firstNonNull(
-                        LastUpdatedProvider.getMostRecentUpdateDate(getState()),
-                        getState().as(Content.ObjectModification.class).getPublishDate()
-                )
+            ObjectUtils.firstNonNull(
+                LastUpdatedProvider.getMostRecentUpdateDate(getState()),
+                getState().as(Content.ObjectModification.class).getPublishDate()
+            )
         );
         siteMapEntry.setPermalink(SiteSettings.get(
-                site,
-                f -> f.as(SiteMapSettingsModification.class).getSiteMapDefaultUrl()
-                        + StringUtils.prependIfMissing(sitePermalinkPath, "/")));
+            site,
+            f -> f.as(SiteMapSettingsModification.class).getSiteMapDefaultUrl()
+                + StringUtils.prependIfMissing(sitePermalinkPath, "/")));
 
         SiteMapNews siteMapNews = new SiteMapNews();
         siteMapNews.setName(site != null ? site.getName() : "Global");
@@ -441,13 +463,13 @@ public class Listicle extends Content implements
         siteMapNews.setLanguage(locale.getISO3Language());
         siteMapNews.setPublicationDate(this.getPublishDate());
         siteMapNews.setTitle(ObjectUtils.firstNonBlank(
-                getSeoTitle(),
-                RichTextUtils.richTextToPlainText(this.getHeadline())
+            getSeoTitle(),
+            RichTextUtils.richTextToPlainText(this.getHeadline())
         ));
         List<String> keywords = getTags()
-                .stream()
-                .map(Tag::getTagDisplayNamePlainText)
-                .collect(Collectors.toList());
+            .stream()
+            .map(Tag::getTagDisplayNamePlainText)
+            .collect(Collectors.toList());
 
         if (!ObjectUtils.isBlank(keywords)) {
             if (keywords.size() > 10) {
@@ -483,12 +505,12 @@ public class Listicle extends Content implements
     @Override
     public String getFullContentEncoded() {
         return Stream.concat(
-                        Stream.of(getIntro())
-                                .map(RichTextUtils::stripRichTextElements)
-                                .map(RichTextUtils::richTextToPlainText),
-                        getItems().stream()
-                                .map(ListicleItem::getFullContentEncoded))
-                .collect(Collectors.joining(" "));
+                Stream.of(getIntro())
+                    .map(RichTextUtils::stripRichTextElements)
+                    .map(RichTextUtils::richTextToPlainText),
+                getItems().stream()
+                    .map(ListicleItem::getFullContentEncoded))
+            .collect(Collectors.joining(" "));
     }
 
     // --- Directory.Item support ---
@@ -503,12 +525,12 @@ public class Listicle extends Content implements
     @Override
     public String getSuggestableText() {
         return Stream.concat(
-                        Stream.of(getHeadline(), getSubheadline(), getIntro())
-                                .map(RichTextUtils::stripRichTextElements)
-                                .map(RichTextUtils::richTextToPlainText),
-                        getItems().stream().map(ListicleItem::getSuggestableText))
-                .filter(StringUtils::isNotBlank)
-                .collect(Collectors.joining(" "));
+                Stream.of(getHeadline(), getSubheadline(), getIntro())
+                    .map(RichTextUtils::stripRichTextElements)
+                    .map(RichTextUtils::richTextToPlainText),
+                getItems().stream().map(ListicleItem::getSuggestableText))
+            .filter(StringUtils::isNotBlank)
+            .collect(Collectors.joining(" "));
     }
 
     // --- Suggestible support ---
@@ -516,14 +538,14 @@ public class Listicle extends Content implements
     @Override
     public List<String> getSuggestibleFields() {
         return Stream.of(
-                "seo.title",
-                "seo.description",
-                "pagePromotable.promoTitle",
-                "pagePromotable.promoDescription",
-                "pagePromotable.promoImage",
-                "shareable.shareTitle",
-                "shareable.shareDescription",
-                "shareable.shareImage"
+            "seo.title",
+            "seo.description",
+            "pagePromotable.promoTitle",
+            "pagePromotable.promoDescription",
+            "pagePromotable.promoImage",
+            "shareable.shareTitle",
+            "shareable.shareDescription",
+            "shareable.shareImage"
         ).collect(Collectors.toList());
     }
 
@@ -534,27 +556,27 @@ public class Listicle extends Content implements
         List<PlaceableTarget> targets = new ArrayList<>();
 
         targets.add(Query.from(Homepage.class)
-                .where("cms.site.owner = ?", as(Site.ObjectModification.class).getOwner())
-                .first());
+            .where("cms.site.owner = ?", as(Site.ObjectModification.class).getOwner())
+            .first());
         targets.addAll(this.as(HasTags.class)
-                .getTags()
-                .stream()
-                .filter(PlaceableTarget.class::isInstance)
-                .filter(tag -> !tag.isHiddenTag())
-                .map(PlaceableTarget.class::cast)
-                .collect(Collectors.toSet()));
+            .getTags()
+            .stream()
+            .filter(PlaceableTarget.class::isInstance)
+            .filter(tag -> !tag.isHiddenTag())
+            .map(PlaceableTarget.class::cast)
+            .collect(Collectors.toSet()));
         targets.addAll(this.as(HasSection.class)
-                .getSectionAncestors()
-                .stream()
-                .filter(PlaceableTarget.class::isInstance)
-                .map(PlaceableTarget.class::cast)
-                .collect(Collectors.toSet()));
+            .getSectionAncestors()
+            .stream()
+            .filter(PlaceableTarget.class::isInstance)
+            .map(PlaceableTarget.class::cast)
+            .collect(Collectors.toSet()));
         targets.addAll(this.as(HasSecondarySections.class)
-                .getSecondarySections()
-                .stream()
-                .filter(PlaceableTarget.class::isInstance)
-                .map(PlaceableTarget.class::cast)
-                .collect(Collectors.toSet()));
+            .getSecondarySections()
+            .stream()
+            .filter(PlaceableTarget.class::isInstance)
+            .map(PlaceableTarget.class::cast)
+            .collect(Collectors.toSet()));
 
         return targets;
     }
@@ -606,10 +628,10 @@ public class Listicle extends Content implements
         // - PagePromoModulePlacementInline
         // - LinkRichTextElement
         return ImmutableList.of(
-                getState().getTypeId(), // enable dragging and dropping as itself from the shelf
-                ObjectType.getInstance(PagePromo.class).getId(),
-                ObjectType.getInstance(PagePromoModulePlacementInline.class).getId(),
-                ObjectType.getInstance(LinkRichTextElement.class).getId()
+            getState().getTypeId(), // enable dragging and dropping as itself from the shelf
+            ObjectType.getInstance(PagePromo.class).getId(),
+            ObjectType.getInstance(PagePromoModulePlacementInline.class).getId(),
+            ObjectType.getInstance(LinkRichTextElement.class).getId()
         );
     }
 }

@@ -3,6 +3,7 @@ package brightspot.podcast;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Objects;
 import java.util.Optional;
 import java.util.UUID;
 import java.util.stream.Collectors;
@@ -14,6 +15,7 @@ import brightspot.embargo.Embargoable;
 import brightspot.image.ImagePreviewHtml;
 import brightspot.image.WebImage;
 import brightspot.image.WebImageAsset;
+import brightspot.image.WebImagePlacement;
 import brightspot.landing.LandingCascadingData;
 import brightspot.landing.LandingPageElements;
 import brightspot.link.InternalLink;
@@ -33,6 +35,7 @@ import brightspot.rss.feed.apple.AppleRssFeedItemWithFields;
 import brightspot.rte.LargeRichTextToolbar;
 import brightspot.rte.SmallRichTextToolbar;
 import brightspot.rte.TinyRichTextToolbar;
+import brightspot.rte.image.ImageRichTextElement;
 import brightspot.rte.link.LinkRichTextElement;
 import brightspot.search.boost.HasSiteSearchBoostIndexes;
 import brightspot.search.modifier.exclusion.SearchExcludable;
@@ -41,6 +44,8 @@ import brightspot.section.HasSecondarySectionsWithField;
 import brightspot.section.HasSection;
 import brightspot.section.Section;
 import brightspot.seo.EnhancedSeoBodyDynamicNote;
+import brightspot.seo.EnhancedSeoHeadlineDynamicNote;
+import brightspot.seo.EnhancedSeoWithFields;
 import brightspot.seo.SeoWithFields;
 import brightspot.share.Shareable;
 import brightspot.sharedcontent.SharedContent;
@@ -60,41 +65,44 @@ import com.psddev.cms.ui.form.DynamicNoteMethod;
 import com.psddev.dari.db.ObjectType;
 import com.psddev.dari.db.Recordable;
 import com.psddev.dari.html.Node;
+import com.psddev.dari.util.ObjectUtils;
 import com.psddev.dari.util.Utils;
 import com.psddev.feed.FeedItem;
 import com.psddev.suggestions.Suggestable;
 
 public abstract class AbstractPodcastEpisodePage extends Content implements
-        AlphabeticallySortable,
-        AppleRssFeedItemWithFields,
-        CascadingPageElements,
-        Embargoable,
-        DefaultSiteMapItem,
-        FeedItem,
-        HasBreadcrumbs,
-        HasPodcastWithField,
-        HasSecondarySectionsWithField,
-        HasSection,
-        HasSiteSearchBoostIndexes,
-        HasTagsWithField,
-        HasUrlSlugWithField,
-        Interchangeable,
-        LandingPageElements,
-        Page,
-        PagePromotableWithOverrides,
-        PodcastEpisode,
-        PodcastEpisodePromotable,
-        PodcastFeedItem,
-        RssFeedItemWithFields,
-        SearchExcludable,
-        SeoWithFields,
-        Shareable,
-        SharedContent,
-        Suggestable,
-        Suggestible {
+    AlphabeticallySortable,
+    AppleRssFeedItemWithFields,
+    CascadingPageElements,
+    Embargoable,
+    EnhancedSeoWithFields,
+    DefaultSiteMapItem,
+    FeedItem,
+    HasBreadcrumbs,
+    HasPodcastWithField,
+    HasSecondarySectionsWithField,
+    HasSection,
+    HasSiteSearchBoostIndexes,
+    HasTagsWithField,
+    HasUrlSlugWithField,
+    Interchangeable,
+    LandingPageElements,
+    Page,
+    PagePromotableWithOverrides,
+    PodcastEpisode,
+    PodcastEpisodePromotable,
+    PodcastFeedItem,
+    RssFeedItemWithFields,
+    SearchExcludable,
+    SeoWithFields,
+    Shareable,
+    SharedContent,
+    Suggestable,
+    Suggestible {
 
     private String episodeNumber;
 
+    @DynamicNoteClass(EnhancedSeoHeadlineDynamicNote.class)
     @Required
     @ToolUi.RichText(toolbar = TinyRichTextToolbar.class)
     private String title;
@@ -104,8 +112,8 @@ public abstract class AbstractPodcastEpisodePage extends Content implements
     @DynamicNoteMethod("getCoverImageFallbackNote")
     private WebImage coverImageOverride;
 
-    @ToolUi.RichText(toolbar = LargeRichTextToolbar.class, lines = 10, inline = false)
     @DynamicNoteClass(EnhancedSeoBodyDynamicNote.class)
+    @ToolUi.RichText(toolbar = LargeRichTextToolbar.class, lines = 10, inline = false)
     private String body;
 
     public String getEpisodeNumber() {
@@ -146,6 +154,20 @@ public abstract class AbstractPodcastEpisodePage extends Content implements
 
     public void setBody(String body) {
         this.body = body;
+    }
+
+    // --- EnhancedSeoWithFields support ---
+
+    @Override
+    public List<String> getEnhancedSeoBodyAllImageAltTexts(String body) {
+        List<ImageRichTextElement> iRtes = ImageRichTextElement.getImageEnhancementsFromRichText(body);
+        if (ObjectUtils.isBlank(iRtes)) {
+            return null;
+        }
+        return iRtes.stream()
+            .filter(Objects::nonNull)
+            .map(rte -> rte.as(WebImagePlacement.class).getWebImageAltText())
+            .collect(Collectors.toList());
     }
 
     // --- Has Breadcrumbs Support ---
@@ -213,14 +235,14 @@ public abstract class AbstractPodcastEpisodePage extends Content implements
 
     @Override
     public String getPagePromotableCategoryFallback() {
-        return Optional.ofNullable(asHasSectionData().getSectionParent())
+        return Optional.ofNullable(getSectionParent())
             .map(Section::getSectionDisplayNameRichText)
             .orElse(null);
     }
 
     @Override
     public String getPagePromotableCategoryUrlFallback(Site site) {
-        return Optional.ofNullable(asHasSectionData().getSectionParent())
+        return Optional.ofNullable(getSectionParent())
             .map(section -> section.getLinkableUrl(site))
             .orElse(null);
     }
@@ -278,10 +300,10 @@ public abstract class AbstractPodcastEpisodePage extends Content implements
     @Override
     public String getSuggestableText() {
         return Optional.ofNullable(RichTextUtils.richTextToPlainText(getTitle())).orElse("") + " "
-                + Optional.ofNullable(getDescription())
-                .map(RichTextUtils::stripRichTextElements)
-                .map(RichTextUtils::richTextToPlainText)
-                .orElse("");
+            + Optional.ofNullable(getDescription())
+            .map(RichTextUtils::stripRichTextElements)
+            .map(RichTextUtils::richTextToPlainText)
+            .orElse("");
     }
 
     // --- Suggestible support ---
@@ -289,14 +311,14 @@ public abstract class AbstractPodcastEpisodePage extends Content implements
     @Override
     public List<String> getSuggestibleFields() {
         return Stream.of(
-                "seo.title",
-                "seo.description",
-                "pagePromotable.promoTitle",
-                "pagePromotable.promoDescription",
-                "pagePromotable.promoImage",
-                "shareable.shareTitle",
-                "shareable.shareDescription",
-                "shareable.shareImage"
+            "seo.title",
+            "seo.description",
+            "pagePromotable.promoTitle",
+            "pagePromotable.promoDescription",
+            "pagePromotable.promoImage",
+            "shareable.shareTitle",
+            "shareable.shareDescription",
+            "shareable.shareImage"
         ).collect(Collectors.toList());
     }
 
@@ -318,15 +340,15 @@ public abstract class AbstractPodcastEpisodePage extends Content implements
     // ---Image Fallback ---
     public WebImage getPodcastEpisodeCoverImageFallback() {
         return Optional.ofNullable(getPodcast())
-                .filter(PodcastPage.class::isInstance)
-                .map(PodcastPage.class::cast)
-                .map(PodcastPage::getCoverArt)
-                .orElse(null);
+            .filter(PodcastPage.class::isInstance)
+            .map(PodcastPage.class::cast)
+            .map(PodcastPage::getCoverArt)
+            .orElse(null);
     }
 
     public WebImage getPodcastEpisodeCoverImage() {
         return Optional.ofNullable(getPodcastEpisodeCoverImageOverride())
-                .orElseGet(this::getPodcastEpisodeCoverImageFallback);
+            .orElseGet(this::getPodcastEpisodeCoverImageFallback);
     }
 
     public WebImage getPodcastEpisodeCoverImageOverride() {
@@ -375,9 +397,9 @@ public abstract class AbstractPodcastEpisodePage extends Content implements
     public String getRssFeedItemDescriptionFallback() {
 
         return Optional.ofNullable(getDescription())
-                .map(RichTextUtils::richTextToPlainText)
-                .map(text -> Truncate.truncate(text, 1500, true))
-                .orElse(null);
+            .map(RichTextUtils::richTextToPlainText)
+            .map(text -> Truncate.truncate(text, 1500, true))
+            .orElse(null);
     }
 
     @Override
@@ -453,10 +475,10 @@ public abstract class AbstractPodcastEpisodePage extends Content implements
         // - PagePromoModulePlacementInline
         // - LinkRichTextElement
         return ImmutableList.of(
-                getState().getTypeId(), // enable dragging and dropping as itself from the shelf
-                ObjectType.getInstance(PodcastEpisodePromo.class).getId(),
-                ObjectType.getInstance(PagePromoModulePlacementInline.class).getId(),
-                ObjectType.getInstance(LinkRichTextElement.class).getId()
+            getState().getTypeId(), // enable dragging and dropping as itself from the shelf
+            ObjectType.getInstance(PodcastEpisodePromo.class).getId(),
+            ObjectType.getInstance(PagePromoModulePlacementInline.class).getId(),
+            ObjectType.getInstance(LinkRichTextElement.class).getId()
         );
     }
 }

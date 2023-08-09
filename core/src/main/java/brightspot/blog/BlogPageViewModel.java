@@ -19,9 +19,9 @@ public class BlogPageViewModel extends AbstractPageViewModel<BlogPage> implement
     @Override
     public Iterable<? extends PageViewPageHeadingField> getPageHeading() {
         return RichTextUtils.buildInlineHtml(
-                model,
-                BlogPage::getDisplayName,
-                e -> createView(PageViewPageHeadingField.class, e));
+            model,
+            BlogPage::getDisplayName,
+            e -> createView(PageViewPageHeadingField.class, e));
     }
 
     @Override
@@ -32,8 +32,8 @@ public class BlogPageViewModel extends AbstractPageViewModel<BlogPage> implement
     @Override
     public Iterable<? extends PageViewPageSubHeadingField> getPageSubHeading() {
         return RichTextUtils.buildHtml(
-                model,
-                BlogPage::getDescription,
-                e -> createView(PageViewPageSubHeadingField.class, e));
+            model,
+            BlogPage::getDescription,
+            e -> createView(PageViewPageSubHeadingField.class, e));
     }
 }

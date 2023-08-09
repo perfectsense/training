@@ -6,9 +6,9 @@ import brightspot.l10n.LocaleDynamicQueryModifiable;
 import com.psddev.dari.util.Substitution;
 
 public class DynamicAttachmentItemStreamSubstitution extends DynamicAttachmentItemStream implements
-        Substitution,
-        LocaleDynamicQueryModifiable,
-        MemoizationDynamicQueryModifiable,
-        SiteItemsQueryModifiableWithField {
+    Substitution,
+    LocaleDynamicQueryModifiable,
+    MemoizationDynamicQueryModifiable,
+    SiteItemsQueryModifiableWithField {
 
 }

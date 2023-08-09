@@ -1,12 +1,12 @@
 {
   "_template": "TabItem.hbs",
   "title": {
-    "_include": "/_group/RichTextElementsTiny.json"
+    "_include": "/_group/RichTextElementsTiny.json",
+    "_key": 0
   },
-  "id": "Tab ID",
+  "id": "",
   "content": {
     "_include": "/_group/Modules.json",
-    "_key": 1
-  },
-  "_hidden": true
+    "_key": 0
+  }
 }

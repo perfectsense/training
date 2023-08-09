@@ -1,0 +1,41 @@
+.SearchResultsModuleHorizontalFilters {
+  display: flex;
+  gap: 60px;
+  align-items: flex-start;
+  flex-grow: 1;
+  border-bottom: solid 1px var(--color-border);
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+
+  &-filters {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    flex-grow: 1;
+  }
+
+  &-clearFilters,
+  .SearchFilterDropdown {
+    flex-shrink: 0;
+  }
+
+  &-clearFilters {
+    margin-top: 7px;
+    &:extend(a all);
+    .description-3;
+    text-decoration: underline;
+    cursor: pointer;
+    background: none;
+    border: 0;
+    padding: 0;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  @media @mq-up-to-md {
+    display: none;
+  }
+}

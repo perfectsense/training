@@ -5,32 +5,17 @@
   },
   "description": {
     "_include": "/_group/RichTextElementsSmall.json",
-    "_key": 1
+    "_key": 0
   },
-  "items": [
-    {
-      "_include": "/download/promo/DownloadPromo.json",
-      "_key": 0
-    },
-    {
-      "_include": "/download/promo/DownloadPromo.json",
-      "_key": 1
-    },
-    {
-      "_include": "/download/promo/DownloadPromo.json",
-      "_key": 2
-    },
-    {
-      "_include": "/download/promo/DownloadPromo.json",
-      "_key": 3
-    }
-  ],
+  "items": {
+    "_template": "/download/promo/DownloadPromo.hbs"
+  },
   "ctaButtonText": {
     "_include": "/_group/RichTextElementsTiny.json"
   },
-  "ctaUrl": "#",
-  "ctaTarget": "_self",
+  "ctaUrl": "",
+  "ctaTarget": "",
   "pagination": {
-    "_include": "/link/Link.json"
+    "_template": "/link/PaginationLink.hbs"
   }
 }

@@ -1,11 +1,12 @@
 {
   "_template": "/video/VideoPlaylistModule.hbs",
   "title": {
-    "_include": "/_group/RichTextElementsTiny.json"
+    "_include": "/_group/RichTextElementsTiny.json",
+    "_key": 0
   },
   "description": {
     "_include": "/_group/RichTextElementsSmall.json",
-    "_key": 1
+    "_key": 0
   },
   "anchorId": "anchorTest",
   "player": {
@@ -13,9 +14,11 @@
     "_key": 0
   },
   "playlist": {
-    "_include": "/video/VideoPlaylistItem.json"
+    "_template": "/video/VideoPlaylistItem.hbs"
   },
-  "ctaUrl": "#",
-  "ctaTarget": "_self",
-  "_hidden": true
+  "ctaButtonText": {
+    "_include": "/_group/RichTextElementsTiny.json"
+  },
+  "ctaUrl": "",
+  "ctaTarget": ""
 }

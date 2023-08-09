@@ -21,9 +21,9 @@ public class TagPageViewModel extends AbstractPageViewModel<TagPage> implements 
     @Override
     public Iterable<? extends PageViewPageHeadingField> getPageHeading() {
         return RichTextUtils.buildInlineHtml(
-                model,
-                TagPage::getDisplayName,
-                e -> createView(PageViewPageHeadingField.class, e));
+            model,
+            TagPage::getDisplayName,
+            e -> createView(PageViewPageHeadingField.class, e));
     }
 
     @Override
@@ -33,6 +33,9 @@ public class TagPageViewModel extends AbstractPageViewModel<TagPage> implements 
 
     @Override
     public Iterable<? extends PageViewPageSubHeadingField> getPageSubHeading() {
-        return RichTextUtils.buildHtml(model, TagPage::getDescription, e -> createView(PageViewPageSubHeadingField.class, e));
+        return RichTextUtils.buildHtml(
+            model,
+            TagPage::getDescription,
+            e -> createView(PageViewPageSubHeadingField.class, e));
     }
 }

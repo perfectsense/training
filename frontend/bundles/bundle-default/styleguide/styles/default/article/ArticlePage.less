@@ -4,12 +4,6 @@
   }
 
   .Page {
-    &-articleBody {
-      .Page-subHeadline {
-        text-align: left;
-      }
-    }
-
     &-breadcrumbs,
     &-byline,
     &-lead,
@@ -60,14 +54,6 @@
       justify-content: center;
     }
 
-    .Page {
-      &-articleBody {
-        .Page-subHeadline {
-          text-align: left;
-        }
-      }
-    }
-
     .Page-actions {
       margin-left: auto;
       margin-right: auto;
@@ -81,8 +67,7 @@
       text-align: center;
     }
 
-    .Page-headline,
-    .Page-subHeadline {
+    .Page-headline {
       text-align: center;
     }
 
@@ -135,8 +120,7 @@
       }
 
       &-breadcrumbs,
-      &-headline,
-      &-subHeadline {
+      &-headline {
         display: flex;
         justify-content: center;
         text-align: center;
@@ -150,9 +134,22 @@
 
   &[data-lead='large'] {
     .Page-lead {
-      margin-left: auto;
-      margin-right: auto;
-      max-width: 1440px;
+      display: grid;
+      padding-left: 20px;
+      padding-right: 20px;
+      grid-template-columns: minmax(0, 1240px);
+      max-width: unset;
+      justify-content: center;
+
+      @media @mq-md {
+        padding-left: 50px;
+        padding-right: 50px;
+      }
+
+      @media @mq-hk {
+        padding-left: 60px;
+        padding-right: 60px;
+      }
     }
 
     .Figure-content {
@@ -188,11 +185,6 @@
 
       &-headline {
         margin: 0 auto 20px;
-        max-width: 1440px;
-      }
-
-      &-subHeadline {
-        margin: 0 auto;
         max-width: 1440px;
       }
 
@@ -247,6 +239,33 @@
         &-content {
           display: none;
         }
+      }
+    }
+  }
+
+  bsp-gallery-page {
+    .Page-oneColumn {
+      .Page-main {
+        padding-left: 20px;
+        padding-right: 20px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+  }
+
+  bsp-gallery-page[data-gallery-style="waterfall"] {
+    .Page-oneColumn {
+      .Page-main {
+        max-width: 840px;
+      }
+    }
+  }
+
+  bsp-gallery-page[data-gallery-style="carousel"] {
+    .Page-oneColumn {
+      .Page-main {
+        max-width: 1440px;
       }
     }
   }

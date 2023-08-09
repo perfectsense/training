@@ -2,13 +2,15 @@
   display: grid;
   grid-gap: 20px;
 
-  &[data-inverse-colors] {
-    --color-link-text: var(--color-text-inverse);
-    --color-link-text-hover: var(--color-text-inverse);
-    --color-primary-text: var(--color-text-inverse);
+  &[data-text-align='center'] & {
+    &-content {
+      text-align: center;
+    }
+  }
 
-    svg {
-      fill: var(--color-text-inverse);
+  &[data-text-align='right'] & {
+    &-content {
+      text-align: right;
     }
   }
 
@@ -35,13 +37,22 @@
   &-link {
     &:extend(.title-6 all);
     cursor: pointer;
-    display: grid;
-    justify-content: center;
-    grid-template-columns: 0.01fr 0.7fr;
+    display: flex;
+    gap: 10px;
+    justify-content: flex-start;
+
+    [data-text-align="center"] & {
+      justify-content: center;
+    }
+
+    [data-text-align="right"] & {
+      justify-content: flex-end;
+    }
 
     svg {
       height: 25px;
       width: 30px;
+      fill: currentColor;
     }
 
     &-text {
@@ -67,7 +78,7 @@
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 40px;
 
-    &[data-align-right] {
+    &[data-image-align-horizontal="right"] {
       &[data-image-width="66"] {
         grid-template-columns: 0.34fr 0.66fr;
       }

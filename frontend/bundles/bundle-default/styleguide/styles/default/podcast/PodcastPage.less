@@ -1,13 +1,13 @@
 .PodcastPage {
   .Page-articleBody {
-    border-bottom: 1px solid var(--color-border);
     display: block;
-    margin: 30px 0;
     padding-bottom: 30px;
+    margin: 30px 0;
+    border-bottom: 1px solid var(--color-border);
   }
 
   .Page-headline {
-    &:extend(.page-title-2);
+    &:extend(.title-3);
   }
 
   .Page-subHeadline {
@@ -15,48 +15,43 @@
     color: var(--color-tertiary-text);
   }
 
+  .Page-subHeadline &-player {
+    margin: 15px 0;
+  }
+
   .Page-twoColumn {
     margin-bottom: 40px;
     margin-top: 40px;
   }
 
-  .PodcastEpisodePromo {
-    border-bottom: 1px solid var(--color-border);
-    margin-bottom: 40px;
-
-    .HTML5AudioPlayer {
-      margin: 20px 0;
-    }
-
-    .PodcastEpisodePage-player {
-      margin-bottom: 40px;
-    }
-  }
-
-  &-image {
-    align-self: start;
-  }
-
   &-intro {
-    align-items: center;
-    column-gap: 15px;
     display: grid;
     grid-template-columns: 80px 1fr;
-  }
-
-  &-introBottomRow {
-    grid-column-end: 3;
-    grid-column-start: 1;
+    column-gap: 15px;
+    align-items: center;
   }
 
   &-introTopRow {
     grid-column-start: 2;
   }
 
+  &-introBottomRow {
+    grid-column-start: 1;
+    grid-column-end: 3;
+  }
+
+  &-image {
+    align-self: start;
+  }
+
+  &-player {
+    margin: 15px 0;
+  }
+
   @media @mq-md {
     .Page-articleBody {
-      margin: 30px 0 60px;
       padding-bottom: 50px;
+      margin: 30px 0 60px;
     }
 
     .Page-twoColumn {
@@ -65,17 +60,17 @@
     }
 
     &-intro {
+      grid-template-columns: 200px 1fr;
       align-items: start;
       column-gap: 30px;
-      grid-template-columns: 200px 1fr;
-    }
-
-    &-introBottomRow {
-      grid-column-start: 2;
     }
 
     &-introTopRow {
       align-self: end;
+    }
+
+    &-introBottomRow {
+      grid-column-start: 2;
     }
 
     &-image {

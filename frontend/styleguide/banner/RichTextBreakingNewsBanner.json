@@ -1,0 +1,9 @@
+{
+  "_template" : "RichTextBreakingNewsBanner.hbs",
+  "items": [
+    {
+      "_include": "/_group/RichTextElementsMedium.json",
+      "_key": 0
+    }
+  ]
+}

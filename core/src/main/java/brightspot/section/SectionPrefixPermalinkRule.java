@@ -31,11 +31,11 @@ public class SectionPrefixPermalinkRule extends AbstractPermalinkRule {
         }
 
         return Optional.ofNullable(state.as(HasSection.class).getSectionParent())
-                .map(s -> Permalink.getRelativePermalink(site, s))
-                .map(p -> StringUtils.prependIfMissing(p, "/"))
-                .map(p -> StringUtils.appendIfMissing(p, "/"))
-                .orElse("/")
-                + StringUtils.removeStart(pathEnd, "/");
+            .map(s -> Permalink.getRelativePermalink(site, s))
+            .map(p -> StringUtils.prependIfMissing(p, "/"))
+            .map(p -> StringUtils.appendIfMissing(p, "/"))
+            .orElse("/")
+            + StringUtils.removeStart(pathEnd, "/");
     }
 
     @Override

@@ -19,7 +19,9 @@
                     {{else}}
                         {{#eq ../enhancementAlignmentImage "align-portrait-center"}}
                             {{#set imageSize="large-3x4"}}
-                                {{this}}
+                                {{#set sizes="(max-width: 1024px) 100vw, 800px"}}
+                                    {{this}}
+                                {{/set}}
                             {{/set}}
                         {{else}}
                             {{this}}

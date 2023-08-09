@@ -1,0 +1,6 @@
+package brightspot.itemstream.attachment;
+
+import brightspot.util.TypeStateValueAdapter;
+
+public class DynamicAttachmentItemStreamNoneMatchAdapter extends TypeStateValueAdapter<DynamicAttachmentItemStreamNoneMatch, brightspot.module.list.attachment.DynamicAttachmentItemStreamNoneMatch> {
+}

@@ -3,11 +3,6 @@
   height: auto;
   position: relative;
 
-  .flickity-prev-next-button {
-    padding: 0;
-    transform: none; // flickity overrides the top and makes the arrow janky, this fixes it
-  }
-
   &-slide {
     display: none;
     width: 100%;
@@ -27,5 +22,11 @@
         top: -1px;
       }
     }
+  }
+}
+
+[data-item-display-style="card"] {
+  .flickity-viewport {
+    overflow: visible;
   }
 }

@@ -1,19 +1,18 @@
 {
   "_template": "/download/promo/DownloadPromo.hbs",
   "media": {
-    "_include": "/image/Image.json"
+    "_template": "/image/Image.hbs"
   },
   "title": {
     "_include": "/_group/RichTextElementsTiny.json"
   },
   "description": {
-    "_include": "/_group/RichTextElementsTiny.json"
+    "_include": "/_group/RichTextElementsSmall.json"
   },
   "fileSize": "2MB",
   "fileName": "attachment.pdf",
   "fileTypeDisplayName": "PDF",
   "iconType": "PDF",
-  "mimeType": "application/pdf",
   "ctaText": {
     "_include": "/_group/RichTextElementsTiny.json"
   },

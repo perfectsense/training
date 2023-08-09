@@ -6,6 +6,7 @@ import java.util.UUID;
 
 import brightspot.google.drive.GoogleDriveImport;
 import brightspot.imageitemstream.WebImageItem;
+import brightspot.microsoft.drives.MicrosoftDrivesImport;
 import brightspot.rss.feed.apple.RssWebImage;
 import brightspot.rte.image.ImageRichTextElement;
 import com.google.common.collect.ImmutableList;
@@ -15,8 +16,12 @@ import com.psddev.dari.db.Recordable;
 import com.psddev.dari.util.StorageItem;
 import com.psddev.dari.util.Substitution;
 
-public class WebImageSubstitution extends WebImage
-        implements GoogleDriveImport, Interchangeable, RssWebImage, Substitution {
+public class WebImageSubstitution extends WebImage implements
+    GoogleDriveImport,
+    Interchangeable,
+    MicrosoftDrivesImport,
+    RssWebImage,
+    Substitution {
 
     // --- GoogleDriveImport support ---
 
@@ -38,8 +43,8 @@ public class WebImageSubstitution extends WebImage
     @Override
     public boolean supportsGoogleDriveImport(String mimeType) {
         return Optional.ofNullable(getState().getType().getField("file"))
-                .filter(field -> field.getMimeTypes() != null && field.getMimeTypes().contains(mimeType))
-                .isPresent();
+            .filter(field -> field.getMimeTypes() != null && field.getMimeTypes().contains(mimeType))
+            .isPresent();
     }
 
     // --- Interchangeable support ---
@@ -74,10 +79,34 @@ public class WebImageSubstitution extends WebImage
         // - WebImageItem (Gallery slide / Advanced type)
         // - ImageRichTextElement
         return ImmutableList.of(
-                getState().getTypeId(), // enable dragging and dropping as itself from the shelf
-                ObjectType.getInstance(WebImageItem.class).getId(),
-                ObjectType.getInstance(ImageRichTextElement.class).getId()
+            getState().getTypeId(), // enable dragging and dropping as itself from the shelf
+            ObjectType.getInstance(WebImageItem.class).getId(),
+            ObjectType.getInstance(ImageRichTextElement.class).getId()
         );
+    }
+
+    // --- MicrosoftDriveImport support ---
+
+    @Override
+    public String getDefaultMicrosoftDriveExtension() {
+        return ".jpg";
+    }
+
+    @Override
+    public void setFileFromMicrosoftDrive(StorageItem file) {
+        setFile(file);
+    }
+
+    @Override
+    public void setTitleFromMicrosoftDrive(String title) {
+        setCaptionOverride(title);
+    }
+
+    @Override
+    public boolean supportsMicrosoftDriveImport(String mimeType) {
+        return Optional.ofNullable(getState().getType().getField("file"))
+            .filter(field -> field.getMimeTypes() != null && field.getMimeTypes().contains(mimeType))
+            .isPresent();
     }
 
     // --- RssWebImage support ---

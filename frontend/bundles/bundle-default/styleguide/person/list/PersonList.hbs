@@ -1,11 +1,13 @@
 <div class="PersonList" data-module{{include "/page/list/includes/PageList-attributes.hbs" this}}>
-    {{include "/page/list/includes/PageList-header.hbs" this}}
+    {{include "/global/ModuleHeader.hbs" this}}
 
     {{#with items}}
         <ul class="PersonList-items" data-with-borders>
             {{#each this}}
                 <li class="PersonList-items-item">
-                    {{include "/person/promo/PersonPromo.hbs" this}}
+                    {{#set imageSize=../../itemImageAspectRatio}}
+                        {{include "/person/promo/PersonPromo.hbs" this}}
+                    {{/set}}
                 </li>
             {{/each}}
         </ul>

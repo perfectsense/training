@@ -12,13 +12,13 @@ import com.psddev.dari.util.Substitution;
 import com.psddev.dari.util.SubstitutionTarget;
 
 /**
- * The purpose of this class is to provide drag and drop support for {@link ContactForm}
- * from the CMS UI Shelf into {@link FormPlacementShared}.
+ * The purpose of this class is to provide drag and drop support for {@link ContactForm} from the CMS UI Shelf into
+ * {@link FormPlacementShared}.
  */
 @SubstitutionTarget(AbstractForm.class)
 public class AbstractFormSubstitution extends Record implements
-        Interchangeable,
-        Substitution {
+    Interchangeable,
+    Substitution {
 
     // --- Interchangeable support ---
 
@@ -41,8 +41,8 @@ public class AbstractFormSubstitution extends Record implements
         // Support the following types for Shelf drag and drop:
         // - FormPlacementShared
         return ImmutableList.of(
-                getState().getTypeId(), // enable dragging and dropping as itself from the shelf
-                ObjectType.getInstance(FormPlacementShared.class).getId()
+            getState().getTypeId(), // enable dragging and dropping as itself from the shelf
+            ObjectType.getInstance(FormPlacementShared.class).getId()
         );
     }
 }

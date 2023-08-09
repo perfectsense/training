@@ -34,18 +34,18 @@ import org.apache.commons.lang3.StringUtils;
 @ToolUi.ExcludeFromGlobalSearch
 @ToolUi.CssClass("is-inGrid")
 public class LiveBlogPost extends Content implements
-        ILiveBlogPost,
-        AnchorLinkable,
-        ContentEditWidgetDisplay,
-        ContentEditPublishRedirectUrlSupplier,
-        FeedItem,
-        HasActionBar,
-        HasAuthorsWithField,
-        HasSiteSearchBoostIndexes,
-        Managed,
-        RtcEvent,
-        PagePromotableWithOverrides,
-        Shareable {
+    ILiveBlogPost,
+    AnchorLinkable,
+    ContentEditWidgetDisplay,
+    ContentEditPublishRedirectUrlSupplier,
+    FeedItem,
+    HasActionBar,
+    HasAuthorsWithField,
+    HasSiteSearchBoostIndexes,
+    Managed,
+    RtcEvent,
+    PagePromotableWithOverrides,
+    Shareable {
 
     public static final String GET_UPDATE_DATE_FIELD = "getUpdateDate";
 
@@ -231,7 +231,7 @@ public class LiveBlogPost extends Content implements
 
         // If the override param is true and the liveblog is set then dont redirect
         if (liveBlog != null && WebRequest.getCurrent()
-                .getParameter(boolean.class, LiveBlogLivePostServlet.MANAGED_OVERRIDE_PARAM)) {
+            .getParameter(boolean.class, LiveBlogLivePostServlet.MANAGED_OVERRIDE_PARAM)) {
             return null;
         } else if (liveBlog == null) {
             // this case will only trigger if someone attempts to "Create New" a LBP
@@ -239,11 +239,11 @@ public class LiveBlogPost extends Content implements
         }
         // Otherwise redirect to the liveblog post UI
         return WebRequest.getCurrent()
-                .as(ToolRequest.class)
-                .getPathBuilder(LiveBlogLivePostServlet.PATH)
-                .setParameter(LiveBlogLivePostServlet.BLOG_ID_PARAM, liveBlog.getId())
-                .setParameter(LiveBlogLivePostServlet.POST_ID_PARAM, getId())
-                .build();
+            .as(ToolRequest.class)
+            .getPathBuilder(LiveBlogLivePostServlet.PATH)
+            .setParameter(LiveBlogLivePostServlet.BLOG_ID_PARAM, liveBlog.getId())
+            .setParameter(LiveBlogLivePostServlet.POST_ID_PARAM, getId())
+            .build();
     }
 
     // --- RtcEvent support ---

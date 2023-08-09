@@ -1,22 +1,21 @@
 {
   "_wrapper": false,
   "_template": "/facebookinstantarticles/InstantArticle.hbs",
-  "canonicalUrl": "https://www.brightspot.com/",
+  "canonicalUrl": "",
   "leadFigure": {
-    "_include": "/figure/Figure.json"
+    "_template": "/figure/Figure.hbs"
   },
-  "headline": "Example Facebook Instant Article",
-  "tags": "one, two, three",
+  "headline": "",
+  "tags": "Tag1, Tag2, Tag3",
   "authors": {
-    "_include": "/facebookinstantarticles/Author.json"
+    "_template": "/facebookinstantarticles/Author.hbs"
   },
   "publishedTimeStamp": "Mon, 18 Apr 2016 04:40:34 GMT",
   "modifiedTimeStamp": "Mon, 19 Apr 2016 04:40:34 GMT",
   "body": {
-    "_include": "/facebookinstantarticles/Body.json"
+    "_template": "/facebookinstantarticles/Body.hbs"
   },
   "analyticsScript": {
-    "_include": "/facebookinstantarticles/Analytics.json"
-  },
-  "_hidden": true
+    "_template": "/facebookinstantarticles/Analytics.hbs"
+  }
 }

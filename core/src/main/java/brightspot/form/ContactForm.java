@@ -18,7 +18,9 @@ import brightspot.form.item.FormItem;
 import brightspot.rte.SmallRichTextToolbar;
 import com.psddev.cms.db.ToolUi;
 import com.psddev.cms.ui.form.HtmlNote;
+import com.psddev.dari.db.Recordable;
 
+@Recordable.DisplayName("Contact Form")
 public class ContactForm extends PredefinedForm {
 
     @HtmlNote("Displayed to the user upon successful submission of the form.")
@@ -37,11 +39,11 @@ public class ContactForm extends PredefinedForm {
     @Override
     protected List<FormItem> createPredefinedItems() {
         return Stream.of(
-            createTextField("First Name", new ShortText(), true),
-            createTextField("Last Name", new ShortText(), true),
-            createTextField("Email", new Email(), true),
-            createTextField("Subject", new ShortText(), true),
-            createTextField("Body", new LongText(), true))
+                createTextField("First Name", new ShortText(), true),
+                createTextField("Last Name", new ShortText(), true),
+                createTextField("Email", new Email(), true),
+                createTextField("Subject", new ShortText(), true),
+                createTextField("Body", new LongText(), true))
             .collect(Collectors.toList());
     }
 

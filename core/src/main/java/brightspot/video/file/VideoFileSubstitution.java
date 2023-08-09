@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.UUID;
 
 import brightspot.google.drive.GoogleDriveImport;
+import brightspot.microsoft.drives.MicrosoftDrivesImport;
 import brightspot.module.video.VideoModule;
 import brightspot.playlist.video.VideoPlaylistItem;
 import brightspot.rte.video.VideoRichTextElement;
@@ -18,10 +19,11 @@ import com.psddev.dari.util.StorageItem;
 import com.psddev.dari.util.Substitution;
 
 public class VideoFileSubstitution extends VideoFile implements
-        GoogleDriveImport,
-        HasTagsWithField,
-        Interchangeable,
-        Substitution {
+    GoogleDriveImport,
+    HasTagsWithField,
+    Interchangeable,
+    MicrosoftDrivesImport,
+    Substitution {
 
     // --- GoogleDriveImport support
 
@@ -46,7 +48,7 @@ public class VideoFileSubstitution extends VideoFile implements
     @Override
     public boolean supportsGoogleDriveImport(String mimeType) {
         return ObjectType.getInstance(VideoStorageItemWrapper.class).getFields().stream()
-                .anyMatch(field -> field.getMimeTypes() != null && field.getMimeTypes().contains(mimeType));
+            .anyMatch(field -> field.getMimeTypes() != null && field.getMimeTypes().contains(mimeType));
     }
 
     // --- Interchangeable support ---
@@ -90,10 +92,36 @@ public class VideoFileSubstitution extends VideoFile implements
         // - VideoModule
         // - VideoPlayListItem
         return ImmutableList.of(
-                getState().getTypeId(), // enable dragging and dropping as itself from the shelf
-                ObjectType.getInstance(VideoRichTextElement.class).getId(),
-                ObjectType.getInstance(VideoModule.class).getId(),
-                ObjectType.getInstance(VideoPlaylistItem.class).getId()
+            getState().getTypeId(), // enable dragging and dropping as itself from the shelf
+            ObjectType.getInstance(VideoRichTextElement.class).getId(),
+            ObjectType.getInstance(VideoModule.class).getId(),
+            ObjectType.getInstance(VideoPlaylistItem.class).getId()
         );
+    }
+
+    // --- MicrosoftDriveImport support ---
+
+    @Override
+    public String getDefaultMicrosoftDriveExtension() {
+        return ".mp4";
+    }
+
+    @Override
+    public void setFileFromMicrosoftDrive(StorageItem file) {
+        VideoStorageItemWrapper storageItemWrapper = new VideoStorageItemWrapper();
+        storageItemWrapper.setFile(file);
+
+        setItems(Collections.singletonList(storageItemWrapper));
+    }
+
+    @Override
+    public void setTitleFromMicrosoftDrive(String title) {
+        this.as(VideoData.class).setTitleOverride(title);
+    }
+
+    @Override
+    public boolean supportsMicrosoftDriveImport(String mimeType) {
+        return ObjectType.getInstance(VideoStorageItemWrapper.class).getFields().stream()
+            .anyMatch(field -> field.getMimeTypes() != null && field.getMimeTypes().contains(mimeType));
     }
 }

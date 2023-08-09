@@ -1,6 +1,18 @@
 {
   "styles": {
     "/stat/StatList.hbs": {
+      "fields": [
+        "backgroundColor",
+        "inverseColors",
+        "itemDisplayStyle",
+        "itemBackgroundColor",
+        "itemBackgroundImage",
+        "itemTextColor",
+        "itemDescriptionAlignment",
+        "headerTextAlign",
+        "modulePaddingTop",
+        "modulePaddingBottom"
+      ],
       "templates": [
         {
           "displayName": "Stat List A",
@@ -8,8 +20,6 @@
           "height": 800,
           "width": 1024,
           "fields": [
-            "backgroundColor",
-            "inverseColors",
             "countUpAnimation"
           ]
         },
@@ -19,8 +29,6 @@
           "height": 800,
           "width": 1024,
           "fields": [
-            "backgroundColor",
-            "inverseColors",
             "countUpAnimation",
             "listTitleSize",
             "listDescriptionSize",

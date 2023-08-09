@@ -1,6 +1,11 @@
 {
   "styles": {
     "/search/SearchModule.hbs": {
+      "fields": [
+        "backgroundColor",
+        "modulePaddingTop",
+        "modulePaddingBottom"
+      ],
       "templates": [
         {
           "displayName": "Search Module",

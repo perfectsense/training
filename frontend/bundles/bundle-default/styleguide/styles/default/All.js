@@ -16,6 +16,7 @@ import { LiveBlog } from '../../liveblog/LiveBlog'
 import { LiveBlogFeed } from '../../liveblog/includes/LiveBlogFeed'
 import { LiveBlogPost } from '../../liveblog/LiveBlogPost'
 import { LoadMore } from '../../global/LoadMore'
+import { OverflowContainer } from '../../global/OverflowContainer'
 import { GalleryPageCarousel } from '../../gallery/GalleryPageCarousel'
 import { GalleryPage } from '../../gallery/GalleryPage'
 import { GoogleDfp } from '../../dfp/GoogleDfp'
@@ -27,12 +28,12 @@ import { PageListAutoRotate } from '../../page/list/PageListAutoRotate'
 import { PageListCarousel } from '../../page/list/PageListCarousel'
 import { PageListLoadMore } from '../../page/list/PageListLoadMore'
 import { PageHeader } from '../../page/Page-header'
-import { SearchFilters } from '../../search/SearchFilters'
-import { SearchResultsModule } from '../../search/SearchResultsModule'
 import { SearchOverlay } from '../../page/Page-searchOverlay'
+import { SearchResultsModule } from '../../search/SearchResultsModule'
 import { SectionNavigation } from '../../navigation/SectionNavigation'
 import { StatList } from '../../stat/StatList'
 import { Tabs } from '../../tab/Tabs'
+import { TabsHorizontalNavigation } from '../../tab/TabsHorizontalNavigation'
 import { Toggler } from '../../util/Toggler'
 import { Unfocus } from '../../util/Unfocus'
 import { VideoPlaylistModule } from '../../video/VideoPlaylistModule'
@@ -66,14 +67,18 @@ function registerCustomElements() {
   window.customElements.define('bsp-liveblog', LiveBlog)
   window.customElements.define('bsp-liveblog-feed', LiveBlogFeed)
   window.customElements.define('bsp-liveblog-post', LiveBlogPost)
+  window.customElements.define('bsp-overflow-container', OverflowContainer)
   window.customElements.define('bsp-page-heading-video', PageHeadingVideo)
   window.customElements.define('bsp-section-nav', SectionNavigation)
   window.customElements.define('bsp-toggler', Toggler)
-  window.customElements.define('bsp-search-filters', SearchFilters)
-  window.customElements.define('bsp-search-results-module', SearchResultsModule)
   window.customElements.define('bsp-search-overlay', SearchOverlay)
+  window.customElements.define('bsp-search-results-module', SearchResultsModule)
   window.customElements.define('bsp-stat-list', StatList)
   window.customElements.define('bsp-tabs', Tabs)
+  window.customElements.define(
+    'bsp-tabs-horitontal-navigation',
+    TabsHorizontalNavigation
+  )
   window.customElements.define('bsp-video-playlist-module', VideoPlaylistModule)
   window.customElements.define('bsp-vimeo-player', VimeoVideoPlayer)
   window.customElements.define('bsp-youtube-player', YouTubeVideoPlayer)

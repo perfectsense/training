@@ -1,0 +1,10 @@
+{
+  "_wrapper": false,
+  "_include": "Page.json",
+  "_template": "CustomPage.hbs",
+  "pageHeading": null,
+  "pageSubHeading": null,
+  "pageLead": null,
+  "main": null,
+  "innerHtml": "html"
+}

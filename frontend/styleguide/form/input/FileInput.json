@@ -3,7 +3,6 @@
   "_include": "/form/input/Input.json",
   "accept": "image/*",
   "disabled": false,
-  "multiple": true,
-  "required": false,
-  "_hidden": true
+  "multiple": false,
+  "required": false
 }

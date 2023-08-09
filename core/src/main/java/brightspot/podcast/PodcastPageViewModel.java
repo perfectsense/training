@@ -94,23 +94,23 @@ public class PodcastPageViewModel extends AbstractPageViewModel<PodcastPage> imp
     public CharSequence getFeedLink() {
 
         return Optional.ofNullable(model)
-                .map(podcast -> {
-                    String feedUrl = podcast.getRssFeedUrl(site);
-                    String feedTitle = podcast.getRssFeedTitle();
+            .map(podcast -> {
+                String feedUrl = podcast.getRssFeedUrl(site);
+                String feedTitle = podcast.getRssFeedTitle();
 
-                    if (Utils.isBlank(feedUrl) || Utils.isBlank(feedTitle)) {
-                        return null;
-                    } else {
+                if (Utils.isBlank(feedUrl) || Utils.isBlank(feedTitle)) {
+                    return null;
+                } else {
 
-                        return RawHtml.of(LINK.rel(LinkRel.ALTERNATE)
-                                .type("application/rss+xml")
-                                .title(feedTitle)
-                                .href(feedUrl)
-                                .toString());
+                    return RawHtml.of(LINK.rel(LinkRel.ALTERNATE)
+                        .type("application/rss+xml")
+                        .title(feedTitle)
+                        .href(feedUrl)
+                        .toString());
 
-                    }
-                })
-                .orElse(null);
+                }
+            })
+            .orElse(null);
     }
 }
 

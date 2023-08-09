@@ -10,22 +10,52 @@
     "_template": "/externalcontent/ExternalContentWrapper.hbs"
   },
   {
+    "_template": "/form/FormEnhancement.hbs"
+  },
+  {
     "_template": "/image/ImageEnhancement.hbs"
   },
   {
     "_template": "/link/LinkEnhancement.hbs"
   },
   {
+    "_template": "/logo/list/LogoListEnhancement.hbs"
+  },
+  {
     "_template": "/page/list/PageListEnhancement.hbs"
   },
   {
+    "_template": "/person/list/PersonListEnhancement.hbs"
+  },
+  {
+    "_template": "/product/list/ProductListEnhancement.hbs"
+  },
+  {
     "_template": "/page/promo/PagePromoEnhancement.hbs"
+  },
+  {
+    "_template": "/person/promo/PersonPromoEnhancement.hbs"
+  },
+  {
+    "_template": "/product/promo/ProductPromoEnhancement.hbs"
+  },
+  {
+    "_template": "/podcast/list/PodcastEpisodeListEnhancement.hbs"
+  },
+  {
+    "_template": "/rte/TextSubstitution.hbs"
   },
   {
     "_template": "/blockquote/BlockQuote.hbs"
   },
   {
     "_template": "/pullquote/PullQuote.hbs"
+  },
+  {
+    "_template": "/quote/QuoteListEnhancement.hbs"
+  },
+  {
+    "_template": "/stat/StatListEnhancement.hbs"
   },
   {
     "_template": "/video/VideoEnhancement.hbs"

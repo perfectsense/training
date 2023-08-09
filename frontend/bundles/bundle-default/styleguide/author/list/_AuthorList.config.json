@@ -3,7 +3,17 @@
     "/author/list/AuthorList.hbs": {
       "fields": [
         "listTitleSize",
-        "listDescriptionSize"
+        "listDescriptionSize",
+        "headerTextAlign",
+        "itemAuthorNameAlignment",
+        "itemJobTitleAlignment",
+        "itemDisplayStyle",
+        "itemBackgroundColor",
+        "itemBackgroundImage",
+        "itemTextColor",
+        "modulePaddingTop",
+        "modulePaddingBottom",
+        "itemImageAspectRatio"
       ],
       "templates": [
         {
@@ -13,7 +23,8 @@
           "width": 400,
           "fields": [
             "backgroundColor",
-            "inverseColors"
+            "inverseColors",
+            "itemImageAlignment"
           ]
         },
         {

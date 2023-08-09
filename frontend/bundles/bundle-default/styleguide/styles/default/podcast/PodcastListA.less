@@ -1,0 +1,30 @@
+.PodcastListA {
+  &:extend(.ListAbstract all);
+  display: block;
+
+  &-items {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: 1fr;
+    margin: 0;
+  }
+
+  @media @mq-sm {
+    &-items {
+      row-gap: 40px;
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media @mq-md {
+    &-items {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  @media @mq-lg {
+    &-items {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+}

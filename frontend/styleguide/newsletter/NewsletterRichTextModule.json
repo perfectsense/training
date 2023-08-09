@@ -1,6 +1,6 @@
 {
   "_template": "NewsletterRichTextModule.hbs",
-  "title": "Rich Text Title",
+  "title": "",
   "items": {
     "_include": "/_group/RichTextElementsSmall.json",
     "_key": 0
@@ -9,6 +9,5 @@
   "newsletterDataMedium": "",
   "newsletterDataCampaign": "",
   "newsletterDataContent": "",
-  "isNotUTMCapable": "false",
-  "_hidden": true
+  "isNotUTMCapable": "false"
 }

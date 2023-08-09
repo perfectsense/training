@@ -1,6 +1,7 @@
 {
     "_template": "Carousel.hbs",
     "title": "A Captivating Gallery Title",
+    "description": "{{words([5, 10])}}",
     "anchorId": "anchorTest",
     "slides": [
         {

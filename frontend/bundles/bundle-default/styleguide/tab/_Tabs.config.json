@@ -1,6 +1,13 @@
 {
   "styles": {
     "/tab/Tabs.hbs": {
+      "fields": [
+        "backgroundColor",
+        "inverseColors",
+        "headerTextAlign",
+        "modulePaddingTop",
+        "modulePaddingBottom"
+      ],
       "templates": [
         {
           "displayName": "Tabs",

@@ -1,4 +1,4 @@
-<div class="Quote" data-module{{#if backgroundColor}} data-with-bg{{/if}}{{#if inverseColors}} data-inverse-colors{{/if}} style="--color-quote-background: {{#with backgroundColor}}{{this}}{{else}}#fff{{/with}};">
+<div class="Quote" data-module {{include '/global/ModuleAttributes.hbs' this}}>
     {{include "/link/AnchorLink.hbs" this}}
     <div class="Quote-content">
         <blockquote>
@@ -8,7 +8,7 @@
         {{#if attribution}}
             <div class="Quote-attribution">
                 {{#if image}}
-                    {{#set imageSize="small-square"}}
+                    {{#set imageSize=(fallback (get "imageSize") "small-square")}}
                         <div class="Quote-attribution-image">{{image}}</div>
                     {{/set}}
                 {{/if}}

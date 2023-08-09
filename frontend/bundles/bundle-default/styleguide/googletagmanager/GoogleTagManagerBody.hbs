@@ -1,0 +1,13 @@
+{{#if containerId}}
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id={{containerId}}
+            {{~#if authToken~}}{{~#if previewEnvironment~}}
+                &gtm_auth={{~authToken~}}
+                &gtm_preview={{~previewEnvironment~}}
+                {{~#if useEnvironmentSetInCookie~}}&gtm_cookies_win=x{{~/if~}}
+            {{~/if~}}{{~/if~}}" height="0" width="0" style="display:none;visibility:hidden">
+        </iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+{{/if}}

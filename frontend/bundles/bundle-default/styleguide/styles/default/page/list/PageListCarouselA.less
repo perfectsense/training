@@ -9,12 +9,22 @@
       margin-right: 20px;
       max-width: 400px;
       width: 80%;
+      min-height: 100%;
+      display: flex;
     }
   }
 
   .PagePromo {
-      &-title {
-        &:extend(.promo-title-4 all);
+    &-title {
+      &:extend(.promo-title-4 all);
+    }
+
+    &-content {
+      padding: 20px;
+    }
+
+    &-media {
+      margin-bottom: 0;
     }
   }
 
@@ -32,6 +42,16 @@
     .PagePromo {
         &-title {
           &:extend(.promo-title-5 all);
+      }
+    }
+  }
+
+  &[data-item-display-style="card"] {
+    .PagePromo {
+      min-height: 100%;
+
+      &-content {
+        padding: 20px;
       }
     }
   }

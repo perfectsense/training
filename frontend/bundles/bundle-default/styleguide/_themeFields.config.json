@@ -14,6 +14,91 @@
       "cms.ui.placeholder": "Merriweather",
       "cms.ui.note": "Set Font 2. Used for Quote/Pull Quote modules only. Use the exact font name from Google Fonts. ex: Merriweather"
     },
+    "pageTitleFont": {
+      "cms.ui.note": "Choose the font for Page Titles",
+      "type": "text",
+      "cms.ui.cluster": "Fonts",
+      "cms.ui.dropDown": true,
+      "cms.ui.placeholder": "Default",
+      "values": [
+        {
+          "label": "Font 1 (default)",
+          "value": "font-1"
+        },
+        {
+          "label": "Font 2",
+          "value": "font-2"
+        }
+      ]
+    },
+    "listTitleFont": {
+      "cms.ui.note": "Choose the font for List Titles",
+      "type": "text",
+      "cms.ui.cluster": "Fonts",
+      "cms.ui.dropDown": true,
+      "cms.ui.placeholder": "Default",
+      "values": [
+        {
+          "label": "Font 1 (default)",
+          "value": "font-1"
+        },
+        {
+          "label": "Font 2",
+          "value": "font-2"
+        }
+      ]
+    },
+    "promoTitleFont": {
+      "cms.ui.note": "Choose the font for Promo Titles",
+      "type": "text",
+      "cms.ui.cluster": "Fonts",
+      "cms.ui.dropDown": true,
+      "cms.ui.placeholder": "Default",
+      "values": [
+        {
+          "label": "Font 1 (default)",
+          "value": "font-1"
+        },
+        {
+          "label": "Font 2",
+          "value": "font-2"
+        }
+      ]
+    },
+    "descriptionFont": {
+      "cms.ui.note": "Choose the font for Descriptions",
+      "type": "text",
+      "cms.ui.cluster": "Fonts",
+      "cms.ui.dropDown": true,
+      "cms.ui.placeholder": "Default",
+      "values": [
+        {
+          "label": "Font 1 (default)",
+          "value": "font-1"
+        },
+        {
+          "label": "Font 2",
+          "value": "font-2"
+        }
+      ]
+    },
+    "quoteFont": {
+      "cms.ui.note": "Choose the font for Quote Modules",
+      "type": "text",
+      "cms.ui.cluster": "Fonts",
+      "cms.ui.dropDown": true,
+      "cms.ui.placeholder": "Default",
+      "values": [
+        {
+          "label": "Font 1 (default)",
+          "value": "font-1"
+        },
+        {
+          "label": "Font 2",
+          "value": "font-2"
+        }
+      ]
+    },
 
     "primaryColor": {
       "displayName": "Primary Color",
@@ -192,6 +277,7 @@
       "type": "text",
       "cms.ui.cluster": "Articles",
       "cms.ui.dropDown": true,
+      "cms.ui.placeholder": "Default",
       "values": [
         {
           "label": "Standard",
@@ -220,6 +306,7 @@
       "cms.ui.note": "Choose the default button style",
       "type": "text",
       "cms.ui.dropDown": true,
+      "cms.ui.placeholder": "Default",
       "values": [
         {
           "label": "Square",

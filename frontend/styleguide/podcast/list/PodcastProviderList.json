@@ -2,31 +2,31 @@
   "_template": "/podcast/list/PodcastProviderList.hbs",
   "items": [
     {
-      "_include": "/podcast/providers/amazon-alexa/AmazonAlexa.json"
+      "_template": "/podcast/providers/amazon-alexa/AmazonAlexa.hbs"
     },
     {
-      "_include": "/podcast/providers/applepodcast/ApplePodcast.json"
+      "_template": "/podcast/providers/applepodcast/ApplePodcast.hbs"
     },
     {
-      "_include": "/podcast/providers/googlepodcast/GooglePodcast.json"
+      "_template": "/podcast/providers/googlepodcast/GooglePodcast.hbs"
     },
     {
-      "_include": "/podcast/providers/pandorapodcast/PandoraPodcast.json"
+      "_template": "/podcast/providers/pandorapodcast/PandoraPodcast.hbs"
     },
     {
-      "_include": "/podcast/providers/rsspodcast/RSSPodcast.json"
+      "_template": "/podcast/providers/rsspodcast/RSSPodcast.hbs"
     },
     {
-      "_include": "/podcast/providers/overcast/Overcast.json"
+      "_template": "/podcast/providers/overcast/Overcast.hbs"
     },
     {
-      "_include": "/podcast/providers/pocketcasts/PocketCasts.json"
+      "_template": "/podcast/providers/pocketcasts/PocketCasts.hbs"
     },
     {
-      "_include": "/podcast/providers/spotify/Spotify.json"
+      "_template": "/podcast/providers/spotify/Spotify.hbs"
     },
     {
-      "_include": "/podcast/providers/tunein/TuneIn.json"
+      "_template": "/podcast/providers/tunein/TuneIn.hbs"
     }
   ]
 }

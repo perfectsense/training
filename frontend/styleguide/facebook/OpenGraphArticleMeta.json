@@ -1,17 +1,16 @@
 {
   "_template": "OpenGraphArticleMeta.hbs",
   "authorUrls": [
-    "https://link.to.author1",
-    "https://link.to.author2"
+    "https://www.example.com",
+    "https://www.example.com"
   ],
-  "publishedTime": "dateTime",
-  "modifiedTime": "dateTime",
-  "expirationTime": "dateTime",
-  "section": "Technology",
+  "publishedTime": "",
+  "modifiedTime": "",
+  "expirationTime": "",
+  "section": "",
   "tags": [
-    "Elon Musk",
-    "Tesla",
-    "Solar City"
-  ],
-  "_hidden": true
+    "",
+    "",
+    ""
+  ]
 }

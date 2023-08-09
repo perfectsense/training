@@ -2,7 +2,7 @@
   "_include": "/form/input/Input.json",
   "_template": "CaptchaInput.hbs",
   "captcha": {
-    "_include": "/_group/Captchas.json"
-  },
-  "_hidden": true
+    "_include": "/_group/Captchas.json",
+    "_key": 0
+  }
 }

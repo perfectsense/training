@@ -5,4 +5,5 @@ import com.psddev.dari.util.Substitution;
 
 public class IframeModuleSubstitution extends IframeEmbedModulePlacementShared implements PageItemStreamModuleItem,
     Substitution {
+
 }

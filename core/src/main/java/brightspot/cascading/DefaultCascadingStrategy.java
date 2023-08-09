@@ -19,17 +19,9 @@ import com.psddev.dari.db.Singleton;
 /**
  * Cascading settings strategy with the following order of precedence:
  *
- * 1) The asset
- * 2) If the asset is HasSection, find the parent Section
- * 2a) The Section type-specific overrides
- * 2b) The Section
- * 2c) If the Section has a parent, the Section's parent, and so on
- * 3) Find the Site
- * 3a) Site type-specific overrides
- * 3b) Site
- * 4) Find GlobalSettings
- * 4a) GlobalSettings type-specific overrides
- * 4b) GlobalSettings
+ * 1) The asset 2) If the asset is HasSection, find the parent Section 2a) The Section type-specific overrides 2b) The
+ * Section 2c) If the Section has a parent, the Section's parent, and so on 3) Find the Site 3a) Site type-specific
+ * overrides 3b) Site 4) Find GlobalSettings 4a) GlobalSettings type-specific overrides 4b) GlobalSettings
  */
 public class DefaultCascadingStrategy extends CascadingStrategy {
 

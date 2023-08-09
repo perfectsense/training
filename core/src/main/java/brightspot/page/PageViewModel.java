@@ -45,11 +45,13 @@ import brightspot.search.NavigationSearchSettings;
 import brightspot.section.SectionCascadingData;
 import brightspot.seo.Seo;
 import brightspot.tag.HasTags;
+import brightspot.tagmanager.TagManagerSiteSettings;
 import brightspot.util.RichTextUtils;
 import com.google.common.collect.ImmutableList;
 import com.psddev.cms.db.Site;
 import com.psddev.cms.db.SiteSettings;
 import com.psddev.cms.image.ImageSize;
+import com.psddev.cms.l10n.LocaleUtils;
 import com.psddev.cms.page.CurrentSite;
 import com.psddev.cms.page.MainContent;
 import com.psddev.cms.view.ViewModel;
@@ -58,6 +60,7 @@ import com.psddev.dari.db.State;
 import com.psddev.dari.util.StorageItem;
 import com.psddev.feed.FeedSource;
 import com.psddev.feed.FeedUtils;
+import com.psddev.localization.LocalizationData;
 import com.psddev.styleguide.RawHtml;
 import com.psddev.styleguide.facebook.FacebookMetasView;
 import com.psddev.styleguide.facebook.OpenGraphMetaView;
@@ -115,10 +118,10 @@ public class PageViewModel extends ViewModel<Recordable> {
     public <T> Iterable<T> getMeta(Class<T> viewClass) {
         Collection<T> metaViews = new ArrayList<>();
         metaViews.addAll(Stream.of(
-            createView(SeoRobotsMetaView.class, model),
-            createView(OpenGraphMetaView.class, model),
-            createView(TwitterSummaryLargeImageCardView.class, model),
-            createView(FacebookMetasView.class, model))
+                createView(SeoRobotsMetaView.class, model),
+                createView(OpenGraphMetaView.class, model),
+                createView(TwitterSummaryLargeImageCardView.class, model),
+                createView(FacebookMetasView.class, model))
             .filter(viewClass::isInstance)
             .map(viewClass::cast)
             .collect(Collectors.toList()));
@@ -138,8 +141,8 @@ public class PageViewModel extends ViewModel<Recordable> {
     public CharSequence getDescription() {
         // Plain text
         return Optional.ofNullable(model.as(Seo.class))
-                .map(Seo::getSeoDescription)
-                .orElse(null);
+            .map(Seo::getSeoDescription)
+            .orElse(null);
     }
 
     public <T> Iterable<T> getExtraLinks(Class<T> viewClass) {
@@ -211,17 +214,17 @@ public class PageViewModel extends ViewModel<Recordable> {
 
     public CharSequence getLanguage() {
         return Optional.ofNullable(LocaleProvider.getModelLocale(currentSite, model))
-            .map(Locale::getLanguage)
+            .map(Locale::toLanguageTag)
             .orElse(null);
     }
 
     public CharSequence getTitle() {
         // Plain text
         return Optional.ofNullable(model.as(Seo.class))
-                .map(seo -> seo.getSeoFullTitle(currentSite))
-                .orElseGet(() -> Optional.ofNullable(currentSite)
-                        .map(Site::getSeoDisplayName)
-                        .orElse(null));
+            .map(seo -> seo.getSeoFullTitle(currentSite))
+            .orElseGet(() -> Optional.ofNullable(currentSite)
+                .map(Site::getSeoDisplayName)
+                .orElse(null));
     }
 
     public CharSequence getCanonicalLink() {
@@ -230,9 +233,9 @@ public class PageViewModel extends ViewModel<Recordable> {
 
     public CharSequence getFeedLink() {
         return Optional.ofNullable(model.as(FeedSource.class))
-                .map(fs -> FeedUtils.getFeedAutoDetectLink(fs, currentSite))
-                .map(RawHtml::of)
-                .orElse(null);
+            .map(fs -> FeedUtils.getFeedAutoDetectLink(fs, currentSite))
+            .map(RawHtml::of)
+            .orElse(null);
     }
 
     public <T> Iterable<T> getStyles(Class<T> viewClass) {
@@ -273,14 +276,17 @@ public class PageViewModel extends ViewModel<Recordable> {
 
     public <T> Iterable<T> getLanguageMenu(Class<T> viewClass) {
 
-        return createViews(viewClass,
-                SiteSettings.get(
-                        currentSite,
-                        siteSettings -> siteSettings.as(LanguageMenuSiteSettings.class).getLanguageMenu()));
+        return createViews(
+            viewClass,
+            SiteSettings.get(
+                currentSite,
+                siteSettings -> siteSettings.as(LanguageMenuSiteSettings.class).getLanguageMenu()));
     }
 
     public CharSequence getSearchAction() {
-        NavigationSearch search = SiteSettings.get(currentSite, siteSettings -> siteSettings.as(NavigationSearchSettings.class).getSearchPage());
+        NavigationSearch search = SiteSettings.get(
+            currentSite,
+            siteSettings -> siteSettings.as(NavigationSearchSettings.class).getSearchPage());
         return search == null ? null : search.getSearchAction(currentSite);
     }
 
@@ -371,6 +377,14 @@ public class PageViewModel extends ViewModel<Recordable> {
         return createViews(viewClass, model.as(HasTags.class).getVisibleTags());
     }
 
+    public <T> Iterable<T> getTagManager(Class<T> viewClass) {
+        return Optional.ofNullable(SiteSettings.get(
+                currentSite,
+                siteSettings -> siteSettings.as(TagManagerSiteSettings.class).getTagManager()))
+            .map(tm -> createViews(viewClass, tm))
+            .orElse(Collections.emptyList());
+    }
+
     /**
      * Gets {@code href} to manifest.json file. The output of this file is produced by {@link ManifestFilter} which
      * retrieves the configuration from {@link ManifestSettings#getWebAppManifest()}.
@@ -378,7 +392,9 @@ public class PageViewModel extends ViewModel<Recordable> {
      * @return {@code href} to manifest.json
      */
     public CharSequence getManifestLink() {
-        String manifest = SiteSettings.get(currentSite, siteSettings -> siteSettings.as(ManifestSettings.class).getWebAppManifest());
+        String manifest = SiteSettings.get(
+            currentSite,
+            siteSettings -> siteSettings.as(ManifestSettings.class).getWebAppManifest());
 
         if (manifest == null) {
             return null;
@@ -388,13 +404,15 @@ public class PageViewModel extends ViewModel<Recordable> {
     }
 
     /**
-     * Gets {@link FaviconView}s for the recommended favicon implementations. {@link FaviconFilter}
-     * handles favicon requests, and automatically resizes {@link FaviconSettings#getFavicon()}.
+     * Gets {@link FaviconView}s for the recommended favicon implementations. {@link FaviconFilter} handles favicon
+     * requests, and automatically resizes {@link FaviconSettings#getFavicon()}.
      *
      * @return {@link FaviconView}s
      */
     public Iterable<FaviconView> getFavicons() {
-        StorageItem favicon = SiteSettings.get(currentSite, siteSettings -> siteSettings.as(FaviconSettings.class).getFavicon());
+        StorageItem favicon = SiteSettings.get(
+            currentSite,
+            siteSettings -> siteSettings.as(FaviconSettings.class).getFavicon());
 
         if (favicon == null) {
             return null;
@@ -420,7 +438,13 @@ public class PageViewModel extends ViewModel<Recordable> {
     }
 
     public <T> Iterable<T> getBanners(Class<T> viewClass) {
-        return createViews(viewClass, PageElementSupplier.get(Banner.class, currentSite, model));
+        List<Banner> activeBanners = Optional.ofNullable(model.as(CascadingPageData.class).getBanners(currentSite))
+            .orElse(new ArrayList<>())
+            .stream()
+            .filter(Banner::isActive)
+            .collect(Collectors.toList());
+
+        return createViews(viewClass, activeBanners);
     }
 
     public CharSequence getContentId() {
@@ -558,5 +582,27 @@ public class PageViewModel extends ViewModel<Recordable> {
         return createViews(viewClass, SiteSettings.get(
             currentSite,
             siteSettings -> siteSettings.as(CommentingSiteSettings.class).getCommentingServices()));
+    }
+
+    public <T> Iterable<T> languageVariantLinks(Class<T> viewClass) {
+        List<PageHrefLangLink> items = LocaleUtils.getAllLocaleVariants(model)
+            .stream()
+            .filter(variant -> State.getInstance(variant).isVisible())
+            .filter(Recordable.class::isInstance)
+            .map(Recordable.class::cast)
+            .map(obj -> obj.as(LocalizationData.class))
+            .map(localizedObject -> {
+                String languageCode = Optional.of(localizedObject)
+                    .map(LocalizationData::getLocale)
+                    .map(Locale::toLanguageTag)
+                    .orElse(null);
+
+                String url = Permalink.getPermalink(currentSite, localizedObject);
+
+                return new PageHrefLangLink(languageCode, url);
+            })
+            .collect(Collectors.toList());
+
+        return createViews(viewClass, items);
     }
 }

@@ -1,17 +1,18 @@
 {
   "_template": "NavigationLink.hbs",
-  "href": "#",
-  "target": "_self",
+  "href": "",
+  "target": "",
   "text": {
-    "_include": "/_group/RichTextElementsTiny.json"
+    "_include": "/_group/RichTextElementsTiny.json",
+    "_key": 0
   },
   "description": {
-    "_include": "/_group/RichTextElementsTiny.json"
+    "_include": "/_group/RichTextElementsTiny.json",
+    "_key": 0
   },
-  "contentId": "a123",
+  "contentId": "",
   "iconUrl": "",
-  "status": "2",
-  "count": 3,
-  "isActive": true,
-  "_hidden": true
+  "status": "",
+  "count": 0,
+  "isActive": false
 }

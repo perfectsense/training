@@ -1,20 +1,21 @@
 {
   "_template": "HTML5VideoPlayer.hbs",
-  "playerId": "1",
+  "playerId": "",
   "videoTitle": {
-    "_include": "/_group/RichTextElementsTiny.json"
+    "_include": "/_group/RichTextElementsTiny.json",
+    "_key": 0
   },
-  "videoId": "XXXXXX",
+  "videoId": "",
   "poster": {
     "_image": true
   },
   "autoplay": false,
   "muted": true,
   "sources": {
-    "_include": "HTML5VideoPlayerSource.json"
+    "_template": "HTML5VideoPlayerSource.hbs"
   },
   "extraAttributes": {
-    "_include": "/_group/VideoExtraAttributes.json"
-  },
-  "_hidden": true
+    "_include": "/_group/VideoExtraAttributes.json",
+    "_key": 0
+  }
 }

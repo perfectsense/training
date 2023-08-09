@@ -1,4 +1,4 @@
 {
   "_template" : "NewsletterHtmlModule.hbs",
-  "rawHtml" : "<p> hello <strong> this is strong text </strong> </p>"
+  "rawHtml" : ""
 }

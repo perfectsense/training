@@ -18,9 +18,9 @@ public class AuthorViewModel extends ViewModel<Author> implements AuthorView {
     @Override
     public Iterable<? extends AuthorViewBiographyField> getBiography() {
         return RichTextUtils.buildInlineHtml(
-                model,
-                Author::getShortBiography,
-                e -> createView(AuthorViewBiographyField.class, e));
+            model,
+            Author::getShortBiography,
+            e -> createView(AuthorViewBiographyField.class, e));
     }
 
     @Override
@@ -31,9 +31,9 @@ public class AuthorViewModel extends ViewModel<Author> implements AuthorView {
     @Override
     public Iterable<? extends AuthorViewNameField> getName() {
         return RichTextUtils.buildInlineHtml(
-                model,
-                Author::getName,
-                e -> createView(AuthorViewNameField.class, e));
+            model,
+            Author::getName,
+            e -> createView(AuthorViewNameField.class, e));
     }
 
     @Override

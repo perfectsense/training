@@ -10,8 +10,8 @@ import com.psddev.styleguide.RawHtml;
 import com.psddev.styleguide.custom.CustomModuleView;
 
 /**
- * Render any Editorial Content Type extensions of {@link CustomModule} anywhere
- * {@link CustomModuleView} can be placed.
+ * Render any Editorial Content Type extensions of {@link CustomModule} anywhere {@link CustomModuleView} can be
+ * placed.
  */
 public class CustomModuleViewModel extends ViewModel<CustomModule> implements CustomModuleView {
 

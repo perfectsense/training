@@ -1,11 +1,10 @@
 {
   "_wrapper": false,
-  "_hidden": true,
   "_include": "/page/CreativeWorkPage.json",
   "_template": "ArticlePage.hbs",
   "lead": {
     "_include": "/_group/Leads.json",
-    "_key": 1
+    "_key": 0
   },
   "articleBody": {
     "_include": "/_group/RichTextElementsLarge.json",

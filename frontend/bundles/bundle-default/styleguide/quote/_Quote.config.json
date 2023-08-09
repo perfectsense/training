@@ -1,7 +1,12 @@
 {
   "styles": {
     "/quote/Quote.hbs": {
-      "fields": ["backgroundColor","inverseColors"],
+      "fields": [
+        "backgroundColor",
+        "inverseColors",
+        "modulePaddingTop",
+        "modulePaddingBottom"
+      ],
       "templates": [
         {
           "displayName": "Quote",

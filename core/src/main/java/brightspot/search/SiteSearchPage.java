@@ -9,8 +9,12 @@ import brightspot.page.Page;
 import brightspot.permalink.AbstractPermalinkRule;
 import brightspot.permalink.Permalink;
 import brightspot.promo.page.PagePromotable;
+import brightspot.query.HideIncludeCurrentFields;
 import brightspot.query.QueryBuilderDynamicQueryModifiable;
 import brightspot.search.boost.BoostDynamicQueryModifiable;
+import brightspot.search.boost.BoostDynamicQueryModification;
+import brightspot.search.boost.IndexBoostFieldProvider;
+import brightspot.search.boost.StandardBoostConfiguration;
 import brightspot.search.modifier.exclusion.SearchExclusionQueryModifiable;
 import brightspot.search.stopwords.StopWordsDynamicQueryModifiable;
 import brightspot.seo.SeoWithFields;
@@ -18,29 +22,44 @@ import brightspot.util.RichTextUtils;
 import com.psddev.cms.db.Directory;
 import com.psddev.cms.db.Site;
 import com.psddev.cms.db.ToolUi;
+import com.psddev.cms.ui.ContentLifecycle;
 import com.psddev.dari.db.Recordable;
 
 @ToolUi.FieldDisplayOrder({
-        "seo.title",
-        "seo.suppressSeoDisplayName",
-        "seo.description",
-        "seo.keywords",
-        "seo.robots",
-        "ampPage.ampDisabled"
+    "seo.title",
+    "seo.suppressSeoDisplayName",
+    "seo.description",
+    "seo.keywords",
+    "seo.robots",
+    "ampPage.ampDisabled"
 })
 public class SiteSearchPage extends AbstractSiteSearchPage implements
-        BoostDynamicQueryModifiable,
-        Directory.Item,
-        Linkable,
-        LocaleDynamicQueryModifiable,
-        NavigationSearch,
-        Page,
-        PathedOnlyQueryModifiableWithField,
-        QueryBuilderDynamicQueryModifiable,
-        SearchExclusionQueryModifiable,
-        SeoWithFields,
-        SiteItemsQueryModifiable,
-        StopWordsDynamicQueryModifiable {
+    BoostDynamicQueryModifiable,
+    ContentLifecycle,
+    Directory.Item,
+    HideIncludeCurrentFields,
+    Linkable,
+    LocaleDynamicQueryModifiable,
+    NavigationSearch,
+    Page,
+    PathedOnlyQueryModifiableWithField,
+    QueryBuilderDynamicQueryModifiable,
+    SearchExclusionQueryModifiable,
+    SeoWithFields,
+    SiteItemsQueryModifiable,
+    StopWordsDynamicQueryModifiable {
+
+    // --- BoostDynamicQueryModifiable support ---
+
+    @Override
+    public SiteSearch getBoostedSiteSearch() {
+        return this;
+    }
+
+    @Override
+    public IndexBoostFieldProvider getIndexedFieldsProvider() {
+        return new StandardIndexBoostFieldProvider();
+    }
 
     // --- Directory.Item support ---
 
@@ -80,14 +99,17 @@ public class SiteSearchPage extends AbstractSiteSearchPage implements
     @Override
     public Object transformSiteSearchResult(Object object) {
         return object instanceof Recordable && ((Recordable) object).isInstantiableTo(PagePromotable.class)
-                ? PagePromo.fromPromotable(((Recordable) object).as(PagePromotable.class))
-                : object;
+            ? PagePromo.fromPromotable(((Recordable) object).as(PagePromotable.class))
+            : object;
     }
 
-    // --- BoostDynamicQueryModifiable support ---
+    // --- ContentLifecycle support ---
 
+    // Defaults site search page boosts to the standard configuration
     @Override
-    public SiteSearch getBoostedSiteSearch() {
-        return this;
+    public void onNew() {
+        if (this.as(BoostDynamicQueryModification.class).getBoostConfiguration() == null) {
+            this.as(BoostDynamicQueryModification.class).setBoostConfiguration(new StandardBoostConfiguration());
+        }
     }
 }

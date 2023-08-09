@@ -1,0 +1,135 @@
+.ModuleHeader {
+  margin-bottom: 20px;
+  flex-grow: 1;
+
+  .PageList-cta {
+    display: block;
+
+    .Button {
+      margin: 30px 0 0 0;
+    }
+  }
+
+  &-description {
+    &:extend(.description-1 all);
+    &:extend(.RichTextElements all);
+    color: var(--color-primary-text);
+  }
+
+  &-title {
+    &:extend(.list-title-1 all);
+
+    color: var(--color-primary-text);
+    margin-bottom: 10px;
+  }
+
+
+  @media @mq-md {
+    &-title {
+      margin-bottom: 15px;
+    }
+  }
+
+  @media @mq-lg {
+    margin-bottom: 30px;
+
+    &-title {
+      margin-bottom: 20px;
+    }
+  }
+}
+
+@media @mq-lg {
+  [data-module-header-position='side'] {
+    display: grid;
+    column-gap: 40px;
+    grid-template-columns: 300px 1fr;
+
+    .PageList-footer {
+      display: none;
+    }
+  }
+}
+
+@media @mq-xl {
+  [data-module-header-position='side'] {
+    display: grid;
+    column-gap: 40px;
+    grid-template-columns: 320px 1fr;
+  }
+}
+
+// Duplication of attribute selector to increase specificity
+[data-module-title-size][data-module-title-size="1"] {
+  .ModuleHeader {
+    &-title {
+      &:extend(.list-title-1 all);
+    }
+  }
+}
+
+// Duplication of attribute selector to increase specificity
+[data-module-title-size][data-module-title-size="2"] {
+  .ModuleHeader {
+    &-title {
+      &:extend(.list-title-2 all);
+    }
+  }
+}
+
+// Duplication of attribute selector to increase specificity
+[data-module-title-size][data-module-title-size="3"] {
+  .ModuleHeader {
+    &-title {
+      &:extend(.list-title-3 all);
+    }
+  }
+}
+
+// Duplication of attribute selector to increase specificity
+[data-module-description-size][data-module-description-size="1"] {
+  .ModuleHeader {
+    &-description {
+      &:extend(.description-1 all);
+    }
+  }
+}
+
+// Duplication of attribute selector to increase specificity
+[data-module-description-size][data-module-description-size="2"] {
+  .ModuleHeader {
+    &-description {
+      &:extend(.description-2 all);
+    }
+  }
+}
+
+// Duplication of attribute selector to increase specificity
+[data-module-description-size][data-module-description-size="3"] {
+  .ModuleHeader {
+    &-description {
+      &:extend(.description-3 all);
+    }
+  }
+}
+
+// Duplication of attribute selector to increase specificity
+[data-header-text-align][data-header-text-align="left"] {
+  .ModuleHeader {
+    text-align: left;
+  }
+}
+
+// Duplication of attribute selector to increase specificity
+[data-header-text-align][data-header-text-align="center"] {
+  .ModuleHeader {
+    text-align: center;
+  }
+}
+
+// Duplication of attribute selector to increase specificity
+[data-header-text-align][data-header-text-align="right"] {
+  .ModuleHeader {
+    text-align: right;
+  }
+}

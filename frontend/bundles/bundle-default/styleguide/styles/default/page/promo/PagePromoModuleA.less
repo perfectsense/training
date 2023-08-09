@@ -1,14 +1,7 @@
 .PagePromoModuleA {
   display: grid;
 
-  &[data-inverse-colors],
-  [data-inverse-colors] & {
-    --color-link-text: var(--color-text-inverse);
-    --color-link-text-hover: var(--color-text-inverse);
-    --color-primary-text: var(--color-text-inverse);
-  }
-
-  &[data-align-bottom] {
+  &[data-image-align-vertical="bottom"] {
     .PagePromo {
       &-media {
         margin-bottom: 0;
@@ -84,7 +77,7 @@
   }
 
   @media @mq-md {
-    &[data-align-bottom] {
+    &[data-image-align-vertical="bottom"] {
       .PagePromo {
         &-media {
           margin-top: 30px;

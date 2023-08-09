@@ -1,6 +1,22 @@
 {
   "styles": {
     "/person/list/PersonList.hbs": {
+      "fields": [
+        "backgroundColor",
+        "inverseColors",
+        "headerTextAlign",
+        "ctaAlignment",
+        "itemTitleAlignment",
+        "itemDescriptionAlignment",
+        "itemImageAlignment",
+        "itemImageAspectRatio",
+        "itemDisplayStyle",
+        "itemBackgroundColor",
+        "itemBackgroundImage",
+        "itemTextColor",
+        "modulePaddingTop",
+        "modulePaddingBottom"
+      ],
       "templates": [
         {
           "displayName": "Person List",

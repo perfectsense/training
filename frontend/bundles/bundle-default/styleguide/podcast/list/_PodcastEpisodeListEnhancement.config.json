@@ -1,0 +1,10 @@
+{
+  "styles": {
+    "/podcast/list/PodcastEpisodeListEnhancement.hbs": {
+        "inline": true,
+        "fields": [
+            "enhancementAlignment"
+        ]
+    }
+  }
+}

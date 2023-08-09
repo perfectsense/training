@@ -1,33 +1,33 @@
 <div class="StatPromo">
-    {{#if value}}
-        <div class="StatPromo-content">
-            {{#unless statTitlePosition}}
-                {{#with title}}
-                    <div class="StatPromo-title">
-                        {{this}}
-                    </div>
-                {{/with}}
-            {{/unless}}
-            {{#eq statTitlePosition "left"}}
-                {{#with title}}
-                    <span class="StatPromo-title">
-                        {{this}}
-                    </span>
-                {{/with}}
-            {{/eq}}
-            <span class="StatPromo-value" data-counter data-target="{{value}}">{{#if countUpAnimation}}0{{else}}{{value}}{{/if}}</span>
-            {{#eq statTitlePosition "right"}}
-                {{#with title}}
-                    <span class="StatPromo-title">
-                        {{this}}
-                    </span>
-                {{/with}}
-            {{/eq}}
-        </div>
-        {{#with description}}
-            <span class="StatPromo-description">
-                {{this}}
+    <div class="StatPromo-valueWrapper">
+        {{~#with valuePrefix~}}
+            <span class="StatPromo-valuePrefix">
+                {{~this~}}
             </span>
-        {{/with}}
-    {{/if}}
+        {{~/with~}}
+        {{~#with value~}}
+            <span class="StatPromo-value">
+                {{~#if ../countUpAnimation~}}
+                    <span aria-hidden="true" data-counter data-target="{{this}}">0</span><span data-value-placeholder>{{this}}</span>
+                {{~else~}}
+                    {{~this~}}
+                {{~/if~}}
+            </span>
+        {{~/with~}}
+        {{~#with valueSuffix~}}
+            <span class="StatPromo-valueSuffix">
+                {{~this~}}
+            </span>
+        {{~/with~}}
+    </div>
+    {{#with title}}
+        <div class="StatPromo-title">
+            {{this}}
+        </div>
+    {{/with}}
+    {{#with description}}
+        <div class="StatPromo-description">
+            {{this}}
+        </div>
+    {{/with}}
 </div>

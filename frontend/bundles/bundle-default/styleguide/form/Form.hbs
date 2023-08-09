@@ -1,10 +1,7 @@
-<div class="Form-wrapper" data-module {{#if inverseColors}} data-inverse-colors{{/if}}{{#or backgroundColor backgroundImage}} data-has-background {{/or}}{{#if backgroundImage}} data-has-bg-image{{/if}} style="--color-form-background: {{#with backgroundColor}}{{this}}{{else}}#fff{{/with}};{{#each backgroundImage}}{{#resize image "xl-4x3"}} background-image: url('{{src}}');{{/resize}} {{/each}}">
-    <bsp-form class="Form">
-        {{include "/link/AnchorLink.hbs" this}}
-        {{#with title}}<div class="Form-title">{{this}}</div>{{/with}}
+<bsp-form class="Form" data-module {{include '/global/ModuleAttributes.hbs' this}}>
+    {{include '/global/ModuleHeader.hbs' this}}
 
-        {{#with description}}<div class="Form-description">{{this}}</div>{{/with}}
-
+    <div class="Form-wrapper">
         {{#if submissionSuccess}}
         <div class="Form-submissionSuccess">
             {{#if message}}
@@ -41,5 +38,5 @@
         </div>
         {{/with}}
         {{/if}}
-    </bsp-form>
-</div>
+    </div>
+</bsp-form>

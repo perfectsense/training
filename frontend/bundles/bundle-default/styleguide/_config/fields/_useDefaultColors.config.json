@@ -1,0 +1,7 @@
+{
+  "fields": {
+    "useDefaultColors": {
+      "type": "boolean"
+    }
+  }
+}

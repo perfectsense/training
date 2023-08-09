@@ -21,9 +21,9 @@ public class SectionPageViewModel extends AbstractPageViewModel<SectionPage> imp
     @Override
     public Iterable<? extends PageViewPageHeadingField> getPageHeading() {
         return RichTextUtils.buildInlineHtml(
-                model,
-                SectionPage::getDisplayName,
-                e -> createView(PageViewPageHeadingField.class, e));
+            model,
+            SectionPage::getDisplayName,
+            e -> createView(PageViewPageHeadingField.class, e));
     }
 
     @Override
@@ -33,6 +33,9 @@ public class SectionPageViewModel extends AbstractPageViewModel<SectionPage> imp
 
     @Override
     public Iterable<? extends PageViewPageSubHeadingField> getPageSubHeading() {
-        return RichTextUtils.buildHtml(model, SectionPage::getDescription, e -> createView(PageViewPageSubHeadingField.class, e));
+        return RichTextUtils.buildHtml(
+            model,
+            SectionPage::getDescription,
+            e -> createView(PageViewPageSubHeadingField.class, e));
     }
 }

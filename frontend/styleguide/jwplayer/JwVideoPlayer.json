@@ -1,14 +1,14 @@
 {
   "_include": "/video/HTML5VideoPlayer.json",
   "_template": "JwVideoPlayer.hbs",
-  "videoTitle": "{{words([5,10])}}",
+  "videoTitle": "",
   "autoplay": false,
   "muted": false,
-  "seekSeconds": 10,
-  "videoUuid": "11123",
+  "seekSeconds": 1,
+  "videoUuid": "",
   "videoFileType": "mp4",
-  "playerId": "iNykjppM",
-  "mediaId": "XPYF0VB8",
+  "playerId": "",
+  "mediaId": "",
   "poster": {
     "_image": true
   }

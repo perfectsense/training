@@ -1,22 +1,4 @@
 {
-  "_template": "/page/list/PageList.hbs",
-  "_styledTemplate": "/page/list/PageListCarouselC.hbs",
-  "title": "List S",
-  "ctaUrl": "#",
-  "ctaTarget": "_self",
-  "items": [
-    {
-      "_include": "/page/promo/PagePromo.json"
-    },
-    {
-      "_include": "/page/promo/PagePromo.json"
-    },
-    {
-      "_include": "/page/promo/PagePromo.json"
-    },
-    {
-      "_include": "/page/promo/PagePromo.json"
-    }
-  ],
-  "textAlign": "center"
+  "_include": "/page/list/PageList.json",
+  "_styledTemplate": "/page/list/PageListCarouselC.hbs"
 }

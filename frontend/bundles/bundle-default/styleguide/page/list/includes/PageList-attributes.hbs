@@ -3,13 +3,48 @@
 {{~#if hideDates}} data-hide-dates="true"{{/if~}}
 {{~#if hideDescriptions}} data-hide-descriptions="true"{{/if~}}
 {{~#if hideTitles}} data-hide-titles="true"{{/if~}}
+{{~#with headerTextAlign}} data-header-text-align="{{this}}"{{/with~}}
 {{~#if pagination}} data-show-loadmore="true"{{/if~}}
-{{~#with listHeaderPosition}} data-list-header-position="{{this}}"{{/with~}}
+{{~#with (fallback moduleHeaderPosition listHeaderPosition)}} data-module-header-position="{{this}}"{{/with~}}
 {{~#if inverseColors}} data-inverse-colors{{/if~}}
-{{~#with backgroundColor}} data-has-background style="--color-module-background:{{this}};"{{/with~}}
+{{~#with backgroundColor}} data-has-background{{/with~}}
+{{~#with ctaAlignment}} data-cta-alignment="{{this}}"{{/with~}}
 {{~#with listColumns56}} data-column-count="{{this}}"{{/with~}}
+{{~#with listColumns23}} data-column-count="{{this}}"{{/with~}}
 {{~#with listColumns234}} data-column-count="{{this}}"{{/with~}}
 {{~#with listColumns23456}} data-column-count="{{this}}"{{/with~}}
 {{~#if textAlign}} data-text-align="{{textAlign}}"{{/if~}}
-{{~#with listTitleSize}} data-list-title-size="{{this}}"{{/with~}}
-{{~#with listDescriptionSize}} data-list-description-size="{{this}}"{{/with~}}
+{{~#with listTitleSize}} data-module-title-size="{{this}}"{{/with~}}
+{{~#with listDescriptionSize}} data-module-description-size="{{this}}"{{/with~}}
+{{~#if itemAccentColor}} data-item-has-accent-color{{/if~}}
+{{~#if itemBackgroundColor}} data-item-has-background-color{{/if~}}
+{{~#if itemBackgroundImage}} data-item-has-background-image{{/if~}}
+{{~#if itemTextColor}} data-item-has-text-color{{/if~}}
+{{~#if itemBorderColor}} data-item-has-border-color{{/if~}}
+{{~#if itemInverseColors}} data-item-inverse-colors{{/if~}}
+{{~#with itemAttributionAlignment}} data-item-attribution-alignment="{{this}}"{{/with~}}
+{{~#with itemAttributionAlignment}} data-item-attribution-alignment="{{this}}"{{/with~}}
+{{~#with itemAttributionImageAlignment}} data-item-attribution-image-alignment="{{this}}"{{/with~}}
+{{~#with itemBylineAlignment}} data-item-byline-alignment="{{this}}"{{/with~}}
+{{~#with itemAuthorNameAlignment}} data-item-author-name-alignment="{{this}}"{{/with~}}
+{{~#with itemCategoryAlignment}} data-item-category-alignment="{{this}}"{{/with~}}
+{{~#with itemCtaAlignment}} data-item-cta-alignment="{{this}}"{{/with~}}
+{{~#with itemDescriptionAlignment}} data-item-description-alignment="{{this}}"{{/with~}}
+{{~#with itemDisplayStyle}} data-item-display-style="{{this}}"{{/with~}}
+{{~#with itemImageAlignment}} data-item-image-alignment="{{this}}"{{/with~}}
+{{~#with itemImageAspectRatio}} data-item-image-aspect-ratio="{{this}}"{{/with~}}
+{{~#with itemJobTitleAlignment}} data-item-job-title-alignment="{{this}}"{{/with~}}
+{{~#with itemPlayerAlignment}} data-item-player-alignment="{{this}}"{{/with~}}
+{{~#with itemQuoteAlignment}} data-item-quote-alignment="{{this}}"{{/with~}}
+{{~#with itemTextAlignment}} data-item-text-alignment="{{this}}"{{/with~}}
+{{~#with itemTitleAlignment}} data-item-title-alignment="{{this}}"{{/with~}}
+{{~#with modulePaddingBottom}} data-module-padding-bottom="{{this}}"{{/with~}}
+{{~#with modulePaddingTop}} data-module-padding-top="{{this}}"{{/with~}}
+{{~#or backgroundColor itemAccentColor itemBackgroundColor itemBackgroundImage itemBorderColor itemTextColor}} style="
+    {{~#with backgroundColor}}--color-module-background:{{this}};{{/with~}}
+    {{~#with itemAccentColor}}--color-item-accent:{{this}};{{/with~}}
+    {{~#with itemBackgroundColor}}--color-item-background:{{this}};{{/with~}}
+    {{~#with itemBackgroundImage}}{{#each this}}{{#resize image "medium-square"}}--item-background-image:url('{{src}}');{{/resize}}{{/each}}{{/with~}}
+    {{~#with itemBorderColor}}--color-item-border:{{this}};{{/with~}}
+    {{~#with itemTextColor}}--color-item-text:{{this}};{{/with~}}
+"{{/or~}}

@@ -1,9 +1,8 @@
 {
   "_template": "TwitterWidgetsWebpageProperties.hbs",
-  "borderColor": "#ffffff",
-  "csp": true,
-  "dnt": true,
-  "linkColor": "#ff0000",
-  "theme": "dark",
-  "_hidden": true
+  "borderColor": "",
+  "csp": false,
+  "dnt": false,
+  "linkColor": "",
+  "theme": ""
 }

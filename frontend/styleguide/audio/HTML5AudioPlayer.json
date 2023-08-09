@@ -1,6 +1,6 @@
 {
   "_template": "HTML5AudioPlayer.hbs",
   "sources": {
-    "_include": "HTML5AudioSource.json"
+    "_template": "HTML5AudioSource.hbs"
   }
 }

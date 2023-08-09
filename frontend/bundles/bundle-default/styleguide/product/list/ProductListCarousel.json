@@ -1,0 +1,4 @@
+{
+  "_include": "/product/list/ProductList.json",
+  "_styledTemplate": "/product/list/ProductListCarousel.hbs"
+}

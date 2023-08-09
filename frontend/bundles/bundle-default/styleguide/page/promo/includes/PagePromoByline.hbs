@@ -1,7 +1,9 @@
 {{#if sponsorName}}
     <div class="PagePromo-byline">
         <div class="PagePromo-sponsoredBy">
-            <span class="PagePromo-sponsoredBy-text">{{format "/page/promo/PagePromo" "sponsorBy"}}</span>
+            {{#with sponsorDisplayText}}
+                <span class="Page-sponsoredBy-text">{{this}}</span>
+            {{/with}}
             <span class="PagePromo-sponsoredBy-logo">
                 {{include "/link/Link.hbs" href=sponsorUrl target=sponsorTarget body=sponsorName}}
             </span>

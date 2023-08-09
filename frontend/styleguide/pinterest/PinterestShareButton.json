@@ -1,8 +1,7 @@
 {
   "_template": "PinterestShareButton.hbs",
-  "url": "https://brightspot.com",
-  "description": "This is the title (weird, I know)",
-  "media": "https://cdn2-www.dogtime.com/assets/uploads/gallery/30-impossibly-cute-puppies/impossibly-cute-puppy-8.jpg",
-  "body": "Pinterest",
-  "_hidden": true
+  "url": "",
+  "description": "",
+  "media": "",
+  "body": ""
 }

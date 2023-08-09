@@ -5,13 +5,13 @@
     "_key": 0
   },
   "playlist": {
-    "_include": "/video/VideoPlaylistItem.json"
+    "_template": "/video/VideoPlaylistItem.hbs"
   },
   "thumbnail": {
-    "_include": "/image/Image.json"
+    "_template": "/image/Image.hbs"
   },
   "title": {
-    "_include": "/_group/RichTextElementsTiny.json"
-  },
-  "_hidden": true
+    "_include": "/_group/RichTextElementsTiny.json",
+    "_key": 0
+  }
 }

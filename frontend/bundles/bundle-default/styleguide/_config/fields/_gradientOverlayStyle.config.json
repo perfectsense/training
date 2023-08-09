@@ -1,0 +1,29 @@
+{
+  "fields": {
+    "gradientOverlayStyle": {
+      "displayName": "Gradient Overlay",
+      "type": "text",
+      "cms.ui.dropDown": true,
+      "cms.ui.placeholder": "Default",
+      "cms.ui.note": "To set ‘Match Module Background Color‘, choose a background color below",
+      "values": [
+        {
+          "label": "None",
+          "value": "none"
+        },
+        {
+          "label": "Dark",
+          "value": "dark"
+        },
+        {
+          "label": "Light",
+          "value": "light"
+        },
+        {
+          "label": "Match Module Background Color",
+          "value": "useBackgroundColor"
+        }
+      ]
+    }
+  }
+}

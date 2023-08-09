@@ -1,39 +1,58 @@
 .StatPromo {
+  color: var(--color-primary-text);
   display: grid;
   grid-gap: 10px;
   text-align: center;
 
+  &-valueWrapper {
+    &:extend(.stat-2);
+  }
+
   &-description {
     &:extend(.description-3 all);
-
-    font-weight: bold;
-
-    [data-inverse-colors] & {
-      color: var(--color-text-inverse);
-      --color-link-text: var(--color-text-inverse);
-      --color-link-text-hover: var(--color-text-inverse);
-    }
+    &:extend(.RichTextElements all);
   }
 
   &-title {
     &:extend(.promo-title-6 all);
-
-    [data-inverse-colors] & {
-      color: var(--color-text-inverse);
-    }
   }
 
   &-value {
-    &:extend(.stat-2);
+    display: inline-grid;
 
-    [data-inverse-colors] & {
-      color: var(--color-text-inverse);
+    [data-counter],
+    [data-value-placeholder] {
+      grid-column: 1;
+      grid-row: 1;
+    }
+
+    [data-value-placeholder] {
+      visibility: hidden;
+      opacity: 0;
     }
   }
 
-  @media @mq-lg {
-    &-value {
-      font-size: 45px;
-    }
+  [data-item-display-style="card"] & {
+    padding: 20px;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: var(--color-site-bg);
+    box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.1);
+    min-height: 100%;
+  }
+
+  [data-item-has-background-color] & {
+    background-color: var(--color-item-background);
+  }
+
+  [data-item-has-background-image] & {
+    background-image: var(--item-background-image);
+    background-size: cover;
+  }
+
+  [data-item-has-text-color] & {
+    --color-primary-text: var(--color-item-text);
+    --color-link-text: var(--color-item-text);
+    --color-link-text-hover: var(--color-item-text);
   }
 }

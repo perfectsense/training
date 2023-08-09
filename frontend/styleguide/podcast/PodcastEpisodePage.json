@@ -2,30 +2,30 @@
   "_include": "/page/Page.json",
   "_template": "/podcast/PodcastEpisodePage.hbs",
   "breadcrumbs": {
-    "_include": "/link/Link.json"
+    "_template": "/page/BreadcrumbLink.hbs"
   },
   "headline": {
-    "_include": "/_group/RichTextElementsTiny.json"
+    "_include": "/_group/RichTextElementsTiny.json",
+    "_key": 0
   },
   "subHeadline": {
-    "_include": "/_group/RichTextElementsTiny.json"
+    "_include": "/_group/RichTextElementsTiny.json",
+    "_key": 0
   },
   "image": {
-    "_include": "/image/Image.json"
+    "_template": "/image/Image.hbs"
   },
   "podcast": {
-    "_include": "/podcast/promo/PodcastPromo.json"
+    "_template": "/podcast/promo/PodcastPromo.hbs"
   },
   "primaryAudio": {
-    "_include": "/audio/HTML5AudioPlayer.json"
+    "_template": "/audio/HTML5AudioPlayer.hbs"
   },
   "body": {
     "_include": "/_group/RichTextElementsLarge.json",
     "_key": 0
   },
-  "main": [
-    {
-      "_include": "/podcast/list/PodcastEpisodeList.json"
-    }
-  ]
+  "main": {
+    "_template": "/podcast/list/PodcastEpisodeList.hbs"
+  }
 }

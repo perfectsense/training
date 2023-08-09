@@ -1,0 +1,13 @@
+
+<bsp-search-filters class="SearchResultsModuleVerticalFilters">
+    <div class="SearchResultsModuleVerticalFilters-title">{{format "/search/SearchResultsModule" "filterTitle"}}</div>
+
+    {{include "/search/includes/SearchResultsModuleActiveFilters.hbs" this}}
+
+    <!-- Filters -->
+    <div class="SearchResultsModuleVerticalFilters-content">
+        {{#each filters}}
+            {{include "/search/SearchFilter.hbs" this}}
+        {{/each}}
+    </div>
+</bsp-search-filters>

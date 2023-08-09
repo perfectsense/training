@@ -4,8 +4,8 @@ import brightspot.image.WebImageAsset;
 import com.psddev.dari.util.Substitution;
 
 public class PageHeadingSubstitution extends PageHeading implements
-        ModulePageLead,
-        Substitution {
+    ModulePageLead,
+    Substitution {
 
     @Override
     public WebImageAsset getModulePageLeadImage() {

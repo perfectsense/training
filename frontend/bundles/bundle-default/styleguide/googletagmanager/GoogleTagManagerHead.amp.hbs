@@ -1,0 +1,12 @@
+{{#if containerId}}
+    <!-- Google Tag Manager -->
+    <amp-analytics config="https://www.googletagmanager.com/amp.json?id={{~containerId~}}
+    {{~#if authToken~}}
+        {{~#if previewEnvironment~}}
+            &gtm_auth={{~authToken~}}&gtm_preview={{~previewEnvironment~}}
+            {{~#if useEnvironmentSetInCookie~}}&gtm_cookies_win=x{{/if}}
+        {{~/if~}}
+    {{~/if~}}
+    &gtm.url=SOURCE_URL" data-credentials="include"></amp-analytics>
+    <!-- End Google Tag Manager -->
+{{/if}}

@@ -1,0 +1,47 @@
+.PagePromoEnhancementC {
+  &:extend(.PagePromoEnhancement all);
+
+  .PagePromo {
+    &-media {
+      img {
+        width: 100%;
+      }
+    }
+  }
+
+  @media @mq-up-to-md {
+    .PagePromo {
+      &-media {
+        float: right;
+        width: 90px;
+        margin-left: 20px;
+      }
+    }
+  }
+
+  @media @mq-md {
+    &:not([data-align-left], [data-align-right]) {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+
+      .PagePromoEnhancementC {
+        &-content {
+          flex: 0 1 50%;
+        }
+      }
+
+      .PagePromo {
+        &-media {
+          flex: 0 1 50%;
+        }
+      }
+    }
+  }
+
+  @media @mq-lg {
+    &:not([data-align-left], [data-align-right]) {
+      gap: 40px;
+    }
+  }
+}

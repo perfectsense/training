@@ -1,21 +1,12 @@
 <div class="PagePromoModuleB"
-     data-module
-     data-width="full"
-     {{#if imageAspectRatio}}data-aspect-ratio="{{imageAspectRatio}}"{{/if}}
-     data-padding="none"{{include "includes/PagePromoAttributes.hbs" this}}
-     data-has-background>
+    data-module
+    data-width="full"
+    {{#if imageAspectRatio}}data-aspect-ratio="{{imageAspectRatio}}"{{/if}}
+    {{include "includes/PagePromoAttributes.hbs" this modulePaddingTop="none" modulePaddingBottom="none"}}>
 
-    {{#if media}}
-        {{#if imageAspectRatio}}
-            {{#set imageSize=imageAspectRatio}}
-                {{include "includes/PagePromoMediaWithIcon.hbs" this}}
-            {{/set}}
-        {{else}}
-            {{#set imageSize=(fallback (get "imageSize") "xl-16x9")}}
-                {{include "includes/PagePromoMediaWithIcon.hbs" this}}
-            {{/set}}
-        {{/if}}
-    {{/if}}
+    {{#set imageSize=(fallback imageAspectRatio "xl-16x9")}}
+        {{include "includes/PagePromoMediaWithIcon.hbs" this}}
+    {{/set}}
 
     <div class="PagePromoModuleB-content-wrapper">
         <div class="PagePromoModuleB-content"{{#if animateOnScroll}} data-animate="fromRight"{{/if}}>

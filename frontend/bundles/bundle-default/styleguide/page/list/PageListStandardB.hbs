@@ -1,6 +1,6 @@
 {{#if items}}
 <bsp-list-loadmore data-module class="PageListStandardB"{{include "includes/PageList-attributes.hbs" this}}>
-    {{include "includes/PageList-header.hbs" this}}
+    {{include "/global/ModuleHeader.hbs" this}}
 
     {{#with items}}
         <div class="PageList-items" data-list-loadmore-items>
@@ -9,11 +9,13 @@
                     {{#eq ../../listColumns23456 "2"}}
                         {{#eq this._template "/page/promo/PagePromo.hbs"}}
                             {{#set imageSize="large-16x9"}}
-                                {{#if ../../hideImages}}
-                                    {{include "/page/promo/PagePromo.hbs" this mobileAltLayout="true" imagePositionVertical="top" animateOnScroll=../../animateOnScroll animation="fromBottom" media=null}}
-                                {{else}}
-                                    {{include "/page/promo/PagePromo.hbs" this imagePositionVertical="top" animateOnScroll=../../animateOnScroll animation="fromBottom"}}
-                                {{/if}}
+                                {{#set sizes="(max-width: 768px) 100vw, 50vw"}}
+                                    {{#if ../../hideImages}}
+                                        {{include "/page/promo/PagePromo.hbs" this mobileAltLayout="true" imagePositionVertical="top" animateOnScroll=../../animateOnScroll animation="fromBottom" media=null}}
+                                    {{else}}
+                                        {{include "/page/promo/PagePromo.hbs" this imagePositionVertical="top" animateOnScroll=../../animateOnScroll animation="fromBottom"}}
+                                    {{/if}}
+                                {{/set}}
                             {{/set}}
                         {{else}}
                             {{render this}}
@@ -21,21 +23,25 @@
                     {{else}}
                         {{#eq ../../listColumns23456 "4"}}
                             {{#eq this._template "/page/promo/PagePromo.hbs"}}
-                                {{#if ../../hideImages}}
-                                    {{include "/page/promo/PagePromo.hbs" this mobileAltLayout="true" imagePositionVertical="top" animateOnScroll=../../animateOnScroll animation="fromBottom" media=null}}
-                                {{else}}
-                                    {{include "/page/promo/PagePromo.hbs" this mobileAltLayout="true" imagePositionVertical="top" description=null animateOnScroll=../../animateOnScroll animation="fromBottom"}}
-                                {{/if}}
+                                {{#set sizes="(max-width: 568px) 100px, 300px"}}
+                                    {{#if ../../hideImages}}
+                                        {{include "/page/promo/PagePromo.hbs" this mobileAltLayout="true" imagePositionVertical="top" animateOnScroll=../../animateOnScroll animation="fromBottom" media=null}}
+                                    {{else}}
+                                        {{include "/page/promo/PagePromo.hbs" this mobileAltLayout="true" imagePositionVertical="top" description=null animateOnScroll=../../animateOnScroll animation="fromBottom"}}
+                                    {{/if}}
+                                {{/set}}
                             {{else}}
                                 {{render this}}
                             {{/eq}}
                         {{else}}
                             {{#eq this._template "/page/promo/PagePromo.hbs"}}
-                                {{#if ../../hideImages}}
-                                    {{include "/page/promo/PagePromo.hbs" this mobileAltLayout="true" imagePositionVertical="top" animateOnScroll=../../animateOnScroll animation="fromBottom" media=null}}
-                                {{else}}
-                                    {{include "/page/promo/PagePromo.hbs" this mobileAltLayout="true" imagePositionVertical="top" animateOnScroll=../../animateOnScroll animation="fromBottom"}}
-                                {{/if}}
+                                {{#set sizes="(max-width: 568px) 100px, 400px"}}
+                                    {{#if ../../hideImages}}
+                                        {{include "/page/promo/PagePromo.hbs" this mobileAltLayout="true" imagePositionVertical="top" animateOnScroll=../../animateOnScroll animation="fromBottom" media=null}}
+                                    {{else}}
+                                        {{include "/page/promo/PagePromo.hbs" this mobileAltLayout="true" imagePositionVertical="top" animateOnScroll=../../animateOnScroll animation="fromBottom"}}
+                                    {{/if}}
+                                {{/set}}
                             {{else}}
                                 {{render this}}
                             {{/eq}}

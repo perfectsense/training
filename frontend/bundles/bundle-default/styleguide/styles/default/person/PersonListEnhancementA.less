@@ -1,0 +1,12 @@
+.PersonListEnhancementA {
+  &:extend(.PersonListEnhancement all);
+
+  @media @mq-md {
+    .PersonList {
+      &-items {
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 40px;
+      }
+    }
+  }
+}

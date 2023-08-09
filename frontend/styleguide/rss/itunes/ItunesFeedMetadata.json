@@ -1,19 +1,17 @@
 {
   "_template": "ItunesFeedMetadata.hbs",
-  "title": "Title",
-  "author": "Editor",
-  "explicit": true,
-  "ownerEmail": "brightspot@brightspot.org",
-  "ownerName": "Brightspot",
-  "categories": [
-    {
-      "_include": "/rss/itunes/ItunesFeedCategory.json"
-    }
-  ],
+  "title": "",
+  "author": "",
+  "explicit": false,
+  "ownerEmail": "",
+  "ownerName": "",
+  "categories": {
+    "_template": "/rss/itunes/ItunesFeedCategory.hbs"
+  },
   "imageUrl": "",
   "type": "episodic",
-  "newFeedUrl": "www.newfeed.com/rss.xml",
+  "newFeedUrl": "",
   "block": "No",
   "complete": "Yes",
-  "showNewFeedUrl": true
+  "showNewFeedUrl": false
 }

@@ -15,8 +15,9 @@ import com.psddev.dari.db.Recordable;
 @Recordable.FieldInternalNamePrefix("sectionCascading.")
 public class SectionCascadingData extends Modification<SectionPageElements> {
 
-    @CascadingPageElement
+    @DisplayName("Secondary Navigation")
     @ToolUi.Cluster(CascadingPageData.LAYOUT_CLUSTER_NAME)
+    @CascadingPageElement
     private CascadingNavigation sectionNavigation;
 
     public Cascading<Navigation> getCascadingSectionNavigation() {

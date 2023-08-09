@@ -1,12 +1,4 @@
 {
-  "_template": "/logo/list/LogoList.hbs",
-  "_styledTemplate": "/logo/list/LogoListA.hbs",
-
-  "title": "Logo List A",
-  "items": [
-    {
-      "_include": "/logo/promo/LogoPromo.json",
-      "_repeat": 10
-    }
-  ]
+  "_include": "/logo/list/LogoList.json",
+  "_styledTemplate": "/logo/list/LogoListA.hbs"
 }

@@ -1,24 +1,24 @@
 {
   "_template": "LiveBlogPost.hbs",
   "authors": {
-    "_include": "/link/Link.json"
+    "_template": "/author/Author.hbs"
   },
-  "postId": "postuuid",
+  "postId": "",
   "headline": {
     "_include": "/_group/RichTextElementsTiny.json",
     "_key": 0
   },
-  "postedDate": "This is a formatted string as to when the post was posted. NOT relative",
+  "postedDate": "",
   "postedDateTimestamp": 1550605545167,
-  "updateDate": "This is a formatted string as to when the post was updated. NOT relative",
+  "updateDate": "",
   "updateDateTimestamp": 1550605545167,
   "body": {
     "_include": "/_group/RichTextElementsLarge.json",
     "_key": 0
   },
-  "postUrl": "https://www.domain.com/live-updates/liveblog#post-anchor",
-  "anchor": "#",
+  "postUrl": "",
+  "anchor": "",
   "actions": {
-    "_include": "/action-bar/ActionBar.json"
+    "_template": "/action-bar/ActionBar.hbs"
   }
 }

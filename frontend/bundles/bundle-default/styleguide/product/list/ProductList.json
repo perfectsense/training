@@ -1,0 +1,26 @@
+{
+  "_template": "/product/list/ProductList.hbs",
+  "title": "Product List",
+  "description": "{{words(20)}}",
+  "ctaUrl": "#",
+  "ctaTarget": "_self",
+  "pagination": [
+    {
+      "_template": "/link/PaginationLink.hbs",
+      "body": "Previous Page",
+      "href": ""
+    },
+    {
+      "_template": "/link/PaginationLink.hbs",
+      "body": "Next Page",
+      "href": "#"
+    }
+  ],
+  "items": [
+    {
+      "_include": "/product/promo/ProductPromo.json",
+      "_repeat": 14
+    }
+  ],
+  "anchorId": "test-anchor"
+}

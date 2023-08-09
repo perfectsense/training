@@ -1,0 +1,131 @@
+.PageListStandardN {
+  display: grid;
+
+  .PageList {
+    &-items {
+      display: grid;
+      grid-gap: 20px;
+    }
+  }
+
+  .PagePromo {
+    min-height: 100%;
+    display: grid;
+    justify-content: stretch;
+    align-items: stretch;
+    text-align: center;
+
+    &-media,
+    &-content {
+      grid-column: 1;
+      grid-row: 1;
+    }
+
+    &-media {
+      margin-bottom: 0;
+
+      a,
+      img {
+        width: 100%;
+        height: 100%;
+      }
+
+      img {
+        object-fit: cover;
+      }
+    }
+
+    &-content {
+      position: relative;
+      padding: 40px 20px;
+      display: grid;
+      place-content: center;
+    }
+
+    &-description {
+      &:extend(.description-2 all);
+    }
+
+    &-title {
+      &:extend(.promo-title-4 all);
+    }
+
+    &-byline {
+      justify-content: center;
+    }
+  }
+
+  &[data-column-count='2'] {
+    .PageList {
+      &-items {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .PagePromo-title {
+      &:extend(.promo-title-3 all);
+    }
+  }
+
+  &[data-column-count='4'],
+  &[data-column-count='5'],
+  &[data-column-count='6'] {
+    .PagePromo-title {
+      &:extend(.promo-title-5 all);
+    }
+  }
+
+  @media @mq-md {
+    .PageList-items {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+
+      [data-column-count='2']& {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      [data-column-count='4']& {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      [data-column-count='5']&,
+      [data-column-count='6']& {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+      }
+    }
+  }
+
+  @media @mq-lg {
+    .PageList-items {
+      [data-column-count='4']& {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+      }
+
+      [data-column-count='5']& {
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+      }
+
+      [data-column-count='6']& {
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+      }
+    }
+
+    .TwoColumnContainer7030-column & {
+      &[data-column-count='4'] {
+        .PageList-items {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+    }
+  }
+
+  @media @mq-hk {
+    .TwoColumnContainer7030-column & {
+      &[data-column-count='4'] {
+        .PageList-items {
+          grid-template-columns: 1fr 1fr 1fr 1fr;
+        }
+      }
+    }
+  }
+}

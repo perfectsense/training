@@ -1,6 +1,5 @@
 .Tabs {
   display: block;
-  overflow: hidden;
 
   &-content {
     width: 100%;
@@ -34,8 +33,6 @@
   }
 
   &-tabsRow {
-    margin-bottom: -20px;
-    overflow: hidden;
     text-align: center;
   }
 
@@ -44,12 +41,6 @@
     max-width: 100%;
     grid-auto-flow: column;
     grid-gap: 25px;
-    padding-bottom: 20px;
-    overflow-x: auto;
-
-    &::-webkit-scrollbar {
-      display: none;
-    }
 
     > li {
       white-space: nowrap;

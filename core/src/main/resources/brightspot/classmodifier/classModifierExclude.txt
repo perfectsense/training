@@ -1,0 +1,10 @@
+brightspot.apple.news.v2.article.StandardAppleNewsArticleSubstitution
+brightspot.apple.news.v2.displaycontrol.StandardAppleNewsChannelSubstitution
+brightspot.apple.news.v2.displaycontrol.AppleNewsAutoCreationEventSubstitution
+brightspot.aws.transcribe.AudioFileTranscribableSubstitution
+brightspot.audio.AudioFileSubstitution
+brightspot.page.PageHeadingSubstitution
+brightspot.promo.page.InternalPagePromoItemSubstitution
+brightspot.image.ImageLeadSubstitution
+brightspot.video.VideoLeadSubstitution
+brightspot.sailthru.ContentLibraryPromotableSubstitution

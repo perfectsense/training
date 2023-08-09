@@ -4,12 +4,8 @@ export class ModuleAnimations {
       '[data-animate-on-scroll]'
     )
 
-    // const animatedOptions = {
-    //   threshold: [0, 0.25, 0.5, 0.75, 1]
-    // }
-
     const animatedOptions = {
-      threshold: 0.25,
+      threshold: [0, 0.25, 0.5, 0.75, 1],
     }
 
     animatedModules.forEach((item) => {

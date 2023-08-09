@@ -1,20 +1,23 @@
 {
   "_template": "/author/promo/AuthorPromo.hbs",
   "media": {
-    "_template": "/image/Image.hbs",
-    "image": {
-      "_image": true
-    }
+    "_template": "/image/Image.hbs"
   },
-  "publicationUrl": "#",
+  "publicationUrl": "",
   "publicationTitle": {
-    "_include": "/_group/RichTextElementsTiny.json"
+    "_include": "/_group/RichTextElementsTiny.json",
+    "_key": 0
   },
   "name": {
-    "_include": "/_group/RichTextElementsTiny.json"
+    "_include": "/_group/RichTextElementsTiny.json",
+    "_key": 0
   },
   "jobTitle": {
-    "_include": "/_group/RichTextElementsTiny.json"
+    "_include": "/_group/RichTextElementsTiny.json",
+    "_key": 0
   },
-  "url": "#"
+  "url": "",
+  "authorSocialLinks": {
+    "_include": "/social/SocialBar.json"
+  }
 }

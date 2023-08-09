@@ -2,8 +2,34 @@
   "styles": {
     "/page/promo/PagePromoEnhancement.hbs": {
         "inline": true,
-        "fields": [
-            "enhancementAlignment"
+        "templates": [
+          {
+            "displayName": "Promo Enhancement A",
+            "example": "/page/promo/PagePromoEnhancementA.json",
+            "height": 400,
+            "width": 768,
+            "fields": [
+              "enhancementAlignmentNoFullWidth"
+            ]
+          },
+          {
+            "displayName": "Promo Enhancement B",
+            "example": "/page/promo/PagePromoEnhancementB.json",
+            "height": 400,
+            "width": 768,
+            "fields": [
+              "enhancementAlignmentNoFullWidth"
+            ]
+          },
+          {
+            "displayName": "Promo Enhancement C",
+            "example": "/page/promo/PagePromoEnhancementC.json",
+            "height": 400,
+            "width": 768,
+            "fields": [
+              "enhancementAlignmentNoFullWidth"
+            ]
+          }
         ]
     }
   }

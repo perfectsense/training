@@ -3,18 +3,23 @@
     "/logo/list/LogoList.hbs": {
       "fields": [
         "listTitleSize",
-        "listDescriptionSize"
+        "listDescriptionSize",
+        "backgroundColor",
+        "inverseColors",
+        "itemDisplayStyle",
+        "itemBackgroundColor",
+        "itemBackgroundImage",
+        "itemImageAspectRatio",
+        "headerTextAlign",
+        "modulePaddingTop",
+        "modulePaddingBottom"
       ],
       "templates": [
         {
           "displayName": "Logo List A",
           "example": "/logo/list/LogoListA.json",
           "height": 800,
-          "width": 1024,
-          "fields": [
-            "backgroundColor",
-            "inverseColors"
-          ]
+          "width": 1024
         },
         {
           "displayName": "Logo List B",
@@ -22,8 +27,6 @@
           "height": 800,
           "width": 1024,
           "fields": [
-            "backgroundColor",
-            "inverseColors",
             "listHeaderPosition"
           ]
         }

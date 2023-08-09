@@ -17,7 +17,7 @@ public class FacebookHeadScriptsSupplier implements PageElementSupplier<Facebook
     public Iterable<FacebookSettings> get(Site site, Object mainObject) {
 
         return Optional.ofNullable(
-            SiteSettings.get(site, item -> item.as(FacebookSettingsModification.class).getFacebookSettings()))
+                SiteSettings.get(site, item -> item.as(FacebookSettingsModification.class).getFacebookSettings()))
             .map(Collections::singletonList)
             .orElse(null);
 

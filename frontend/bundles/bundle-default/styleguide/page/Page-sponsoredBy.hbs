@@ -1,6 +1,8 @@
 {{#if sponsored}}
     <div class="Page-sponsoredBy">
-        <span class="Page-sponsoredBy-text">{{format "/page/Page" "sponsorBy"}}</span>
+        {{#with sponsorDisplayText}}
+            <span class="Page-sponsoredBy-text">{{this}}</span>
+        {{/with}}
         {{#if sponsorLogo}}
             {{#set imageSize="logo-small"}}
                 <span class="Page-sponsoredBy-logo">

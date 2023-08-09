@@ -2,33 +2,34 @@
   "_wrapper": false,
   "_include": "/page/ContentPage.json",
   "_template": "CreativeWorkPage.hbs",
-  "datePublished": "December 11, 2016",
-  "datePublishedISO": "2016-02-19T16:43:22+00:00",
-  "dateModified": "Modified: December 12, 2016",
-  "dateModifiedISO": "2016-02-19T17:44:23+00:00",
+  "datePublished": "",
+  "datePublishedISO": "",
+  "dateModified": "",
+  "dateModifiedISO": "",
   "headline": {
-    "_include": "/_group/RichTextElementsTiny.json"
+    "_include": "/_group/RichTextElementsTiny.json",
+    "_key": 0
   },
   "subHeadline": {
-    "_include": "/_group/RichTextElementsTiny.json"
+    "_include": "/_group/RichTextElementsTiny.json",
+    "_key": 0
   },
-  "authors": [
-    {
-      "_include": "/author/Author.json"
-    }
-  ],
-  "source": "Source",
+  "authors": {
+    "_template": "/author/Author.hbs"
+  },
+  "source": "",
 
   "sponsored": true,
   "sponsorLogo": {
-    "_include": "/image/Image.json"
+    "_template": "/image/Image.hbs"
   },
-  "sponsorUrl": "#",
+  "sponsorUrl": "",
   "sponsorTarget": "",
   "sponsorName": {
-    "_include": "/_group/RichTextElementsTiny.json"
+    "_include": "/_group/RichTextElementsTiny.json",
+    "_key": 0
   },
-  "sponsorMeaningUrl": "#",
+  "sponsorMeaningUrl": "",
   "sponsorMeaningTarget": "",
-  "_hidden": true
+  "sponsorDisplayText": ""
 }

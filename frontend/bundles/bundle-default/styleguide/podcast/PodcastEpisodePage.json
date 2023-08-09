@@ -2,7 +2,7 @@
   "_include": "/page/Page.json",
   "_template": "/podcast/PodcastEpisodePage.hbs",
   "breadcrumbs": {
-    "_include": "/link/Link.json"
+    "_include": "/page/BreadcrumbLink.json"
   },
   "headline": "Podcast Episode Title",
   "subHeadline": "Podcast Episode Description",
@@ -10,7 +10,7 @@
     "_include": "/image/Image.json"
   },
   "podcast": {
-    "_include": "/podcast/promo/PodcastPromo.json"
+    "_include": "/podcast/promo/PodcastPromoD.json"
   },
   "primaryAudio": {
     "_include": "/audio/HTML5AudioPlayer.json"
@@ -20,7 +20,7 @@
   ],
   "aside": [
     {
-      "_include": "/page/list/PageListRightRailA.json"
+      "_include": "/podcast/list/PodcastListC.json"
     }
   ],
   "main": [
@@ -30,7 +30,7 @@
   ],
   "below": [
     {
-      "_include": "/page/list/PageListStandardB.json",
+      "_include": "/page/list/PageListStandardD.json",
       "listColumns234": "4",
       "items": [
         {

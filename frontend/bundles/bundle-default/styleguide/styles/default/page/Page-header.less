@@ -33,8 +33,10 @@
 
     &-logo {
       img {
-        height: auto;
-        width: 175px;
+        object-fit: contain;
+        object-position: center;
+        max-height: 56px;
+        max-width: 175px;
       }
     }
 
@@ -114,13 +116,20 @@
     padding: 20px 0;
   }
 
+  @media @mq-up-to-lg {
+    &-end {
+      min-width: 60px;
+    }
+  }
+
   @media @mq-md {
     &-bar {
       height: var(--headerHeight);
 
       &-logo {
         img {
-          width: 200px;
+          max-width: 220px;
+          max-height: 70px;
         }
       }
     }
@@ -137,6 +146,15 @@
   @media @mq-lg {
     &-menu-trigger {
       margin-left: 34px;
+    }
+
+    &-bar {
+      &-logo {
+        img {
+          max-width: 250px;
+          max-height: 80px;
+        }
+      }
     }
   }
 

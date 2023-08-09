@@ -3,7 +3,7 @@
         <div class="Quote"
             {{#if backgroundColor}} data-with-bg{{/if}}
             {{#if inverseColors}} data-inverse-colors{{/if}}
-             style="--color-quote-background: {{#with backgroundColor}}{{this}}{{else}}#fff{{/with}};">
+            style="--color-quote-background: {{#with backgroundColor}}{{this}}{{else}}var(--color-callout-bg){{/with}};">
 
             <div class="Quote-content">
                 <blockquote>

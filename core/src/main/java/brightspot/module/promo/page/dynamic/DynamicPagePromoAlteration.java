@@ -1,11 +1,12 @@
 package brightspot.module.promo.page.dynamic;
 
 import brightspot.author.AuthorMatch;
+import brightspot.blog.BlogMatch;
 import brightspot.itemstream.DateRangeMatch;
 import brightspot.itemstream.DynamicQuerySort;
-import brightspot.itemstream.page.DynamicPageItemStreamAllMatch;
-import brightspot.itemstream.page.DynamicPageItemStreamAnyMatch;
-import brightspot.itemstream.page.DynamicPageItemStreamNoneMatch;
+import brightspot.module.list.page.DynamicPageItemStreamAllMatch;
+import brightspot.module.list.page.DynamicPageItemStreamAnyMatch;
+import brightspot.module.list.page.DynamicPageItemStreamNoneMatch;
 import brightspot.query.QueryBuilder;
 import brightspot.query.QueryBuilderDynamicQueryModifier;
 import brightspot.section.AllSectionMatch;
@@ -20,20 +21,21 @@ public class DynamicPagePromoAlteration extends Alteration<AbstractDynamicPagePr
 
     @Recordable.InternalName(QueryBuilderDynamicQueryModifier.QUERY_BUILDER_FIELD)
     @Types({
-            AuthorMatch.class,
-            DateRangeMatch.class,
-            DynamicPageItemStreamAllMatch.class,
-            DynamicPageItemStreamAnyMatch.class,
-            DynamicPageItemStreamNoneMatch.class,
-            AllSectionMatch.class,
-            TagMatch.class
+        AuthorMatch.class,
+        BlogMatch.class,
+        DateRangeMatch.class,
+        DynamicPageItemStreamAllMatch.class,
+        DynamicPageItemStreamAnyMatch.class,
+        DynamicPageItemStreamNoneMatch.class,
+        AllSectionMatch.class,
+        TagMatch.class
     })
     private QueryBuilder queryBuilder;
 
     @Types({
-            NewestPublishDate.class,
-            OldestPublishDate.class,
-            PageViews.class
+        NewestPublishDate.class,
+        OldestPublishDate.class,
+        PageViews.class
     })
     private DynamicQuerySort sort;
 }

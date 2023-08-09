@@ -1,0 +1,5 @@
+{
+  "_template": "PaginationLink.hbs",
+  "href": "#",
+  "body": "{{words([2,5])}}"
+}

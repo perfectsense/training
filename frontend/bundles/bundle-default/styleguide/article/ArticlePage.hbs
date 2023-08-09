@@ -13,18 +13,19 @@
                 <div class="ArticlePage-lede">
                     {{#eq (get "leadStyle") "overlay"}}
                         {{#if lead}}
-                            {{#set imageSize="large-square"}}
+                            {{#set imageSize="medium-square"}}
                                 {{#set imageSizeAlt="xl-24x1"}}
-                                    <div class="Page-lead">
-                                        {{#with lead}}
-                                            {{this}}
-                                        {{/with}}
-                                        <div class="Page-lead-content">
-                                            {{include "/page/Page-breadcrumbs.hbs" this}}
-                                            {{include "/page/Page-headline.hbs" this}}
-                                            {{include "/page/Page-subHeadline.hbs" this}}
+                                    {{#set lazyLoad=false}}
+                                        <div class="Page-lead">
+                                            {{#with lead}}
+                                                {{this}}
+                                            {{/with}}
+                                            <div class="Page-lead-content">
+                                                {{include "/page/Page-breadcrumbs.hbs" this}}
+                                                {{include "/page/Page-headline.hbs" this}}
+                                            </div>
                                         </div>
-                                    </div>
+                                    {{/set}}
                                 {{/set}}
                             {{/set}}
                         {{/if}}
@@ -34,8 +35,6 @@
                             {{include "/page/Page-breadcrumbs.hbs" this}}
 
                             {{include "/page/Page-headline.hbs" this}}
-
-                            {{include "/page/Page-subHeadline.hbs" this}}
 
                             <div class="ArticlePage-actions-wrapper">
                                 {{include "/page/Page-byline.hbs" this}}
@@ -48,12 +47,16 @@
                         </div>
                     {{#eq (get "leadStyle") "full"}}
                         {{#set imageSize="xl-24x1"}}
-                            {{include "/page/Page-lead.hbs" this}}
+                            {{#set lazyLoad=false}}
+                                {{include "/page/Page-lead.hbs" this}}
+                            {{/set}}
                         {{/set}}
                     {{/eq}}
                     {{#eq (get "leadStyle") "large"}}
                         {{#set imageSize="xl-24x1"}}
-                            {{include "/page/Page-lead.hbs" this}}
+                            {{#set lazyLoad=false}}
+                                {{include "/page/Page-lead.hbs" this}}
+                            {{/set}}
                         {{/set}}
                     {{/eq}}
                 </div>
@@ -67,8 +70,6 @@
 
                                 {{include "/page/Page-headline.hbs" this}}
 
-                                {{include "/page/Page-subHeadline.hbs" this}}
-
                                 <div class="ArticlePage-actions-wrapper">
                                     {{include "/page/Page-byline.hbs" this}}
 
@@ -79,7 +80,11 @@
                             </div>
                         </div>
                         {{#set imageSize="large-16x9"}}
-                            {{include "/page/Page-lead.hbs" this}}
+                            {{#set sizes="(max-width: 800px) 100vw, 800px"}}
+                                {{#set lazyLoad=false}}
+                                    {{include "/page/Page-lead.hbs" this}}
+                                {{/set}}
+                            {{/set}}
                         {{/set}}
                     {{else}}
                         {{#if (eq (get "leadStyle") "overlay")}}
@@ -95,18 +100,25 @@
                         {{/if}}
                         {{#unless (get "leadStyle")}}
                             {{#set imageSize="large-16x9"}}
-                                {{include "/page/Page-lead.hbs" this}}
+                                {{#set lazyLoad=false}}
+                                    {{include "/page/Page-lead.hbs" this}}
+                                {{/set}}
                             {{/set}}
                         {{else}}
                             {{#eq (get "leadStyle") "standard"}}
                                 {{#set imageSize="large-16x9"}}
-                                    {{include "/page/Page-lead.hbs" this}}
+                                    {{#set lazyLoad=false}}
+                                        {{include "/page/Page-lead.hbs" this}}
+                                    {{/set}}
                                 {{/set}}
                             {{/eq}}
                         {{/unless}}
                     {{/if}}
 
                     <div class="Page-articleBody">
+
+                            {{include "/page/Page-subHeadline.hbs" this}}
+
                             {{#with intro}}
                                 <div class="Page-articleBody-intro RichTextBody">
                                 {{this}}

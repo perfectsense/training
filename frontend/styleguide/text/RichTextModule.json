@@ -1,12 +1,12 @@
 {
   "_template": "RichTextModule.hbs",
   "title": {
-    "_include": "/_group/RichTextElementsTiny.json"
+    "_include": "/_group/RichTextElementsTiny.json",
+    "_key": 0
   },
   "anchorId": "anchorTest",
   "items": {
     "_include": "/_group/RichTextElementsLarge.json",
     "_key": 0
-  },
-  "_hidden": true
+  }
 }

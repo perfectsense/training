@@ -1,5 +1,5 @@
 [
     {
-        "_include": "/faq/FaqQuestion.json"
+        "_template": "/faq/FaqQuestion.hbs"
     }
 ]

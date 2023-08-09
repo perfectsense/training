@@ -1,17 +1,10 @@
-<div class="VideoModule" data-module>
+<div class="VideoModule" data-module {{include '/global/ModuleAttributes.hbs' this}}>
     {{include "/link/AnchorLink.hbs" this}}
-    {{#or title description}}
-        <div class="VideoModule-header">
-            {{#with title}}
-                <div class="VideoModule-title">{{this}}</div>
-            {{/with}}
-            {{#with description}}
-                <div class="VideoModule-description">{{this}}</div>
-            {{/with}}
-        </div>
-    {{/or}}
+    {{include "/global/ModuleHeader.hbs" this}}
 
     {{#with player}}
         <div class="VideoModule-player">{{this}}</div>
     {{/with}}
+
+    {{include "/page/list/includes/PageList-footer.hbs" this}}
 </div>

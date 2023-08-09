@@ -1,5 +1,4 @@
 /* globals __dirname */
-/* eslint-disable no-undef */
 
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const path = require('path')

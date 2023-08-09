@@ -1,0 +1,31 @@
+{{#gt (countSelected filters) 0}}
+<bsp-search-active-filters class="SearchResultsModuleActiveFilters">
+    <div class="SearchResultsModuleActiveFilters-header">
+        <div class="SearchResultsModuleActiveFilters-title">
+            {{format '/search/includes/SearchResultsModuleActiveFilters' 'title'}}
+        </div>
+        <button class="SearchResultsModuleActiveFilters-clearFilters" type="submit">
+            {{format '/search/includes/SearchResultsModuleActiveFilters' 'clear'}}
+        </button>
+    </div>
+    <div class="SearchResultsModuleActiveFilters-items">
+        {{#each filters}}
+            {{#each items}}
+                {{#if selected}}
+                    <div class="SearchResultsModuleActiveFilters-item">
+                        {{label}}
+                        <button type="submit"
+                            {{~#with parameterName}} data-filter-name="{{this}}"{{/with~}}
+                            {{~#with parameterValue}} data-filter-value="{{this}}"{{/with~}}
+                        >
+                            <svg>
+                                <use xlink:href="#close-x"></use>
+                            </svg>
+                        </button>
+                    </div>
+                {{/if}}
+            {{/each}}
+        {{/each}}
+    </div>
+</bsp-search-active-filters>
+{{/gt}}

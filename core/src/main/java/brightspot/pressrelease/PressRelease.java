@@ -14,11 +14,13 @@ import java.util.stream.Stream;
 import brightspot.breadcrumbs.HasBreadcrumbs;
 import brightspot.cascading.CascadingPageElements;
 import brightspot.embargo.Embargoable;
+import brightspot.google.drive.docs.GoogleDocumentImport;
 import brightspot.homepage.Homepage;
 import brightspot.image.WebImageAsset;
 import brightspot.image.WebImagePlacement;
 import brightspot.l10n.LocaleProvider;
 import brightspot.link.InternalLink;
+import brightspot.microsoft.drives.conversion.document.MicrosoftDocumentImport;
 import brightspot.module.list.page.PagePromo;
 import brightspot.module.promo.page.PagePromoModulePlacementInline;
 import brightspot.opengraph.article.OpenGraphArticle;
@@ -76,56 +78,59 @@ import com.psddev.suggestions.Suggestable;
 import org.apache.commons.lang3.StringUtils;
 
 @ToolUi.FieldDisplayOrder({
-        "headline",
-        "subheadline",
-        "hasUrlSlug.urlSlug",
-        "lead",
-        "body",
-        "hasSectionWithField.section",
-        "hasTags.tags",
-        "embargoable.embargo",
-        "seo.title",
-        "seo.suppressSeoDisplayName",
-        "seo.description",
-        "seo.keywords",
-        "seo.robots",
-        "seo.focusKeyWord",
-        "seo.getFocusKeywordDensity",
-        "seo.disableSeoRecommendations",
-        "ampPage.ampDisabled"
+    "headline",
+    "subheadline",
+    "hasUrlSlug.urlSlug",
+    "lead",
+    "body",
+    "hasSectionWithField.section",
+    "hasSecondarySectionsWithField.secondarySections",
+    "hasTags.tags",
+    "embargoable.embargo",
+    "seo.title",
+    "seo.suppressSeoDisplayName",
+    "seo.description",
+    "seo.keywords",
+    "seo.robots",
+    "seo.focusKeyWord",
+    "seo.getFocusKeywordDensity",
+    "seo.disableSeoRecommendations",
+    "ampPage.ampDisabled"
 })
 @Recordable.LabelFields("headline")
 @ToolUi.IconName("business")
 @ToolUi.FieldDisplayPreview({
-        "headline",
-        "subheadline",
-        "hasSectionWithField.section",
-        "hasTags.tags",
-        "cms.content.updateDate",
-        "cms.content.updateUser" })
+    "headline",
+    "subheadline",
+    "hasSectionWithField.section",
+    "hasTags.tags",
+    "cms.content.updateDate",
+    "cms.content.updateUser" })
 public class PressRelease extends Content implements
-        CascadingPageElements,
-        EnhancedSeoWithFields,
-        Embargoable,
-        DefaultSiteMapItem,
-        FeedItem,
-        HasBreadcrumbs,
-        HasSecondarySectionsWithField,
-        HasSectionWithField,
-        HasSiteSearchBoostIndexes,
-        HasTagsWithField,
-        HasUrlSlugWithField,
-        Interchangeable,
-        NewsSiteMapItem,
-        OpenGraphArticle,
-        Page,
-        PagePromotableWithOverrides,
-        Placeable,
-        SearchExcludable,
-        Shareable,
-        SharedContent,
-        Suggestable,
-        Suggestible {
+    CascadingPageElements,
+    EnhancedSeoWithFields,
+    Embargoable,
+    DefaultSiteMapItem,
+    FeedItem,
+    GoogleDocumentImport,
+    HasBreadcrumbs,
+    HasSecondarySectionsWithField,
+    HasSectionWithField,
+    HasSiteSearchBoostIndexes,
+    HasTagsWithField,
+    HasUrlSlugWithField,
+    Interchangeable,
+    MicrosoftDocumentImport,
+    NewsSiteMapItem,
+    OpenGraphArticle,
+    Page,
+    PagePromotableWithOverrides,
+    Placeable,
+    SearchExcludable,
+    Shareable,
+    SharedContent,
+    Suggestable,
+    Suggestible {
 
     @Required
     @ToolUi.RichText(toolbar = TinyRichTextToolbar.class)
@@ -253,16 +258,16 @@ public class PressRelease extends Content implements
     @Override
     public String getOpenGraphArticleSection() {
         return Optional.ofNullable(asHasSectionData().getSectionParent())
-                .map(Section::getSectionDisplayNamePlainText)
-                .orElse(null);
+            .map(Section::getSectionDisplayNamePlainText)
+            .orElse(null);
     }
 
     @Override
     public List<String> getOpenGraphArticleTags() {
         return getTags()
-                .stream()
-                .map(Tag::getTagDisplayNamePlainText)
-                .collect(Collectors.toList());
+            .stream()
+            .map(Tag::getTagDisplayNamePlainText)
+            .collect(Collectors.toList());
     }
 
     // --- NewsSiteMapItem  support ---
@@ -275,20 +280,20 @@ public class PressRelease extends Content implements
         }
 
         Locale locale = ObjectUtils.firstNonNull(
-                LocaleProvider.getModelLocale(site, this),
-                LocaleProvider.DEFAULT_LOCALE);
+            LocaleProvider.getModelLocale(site, this),
+            LocaleProvider.DEFAULT_LOCALE);
 
         SiteMapEntry siteMapEntry = new SiteMapEntry();
         siteMapEntry.setUpdateDate(
-                ObjectUtils.firstNonNull(
-                        LastUpdatedProvider.getMostRecentUpdateDate(getState()),
-                        getState().as(Content.ObjectModification.class).getPublishDate()
-                )
+            ObjectUtils.firstNonNull(
+                LastUpdatedProvider.getMostRecentUpdateDate(getState()),
+                getState().as(Content.ObjectModification.class).getPublishDate()
+            )
         );
         siteMapEntry.setPermalink(SiteSettings.get(
-                site,
-                f -> f.as(SiteMapSettingsModification.class).getSiteMapDefaultUrl()
-                        + StringUtils.prependIfMissing(sitePermalinkPath, "/")));
+            site,
+            f -> f.as(SiteMapSettingsModification.class).getSiteMapDefaultUrl()
+                + StringUtils.prependIfMissing(sitePermalinkPath, "/")));
 
         SiteMapNews siteMapNews = new SiteMapNews();
         siteMapNews.setName(site != null ? site.getName() : "Global");
@@ -296,13 +301,13 @@ public class PressRelease extends Content implements
         siteMapNews.setLanguage(locale.getISO3Language());
         siteMapNews.setPublicationDate(this.getPublishDate());
         siteMapNews.setTitle(ObjectUtils.firstNonBlank(
-                getSeoTitle(),
-                RichTextUtils.richTextToPlainText(this.getHeadline())
+            getSeoTitle(),
+            RichTextUtils.richTextToPlainText(this.getHeadline())
         ));
         List<String> keywords = getTags()
-                .stream()
-                .map(Tag::getTagDisplayNamePlainText)
-                .collect(Collectors.toList());
+            .stream()
+            .map(Tag::getTagDisplayNamePlainText)
+            .collect(Collectors.toList());
 
         if (!ObjectUtils.isBlank(keywords)) {
             if (keywords.size() > 10) {
@@ -333,10 +338,10 @@ public class PressRelease extends Content implements
     @Override
     public String getSuggestableText() {
         return Optional.ofNullable(RichTextUtils.richTextToPlainText(getHeadline())).orElse("") + " "
-                + Optional.ofNullable(getBody())
-                .map(RichTextUtils::stripRichTextElements)
-                .map(RichTextUtils::richTextToPlainText)
-                .orElse("");
+            + Optional.ofNullable(getBody())
+            .map(RichTextUtils::stripRichTextElements)
+            .map(RichTextUtils::richTextToPlainText)
+            .orElse("");
     }
 
     // --- Suggestible support ---
@@ -344,14 +349,14 @@ public class PressRelease extends Content implements
     @Override
     public List<String> getSuggestibleFields() {
         return Stream.of(
-                "seo.title",
-                "seo.description",
-                "pagePromotable.promoTitle",
-                "pagePromotable.promoDescription",
-                "pagePromotable.promoImage",
-                "shareable.shareTitle",
-                "shareable.shareDescription",
-                "shareable.shareImage"
+            "seo.title",
+            "seo.description",
+            "pagePromotable.promoTitle",
+            "pagePromotable.promoDescription",
+            "pagePromotable.promoImage",
+            "shareable.shareTitle",
+            "shareable.shareDescription",
+            "shareable.shareImage"
         ).collect(Collectors.toList());
     }
 
@@ -375,22 +380,22 @@ public class PressRelease extends Content implements
     @Override
     public WebImageAsset getPagePromotableImageFallback() {
         return Optional.ofNullable(getLead())
-                .map(PressReleaseLead::getPressReleaseLeadImage)
-                .orElseGet(() -> ImageRichTextElement.getFirstImageFromRichText(getBody()));
+            .map(PressReleaseLead::getPressReleaseLeadImage)
+            .orElseGet(() -> ImageRichTextElement.getFirstImageFromRichText(getBody()));
     }
 
     @Override
     public String getPagePromotableCategoryFallback() {
         return Optional.ofNullable(asHasSectionData().getSectionParent())
-                .map(Section::getSectionDisplayNameRichText)
-                .orElse(null);
+            .map(Section::getSectionDisplayNameRichText)
+            .orElse(null);
     }
 
     @Override
     public String getPagePromotableCategoryUrlFallback(Site site) {
         return Optional.ofNullable(asHasSectionData().getSectionParent())
-                .map(section -> section.getLinkableUrl(site))
-                .orElse(null);
+            .map(section -> section.getLinkableUrl(site))
+            .orElse(null);
     }
 
     // --- Shareable implementation ---
@@ -415,9 +420,9 @@ public class PressRelease extends Content implements
     @Override
     public String getFullContentEncoded() {
         return Optional.ofNullable(getBody())
-                .map(RichTextUtils::stripRichTextElements)
-                .map(RichTextUtils::richTextToPlainText)
-                .orElse(null);
+            .map(RichTextUtils::stripRichTextElements)
+            .map(RichTextUtils::richTextToPlainText)
+            .orElse(null);
     }
 
     // --- Placeable support ---
@@ -427,27 +432,27 @@ public class PressRelease extends Content implements
         List<PlaceableTarget> targets = new ArrayList<>();
 
         targets.add(Query.from(Homepage.class)
-                .where("cms.site.owner = ?", as(Site.ObjectModification.class).getOwner())
-                .first());
+            .where("cms.site.owner = ?", as(Site.ObjectModification.class).getOwner())
+            .first());
         targets.addAll(this.as(HasTags.class)
-                .getTags()
-                .stream()
-                .filter(PlaceableTarget.class::isInstance)
-                .filter(tag -> !tag.isHiddenTag())
-                .map(PlaceableTarget.class::cast)
-                .collect(Collectors.toSet()));
+            .getTags()
+            .stream()
+            .filter(PlaceableTarget.class::isInstance)
+            .filter(tag -> !tag.isHiddenTag())
+            .map(PlaceableTarget.class::cast)
+            .collect(Collectors.toSet()));
         targets.addAll(this.as(HasSection.class)
-                .getSectionAncestors()
-                .stream()
-                .filter(PlaceableTarget.class::isInstance)
-                .map(PlaceableTarget.class::cast)
-                .collect(Collectors.toSet()));
+            .getSectionAncestors()
+            .stream()
+            .filter(PlaceableTarget.class::isInstance)
+            .map(PlaceableTarget.class::cast)
+            .collect(Collectors.toSet()));
         targets.addAll(this.as(HasSecondarySections.class)
-                .getSecondarySections()
-                .stream()
-                .filter(PlaceableTarget.class::isInstance)
-                .map(PlaceableTarget.class::cast)
-                .collect(Collectors.toSet()));
+            .getSecondarySections()
+            .stream()
+            .filter(PlaceableTarget.class::isInstance)
+            .map(PlaceableTarget.class::cast)
+            .collect(Collectors.toSet()));
 
         return targets;
     }
@@ -499,10 +504,10 @@ public class PressRelease extends Content implements
         // - PagePromoModulePlacementInline
         // - LinkRichTextElement
         return ImmutableList.of(
-                getState().getTypeId(), // enable dragging and dropping as itself from the shelf
-                ObjectType.getInstance(PagePromo.class).getId(),
-                ObjectType.getInstance(PagePromoModulePlacementInline.class).getId(),
-                ObjectType.getInstance(LinkRichTextElement.class).getId()
+            getState().getTypeId(), // enable dragging and dropping as itself from the shelf
+            ObjectType.getInstance(PagePromo.class).getId(),
+            ObjectType.getInstance(PagePromoModulePlacementInline.class).getId(),
+            ObjectType.getInstance(LinkRichTextElement.class).getId()
         );
     }
 
@@ -513,8 +518,8 @@ public class PressRelease extends Content implements
             return null;
         }
         return iRtes.stream()
-                .filter(Objects::nonNull)
-                .map(image -> image.as(WebImagePlacement.class).getWebImageAltText())
-                .collect(Collectors.toList());
+            .filter(Objects::nonNull)
+            .map(image -> image.as(WebImagePlacement.class).getWebImageAltText())
+            .collect(Collectors.toList());
     }
 }

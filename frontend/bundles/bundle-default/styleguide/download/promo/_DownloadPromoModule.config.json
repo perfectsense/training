@@ -7,8 +7,12 @@
           "imageWidth",
           "backgroundColor",
           "inverseColors",
+          "textAlign",
           "promoTitleSize",
-          "promoDescriptionSize"
+          "promoDescriptionSize",
+          "imageAspectRatio",
+          "modulePaddingTop",
+          "modulePaddingBottom"
         ],
         "templates": [
           {

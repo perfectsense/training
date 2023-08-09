@@ -1,5 +1,4 @@
 {
   "_template": "HiddenDocumentReferrerInput.hbs",
-  "inputName": "inputName",
-  "_hidden": true
+  "inputName": ""
 }

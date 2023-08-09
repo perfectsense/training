@@ -1,0 +1,7 @@
+{
+  "fields": {
+    "itemAccentColor": {
+      "type": "color"
+    }
+  }
+}

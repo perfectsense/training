@@ -77,10 +77,12 @@
       "_include": "/page/promo/PagePromoModule.json"
     }
   ],
-
   "disclaimer": "{{html('&copy; 2020. Site powered by the <a href=\"http://www.brightspot.com/\">Brightspot</a> publishing platform.')}}",
-
   "ampIntegrations": null,
-
-  "ampAnalytics": null
+  "ampAnalytics": null,
+  "languageVariantLinks": [
+    {
+      "_include": "/page/PageHrefLangLink.json"
+    }
+  ]
 }

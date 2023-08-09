@@ -1,11 +1,10 @@
 {
   "_template": "Image.hbs",
-  "alt": "Alt Text",
+  "alt": "",
   "image": {
     "_image": true
   },
   "narrowImage": {
     "_image": true
-  },
-  "_hidden": true
+  }
 }

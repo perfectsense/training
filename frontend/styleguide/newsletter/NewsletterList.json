@@ -2,7 +2,8 @@
   "_template": "NewsletterList.hbs",
   "title": "NewsletterList Title",
   "description": {
-    "_include": "/_group/RichTextElementsSmall.json"
+    "_include": "/_group/RichTextElementsSmall.json",
+    "_key": 0
   },
   "items": {
     "_template": "/newsletter/NewsletterPromo.hbs"
@@ -13,8 +14,7 @@
   "newsletterDataContent": "",
   "isNotUTMCapable": "false",
   "ctaIsNotUTMCapable": "false",
-  "ctaUrl": "#",
-  "ctaTarget": "_self",
-  "ctaTitle": "Read More",
-  "_hidden": true
+  "ctaUrl": "",
+  "ctaTarget": "",
+  "ctaTitle": ""
 }

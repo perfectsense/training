@@ -1,15 +1,15 @@
 [
   {
-    "_include": "OpenGraphArticleMeta.json"
+    "_template": "OpenGraphArticleMeta.hbs"
   },
   {
-    "_include": "OpenGraphProfileMeta.json"
+    "_template": "OpenGraphProfileMeta.hbs"
   },
   {
-    "_include": "OpenGraphVideoMeta.json"
+    "_template": "OpenGraphVideoMeta.hbs"
   },
   {
-    "_include": "OpenGraphAudioMeta.json"
+    "_template": "OpenGraphAudioMeta.hbs"
   },
   {
     "_template": "OpenGraphWebsiteMeta.hbs"

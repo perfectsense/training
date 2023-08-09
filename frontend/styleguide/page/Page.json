@@ -6,23 +6,21 @@
     "_include": "/_group/ExtraStyles.json",
     "_key": 0
   },
-  "extraLinks": [
-    {
-      "_include": "/page/LinkElement.json"
-    }
-  ],
-  "title": "Brightspot Express",
-  "description": "Brightspot Express is...",
-  "canonicalLink": "https://www.brightspot.com/",
+  "extraLinks": {
+    "_template": "/page/LinkElement.hbs"
+  },
+  "title": "",
+  "description": "",
+  "canonicalLink": "",
   "meta": {
     "_include": "/_group/Metas.json",
     "_key": 0
   },
-  "feedLink": "Feed Link",
+  "feedLink": "",
   "jsonLinkedData": "",
-  "manifestLink": "/manifest.json",
+  "manifestLink": "",
   "favicons": {
-    "_include": "Favicon.json"
+    "_template": "Favicon.hbs"
   },
   "extraScripts": {
     "_include": "/_group/ExtraScripts.json",
@@ -37,34 +35,43 @@
     "_key": 0
   },
   "hat": {
-    "_include": "/page/PageHeaderTextHat.json"
+    "_template": "/page/PageHeaderTextHat.hbs"
   },
   "logo": {
-    "_include": "/page/PageLogo.json"
+    "_template": "/page/PageLogo.hbs"
   },
   "footerLogo": {
-    "_include": "/page/PageLogo.json"
+    "_template": "/page/PageLogo.hbs"
+  },
+  "tagManagerHead": {
+    "_include": "/_group/TagManagerHead.json",
+    "_key": 0
+  },
+  "tagManagerBody": {
+    "_include": "/_group/TagManagerBody.json",
+    "_key": 0
   },
   "banner": {
     "_include": "/_group/Banners.json",
     "_key": 0
   },
   "navigation": {
-    "_include": "/navigation/Navigation.json"
+    "_template": "/navigation/Navigation.hbs"
   },
   "social": {
-    "_include": "/social/SocialBar.json"
+    "_template": "/social/SocialBar.hbs"
   },
   "sectionNavigation": {
-    "_include": "/navigation/Navigation.json"
+    "_template": "/navigation/Navigation.hbs"
   },
-  "searchAction": "#",
+  "searchAction": "",
   "above": {
     "_include": "/_group/Modules.json",
     "_key": 0
   },
   "pageHeading": {
-    "_include": "/_group/RichTextElementsTiny.json"
+    "_include": "/_group/RichTextElementsTiny.json",
+    "_key": 0
   },
   "pageLead": {
     "_include": "/_group/Leads.json",
@@ -72,7 +79,7 @@
   },
   "pageSubHeading": {
     "_include": "/_group/RichTextElementsSmall.json",
-    "_key": 1
+    "_key": 0
   },
   "main": {
     "_include": "/_group/Modules.json",
@@ -87,7 +94,7 @@
     "_key": 0
   },
   "footerNavigation": {
-    "_include": "/navigation/Navigation.json"
+    "_template": "/navigation/Navigation.hbs"
   },
   "footerContent": {
     "_include": "/_group/Modules.json",
@@ -95,9 +102,9 @@
   },
   "disclaimer": {
     "_include": "/_group/RichTextElementsSmall.json",
-    "_key": 1
+    "_key": 0
   },
-  "contentId": "a123",
+  "contentId": "",
   "ampIntegrations": {
     "_include": "/_group/AmpIntegrations.json",
     "_key": 0
@@ -107,14 +114,16 @@
     "_key": 0
   },
   "actions": {
-    "_include": "/action-bar/ActionBar.json"
+    "_template": "/action-bar/ActionBar.hbs"
   },
   "commenting": {
     "_include": "/_group/Comments.json",
     "_key": 0
   },
   "languages": {
-    "_include": "/languages/LanguagesMenu.json"
+    "_template": "/languages/LanguagesMenu.hbs"
   },
-  "_hidden": true
+  "languageVariantLinks": {
+    "_template": "/page/Page-hrefLangLink.hbs"
+  }
 }

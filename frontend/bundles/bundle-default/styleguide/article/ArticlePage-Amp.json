@@ -47,12 +47,12 @@
 
   "breadcrumbs": [
     {
-        "_include": "/link/Link.json",
-        "_template": "/link/Link.amp.hbs"
+        "_include": "/page/BreadcrumbLink.json",
+        "_template": "/page/BreadcrumbLink.amp.hbs"
     },
     {
-      "_include": "/link/Link.json",
-      "_template": "/link/Link.amp.hbs"
+      "_include": "/page/BreadcrumbLink.json",
+      "_template": "/page/BreadcrumbLink.amp.hbs"
     }
   ],
 
@@ -61,51 +61,48 @@
     "_template": "/figure/Figure.amp.hbs"
   },
 
-  "articleBody": {
-    "_template": "/article/RichTextArticleBody.amp.hbs",
-    "body": [
-      "{{paragraphs([2,5])}}",
-      {
-        "_template": "/image/ImageEnhancement.amp.hbs",
+  "articleBody": [
+    "{{paragraphs([2,5])}}",
+    {
+      "_template": "/image/ImageEnhancement.amp.hbs",
 
-        "item": {
-          "_include": "/figure/Figure.json",
-          "_template": "/figure/Figure.amp.hbs"
-        },
-        "inline": false
+      "item": {
+        "_include": "/figure/Figure.json",
+        "_template": "/figure/Figure.amp.hbs"
       },
-      "{{paragraphs([2,5])}}",
-      {
-        "_template": "/blockquote/BlockQuote.amp.hbs",
+      "inline": false
+    },
+    "{{paragraphs([2,5])}}",
+    {
+      "_template": "/blockquote/BlockQuote.amp.hbs",
 
-        "item": {
-          "_include": "/quote/Quote.json",
-          "_template": "/quote/Quote.amp.hbs"
-        },
-        "inline": false
+      "item": {
+        "_include": "/quote/Quote.json",
+        "_template": "/quote/Quote.amp.hbs"
       },
-      "{{paragraphs([2,5])}}"
-    ]
-  },
+      "inline": false
+    },
+    "{{paragraphs([2,5])}}"
+  ],
 
   "updatesCorrections": "{{words([5,10])}}",
 
   "tags": [
     {
-      "_include": "/link/Link.json",
-      "_template": "/link/Link.amp.hbs"
+      "_include": "/tag/TagLink.json",
+      "_template": "/tag/TagLink.amp.hbs"
     },
     {
-      "_include": "/link/Link.json",
-      "_template": "/link/Link.amp.hbs"
+      "_include": "/tag/TagLink.json",
+      "_template": "/tag/TagLink.amp.hbs"
     },
     {
-      "_include": "/link/Link.json",
-      "_template": "/link/Link.amp.hbs"
+      "_include": "/tag/TagLink.json",
+      "_template": "/tag/TagLink.amp.hbs"
     },
     {
-      "_include": "/link/Link.json",
-      "_template": "/link/Link.amp.hbs"
+      "_include": "/tag/TagLink.json",
+      "_template": "/tag/TagLink.amp.hbs"
     }
   ]
 }

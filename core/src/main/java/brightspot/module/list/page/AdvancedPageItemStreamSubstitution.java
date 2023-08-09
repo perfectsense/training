@@ -9,13 +9,14 @@ import com.psddev.cms.ui.content.place.Placeable;
 import com.psddev.dari.db.Recordable;
 import com.psddev.dari.util.Substitution;
 
-public class AdvancedPageItemStreamSubstitution extends AdvancedPageItemStream implements Substitution, GroupedPlaceItem {
+public class AdvancedPageItemStreamSubstitution extends AdvancedPageItemStream
+    implements Substitution, GroupedPlaceItem {
 
     @Override
     public List<Place> getGroupedPlaceItemPlaces(Placeable source, Recordable target) {
         return getItems().stream()
-                .filter(GroupedPlaceItem.class::isInstance)
-                .flatMap(i -> ((GroupedPlaceItem) i).getGroupedPlaceItemPlaces(source, target).stream())
-                .collect(Collectors.toList());
+            .filter(GroupedPlaceItem.class::isInstance)
+            .flatMap(i -> ((GroupedPlaceItem) i).getGroupedPlaceItemPlaces(source, target).stream())
+            .collect(Collectors.toList());
     }
 }

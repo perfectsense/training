@@ -35,7 +35,11 @@ public class ShutterstockImageToWebImageConverter extends ExternalItemConverter<
             if (WebRequest.isAvailable()) {
                 Site site = WebRequest.getCurrent().as(ToolRequest.class).getCurrentSite();
                 //  Auto-tag based on keywords
-                image.as(HasTagsWithFieldData.class).setTags(Query.from(Tag.class).where("tag.getTagDisplayNamePlainText = ?", keywords).and(site != null ? site.itemsPredicate() : null).selectAll());
+                image.as(HasTagsWithFieldData.class)
+                    .setTags(Query.from(Tag.class)
+                        .where("tag.getTagDisplayNamePlainText = ?", keywords)
+                        .and(site != null ? site.itemsPredicate() : null)
+                        .selectAll());
             }
         }
 

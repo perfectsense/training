@@ -1,0 +1,15 @@
+{
+  "_template": "/logo/list/LogoList.hbs",
+  "title": "{{words([4,8])}}",
+  "description": "{{words([10,20])}}",
+  "anchorId": "list-anchor",
+  "items": [
+    {
+      "_include": "/logo/promo/LogoPromo.json",
+      "_repeat": 10
+    }
+  ],
+  "ctaButtonText": "{{words([1,2])}}",
+  "ctaUrl": "#",
+  "ctaTarget": "_self"
+}

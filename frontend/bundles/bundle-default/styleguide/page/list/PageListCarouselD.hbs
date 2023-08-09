@@ -1,12 +1,12 @@
 {{#if items}}
 <bsp-listcarousel class="PageListCarouselD" data-module{{include "includes/PageList-attributes.hbs" this}}>
-    {{include "includes/PageList-header.hbs" this}}
+    {{include "/global/ModuleHeader.hbs" this}}
 
     {{#with items}}
         <div class="PageList-items">
             {{#each this}}
                 <div class="PageList-items-item">
-                    {{#set lazyLoad=false}}
+                    {{#set lazyLoad="flickity"}}
                         {{#set imageSize="medium-3x4"}}
                             {{#eq this._template "/page/promo/PagePromo.hbs"}}
                                 {{include "/page/promo/PagePromo.hbs" this authorName=null publishDate=null category=null description=null}}

@@ -3,13 +3,16 @@ package brightspot.podcast;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Objects;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 import brightspot.breadcrumbs.HasBreadcrumbs;
 import brightspot.cascading.CascadingPageElements;
 import brightspot.embargo.Embargoable;
 import brightspot.image.WebImage;
 import brightspot.image.WebImageAsset;
+import brightspot.image.WebImagePlacement;
 import brightspot.landing.LandingCascadingData;
 import brightspot.landing.LandingPageElements;
 import brightspot.module.ModulePlacement;
@@ -26,12 +29,16 @@ import brightspot.rss.feed.apple.AppleRssFeedWithFields;
 import brightspot.rss.feed.apple.RssWebImage;
 import brightspot.rte.LargeRichTextToolbar;
 import brightspot.rte.TinyRichTextToolbar;
+import brightspot.rte.image.ImageRichTextElement;
 import brightspot.search.boost.HasSiteSearchBoostIndexes;
 import brightspot.search.modifier.exclusion.SearchExcludable;
 import brightspot.search.sortalphabetical.AlphabeticallySortable;
 import brightspot.section.HasSecondarySectionsWithField;
 import brightspot.section.HasSectionWithField;
 import brightspot.section.Section;
+import brightspot.seo.EnhancedSeoBodyDynamicNote;
+import brightspot.seo.EnhancedSeoHeadlineDynamicNote;
+import brightspot.seo.EnhancedSeoWithFields;
 import brightspot.seo.SeoWithFields;
 import brightspot.share.Shareable;
 import brightspot.sharedcontent.SharedContent;
@@ -42,9 +49,11 @@ import brightspot.util.RichTextUtils;
 import com.psddev.cms.db.Content;
 import com.psddev.cms.db.Site;
 import com.psddev.cms.db.ToolUi;
+import com.psddev.cms.ui.form.DynamicNoteClass;
 import com.psddev.cms.ui.form.Note;
 import com.psddev.dari.db.Query;
 import com.psddev.dari.db.Recordable;
+import com.psddev.dari.util.ObjectUtils;
 import com.psddev.dari.util.Utils;
 import com.psddev.feed.FeedItem;
 import com.psddev.suggestions.Suggestable;
@@ -52,49 +61,52 @@ import com.psddev.suggestions.Suggestable;
 @ToolUi.IconName("settings_voice")
 @Recordable.DisplayName("Podcast")
 @ToolUi.FieldDisplayOrder({
-        "title",
-        "description",
-        "hasUrlSlug.urlSlug",
-        "coverArt",
-        "body",
-        "gatewayEpisode",
-        "hasSectionWithField.section",
-        "hasTags.tags",
-        "embargoable.embargo",
-        "seo.title",
-        "seo.suppressSeoDisplayName",
-        "seo.description",
-        "seo.keywords",
-        "seo.robots",
-        "ampPage.ampDisabled"
+    "title",
+    "description",
+    "hasUrlSlug.urlSlug",
+    "coverArt",
+    "body",
+    "gatewayEpisode",
+    "hasSectionWithField.section",
+    "hasSecondarySectionsWithField.secondarySections",
+    "hasTags.tags",
+    "embargoable.embargo",
+    "seo.title",
+    "seo.suppressSeoDisplayName",
+    "seo.description",
+    "seo.keywords",
+    "seo.robots",
+    "ampPage.ampDisabled"
 })
 public class PodcastPage extends Content implements
-        AlphabeticallySortable,
-        AppleRssFeedWithFields,
-        CascadingPageElements,
-        Embargoable,
-        DefaultSiteMapItem,
-        FeedItem,
-        HasBreadcrumbs,
-        HasPodcastProvidersMetadataWithField,
-        HasSecondarySectionsWithField,
-        HasSectionWithField,
-        HasSiteSearchBoostIndexes,
-        HasTagsWithField,
-        HasUrlSlugWithField,
-        LandingPageElements,
-        Page,
-        PagePromotableWithOverrides,
-        Podcast,
-        PodcastPromotable,
-        RssFeedWithFields,
-        Section,
-        SearchExcludable,
-        SeoWithFields,
-        Shareable,
-        SharedContent,
-        Suggestable {
+    AlphabeticallySortable,
+    AppleRssFeedWithFields,
+    CascadingPageElements,
+    Embargoable,
+    EnhancedSeoWithFields,
+    DefaultSiteMapItem,
+    FeedItem,
+    HasBreadcrumbs,
+    HasPodcastProvidersMetadataWithField,
+    HasSecondarySectionsWithField,
+    HasSectionWithField,
+    HasSiteSearchBoostIndexes,
+    HasTagsWithField,
+    HasUrlSlugWithField,
+    LandingPageElements,
+    Page,
+    PagePromotableWithOverrides,
+    Podcast,
+    PodcastPromotable,
+    RssFeedWithFields,
+    Section,
+    SearchExcludable,
+    SeoWithFields,
+    Shareable,
+    SharedContent,
+    Suggestable {
 
+    @DynamicNoteClass(EnhancedSeoHeadlineDynamicNote.class)
     @ToolUi.RichText(toolbar = TinyRichTextToolbar.class)
     private String title;
 
@@ -105,6 +117,7 @@ public class PodcastPage extends Content implements
     @Note("Cover art image must have minimum dimensions of 1400x1400 pixels and aspect ratio of 1:1.")
     private WebImage coverArt;
 
+    @DynamicNoteClass(EnhancedSeoBodyDynamicNote.class)
     @ToolUi.RichText(toolbar = LargeRichTextToolbar.class, lines = 10, inline = false)
     private String body;
 
@@ -150,6 +163,20 @@ public class PodcastPage extends Content implements
 
     public void setGatewayEpisode(PodcastEpisode gatewayEpisode) {
         this.gatewayEpisode = gatewayEpisode;
+    }
+
+    // --- EnhancedSeoWithFields support ---
+
+    @Override
+    public List<String> getEnhancedSeoBodyAllImageAltTexts(String body) {
+        List<ImageRichTextElement> iRtes = ImageRichTextElement.getImageEnhancementsFromRichText(body);
+        if (ObjectUtils.isBlank(iRtes)) {
+            return null;
+        }
+        return iRtes.stream()
+            .filter(Objects::nonNull)
+            .map(rte -> rte.as(WebImagePlacement.class).getWebImageAltText())
+            .collect(Collectors.toList());
     }
 
     // --- Has Breadcrumbs Support ---
@@ -216,14 +243,14 @@ public class PodcastPage extends Content implements
 
     @Override
     public String getPagePromotableCategoryFallback() {
-        return Optional.ofNullable(asHasSectionData().getSectionParent())
+        return Optional.ofNullable(getSectionParent())
             .map(Section::getSectionDisplayNameRichText)
             .orElse(null);
     }
 
     @Override
     public String getPagePromotableCategoryUrlFallback(Site site) {
-        return Optional.ofNullable(asHasSectionData().getSectionParent())
+        return Optional.ofNullable(getSectionParent())
             .map(section -> section.getLinkableUrl(site))
             .orElse(null);
     }
@@ -279,10 +306,10 @@ public class PodcastPage extends Content implements
     @Override
     public String getSuggestableText() {
         return Optional.ofNullable(RichTextUtils.richTextToPlainText(getTitle())).orElse("") + " "
-                + Optional.ofNullable(getDescription())
-                .map(RichTextUtils::stripRichTextElements)
-                .map(RichTextUtils::richTextToPlainText)
-                .orElse("");
+            + Optional.ofNullable(getDescription())
+            .map(RichTextUtils::stripRichTextElements)
+            .map(RichTextUtils::richTextToPlainText)
+            .orElse("");
     }
 
     @Override
@@ -297,8 +324,8 @@ public class PodcastPage extends Content implements
 
     public List<ModulePlacement> getContents() {
         return Optional.ofNullable(as(LandingCascadingData.class)
-                        .getContent(as(Site.ObjectModification.class).getOwner()))
-                .orElseGet(ArrayList::new);
+                .getContent(as(Site.ObjectModification.class).getOwner()))
+            .orElseGet(ArrayList::new);
     }
 
     @Override
@@ -314,6 +341,16 @@ public class PodcastPage extends Content implements
     @Override
     public WebImageAsset getPodcastPromotableImage() {
         return getPagePromotableImage();
+    }
+
+    @Override
+    public String getPodcastPromotableCategory() {
+        return getPagePromotableCategory();
+    }
+
+    @Override
+    public String getPodcastPromotableCategoryUrl(Site site) {
+        return getPagePromotableCategoryUrl(site);
     }
 
     // - AlphabeticallySortable

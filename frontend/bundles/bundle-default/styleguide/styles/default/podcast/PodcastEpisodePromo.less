@@ -1,8 +1,44 @@
 .PodcastEpisodePromo {
   .PagePromo {
-    &-title {
-      &:extend(.promo-title-5);
-      padding-bottom: 10px;
+    &-byline {
+      margin-bottom: 5px;
     }
+
+    &-title {
+      &:extend(.title-6);
+    }
+  }
+
+  &-player {
+    margin-top: 10px;
+    display: flex;
+  }
+
+  [data-item-has-background-color] &,
+  [data-item-has-background-image] &,
+  [data-item-display-style="card"] & {
+    padding: 20px;
+  }
+
+  [data-item-display-style="card"] & {
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: var(--color-site-bg);
+    box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.1);
+  }
+
+  [data-item-has-background-color] & {
+    background-color: var(--color-item-background);
+  }
+
+  [data-item-has-background-image] & {
+    background-image: var(--item-background-image);
+    background-size: cover;
+  }
+
+  [data-item-has-text-color] & {
+    --color-primary-text: var(--color-item-text);
+    --color-link-text: var(--color-item-text);
+    --color-link-text-hover: var(--color-item-text);
   }
 }

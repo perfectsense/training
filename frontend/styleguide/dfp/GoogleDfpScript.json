@@ -1,5 +1,4 @@
 {
   "_template": "GoogleDfpScript.hbs",
-  "targets": "['styleguide', 'true', 'environment', 'test']",
-  "_hidden": true
+  "targets": "['banner', '300x250', 'sticky_footer']"
 }

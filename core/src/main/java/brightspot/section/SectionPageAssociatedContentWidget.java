@@ -20,12 +20,12 @@ public class SectionPageAssociatedContentWidget extends AssociatedContentWidget 
     @Override
     protected Set<ObjectType> getAssociatedTypes() {
         return Optional.of(HasSection.class)
-                .map(ClassFinder::findConcreteClasses)
-                .map(targetClasses -> targetClasses
-                        .stream()
-                        .map(ObjectType::getInstance)
-                        .collect(Collectors.toSet()))
-                .orElseGet(HashSet::new);
+            .map(ClassFinder::findConcreteClasses)
+            .map(targetClasses -> targetClasses
+                .stream()
+                .map(ObjectType::getInstance)
+                .collect(Collectors.toSet()))
+            .orElseGet(HashSet::new);
     }
 
     @Override

@@ -16,7 +16,9 @@ import brightspot.rte.SmallRichTextToolbar;
 import brightspot.util.RichTextUtils;
 import com.psddev.cms.db.Content;
 import com.psddev.cms.db.ToolUi;
+import com.psddev.dari.db.Recordable;
 
+@Recordable.DisplayName("Footer")
 public class PageFooter extends Content implements Footer {
 
     private static final DateTimeFormatter FMT_YEAR = DateTimeFormatter.ofPattern("yyyy");
@@ -29,9 +31,9 @@ public class PageFooter extends Content implements Footer {
     private Logo logo;
     private Navigation navigation;
 
-    @DisplayName("Contents")
+    @DisplayName("Content")
     @Embedded
-    @Types({ PagePromoModulePlacementInline.class})
+    @Types({ PagePromoModulePlacementInline.class })
     private List<ModulePlacement> content;
 
     @ToolUi.RichText(toolbar = SmallRichTextToolbar.class)

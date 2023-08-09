@@ -1,5 +1,4 @@
-/* eslint-disable no-undef */
-
+/* eslint-disable */
 const styleguide = require('@brightspot/styleguide')
 const webpack = require('webpack')
 const merge = require('webpack-merge')
@@ -9,6 +8,7 @@ module.exports = merge(
   styleguide.webpack('./styleguide', webpack, {
     mode: 'development',
     devtool: 'inline-source-map',
+    target: 'web',
 
     module: {
       rules: [

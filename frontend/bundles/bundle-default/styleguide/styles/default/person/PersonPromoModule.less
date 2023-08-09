@@ -1,0 +1,85 @@
+.PersonPromoModule {
+  display: grid;
+  grid-template-columns: 90px auto;
+  gap: 10px 20px;
+  align-items: center;
+
+  &-contentTop,
+  &-contentBottom {
+    width: 100%;
+  }
+
+  .PagePromo {
+    &-media {
+      margin-bottom: 0;
+      margin-right: 0;
+      align-self: flex-start;
+
+      img {
+        clip-path: circle();
+      }
+    }
+
+    &-title {
+      &:extend(.promo-title-5 all);
+      margin-bottom: 10px;
+    }
+
+    &-label {
+      &:extend(.description-3 all);
+      margin-top: -5px;
+
+      .Link {
+        color: var(--color-primary-text);
+      }
+    }
+
+    &-description {
+      &:extend(.description-2 all);
+      margin-top: 10px;
+    }
+  }
+
+  &[data-image-aspect-ratio]:not([data-image-aspect-ratio$="circle"]) {
+    .PagePromo {
+      &-media {
+        img {
+          clip-path: none;
+        }
+      }
+    }
+  }
+
+  .Link {
+    &-icon {
+      display: none;
+    }
+  }
+
+  @media @mq-up-to-md {
+    &-content {
+      display: contents;
+    }
+
+    &-contentBottom {
+      grid-column: span 2;
+    }
+  }
+
+  @media @mq-md {
+    grid-template-columns: 120px auto;
+    row-gap: 10px;
+
+    .PagePromo {
+      &-media {
+        img {
+          width: 120px;
+        }
+      }
+
+      &-description {
+        margin-top: 15px;
+      }
+    }
+  }
+}

@@ -8,8 +8,8 @@ import com.psddev.dari.web.WebRequest;
 import com.psddev.styleguide.liveblog.LiveBlogPageView;
 
 public class LiveBlogPostPreviewViewModel extends ViewModel<LiveBlogPost> implements
-        DelegateView<LiveBlogPageView>,
-        PreviewEntryView {
+    DelegateView<LiveBlogPageView>,
+    PreviewEntryView {
 
     @Override
     public LiveBlogPageView getDelegate() {

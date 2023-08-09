@@ -1,6 +1,5 @@
 {
   "_template": "TumblrShareButton.hbs",
   "url": "https://brightspot.com",
-  "body": "Tumblr",
-  "_hidden": true
+  "body": ""
 }

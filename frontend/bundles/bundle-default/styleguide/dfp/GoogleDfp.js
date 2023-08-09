@@ -28,21 +28,25 @@ export class GoogleDfp {
       lazyAds.push(ad)
     })
 
-    if (lazyAds.length > 0) {
-      if (!('IntersectionObserver' in window)) {
-        this.oldskool(lazyAds)
-      } else {
-        this.modernBrowsers(lazyAds)
-      }
+    if (lazyAds.length < 1) return
+
+    if (!('IntersectionObserver' in window)) {
+      this.oldskool(lazyAds)
+    } else {
+      this.modernBrowsers(lazyAds)
     }
+
+    this.createResizeListener()
   }
 
-  sendAdserverRequest() {
+  sendAdserverRequest(adSlots) {
     // make ad request to DFP
     window.googletag.cmd.push(() => {
-      window.googletag.pubads().refresh(window.dfpAdSlots)
-
-      this.createResizeListener()
+      if (adSlots && adSlots.length > 0) {
+        window.googletag.pubads().refresh(adSlots)
+      } else {
+        window.googletag.pubads().refresh(window.dfpAdSlots)
+      }
     })
   }
 

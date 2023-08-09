@@ -1,0 +1,15 @@
+{
+  "fields": {
+    "itemDisplayStyle": {
+      "type": "text",
+      "cms.ui.dropDown": true,
+      "cms.ui.placeholder": "Default",
+      "values": [
+        {
+          "label": "Card",
+          "value": "card"
+        }
+      ]
+    }
+  }
+}

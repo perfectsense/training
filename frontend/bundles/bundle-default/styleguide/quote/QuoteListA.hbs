@@ -1,11 +1,13 @@
 <bsp-listcarousel class="QuoteListA" data-module{{include "/page/list/includes/PageList-attributes.hbs" this}}>
-    {{include "/page/list/includes/PageList-header.hbs" this}}
+    {{include "/global/ModuleHeader.hbs" this}}
 
     {{#with items}}
         <ul class="QuoteListA-items">
             {{#each this}}
                 <li class="QuoteListA-items-item">
-                    {{include "/quote/Quote.hbs" this}}
+                    {{#set imageSize=../../itemImageAspectRatio}}
+                        {{include "/quote/Quote.hbs" this}}
+                    {{/set}}
                 </li>
             {{/each}}
         </ul>

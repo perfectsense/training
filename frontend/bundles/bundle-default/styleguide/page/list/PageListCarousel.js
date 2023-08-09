@@ -20,7 +20,10 @@ export class PageListCarousel extends window.HTMLElement {
         watchCSS: true, // watch for this, we enable carousels with CSS by default
       }
 
-      if (this.classList.contains('PageListCarouselA')) {
+      if (
+        this.classList.contains('PageListCarouselA') ||
+        this.classList.contains('ProductListCarousel')
+      ) {
         this.carouselOptions = {
           adaptiveHeight: true,
           cellAlign: 'left',

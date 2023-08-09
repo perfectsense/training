@@ -1,13 +1,11 @@
 {
   "_template": "/logo/promo/LogoPromo.hbs",
   "media": {
-    "_template": "/image/Image.hbs",
-    "image": {
-      "_image": true
-    }
+    "_template": "/image/Image.hbs"
   },
   "title": {
-    "_include": "/_group/RichTextElementsTiny.json"
+    "_include": "/_group/RichTextElementsTiny.json",
+    "_key": 0
   },
   "url": "",
   "target": ""

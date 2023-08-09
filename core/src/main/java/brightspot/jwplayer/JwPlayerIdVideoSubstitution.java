@@ -14,9 +14,9 @@ import com.psddev.dari.db.Recordable;
 import com.psddev.dari.util.Substitution;
 
 public class JwPlayerIdVideoSubstitution extends JwPlayerIdVideo implements
-        HasTagsWithField,
-        Interchangeable,
-        Substitution {
+    HasTagsWithField,
+    Interchangeable,
+    Substitution {
 
     // --- Interchangeable support ---
 
@@ -59,10 +59,10 @@ public class JwPlayerIdVideoSubstitution extends JwPlayerIdVideo implements
         // - VideoModule
         // - VideoPlayListItem
         return ImmutableList.of(
-                getState().getTypeId(), // enable dragging and dropping as itself from the shelf
-                ObjectType.getInstance(VideoRichTextElement.class).getId(),
-                ObjectType.getInstance(VideoModule.class).getId(),
-                ObjectType.getInstance(VideoPlaylistItem.class).getId()
+            getState().getTypeId(), // enable dragging and dropping as itself from the shelf
+            ObjectType.getInstance(VideoRichTextElement.class).getId(),
+            ObjectType.getInstance(VideoModule.class).getId(),
+            ObjectType.getInstance(VideoPlaylistItem.class).getId()
         );
     }
 }

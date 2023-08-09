@@ -1,0 +1,30 @@
+.PersonListEnhancementB {
+  &:extend(.PersonListEnhancement all);
+
+  @media @mq-md {
+    &:not([data-align-left]):not([data-align-right]) {
+      text-align: center;
+
+      .PersonList {
+        &-items {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+
+      .PersonPromo {
+        grid-template-columns: 1fr;
+        justify-content: center;
+        gap: 20px;
+      }
+
+      .PagePromo {
+        &-media {
+          img {
+            margin-left: auto;
+            margin-right: auto;
+          }
+        }
+      }
+    }
+  }
+}

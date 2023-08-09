@@ -1,0 +1,11 @@
+{
+  "fields": {
+    "searchFilterDefaultVisible": {
+      "type": "number",
+      "cms.ui.note": "Set the maximum number of filter choices to display before showing a \"See All\" control.",
+      "cms.ui.placeholder": 5,
+      "cms.ui.min": 1,
+      "cms.ui.step": 1
+    }
+  }
+}

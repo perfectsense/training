@@ -1,0 +1,15 @@
+<bsp-banner class="Banner">
+    <div class="Banner-content">
+        {{#with items}}
+            <div class="RichTextBreakingNewsBanner-items">
+                {{this}}
+            </div>
+        {{/with}}
+    </div>
+    <button class="Banner-close" data-toggle-trigger="banner">
+        <span class="sr-only">{{format "/banner/Banner" "closeText"}}</span>
+        <svg class="close-x">
+            <use xlink:href="#close-x"></use>
+        </svg>
+    </button>
+</bsp-banner>

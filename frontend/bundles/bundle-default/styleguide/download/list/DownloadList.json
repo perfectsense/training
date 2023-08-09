@@ -7,5 +7,11 @@
       "_include": "/download/promo/DownloadPromo.json",
       "_repeat": 4
     }
-  ]
+  ],
+  "ctaButtonText": "{{words([1, 2])}}",
+  "ctaUrl": "#",
+  "ctaTarget": "_self",
+  "pagination": {
+    "_template": "/link/PaginationLink.hbs"
+  }
 }

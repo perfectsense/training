@@ -16,7 +16,24 @@
     }
   }
 
+  &[data-item-display-style="card"] {
+    .PagePromo {
+      padding: 20px;
+    }
+  }
+
   .PagePromo {
+    gap: 20px;
+
+    &[data-align-left] .PagePromo-media,
+    &-media {
+      margin-right: 0;
+    }
+
+    &-content {
+      flex-grow: 1;
+    }
+
     &-description {
       &:extend(.description-2 all);
     }

@@ -1,19 +1,20 @@
 .Banner {
-  display: none;
+  display: flex;
   background: var(--color-banner-bg);
   color: var(--color-banner-text);
-  padding: 20px 60px 20px 20px;
-  position: relative;
-  width: 100%;
+  padding: 20px;
+  gap: 20px;
+  align-items: flex-start;
+
+  &-content {
+    flex-grow: 1;
+  }
 
   &-close {
     align-items: center;
     background: none;
     border: 0;
     cursor: pointer;
-    right: 10px;
-    top: calc(~'50% - 10px');
-    position: absolute;
     width: 30px;
 
     svg {
@@ -36,19 +37,14 @@
 
   &-title {
     &:extend(.promo-title-4);
-
   }
 
-  &[data-banner='show'] {
-    display: block;
+  &:not([data-banner='show']) {
+    display: none;
   }
 
   @media @mq-md {
     padding-left: 40px;
-    padding-right: 80px;
-
-    &-close {
-      right: 30px;
-    }
+    padding-right: 40px;
   }
 }

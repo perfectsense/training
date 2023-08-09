@@ -9,7 +9,7 @@ import brightspot.pressrelease.PressReleaseLead;
 import com.psddev.dari.util.Substitution;
 
 public class GalleryLeadSubstitution extends GalleryLead implements ArticleLead, BlogPostLead, ListicleLead,
-        LiveBlogLead, PressReleaseLead, Substitution {
+    LiveBlogLead, PressReleaseLead, Substitution {
 
     @Override
     public WebImageAsset getArticleLeadImage() {

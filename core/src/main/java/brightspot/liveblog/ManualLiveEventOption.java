@@ -5,15 +5,20 @@ import java.util.Date;
 import java.util.Optional;
 
 import com.psddev.cms.db.Site;
-import com.psddev.cms.db.ToolUi;
+import com.psddev.cms.ui.ToolLocalization;
+import com.psddev.cms.ui.form.DynamicNoteMethod;
+import com.psddev.cms.ui.form.Note;
 import com.psddev.dari.db.Recordable;
-import com.psddev.dari.db.StringException;
+import com.psddev.dari.html.Node;
+
+import static com.psddev.dari.html.Nodes.DIV;
 
 @Recordable.DisplayName("Manual")
 public class ManualLiveEventOption extends LiveEventOption {
 
     @Required
-    @ToolUi.Note("This is the date that the live blog will expire on.")
+    @Note("This is the date that the live blog will expire on.")
+    @DynamicNoteMethod("getPastExpirationDateNote")
     private Date expirationDate;
 
     public Date getExpirationDate() {
@@ -40,17 +45,11 @@ public class ManualLiveEventOption extends LiveEventOption {
             .orElse(false);
     }
 
-    // --- Recordable support ---
-
-    @Override
-    protected void onValidate() {
-
+    private Node getPastExpirationDateNote() {
         Instant now = Instant.now();
-        if (getExpirationDate() != null && getExpirationDate().toInstant().isBefore(now)) {
-
-            getState().addError(
-                    getState().getField("expirationDate"),
-                    new StringException("Expiration date must be in the future!"));
+        if (getExpirationDate().toInstant().isBefore(now)) {
+            return DIV.classList("Message is-warning").with(ToolLocalization.text(ManualLiveEventOption.class, "note.expiredDate", "Expiration Date set in the past"));
         }
+        return null;
     }
 }

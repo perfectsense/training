@@ -1,10 +1,46 @@
 {
   "styles": {
     "/podcast/list/PodcastList.hbs": {
+      "fields": [
+        "backgroundColor",
+        "inverseColors",
+        "headerTextAlign",
+        "ctaAlignment",
+        "itemCategoryAlignment",
+        "itemTitleAlignment",
+        "itemDescriptionAlignment",
+        "itemImageAspectRatio",
+        "itemDisplayStyle",
+        "itemBackgroundColor",
+        "itemBackgroundImage",
+        "itemTextColor",
+        "modulePaddingTop",
+        "modulePaddingBottom"
+      ],
       "templates": [
         {
-          "displayName": "Podcast List",
-          "example": "/podcast/list/PodcastList.json"
+          "displayName": "Podcast List A",
+          "example": "/podcast/list/PodcastListA.json",
+          "height": 800,
+          "width": 1024
+        },
+        {
+          "displayName": "Podcast List B",
+          "example": "/podcast/list/PodcastListB.json",
+          "height": 800,
+          "width": 1024,
+          "fields": [
+            "itemImageAlignment"
+          ]
+        },
+        {
+          "displayName": "Podcast List C (Right Rail)",
+          "example": "/podcast/list/PodcastListC.json",
+          "height": 800,
+          "width": 1024,
+          "fields": [
+            "itemImageAlignment"
+          ]
         }
       ]
     }

@@ -1,0 +1,19 @@
+{
+  "_template": "/quote/QuoteList.hbs",
+  "title": "{{words([5,10])}}",
+  "description": "{{words([10,20])}}",
+  "anchorId": "anchorTest",
+  "items": [
+    {
+      "_include": "/quote/Quote.json"
+    },
+    {
+      "_include": "/quote/Quote.json"
+    },
+    {
+      "_include": "/quote/Quote.json"
+    }
+  ],
+  "ctaUrl": "#",
+  "ctaButtonText": "Read More"
+}

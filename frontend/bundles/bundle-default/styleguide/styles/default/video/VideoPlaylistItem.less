@@ -24,6 +24,10 @@
     display: none;
   }
 
+  &:not([is-current]) &-title:hover {
+    color: var(--color-link-text-hover);
+  }
+
   &-duration {
     &:extend(.label-1 all);
 
@@ -49,7 +53,7 @@
     svg {
       background-color: var(--color-primary);
       border-radius: 100%;
-      color: var(--color-text-inverse);
+      color: var(--color-primary);
       height: 20px;
       width: 20px;
     }

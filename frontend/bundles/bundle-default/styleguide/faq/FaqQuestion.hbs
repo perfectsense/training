@@ -1,5 +1,6 @@
-<bsp-faq-question class="FaqQuestion" {{include "includes/Faq-attributes.hbs" this}} {{~#if expandItem}}
-    data-expanded{{/if~}}>
+<bsp-faq-question class="FaqQuestion"
+    {{~include "/global/ModuleAttributes.hbs" this~}}
+    {{~#if expandItem}} data-expanded{{/if~}}>
     <div class="FaqQuestion-header" aria-role="button" role="button">
         {{~#with question}}
         <div class="FaqQuestion-title">

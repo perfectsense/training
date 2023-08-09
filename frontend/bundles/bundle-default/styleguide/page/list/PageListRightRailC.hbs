@@ -1,17 +1,13 @@
 {{#if items}}
 <div class="PageListRightRailC" data-module{{include "includes/PageList-attributes.hbs" this}}>
     {{#if title}}
-        {{include "includes/PageList-header.hbs" this}}
+        {{include "/global/ModuleHeader.hbs" this}}
     {{/if}}
 
     <div class="PageList-items">
         {{#each items}}
             <div class="PageList-items-item">
-                {{#eq this._template "/page/promo/PagePromo.hbs"}}
-                    {{include "/link/Link.hbs" this href=url body=title}}
-                {{else}}
-                    {{render this}}
-                {{/eq}}
+                {{this}}
             </div>
         {{/each}}
     </div>

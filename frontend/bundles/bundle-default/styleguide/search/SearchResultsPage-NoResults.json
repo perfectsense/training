@@ -11,18 +11,19 @@
     {
       "_template": "/search/SearchFilter.hbs",
       "heading": "{{words([1,2])}}",
+      "searchFilterDefaultState": "collapsed",
       "items": [
         {
           "_include": "/search/SearchFilterInput.json",
           "url": "#",
-          "label": "All"
+          "label": "Thing"
         },
         {
           "_include": "/search/SearchFilterInput.json",
           "url": "#",
           "label": "{{words([1,2])}}",
           "count": 1234,
-          "selected": true
+          "selected": false
         },
         {
           "_include": "/search/SearchFilterInput.json",
@@ -65,6 +66,31 @@
           "url": "#",
           "label": "{{words([1,2])}}",
           "count": 89
+        },
+        {
+          "_include": "/search/SearchFilterInput.json",
+          "url": "#",
+          "label": "{{words([1,2])}}",
+          "count": 567
+        },
+        {
+          "_include": "/search/SearchFilterInput.json",
+          "url": "#",
+          "label": "{{words([1,2])}}",
+          "count": 89
+        },
+        {
+          "_include": "/search/SearchFilterInput.json",
+          "url": "#",
+          "label": "{{words([1,2])}}",
+          "count": 120
+        },
+        {
+          "_include": "/search/SearchFilterInput.json",
+          "_repeat": 5,
+          "url": "#",
+          "label": "{{words([1,2])}}",
+          "count": 44
         }
       ]
     },
@@ -192,13 +218,15 @@
       "_include": "/search/SearchSortInput.json",
       "url": "#",
       "label": "Newest",
-      "parameterValue": "newest"
+      "parameterValue": "newest",
+      "selected": false
     },
     {
       "_include": "/search/SearchSortInput.json",
       "url": "#",
       "label": "Oldest",
-      "parameterValue": "oldest"
+      "parameterValue": "oldest",
+      "selected": false
     }
   ],
   "count": 123456,

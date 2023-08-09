@@ -1,7 +1,7 @@
 {
   "_template": "LinkElement.hbs",
   "rel": "canonical",
-  "href": "akgjhkfshgjkerGHJFG",
+  "href": "",
   "asAttribute": "script",
-  "crossorigin": true
+  "crossorigin": false
 }

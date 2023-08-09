@@ -4,6 +4,7 @@
       "displayName": "Choose article lead style",
       "type": "text",
       "cms.ui.dropDown": true,
+      "cms.ui.placeholder": "Default",
       "values": [
         {
           "label": "Standard",
@@ -46,6 +47,10 @@
       "cms.ui.note": "Set the Background Video",
       "groups": "brightspot.video.Video"
     },
+    "borderColor": {
+      "displayName": "Choose a border color",
+      "type": "color"
+    },
     "carouselSuppressAutoPlay": {
       "displayName": "Stop the carousel from automatically transitioning",
       "type": "boolean"
@@ -62,6 +67,7 @@
       "displayName": "Choose enhancement alignment",
       "type": "text",
       "cms.ui.dropDown": true,
+      "cms.ui.placeholder": "Default",
       "values": [
         {
           "label": "Center Alignment",
@@ -85,6 +91,7 @@
       "displayName": "Choose enhancement alignment",
       "type": "text",
       "cms.ui.dropDown": true,
+      "cms.ui.placeholder": "Default",
       "values": [
         {
           "label": "Landscape Image - Center Alignment",
@@ -116,6 +123,26 @@
         }
       ]
     },
+    "enhancementAlignmentNoFullWidth": {
+      "displayName": "Choose enhancement alignment",
+      "type": "text",
+      "cms.ui.dropDown": true,
+      "cms.ui.placeholder": "Default",
+      "values": [
+        {
+          "label": "Center Alignment",
+          "value": "align-center"
+        },
+        {
+          "label": "Left Alignment",
+          "value": "align-left"
+        },
+        {
+          "label": "Right Alignment",
+          "value": "align-right"
+        }
+      ]
+    },
     "expandItem": {
       "displayName": "Check to expand this item by default.",
       "type": "boolean"
@@ -125,6 +152,7 @@
       "type": "text",
       "cms.ui.text": true,
       "cms.ui.dropDown": true,
+      "cms.ui.placeholder": "Default",
       "values": [{
           "label": "Full Width",
           "value": "1"
@@ -151,6 +179,12 @@
         }
       ]
     },
+    "flagText": {
+      "type": "text"
+    },
+    "flagBackgroundColor": {
+      "type": "color"
+    },
     "fullScreenVideo": {
       "displayName": "Full screen video vs 16:9 ratio?",
       "type": "boolean"
@@ -159,6 +193,7 @@
       "displayName": "Set the style of the Gallery page",
       "type": "text",
       "cms.ui.dropDown": true,
+      "cms.ui.placeholder": "Default",
       "values": [
         {
           "label": "Default (Carousel)",
@@ -182,6 +217,7 @@
       "displayName": "Heading Text Alignment",
       "type": "text",
       "cms.ui.dropDown": true,
+      "cms.ui.placeholder": "Default",
       "values": [
         {
           "label": "Center",
@@ -190,6 +226,26 @@
         {
           "label": "Left",
           "value": "left"
+        },
+        {
+          "label": "Right",
+          "value": "right"
+        }
+      ]
+    },
+    "headerTextAlign": {
+      "displayName": "Header Text Alignment",
+      "type": "text",
+      "cms.ui.dropDown": true,
+      "cms.ui.placeholder": "Default",
+      "values": [
+        {
+          "label": "Left",
+          "value": "left"
+        },
+        {
+          "label": "Center",
+          "value": "center"
         },
         {
           "label": "Right",
@@ -237,6 +293,7 @@
       "cms.ui.note": "Position the stat title to the left or right of the value field",
       "type": "text",
       "cms.ui.dropDown": true,
+      "cms.ui.placeholder": "Default",
       "values": [
         {
           "label": "Right",
@@ -251,6 +308,7 @@
     "imageAspectRatio": {
       "type": "text",
       "cms.ui.dropDown": true,
+      "cms.ui.placeholder": "Default",
       "values": [
         {
           "label": "16x9",
@@ -275,13 +333,17 @@
         {
           "label": "1x1 (square)",
           "value": "large-square"
+        },
+        {
+          "label": "1x1 (circle)",
+          "value": "large-circle"
         }
       ]
-
     },
     "imagePositionVertical": {
       "type": "text",
       "cms.ui.dropDown": true,
+      "cms.ui.placeholder": "Default",
       "values": [
         {
           "label": "Top",
@@ -296,6 +358,7 @@
     "imagePositionHorizontal": {
       "type": "text",
       "cms.ui.dropDown": true,
+      "cms.ui.placeholder": "Default",
       "values": [
         {
           "label": "Left",
@@ -310,6 +373,7 @@
     "imageWidth": {
       "type": "text",
       "cms.ui.dropDown": true,
+      "cms.ui.placeholder": "Default",
       "values": [
         {
           "label": "66%",
@@ -323,6 +387,18 @@
     },
     "inverseColors": {
       "displayName": "Change Primary Text Color to Primary Inverse Text color (set in theme colors)",
+      "type": "boolean"
+    },
+    "itemBackgroundColor": {
+      "displayName": "Choose an item background color",
+      "type": "color"
+    },
+    "itemBorderColor": {
+      "displayName": "Choose an item border color",
+      "type": "color"
+    },
+    "itemInverseColors": {
+      "displayName": "Change the item Primary Text Color to Primary Inverse Text color (set in theme colors)",
       "type": "boolean"
     },
     "listHeaderPosition": {
@@ -379,6 +455,7 @@
       "displayName": "Choose how many navigation dropdown columns you would like",
       "type": "text",
       "cms.ui.dropDown": true,
+      "cms.ui.placeholder": "Default",
       "values": [
         {
           "label": "2",
@@ -394,6 +471,7 @@
       "displayName": "Choose how to align the navigation within the header",
       "type": "text",
       "cms.ui.dropDown": true,
+      "cms.ui.placeholder": "Default",
       "values": [
         {
           "label": "Right",
@@ -409,10 +487,27 @@
         }
       ]
     },
-    "listColumns234": {
-      "displayName": "Choose how many columns would you like",
+    "listColumns23": {
+      "displayName": "Choose how many columns you would like",
       "type": "text",
       "cms.ui.dropDown": true,
+      "cms.ui.placeholder": "Default",
+      "values": [
+        {
+          "label": "2",
+          "value": "2"
+        },
+        {
+          "label": "3",
+          "value": "3"
+        }
+      ]
+    },
+    "listColumns234": {
+      "displayName": "Choose how many columns you would like",
+      "type": "text",
+      "cms.ui.dropDown": true,
+      "cms.ui.placeholder": "Default",
       "values": [
         {
           "label": "2",
@@ -432,6 +527,7 @@
       "displayName": "Choose how many columns you would like",
       "type": "text",
       "cms.ui.dropDown": true,
+      "cms.ui.placeholder": "Default",
       "values": [
         {
           "label": "4",
@@ -447,6 +543,7 @@
       "displayName": "Choose how many columns you would like",
       "type": "text",
       "cms.ui.dropDown": true,
+      "cms.ui.placeholder": "Default",
       "values": [
         {
           "label": "5",
@@ -459,9 +556,10 @@
       ]
     },
     "listColumns23456": {
-      "displayName": "Choose how many columns would you like",
+      "displayName": "Choose how many columns you would like",
       "type": "text",
       "cms.ui.dropDown": true,
+      "cms.ui.placeholder": "Default",
       "values": [
         {
           "label": "2",
@@ -505,6 +603,19 @@
         {
           "label": "PageTitle2 (Small)",
           "value": "2"
+        }
+      ]
+    },
+    "pageListEnahncementDesktopLayout": {
+      "displayName": "Desktop Layout",
+      "type": "text",
+      "cms.ui.dropDown": true,
+      "cms.ui.note": "Choose an alternate desktop layout for this module",
+      "cms.ui.placeholder": "Default",
+      "values": [
+        {
+          "label": "Grid",
+          "value": "grid"
         }
       ]
     },
@@ -594,6 +705,7 @@
       "displayName": "Choose Section Nav Alignment",
       "type": "text",
       "cms.ui.dropDown": true,
+      "cms.ui.placeholder": "Default",
       "values": [
         {
           "label": "Center",
@@ -657,17 +769,18 @@
       "displayName": "Text Alignment",
       "type": "text",
       "cms.ui.dropDown": true,
+      "cms.ui.placeholder": "Default",
       "values": [
         {
-          "label": "left",
+          "label": "Left",
           "value": "left"
         },
         {
-          "label": "center",
+          "label": "Center",
           "value": "center"
         },
         {
-          "label": "right",
+          "label": "Right",
           "value": "right"
         }
       ]

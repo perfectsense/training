@@ -1,0 +1,8 @@
+{
+  "_template": "GoogleTagManagerBody.hbs",
+  "containerId": "GTM-123456",
+  "authToken": "123456789",
+  "previewEnvironment": "env-2",
+  "useEnvironmentSetInCookie": true,
+  "_hidden": true
+}

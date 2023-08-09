@@ -1,9 +1,9 @@
 {
   "_template": "SocialLink.hbs",
   "body": {
-    "_include": "/_group/RichTextElementsTiny.json"
+    "_include": "/_group/RichTextElementsTiny.json",
+    "_key": 0
   },
   "href": "",
-  "socialService": "",
-  "_hidden": true
+  "socialService": ""
 }

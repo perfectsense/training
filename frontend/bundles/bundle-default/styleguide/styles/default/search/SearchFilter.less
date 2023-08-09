@@ -1,4 +1,5 @@
 .SearchFilter {
+  display: block;
   border-bottom: 1px solid var(--color-border);
 
   &:first-of-type {
@@ -12,18 +13,28 @@
   &-content {
     display: block;
     margin-bottom: 20px;
+  }
 
-    &[data-toggle-in='search-filter'] {
-      height: 44px;
-      overflow: hidden;
-      margin-bottom: 0;
+  &:not([data-expanded]) &-content {
+    display: none;
+  }
 
-      .SearchFilter-heading {
-        svg {
-          transform: rotate(0deg);
-          top: 20px;
-        }
-      }
+  &:not([data-expanded]) &-heading {
+    svg {
+      transform: rotate(0deg);
+      top: 20px;
+    }
+  }
+
+  &[data-clipped] {
+    .seeLessText {
+      display: none;
+    }
+  }
+
+  &:not([data-clipped]) {
+    .seeAllText {
+      display: none;
     }
   }
 
@@ -56,31 +67,22 @@
         margin: 0;
       }
     }
+  }
 
-    &-wrapper {
-      [data-see-all] & {
-        height: 100px;
-        overflow: hidden;
+  &[data-clipped] & {
+    &-items {
+      mask-image: linear-gradient(to top, transparent, transparent 10px, black 10px);
+      margin-bottom: -10px;
+
+      &-item {
+        &[data-is-clippable] {
+          display: none;
+        }
       }
     }
   }
 
   &-seeAll {
-    &[data-toggle-in='see-all'] {
-      .seeLessText {
-        display: inline;
-      }
-
-      .seeAllText {
-        display: none;
-      }
-
-      .SearchFilter-items-wrapper {
-        height: auto;
-        overflow: visible;
-      }
-    }
-
     &-button {
       &:extend(.NotButton all);
       &:extend(.label-5 all);
@@ -89,10 +91,6 @@
       margin-top: 20px;
       text-transform: uppercase;
       font-weight: bold;
-    }
-
-    .seeLessText {
-      display: none;
     }
   }
 

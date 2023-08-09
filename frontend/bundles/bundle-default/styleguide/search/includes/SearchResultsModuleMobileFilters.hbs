@@ -1,0 +1,29 @@
+<bsp-search-filters-mobile class="SearchResultsModuleMobileFilters">
+    <dialog>
+        <div class="SearchResultsModuleMobileFilters-header">
+            {{#with count}}
+                <div class="SearchResultsModuleMobileFilters-count">
+                    {{~format "/search/SearchResultsModule" "foundCountMobileText" resultsCount=this~}}
+                </div>
+            {{/with}}
+            <button class="SearchResultsModuleMobileFilters-dismissButton" type="button">
+                <svg>
+                    <use xlink:href="#close-x"></use>
+                </svg>
+            </button>
+        </div>
+        <bsp-overflow-container class="SearchResultsModuleMobileFilters-filters">
+            {{#each filters}}
+                {{include '/search/SearchFilterMobile.hbs' this}}
+            {{/each}}
+        </bsp-overflow-container>
+        <div class="SearchResultsModuleMobileFilters-footer">
+            <button class="SearchResultsModuleMobileFilters-clearFilters" type="submit">
+                {{format "/search/SearchResultsModule" "filtersClearAll"}}
+            </button>
+            <button class="SearchResultsModuleMobileFilters-applyFilters" type="submit">
+                {{format "/search/SearchResultsModule" "done"}}
+            </button>
+        </div>
+    </dialog>
+</bsp-search-filters-mobile>

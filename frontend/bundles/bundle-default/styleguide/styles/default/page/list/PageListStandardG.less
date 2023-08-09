@@ -12,9 +12,12 @@
       }
 
       .PagePromo {
-        display: grid;
+        display: flex;
         gap: 15px;
-        grid-template-columns: auto 1fr;
+
+        &-content {
+          flex-grow: 1;
+        }
 
         &-media {
           img {
@@ -26,6 +29,12 @@
           &:extend(.promo-title-6 all);
         }
       }
+    }
+  }
+
+  &[data-item-display-style="card"] {
+    .PagePromo {
+      padding: 20px;
     }
   }
 

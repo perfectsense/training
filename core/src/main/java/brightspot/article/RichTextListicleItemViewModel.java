@@ -13,25 +13,25 @@ public class RichTextListicleItemViewModel extends ViewModel<RichTextListicleIte
     @Override
     public Iterable<? extends ListicleItemViewBodyField> getBody() {
         return RichTextUtils.buildHtml(
-                model,
-                RichTextListicleItem::getBody,
-                e -> createView(ListicleItemViewBodyField.class, e)
+            model,
+            RichTextListicleItem::getBody,
+            e -> createView(ListicleItemViewBodyField.class, e)
         );
     }
 
     @Override
     public CharSequence getItemIndex() {
         return Optional.of(model.as(ListicleItemModification.class).getIndex())
-                .map(String::valueOf)
-                .orElse(null);
+            .map(String::valueOf)
+            .orElse(null);
     }
 
     @Override
     public Iterable<? extends ListicleItemViewTitleField> getTitle() {
         return RichTextUtils.buildInlineHtml(
-                model,
-                RichTextListicleItem::getHeading,
-                e -> createView(ListicleItemViewTitleField.class, e)
+            model,
+            RichTextListicleItem::getHeading,
+            e -> createView(ListicleItemViewTitleField.class, e)
         );
     }
 }

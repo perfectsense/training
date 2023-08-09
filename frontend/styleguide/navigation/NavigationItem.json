@@ -1,23 +1,23 @@
 {
   "_template": "NavigationItem.hbs",
   "text": {
-    "_include": "/_group/RichTextElementsTiny.json"
+    "_include": "/_group/RichTextElementsTiny.json",
+    "_key": 0
   },
-  "href": "#",
-  "target": "_self",
+  "href": "",
+  "target": "",
   "items": [
     {
-      "_include": "NavigationLink.json"
+      "_template": "NavigationLink.hbs"
     },
     {
-      "_include": "NavigationGroup.json"
+      "_template": "NavigationGroup.hbs"
     },
     {
-      "_include": "/social/SocialLink.json"
+      "_template": "/social/SocialLink.hbs"
     }
   ],
-  "contentId": "a123",
-  "iconUrl": "https://example.com/url/to/icon",
-  "isCurrent": true,
-  "_hidden": true
+  "contentId": "",
+  "iconUrl": "",
+  "isCurrent": false
 }

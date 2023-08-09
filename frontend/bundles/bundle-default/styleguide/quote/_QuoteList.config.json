@@ -3,7 +3,22 @@
     "/quote/QuoteList.hbs": {
       "fields": [
         "listTitleSize",
-        "listDescriptionSize"
+        "listDescriptionSize",
+        "headerTextAlign",
+        "ctaAlignment",
+        "backgroundColor",
+        "inverseColors",
+        "itemDisplayStyle",
+        "itemBackgroundColor",
+        "itemBackgroundImage",
+        "itemBorderColor",
+        "itemInverseColors",
+        "itemQuoteAlignment",
+        "itemAttributionAlignment",
+        "itemAttributionImageAlignment",
+        "itemImageAspectRatio",
+        "modulePaddingTop",
+        "modulePaddingBottom"
       ],
       "templates": [
         {
@@ -16,7 +31,11 @@
           "displayName": "Quote List B",
           "example": "/quote/QuoteListB.json",
           "height": 800,
-          "width": 1024
+          "width": 1024,
+          "fields": [
+            "itemDisplayStyle",
+            "itemBackgroundImage"
+          ]
         }
       ]
     }

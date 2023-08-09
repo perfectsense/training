@@ -1,8 +1,0 @@
-{
-  "_template": "RichTextArticleBody.hbs",
-  "body": {
-    "_include": "/_group/RichTextElementsLarge.json",
-    "_key": 0
-  },
-  "_hidden": true
-}

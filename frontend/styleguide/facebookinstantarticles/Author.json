@@ -1,7 +1,6 @@
 {
   "_wrapper": false,
   "_template": "/facebookinstantarticles/Author.hbs",
-  "link": "https://www.brightspot.com/author-name",
-  "name": "Author Name",
-  "_hidden": true
+  "link": "https://www.example.com/",
+  "name": ""
 }

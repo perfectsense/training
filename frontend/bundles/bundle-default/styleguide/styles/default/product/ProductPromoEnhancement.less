@@ -1,0 +1,55 @@
+.ProductPromoEnhancement {
+  .ProductPromoModule {
+    &-price {
+      &:extend(.description-2);
+    }
+
+    &-options {
+      &:extend(.byline-1);
+      margin-top: 10px;
+      text-align: center;
+    }
+  }
+
+  .PagePromo {
+    &-category {
+      margin-bottom: 10px;
+    }
+
+    &-title {
+      &:extend(.promo-title-5 all);
+      margin-bottom: 10px;
+    }
+
+    &-button {
+      .Button {
+        width: 100%;
+      }
+    }
+  }
+
+  @media @mq-lg {
+    &[data-align-left],
+    &[data-align-right] {
+      .ProductPromoModule,
+      .ProductPromoModule[data-layout="7030"] {
+        .ProductPromoModule-wrapper {
+          padding: 20px;
+          gap: 20px;
+          grid-template-columns: 1fr;
+        }
+
+        .PagePromo-media,
+        .ProductPromoModule-content {
+          grid-column-start: auto;
+        }
+      }
+
+      .PagePromo {
+        &-button {
+          margin-top: 20px;
+        }
+      }
+    }
+  }
+}

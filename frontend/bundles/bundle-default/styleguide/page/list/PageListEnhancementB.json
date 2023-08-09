@@ -1,0 +1,10 @@
+{
+  "_include": "/page/list/PageListEnhancement.json",
+  "_styledTemplate": "/page/list/PageListEnhancementB.hbs",
+  "item": [
+    {
+      "_include": "/page/list/PageList.json",
+      "title": "Page List Enhancement B"
+    }
+  ]
+}

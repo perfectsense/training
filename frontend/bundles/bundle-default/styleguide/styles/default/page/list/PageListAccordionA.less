@@ -1,19 +1,17 @@
 .PageListAccordionA {
   display: grid;
 
-  &[data-list-header-position='side'] {
-    .PageList {
-      &-header {
-        text-align: left;
-      }
+  &[data-module-header-position='side'] {
+    .ModuleHeader {
+      text-align: left;
     }
   }
 
-  .PageList {
-    &-header {
-      text-align: center;
-    }
+  .ModuleHeader {
+    text-align: center;
+  }
 
+  .PageList {
     &-items {
       display: grid;
       grid-row-gap: 20px;

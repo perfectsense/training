@@ -6,10 +6,10 @@
     "_key": 0
   },
   "thumbnail": {
-    "_include": "/image/Image.json"
+    "_template": "/image/Image.hbs"
   },
   "title": {
-    "_include": "/_group/RichTextElementsTiny.json"
-  },
-  "_hidden": true
+    "_include": "/_group/RichTextElementsTiny.json",
+    "_key": 0
+  }
 }

@@ -1,22 +1,22 @@
 .Form {
-  background-size: cover;
-  background-repeat: no-repeat;
   display: block;
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 800px;
-
-  .Form-wrapper[data-has-bg-image] & {
-    background-color: var(--color-form-background);
-    padding: 20px;
-  }
-
   --color-invalid: #d31141;
   --color-placeholder: #bbbbbb;
 
-  &-description {
-    &:extend(.description-2);
-    margin-bottom: 30px;
+  .ModuleHeader,
+  &-wrapper {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 800px;
+  }
+
+  &-message,
+  &-submissionSuccess {
+    &:extend(.RichTextElements all);
+  }
+
+  &-message {
+    margin-top: 20px;
   }
 
   &-items {
@@ -30,7 +30,7 @@
 
       .Select-label {
         .Select-input {
-          color: var(--color-primary-text);
+          color: var(--color-input-text);
         }
 
         svg {
@@ -40,11 +40,6 @@
     }
   }
 
-  &-title {
-    &:extend(.list-title-1);
-
-    margin-bottom: 10px;
-  }
 
   &-wrapper {
     background: var(--color-form-background);
@@ -52,14 +47,19 @@
 
     &[data-inverse-colors] {
       --color-input-text: #333;
-      --color-primary-text: var(--color-primary-text-inverse);
-      --color-primary: var(--color-primary-text-inverse);
+      --color-primary-text: var(--color-text-inverse);
     }
   }
 
   @media @mq-md {
     .Form-wrapper[data-has-bg-image] & {
       padding: 40px;
+    }
+  }
+
+  @media @mq-lg {
+    &[data-module-header-position='side'] {
+      display: grid;
     }
   }
 }

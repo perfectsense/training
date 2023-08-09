@@ -1,41 +1,4 @@
 {
-  "_template": "/page/list/PageList.hbs",
-  "_styledTemplate": "/page/list/PageListStandardC.hbs",
-  "title": "Standard List C",
-  "ctaUrl": "#",
-  "ctaTarget": "_self",
-  "items": [
-    {
-      "_include": "/page/promo/PagePromo.json",
-      "type": "video"
-    },
-    {
-      "_include": "/page/promo/PagePromo.json"
-    },
-    {
-      "_include": "/page/promo/PagePromo.json"
-    },
-    {
-      "_include": "/page/promo/PagePromo.json"
-    },
-    {
-      "_include": "/page/promo/PagePromo.json"
-    },
-    {
-      "_include": "/page/promo/PagePromo.json",
-      "type": "video"
-    },
-    {
-      "_include": "/page/promo/PagePromo.json"
-    },
-    {
-      "_include": "/page/promo/PagePromo.json"
-    },
-    {
-      "_include": "/page/promo/PagePromo.json"
-    },
-    {
-      "_include": "/page/promo/PagePromo.json"
-    }
-  ]
+  "_include": "/page/list/PageList.json",
+  "_styledTemplate": "/page/list/PageListStandardC.hbs"
 }

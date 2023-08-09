@@ -2,18 +2,12 @@
     {{~#with fragmentUri}} fragment-uri="{{this}}"{{/with~}}
     {{~#with fragmentParams}} fragment-params="{{this}}"{{/with~}}
     {{~#gt playlist.length 3}} data-clipped{{/gt~}}
-    {{~#with playlistBottom}} data-playlist-bottom{{/with~}}>
+    {{~#with playlistBottom}} data-playlist-bottom{{/with~}}
+    {{~include "/global/ModuleAttributes.hbs" this~}}
+    >
     {{include "/link/AnchorLink.hbs" this}}
-    {{#or title description}}
-        <div class="VideoPlaylistModule-header">
-            {{#with title}}
-                <div class="VideoPlaylistModule-title">{{this}}</div>
-            {{/with}}
-            {{#with description}}
-                <div class="VideoPlaylistModule-description">{{this}}</div>
-            {{/with}}
-        </div>
-    {{/or}}
+    {{include "/global/ModuleHeader.hbs" this}}
+
     <div class="VideoPlaylistModule-body">
         {{#with player}}
             <div class="VideoPlaylistModule-player">{{this}}</div>
@@ -39,4 +33,6 @@
             </div>
         {{/with}}
     </div>
+
+    {{include "/page/list/includes/PageList-footer.hbs" this}}
 </bsp-video-playlist-module>

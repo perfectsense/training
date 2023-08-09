@@ -1,16 +1,18 @@
 {{#if items}}
 <div class="PageListStandardE" data-module{{include "includes/PageList-attributes.hbs" this}}>
-    {{include "includes/PageList-header.hbs" this}}
+    {{include "/global/ModuleHeader.hbs" this}}
 
         <div class="PageList-items">
             <div class="PageList-items-item">
                 {{#with items.[0]}}
                     {{#set imageSize="large-16x9"}}
-                        {{#eq this._template "/page/promo/PagePromo.hbs"}}
-                            {{include "/link/Link.hbs" this href=url body=media}}
-                        {{else}}
-                            {{render this}}
-                        {{/eq}}
+                        {{#set sizes="(max-width: 1024px) 100vw, 1024px"}}
+                            {{#eq this._template "/page/promo/PagePromo.hbs"}}
+                                {{include "/link/Link.hbs" this href=url body=media}}
+                            {{else}}
+                                {{render this}}
+                            {{/eq}}
+                        {{/set}}
                     {{/set}}
                 {{/with}}
             </div>
@@ -32,7 +34,7 @@
                 {{#each items}}
                     {{#if (gt @index 0)}}
                         {{#eq this._template "/page/promo/PagePromo.hbs"}}
-                            {{include "/link/Link.hbs" this href=url body=title}}
+                            {{include "/page/promo/PagePromo.hbs" title=title url=url target=target}}
                         {{else}}
                             {{render this}}
                         {{/eq}}

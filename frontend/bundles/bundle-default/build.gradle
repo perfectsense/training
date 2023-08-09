@@ -2,8 +2,6 @@ plugins {
     id 'com.brightspot.bundle'
 }
 
-description = 'Brightpot Training: Default Bundle'
-
 bundle {
     yarnBuildCommand = 'build'
     styleguideOutputDir = 'styleguide'

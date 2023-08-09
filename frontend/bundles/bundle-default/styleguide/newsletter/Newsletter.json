@@ -22,7 +22,7 @@
       "isNotUTMCapable": "false",
       "links": [
         {
-          "_include": "/link/Link.json",
+          "_include": "/newsletter/NewsletterNavigationLink.json",
           "_repeat": 4
         }
       ],

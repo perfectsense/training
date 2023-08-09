@@ -1,0 +1,16 @@
+{
+  "fields": {
+    "moduleHeaderPosition": {
+      "displayName": "Choose the position of the module header",
+      "type": "text",
+      "cms.ui.dropDown": true,
+      "cms.ui.placeholder": "Default",
+      "values": [
+        {
+          "label": "Side",
+          "value": "side"
+        }
+      ]
+    }
+  }
+}

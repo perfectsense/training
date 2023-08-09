@@ -1,15 +1,21 @@
 {
   "_template": "QuoteList.hbs",
   "title": {
-    "_include": "/_group/RichTextElementsTiny.json"
+    "_include": "/_group/RichTextElementsTiny.json",
+    "_key": 0
   },
-  "anchorId": "anchorTest",
+  "description": {
+    "_include": "/_group/RichTextElementsSmall.json",
+    "_key": 0
+  },
+  "anchorId": "",
   "items": {
-    "_include": "/quote/Quote.json"
+    "_template": "/quote/Quote.hbs"
   },
-  "ctaUrl": "#",
-  "ctaTarget": "_self",
+  "ctaUrl": "",
+  "ctaTarget": "",
   "ctaButtonText": {
-    "_include": "/_group/RichTextElementsTiny.json"
+    "_include": "/_group/RichTextElementsTiny.json",
+    "_key": 0
   }
 }

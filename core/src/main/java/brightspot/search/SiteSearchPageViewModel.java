@@ -26,7 +26,8 @@ import org.jsoup.Jsoup;
 import org.jsoup.safety.Whitelist;
 
 @JsonLdType("WebPage")
-public class SiteSearchPageViewModel extends AbstractPageViewModel<SiteSearchPage> implements SearchResultsPageView, PageEntryView {
+public class SiteSearchPageViewModel extends AbstractPageViewModel<SiteSearchPage>
+    implements SearchResultsPageView, PageEntryView {
 
     protected static final String VIEW_PARAMETER = "v";
 
@@ -58,17 +59,17 @@ public class SiteSearchPageViewModel extends AbstractPageViewModel<SiteSearchPag
     @Override
     public Iterable<? extends PageViewPageHeadingField> getPageHeading() {
         return RichTextUtils.buildInlineHtml(
-                model,
-                SiteSearchPage::getTitle,
-                e -> createView(PageViewPageHeadingField.class, e));
+            model,
+            SiteSearchPage::getTitle,
+            e -> createView(PageViewPageHeadingField.class, e));
     }
 
     @Override
     public Iterable<? extends PageViewPageSubHeadingField> getPageSubHeading() {
         return RichTextUtils.buildInlineHtml(
-                model,
-                SiteSearchPage::getDescription,
-                e -> createView(PageViewPageSubHeadingField.class, e));
+            model,
+            SiteSearchPage::getDescription,
+            e -> createView(PageViewPageSubHeadingField.class, e));
     }
 
     @Override
@@ -102,10 +103,11 @@ public class SiteSearchPageViewModel extends AbstractPageViewModel<SiteSearchPag
             return null;
         }
 
-        return createViews(SearchResultsPageViewSortsField.class,
-                Optional.ofNullable(model.getSiteSearchSorting())
-                        .map(SiteSearchSorting::getSorts)
-                        .orElse(Collections.emptyList())
+        return createViews(
+            SearchResultsPageViewSortsField.class,
+            Optional.ofNullable(model.getSiteSearchSorting())
+                .map(SiteSearchSorting::getSorts)
+                .orElse(Collections.emptyList())
         );
     }
 

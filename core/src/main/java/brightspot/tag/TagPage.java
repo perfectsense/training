@@ -22,22 +22,28 @@ import brightspot.page.PageHeading;
 import brightspot.permalink.AbstractPermalinkRule;
 import brightspot.permalink.DefaultPermalinkRule;
 import brightspot.permalink.Permalink;
+import brightspot.promo.page.PagePromotableWithOverrides;
 import brightspot.rss.DynamicFeedSource;
 import brightspot.rte.SmallRichTextToolbar;
 import brightspot.rte.TinyRichTextToolbar;
 import brightspot.seo.SeoWithFields;
 import brightspot.share.Shareable;
 import brightspot.site.DefaultSiteMapItem;
+import brightspot.sort.publishdate.NewestPublishDate;
+import brightspot.taxon.TaxonParentExtension;
 import brightspot.util.MoreStringUtils;
 import brightspot.util.RichTextUtils;
 import com.psddev.cms.db.Content;
 import com.psddev.cms.db.ContentEditDrawerItem;
 import com.psddev.cms.db.Site;
+import com.psddev.cms.db.Taxon;
 import com.psddev.cms.db.ToolUi;
 import com.psddev.cms.ui.content.place.GroupedPlace;
 import com.psddev.cms.ui.content.place.Place;
 import com.psddev.cms.ui.content.place.Placeable;
 import com.psddev.cms.ui.content.place.PlaceableTarget;
+import com.psddev.cms.ui.form.Note;
+import com.psddev.dari.db.Query;
 import com.psddev.dari.db.Recordable;
 import com.psddev.feed.FeedItem;
 import com.psddev.suggestions.SuggestionsInitField;
@@ -70,9 +76,11 @@ public class TagPage extends Content implements
     PlaceableTarget,
     LandingPageElements,
     Page,
+    PagePromotableWithOverrides,
     SeoWithFields,
     Shareable,
-    Tag {
+    Tag,
+    TaxonParentExtension {
 
     @Required
     @ToolUi.CssClass("is-half")
@@ -88,11 +96,11 @@ public class TagPage extends Content implements
     @Where("_id != ?")
     private TagPage parent;
 
-    @ToolUi.Note("Note: If enabled, this tag will be hidden from display on asset pages and modules")
+    @Note("Note: If enabled, this tag will be hidden from display on asset pages and modules")
     private boolean hidden;
 
     // @ToolUi.EmbeddedContentCreatorClass(StyleEmbeddedContentCreator.class)
-    @ToolUi.Note("If a Lead is added, it will appear before the content.")
+    @Note("If a Lead is added, it will appear before the content.")
     private ModulePageLead lead = new PageHeading().as(ModulePageLead.class);
 
     public String getInternalName() {
@@ -152,7 +160,7 @@ public class TagPage extends Content implements
 
     public List<ModulePlacement> getContents() {
         return Optional.ofNullable(as(LandingCascadingData.class)
-            .getContent(as(Site.ObjectModification.class).getOwner()))
+                .getContent(as(Site.ObjectModification.class).getOwner()))
             .orElseGet(ArrayList::new);
     }
 
@@ -180,6 +188,38 @@ public class TagPage extends Content implements
         return getDisplayName();
     }
 
+    // --- Promotable support ---
+    @Override
+    public String getPagePromotableTitleFallback() {
+        return getDisplayName();
+    }
+
+    @Override
+    public String getPagePromotableDescriptionFallback() {
+        return getDescription();
+    }
+
+    @Override
+    public WebImageAsset getPagePromotableImageFallback() {
+        return Optional.ofNullable(getLead())
+            .map(ModulePageLead::getModulePageLeadImage)
+            .orElse(null);
+    }
+
+    @Override
+    public String getPagePromotableCategoryFallback() {
+        return Optional.ofNullable(getParent())
+            .map(TagPage::getDisplayName)
+            .orElse(null);
+    }
+
+    @Override
+    public String getPagePromotableCategoryUrlFallback(Site site) {
+        return Optional.ofNullable(getParent())
+            .map(tag -> tag.getLinkableUrl(site))
+            .orElse(null);
+    }
+
     // --- SeoWithFields support ---
 
     @Override
@@ -189,7 +229,7 @@ public class TagPage extends Content implements
 
     @Override
     public String getSeoDescriptionFallback() {
-        return null;
+        return RichTextUtils.richTextToPlainText(getDescription());
     }
 
     // --- Tag Support ---
@@ -212,6 +252,24 @@ public class TagPage extends Content implements
     @Override
     public Tag getTagParent() {
         return getParent();
+    }
+
+    // --- TaxonForNow support ---
+
+    @Override
+    public TaxonParentExtension getTaxonParent() {
+        return getParent();
+    }
+
+    @Override
+    public Query<? extends Taxon> getTaxonChildrenQuery() {
+        return Query.from(TagPage.class)
+            .where(
+                TagData.class.getName() + "/" + TagData.TAG_PARENT_FIELD + " = ?",
+                this)
+            .and("cms.content.draft = missing OR cms.content.draft = true")
+            .and("cms.content.trashed = missing OR cms.content.trashed = true")
+            .and("cms.workflow.currentState = missing OR cms.workflow.currentState != missing");
     }
 
     // --- Anchorable Support ---
@@ -282,6 +340,8 @@ public class TagPage extends Content implements
         DynamicPageItemStream itemStream = new DynamicPageItemStream();
         itemStream.asQueryBuilderDynamicQueryModifier().setQueryBuilder(tagMatch);
 
+        itemStream.setSort(new NewestPublishDate());
+
         return getFeedFromDynamicStream(itemStream, getContents(), site);
     }
 
@@ -300,7 +360,7 @@ public class TagPage extends Content implements
     @Override
     public List<Place> getPlaceableTargetPlaces(Placeable content) {
         return Collections.singletonList(
-                new GroupedPlace(content, this, "Contents", getContents())
+            new GroupedPlace(content, this, "Content", getContents())
         );
     }
 }

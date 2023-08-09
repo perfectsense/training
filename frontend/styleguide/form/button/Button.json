@@ -7,9 +7,8 @@
   "formmethod": "",
   "formnovalidate": "",
   "formtarget": "",
-  "label": "Submit",
+  "label": "",
   "name": "",
   "type": "submit",
-  "value": "",
-  "_hidden": true
+  "value": ""
 }

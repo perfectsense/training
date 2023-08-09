@@ -26,8 +26,6 @@
       ]
       },
       "duration": "5 min",
-      "url": "#",
-      "target": "_self",
       "title": "{{words(10)}}",
       "description": "{{words(20)}}"
     },

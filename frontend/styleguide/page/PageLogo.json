@@ -3,8 +3,7 @@
   "image": {
     "_image": true
   },
-  "href": "#",
-  "alt": "alt text here",
-  "target": "_blank",
-  "_hidden": true
+  "href": "",
+  "alt": "",
+  "target": ""
 }

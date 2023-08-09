@@ -10,10 +10,10 @@ import com.psddev.dari.db.Alteration;
 public class RelevanceAlteration extends Alteration<Relevance> {
 
     @Types({
-            NewestPublishDate.class,
-            OldestPublishDate.class,
-            AlphabeticalAscendingDynamicQuerySort.class,
-            AlphabeticalDescendingDynamicQuerySort.class
+        NewestPublishDate.class,
+        OldestPublishDate.class,
+        AlphabeticalAscendingDynamicQuerySort.class,
+        AlphabeticalDescendingDynamicQuerySort.class
     })
     private DynamicQuerySort fallbackSort;
 }

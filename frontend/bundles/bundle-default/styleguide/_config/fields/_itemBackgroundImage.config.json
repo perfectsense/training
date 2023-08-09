@@ -1,0 +1,8 @@
+{
+  "fields": {
+    "itemBackgroundImage": {
+      "type": "record",
+      "groups": "brightspot.image.WebImage"
+    }
+  }
+}

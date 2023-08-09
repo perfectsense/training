@@ -1,16 +1,78 @@
+[data-module] {
+  --modulePaddingSmall: 20px;
+  --modulePaddingMedium: 40px;
+  --modulePaddingLarge: 60px;
+
+  @media @mq-lg {
+    --modulePaddingSmall: 20px;
+    --modulePaddingMedium: 80px;
+    --modulePaddingLarge: 120px;
+  }
+
+  --modulePaddingTop: var(--modulePaddingMedium);
+  --modulePaddingBottom: var(--modulePaddingMedium);
+
+  &:where([data-module-padding-top="none"]) {
+    --modulePaddingTop: 0;
+  }
+
+  &:where([data-module-padding-top="small"]) {
+    --modulePaddingTop: var(--modulePaddingSmall);
+  }
+
+  &:where([data-module-padding-top="medium"]) {
+    --modulePaddingTop: var(--modulePaddingMedium);
+  }
+
+  &:where([data-module-padding-top="large"]) {
+    --modulePaddingTop: var(--modulePaddingLarge);
+  }
+
+  &:where([data-module-padding-bottom="none"]) {
+    --modulePaddingBottom: 0;
+  }
+
+  &:where([data-module-padding-bottom="small"]) {
+    --modulePaddingBottom: var(--modulePaddingSmall);
+  }
+
+  &:where([data-module-padding-bottom="medium"]) {
+    --modulePaddingBottom: var(--modulePaddingMedium);
+  }
+
+  &:where([data-module-padding-bottom="large"]) {
+    --modulePaddingBottom: var(--modulePaddingLarge);
+  }
+}
+
 // Set of rules for a normal data-module directly in a modulewell
 [data-module] {
-  background-color: var(--color-module-background);
+  &:where([data-has-background]) {
+    background-color: var(--color-module-background);
+  }
+
+  &:where([data-has-background-image]) {
+    background-image: var(--background-image);
+    background-size: cover;
+  }
+
+  &:where([data-has-background]) {
+    background-color: var(--color-module-background);
+  }
+
+  &:where([data-has-border]) {
+    border-color: var(--color-module-border);
+  }
 
   [data-modulewell] > & {
     .layoutWidth();
-    margin-bottom: 40px;
-    margin-top: 40px;
+    margin-top: var(--modulePaddingTop);
+    margin-bottom: var(--modulePaddingBottom);
 
-    &[data-has-background] {
+    &:not([data-module-contained])[data-has-background] {
       margin-top: 0;
-      padding-top: 40px;
-      padding-bottom: 40px;
+      padding-top: var(--modulePaddingTop);
+      padding-bottom: var(--modulePaddingBottom);
       margin-bottom: 0;
     }
 
@@ -21,26 +83,14 @@
       padding-top: 0;
     }
 
+    &[data-height='full'] {
+      padding-top: 0 !important;
+      padding-bottom: 0 !important;
+    }
+
     &[data-width='full'] {
       padding-left: 0 !important;
       padding-right: 0 !important;
-    }
-
-    @media @mq-lg {
-      margin-top: 80px;
-      margin-bottom: 80px;
-
-      &[data-has-background] {
-        padding-top: 80px;
-        padding-bottom: 80px;
-      }
-
-      &[data-padding='none'] {
-        margin-bottom: 0;
-        margin-top: 0;
-        padding-bottom: 0;
-        padding-top: 0;
-      }
     }
   }
 }
@@ -50,18 +100,14 @@
 .Page-twoColumn .Page-main [data-module]  {
   padding-left: 0; // to override layout widths
   padding-right: 0; // to override layout widths
-  margin-bottom: 40px;
-  margin-top: 0;
+  margin-top: var(--modulePaddingTop);
+  margin-bottom: var(--modulePaddingBottom);
+
+  &:first-child {
+    margin-top: 0;
+  }
 
   &:last-child {
     margin-bottom: 0;
-  }
-
-  @media @mq-lg {
-    margin-bottom: 80px;
-
-    &:last-child {
-      margin-bottom: 0;
-    }
   }
 }

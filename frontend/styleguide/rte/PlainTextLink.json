@@ -1,7 +1,7 @@
 {
   "_template": "PlainTextLink.hbs",
-
   "text": {
-    "_include": "/_group/RichTextElementsTiny.json"
+    "_include": "/_group/RichTextElementsTiny.json",
+    "_key": 0
   }
 }

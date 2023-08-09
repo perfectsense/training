@@ -1,0 +1,52 @@
+.PagePromoEnhancement {
+  margin: 30px 0;
+
+  .PagePromo {
+    &-category {
+      margin-bottom: 10px;
+    }
+
+    &-title {
+      .promo-title-6;
+    }
+
+    &-media {
+      img {
+        width: auto;
+      }
+    }
+  }
+
+  @media @mq-md {
+    margin: 40px 0;
+
+    &:not([data-align-right], [data-align-left]) {
+      .PagePromo {
+        &-title {
+          .promo-title-5;
+        }
+
+        &-description {
+          .description-2;
+        }
+      }
+    }
+
+    &[data-align-left],
+    &[data-align-right] {
+      margin: 10px 0;
+      max-width: 360px;
+      width: 50%;
+    }
+
+    &[data-align-left] {
+      float: left;
+      margin-right: 40px;
+    }
+
+    &[data-align-right] {
+      float: right;
+      margin-left: 40px;
+    }
+  }
+}

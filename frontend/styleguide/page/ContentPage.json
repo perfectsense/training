@@ -1,15 +1,14 @@
 {
   "_wrapper": false,
-  "_include": "Page.json",
+  "_include": "/page/Page.json",
   "_template": "ContentPage.hbs",
   "pageHeading": null,
   "pageLead": null,
   "main": null,
   "breadcrumbs": {
-    "_include": "/link/Link.json"
+    "_template": "/page/BreadcrumbLink.hbs"
   },
   "tags": {
-    "_include": "/link/Link.json"
-  },
-  "_hidden": true
+    "_template": "/tag/TagLink.hbs"
+  }
 }

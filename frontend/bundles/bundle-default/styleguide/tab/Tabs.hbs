@@ -1,18 +1,28 @@
 <bsp-tabs class="Tabs" data-widget="Tabs" data-module {{include "/page/list/includes/PageList-attributes.hbs" this}}>
-    {{include "/page/list/includes/PageList-header.hbs" this}}
+    {{include "/global/ModuleHeader.hbs" this}}
     <div class="Tabs-container" data-module-container>
         {{#with tabs}}
-            <div class="Tabs-tabsRow">
-                <ul class="Tabs-tabs">
-                    {{#each this}}
-                        <li>
-                            <a class="Tabs-tab" href="#{{id}}" data-tab {{~#eq @index 0}} data-visible{{/eq~}}>
-                                {{~title~}}
-                            </a>
-                        </li>
-                    {{/each}}
-                </ul>
-            </div>
+            <bsp-tabs-horitontal-navigation class="TabsHorizontalNavigation">
+                <button class="Button" type="button" data-click="previous" aria-label="Previous">
+                    <svg><use href="#icon-chevron-left"></use></svg>
+                </button>
+                <button class="Button" type="button" data-click="next" aria-label="Next">
+                    <svg><use href="#icon-chevron-right"></use></svg>
+                </button>
+                <div class="TabsHorizontalNavigation-content">
+                    <div class="Tabs-tabsRow">
+                        <ul class="Tabs-tabs">
+                            {{#each this}}
+                                <li>
+                                    <a class="Tabs-tab" href="#{{id}}" data-tab {{~#eq @index 0}} data-visible{{/eq~}}>
+                                        {{~title~}}
+                                    </a>
+                                </li>
+                            {{/each}}
+                        </ul>
+                    </div>
+                </div>
+            </bsp-tabs-horitontal-navigation>
         {{/with}}
         <div class="Tabs-content">
             {{#each tabs}}
@@ -21,5 +31,6 @@
                 </div>
             {{/each}}
         </div>
+        {{include "/page/list/includes/PageList-footer.hbs" this}}
     </div>
 </bsp-tabs>
