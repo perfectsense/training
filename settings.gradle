@@ -25,7 +25,7 @@ brightspot {
     versions {
         brightspot = '4.7.7'
         brightspotGo = '1.5.1'
-        sharedTests = '0.6.1'
+        sharedTests = '0.6.2'
         componentLib = '4.5.17'
         java = 11
     }
