@@ -14,7 +14,7 @@ bundle {
 }
 
 node {
-    version = '16.13.2'
+    version = '16.20.1'
     yarnVersion = '1.22.19'
     download = true
 }
