@@ -31,8 +31,6 @@ Install [Docker Desktop](https://www.docker.com/products/docker-desktop).
 
 #### Windows
 
-We recommend using [Git for Windows](https://git-scm.com/downloads).
-
 Install [OpenJDK](https://adoptium.net/releases.html?variant=openjdk11&jvmVariant=hotspot).
 
 Install [Docker Desktop](https://www.docker.com/products/docker-desktop).
@@ -44,6 +42,8 @@ the root directory of the project:
 ```console
 ./gradlew
 ```
+
+Note that on Windows you would use `gradlew.bat` rather than `./gradlew` for all the commands mentioned in this section.
 
 Here are some helpful Gradle commands:
 ```console
@@ -109,7 +109,7 @@ npm install --global yarn
 
 #### Windows
 
-Install [Node](https://nodejs.org/en/) — we recommend using the latest LTS release, currently 16.13.0.
+Install [Node 16.20.1](https://nodejs.org/en/).
 
 Install Yarn:
 ```
