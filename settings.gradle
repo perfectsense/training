@@ -31,7 +31,10 @@ brightspot {
     }
 
     dependencySubstitutions = [
-        'javax.inject:javax.inject': 'org.glassfish.hk2.external:javax.inject:_'
+        'javax.inject:javax.inject': 'org.glassfish.hk2.external:javax.inject:_',
+
+        // Go's lib-util-auto-dependency-test uses the CL version
+        'com.psddev.component-lib:test-utils': 'com.brightspot.shared-tests:util-filtered-class-finder:0.6.3',
     ]
 }
 
