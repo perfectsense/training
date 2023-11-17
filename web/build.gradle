@@ -15,7 +15,7 @@ dependencies {
     // Tests
     sharedTest 'com.brightspot.go:lib-util-gradle-dynamic-test'
     sharedTest 'com.brightspot.shared-tests:pack-standard-backend-integration-tests'
-    testRuntimeClasspath('com.brightspot.go:lib-util-auto-dependency-test') {
+    testImplementation('com.brightspot.go:lib-util-auto-dependency-test') {
         exclude group: 'com.psddev.component-lib', module: 'test-utils'
     }
 
