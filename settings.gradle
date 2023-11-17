@@ -13,8 +13,8 @@ pluginManagement {
 }
 
 plugins {
-    id "com.gradle.enterprise" version "3.1.1"
-    id 'com.brightspot.gradle' version '1.0.0-rc16'
+    id "com.gradle.enterprise" version "3.15.1"
+    id 'com.brightspot.gradle' version '1.0.0-rc32'
 }
 
 rootProject.name = 'brightspot-training'
