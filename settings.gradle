@@ -23,10 +23,10 @@ brightspot {
     projectGroup = 'com.brightspot-training'
 
     versions {
-        brightspot = '4.7.7'
-        brightspotGo = '1.5.1'
-        sharedTests = '0.6.2'
-        componentLib = '4.5.17'
+        brightspot = '4.7.10'
+        brightspotGo = '1.5.2'
+        sharedTests = '0.6.3'
+        componentLib = '4.5.22'
         java = 11
     }
 
