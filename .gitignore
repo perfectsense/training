@@ -9,6 +9,5 @@ build.properties
 docker-compose-dev.yml
 docker-compose.override.yml
 docker-sync.yml
-gradle
 node
 node_modules

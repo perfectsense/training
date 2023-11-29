@@ -13,8 +13,8 @@ pluginManagement {
 }
 
 plugins {
-    id "com.gradle.enterprise" version "3.1.1"
-    id 'com.brightspot.gradle' version '1.0.0-rc16'
+    id "com.gradle.enterprise" version "3.15.1"
+    id 'com.brightspot.gradle' version '1.0.0-rc32'
 }
 
 rootProject.name = 'brightspot-training'
@@ -23,15 +23,18 @@ brightspot {
     projectGroup = 'com.brightspot-training'
 
     versions {
-        brightspot = '4.7.7'
-        brightspotGo = '1.5.1'
-        sharedTests = '0.6.2'
-        componentLib = '4.5.17'
+        brightspot = '4.7.10'
+        brightspotGo = '1.5.2'
+        sharedTests = '0.6.3'
+        componentLib = '4.5.22'
         java = 11
     }
 
     dependencySubstitutions = [
-        'javax.inject:javax.inject': 'org.glassfish.hk2.external:javax.inject:_'
+        'javax.inject:javax.inject': 'org.glassfish.hk2.external:javax.inject:_',
+
+        // Go's lib-util-auto-dependency-test uses the CL version
+        'com.psddev.component-lib:test-utils': 'com.brightspot.shared-tests:util-filtered-class-finder:0.6.3',
     ]
 }
 
