@@ -1,6 +1,5 @@
 {
   "_template": "/newsletter/Newsletter.hbs",
-  "_wrapper": false,
   "above": [
     {
       "_template": "/newsletter/NewsletterHtmlModule.hbs",

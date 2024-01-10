@@ -1,5 +1,4 @@
 {
-  "_wrapper": false,
   "_include": "/page/ContentPage.json",
   "_template": "AuthorPage.hbs",
   "name": {
