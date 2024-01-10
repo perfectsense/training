@@ -1,5 +1,6 @@
 {
   "_template": "/page/Page.hbs",
+  "_wrapper": false,
   "_hidden": true,
   "_exampleOnly": true,
 
