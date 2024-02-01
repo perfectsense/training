@@ -14,7 +14,7 @@ pluginManagement {
 
 plugins {
     id "com.gradle.enterprise" version "3.15.1"
-    id 'com.brightspot.gradle' version '1.0.0-rc33'
+    id 'com.brightspot.gradle' version '1.0.0'
 }
 
 rootProject.name = 'brightspot-training'
@@ -25,7 +25,7 @@ brightspot {
     versions {
         brightspot = '4.7.10'
         brightspotGo = '1.5.2'
-        sharedTests = '0.6.3'
+        sharedTests = '0.7.1'
         componentLib = '4.5.22'
         java = 11
     }
@@ -34,7 +34,11 @@ brightspot {
         'javax.inject:javax.inject': 'org.glassfish.hk2.external:javax.inject:_',
 
         // Go's lib-util-auto-dependency-test uses the CL version
-        'com.psddev.component-lib:test-utils': 'com.brightspot.shared-tests:util-filtered-class-finder:0.6.3',
+        'com.psddev.component-lib:test-utils': 'com.brightspot.shared-tests:util-filtered-class-finder:0.7.1.2-xfea2e1', // from 0.7.1
+
+        // dependency conflicts across Gradle configurations
+        'com.fasterxml.jackson.core:jackson-core': 'com.fasterxml.jackson.core:jackson-core:2.11.0',
+        'com.google.api-client:google-api-client': 'com.google.api-client:google-api-client:1.33.4',
     ]
 }
 
