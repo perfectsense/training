@@ -212,7 +212,6 @@ dependencies {
     api 'com.brightspot.go:lib-util-edit-top-html'
     api 'com.brightspot.go:lib-util-embedded-interface'
     api 'com.brightspot.go:lib-util-handlebars-locale'
-    api 'com.brightspot.go:lib-util-hide-unthemed-models'
     api 'com.brightspot.go:lib-util-hide-urls-widget'
     api 'com.brightspot.go:lib-util-image-preview-html'
     api 'com.brightspot.go:lib-util-import-api'
