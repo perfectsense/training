@@ -92,7 +92,7 @@ We also need to add an association for the styles we set into the bundle’s par
 
 ## Styleguide navigation
 
-Complete example: <https://github.com/perfectsense/training/blob/exercise/meal/frontend/bundles/bundle-default/styleguide/_navigation.config.json>
+Complete example: <https://github.com/perfectsense/training/blob/exercise/meal/frontend/bundles/bundle-default/styleguide/_navigation.config.json#L551-L554>
 
 Lastly in order to see it when we run our Style Guide locally we need to add it to our `_navigation.config.json` file. Now if we start our theme locally by running yarn server:styleguide we should see a new page on the left side labeled Meal that will show the page and modules we just created.
 
