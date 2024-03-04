@@ -1,5 +1,4 @@
 {
-  "_wrapper": false,
   "_include": "/page/CreativeWorkPage.json",
   "_template": "ListiclePage.hbs",
   "lead": {

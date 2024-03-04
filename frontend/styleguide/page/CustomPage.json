@@ -1,5 +1,4 @@
 {
-  "_wrapper": false,
   "_include": "Page.json",
   "_template": "CustomPage.hbs",
   "pageHeading": null,
