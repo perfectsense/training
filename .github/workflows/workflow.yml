@@ -16,3 +16,4 @@ jobs:
     secrets: inherit
     with:
       node-version: '16.20.1'
+      runs-on: 'ubuntu-20.04'
