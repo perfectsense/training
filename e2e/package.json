@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "devDependencies": {
-    "@cypress-brightspot/cypress-brightspot": "^1.0.6",
+    "@cypress-brightspot/cypress-brightspot": "2.x",
     "cypress": "^13.9.0"
   },
   "scripts": {

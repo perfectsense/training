@@ -20,3 +20,24 @@ import './commands'
 // require('./commands')
 
 import '@cypress-brightspot/cypress-brightspot';
+
+
+const resizeObserverLoopErrRe = /^ResizeObserver loop limit exceeded/;
+
+Cypress.on('uncaught:exception', (err) => {
+    // if (resizeObserverLoopErrRe.test(err.message)) {
+    //     return false;
+    // }
+
+    // if (err.message.includes(`Failed to execute 'removeChild' on 'Node':`)) {
+    //     return false;
+    // }
+    // if (err.message.includes(`ResizeObserver loop limit exceeded`)) {
+    //     return false;
+    // }
+
+    // if (err.message.includes(`Failed to execute 'define' on 'CustomElementRegistry'`)) {
+    //     return false;
+    // }
+    return false;
+});

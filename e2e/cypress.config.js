@@ -1,15 +1,15 @@
 const { defineConfig } = require("cypress");
-const webpackPreprocessor = require('@cypress/webpack-preprocessor')
+const webpackPreprocessor = require("@cypress/webpack-preprocessor");
 
 // Set isLower to true if you are targetting a lower environment
-const isLower = true;
+const isLower = false;
 
 // Default values for environment variables
 const defaultEnv = {
   debugUsername: process.env.CYPRESS_debugUsername || "",
   debugPassword: process.env.CYPRESS_debugPassword || "",
   host: process.env.CYPRESS_baseUrl || "http://localhost",
-}
+};
 
 // Load local configuration if available
 if (isLower) {
@@ -27,16 +27,18 @@ module.exports = defineConfig({
   responseTimeout: 120000,
   requestTimeout: 120000,
   e2e: {
-    specPattern: ["./node_modules/@cypress-brightspot/cypress-brightspot/tests/e2e/cypress/e2e/*.cy.js","cypress/e2e/*.cy.js"],
+    specPattern: [
+      "./node_modules/@cypress-brightspot/cypress-brightspot/src/shared-tests/e2e/*.cy.js",
+      "cypress/e2e/brightspot-examples/*.cy.js",
+      "cypress/e2e/*.cy.js",
+    ],
     baseUrl: defaultEnv.host,
     watchForFileChanges: false,
     chromeWebSecurity: false,
     waitForAnimations: true,
     setupNodeEvents(on, config) {
-      on('file:preprocessor', webpackPreprocessor())
+      on("file:preprocessor", webpackPreprocessor());
     },
   },
   env: defaultEnv,
-})
-
-
+});

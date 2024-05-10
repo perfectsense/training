@@ -1,8 +1,0 @@
-{
-    "env": {
-        "debugUsername": "go-qa",
-        "debugPassword": "7586589c842fc62221e93a44a51da232",
-        "host": "https://cms.go-qa.lower.platform.brightspot.cloud",
-        "frontEndDomain": "https://cms.go-qa.lower.platform.brightspot.cloud"
-    }
-}
