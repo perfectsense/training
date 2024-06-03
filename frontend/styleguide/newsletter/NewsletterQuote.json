@@ -1,0 +1,12 @@
+{
+  "_template": "NewsletterQuote.hbs",
+  "quote": {
+    "_include": "/_group/RichTextElementsTiny.json",
+    "_key": 0
+  },
+  "attribution": {
+    "_include": "/_group/RichTextElementsTiny.json",
+    "_key": 0
+  },
+  "date": ""
+}

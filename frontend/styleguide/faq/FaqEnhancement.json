@@ -1,0 +1,6 @@
+{
+  "_template": "FaqEnhancement.hbs",
+  "item": {
+    "_template": "/faq/FaqModule.hbs"
+  }
+}

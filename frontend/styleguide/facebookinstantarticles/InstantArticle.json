@@ -1,0 +1,21 @@
+{
+  "_wrapper": false,
+  "_template": "/facebookinstantarticles/InstantArticle.hbs",
+  "canonicalUrl": "",
+  "leadFigure": {
+    "_template": "/figure/Figure.hbs"
+  },
+  "headline": "",
+  "tags": "Tag1, Tag2, Tag3",
+  "authors": {
+    "_template": "/facebookinstantarticles/Author.hbs"
+  },
+  "publishedTimeStamp": "Mon, 18 Apr 2016 04:40:34 GMT",
+  "modifiedTimeStamp": "Mon, 19 Apr 2016 04:40:34 GMT",
+  "body": {
+    "_template": "/facebookinstantarticles/Body.hbs"
+  },
+  "analyticsScript": {
+    "_template": "/facebookinstantarticles/Analytics.hbs"
+  }
+}

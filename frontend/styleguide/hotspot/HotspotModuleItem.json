@@ -1,0 +1,14 @@
+{
+  "_template": "HotspotModuleItem.hbs",
+  "xCoord": "5, returns x coordingate in percentage of the screen width. 0 is the left edge of the image, 100 is the right edge of the image.",
+  "yCoord": "5, returns y coordingate in percentage of the screen width. 0 is the top edge of the image, 100 is the bottom edge of the image.",
+  "icon": "enum: plus, plus-filled, magnify, tag, flag, image, location, expand",
+  "item": [
+    {
+      "_include": "/page/promo/PagePromo.json"
+    },
+    {
+      "_include": "/product/promo/ProductPromo.json"
+    }
+  ]
+}

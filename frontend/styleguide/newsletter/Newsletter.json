@@ -1,0 +1,47 @@
+{
+  "_wrapper": false,
+  "_template": "/newsletter/Newsletter.hbs",
+  "language": "",
+  "charset": "",
+  "newsletterDataSource": "",
+  "newsletterDataMedium": "",
+  "newsletterDataCampaign": "",
+  "newsletterDataContent": "",
+  "above": [
+    {
+      "_template": "/newsletter/NewsletterPromo.hbs"
+    },
+    {
+      "_template": "/newsletter/NewsletterHtmlModule.hbs"
+    }
+  ],
+  "header": {
+    "_template": "/newsletter/NewsletterHeader.hbs"
+  },
+  "banner": {
+    "_template": "/newsletter/NewsletterPromoBanner.hbs"
+  },
+  "footer": {
+    "_template": "/newsletter/NewsletterFooter.hbs"
+  },
+  "main": [
+    {
+      "_template": "/newsletter/NewsletterList.hbs"
+    },
+    {
+      "_template": "/newsletter/NewsletterHeading.hbs"
+    },
+    {
+      "_template": "/newsletter/NewsletterPromo.hbs"
+    },
+    {
+      "_template": "/newsletter/NewsletterQuote.hbs"
+    },
+    {
+      "_template": "/newsletter/NewsletterHtmlModule.hbs"
+    },
+    {
+      "_template": "/newsletter/NewsletterRichTextModule.hbs"
+    }
+  ]
+}

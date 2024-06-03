@@ -1,0 +1,37 @@
+{
+  "_template": "/podcast/list/PodcastList.hbs",
+  "ctaButtonText": {
+    "_include": "/_group/RichTextElementsTiny.json"
+  },
+  "ctaTarget": "_self",
+  "ctaUrl": "#",
+  "title": {
+    "_include": "/_group/RichTextElementsTiny.json",
+    "_key": 0
+  },
+  "description": {
+    "_include": "/_group/RichTextElementsSmall.json"
+  },
+  "anchorId": "anchorTest",
+  "items": [
+    {
+      "_template": "/podcast/promo/PodcastPromo.hbs"
+    },
+    {
+      "_template": "/iframe/IframeModule.hbs"
+    },
+    {
+      "_template": "/htmlmodule/HtmlModule.hbs"
+    },
+    {
+      "_template": "/adsense/GoogleAdsenseAdModule.hbs"
+    },
+    {
+      "_template": "/dfp/GoogleDfpAdModule.hbs"
+    }
+  ],
+  "pagination": {
+    "_template": "/link/PaginationLink.hbs"
+  }
+}
+

@@ -1,0 +1,25 @@
+{
+  "_template": "LiveBlogPage.hbs",
+  "_include": "/page/CreativeWorkPage.json",
+  "blogLead": {
+    "_include": "/_group/Leads.json",
+    "_key": 0
+  },
+  "blogBody": {
+    "_include": "/_group/RichTextElementsLarge.json",
+    "_key": 0
+  },
+  "pinnedPosts": {
+    "_template": "LiveBlogPost.hbs"
+  },
+  "currentPosts": {
+    "_template": "LiveBlogPost.hbs"
+  },
+  "fragment": false,
+  "postsEndpoint": "",
+  "liveEvent": false,
+  "whatYouNeedToKnow": {
+    "_include": "/_group/RichTextElementsLarge.json",
+    "_key": 0
+  }
+}

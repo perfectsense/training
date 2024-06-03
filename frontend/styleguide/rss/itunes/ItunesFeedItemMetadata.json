@@ -1,0 +1,14 @@
+{
+  "_template": "ItunesFeedItemMetadata.hbs",
+  "title": "",
+  "summary": "",
+  "subtitle": "",
+  "author": "",
+  "duration": 550,
+  "imageUrl": "",
+  "explicit": false,
+  "episodeType": "full",
+  "episodeNumber": 1,
+  "seasonNumber": 1,
+  "block": "No"
+}

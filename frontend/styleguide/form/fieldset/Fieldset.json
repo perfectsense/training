@@ -1,0 +1,18 @@
+{
+  "_template": "Fieldset.hbs",
+  "description": {
+    "_include": "/_group/RichTextElementsTiny.json",
+    "_key": 0
+  },
+  "errors": [
+    "At least one item must be selected"
+  ],
+  "items": {
+    "_include": "/_group/FormInputs.json",
+    "_key": 0
+  },
+  "legend": {
+    "_include": "/_group/RichTextElementsTiny.json",
+    "_key": 0
+  }
+}

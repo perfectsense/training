@@ -1,0 +1,6 @@
+{
+  "_template": "CarouselEnhancement.hbs",
+  "item": {
+    "_template": "/carousel/Carousel.hbs"
+  }
+}

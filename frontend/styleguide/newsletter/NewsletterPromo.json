@@ -1,0 +1,27 @@
+{
+  "_template": "NewsletterPromo.hbs",
+  "media": {
+    "_template": "/image/Image.hbs"
+  },
+  "url": "",
+  "target": "",
+  "category": {
+    "_include": "/_group/RichTextElementsTiny.json",
+    "_key": 0
+  },
+  "categoryUrl": "",
+  "type": "",
+  "title": {
+    "_include": "/_group/RichTextElementsTiny.json",
+    "_key": 0
+  },
+  "description": {
+    "_include": "/_group/RichTextElementsTiny.json",
+    "_key": 0
+  },
+  "newsletterDataSource": "",
+  "newsletterDataMedium": "",
+  "newsletterDataCampaign": "",
+  "newsletterDataContent": "",
+  "isNotUTMCapable": "false"
+}

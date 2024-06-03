@@ -1,0 +1,20 @@
+{
+  "_template": "OpenGraphMeta.hbs",
+  "title": "",
+  "url": "",
+  "description": "",
+  "determiner": "auto",
+  "locale": "en_US",
+  "localeAlternates": [
+    "es_ES",
+    "fr_FR"
+  ],
+  "siteName": "",
+  "type": {
+    "_include": "/facebook/OpenGraphTypes.json",
+    "_key": 0
+  },
+  "images": {
+    "_template": "OpenGraphImageMeta.hbs"
+  }
+}

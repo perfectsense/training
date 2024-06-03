@@ -1,0 +1,17 @@
+{
+  "_template": "./NewsletterHeader.hbs",
+  "description": {
+    "_include": "/_group/RichTextElementsSmall.json",
+    "_key": 0
+  },
+  "media": {
+    "_template": "/image/Image.hbs"
+  },
+  "title": "",
+  "publishDate": "",
+  "newsletterDataSource": "",
+  "newsletterDataMedium": "",
+  "newsletterDataCampaign": "",
+  "newsletterDataContent": "",
+  "isNotUTMCapable": "false"
+}

@@ -1,0 +1,44 @@
+[
+  {
+    "_template": "/form/fieldset/Fieldset.hbs"
+  },
+  {
+    "_template": "/form/input/CaptchaInput.hbs"
+  },
+  {
+    "_template": "/form/input/CheckboxInput.hbs"
+  },
+  {
+    "_template": "/form/input/EmailInput.hbs"
+  },
+  {
+    "_template": "/form/input/FileInput.hbs"
+  },
+  {
+    "_template": "/form/input/HiddenCookieInput.hbs"
+  },
+  {
+    "_template": "/form/input/HiddenDocumentReferrerInput.hbs"
+  },
+  {
+    "_template": "/form/input/HiddenInput.hbs"
+  },
+  {
+    "_template": "/form/input/PasswordInput.hbs"
+  },
+  {
+    "_template": "/form/input/PhoneNumberInput.hbs"
+  },
+  {
+    "_template": "/form/input/RadioInput.hbs"
+  },
+  {
+    "_template": "/form/input/TextArea.hbs"
+  },
+  {
+    "_template": "/form/input/TextInput.hbs"
+  },
+  {
+    "_template": "/form/select/Select.hbs"
+  }
+]

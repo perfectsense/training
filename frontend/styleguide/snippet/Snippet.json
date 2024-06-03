@@ -1,0 +1,6 @@
+{
+  "_template": "/snippet/Snippet.hbs",
+  "snippetOption": {
+    "_include": "/snippet/SnippetTextOption.json"
+  }
+}

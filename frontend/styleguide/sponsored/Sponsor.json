@@ -1,0 +1,18 @@
+{
+  "_template": "/sponsored/Sponsor.hbs",
+  "media": {
+    "_include": "/image/Image.json"
+  },
+  "url": "#",
+  "sponsorName": {
+    "_include": "/_group/RichTextElementsTiny.json",
+    "_key": 0
+  },
+  "sponsorDisplayText": {
+    "_include": "/_group/RichTextElementsTiny.json",
+    "_key": 0
+  },
+  "sponsorMeaningUrl": "",
+  "sponsorMeaningTarget": "",
+  "target": "_self"
+}

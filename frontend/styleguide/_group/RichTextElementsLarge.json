@@ -1,0 +1,105 @@
+[
+  "Enhancement",
+  {
+    "_template": "/ad/AdRichTextElement.hbs"
+  },
+  {
+    "_template": "/callout/CalloutEnhancement.hbs"
+  },
+  {
+    "_template": "/carousel/CarouselEnhancement.hbs"
+  },
+  {
+    "_template": "/code/CodeBlockEnhancement.hbs"
+  },
+  {
+    "_template": "/code/CodeInline.hbs"
+  },
+  {
+    "_template": "/externalcontent/ExternalContentWrapper.hbs"
+  },
+  {
+    "_template": "/faq/FaqEnhancement.hbs"
+  },
+  {
+    "_template": "/form/FormEnhancement.hbs"
+  },
+  {
+    "_template": "/image/ImageEnhancement.hbs"
+  },
+  {
+    "_template": "/link/LinkEnhancement.hbs"
+  },
+  {
+    "_template": "/logo/list/LogoListEnhancement.hbs"
+  },
+  {
+    "_template": "/page/list/PageListEnhancement.hbs"
+  },
+  {
+    "_template": "/person/list/PersonListEnhancement.hbs"
+  },
+  {
+    "_template": "/product/list/ProductListEnhancement.hbs"
+  },
+  {
+    "_template": "/page/promo/PagePromoEnhancement.hbs"
+  },
+  {
+    "_template": "/person/promo/PersonPromoEnhancement.hbs"
+  },
+  {
+    "_template": "/product/promo/ProductPromoEnhancement.hbs"
+  },
+  {
+    "_template": "/podcast/list/PodcastEpisodeListEnhancement.hbs"
+  },
+  {
+    "_template": "/rte/TextSubstitution.hbs"
+  },
+  {
+    "_template": "/blockquote/BlockQuote.hbs"
+  },
+  {
+    "_template": "/pullquote/PullQuote.hbs"
+  },
+  {
+    "_template": "/quote/QuoteListEnhancement.hbs"
+  },
+  {
+    "_template": "/snippet/Snippet.hbs"
+  },
+  {
+    "_template": "/stat/StatListEnhancement.hbs"
+  },
+  {
+    "_template": "/tab/TabsEnhancement.hbs"
+  },
+  {
+    "_template": "/video/VideoEnhancement.hbs"
+  },
+  {
+    "_template": "/video/VideoPlaylistEnhancement.hbs"
+  },
+  {
+    "_template": "/attachment/AttachmentEnhancement.hbs"
+  },
+  {
+    "_template": "/text/RichTextHeading.hbs"
+  },
+  {
+    "_template": "/htmlmodule/HtmlModuleEnhancement.hbs"
+  },
+  {
+    "_template": "/iframe/IframeModuleEnhancement.hbs"
+  },
+  {
+    "_template": "/table/Table.hbs"
+  },
+  {
+    "_template": "/text/HorizontalRule.hbs"
+  },
+  {
+    "_include": "/_group/Ads.json"
+  }
+]

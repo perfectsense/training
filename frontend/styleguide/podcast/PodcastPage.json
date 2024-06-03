@@ -1,0 +1,25 @@
+{
+  "_include": "/page/Page.json",
+  "_template": "/podcast/PodcastPage.hbs",
+  "headline": {
+    "_include": "/_group/RichTextElementsTiny.json",
+    "_key": 0
+  },
+  "subHeadline": {
+    "_include": "/_group/RichTextElementsTiny.json",
+    "_key": 0
+  },
+  "image": {
+    "_template": "/image/Image.hbs"
+  },
+  "providers": {
+    "_template": "/podcast/list/PodcastProviderList.hbs"
+  },
+  "body": {
+    "_include": "/_group/RichTextElementsLarge.json",
+    "_key": 0
+  },
+  "main": {
+    "_template": "/podcast/list/PodcastEpisodeList.hbs"
+  }
+}

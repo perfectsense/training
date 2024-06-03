@@ -1,0 +1,17 @@
+{
+  "_template": "ExternalContentWrapper.hbs",
+  "item": [
+    {
+      "_template": "/externalcontent/ExternalContent.hbs"
+    },
+    {
+      "_template": "/facebook/FacebookUrl.hbs"
+    },
+    {
+      "_template": "/instagram/InstagramUrl.hbs"
+    },
+    {
+      "_template": "/twitter/TweetUrl.hbs"
+    }
+  ]
+}

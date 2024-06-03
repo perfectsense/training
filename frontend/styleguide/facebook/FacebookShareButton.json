@@ -1,0 +1,8 @@
+{
+  "_template": "FacebookShareButton.hbs",
+  "shareHref": "https%3A%2F%2Fwww.example.com",
+  "display": "popup",
+  "facebookAppId": "",
+  "redirectUri": "https%3A%2F%2Fwww.example.com",
+  "body": "facebook"
+}

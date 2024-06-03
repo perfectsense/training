@@ -1,0 +1,9 @@
+[
+  "Enhancement",
+  {
+    "_template": "/snippet/Snippet.hbs"
+  },
+  {
+    "_template": "/link/LinkEnhancement.hbs"
+  }
+]

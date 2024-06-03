@@ -1,0 +1,20 @@
+{
+  "_template": "Tabs.hbs",
+  "title": {
+    "_include": "/_group/RichTextElementsTiny.json",
+    "_key": 0
+  },
+  "description": {
+    "_include": "/_group/RichTextElementsSmall.json",
+    "_key": 0
+  },
+  "anchorId": "anchorTest",
+  "tabs": {
+    "_template": "TabItem.hbs"
+  },
+  "ctaButtonText": {
+    "_include": "/_group/RichTextElementsTiny.json"
+  },
+  "ctaTarget": "_self",
+  "ctaUrl": "#"
+}

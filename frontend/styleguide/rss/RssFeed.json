@@ -1,0 +1,18 @@
+{
+  "_template": "RssFeed.hbs",
+  "websitePrimaryUrl": "",
+  "feedUrl": "",
+  "title": "",
+  "description": "",
+  "language": "en",
+  "lastBuildDate": "Mon, 01 Jan 2020 00:00:00 -0500",
+  "generator": "",
+  "copyright": "",
+  "metadata": {
+    "_include": "/rss/_group/RssFeedMetadata.json",
+    "_key": 0
+  },
+  "items": {
+    "_template": "/rss/RssFeedItem.hbs"
+  }
+}

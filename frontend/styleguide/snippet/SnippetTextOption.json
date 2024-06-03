@@ -1,0 +1,6 @@
+{
+  "_template": "/snippet/SnippetTextOption.hbs",
+  "text": {
+    "_include": "/_group/RichTextElementsTextSnippet.json"
+  }
+}

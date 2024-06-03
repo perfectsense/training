@@ -1,0 +1,25 @@
+{
+  "_template": "/video/VideoPlaylistItem.hbs",
+  "media": {
+    "_template": "/image/Image.hbs"
+  },
+  "player": {
+    "_include": "/_group/VideoPlayers.json",
+    "_key": 0
+  },
+  "date": "",
+  "duration": "",
+  "type": "",
+  "title": {
+    "_include": "/_group/RichTextElementsTiny.json",
+    "_key": 0
+  },
+  "description": {
+    "_include": "/_group/RichTextElementsSmall.json",
+    "_key": 0
+  },
+  "contentId": "",
+  "companions": {
+    "_template": "/video/CompanionContentItem.hbs"
+  }
+}

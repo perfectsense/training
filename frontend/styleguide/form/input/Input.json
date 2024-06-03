@@ -1,0 +1,17 @@
+{
+  "_template": "Input.hbs",
+  "label": {
+    "_include": "/_group/RichTextElementsTiny.json",
+    "_key": 0
+  },
+  "labelPlainText": "",
+  "inputName": "",
+  "inputValue": "",
+  "errors": [
+    ""
+  ],
+  "description": {
+    "_include": "/_group/RichTextElementsTiny.json",
+    "_key": 0
+  }
+}

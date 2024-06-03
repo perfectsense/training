@@ -1,0 +1,17 @@
+[
+  {
+    "_template": "/page/SeoRobotsMeta.hbs"
+  },
+  {
+    "_template": "/facebook/OpenGraphMeta.hbs"
+  },
+  {
+    "_template": "/facebook/FacebookMetas.hbs"
+  },
+  {
+    "_template": "/page/MetaElement.hbs"
+  },
+  {
+    "_template": "/twitter/card/TwitterSummaryLargeImageCard.hbs"
+  }
+]

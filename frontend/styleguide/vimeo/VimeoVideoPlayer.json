@@ -1,0 +1,13 @@
+{
+  "_template": "VimeoVideoPlayer.hbs",
+  "playerId": "",
+  "videoTitle": {
+    "_include": "/_group/RichTextElementsTiny.json",
+    "_key": 0
+  },
+  "videoId": "",
+  "privacyHash": "",
+  "autoplay": false,
+  "muted": false,
+  "seekSeconds": 1
+}

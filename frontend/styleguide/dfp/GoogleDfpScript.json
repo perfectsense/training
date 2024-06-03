@@ -1,0 +1,4 @@
+{
+  "_template": "GoogleDfpScript.hbs",
+  "targets": "['banner', '300x250', 'sticky_footer']"
+}

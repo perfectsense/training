@@ -1,0 +1,13 @@
+{
+  "_template": "VideoPlayer.hbs",
+  "playerId": "",
+  "videoTitle": "",
+  "videoId": "",
+  "autoplay": false,
+  "muted": false,
+  "seekSeconds": 0,
+  "liveVideo": false,
+  "extraAttributes": {
+    "_template": "/dfp/GoogleDfpVideoAttribute.hbs"
+  }
+}

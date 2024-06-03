@@ -1,0 +1,16 @@
+{
+  "_include": "/form/input/Input.json",
+  "_template": "TextInput.hbs",
+  "inputName": "textInput",
+  "placeholder": "Placeholder",
+  "autocomplete": "on",
+  "autofocus": false,
+  "disabled": false,
+  "maxlength": 100,
+  "minlength": 1,
+  "pattern": "[a-zA-Z0-9]+",
+  "readonly": false,
+  "required": false,
+  "spellcheck": true,
+  "inputValue": ""
+}

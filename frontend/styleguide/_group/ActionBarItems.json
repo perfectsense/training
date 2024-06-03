@@ -1,0 +1,29 @@
+[
+  {
+    "_template": "/link/MailToLink.hbs"
+  },
+  {
+    "_template": "/link/PrintLink.hbs"
+  },
+  {
+    "_template": "/facebook/FacebookShareButton.hbs"
+  },
+  {
+    "_template": "/linkedin/LinkedInShareButton.hbs"
+  },
+  {
+    "_template": "/pinterest/PinterestShareButton.hbs"
+  },
+  {
+    "_template": "/tumblr/TumblrShareButton.hbs"
+  },
+  {
+    "_template": "/twitter/intent/TwitterTweetButton.hbs"
+  },
+  {
+    "_template": "/link/CopyLink.hbs"
+  },
+  {
+    "_template": "/link/DownloadLink.hbs"
+  }
+]

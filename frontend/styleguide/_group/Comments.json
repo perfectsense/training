@@ -1,0 +1,8 @@
+[
+  {
+    "_template": "/coral/CoralCommenting.hbs"
+  },
+  {
+    "_template": "/disqus/DisqusCommenting.hbs"
+  }
+]

@@ -1,0 +1,8 @@
+{
+  "_template": "FileInput.hbs",
+  "_include": "/form/input/Input.json",
+  "accept": "image/*",
+  "disabled": false,
+  "multiple": false,
+  "required": false
+}

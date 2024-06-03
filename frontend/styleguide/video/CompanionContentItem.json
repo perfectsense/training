@@ -1,0 +1,14 @@
+{
+  "_template": "/video/CompanionContentItem.hbs",
+  "media": {
+    "_template": "/image/Image.hbs"
+  },
+  "date": "",
+  "url": "",
+  "category": "",
+  "categoryUrl": "",
+  "type": "",
+  "title": "",
+  "timeStamp": "",
+  "description": ""
+}

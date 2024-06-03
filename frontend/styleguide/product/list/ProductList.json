@@ -1,0 +1,38 @@
+{
+  "_template": "/product/list/ProductList.hbs",
+  "title": {
+    "_include": "/_group/RichTextElementsTiny.json",
+    "_key": 0
+  },
+  "description": {
+    "_include": "/_group/RichTextElementsSmall.json",
+    "_key": 0
+  },
+  "ctaButtonText": {
+    "_include": "/_group/RichTextElementsTiny.json",
+    "_key": 0
+  },
+  "ctaUrl": "",
+  "ctaTarget": "",
+  "pagination": {
+    "_template": "/link/PaginationLink.hbs"
+  },
+  "items": [
+    {
+      "_template": "/product/promo/ProductPromo.hbs"
+    },
+    {
+      "_template": "/iframe/IframeModule.hbs"
+    },
+    {
+      "_template": "/htmlmodule/HtmlModule.hbs"
+    },
+    {
+      "_template": "/adsense/GoogleAdsenseAdModule.hbs"
+    },
+    {
+      "_template": "/dfp/GoogleDfpAdModule.hbs"
+    }
+  ],
+  "anchorId": ""
+}

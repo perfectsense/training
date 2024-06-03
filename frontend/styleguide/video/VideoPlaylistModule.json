@@ -1,0 +1,24 @@
+{
+  "_template": "/video/VideoPlaylistModule.hbs",
+  "title": {
+    "_include": "/_group/RichTextElementsTiny.json",
+    "_key": 0
+  },
+  "description": {
+    "_include": "/_group/RichTextElementsSmall.json",
+    "_key": 0
+  },
+  "anchorId": "anchorTest",
+  "player": {
+    "_include": "/_group/VideoPlayers.json",
+    "_key": 0
+  },
+  "playlist": {
+    "_template": "/video/VideoPlaylistItem.hbs"
+  },
+  "ctaButtonText": {
+    "_include": "/_group/RichTextElementsTiny.json"
+  },
+  "ctaUrl": "",
+  "ctaTarget": ""
+}

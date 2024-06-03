@@ -1,0 +1,132 @@
+{
+  "_wrapper": false,
+  "_template": "Page.hbs",
+  "language": "",
+  "extraStyles": {
+    "_include": "/_group/ExtraStyles.json",
+    "_key": 0
+  },
+  "extraLinks": {
+    "_template": "/page/LinkElement.hbs"
+  },
+  "breadcrumbs": {
+    "_template": "/page/BreadcrumbLink.hbs"
+  },
+  "seoTitle": "",
+  "seoDescription": "",
+  "canonicalLink": "",
+  "meta": {
+    "_include": "/_group/Metas.json",
+    "_key": 0
+  },
+  "feedLink": "",
+  "jsonLinkedData": "",
+  "manifestLink": "",
+  "favicons": {
+    "_template": "Favicon.hbs"
+  },
+  "extraScripts": {
+    "_include": "/_group/ExtraScripts.json",
+    "_key": 0
+  },
+  "extraBodyItems": {
+    "_include": "/_group/ExtraBodyItems.json",
+    "_key": 0
+  },
+  "entitlements": {
+    "_include": "/_group/EntitlementProviders.json",
+    "_key": 0
+  },
+  "hat": {
+    "_template": "/page/PageHeaderTextHat.hbs"
+  },
+  "logo": {
+    "_template": "/page/PageLogo.hbs"
+  },
+  "footerLogo": {
+    "_template": "/page/PageLogo.hbs"
+  },
+  "sponsored": {
+    "_include": "/_group/Sponsored.json",
+    "_key": 0
+  },
+  "tagManagerHead": {
+    "_include": "/_group/TagManagerHead.json",
+    "_key": 0
+  },
+  "tagManagerBody": {
+    "_include": "/_group/TagManagerBody.json",
+    "_key": 0
+  },
+  "banner": {
+    "_include": "/_group/Banners.json",
+    "_key": 0
+  },
+  "navigation": {
+    "_template": "/navigation/Navigation.hbs"
+  },
+  "social": {
+    "_template": "/social/SocialBar.hbs"
+  },
+  "sectionNavigation": {
+    "_template": "/navigation/Navigation.hbs"
+  },
+  "searchAction": "",
+  "above": {
+    "_include": "/_group/Modules.json",
+    "_key": 0
+  },
+  "pageHeading": {
+    "_include": "/_group/RichTextElementsTiny.json",
+    "_key": 0
+  },
+  "pageLead": {
+    "_include": "/_group/Leads.json",
+    "_key": 0
+  },
+  "pageSubHeading": {
+    "_include": "/_group/RichTextElementsSmall.json",
+    "_key": 0
+  },
+  "main": {
+    "_include": "/_group/Modules.json",
+    "_key": 0
+  },
+  "aside": {
+    "_include": "/_group/Modules.json",
+    "_key": 0
+  },
+  "below": {
+    "_include": "/_group/Modules.json",
+    "_key": 0
+  },
+  "footerNavigation": {
+    "_template": "/navigation/Navigation.hbs"
+  },
+  "footerContent": {
+    "_include": "/_group/Modules.json",
+    "_key": 0
+  },
+  "footerDescription": {
+    "_include": "/_group/RichTextElementsSmall.json",
+    "_key": 0
+  },
+  "disclaimer": {
+    "_include": "/_group/RichTextElementsSmall.json",
+    "_key": 0
+  },
+  "contentId": "",
+  "actions": {
+    "_template": "/action-bar/ActionBar.hbs"
+  },
+  "commenting": {
+    "_include": "/_group/Comments.json",
+    "_key": 0
+  },
+  "languages": {
+    "_template": "/languages/LanguagesMenu.hbs"
+  },
+  "languageVariantLinks": {
+    "_template": "/page/Page-hrefLangLink.hbs"
+  }
+}

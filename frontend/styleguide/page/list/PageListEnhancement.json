@@ -1,0 +1,6 @@
+{
+  "_template": "PageListEnhancement.hbs",
+  "item": {
+    "_template": "/page/list/PageList.hbs"
+  }
+}

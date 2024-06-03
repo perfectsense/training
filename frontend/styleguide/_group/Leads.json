@@ -1,0 +1,14 @@
+[
+  {
+    "_template": "/carousel/Carousel.hbs"
+  },
+  {
+    "_template": "/figure/Figure.hbs"
+  },
+  {
+    "_template": "/page/PageHeading.hbs"
+  },
+  {
+    "_template": "/video/VideoLead.hbs"
+  }
+]

@@ -1,0 +1,21 @@
+{
+  "_template": "/author/list/AuthorList.hbs",
+  "title": {
+    "_include": "/_group/RichTextElementsTiny.json",
+    "_key": 0
+  },
+  "description": {
+    "_include": "/_group/RichTextElementsSmall.json",
+    "_key": 0
+  },
+  "anchorId": "",
+  "items": {
+    "_template": "/author/promo/AuthorPromo.hbs"
+  },
+  "ctaButtonText": {
+    "_include": "/_group/RichTextElementsTiny.json",
+    "_key": 0
+  },
+  "ctaUrl": "",
+  "ctaTarget": ""
+}

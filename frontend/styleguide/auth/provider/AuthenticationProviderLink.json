@@ -1,0 +1,6 @@
+{
+  "_template": "AuthenticationProviderLink.hbs",
+  "providerIdentifier": "providerIdentifier",
+  "body": "Body",
+  "url": "#"
+}

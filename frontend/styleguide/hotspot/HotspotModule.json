@@ -1,0 +1,34 @@
+{
+  "_template": "HotspotModule.hbs",
+  "anchorId": "",
+  "modalId": "Required. Unique ID to this module, to be used for the modal overlay",
+  "category": {
+    "_include": "/_group/RichTextElementsTiny.json",
+    "_key": 0
+  },
+  "categoryUrl": "",
+  "ctaButtonText": {
+    "_include": "/_group/RichTextElementsTiny.json",
+    "_key": 0
+  },
+  "description": {
+    "_include": "/_group/RichTextElementsSmall.json",
+    "_key": 0
+  },
+  "combinedHotspotIcon": "enum: plus, magnify, tag, flag, image, location, expand",
+  "media": {
+    "_template": "/image/Image.hbs"
+  },
+  "items": [
+    {
+      "_include": "HotspotModuleItem.json"
+    }
+  ],
+  "target": "",
+  "title": {
+    "_include": "/_group/RichTextElementsTiny.json",
+    "_key": 0
+  },
+  "type": "",
+  "url": ""
+}

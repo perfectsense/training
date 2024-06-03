@@ -1,0 +1,6 @@
+{
+  "_template": "ImageEnhancement.hbs",
+  "item": {
+    "_template": "/figure/Figure.hbs"
+  }
+}

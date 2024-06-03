@@ -1,0 +1,18 @@
+{
+  "_template": "./NewsletterFooter.hbs",
+  "body": {
+    "_include": "/_group/RichTextElementsSmall.json",
+    "_key": 0
+  },
+  "links": {
+    "_template": "/newsletter/NewsletterNavigationLink.hbs"
+  },
+  "social": {
+    "_template": "/social/SocialBar.hbs"
+  },
+  "newsletterDataSource": "",
+  "newsletterDataMedium": "",
+  "newsletterDataCampaign": "",
+  "newsletterDataContent": "",
+  "isNotUTMCapable": "false"
+}

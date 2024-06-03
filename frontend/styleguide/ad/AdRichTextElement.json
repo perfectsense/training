@@ -1,0 +1,20 @@
+{
+  "_template": "AdRichTextElement.hbs",
+  "ad": [
+    {
+      "_template": "/adsense/GoogleAdsenseAdModule.hbs"
+    },
+    {
+      "_template": "/dfp/GoogleDfpAdModule.hbs"
+    },
+    {
+      "_template": "/nativo/NativoAd.hbs"
+    },
+    {
+      "_template": "/outbrain/OutbrainRecommendationModule.hbs"
+    },
+    {
+      "_template": "/taboola/TaboolaRecommendationModule.hbs"
+    }
+  ]
+}

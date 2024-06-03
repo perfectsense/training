@@ -1,0 +1,17 @@
+{
+  "_include": "/form/input/Input.json",
+  "_template": "EmailInput.hbs",
+  "inputName": "",
+  "placeholder": "",
+  "autocomplete": "email",
+  "autofocus": false,
+  "disabled": false,
+  "maxlength": 100,
+  "minlength": 1,
+  "multiple": false,
+  "pattern": "",
+  "readonly": false,
+  "required": false,
+  "spellcheck": false,
+  "inputValue": ""
+}

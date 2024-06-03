@@ -1,0 +1,8 @@
+{
+  "_template": "Row.hbs",
+
+  "cells": {
+    "_template": "Cell.hbs"
+  },
+  "verticalAlign": ""
+}

@@ -1,0 +1,12 @@
+[
+  "Enhancement",
+  {
+    "_template": "/rte/PlainTextHeading.hbs"
+  },
+  {
+    "_template": "/rte/PlainTextLink.hbs"
+  },
+  {
+    "_template": "/rte/TextSubstitution.hbs"
+  }
+]

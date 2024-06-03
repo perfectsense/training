@@ -1,0 +1,15 @@
+{
+  "_template": "NavigationGroup.hbs",
+  "title": {
+    "_include": "/_group/RichTextElementsTiny.json",
+    "_key": 0
+  },
+  "items":[
+    {
+      "_template": "NavigationLink.hbs"
+    },
+    {
+      "_template": "/social/SocialLink.hbs"
+    }
+  ]
+}

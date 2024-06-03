@@ -1,0 +1,20 @@
+{
+    "_template": "/faq/FaqModule.hbs",
+    "title": {
+        "_include": "/_group/RichTextElementsTiny.json"
+    },
+    "description": {
+        "_include": "/_group/RichTextElementsSmall.json"
+    },
+    "anchorId": "anchorTest",
+    "items": {
+        "_include": "/_group/FaqItems.json"
+    },
+    "ctaButtonText": {
+        "_include": "/_group/RichTextElementsTiny.json",
+        "_key": 0
+    },
+    "ctaUrl": "",
+    "ctaTarget": "",
+    "jsonLinkedData": ""
+}

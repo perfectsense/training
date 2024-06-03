@@ -1,0 +1,15 @@
+{
+  "_template": "Quote.hbs",
+  "anchorId": "anchorTest",
+  "quote": {
+    "_include": "/_group/RichTextElementsTiny.json",
+    "_key": 0
+  },
+  "attribution": {
+    "_include": "/_group/RichTextElementsTiny.json",
+    "_key": 0
+  },
+  "image": {
+    "_template": "/image/Image.hbs"
+  }
+}

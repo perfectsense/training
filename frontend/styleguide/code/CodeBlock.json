@@ -1,0 +1,14 @@
+{
+  "_template": "/code/CodeBlock.hbs",
+  "title": {
+    "_include": "/_group/RichTextElementsTiny.json",
+    "_key": 0
+  },
+  "code": "code",
+  "language": "text/x-java",
+  "annotations": [
+    {
+      "_template": "/code/CodeAnnotation.hbs"
+    }
+  ]
+}

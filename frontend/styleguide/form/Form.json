@@ -1,0 +1,33 @@
+{
+  "_template": "Form.hbs",
+  "title": {
+    "_include": "/_group/RichTextElementsTiny.json",
+    "_key": 0
+  },
+  "description": {
+    "_include": "/_group/RichTextElementsSmall.json",
+    "_key": 0
+  },
+  "anchorId": "anchorTest",
+  "acceptCharset": "utf-8",
+  "action": "",
+  "autocomplete": "on",
+  "enctype": "multipart/form-data",
+  "method": "post",
+  "name": "",
+  "novalidate": false,
+  "target": "",
+  "submissionSuccess": false,
+  "items": {
+    "_include": "/_group/FormElements.json",
+    "_key": 0
+  },
+  "errorMessage": {
+    "_include": "/_group/RichTextElementsSmall.json",
+    "_key": 0
+  },
+  "successMessage": {
+    "_include": "/_group/RichTextElementsSmall.json",
+    "_key": 0
+  }
+}

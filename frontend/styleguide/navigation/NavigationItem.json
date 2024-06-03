@@ -1,0 +1,28 @@
+{
+  "_template": "NavigationItem.hbs",
+  "text": {
+    "_include": "/_group/RichTextElementsTiny.json",
+    "_key": 0
+  },
+  "href": "",
+  "target": "",
+  "items": [
+    {
+      "_template": "NavigationLink.hbs"
+    },
+    {
+      "_template": "NavigationGroup.hbs"
+    },
+    {
+      "_template": "/social/SocialLink.hbs"
+    }
+  ],
+  "content": [
+    {
+      "_template": "/page/promo/PagePromo.hbs"
+    }
+  ],
+  "contentId": "",
+  "iconUrl": "",
+  "isCurrent": false
+}

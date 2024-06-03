@@ -1,0 +1,9 @@
+{
+  "_template": "/podcast/promo/PodcastProviderPromo.hbs",
+  "media": {
+    "_template": "/image/Image.hbs"
+  },
+  "url": "",
+  "target": "",
+  "title": ""
+}

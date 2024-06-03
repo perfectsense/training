@@ -1,0 +1,7 @@
+{
+  "_template": "Table.hbs",
+
+  "rows": {
+    "_template": "Row.hbs"
+  }
+}

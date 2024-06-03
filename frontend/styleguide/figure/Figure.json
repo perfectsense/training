@@ -1,0 +1,16 @@
+{
+  "_template": "Figure.hbs",
+  "anchorId": "",
+  "image": {
+    "_image": true
+  },
+  "alt": "",
+  "caption": {
+    "_include": "/_group/RichTextElementsSmall.json",
+    "_key": 0
+  },
+  "credit": {
+    "_include": "/_group/RichTextElementsSmall.json",
+    "_key": 0
+  }
+}

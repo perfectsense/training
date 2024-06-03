@@ -1,0 +1,45 @@
+{
+  "_wrapper": false,
+  "_include": "/page/CreativeWorkPage.json",
+  "_template": "TopicPage.hbs",
+  "topicBody": {
+    "_include": "/_group/RichTextElementsLarge.json",
+    "_key": 0
+  },
+  "book": [
+    {
+      "_include": "/book/Book.json"
+    }
+  ],
+  "headline": {
+    "_include": "/_group/RichTextElementsTiny.json",
+    "_key": 0
+  },
+  "subHeadline": {
+    "_include": "/_group/RichTextElementsTiny.json",
+    "_key": 0
+  },
+  "copyright": {
+    "_include": "/_group/RichTextElementsSmall.json",
+    "_key": 0
+  },
+  "previousTopic": {
+    "_include": "/topic/TopicLink.json"
+  },
+  "nextTopic": {
+    "_include": "/topic/TopicLink.json"
+  },
+  "attachments": [
+    {
+      "_include": "/attachment/AttachmentEnhancement.json",
+      "_repeat": 2
+    }
+  ],
+  "lead": {
+    "_include": "/_group/Leads.json",
+    "_key": 0
+  },
+  "relatedContent": {
+    "_template": "/page/grouped-list/PageGroupedList.hbs"
+  }
+}

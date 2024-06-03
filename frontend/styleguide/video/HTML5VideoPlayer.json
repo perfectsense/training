@@ -1,0 +1,21 @@
+{
+  "_template": "HTML5VideoPlayer.hbs",
+  "playerId": "",
+  "videoTitle": {
+    "_include": "/_group/RichTextElementsTiny.json",
+    "_key": 0
+  },
+  "videoId": "",
+  "poster": {
+    "_image": true
+  },
+  "autoplay": false,
+  "muted": true,
+  "sources": {
+    "_template": "HTML5VideoPlayerSource.hbs"
+  },
+  "extraAttributes": {
+    "_include": "/_group/VideoExtraAttributes.json",
+    "_key": 0
+  }
+}

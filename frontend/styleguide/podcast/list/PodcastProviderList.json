@@ -1,0 +1,33 @@
+{
+  "_template": "/podcast/list/PodcastProviderList.hbs",
+  "items": [
+    {
+      "_template": "/podcast/providers/amazon-alexa/AmazonAlexa.hbs"
+    },
+    {
+      "_template": "/podcast/providers/applepodcast/ApplePodcast.hbs"
+    },
+    {
+      "_template": "/podcast/providers/googlepodcast/GooglePodcast.hbs"
+    },
+    {
+      "_template": "/podcast/providers/pandorapodcast/PandoraPodcast.hbs"
+    },
+    {
+      "_template": "/podcast/providers/rsspodcast/RSSPodcast.hbs"
+    },
+    {
+      "_template": "/podcast/providers/overcast/Overcast.hbs"
+    },
+    {
+      "_template": "/podcast/providers/pocketcasts/PocketCasts.hbs"
+    },
+    {
+      "_template": "/podcast/providers/spotify/Spotify.hbs"
+    },
+    {
+      "_template": "/podcast/providers/tunein/TuneIn.hbs"
+    }
+  ]
+}
+

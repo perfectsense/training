@@ -1,0 +1,6 @@
+{
+  "_template": "HtmlModuleEnhancement.hbs",
+  "item": {
+    "_template": "/htmlmodule/HtmlModule.hbs"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "_template": "/product/promo/ProductPromoModule.hbs",
+  "title": {
+    "_include": "/_group/RichTextElementsTiny.json"
+  },
+  "description": {
+    "_include": "/_group/RichTextElementsSmall.json"
+  },
+  "price": "$249.00",
+  "compareAtPrice": "$300.00",
+  "media": {
+    "_template": "/image/Image.hbs"
+  },
+  "category": {
+    "_include": "/_group/RichTextElementsTiny.json"
+  },
+  "categoryUrl": "#",
+  "flagText": {
+    "_include": "/_group/RichTextElementsTiny.json"
+  },
+  "ctaButtonText": {
+    "_include": "/_group/RichTextElementsTiny.json"
+  },
+  "target": "",
+  "url": "#",
+  "options": {
+    "_include": "/_group/RichTextElementsTiny.json"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "_template": "OpenGraphArticleMeta.hbs",
+  "authorUrls": [
+    "https://www.example.com",
+    "https://www.example.com"
+  ],
+  "publishedTime": "",
+  "modifiedTime": "",
+  "expirationTime": "",
+  "section": "",
+  "tags": [
+    "",
+    "",
+    ""
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "_template": "Cell.hbs",
+
+  "body": {
+    "_include": "/_group/RichTextElementsSmall.json"
+  },
+  "horizontalAlign": "",
+  "verticalAlign": "",
+  "colspan": 0,
+  "rowspan": 0
+}

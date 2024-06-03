@@ -1,0 +1,9 @@
+{
+  "_template": "RichTextHeading.hbs",
+  "tag" : "h2",
+  "anchorId": "heading",
+  "text": {
+    "_include": "/_group/RichTextElementsSmall.json",
+    "_key": 0
+  }
+}

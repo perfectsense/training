@@ -1,0 +1,5 @@
+{
+  "_wrapper": false,
+  "_include": "/page/Page.json",
+  "_template": "TagPage.hbs"
+}

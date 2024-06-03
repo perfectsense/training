@@ -1,0 +1,13 @@
+{
+  "_template": "TwitterSummaryLargeImageCard.hbs",
+  "site": "",
+  "siteId": "",
+  "creator": "",
+  "creatorId": "",
+  "description": "",
+  "title": "",
+  "image": {
+    "_image": true
+  },
+  "imageAlt": ""
+}

@@ -1,0 +1,16 @@
+{
+  "_wrapper": false,
+  "_include": "/page/CreativeWorkPage.json",
+  "_template": "GalleryPage.hbs",
+  "slides": {
+    "_template": "/gallery/GallerySlide.hbs"
+  },
+  "contentId": "",
+  "galleryBody": {
+    "_include": "/_group/RichTextElementsLarge.json",
+    "_key": 0
+  },
+  "pagination": {
+    "_template": "/link/PaginationLink.hbs"
+  }
+}

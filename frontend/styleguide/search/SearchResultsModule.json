@@ -1,0 +1,35 @@
+{
+  "_template": "SearchResultsModule.hbs",
+  "title": {
+    "_include": "/_group/RichTextElementsTiny.json",
+    "_key": 0
+  },
+  "description": {
+    "_include": "/_group/RichTextElementsSmall.json",
+    "_key": 0
+  },
+  "anchorId": "",
+  "query": "",
+  "searchInputPlaceholder": {
+    "_include": "/_group/RichTextElementsTiny.json",
+    "_key": 0
+  },
+  "filters": {
+    "_template": "/search/SearchFilter.hbs"
+  },
+  "count": 1,
+  "sorts": {
+    "_template": "/search/SearchSortInput.hbs"
+  },
+  "spotlights": {
+      "_template": "/page/promo/PagePromoModule.hbs"
+  },
+  "items": {
+    "_template": "/page/promo/PagePromo.hbs"
+  },
+  "previousPage" : "",
+  "pageNumber": 1,
+  "pageCount": 1,
+  "nextPage" : "",
+  "searchResultsModuleId": "1234"
+}

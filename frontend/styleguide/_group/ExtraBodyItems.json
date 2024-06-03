@@ -1,0 +1,17 @@
+[
+  {
+    "_template": "/page/BodyHtmlEmbedElement.hbs"
+  },
+  {
+    "_template": "/page/ExternalScript.hbs"
+  },
+  {
+    "_template": "/page/InlineScript.hbs"
+  },
+  {
+    "_template": "/taboola/TaboolaExtraBodyItem.hbs"
+  },
+  {
+    "_template": "/parsely/ParselyScript.hbs"
+  }
+]

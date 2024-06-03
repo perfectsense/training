@@ -1,0 +1,7 @@
+{
+  "_template": "PlainTextHeading.hbs",
+  "text": {
+    "_include": "/_group/RichTextElementsTiny.json",
+    "_key": 0
+  }
+}

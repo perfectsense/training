@@ -1,0 +1,23 @@
+{
+  "_template": "/author/promo/AuthorPromo.hbs",
+  "media": {
+    "_template": "/image/Image.hbs"
+  },
+  "publicationUrl": "",
+  "publicationTitle": {
+    "_include": "/_group/RichTextElementsTiny.json",
+    "_key": 0
+  },
+  "name": {
+    "_include": "/_group/RichTextElementsTiny.json",
+    "_key": 0
+  },
+  "jobTitle": {
+    "_include": "/_group/RichTextElementsTiny.json",
+    "_key": 0
+  },
+  "url": "",
+  "authorSocialLinks": {
+    "_include": "/social/SocialBar.json"
+  }
+}

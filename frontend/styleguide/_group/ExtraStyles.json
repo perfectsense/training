@@ -1,0 +1,8 @@
+[
+  {
+    "_template": "/page/ExternalStyle.hbs"
+  },
+  {
+    "_template": "/page/InlineStyle.hbs"
+  }
+]

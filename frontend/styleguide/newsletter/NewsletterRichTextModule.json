@@ -1,0 +1,16 @@
+{
+  "_template": "NewsletterRichTextModule.hbs",
+  "title": {
+    "_include": "/_group/RichTextElementsTiny.json",
+    "_key": 0
+  },
+  "items": {
+    "_include": "/_group/RichTextElementsSmall.json",
+    "_key": 0
+  },
+  "newsletterDataSource": "",
+  "newsletterDataMedium": "",
+  "newsletterDataCampaign": "",
+  "newsletterDataContent": "",
+  "isNotUTMCapable": "false"
+}

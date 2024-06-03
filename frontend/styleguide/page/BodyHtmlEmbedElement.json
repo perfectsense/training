@@ -1,0 +1,4 @@
+{
+  "_template": "/page/BodyHtmlEmbedElement.hbs",
+  "rawHtml" : "<p> hello <strong> this is strong text </strong> </p>"
+}

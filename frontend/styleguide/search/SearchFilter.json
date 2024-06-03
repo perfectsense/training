@@ -1,0 +1,10 @@
+{
+  "_template": "/search/SearchFilter.hbs",
+  "heading": {
+    "_include": "/_group/RichTextElementsTiny.json",
+    "_key": 0
+  },
+  "items": {
+    "_template": "/search/SearchFilterInput.hbs"
+  }
+}

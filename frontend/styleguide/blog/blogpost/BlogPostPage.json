@@ -1,0 +1,5 @@
+{
+  "_wrapper": false,
+  "_include": "/article/ArticlePage.json",
+  "_template": "BlogPostPage.hbs"
+}

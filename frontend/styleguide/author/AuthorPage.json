@@ -1,0 +1,40 @@
+{
+  "_wrapper": false,
+  "_include": "/page/ContentPage.json",
+  "_template": "AuthorPage.hbs",
+  "name": {
+    "_include": "/_group/RichTextElementsTiny.json",
+    "_key": 0
+  },
+  "firstName": {
+    "_include": "/_group/RichTextElementsTiny.json",
+    "_key": 0
+  },
+  "lastName": {
+    "_include": "/_group/RichTextElementsTiny.json",
+    "_key": 0
+  },
+  "jobTitle": {
+    "_include": "/_group/RichTextElementsTiny.json",
+    "_key": 0
+  },
+  "email": "",
+  "affiliation": {
+    "_include": "/_group/RichTextElementsTiny.json",
+    "_key": 0
+  },
+  "image": {
+    "_template": "/image/Image.hbs"
+  },
+  "shortBiography": {
+    "_include": "/_group/RichTextElementsSmall.json",
+    "_key": 0
+  },
+  "fullBiography": {
+    "_include": "/_group/RichTextElementsMedium.json",
+    "_key": 0
+  },
+  "authorSocialLinks": {
+    "_template": "/social/SocialBar.hbs"
+  }
+}

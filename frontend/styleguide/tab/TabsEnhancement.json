@@ -1,0 +1,9 @@
+{
+  "_template": "/tab/TabsEnhancement.hbs",
+  "item": {
+    "_template": "/tab/Tabs.hbs",
+    "tabs": {
+      "_template": "TabItemRichText.hbs"
+    }
+  }
+}

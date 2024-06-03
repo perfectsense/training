@@ -1,0 +1,9 @@
+{
+  "_template": "MailToLink.hbs",
+  "email": "",
+  "cc": "",
+  "bcc": "",
+  "subject": "",
+  "emailBody": "",
+  "linkBody": ""
+}

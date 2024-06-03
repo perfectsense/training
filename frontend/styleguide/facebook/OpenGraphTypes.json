@@ -1,0 +1,17 @@
+[
+  {
+    "_template": "OpenGraphArticleMeta.hbs"
+  },
+  {
+    "_template": "OpenGraphProfileMeta.hbs"
+  },
+  {
+    "_template": "OpenGraphVideoMeta.hbs"
+  },
+  {
+    "_template": "OpenGraphAudioMeta.hbs"
+  },
+  {
+    "_template": "OpenGraphWebsiteMeta.hbs"
+  }
+]

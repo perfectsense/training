@@ -1,0 +1,9 @@
+{
+  "_template": "TextSubstitution.hbs",
+
+  "text": {
+    "_include": "/_group/RichTextElementsTiny.json"
+  },
+
+  "_hidden": false
+}

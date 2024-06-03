@@ -1,0 +1,7 @@
+{
+  "_template": "PageHeaderTextHat.hbs",
+  "text": {
+    "_include": "/_group/RichTextElementsSmall.json",
+    "_key": 0
+  }
+}

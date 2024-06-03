@@ -1,0 +1,6 @@
+{
+  "_template": "/logo/list/LogoListEnhancement.hbs",
+  "item": {
+    "_template": "/logo/list/LogoList.hbs"
+  }
+}

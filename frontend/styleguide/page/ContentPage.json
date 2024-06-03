@@ -1,0 +1,12 @@
+{
+  "_wrapper": false,
+  "_include": "/page/Page.json",
+  "_template": "ContentPage.hbs",
+  "pageHeading": null,
+  "pageSubHeading": null,
+  "pageLead": null,
+  "main": null,
+  "tags": {
+    "_template": "/tag/TagLink.hbs"
+  }
+}

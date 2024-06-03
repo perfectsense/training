@@ -1,0 +1,6 @@
+{
+  "_template": "/callout/CalloutEnhancement.hbs",
+  "item": {
+    "_include": "/callout/Callout.json"
+  }
+}

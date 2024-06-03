@@ -1,0 +1,9 @@
+{
+  "_include": "/search/SearchResultsModule.json",
+  "_template": "/product/search/ProductSearchResultsModule.hbs",
+  "spotlights": [],
+  "items": {
+    "_template": "/product/promo/ProductPromo.hbs"
+  },
+  "nextPage" : "#"
+}

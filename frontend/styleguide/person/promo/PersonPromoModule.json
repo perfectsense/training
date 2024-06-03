@@ -1,0 +1,25 @@
+{
+  "_template": "/person/promo/PersonPromoModule.hbs",
+  "media": {
+    "_template": "/image/Image.hbs"
+  },
+  "url": "",
+  "anchorId": "",
+  "target": "",
+  "ctaButtonText": {
+    "_include": "/_group/RichTextElementsTiny.json",
+    "_key": 0
+  },
+  "name": {
+    "_include": "/_group/RichTextElementsTiny.json",
+    "_key": 0
+  },
+  "jobTitle": {
+    "_include": "/_group/RichTextElementsTiny.json",
+    "_key": 0
+  },
+  "description": {
+    "_include": "/_group/RichTextElementsSmall.json",
+    "_key": 0
+  }
+}

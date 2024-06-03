@@ -1,0 +1,18 @@
+{
+  "_template": "/video/VideoPlaylistEnhancement.hbs",
+  "anchorId": "anchorTest",
+  "player": {
+    "_include": "/_group/VideoPlayers.json",
+    "_key": 0
+  },
+  "playlist": {
+    "_template": "/video/VideoPlaylistItem.hbs"
+  },
+  "thumbnail": {
+    "_template": "/image/Image.hbs"
+  },
+  "title": {
+    "_include": "/_group/RichTextElementsTiny.json",
+    "_key": 0
+  }
+}

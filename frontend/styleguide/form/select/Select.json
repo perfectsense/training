@@ -1,0 +1,20 @@
+{
+  "_template": "Select.hbs",
+  "label": {
+    "_include": "/_group/RichTextElementsTiny.json",
+    "_key": 0
+  },
+  "autofocus": false,
+  "name": "",
+  "disabled": false,
+  "multiple": false,
+  "placeholder": "",
+  "required": false,
+  "options": {
+    "_template": "Option.hbs"
+  },
+  "description": {
+    "_include": "/_group/RichTextElementsTiny.json",
+    "_key": 0
+  }
+}

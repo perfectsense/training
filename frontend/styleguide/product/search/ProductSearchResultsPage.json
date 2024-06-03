@@ -1,0 +1,24 @@
+{
+  "_wrapper": false,
+  "_include": "/page/Page.json",
+  "_template": "ProductSearchResultsPage.hbs",
+  "main": null,
+  "query": "",
+  "filters": {
+    "_template": "/search/SearchFilter.hbs"
+  },
+  "count": 1,
+  "sorts": {
+    "_template": "/search/SearchSortInput.hbs"
+  },
+  "spotlights": {
+    "_template": "/product/promo/ProductPromoModule.hbs"
+  },
+  "results": {
+    "_template": "/product/promo/ProductPromo.hbs"
+  },
+  "previousPage" : "",
+  "pageNumber": 1,
+  "pageCount": 1,
+  "nextPage" : ""
+}
