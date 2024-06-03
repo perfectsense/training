@@ -1,0 +1,17 @@
+<div class="SearchFilterInput">
+    <label class="SearchFilterInput-label">
+        <input type="checkbox"
+            {{~#with selected}} checked{{/with}}
+            {{~#with disabled}} disabled{{/with}}
+            {{~#with parameterName}}
+                {{~#unless ../passiveInput}} name="{{this}}"{{/unless~}}
+                {{!-- Mobile search filters reflect the state of desktop filters. But are not submitted with the request.--}}
+                {{~#if ../passiveInput}} data-passive-input-name="{{this}}"{{/if~}}
+            {{/with}}
+            {{~#with parameterValue}} value="{{this}}" {{/with}}>
+        <span>
+            {{~label~}}
+            {{~#with count}} ({{this}}){{/with~}}
+        </span>
+    </label>
+</div>

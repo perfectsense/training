@@ -1,0 +1,8 @@
+{
+  "fields": {
+    "itemBorderColor": {
+      "displayName": "Choose an item border color",
+      "type": "color"
+    }
+  }
+}

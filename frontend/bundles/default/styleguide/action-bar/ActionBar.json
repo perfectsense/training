@@ -1,0 +1,32 @@
+{
+  "_template" : "/action-bar/ActionBar.hbs",
+  "items": [
+    {
+      "_include": "/facebook/FacebookShareButton.json"
+    },
+    {
+      "_include": "/twitter/intent/TwitterTweetButton.json"
+    },
+    {
+      "_include": "/linkedin/LinkedInShareButton.json"
+    },
+    {
+      "_include": "/pinterest/PinterestShareButton.json"
+    },
+    {
+        "_include": "/tumblr/TumblrShareButton.json"
+    },
+    {
+      "_include": "/link/MailToLink.json"
+    },
+    {
+      "_include": "/link/PrintLink.json"
+    },
+    {
+      "_include": "/link/CopyLink.json"
+    },
+    {
+      "_include": "/link/DownloadLink.json"
+    }
+  ]
+}

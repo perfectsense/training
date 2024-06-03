@@ -1,0 +1,34 @@
+<div class="Page-articleBody">
+    {{#with intro}}
+        <div class="Page-articleBody-intro RichTextBody">
+        {{this}}
+        </div>
+    {{/with}}
+
+    {{#with items}}
+        <div class="Page-articleBody-items">
+            {{#each this~}}
+                <div class="Page-articleBody-items-item">
+                    {{#eq this._template "/listicle/ListicleItem.hbs"}}
+                        {{include "/listicle/ListicleItem.hbs" this}}
+                    {{else}}
+                        {{render this}}
+                    {{/eq}}
+                </div>
+            {{~/each}}
+        </div>
+    {{/with}}
+
+    {{#with articleBody}}
+        <div class="RichTextArticleBody RichTextBody">
+            {{this}}
+        </div>
+    {{/with}}
+
+    {{#with attributionBody}}
+        <div class="RichTextArticleBody RichTextBody">
+            {{this}}
+        </div>
+    {{/with}}
+</div>
+{{include "/page/Page-articleBelow.hbs" this}}

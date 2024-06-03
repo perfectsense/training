@@ -1,0 +1,8 @@
+{{#if href~}}
+    <link
+        {{~#with rel}} rel="{{this}}"{{else}}rel="icon"{{/with~}}
+        {{~#with type}} type="{{this}}"{{/with~}}
+        {{~#with sizes}} sizes="{{this}}"{{/with~}}
+        {{~#with href}} href="{{this}}"{{/with~}}
+        >
+{{~/if}}

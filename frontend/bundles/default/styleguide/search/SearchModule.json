@@ -1,0 +1,6 @@
+{
+  "_template": "SearchModule.hbs",
+  "anchorId": "anchorTest",
+  "searchAction": "#",
+  "placeholder": "What are you looking for today?"
+}

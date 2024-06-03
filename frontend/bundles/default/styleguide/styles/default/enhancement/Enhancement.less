@@ -1,0 +1,241 @@
+.Enhancement {
+  // just in case people put two aligned enhancements next to each other
+  clear: both;
+  margin: var(--spacing-xxl) 0;
+  width: 100%;
+
+  .Carousel {
+    .flickity-button {
+      margin-top: -10px;
+    }
+  }
+
+  .Figure {
+    img {
+      margin: 0 auto;
+    }
+  }
+
+  // center aligning for all social embeds
+  .FacebookEmbed,
+  .FacebookUrl,
+  .InstagramUrl,
+  .InstagramEmbed,
+  .TweetEmbed,
+  .TweetUrl,
+  .twitter-tweet,
+  .fb-post {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    overflow: hidden;
+    text-align: center;
+
+    iframe {
+      width: 100%;
+    }
+  }
+
+  .twitter-tweet {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  &[data-align-full-width] {
+    .Carousel {
+      max-width: unset;
+      margin-left: calc(var(--horizontal-margin-outside) * -1);
+      margin-right: calc(var(--horizontal-margin-outside) * -1);
+      width: calc(100% + var(--horizontal-margin-outside) * 2);
+    }
+
+    .GallerySlide-info {
+      margin-left: var(--horizontal-margin-outside);
+      margin-left: var(--horizontal-margin-outside);
+    }
+
+    img {
+      max-width: unset;
+      border-radius: 0 !important;
+      margin-left: calc(var(--horizontal-margin-outside) * -1);
+      margin-right: calc(var(--horizontal-margin-outside) * -1);
+      width: calc(100% + var(--horizontal-margin-outside) * 2);
+    }
+  }
+
+  &[data-align-portrait-left],
+  &[data-align-portrait-right] {
+    max-width: 330px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .FaqModule[data-has-background] {
+    padding: 20px;
+  }
+
+  @container (@cq-sm) {
+    &[data-align-left] {
+      float: left;
+      margin-bottom: var(--spacing-sm);
+      margin-right: var(--spacing-xxl);
+      margin-top: var(--spacing-sm);
+      max-width: 360px;
+      width: 50%;
+    }
+
+    &[data-align-right] {
+      float: right;
+      margin-bottom: var(--spacing-sm);
+      margin-left: var(--spacing-xxl);
+      margin-top: var(--spacing-sm);
+      max-width: 360px;
+      width: 50%;
+    }
+
+    &[data-align-portrait-left] {
+      float: left;
+      max-width: 330px;
+      margin-bottom: var(--spacing-sm);
+      margin-right: var(--spacing-xxl);
+      margin-top: var(--spacing-sm);
+    }
+
+    &[data-align-portrait-right] {
+      float: right;
+      max-width: 330px;
+      margin-bottom: var(--spacing-sm);
+      margin-left: var(--spacing-xxl);
+      margin-top: var(--spacing-sm);
+    }
+  }
+
+  @media @mq-lg {
+    &[data-align-full-width] {
+      img {
+        .Page-oneColumn & {
+          margin-left: -95px;
+          margin-right: -95px;
+          width: calc(~'100% + 190px');
+        }
+
+        .Page-twoColumn &,
+        .Page-bookContentContainer & {
+          margin-left: 0;
+          margin-right: 0;
+          width: 100%;
+        }
+      }
+
+      .Figure-content {
+        .Page-oneColumn & {
+          margin-left: -75px;
+        }
+
+        .Page-twoColumn &,
+        .Page-bookContentContainer & {
+          margin-left: 0;
+        }
+      }
+
+      .Carousel {
+        .Page-oneColumn & {
+          margin-left: -95px;
+          margin-right: -95px;
+          width: calc(~'100% + 190px');
+        }
+
+        .Page-twoColumn &,
+        .Page-bookContentContainer & {
+          margin-left: 0;
+          margin-right: 0;
+          width: 100%;
+        }
+
+        img {
+          .Page-oneColumn & {
+            width: calc(~'100% + 190px');
+          }
+
+          .Page-twoColumn &,
+          .Page-bookContentContainer & {
+            margin-left: 0;
+            margin-right: 0;
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+
+  @media @mq-hk {
+    &[data-align-full-width] {
+      img {
+        .Page-oneColumn & {
+          margin-left: -220px;
+          margin-right: -220px;
+          width: calc(~'100% + 440px');
+        }
+      }
+
+      .Figure-content {
+        .Page-oneColumn & {
+          margin-left: -200px;
+        }
+      }
+
+      .Carousel {
+        .Page-oneColumn & {
+          margin-left: -220px;
+          margin-right: -220px;
+          width: calc(~'100% + 440px');
+        }
+
+        img {
+          .Page-oneColumn & {
+            width: calc(~'100% + 440px');
+          }
+        }
+      }
+    }
+  }
+
+  @media @mq-xl {
+    &[data-align-full-width] {
+      img {
+        .Page-oneColumn & {
+          margin-left: -300px;
+          margin-right: -300px;
+          width: calc(~'100% + 600px');
+        }
+
+        .Page-twoColumn &,
+        .Page-bookContentContainer & {
+          margin-left: -95px;
+          margin-right: -95px;
+          width: calc(~'100% + 190px');
+        }
+      }
+
+      .Figure-content {
+        .Page-oneColumn & {
+          margin-left: -280px;
+        }
+      }
+
+      .Carousel {
+        .Page-oneColumn & {
+          margin-left: -300px;
+          margin-right: -300px;
+          width: calc(~'100% + 600px');
+        }
+
+        img {
+          .Page-oneColumn & {
+            width: calc(~'100% + 600px');
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,81 @@
+.ProductPromo {
+  &-pricing {
+    &:extend(.subhead-2 all);
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: var(--spacing-sm);
+    row-gap: var(--spacing-sm);
+    color: var(--color-primary-text);
+
+    [data-text-align='right'] & {
+      justify-content: flex-end;
+    }
+  }
+
+  &-compareAtPrice {
+    text-decoration: line-through;
+  }
+
+  &-options {
+    &:extend(.byline-1);
+    color: var(--color-primary-text);
+    margin-top: var(--spacing-sm);
+
+    [data-has-cta] & {
+      text-align: center;
+    }
+  }
+
+  .PagePromo {
+    &-category {
+      margin-bottom: var(--spacing-sm);
+    }
+
+    &-title {
+      &:extend(.headline-7 all);
+      margin-bottom: var(--spacing-sm);
+    }
+
+    &-button {
+      .Button {
+        width: 100%;
+      }
+    }
+  }
+
+  .ProductPromoMedia {
+    margin-bottom: 15px;
+  }
+
+  [data-item-display-style="card"] & {
+    padding: var(--spacing-md) var(--spacing-md);
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: var(--color-site-bg);
+    box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.1);
+    min-height: 100%;
+  }
+
+  [data-item-has-background-color] & {
+    background-color: var(--color-item-background);
+  }
+
+  [data-item-has-background-image] & {
+    background-image: var(--item-background-image);
+    background-size: cover;
+  }
+
+  [data-item-has-text-color] & {
+    --color-primary-text: var(--color-item-text);
+    --color-link-text: var(--color-item-text);
+    --color-link-text-hover: var(--color-item-text);
+  }
+
+  @container (@cq-lg) {
+    .PagePromo {
+      &-button {
+        margin-top: var(--spacing-md);
+      }
+    }
+  }
+}

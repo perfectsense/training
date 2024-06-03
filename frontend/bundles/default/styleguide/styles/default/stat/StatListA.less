@@ -1,0 +1,36 @@
+.StatListA {
+  display: block;
+
+  .StatList {
+    &-items {
+      display: grid;
+      column-gap: var(--spacing-lg);
+      row-gap: var(--spacing-lg);
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .StatPromo {
+    &-valueWrapper {
+      &:extend(.stat-1);
+    }
+  }
+
+  @container (@cq-sm) {
+    .StatList {
+      &-items {
+        grid-template-columns: auto auto auto auto;
+
+        &[data-column-count='2'] {
+          grid-template-columns: auto auto;
+        }
+
+        &[data-column-count='3'],
+        &[data-column-count='6'],
+        &[data-column-count='9'] {
+          grid-template-columns: auto auto auto;
+        }
+      }
+    }
+  }
+}

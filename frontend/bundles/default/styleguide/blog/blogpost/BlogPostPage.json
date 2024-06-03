@@ -1,0 +1,121 @@
+{
+  "_include": "/page/Page.json",
+  "_template": "/blog/blogpost/BlogPostPage.hbs",
+  "datePublished": "{{date}}",
+  "dateModified": "Modified: {{date}}",
+  "headline": "{{words([10,15])}}",
+  "subHeadline": "{{words([15,20])}}",
+  "readTime": 5,
+  "authors": [
+    {
+      "_include": "/author/Author.json",
+      "_repeat": 3
+    }
+  ],
+  "breadcrumbs": [
+    {
+      "_include": "/page/BreadcrumbLink.json",
+      "_repeat": 2
+    }
+  ],
+  "tags": [
+    {
+      "_include": "/tag/TagLink.json",
+      "_repeat": 2
+    }
+  ],
+  "lead": {
+    "_include": "/figure/Figure.json"
+  },
+  "articleBody": [
+    "{{paragraphs([2,3])}}",
+    {
+      "_template": "/image/ImageEnhancement.hbs",
+      "enhancementAlignmentImage": "align-left",
+      "item": {
+        "_include": "/figure/Figure.json"
+      }
+    },
+    "{{paragraphs([2,3])}}",
+    {
+      "_template": "/image/ImageEnhancement.hbs",
+      "enhancementAlignmentImage": "align-right",
+      "item": {
+        "_include": "/figure/Figure.json"
+      }
+    },
+    "{{paragraphs([2,3])}}",
+    {
+      "_template": "/image/ImageEnhancement.hbs",
+      "enhancementAlignmentImage": "align-full-width",
+      "item": {
+        "_include": "/figure/Figure.json"
+      }
+    },
+    "{{paragraphs([2,3])}}",
+    {
+      "_template": "/image/ImageEnhancement.hbs",
+      "enhancementAlignmentImage": "align-portrait-right",
+      "item": {
+        "_include": "/figure/Figure.json"
+      }
+    },
+    "{{paragraphs([2,3])}}",
+    {
+      "_template": "/image/ImageEnhancement.hbs",
+      "enhancementAlignmentImage": "align-portrait-left",
+      "item": {
+        "_include": "/figure/Figure.json"
+      }
+    },
+    "{{paragraphs([2,3])}}",
+    {
+      "_template": "/carousel/CarouselEnhancement.hbs",
+      "item": {
+        "_include": "/carousel/Carousel.json"
+      }
+    },
+    "{{paragraphs([2,3])}}",
+    {
+      "_include": "/pullquote/PullQuote.json",
+      "enhancementAlignment": "align-left"
+    },
+    "{{paragraphs([2,3])}}",
+    {
+      "_template": "/image/ImageEnhancement.hbs",
+      "item": {
+        "_include": "/figure/Figure.json"
+      }
+    },
+    "{{paragraphs([2,3])}}",
+    {
+      "_include": "/youtube/YouTubeVideoEnhancement.json"
+    },
+    "{{paragraphs([2,3])}}",
+    {
+      "_template": "/video/VideoEnhancement.hbs",
+      "player": [
+        {
+          "_include": "/video/HTML5VideoPlayer.json"
+        }
+      ],
+      "title": "{{words(5)}}"
+    },
+    "{{paragraphs([2,3])}}"
+  ],
+  "aside": [
+    {
+      "_include": "/page/list/PageListRightRailA.json"
+    },
+    {
+      "_template": "/dfp/GoogleDfpAdModule.hbs",
+      "adIndex": "1250",
+      "slot": "/13236445/responsive_banner",
+      "sizes": "[[300, 250]]",
+      "adSizeMaps": "[[[1024,768], [300,250]], [[300,250], [300,250]]]"
+    },
+    {
+      "_include": "/page/list/PageListRightRailA.json"
+    }
+  ]
+}

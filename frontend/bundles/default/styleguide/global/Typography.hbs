@@ -1,0 +1,15 @@
+:root {
+  --font-1: "Arial";
+  --font-2: "Times";
+}
+
+body {
+  --font-1: "{{#with font1}}{{this}}{{else}}Roboto{{/with}}";
+  --font-2: "{{#with font2}}{{this}}{{else}}Merriweather{{/with}}";
+  --font-page-titles: {{#with pageTitleFont}}var(--{{this}}){{else}}var(--font-1){{/with}};
+  --font-list-titles: {{#with listTitleFont}}var(--{{this}}){{else}}var(--font-1){{/with}};
+  --font-promo-titles: {{#with promoTitleFont}}var(--{{this}}){{else}}var(--font-1){{/with}};
+  --font-description: {{#with descriptionFont}}var(--{{this}}){{else}}var(--font-1){{/with}};
+  --font-quote: {{#with quoteFont}}var(--{{this}}){{else}}var(--font-2){{/with}};
+  --font-rte-body: {{#with articleBodyFont}}var(--{{this}}){{else}}var(--font-1){{/with}};
+}

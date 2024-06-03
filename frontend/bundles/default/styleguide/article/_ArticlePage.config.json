@@ -1,0 +1,42 @@
+{
+  "styles": {
+    "/article/ArticlePage.hbs": {
+      "fields": [
+          "suppressCommenting",
+          "assetTitleTextAlign"
+      ],
+      "templates": [
+        {
+          "displayName": "Standard Lead",
+          "example": "/article/ArticlePageStandard.json",
+          "height": 800,
+          "width": 1280
+        },
+        {
+          "displayName": "Large Lead",
+          "example": "/article/ArticlePageLarge.json",
+          "height": 800,
+          "width": 1280
+        },
+        {
+          "displayName": "Overlay Lead",
+          "example": "/article/ArticlePageOverlay.json",
+          "height": 800,
+          "width": 1280
+        },
+        {
+          "displayName": "Nested Lead",
+          "example": "/article/ArticlePageNested.json",
+          "height": 800,
+          "width": 1280
+        },
+        {
+          "displayName": "Full Width Lead",
+          "example": "/article/ArticlePageFullWidth.json",
+          "height": 800,
+          "width": 1280
+        }
+      ]
+    }
+  }
+}

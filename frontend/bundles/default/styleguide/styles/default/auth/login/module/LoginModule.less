@@ -1,0 +1,29 @@
+.LoginModule {
+  .ModuleHeader {
+    text-align: center;
+
+    &-title {
+      &:extend(.headline-3 all);
+    }
+  }
+
+  &-container {
+    max-width: 620px;
+    margin: 0 auto;
+  }
+
+  &-authenticationProviderLinks {
+    display: grid;
+    column-gap: var(--spacing-sm);
+    row-gap: var(--spacing-sm);
+    .verticalSpacing(var(--vertical-margin-md));
+  }
+
+  @container (@cq-md) {
+    &-authenticationProviderLinks {
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: var(--spacing-md);
+      row-gap: var(--spacing-md);
+    }
+  }
+}

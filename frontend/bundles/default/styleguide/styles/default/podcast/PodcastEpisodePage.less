@@ -1,0 +1,74 @@
+.PodcastEpisodePage {
+  &:extend(.ArticlePage all);
+
+  .Page-subHeadline {
+    &:extend(.subhead-2);
+    color: var(--color-tertiary-text);
+  }
+
+  .Page-subHeadline,
+  &-player {
+    margin: var(--spacing-md) 0;
+  }
+
+  &-intro {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    column-gap: var(--spacing-md);
+    align-items: center;
+  }
+
+  &-introTopRow {
+    grid-column-start: 2;
+  }
+
+  &-introBottomRow {
+    grid-column-start: 1;
+    grid-column-end: 3;
+  }
+
+  &-image {
+    align-self: start;
+  }
+
+  .Page-articleBody {
+    display: block;
+    margin: var(--spacing-lg) 0;
+  }
+
+  &-podcast {
+    margin: var(--spacing-lg) 0;
+  }
+
+  @media @mq-md {
+
+    .Page-articleBody,
+    &-podcast {
+      margin: var(--spacing-xxl) 0;
+    }
+
+    &-intro {
+      grid-template-columns: 200px 1fr;
+      align-items: start;
+      column-gap: var(--spacing-lg);
+    }
+
+    &-introTopRow {
+      align-self: end;
+    }
+
+    &-introBottomRow {
+      grid-column-start: 2;
+    }
+
+    &-image {
+      grid-row: span 2;
+    }
+  }
+
+  @media @mq-lg {
+    &-intro {
+      grid-template-columns: 300px 1fr;
+    }
+  }
+}

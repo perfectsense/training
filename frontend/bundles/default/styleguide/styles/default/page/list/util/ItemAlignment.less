@@ -1,0 +1,120 @@
+[data-item-alignment="left"] {
+  [class*="-items"] {
+
+    [class*="-byline"],
+    [class*="-category"],
+    [class*="-cta"],
+    [class*="-description"],
+    [class*="-title"] {
+      text-align: left;
+    }
+
+    .Sponsor,
+    [class*="-attribution"],
+    [class*="-player"] {
+      justify-content: flex-start;
+    }
+
+    [class*="-attribution-image"],
+    [class*="-media"] {
+      order: -1;
+    }
+
+    .PagePromo,
+    blockquote {
+      text-align: left;
+    }
+  }
+
+  [class*="-slides"] {
+    .GallerySlide {
+      text-align: left;
+    }
+  }
+
+  @media @mq-up-to-md {
+    [data-mobile-alt-layout="true"] {
+      [class*="-media"] {
+        float: left;
+        margin-left: 0;
+        margin-right: 20px;
+      }
+    }
+  }
+}
+
+[data-item-alignment="center"] {
+  [class*="-items"] {
+
+    [class*="-byline"],
+    [class*="-category"],
+    [class*="-cta"],
+    [class*="-description"],
+    [class*="-title"] {
+      text-align: center;
+    }
+
+    .Sponsor,
+    [class*="-attribution"],
+    [class*="-player"] {
+      justify-content: center;
+    }
+
+    .PagePromo,
+    blockquote {
+      text-align: center;
+    }
+  }
+
+  [class*="-slides"] {
+    .GallerySlide {
+      text-align: center;
+    }
+  }
+}
+
+[data-item-alignment="right"] {
+  [class*="-items"] {
+
+    [class*="-byline"],
+    [class*="-category"],
+    [class*="-cta"],
+    [class*="-description"],
+    [class*="-title"] {
+      text-align: right;
+    }
+
+    .Sponsor,
+    [class*="-attribution"],
+    [class*="-player"] {
+      justify-content: flex-end;
+    }
+
+    [class*="-attribution-image"] {
+      order: 1;
+    }
+
+    [class*="-media"] {
+      order: 2;
+    }
+
+    .PagePromo,
+    blockquote {
+      text-align: right;
+    }
+  }
+
+  [class*="-slides"] {
+    .GallerySlide {
+      text-align: right;
+    }
+  }
+
+  @media @mq-up-to-md {
+    [data-mobile-alt-layout="true"] {
+      [class*="-media"] {
+        float: right;
+      }
+    }
+  }
+}

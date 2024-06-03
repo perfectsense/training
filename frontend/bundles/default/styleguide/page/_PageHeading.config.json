@@ -1,0 +1,18 @@
+{
+  "styles": {
+    "/page/PageHeading.hbs": {
+      "fields": [
+        "pageHeadingSize",
+        "pageSubHeadingSize",
+        "headingTextAlign",
+        "headingTextColor",
+        "useTextColors",
+        "headingBgColor",
+        "opacityOverlay",
+        "backgroundVideo",
+        "fullScreenVideo",
+        "animateOnScroll"
+      ]
+    }
+  }
+}

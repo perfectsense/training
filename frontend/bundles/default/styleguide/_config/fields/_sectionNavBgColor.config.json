@@ -1,0 +1,8 @@
+{
+  "fields": {
+    "sectionNavBgColor": {
+      "displayName": "Section Nav Background Color",
+      "type": "color"
+    }
+  }
+}

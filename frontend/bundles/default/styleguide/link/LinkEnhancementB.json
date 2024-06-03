@@ -1,0 +1,9 @@
+{
+  "_template": "/link/LinkEnhancement.hbs",
+  "_styledTemplate": "/link/LinkEnhancementB.hbs",
+
+  "href": "#",
+  "target": "_self",
+  "body": "{{words([2,5])}}",
+  "contentId": "a123"
+}

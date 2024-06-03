@@ -1,0 +1,19 @@
+{
+  "fields": {
+    "imagePositionVertical": {
+      "type": "text",
+      "cms.ui.dropDown": true,
+      "cms.ui.placeholder": "Default",
+      "values": [
+        {
+          "label": "Top",
+          "value": "top"
+        },
+        {
+          "label": "Bottom",
+          "value": "bottom"
+        }
+      ]
+    }
+  }
+}

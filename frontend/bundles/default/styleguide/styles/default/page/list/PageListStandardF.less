@@ -1,0 +1,104 @@
+.PageListStandardF {
+  .ModuleHeader {
+    margin-bottom: var(--spacing-lg);
+  }
+
+  .PageList {
+    &-items {
+      display: grid;
+      row-gap: var(--spacing-lg);
+      column-gap: var(--spacing-lg);
+
+      &-item {
+        border-top: 1px solid var(--color-list-border);
+        padding-top: var(--spacing-lg);
+      }
+    }
+  }
+
+  &[data-item-display-style="card"] {
+    .PagePromo {
+      padding: var(--spacing-lg) var(--spacing-md);
+    }
+  }
+
+  .PagePromo {
+    &-description {
+      .verticalSpacing(var(--spacing-md))
+    }
+
+    &-title {
+      &:extend(.headline-6 all);
+    }
+
+    &-ctaLink {
+      .verticalSpacing(var(--spacing-lg))
+    }
+  }
+
+  @container (@cq-sm) {
+
+    &:where([data-column-count='2'],
+      [data-column-count='3'],
+      [data-column-count='4'],
+      [data-column-count='5'],
+      [data-column-count='6']) {
+      .PageList {
+        &-items {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+    }
+  }
+
+  @container (@cq-md) {
+    &:where([data-column-count='3']) {
+      .PageList {
+        &-items {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+    }
+
+    &:where([data-column-count='5'],
+      [data-column-count='6']) {
+      .PageList {
+        &-items {
+          grid-template-columns: repeat(4, 1fr);
+        }
+      }
+    }
+  }
+
+  @container (@cq-lg) {
+    .PageList {
+      &-items {
+        margin-top: 0;
+      }
+    }
+
+    &:where([data-column-count='4']) {
+      .PageList {
+        &-items {
+          grid-template-columns: repeat(4, 1fr);
+        }
+      }
+    }
+
+    &:where([data-column-count='5']) {
+      .PageList {
+        &-items {
+          grid-template-columns: repeat(5, 1fr);
+        }
+      }
+    }
+
+    &:where([data-column-count='6']) {
+      .PageList {
+        &-items {
+          grid-template-columns: repeat(6, 1fr);
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,59 @@
+.StatPromo {
+  color: var(--color-primary-text);
+  display: grid;
+  column-gap: var(--spacing-sm);
+  row-gap: var(--spacing-md);
+  text-align: center;
+
+  &-valueWrapper {
+    &:extend(.stat-2);
+  }
+
+  &-description {
+    &:extend(.subhead-3 all);
+    &:extend(.RichTextElements all);
+  }
+
+  &-title {
+    &:extend(.headline-8 all);
+  }
+
+  &-value {
+    display: inline-grid;
+
+    [data-counter],
+    [data-value-placeholder] {
+      grid-column: 1;
+      grid-row: 1;
+    }
+
+    [data-value-placeholder] {
+      visibility: hidden;
+      opacity: 0;
+    }
+  }
+
+  [data-item-display-style="card"] & {
+    padding: var(--spacing-md) var(--spacing-md);
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: var(--color-site-bg);
+    box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.1);
+    min-height: 100%;
+  }
+
+  [data-item-has-background-color] & {
+    background-color: var(--color-item-background);
+  }
+
+  [data-item-has-background-image] & {
+    background-image: var(--item-background-image);
+    background-size: cover;
+  }
+
+  [data-item-has-text-color] & {
+    --color-primary-text: var(--color-item-text);
+    --color-link-text: var(--color-item-text);
+    --color-link-text-hover: var(--color-item-text);
+  }
+}

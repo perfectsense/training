@@ -1,0 +1,6 @@
+{
+  "_template": "HtmlModuleEnhancement.hbs",
+  "item": {
+    "_include": "/htmlmodule/HtmlModule.json"
+  }
+}

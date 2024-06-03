@@ -1,0 +1,8 @@
+{
+  "fields": {
+    "expandItem": {
+      "displayName": "Check to expand this item by default.",
+      "type": "boolean"
+    }
+  }
+}

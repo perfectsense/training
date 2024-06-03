@@ -1,0 +1,16 @@
+{
+  "_template": "HTML5VideoPlayer.hbs",
+  "playerId": "1",
+  "videoTitle": "{{words(5)}}",
+  "videoId": "XXXXXX",
+  "poster": {
+      "_image": true
+  },
+  "autoplay": false,
+  "muted": true,
+  "sources": [
+      {
+        "_include": "/video/HTML5VideoPlayerSource.json"
+      }
+  ]
+}

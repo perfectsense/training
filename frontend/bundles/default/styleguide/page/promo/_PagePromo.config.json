@@ -1,0 +1,22 @@
+{
+  "styles": {
+    "/page/promo/PagePromo.hbs": {
+      "templates": [
+        {
+          "displayName": "Promo",
+          "example": "/page/promo/PagePromo.json",
+          "height": 800,
+          "width": 1024,
+          "hidden": true
+        },
+        {
+          "displayName": "Promo Footer",
+          "example": "/page/promo/PagePromoFooter.json",
+          "height": 800,
+          "width": 1024,
+          "hidden": true
+        }
+      ]
+    }
+  }
+}

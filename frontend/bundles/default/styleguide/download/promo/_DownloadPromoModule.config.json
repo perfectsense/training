@@ -1,0 +1,25 @@
+{
+  "styles": {
+    "/download/promo/DownloadPromoModule.hbs": {
+        "fields": [
+          "imagePositionHorizontal",
+          "imageAspectRatio",
+          "imageWidth",
+          "backgroundColor",
+          "useTextColors",
+          "textAlign",
+          "promoTitleSize",
+          "promoDescriptionSize",
+          "imageAspectRatio",
+          "modulePaddingTop",
+          "modulePaddingBottom"
+        ],
+        "templates": [
+          {
+            "displayName": "Download Promo Module",
+            "example": "/download/promo/DownloadPromoModule.json"
+          }
+        ]
+    }
+  }
+}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html class="TagPage">
+{{include "/page/Page-head.hbs" this}}
+<body class="Page-body">
+    {{include "/page/Page-bodyStart.hbs" this}}
+    {{include "/page/Page-header.hbs" this}}
+    <div data-moduleroot>
+        {{include "/page/Page-above.hbs" this}}
+
+        <main class="Page-content">
+            {{#with pageLead}}
+                <div class="Page-pageLead" data-pagelead>{{this}}</div>
+            {{/with}}
+
+            {{#if aside}}
+                    <div class="Page-twoColumn">
+                        <main class="Page-main" data-modulewell>
+                        {{#each main}}
+                            {{render this [/page/list/PageList.hbs]="/page/list/PageListStandardD.hbs"}}
+                        {{/each}}
+                        </main>
+                        <aside class="Page-aside">
+                            {{aside}}
+                        </aside>
+                    </div>
+            {{else}}
+                {{#with main}}
+                    <div class="Page-oneColumn">
+                        {{#each this}}
+                            {{render this [/page/list/PageList.hbs]="/page/list/PageListStandardD.hbs"}}
+                        {{/each}}
+                    </div>
+                {{/with}}
+            {{/if}}
+        </main>
+
+        {{include "/page/Page-below.hbs" this dataClick="below"}}
+    </div>
+    {{include "/page/Page-footer.hbs" this}}
+    {{include "/page/Page-extraBodyItems.hbs" this}}
+</body>
+</html>

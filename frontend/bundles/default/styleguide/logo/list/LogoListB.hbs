@@ -1,0 +1,16 @@
+<div class="LogoListB" data-module {{include "/page/list/includes/PageList-attributes.hbs" this}}>
+    {{include "/global/ModuleHeader.hbs" this}}
+
+    {{#with items}}
+        <ul class="LogoListB-items">
+            {{#each this}}
+                <li class="LogoListB-items-item">
+                    {{#set imageSize=../../itemImageAspectRatio}}
+                        {{include "/logo/promo/LogoPromo.hbs" this}}
+                    {{/set}}
+                </li>
+            {{/each}}
+        </ul>
+    {{/with}}
+    {{include "/page/list/includes/PageList-footer.hbs" this}}
+</div>

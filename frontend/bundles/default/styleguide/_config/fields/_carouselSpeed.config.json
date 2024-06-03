@@ -1,0 +1,8 @@
+{
+  "fields": {
+    "carouselSpeed": {
+      "displayName": "Set the duration between carousel slides in seconds.",
+      "type": "number"
+    }
+  }
+}

@@ -1,0 +1,5 @@
+{
+  "_include": "/page/list/PageList.json",
+  "_styledTemplate": "/page/list/PageListStandardM.hbs",
+  "itemImageAspectRatio": "large-square"
+}

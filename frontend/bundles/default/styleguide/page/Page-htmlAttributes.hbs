@@ -1,0 +1,6 @@
+{{~#with (fallback language 'en')}} lang="{{this}}"{{/with~}}
+{{~#if aside~}} data-has-aside{{~/if~}}
+{{~#if hat}} data-header-hat="true"{{~/if~}}
+{{~#if sponsored}} data-sponsored="true"{{~/if~}}
+{{~#if book}} data-has-book{{~/if~}}
+{{~#each pageLead}}{{#or delegate.fullScreenVideo fullScreenVideo}} data-full-screen-video="true"{{/or}}{{/each~}}

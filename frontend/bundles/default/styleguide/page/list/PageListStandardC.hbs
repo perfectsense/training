@@ -1,0 +1,37 @@
+{{#if items}}
+<div class="PageListStandardC" data-module{{include "includes/PageList-attributes.hbs" this}}>
+    {{include "/global/ModuleHeader.hbs" this}}
+
+    {{#if items}}
+        <div class="PageList-items">
+            <div class="PageList-items-item">
+                {{#with items.[0]}}
+                    {{#eq this._template "/page/promo/PagePromo.hbs"}}
+                        {{#set sizes="(max-width: 1024px) 100vw, 1024px" imageSize=(fallback ../itemImageAspectRatio "large-16x9")}}
+                            {{include "/page/promo/PagePromo.hbs" this}}
+                        {{/set}}
+                    {{else}}
+                        {{render this}}
+                    {{/eq}}
+                {{/with}}
+            </div>
+            {{#each items}}
+                {{#if (gt @index 0)}}
+                    {{#if (lt @index 3)}}
+                        <div class="PageList-items-item">
+                            {{#eq this._template "/page/promo/PagePromo.hbs"}}
+                                {{#set imageSize=(fallback ../itemImageAspectRatio "medium-16x9")}}
+                                    {{include "/page/promo/PagePromo.hbs" this imagePositionVertical="top" description=null}}
+                                {{/set}}
+                            {{else}}
+                                {{render this}}
+                            {{/eq}}
+                        </div>
+                    {{/if}}
+                {{/if}}
+            {{/each}}
+        </div>
+    {{/if}}
+    {{include "includes/PageList-footer.hbs" this}}
+</div>
+{{/if}}

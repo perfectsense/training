@@ -1,0 +1,15 @@
+.BlockQuote {
+  &:extend(.body-1 all);
+  border-left: 3px solid var(--color-button-border);
+  padding-left: var(--spacing-md);
+
+  &[data-has-background] {
+    padding: var(--spacing-md) var(--spacing-md);
+  }
+
+  &-attribution {
+    &:extend(.byline-1 all);
+
+    margin: 15px auto 0;
+  }
+}

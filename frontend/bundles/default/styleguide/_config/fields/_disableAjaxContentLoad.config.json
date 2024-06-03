@@ -1,0 +1,8 @@
+{
+  "fields": {
+    "disableAjaxContentLoad": {
+      "type": "boolean",
+      "displayName": "Check to disable AJAX calls when navigating to content."
+    }
+  }
+}

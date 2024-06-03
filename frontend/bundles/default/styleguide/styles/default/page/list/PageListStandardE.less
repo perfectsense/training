@@ -1,0 +1,51 @@
+.PageListStandardE {
+  .PageList {
+    &-items {
+      display: grid;
+      row-gap: var(--spacing-lg);
+      column-gap: var(--spacing-lg);
+
+      &-item {
+        .PagePromo {
+          &-description {
+            &:extend(.subhead-2 all);
+          }
+
+          &-title {
+            &:extend(.headline-5 all);
+          }
+        }
+      }
+
+      &-item:nth-child(2) {
+        .PagePromo:nth-child(n + 2) {
+          border-bottom: 1px solid var(--color-list-border);
+          gap: var(--spacing-lg);
+          padding-top: var(--spacing-lg);
+          padding-bottom: var(--spacing-lg);
+
+          .PagePromo-title {
+            &:extend(.headline-8 all);
+          }
+        }
+      }
+
+      &-title {
+        &:extend(.label-1 all);
+
+        border-bottom: 1px solid var(--color-list-border);
+        color: var(--color-primary);
+        margin-top: var(--spacing-xl);
+        padding-bottom: var(--spacing-sm);
+      }
+    }
+  }
+
+  @container (@cq-lg) {
+    .PageList {
+      &-items {
+        grid-template-columns: 2fr 1fr;
+      }
+    }
+  }
+}

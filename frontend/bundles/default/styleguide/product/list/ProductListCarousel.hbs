@@ -1,0 +1,20 @@
+{{#if items}}
+<bsp-listcarousel class="ProductListCarousel" data-module {{include "/page/list/includes/PageList-attributes.hbs" this}}>
+    {{include "/global/ModuleHeader.hbs" this}}
+
+    <div class="PageList-items">
+        {{#each items}}
+            {{#set
+                lazyLoad="flickity"
+                imageSize=../itemImageAspectRatio
+            }}
+                <div class="PageList-items-item">
+                    {{render this}}
+                </div>
+            {{/set}}
+        {{/each}}
+    </div>
+
+    {{include "/page/list/includes/PageList-footer.hbs" this}}
+</bsp-listcarousel>
+{{/if}}

@@ -1,0 +1,12 @@
+{
+  "_template": "/tab/TabsEnhancement.hbs",
+  "item": {
+    "_include": "/tab/Tabs.json",
+    "tabs": [
+      {
+        "_include": "TabItemRichText.json",
+        "_repeat": 3
+      }
+    ]
+  }
+}

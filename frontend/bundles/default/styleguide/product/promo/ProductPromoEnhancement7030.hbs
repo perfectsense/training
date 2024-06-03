@@ -1,0 +1,28 @@
+{{#each item}}
+    {{#if (and (not ../_styledTemplate) this._styledTemplate)}}
+        {{!-- Falls back to the Shared items defined style. In practice, this allows Shared Placements
+          to fall back to the Shared objects defined style. --}}
+        {{this}}
+    {{else}}
+    <div class="Enhancement"
+        {{~#with ../enhancementAlignmentNoFullWidth}} data-{{this}}{{/with~}}
+    >
+        <div class="ProductPromoEnhancement"
+                {{~#with ../enhancementAlignmentNoFullWidth}} data-{{this}}{{/with~}}
+            >
+            {{include "/product/promo/ProductPromoModule.hbs" this
+                layout="7030"
+                backgroundColor=../backgroundColor
+                borderColor=../borderColor
+                useTextColors=../useTextColors
+                flagBorder=../flagBorder
+                flagPosition=../flagPosition
+                flagTextColor=../flagTextColor
+                flagBackgroundColor=../flagBackgroundColor
+                flagBorderColor=../flagBorderColor
+                imageAspectRatio=../imageAspectRatio
+            }}
+        </div>
+    </div>
+    {{/if}}
+{{/each}}

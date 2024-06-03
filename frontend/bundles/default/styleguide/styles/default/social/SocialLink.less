@@ -1,0 +1,32 @@
+// Here we deal with the styling of all our social links. The plain "SocialLink"
+// is used in the navigation, footer and the author page.
+
+// The action bar icons are called "ActionLink" and live in /action-bar
+// This CSS is the same, but it is here because so many sites treat these with a different look
+
+.SocialLink {
+  align-items: center;
+  border: 1px solid currentColor;
+  border-radius: 50%;
+  display: grid;
+  height: 32px;
+  justify-content: center;
+  position: relative;
+  width: 32px;
+  cursor: pointer;
+  color: currentColor;
+
+  svg {
+    align-items: center;
+    height: 16px;
+    width: 16px;
+  }
+
+  span {
+    .sr-only;
+  }
+
+  &:hover {
+    border: 1px solid currentColor;
+  }
+}

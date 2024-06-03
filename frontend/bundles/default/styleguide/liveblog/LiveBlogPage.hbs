@@ -1,0 +1,88 @@
+{{#if fragment}}
+{{#with dateModified}}<div class="Page-dateModified">{{this}}</div>{{/with}}
+{{#with datePublished}}<div class="Page-datePublished">{{this}}</div>{{/with}}
+{{include './includes/LiveBlogPage-currentPosts.hbs' this}}
+{{else}}
+<!DOCTYPE html>
+<html class="LiveBlogPage" {{~include "/page/Page-htmlAttributes.hbs" this}}>
+{{include "/page/Page-head.hbs" this}}
+    <body class="Page-body">
+        {{include "/page/Page-bodyStart.hbs" this}}
+        {{include "/page/Page-header.hbs" this}}
+        <div data-moduleroot>
+            {{include "/page/Page-above.hbs" this dataClick="above"}}
+
+            <bsp-liveblog
+                {{~#with postsEndpoint}} data-posts-endpoint="{{this}}"{{/with~}}
+                {{~#with liveEvent}} data-live-event{{/with~}}
+                {{~#with (format 'latestUpdateText')}} data-latest-update-text="{{this}}"{{/with~}}
+            ></bsp-liveblog>
+
+            <div class="LiveBlogPage-layoutWrapper">
+                <main class="Page-content">
+                    <div class="LiveBlogPage-lede">
+                        <div class="LiveBlogPage-lede-content">
+
+                            {{include "/page/Page-breadcrumbs.hbs" this}}
+
+                            {{#if liveEvent}}
+                                <div class="LiveBlogPage-liveStatus">{{format 'liveText'}}</div>
+                            {{/if}}
+
+                            {{include "/page/Page-headline.hbs" this}}
+                            {{include "/page/Page-subHeadline.hbs" this}}
+
+                            <div class="LiveBlogPage-actions-wrapper">
+                                <div class="LiveBlogPage-dates">
+                                    {{#with dateModified}}<div class="Page-dateModified">{{format "dataModifiedText"}}: {{this}}</div>{{/with}}
+                                    {{#with datePublished}}<div class="Page-datePublished">{{format "datePublishedText"}}: {{this}}</div>{{/with}}
+                                </div>
+                                {{include "/page/Page-actions.hbs" this}}
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="Page-oneColumn">
+                        {{#set imageSize="large-16x9"}}
+                            {{#set sizes="(max-width: 1024px) 100vw, 800px"}}
+                                {{include "/page/Page-lead.hbs" this lead=blogLead}}
+                            {{/set}}
+                        {{/set}}
+
+                        {{#with blogBody}}
+                            <div class="RichTextBody">
+                                {{this}}
+                            </div>
+                        {{/with}}
+
+                        {{#with whatYouNeedToKnow}}
+                            <div class="LiveBlogPage-whatYouNeedToKnow">
+                                <div class="LiveBlogPage-whatYouNeedToKnow-heading">
+                                    {{format 'whatYouNeedToKnow'}}
+                                </div>
+                                <div class="RichTextBody">
+                                    {{this}}
+                                </div>
+                            </div>
+                        {{/with}}
+
+                        {{include './includes/LiveBlogPage-pinnedPosts.hbs' this}}
+
+                        {{include './includes/LiveBlogPage-currentPosts.hbs' this}}
+
+                        {{include "/page/Page-commenting.hbs" this}}
+                    </div>
+                </main>
+
+                <div class="LiveBlogPage-sideRail">
+                    {{include '/liveblog/includes/LiveBlogFeed.hbs'}}
+                </div>
+            </div>
+
+            {{include "/page/Page-below.hbs" this}}
+        </div>
+        {{include "/page/Page-footer.hbs" this}}
+        {{include "/page/Page-extraBodyItems.hbs" this}}
+    </body>
+</html>
+{{/if}}

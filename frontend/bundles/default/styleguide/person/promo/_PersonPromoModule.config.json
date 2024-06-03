@@ -1,0 +1,22 @@
+{
+  "styles": {
+    "/person/promo/PersonPromoModule.hbs": {
+      "fields": [
+        "promoTitleSize",
+        "promoDescriptionSize",
+        "backgroundColor",
+        "useTextColors",
+        "animateOnScroll",
+        "imageAspectRatio"
+      ],
+      "templates": [
+        {
+          "displayName": "Person Promo Module",
+          "example": "/person/promo/PersonPromoModule.json",
+          "height": 400,
+          "width": 768
+        }
+      ]
+    }
+  }
+}

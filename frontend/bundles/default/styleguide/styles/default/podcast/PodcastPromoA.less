@@ -1,0 +1,51 @@
+.PodcastPromoA {
+  .PagePromo {
+    &-media {
+      .verticalSpacing(var(--spacing-md));
+    }
+
+    &-category {
+      &:extend(.label-1);
+      .verticalSpacing(var(--spacing-md));
+      text-transform: uppercase;
+    }
+
+    &-title {
+      &:extend(.headline-7);
+      .verticalSpacing(var(--spacing-md));
+    }
+
+    &-description {
+      &:extend(.subhead-2);
+      .verticalSpacing(var(--spacing-md));
+    }
+
+    &-ctaLink {
+      .verticalSpacing(var(--spacing-md));
+    }
+  }
+
+  [data-item-display-style="card"] & {
+    padding: var(--spacing-md) var(--spacing-md);
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: var(--color-site-bg);
+    box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.1);
+    min-height: 100%;
+  }
+
+  [data-item-has-background-color] & {
+    background-color: var(--color-item-background);
+  }
+
+  [data-item-has-background-image] & {
+    background-image: var(--item-background-image);
+    background-size: cover;
+  }
+
+  [data-item-has-text-color] & {
+    --color-primary-text: var(--color-item-text);
+    --color-link-text: var(--color-item-text);
+    --color-link-text-hover: var(--color-item-text);
+  }
+}

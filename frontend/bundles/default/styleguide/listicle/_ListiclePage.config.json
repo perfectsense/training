@@ -1,0 +1,41 @@
+{
+  "styles": {
+    "/listicle/ListiclePage.hbs": {
+      "fields": [
+          "suppressCommenting"
+      ],
+      "templates": [
+        {
+          "displayName": "Standard Lead",
+          "example": "/listicle/ListiclePageStandard.json",
+          "height": 800,
+          "width": 1280
+        },
+        {
+          "displayName": "Large Lead",
+          "example": "/listicle/ListiclePageLarge.json",
+          "height": 800,
+          "width": 1280
+        },
+        {
+          "displayName": "Overlay Lead",
+          "example": "/listicle/ListiclePageOverlay.json",
+          "height": 800,
+          "width": 1280
+        },
+        {
+          "displayName": "Nested Lead",
+          "example": "/listicle/ListiclePageNested.json",
+          "height": 800,
+          "width": 1280
+        },
+        {
+          "displayName": "Full Width Lead",
+          "example": "/listicle/ListiclePageFullWidth.json",
+          "height": 800,
+          "width": 1280
+        }
+      ]
+    }
+  }
+}

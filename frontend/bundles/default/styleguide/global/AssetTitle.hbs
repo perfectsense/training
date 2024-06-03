@@ -1,0 +1,27 @@
+<div class="AssetTitle"
+    {{~#with assetTitleTextAlign}} data-text-align="{{this}}"{{/with~}}
+    {{~#with useTextColors}} data-use-text-colors="{{this}}"{{/with~}}
+    >
+    {{#if (or breadcrumbs headline subHeadline)}}
+    <div class="AssetTitle-header">
+        {{include "/page/Page-breadcrumbs.hbs" this}}
+        {{include "/page/Page-headline.hbs" this}}
+        {{include "/page/Page-subHeadline.hbs" this}}
+    </div>
+    {{/if}}
+    {{#if (or datePublished readTime authors actions sponsored)}}
+    <div class="AssetTitle-footer">
+        {{#if (or datePublished readTime authors actions)}}
+        <div class="AssetTitle-meta">
+            {{include "/page/Page-byline.hbs" this}}
+            {{actions}}
+        </div>
+        {{/if}}
+        {{#if sponsored}}
+        <div class="AssetTitle-sponsor">
+            {{sponsored}}
+        </div>
+        {{/if}}
+    </div>
+    {{/if}}
+</div>

@@ -1,0 +1,23 @@
+{
+  "_template": "/liveblog/LiveBlogPost.hbs",
+  "authors": {
+    "_include": "/author/Author.json"
+  },
+  "postId": "postuuid",
+  "headline": "{{words([5,10])}}",
+  "postedDate": "{{date}}",
+  "postedDateTimestamp": 1621605432000,
+  "updateDate": "{{date}}",
+  "updateDateTimestamp": 1621605432000,
+  "body": [
+    {
+      "_include": "/image/ImageEnhancement.json"
+    },
+    "{{paragraphs([1,2])}}"
+  ],
+  "postUrl": "https://www.domain.com/live-updates/liveblog#post-anchor",
+  "anchor": "#",
+  "actions": {
+    "_include": "/action-bar/ActionBar.json"
+  }
+}

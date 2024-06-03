@@ -1,0 +1,22 @@
+{
+  "_template": "/newsletter/NewsletterPromo.hbs",
+  "description": ["{{paragraphs(1)}}"],
+  "category": ["{{words([1,3])}}"],
+  "isNotUTMCapable": "false",
+  "media": [
+    {
+      "_template": "/image/Image.hbs",
+      "alt": "Sample Image",
+      "image": {
+        "_image": true,
+        "src": "https://free-trials-brightspot.s3.amazonaws.com/starter-kit/basic/84/e6/c76f39114e98881a80bb90be9d86/blue.png"
+      },
+      "narrowImage": {
+        "_image": true,
+        "src": "https://free-trials-brightspot.s3.amazonaws.com/starter-kit/basic/84/e6/c76f39114e98881a80bb90be9d86/blue.png"
+      }
+    }
+  ],
+  "title": ["{{words([5,10])}}"],
+  "url": "https://www.brightspot.com"
+}

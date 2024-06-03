@@ -1,0 +1,4 @@
+<bsp-google-captcha class="GoogleCaptcha g-recaptcha" data-callback="recaptchaEnable" data-expired-callback="recaptchaDisable"
+    {{~#with key}} data-sitekey="{{this}}"{{/with~}}
+    {{~#if invisibleCaptcha}} data-size="invisible"{{/if~}}
+    ></bsp-google-captcha>

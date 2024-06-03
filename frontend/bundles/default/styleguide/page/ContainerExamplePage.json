@@ -1,0 +1,116 @@
+{
+  "_include": "/page/Page.json",
+  "pageLead": null,
+  "above": {
+    "_include": "/dfp/GoogleDfpAdModule.json"
+  },
+  "main": [
+    {
+      "_template": "/container/OneColumnContainer.hbs",
+      "columnOne": [
+        {
+          "_include": "/page/list/PageListCarouselA.json"
+        }
+      ]
+    },
+    {
+      "_template": "/container/OneColumnContainer.hbs",
+      "columnOne": [
+        {
+          "_template": "/tab/Tabs.hbs",
+          "tabs": [
+            {
+              "_include": "/tab/TabItem.json",
+              "id": "TabOne",
+              "content": {
+                "_include": "/page/list/PageListCarouselA.json"
+              }
+            },
+            {
+              "_include": "/tab/TabItem.json",
+              "id": "TabTwo",
+              "content": {
+                "_include": "/page/list/PageListCarouselA.json"
+              }
+            },
+            {
+              "_include": "/tab/TabItem.json",
+              "id": "TabThree",
+              "content": {
+                "_include": "/page/list/PageListCarouselA.json"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "_template": "/container/TwoColumnContainer.hbs",
+      "_styledTemplate": "/container/TwoColumnContainer5050.hbs",
+      "columnOne": [
+        {
+          "_include": "/page/list/PageListCarouselA.json"
+        }
+      ],
+      "columnTwo": [
+        {
+          "_template": "/tab/Tabs.hbs",
+          "tabs": [
+            {
+              "_include": "/tab/TabItem.json",
+              "id": "TabOne",
+              "content": {
+                "_include": "/page/list/PageListCarouselA.json"
+              }
+            },
+            {
+              "_include": "/tab/TabItem.json",
+              "id": "TabTwo",
+              "content": {
+                "_include": "/page/list/PageListCarouselA.json"
+              }
+            },
+            {
+              "_include": "/tab/TabItem.json",
+              "id": "TabThree",
+              "content": {
+                "_include": "/page/list/PageListCarouselA.json"
+              }
+            }
+          ]
+        }
+      ],
+      "backgroundColor": "#f9f9f9"
+    },
+    {
+      "_template": "/tab/Tabs.hbs",
+      "tabs": [
+        {
+          "_include": "/tab/TabItem.json",
+          "id": "TabOne",
+          "content": {
+            "_include": "/page/list/PageListCarouselA.json"
+          }
+        },
+        {
+          "_include": "/tab/TabItem.json",
+          "id": "TabTwo",
+          "content": {
+            "_include": "/page/list/PageListCarouselA.json"
+          }
+        },
+        {
+          "_include": "/tab/TabItem.json",
+          "id": "TabThree",
+          "content": {
+            "_include": "/page/list/PageListCarouselA.json"
+          }
+        }
+      ]
+    },
+    {
+      "_include": "/page/list/PageListCarouselA.json",
+      "backgroundColor": "#dedede"
+    }
+  ]
+}

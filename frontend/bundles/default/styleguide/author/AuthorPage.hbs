@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html class="AuthorPage" {{~include "/page/Page-htmlAttributes.hbs" this}}>
+{{include "/page/Page-head.hbs" this}}
+
+<body class="Page-body">
+    {{include "/page/Page-bodyStart.hbs" this}}
+    {{include "/page/Page-header.hbs" this}}
+    <div data-moduleroot>
+        {{include "/page/Page-above.hbs" this}}
+
+        <div class="Page-content">
+            <div class="Page-twoColumn">
+                <main class="Page-main">
+                    <div class="AuthorPage-intro">
+                        {{#with image}}
+                            {{#set imageSize="medium-square"}}
+                                <div class="AuthorPage-image">{{this}}</div>
+                            {{/set}}
+                        {{/with}}
+
+                        <div class="AuthorPage-info">
+                            {{#with name}}
+                                <h1 class="AuthorPage-name">{{this}}</h1>
+                            {{/with}}
+                            {{#with jobTitle}}
+                                <div class="AuthorPage-jobTitle">{{this}}</div>
+                            {{/with}}
+                            {{#with authorSocialLinks}}
+                                <div class="AuthorPage-socialLinks">{{this}}</div>
+                            {{/with}}
+                        </div>
+                    </div>
+
+                    {{#with fullBiography}}
+                        <div class="Page-articleBody">
+                            <div class="AuthorPage-biography">
+                                <div class="AuthorPage-biography-content">
+                                {{#set imageSize="medium-4x3"}}
+                                    <div class="RichTextBody">{{this}}</div>
+                                {{/set}}
+                                </div>
+                            </div>
+                        </div>
+                    {{/with}}
+
+                    {{#with main}}
+                        <div class="AuthorPage-related-content">
+                            {{#each this}}
+                                {{this}}
+                            {{/each}}
+                        </div>
+                    {{/with}}
+
+                    {{include "/page/Page-commenting.hbs" this}}
+                </main>
+
+                {{#if aside}}
+                    <aside class="Page-aside">
+                        {{aside}}
+                    </aside>
+                {{/if}}
+            </div>
+        </div>
+
+        {{include "/page/Page-below.hbs" this}}
+    </div>
+    {{include "/page/Page-footer.hbs" this}}
+    {{include "/page/Page-extraBodyItems.hbs" this}}
+</body>
+</html>

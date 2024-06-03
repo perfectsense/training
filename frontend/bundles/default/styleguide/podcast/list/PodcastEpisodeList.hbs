@@ -1,0 +1,18 @@
+<bsp-list-loadmore class="PodcastEpisodeList" data-module {{include "/page/list/includes/PageList-attributes.hbs" this}}>
+    {{include "/global/ModuleHeader.hbs" this}}
+
+    {{#with items}}
+        <ul class="PageList-items" data-list-loadmore-items>
+            {{#each this}}
+                <li class="PageList-items-item">
+                    {{#eq this._template "/podcast/promo/PodcastEpisodePromo.hbs"}}
+                        {{include "/podcast/promo/PodcastEpisodePromo.hbs" this}}
+                    {{else}}
+                        {{render this}}
+                    {{/eq}}
+                </li>
+            {{/each}}
+        </ul>
+    {{/with}}
+    {{include "/page/list/includes/PageList-footer.hbs" this canPaginate=true}}
+</bsp-list-loadmore>

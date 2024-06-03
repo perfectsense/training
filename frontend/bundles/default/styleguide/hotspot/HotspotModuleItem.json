@@ -1,0 +1,11 @@
+{
+  "_template": "HotspotModuleItem.hbs",
+  "xCoord": "20",
+  "yCoord": "20",
+  "icon": "plus",
+  "item": [
+    {
+      "_include": "/page/promo/PagePromo.json"
+    }
+  ]
+}

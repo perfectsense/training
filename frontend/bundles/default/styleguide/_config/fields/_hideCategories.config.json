@@ -1,0 +1,7 @@
+{
+  "fields": {
+    "hideCategories": {
+      "type": "boolean"
+    }
+  }
+}

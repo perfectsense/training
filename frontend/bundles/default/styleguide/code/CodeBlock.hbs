@@ -1,0 +1,36 @@
+<bsp-code-block class="CodeBlock" data-language="{{language}}" data-module {{include "/global/ModuleAttributes.hbs" this}}
+    {{#eq collapsibleState "collapsed"}} data-collapsed{{/eq~}}
+    >
+    {{#or title (ne collapsibleState "disabled")}}
+        <div class="CodeBlock-header">
+            {{#with title}}
+                <div class="CodeBlock-title">
+                    {{this}}
+                </div>
+            {{/with}}
+            {{#if (ne collapsibleState "disabled")}}
+                <button class="CodeBlock-toggle" aria-label="{{format "toggleButton"}}">
+                    <span class="CodeBlock-expand">
+                        {{format '/code/CodeBlock' "expand"}}
+                        {{include (iconPath 'caret-down')}}
+                    </span>
+                    <span class="CodeBlock-collapse">
+                        {{format '/code/CodeBlock' "collapse"}}
+                        {{include (iconPath 'caret-up')}}
+                    </span>
+                </button>
+            {{/if}}
+        </div>
+    {{/or}}
+    <div class="CodeBlock-body">
+        <pre class="language- {{#unless (and (not annotations) hideLineNumbers)}} line-numbers{{/unless}}"
+            {{~#with annotations}} data-line="{{#each this}}{{lineNumber}}{{#unless @last}}, {{/unless}}{{/each}}"{{/with~}}
+            {{~#if verticallyScrollable}} data-highlight style="--visibleLinesCount:{{fallback verticallyScrollableLinesVisible 20}};"{{/if~}}
+            ><code tabindex="0">{{code}}</code></pre>
+        {{#with annotations}}
+            <ul class="CodeBlock-annotations">
+                {{#each this}}{{this}}{{/each}}
+            </ul>
+        {{/with}}
+    </div>
+</bsp-code-block>

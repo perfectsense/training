@@ -1,0 +1,35 @@
+<div class="PersonPromoModule" data-module {{include "/page/promo/includes/PagePromoAttributes.hbs" this}}{{#if animateOnScroll}}  data-animate="fromBottom" {{/if}}>
+    {{include "/link/AnchorLink.hbs" this}}
+    {{#set imageSize=(fallback imageAspectRatio "small-square")}}
+        <div class="PagePromo-media">
+            {{#if media}}
+                {{~#if url~}}
+                    <a class="Link" {{#with name}}aria-label="{{this}}"{{/with}} href="{{url}}">{{media}}</a>
+                {{~else~}}
+                    <span class="Link">{{media}}</span>
+                {{~/if~}}
+            {{/if}}
+        </div>
+    {{/set}}
+
+    <div class="PersonPromoModule-content">
+        <div class="PersonPromoModule-contentTop">
+            {{include "/page/promo/includes/PagePromoTitle.hbs" this title=name}}
+
+            {{#if jobTitle}}
+                <div class="PagePromo-label">
+                    {{include "/link/Link.hbs" href=url body=jobTitle}}
+                </div>
+            {{/if}}
+        </div>
+        <div class="PersonPromoModule-contentBottom">
+            {{#with description}}
+                <div class="PagePromo-description">
+                    {{this}}
+                </div>
+            {{/with}}
+
+            {{include "/page/promo/includes/PagePromoCtaLink.hbs" this}}
+        </div>
+    </div>
+</div>

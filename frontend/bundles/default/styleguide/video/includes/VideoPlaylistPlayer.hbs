@@ -1,0 +1,18 @@
+<div class="VideoPlaylistPlayer">
+    {{#with player}}
+        <div class="VideoPlaylistPlayer-player">{{this}}</div>
+    {{/with}}
+    {{#or title description date}}
+        <div class="VideoPlaylistPlayer-info">
+            {{#with title}}
+                <div class="VideoPlaylistPlayer-title">{{this}}</div>
+            {{/with}}
+            {{#with description}}
+                <div class="VideoPlaylistPlayer-description">{{this}}</div>
+            {{/with}}
+            {{#with date}}
+                <div class="VideoPlaylistPlayer-date">{{this}}</div>
+            {{/with}}
+        </div>
+    {{/or}}
+</div>

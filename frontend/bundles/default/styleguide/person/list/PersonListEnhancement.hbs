@@ -1,0 +1,19 @@
+{{~#each item~}}
+    {{#if (and (not ../_styledTemplate) this._styledTemplate)}}
+        {{!-- Falls back to the Person List's defined style. In practice, this allows Shared Placements
+          to fall back to the Shared objects defined style. --}}
+        {{this}}
+    {{else}}
+        <div class="Enhancement" {{#if ../enhancementAlignmentNoFullWidth}} data-{{../enhancementAlignmentNoFullWidth}}{{else}}data-align-center{{/if}}>
+            {{include "/link/AnchorLink.hbs" this}}
+
+            <div class="Enhancement-item">
+                <div class="PersonListEnhancement"
+                    {{~include "/page/list/includes/PageList-attributes.hbs" ../this~}}
+                    {{~#if ../enhancementAlignmentNoFullWidth}} data-{{../enhancementAlignmentNoFullWidth}}{{else}}data-align-center{{/if~}}>
+                    {{this}}
+                </div>
+            </div>
+        </div>
+    {{/if}}
+{{~/each~}}

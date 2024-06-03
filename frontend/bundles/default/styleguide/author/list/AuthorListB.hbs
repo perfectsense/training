@@ -1,0 +1,18 @@
+{{!-- This list is the same as Person List B. That list hbs just includes this one --}}
+<bsp-listcarousel class="AuthorListB" data-module{{include "/page/list/includes/PageList-attributes.hbs" this}} data-column-count={{#if listColumns45}}{{listColumns45}}{{else}}5{{/if}}>
+    {{include "/global/ModuleHeader.hbs" this}}
+
+    {{#with items}}
+        <div class="AuthorListB-items">
+            {{#each this}}
+                <div class="AuthorListB-items-item">
+                    {{#set imageSize=(fallback ../../itemImageAspectRatio "medium-square")}}
+                        {{include "/author/promo/AuthorPromo.hbs" this}}
+                    {{/set}}
+                </div>
+            {{/each}}
+        </div>
+    {{/with}}
+
+    {{include "/page/list/includes/PageList-footer.hbs" this}}
+</bsp-listcarousel>

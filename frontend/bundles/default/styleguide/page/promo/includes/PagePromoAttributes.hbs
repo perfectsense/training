@@ -1,0 +1,28 @@
+{{~#with (fallback imagePositionVertical (get "imagePositionVertical"))}} data-image-align-vertical="{{this}}"{{~/with~}}
+{{~#with (fallback imagePositionHorizontal (get "imagePositionHorizontal"))}} data-image-align-horizontal="{{this}}"{{~/with~}}
+{{~#with gradientOverlayStyle}} data-gradient-overlay-style="{{this}}"{{~/with~}}
+{{~#with mobileAltLayout}} data-mobile-alt-layout="true"{{~/with~}}
+{{~#if (get "mobileAltLayout")}} data-mobile-alt-layout="true"{{~/if~}}
+{{~#if textAlign}} data-text-align="{{textAlign}}"{{/if~}}
+{{~#if fullBleed}} data-full-bleed{{/if~}}
+{{~#with useTextColors}} data-use-text-colors="{{this}}"{{/with~}}
+{{~#if itemBackgroundColor}} data-item-has-background-color{{/if~}}
+{{~#with backgroundColor}} data-has-background{{/with~}}
+{{~#with borderColor}} data-has-border{{/with~}}
+{{~#and ctaButtonText url}} data-has-cta{{/and~}}
+{{~#and flagText url}} data-has-flag-text{{/and~}}
+{{~#if sponsored}} data-sponsored="true"{{/if~}}
+{{~#with promoTitleSize}} data-promo-title-size="{{this}}"{{/with~}}
+{{~#with promoDescriptionSize}} data-promo-description-size="{{this}}"{{/with~}}
+{{~#if animateOnScroll}} data-animate-on-scroll{{/if~}}
+{{~#if imageWidth}} data-image-width="{{imageWidth}}"{{/if~}}
+{{~#with imageAspectRatio}} data-image-aspect-ratio="{{this}}"{{/with~}}
+{{~#unless media}} data-no-media{{/unless~}}
+{{~#with modulePaddingBottom}} data-module-padding-bottom="{{this}}"{{/with~}}
+{{~#with modulePaddingTop}} data-module-padding-top="{{this}}"{{/with~}}
+{{~#or backgroundColor borderColor flagBackgroundColor itemBackgroundColor}} style="
+    {{~#with backgroundColor}}--color-module-background:{{this}};{{/with~}}
+    {{~#with borderColor}}--color-module-border:{{this}};{{/with~}}
+    {{~#with flagBackgroundColor}}--color-flag-background:{{this}};{{/with~}}
+    {{~#with itemBackgroundColor}}--color-item-background:{{this}};{{/with~}}
+"{{/or~}}

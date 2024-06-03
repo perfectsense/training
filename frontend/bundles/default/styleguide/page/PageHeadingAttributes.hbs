@@ -1,0 +1,14 @@
+{{~#if animateOnScroll}} data-animate-on-scroll{{/if}}
+{{~#with pageHeadingSize}} data-page-heading-size="{{this}}"{{/with~}}
+{{~#with pageSubHeadingSize}} data-page-sub-heading-size="{{this}}"{{/with~}}
+{{~#if headingTextColor}} data-has-text-color{{/if~}}
+{{~#or headingBgColor backgroundVideo media}} data-has-background{{/or~}}
+{{~#with (fallback headingTextAlign "center")}} data-text-align={{this}}{{/with~}}
+{{~#with useTextColors}} data-use-text-colors="{{this}}"{{/with~}}
+{{~#if fullScreenVideo}} data-full-screen-video{{/if}}
+style="
+    {{~#with (fallback opacityOverlay "50")~}} --opacityOverlay: {{this}}%;{{/with~}}
+    {{~#with (fallback headingBgColor "var(--color-site-secondary-bg)")}} background-color: {{this}};{{/with~}}
+    {{~#with headingTextColor}} --color-heading-text: {{this}};{{/with~}}
+    {{~#each media}}{{#resize image "xl-4x1"}}background-image: url('{{src}}');{{/resize}}{{/each~}}
+    "

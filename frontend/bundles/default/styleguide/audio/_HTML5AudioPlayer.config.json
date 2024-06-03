@@ -1,0 +1,20 @@
+{
+  "styles": {
+    "/audio/HTML5AudioPlayer.hbs": {
+      "templates": [
+        {
+          "displayName": "HTML Audio Player A",
+          "example": "/audio/HTML5AudioPlayerA.json",
+          "height": 768,
+          "width": 1024
+        },
+        {
+          "displayName": "HTML Audio Player B",
+          "example": "/audio/HTML5AudioPlayerB.json",
+          "height": 768,
+          "width": 1024
+        }
+      ]
+    }
+  }
+}

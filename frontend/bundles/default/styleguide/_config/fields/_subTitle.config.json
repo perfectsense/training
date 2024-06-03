@@ -1,0 +1,8 @@
+{
+  "fields": {
+    "subTitle": {
+      "displayName": "Set Subtitle text",
+      "type": "text"
+    }
+  }
+}

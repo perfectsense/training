@@ -1,0 +1,41 @@
+{
+  "styles": {
+    "/blog/blogpost/BlogPostPage.hbs": {
+      "fields": [
+          "suppressCommenting"
+      ],
+      "templates": [
+        {
+          "displayName": "Standard Lead",
+          "example": "/blog/blogpost/BlogPostPageStandard.json",
+          "height": 800,
+          "width": 1280
+        },
+        {
+          "displayName": "Large Lead",
+          "example": "/blog/blogpost/BlogPostPageLarge.json",
+          "height": 800,
+          "width": 1280
+        },
+        {
+          "displayName": "Overlay Lead",
+          "example": "/blog/blogpost/BlogPostPageOverlay.json",
+          "height": 800,
+          "width": 1280
+        },
+        {
+          "displayName": "Nested Lead",
+          "example": "/blog/blogpost/BlogPostPageNested.json",
+          "height": 800,
+          "width": 1280
+        },
+        {
+          "displayName": "Full Width Lead",
+          "example": "/blog/blogpost/BlogPostPageFullWidth.json",
+          "height": 800,
+          "width": 1280
+        }
+      ]
+    }
+  }
+}

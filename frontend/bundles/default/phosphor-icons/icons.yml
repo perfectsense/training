@@ -1,0 +1,51 @@
+icons:
+    # List icons to install.
+    # Find icon names at https://phosphoricons.com/
+    - arrow-right
+    - arrow-square-out
+    - arrows-out
+    - caret-down
+    - caret-left
+    - caret-right
+    - caret-up
+    - circle
+    - corners-out
+    - download-simple
+    - envelope-simple
+    - facebook-logo
+    - flag
+    - google-logo
+    - image
+    - instagram-logo
+    - link
+    - linkedin-logo
+    - list
+    - list-dashes
+    - magic-wand
+    - magnifying-glass
+    - map-pin
+    - minus
+    - note
+    - pinterest-logo
+    - play
+    - play-circle
+    - plus
+    - printer
+    - pause-circle
+    - radio-button
+    - star
+    - tag
+    - tiktok-logo
+    - tumblr-logo
+    - warning
+    - x
+    - x-logo
+    - youtube-logo
+weights:
+    # List additional weights to install.
+    # "regular" is always installed by default.
+    # - thin
+    # - light
+    - bold
+    - fill
+    # - duotone

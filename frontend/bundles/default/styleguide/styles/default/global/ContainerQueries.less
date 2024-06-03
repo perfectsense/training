@@ -1,0 +1,14 @@
+// ------------------- Shortcuts for most used container queries----------------------
+@cq-sm: ~'min-width: @{sm-width}';
+@cq-md: ~'min-width: @{md-width}';
+@cq-lg: ~'min-width: @{lg-width}';
+@cq-hk: ~'min-width: @{hk-width}';
+@cq-xl: ~'min-width: @{xl-width}';
+
+@cq-only-sm: ~'max-width: @{sm-max-width}';
+@cq-only-md: ~'(min-width: @{md-width}) and (max-width: @{md-max-width})';
+@cq-only-lg: ~'(min-width: @{lg-width}) and (max-width: @{lg-max-width})';
+
+@cq-up-to-sm: ~"(max-width: @{xs-max})";
+@cq-up-to-md: ~"(max-width: @{sm-max})";
+@cq-up-to-lg: ~"(max-width: @{md-max})";

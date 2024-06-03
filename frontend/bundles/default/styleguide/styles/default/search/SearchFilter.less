@@ -1,0 +1,98 @@
+.SearchFilter {
+  display: block;
+  border-bottom: 1px solid var(--color-border);
+
+  &:first-of-type {
+    border-top: 1px solid var(--color-border);
+  }
+
+  &:last-of-type {
+    border-bottom: 0;
+  }
+
+  &-content {
+    display: block;
+    margin-bottom: var(--spacing-md);
+  }
+
+  &:not([data-expanded]) &-content {
+    display: none;
+  }
+
+  &:not([data-expanded]) &-heading {
+    svg {
+      transform: rotate(0deg);
+    }
+  }
+
+  &[data-clipped] {
+    .seeLessText {
+      display: none;
+    }
+  }
+
+  &:not([data-clipped]) {
+    .seeAllText {
+      display: none;
+    }
+  }
+
+  &-heading {
+    &:extend(.label-3 all);
+
+    cursor: pointer;
+    padding: var(--spacing-md) 0;
+    position: relative;
+
+    svg {
+      height: 16px;
+      position: absolute;
+      top: 18px;
+      right: 0;
+      transform: rotate(180deg);
+      width: 16px;
+    }
+  }
+
+  &-items {
+    list-style: none;
+
+    &-item {
+      margin-bottom: var(--spacing-sm);
+      padding-left: 3px;
+
+      &:last-of-type {
+        margin: 0;
+      }
+    }
+  }
+
+  &[data-clipped] & {
+    &-items {
+      mask-image: linear-gradient(to top, transparent, transparent 10px, black 10px);
+      margin-bottom: calc(var(--spacing-sm) * -1);
+
+      &-item {
+        &[data-is-clippable] {
+          display: none;
+        }
+      }
+    }
+  }
+
+  &-seeAll {
+    &-button {
+      &:extend(.NotButton all);
+      &:extend(.label-5 all);
+
+      color: var(--color-primary);
+      margin-top: var(--spacing-md);
+      text-transform: uppercase;
+      font-weight: bold;
+    }
+  }
+
+  @container (@cq-lg) {
+    padding: 0;
+  }
+}

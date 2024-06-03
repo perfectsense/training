@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html class="ArticlePage" {{include "/page/Page-htmlAttributes.hbs" this}} {{#unless aside}}data-no-aside{{/unless}}>
+{{!-- This page still has ArticlePage as the class name, as it is identical to the Article Page, so just
+      used all the same HTML and CSS vs extending. There is a bsp-gallery-page wrapper around the entire
+      page if you need to write custom CSS against things --}}
+{{include "/page/Page-head.hbs" this}}
+
+<body class="Page-body">
+    {{include "/page/Page-bodyStart.hbs" this}}
+    {{include "/page/Page-header.hbs" this}}
+    <div data-moduleroot>
+        {{include "/page/Page-above.hbs" this}}
+        {{include "/page/Page-sponsoredBanner.hbs" this}}
+
+        <main>
+            <bsp-gallery-page class="Page-content" data-gallery-style="{{#with galleryPageStyle}}{{this}}{{else}}carousel{{/with}}">
+                <div class="ArticlePage-lede">
+                        <div class="ArticlePage-lede-content">
+                        {{include "/page/Page-breadcrumbs.hbs" this}}
+                        {{include "/page/Page-headline.hbs" this}}
+                        {{include "/page/Page-subHeadline.hbs" this}}
+                        {{include "/page/Page-lead.hbs" this}}
+                        {{include "/page/Page-byline.hbs" this}}
+                        {{include "/page/Page-sponsoredBy.hbs" this}}
+                        {{include "/page/Page-actions.hbs" this}}
+                    </div>
+                </div>
+                {{#if aside}}<div class="Page-twoColumn">{{else}}<div class="Page-oneColumn">{{/if}}
+                    <main class="Page-main">
+                        {{#with galleryBody}}
+                            <div class="Page-articleBody RichTextBody">
+                                {{#set imageSize="medium-4x3"}}
+                                    {{this}}
+                                {{/set}}
+                            </div>
+                        {{/with}}
+
+                        {{#if (eq galleryPageStyle "waterfall")}}
+                            <div class="GalleryWaterfall" data-module>
+                                {{#set imageSize="xl-flexible"}}
+                                    {{#each slides}}
+                                        {{include (fallback _styledTemplate _template) this slideIndex=@index slideTotal=../slides.length}}
+                                    {{/each}}
+                                {{/set}}
+                            </div>
+                            {{include "./GalleryFullscreen.hbs" this}}
+                        {{else}}
+                            {{include '/carousel/Carousel.hbs' this title=null description=null}}
+                        {{/if}}
+
+                        {{include "/page/Page-articleBelow.hbs" this}}
+                    </main>
+
+                    {{#if aside}}
+                        <aside class="Page-aside">
+                            {{#each aside}}
+                                {{#set imagePositionVertical="top"}}
+                                    {{render this
+                                                    [/page/promo/PagePromo.hbs]="/page/promo/PagePromo.hbs"
+                                                    [/page/list/PageList.hbs]="/page/list/PageListRightRailA.hbs"
+                                    }}
+                                {{/set}}
+                            {{/each}}
+                        </aside>
+                    {{/if}}
+                </div>
+            </bsp-gallery-page>
+        </main>
+
+        {{include "/page/Page-below.hbs" this}}
+    </div>
+    {{include "/page/Page-footer.hbs" this}}
+    {{include "/page/Page-extraBodyItems.hbs" this}}
+</body>
+</html>

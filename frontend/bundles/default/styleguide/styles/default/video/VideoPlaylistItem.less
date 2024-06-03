@@ -1,0 +1,79 @@
+.VideoPlaylistItem {
+  cursor: pointer;
+  display: block;
+  overflow: hidden;
+
+  &-media {
+    position: relative;
+  }
+
+  &[is-current] {
+    cursor: auto;
+  }
+
+  &[is-current] & {
+    &-media {
+      .Image {
+        filter: brightness(0.5);
+      }
+    }
+
+    &-playIcon {
+      display: none;
+    }
+  }
+
+  &:not([is-current]) &-playingText {
+    display: none;
+  }
+
+  &:not([is-current]) &-title:hover {
+    color: var(--color-link-text-hover);
+  }
+
+  &-duration {
+    &:extend(.label-1 all);
+
+    font-weight: normal;
+  }
+
+  &-playIcon,
+  &-playingText {
+    position: absolute;
+  }
+
+  &-playIcon {
+    bottom: var(--spacing-xs);
+    left: var(--spacing-xs);
+    color: var(--color-text-inverse);
+    background-color: var(--color-primary);
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: grid;
+    place-items: center;
+
+    svg {
+      height: 16px;
+      width: 16px;
+    }
+  }
+
+  &-playingText {
+    &:extend(.label-6 all);
+
+    bottom: 0;
+    color: var(--color-text-inverse);
+    font-weight: bold;
+    left: 0;
+    padding: 6px 9px;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  &-title {
+    &:extend(.headline-8 all);
+    margin-top: var(--spacing-sm);
+    margin-bottom: var(--spacing-xs);
+  }
+}

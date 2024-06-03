@@ -1,0 +1,4 @@
+{
+  "_include": "/product/search/ProductSearchResultsPage.json",
+  "_styledTemplate": "/product/search/ProductSearchResultsPageA.hbs"
+}

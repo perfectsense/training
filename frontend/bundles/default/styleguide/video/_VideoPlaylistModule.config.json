@@ -1,0 +1,23 @@
+{
+  "styles": {
+    "/video/VideoPlaylistModule.hbs": {
+      "fields": [
+        "playlistLayout",
+        "playlistPlayerLayout",
+        "videoTitleSize",
+        "videoDescriptionSize",
+        "backgroundColor",
+        "useTextColors",
+        "headerTextAlign",
+        "modulePaddingTop",
+        "modulePaddingBottom"
+      ],
+      "templates": [
+        {
+          "displayName": "Video Playlist Module",
+          "example": "/video/VideoPlaylistModule.json"
+        }
+      ]
+    }
+  }
+}

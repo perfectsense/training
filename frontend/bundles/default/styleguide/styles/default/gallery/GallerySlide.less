@@ -1,0 +1,88 @@
+.GallerySlide {
+  display: block;
+  width: 100%;
+  position: relative;
+  cursor: pointer;
+
+  &-title {
+    &:extend(.headline-6 all);
+
+    bsp-gallery-page .Page-main &,
+    .Enhancement & {
+      &:extend(.headline-8 all);
+    }
+  }
+
+  &-caption {
+    &:extend(.subhead-3 all);
+
+    bsp-gallery-page .Page-main &,
+    .Enhancement & {
+      &:extend(.subhead-4 all);
+    }
+  }
+
+  &-credit {
+    &:extend(.byline-1 all);
+
+    bsp-gallery-page .Page-main &,
+    .Enhancement & {
+      &:extend(.subhead-4 all);
+    }
+  }
+
+  &-info {
+    color: var(--color-primary-text);
+    margin-top: var(--spacing-md);
+
+    bsp-gallery-page .Page-main &,
+    .Enhancement & {
+      margin-top: var(--spacing-sm);
+    }
+  }
+
+  &-title,
+  &-caption,
+  &-credit {
+    .verticalSpacing(var(--spacing-md));
+
+    bsp-gallery-page .Page-main &,
+    .Enhancement & {
+      .verticalSpacing(var(--spacing-xs));
+    }
+  }
+
+  &-media {
+    background: #333333;
+    display: grid;
+    margin: 0 auto;
+    position: relative;
+    place-content: center;
+  }
+
+  &-fullscreenButton {
+    .NotButton();
+    width: 24px;
+    height: 24px;
+    color: var(--color-text-inverse);
+    background-color: black;
+    border-radius: 70%;
+    top: 10px;
+    right: 10px;
+    position: absolute;
+    z-index: 9;
+    display: grid;
+    place-content: center;
+
+    svg {
+      height: 16px;
+      width: 16px;
+    }
+  }
+
+  @media @mq-lg {
+    &:not(:hover, :focus-within) &-fullscreenButton {
+      opacity: 0;
+    }
+  }
+}

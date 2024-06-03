@@ -1,0 +1,4 @@
+{
+  "_include": "/listicle/ListiclePage.json",
+  "_styledTemplate": "/listicle/ListiclePageOverlay.hbs"
+}

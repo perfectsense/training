@@ -1,0 +1,9 @@
+{
+  "styles": {
+    "/support-desk/book/Book.hbs": {
+      "fields": [
+        "disableAjaxContentLoad"
+      ]
+    }
+  }
+}

@@ -1,0 +1,54 @@
+.LogoListA {
+  .LogoPromo {
+    .PagePromo-media {
+      img {
+        height: 100px;
+        margin: 0 auto;
+        width: auto;
+      }
+    }
+  }
+
+  &-items {
+    height: 100px;
+    width: 100%;
+
+    &-item {
+      min-height: 100%;
+      margin-right: var(--spacing-md);
+    }
+  }
+
+  .flickity-prev-next-button {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  @container (@cq-md) {
+    .LogoPromo {
+      .PagePromo-media {
+        img {
+          height: 150px;
+        }
+      }
+    }
+
+    &-items {
+      height: 150px;
+      width: calc(100% + var(--spacing-md); );
+
+      &-item {
+        margin-right: var(--spacing-md);
+        width: calc((100% / 3) - var(--spacing-md));
+      }
+    }
+  }
+
+  @container (@cq-lg) {
+    &-items {
+      &-item {
+        width: calc(20% - var(--spacing-md));
+      }
+    }
+  }
+}

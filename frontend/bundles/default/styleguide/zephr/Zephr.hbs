@@ -1,0 +1,11 @@
+{{#if (get "head")}}
+    {{#if injectJs}}
+        <script src="https://assets.zephr.com/zephr-browser/1.3.11/zephr-browser.umd.js"></script>
+        <script>
+            let baseUrl = '{{cdnBaseUrl}}';
+            document.addEventListener('DOMContentLoaded', (event) => {
+                zephrBrowser.run(baseUrl);
+            });
+        </script>
+    {{/if}}
+{{/if}}

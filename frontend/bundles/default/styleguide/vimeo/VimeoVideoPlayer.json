@@ -1,0 +1,10 @@
+{
+  "_template": "VimeoVideoPlayer.hbs",
+  "playerId": "1",
+  "videoTitle": "Pork belly bresaola kevin pancetta.",
+  "videoId": "997312",
+  "privacyHash": "8fd17ce2a4",
+  "autoplay": false,
+  "muted": true,
+  "seekSeconds": 10
+}

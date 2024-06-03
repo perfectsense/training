@@ -1,0 +1,57 @@
+.SearchModule {
+  &-formButton {
+    background: #fff;
+    border: solid 1px var(--color-border);
+    border-left: none;
+    border-radius: 0 25px 25px 0;
+    cursor: pointer;
+    height: 50px;
+    padding-right: 15px;
+
+    svg {
+      height: 20px;
+      width: 20px;
+    }
+  }
+
+  &-formInput {
+    &:extend(.label-4 all);
+    border: solid 1px var(--color-border);
+    border-radius: 25px 0 0 25px;
+    border-right: none;
+    color: var(--color-primary-text);
+    font-weight: normal;
+    height: 50px;
+    padding-left: var(--spacing-md);
+    width: 100%;
+  }
+
+  &-form {
+    display: flex;
+    justify-content: space-between;
+  }
+
+
+  @container (@cq-md) {
+    &-formButton {
+      padding-right: var(--spacing-xl);
+    }
+  }
+
+  @container (@cq-lg) {
+    &-formButton {
+      padding-right: var(--spacing-xl);
+    }
+
+    &-formInput {
+      padding-left: var(--spacing-xl);
+    }
+  }
+
+  @container (@cq-hk) {
+    &-form {
+      width: 900px;
+      margin: 0 auto;
+    }
+  }
+}

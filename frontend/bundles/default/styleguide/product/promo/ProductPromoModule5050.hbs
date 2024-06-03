@@ -1,0 +1,23 @@
+<div class="ProductPromoModule" data-module
+    {{~include "/page/promo/includes/PagePromoAttributes.hbs" this ctaButtonText=(fallback ctaButtonText (format "/product/promo/ProductPromoModule" "ctaText"))~}}
+    {{~#with layout}} data-layout="{{this}}"{{/with}}
+    {{~#if animateOnScroll}} data-animate="fromBottom" {{/if~}}>
+    {{include "/link/AnchorLink.hbs" this}}
+
+    <div class="ProductPromoModule-wrapper">
+        {{#set
+            imageSize=(fallback imageAspectRatio "large-16x9")
+        }}
+            {{include '/product/promo/includes/ProductPromoMedia.hbs' this}}
+        {{/set}}
+
+        <div class="ProductPromoModule-content">
+            {{include "/page/promo/includes/PagePromoCategory.hbs" this}}
+            {{include "/page/promo/includes/PagePromoTitle.hbs" this}}
+            {{include './includes/ProductPromoPricing.hbs' this}}
+            {{include "/page/promo/includes/PagePromoDescription.hbs" this}}
+            {{include "/page/promo/includes/PagePromoButton.hbs" this ctaButtonText=(fallback ctaButtonText (format "/product/promo/ProductPromoModule" "ctaText"))}}
+            {{include '/product/promo/includes/ProductPromoOptions.hbs' this}}
+        </div>
+    </div>
+</div>

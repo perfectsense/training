@@ -1,0 +1,7 @@
+<figure class="Figure">
+    {{include "/link/AnchorLink.hbs" this}}
+    {{#set imageSize=(fallback (get "imageSize") "large-16x9-auto")}}
+        {{include "/image/Image.hbs" this}}
+    {{/set}}
+    {{include '/figure/includes/FigureContent.hbs' this}}
+</figure>

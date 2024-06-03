@@ -1,0 +1,20 @@
+
+    <fieldset class="Fieldset" {{#with fieldsetColumns}}data-fieldset-lgcolumns="{{this}}"{{/with}}>
+        {{#with legend}}
+            <div class="Fieldset-title">{{this}}</div>
+        {{/with}}
+
+        {{#with description}}
+            <div class="Fieldset-description">{{this}}</div>
+        {{/with}}
+
+        {{#with items}}
+            <div class="Fieldset-items">
+                {{#each this}}
+                    <div class="Fieldset-items-item">
+                        {{this}}
+                    </div>
+                {{/each}}
+            </div>
+        {{/with}}
+    </fieldset>

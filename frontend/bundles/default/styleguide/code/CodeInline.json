@@ -1,0 +1,4 @@
+{
+  "_template": "./CodeInline.hbs",
+  "code": "{{words}}"
+}

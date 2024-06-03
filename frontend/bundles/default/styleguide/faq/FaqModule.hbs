@@ -1,0 +1,14 @@
+<div class="FaqModule" data-module {{include "/global/ModuleAttributes.hbs" this}}>
+    {{include "/global/ModuleHeader.hbs" this}}
+
+    <div class="FaqModule-container">
+        <div class="FaqModule-items">
+            {{~#each items~}}
+            {{~this~}}
+            {{~/each~}}
+        </div>
+        {{include "/page/list/includes/PageList-footer.hbs" this}}
+    </div>
+</div>
+{{~#with jsonLinkedData}}
+<script type="application/ld+json">{{this}}</script>{{/with~}}

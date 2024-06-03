@@ -1,0 +1,19 @@
+{
+  "_template": "NavigationGroup.hbs",
+  "title": "Nav Group",
+  "items": [
+    {
+      "_include": "/navigation/NavigationLink.json",
+      "text": "Nav Item 1"
+    },
+    {
+      "_include": "/navigation/NavigationLink.json",
+      "text": "Nav Item 2"
+    },
+    {
+      "_template": "/social/SocialLink.hbs",
+      "href": "https://www.facebook.com/BrightspotCMS/",
+      "socialService": "facebook"
+    }
+  ]
+}

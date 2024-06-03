@@ -1,0 +1,27 @@
+{
+    "_template": "FaqModule.hbs",
+    "jsonLinkedData": "",
+    "title": "Care that adapts to our patients' needs",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "anchorId": "list-anchor",
+    "items": [
+        {
+            "_include": "/faq/FaqQuestion.json"
+        },
+        {
+            "_include": "/faq/FaqQuestion.json"
+        },
+        {
+            "_include": "/faq/FaqQuestion.json"
+        },
+        {
+            "_include": "/faq/FaqQuestion.json"
+        },
+        {
+            "_include": "/faq/FaqQuestion.json"
+        }
+    ],
+    "ctaButtonText": "{{words([5, 10])}}",
+    "ctaTarget": "_blank",
+    "ctaUrl": "#"
+}

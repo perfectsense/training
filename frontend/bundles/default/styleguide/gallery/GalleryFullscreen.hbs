@@ -1,0 +1,46 @@
+<dialog>
+    <bsp-gallery-fullscreen class="GalleryFullscreen">
+            <div class="GalleryFullscreen-topBar">
+                {{#with headline}}
+                    <div class="GalleryFullscreen-headline">{{this}}</div>
+                {{/with}}
+                <button type="button" class="GalleryFullscreen-closeButton">{{include (iconPath 'x')}}</a>
+            </div>
+            <div class="GalleryFullscreen-slides">
+                {{#each slides}}
+                    <div class="GalleryFullscreen-slide" id="slide-{{add @index 1}}">
+                        {{#set imageSize="xl-flexible"}}
+                            {{media}}
+                        {{/set}}
+                    </div>
+                {{/each}}
+            </div>
+
+            <div class="GalleryFullscreen-content">
+                <div class="GalleryFullscreen-slides">
+                    {{#each slides}}
+                        <div class="GalleryFullscreen-slide" data-slide-id="slide-{{@index}}">
+                            <div class="GalleryFullscreen-title">
+                                {{~#with title}}{{this}}{{/with~}}
+                            </div>
+
+                            {{#with caption}}
+                                <div class="GalleryFullscreen-caption">
+                                    {{~this~}}
+                                </div>
+                            {{/with}}
+
+                            {{#with credit}}
+                                <div class="GalleryFullscreen-credit">
+                                    {{~this~}}
+                                </div>
+                            {{/with}}
+                        </div>
+                    {{/each}}
+                </div>
+                <div class="GalleryFullscreen-actions">
+                    {{actions}}
+                </div>
+            </div>
+    </bsp-gallery-fullscreen>
+</dialog>

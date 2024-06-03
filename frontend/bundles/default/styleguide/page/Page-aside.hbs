@@ -1,0 +1,11 @@
+{{#with aside}}
+    <aside class="Page-aside">
+        <div class="Page-aside-content" data-modulewell>
+            {{#each this}}
+            {{render this
+                [/page/list/PageList.hbs]="/page/list/PageListRightRailA.hbs"
+            }}
+            {{/each}}
+        </div>
+    </aside>
+{{/with}}

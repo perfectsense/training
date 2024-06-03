@@ -1,0 +1,15 @@
+<bsp-product-promo-gallery class="ProductPromoGallery">
+    <div class="ProductPromoGallery-slides">
+        {{#each media}}
+            {{include '/product/promo/includes/ProductPromoImage.hbs' ../this media=this}}
+        {{/each}}
+    </div>
+    <div class="ProductPromoGallery-controls">
+        <button type="button" class="ProductPromoGallery-previous Button" data-size="small">
+            {{include (iconPath 'caret-left')}}
+        </button>
+        <button type="button" class="ProductPromoGallery-next Button" data-size="small">
+            {{include (iconPath 'caret-right')}}
+        </button>
+    </div>
+</bsp-product-promo-gallery>

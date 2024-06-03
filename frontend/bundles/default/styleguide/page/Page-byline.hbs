@@ -1,0 +1,18 @@
+{{#if (or datePublished readTime authors)}}
+<div class="Page-byline">
+    {{~#with datePublished~}}
+        <div class="Page-datePublished">{{this}}</div>
+    {{~/with~}}
+    {{~#with readTime~}}
+        <div class="Page-readTime">{{format "/page/Page" "readTime" minutes=this}}</div>
+    {{~/with~}}
+    {{~#with authors~}}
+    <div class="Page-authors">
+        {{~#each this~}}
+            {{~include '/link/Link.hbs' this body=name href=url~}}
+            {{~#and (lt @index (subtract ../this.length 1))}}, {{/and~}}
+        {{~/each~}}
+    </div>
+    {{~/with~}}
+</div>
+{{/if}}

@@ -1,0 +1,15 @@
+.ProductPromoPricing {
+  &:extend(.subhead-2 all);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  color: var(--color-primary-text);
+
+  [data-text-align='right'] & {
+    justify-content: flex-end;
+  }
+
+  &-compareAtPrice {
+    text-decoration: line-through;
+  }
+}

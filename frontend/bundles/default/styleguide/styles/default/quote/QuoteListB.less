@@ -1,0 +1,50 @@
+.QuoteListB {
+  .ModuleHeader {
+    text-align: center;
+  }
+
+  .Quote {
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    blockquote {
+      &:extend(.quote-2 all);
+    }
+  }
+
+  &-items {
+    &-item {
+      margin-bottom: var(--spacing-md);
+      display: flex;
+      align-items: stretch;
+      justify-content: stretch;
+
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  @container (@cq-md) {
+    .Quote {
+      padding: var(--spacing-lg) var(--spacing-lg);
+
+      &-attribution {
+        margin-top: var(--spacing-md);
+      }
+    }
+
+    &-items {
+      display: grid;
+      column-gap: var(--spacing-md);
+      row-gap: var(--spacing-md);
+      grid-template-columns: 1fr 1fr 1fr;
+
+      &-item {
+        margin: 0;
+      }
+    }
+  }
+}

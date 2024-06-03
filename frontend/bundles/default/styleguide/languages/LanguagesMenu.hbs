@@ -1,0 +1,14 @@
+<bsp-language>
+    <div class="LanguagesMenu">
+    {{#with items}}
+    <div class="LanguagesMenu-text">
+        <a class="LanguagesMenu-text-link">{{../currentLanguageCode}}</a>
+    </div>
+    <ul class="LanguagesMenu-items">
+        {{#each this}}
+            {{render this}}
+        {{/each}}
+    </ul>
+    {{/with}}
+    </div>
+</bsp-language>

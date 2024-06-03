@@ -1,0 +1,10 @@
+{{#each item}}
+    <div class="Enhancement" {{#if ../enhancementAlignmentNoFullWidth}} data-{{../enhancementAlignmentNoFullWidth}}{{else}}data-align-center{{/if}}>
+        <div class="Enhancement-item">
+            {{include "/tab/Tabs.hbs" this
+                backgroundColor=../backgroundColor
+                useTextColors=../useTextColors
+            }}
+        </div>
+    </div>
+{{/each}}

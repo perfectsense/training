@@ -1,0 +1,138 @@
+:root {
+  --bookHeight: 0px;
+
+  @media @mq-up-to-lg {
+    &[data-has-book] {
+      --bookHeight: 50px;
+    }
+  }
+}
+
+.Book {
+  display: block;
+
+  &-icon {
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+  }
+
+  &-header {
+    .headline-4;
+    display: flex;
+    grid-auto-flow: column;
+    gap: 10px;
+    align-items: center;
+
+    &:hover &-toggle {
+      svg {
+        background-color: var(--backgroundColor);
+      }
+    }
+  }
+
+  &-toggle {
+    pointer-events: none;
+    margin-left: auto;
+    border: none;
+    background: none;
+    color: currentColor;
+
+    svg {
+      border-radius: 50%;
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  &-items {
+    overflow-y: auto;
+
+    &-item {
+      &:not(:first-child) {
+        margin-top: 10px;
+      }
+
+      &:not(:last-child) {
+        margin-bottom: 10px;
+      }
+    }
+  }
+
+  @media @mq-up-to-lg {
+    display: flex;
+    flex-direction: column;
+    align-content: flex-start;
+
+    &-header {
+      .label-4;
+      cursor: pointer;
+      height: 50px;
+      padding: 0 15px;
+      background-color: var(--color-drawer-background);
+      color: var(--color-text-inverse);
+    }
+
+    &-items {
+      padding: 10px 15px 10px 30px;
+      background-color: var(--color-site-bg);
+      flex-grow: 1;
+      height: calc(100vh - var(--headerHeight) - var(--bookHeight));
+    }
+
+    &:not([data-expanded]) & {
+      &-items {
+        display: none;
+      }
+
+      &-collapse {
+        display: none;
+      }
+    }
+
+    &[data-expanded] {
+      top: 0;
+      bottom: 0;
+    }
+
+    &[data-expanded] & {
+      &-expand {
+        display: none;
+      }
+    }
+  }
+
+  @media @mq-lg {
+    &-toggle {
+      display: none;
+    }
+
+    &-items {
+      width: 100%;
+      height: unset;
+      overflow-y: visible;
+
+      &:before {
+        display: block;
+        content: '';
+        width: 40px;
+        height: 4px;
+        margin: 20px 0;
+        background-color: var(--color-primary);
+
+        [data-rounded-corners='true'] & {
+          border-radius: 2px;
+        }
+      }
+    }
+
+    &-header {
+      background: var(--color-site-bg);
+      color: var(--color-primary-text);
+    }
+  }
+
+  @media print {
+    display: none;
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "styles": {
+    "/tab/Tabs.hbs": {
+      "fields": [
+        "backgroundColor",
+        "useTextColors",
+        "headerTextAlign",
+        "modulePaddingTop",
+        "modulePaddingBottom"
+      ],
+      "templates": [
+        {
+          "displayName": "Tabs",
+          "example": "/tab/Tabs.json"
+        }
+      ]
+    }
+  }
+}

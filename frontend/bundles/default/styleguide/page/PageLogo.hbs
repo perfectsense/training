@@ -1,0 +1,22 @@
+{{#if href~}}
+<a aria-label="home page" href="{{href}}" {{#with target}} target="{{this}}" {{/with}} {{extraAttributes}}>
+    {{~/if}}
+    {{#set imageSize="logo" lazyLoad=false}}
+        <picture>
+            {{!-- You can suffix imageSizes with "Alt" for automatic assignment of crop, or set imageSizeAlt otherwise--}}
+            {{#set imageSize=(fallback (get "imageSizeAlt") (concat (get "imageSize") "Alt"))}}
+                {{#set mediaQuery=(fallback (get "mediaQueryAlt") "(min-width: 768px)")}}
+                    {{include "/image/Source.hbs" this}}
+                {{/set}}
+            {{/set}}
+
+            {{!-- default image --}}
+            {{#set mediaQuery=null}}
+                {{include "/image/Source.hbs" this altFormatsOnly=true}}
+            {{/set}}
+            {{include "/image/ImageTag.hbs" this}}
+        </picture>
+    {{/set}}
+    {{#if href~}}
+</a>
+{{~/if}}

@@ -1,0 +1,54 @@
+{
+  "_include": "/page/Page.json",
+  "pageLead": null,
+  "above": {
+    "_include": "/dfp/GoogleDfpAdModule.json"
+  },
+  "main": [
+    {
+      "_template": "/container/TwoColumnContainer.hbs",
+      "_styledTemplate": "/container/TwoColumnContainer7030.hbs",
+      "columnOne": [
+        {
+          "_include": "/page/list/PageListStandardA.json"
+        }
+      ],
+      "columnTwo": [
+        {
+          "_include": "/page/list/PageListRightRailA.json"
+        }
+      ]
+    },
+    {
+      "_include": "/hotspot/HotspotModuleB.json",
+      "modalId": "23456"
+    },
+    {
+      "_include": "/page/list/PageListStandardA.json"
+    },
+    {
+      "_include": "/page/promo/PagePromoModuleA.json"
+    },
+    {
+      "_include": "/page/list/PageListCarouselB.json",
+      "backgroundColor": "#efefef"
+    },
+    {
+      "_include": "/page/promo/PagePromoModuleB.json",
+      "backgroundColor": "#dedede"
+    },
+    {
+      "_template": "/container/OneColumnContainer.hbs",
+      "backgroundColor": "#efefef",
+      "columnOne": [
+        {
+          "_include": "/page/promo/PagePromoModuleB.json"
+        }
+      ]
+    },
+    {
+      "_include": "/page/list/PageListCarouselA.json",
+      "backgroundColor": "#dedede"
+    }
+  ]
+}

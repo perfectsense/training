@@ -1,0 +1,11 @@
+<div class="LoginModule" data-module {{include "/global/ModuleAttributes.hbs" this}}>
+    <div class="LoginModule-container">
+        {{include "/global/ModuleHeader.hbs" this}}
+
+        <ul class="LoginModule-authenticationProviderLinks">
+            {{#each authenticationProviderLinks}}
+                <li class="LoginModule-authenticationProvider">{{this}}</li>
+            {{/each}}
+        </ul>
+    </div>
+</div>

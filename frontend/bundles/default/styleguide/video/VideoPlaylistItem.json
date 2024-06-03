@@ -1,0 +1,15 @@
+{
+  "_template": "/video/VideoPlaylistItem.hbs",
+  "media": {
+    "_include": "/image/Image.json"
+  },
+  "player": {
+    "_include": "/video/HTML5VideoPlayer.json"
+  },
+  "date": "2019-04-11T08:35:03-0700",
+  "duration": "1 min",
+  "type": "Type",
+  "title": "{{words(5)}}",
+  "description": "{{words(20)}}",
+  "contentId": "a123"
+}

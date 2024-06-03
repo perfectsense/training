@@ -1,0 +1,17 @@
+<div class="NavigationGroup">
+    {{#if href}}
+        <a class="NavigationLink" href="{{href}}"{{#with target}} target="{{this}}"{{/with}}{{extraAttributes}}><span class="NavigationLink-text">{{~title~}}</span></a>
+    {{else}}
+        <span class="NavigationLink">{{~title~}}</span>
+    {{/if}}
+
+    {{#if items}}
+        <ul class="NavigationGroup-items" {{#with navColumns}}data-columns="{{this}}"{{/with}}>
+            {{#with items}}
+                {{#each this}}
+                    <li class="NavigationGroup-items-item">{{~this~}}</li>
+                {{/each}}
+            {{/with}}
+        </ul>
+    {{/if}}
+</div>

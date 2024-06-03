@@ -1,0 +1,12 @@
+{
+  "_include": "/search/SearchResultsModule.json",
+  "_template": "/product/search/ProductSearchResultsModule.hbs",
+  "spotlights": [],
+  "items": [
+    {
+      "_include": "/product/promo/ProductPromo.json",
+      "_repeat": 9
+    }
+  ],
+  "nextPage" : "#"
+}

@@ -1,0 +1,12 @@
+{{~#if slot~}}
+    <div class="TaboolaRecommendationModule" id="{{~slot~}}" data-module></div>
+    <script type="text/javascript">
+        window._taboola = window._taboola || [];
+        _taboola.push({
+                    {{~#with slot~}}container: '{{~this~}}'{{~/with~}}
+            {{~#with mode~}}, mode: '{{~this~}}'{{~/with~}}
+            {{~#with placement~}}, placement: '{{~this~}}'{{/with}}
+            {{~#with targetType~}}, target_type: '{{~this~}}'{{/with}}
+        });
+    </script>
+{{~/if~}}

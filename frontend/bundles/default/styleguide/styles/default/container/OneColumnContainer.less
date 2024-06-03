@@ -1,0 +1,12 @@
+.OneColumnContainer {
+  .ModuleHeader {
+    .layoutWidth();
+  }
+
+  // we have to re-space any modules inside this container. The container has the left and right padding pulled off it
+  // in order for the container size to be correct. Normally, modules inside containers have their left and right
+  // padding unset, but in this case, we need to reset it
+  [data-module] {
+    .layoutWidth();
+  }
+}

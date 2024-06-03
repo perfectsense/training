@@ -1,0 +1,11 @@
+{
+  "styles": {
+    "/faq/FaqEnhancement.hbs": {
+      "inline": true,
+      "fields": [
+        "backgroundColor",
+        "useTextColors"
+      ]
+    }
+  }
+}

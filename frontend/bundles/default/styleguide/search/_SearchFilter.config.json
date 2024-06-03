@@ -1,0 +1,10 @@
+{
+  "styles": {
+    "/search/SearchFilter.hbs": {
+      "fields": [
+        "searchFilterDefaultState",
+        "searchFilterDefaultVisible"
+      ]
+    }
+  }
+}

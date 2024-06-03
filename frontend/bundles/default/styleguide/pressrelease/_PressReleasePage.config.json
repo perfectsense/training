@@ -1,0 +1,41 @@
+{
+  "styles": {
+    "/pressrelease/PressReleasePage.hbs": {
+      "fields": [
+          "suppressCommenting"
+      ],
+      "templates": [
+        {
+          "displayName": "Standard Lead",
+          "example": "/pressrelease/PressReleasePageStandard.json",
+          "height": 800,
+          "width": 1280
+        },
+        {
+          "displayName": "Large Lead",
+          "example": "/pressrelease/PressReleasePageLarge.json",
+          "height": 800,
+          "width": 1280
+        },
+        {
+          "displayName": "Overlay Lead",
+          "example": "/pressrelease/PressReleasePageOverlay.json",
+          "height": 800,
+          "width": 1280
+        },
+        {
+          "displayName": "Nested Lead",
+          "example": "/pressrelease/PressReleasePageNested.json",
+          "height": 800,
+          "width": 1280
+        },
+        {
+          "displayName": "Full Width Lead",
+          "example": "/pressrelease/PressReleasePageFullWidth.json",
+          "height": 800,
+          "width": 1280
+        }
+      ]
+    }
+  }
+}

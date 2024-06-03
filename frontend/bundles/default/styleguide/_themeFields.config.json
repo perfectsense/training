@@ -1,0 +1,310 @@
+{
+  "themeFields": {
+    "font1": {
+      "displayName": "Font 1",
+      "type": "text",
+      "cms.ui.cluster": "Fonts",
+      "cms.ui.placeholder": "Roboto",
+      "cms.ui.note": "Set Font 1. Used for most of the site. Use the exact font from Google Fonts. ex: Roboto"
+    },
+    "font2": {
+      "displayName": "Font 2",
+      "type": "text",
+      "cms.ui.cluster": "Fonts",
+      "cms.ui.placeholder": "Merriweather",
+      "cms.ui.note": "Set Font 2. Used for Quote/Pull Quote modules only. Use the exact font name from Google Fonts. ex: Merriweather"
+    },
+    "pageTitleFont": {
+      "cms.ui.note": "Choose the font for Page Titles",
+      "type": "text",
+      "cms.ui.cluster": "Fonts",
+      "cms.ui.dropDown": true,
+      "cms.ui.placeholder": "Default",
+      "values": [
+        {
+          "label": "Font 1 (default)",
+          "value": "font-1"
+        },
+        {
+          "label": "Font 2",
+          "value": "font-2"
+        }
+      ]
+    },
+    "listTitleFont": {
+      "cms.ui.note": "Choose the font for List Titles",
+      "type": "text",
+      "cms.ui.cluster": "Fonts",
+      "cms.ui.dropDown": true,
+      "cms.ui.placeholder": "Default",
+      "values": [
+        {
+          "label": "Font 1 (default)",
+          "value": "font-1"
+        },
+        {
+          "label": "Font 2",
+          "value": "font-2"
+        }
+      ]
+    },
+    "promoTitleFont": {
+      "cms.ui.note": "Choose the font for Promo Titles",
+      "type": "text",
+      "cms.ui.cluster": "Fonts",
+      "cms.ui.dropDown": true,
+      "cms.ui.placeholder": "Default",
+      "values": [
+        {
+          "label": "Font 1 (default)",
+          "value": "font-1"
+        },
+        {
+          "label": "Font 2",
+          "value": "font-2"
+        }
+      ]
+    },
+    "descriptionFont": {
+      "cms.ui.note": "Choose the font for Descriptions",
+      "type": "text",
+      "cms.ui.cluster": "Fonts",
+      "cms.ui.dropDown": true,
+      "cms.ui.placeholder": "Default",
+      "values": [
+        {
+          "label": "Font 1 (default)",
+          "value": "font-1"
+        },
+        {
+          "label": "Font 2",
+          "value": "font-2"
+        }
+      ]
+    },
+    "quoteFont": {
+      "cms.ui.note": "Choose the font for Quote Modules",
+      "type": "text",
+      "cms.ui.cluster": "Fonts",
+      "cms.ui.dropDown": true,
+      "cms.ui.placeholder": "Default",
+      "values": [
+        {
+          "label": "Font 1 (default)",
+          "value": "font-1"
+        },
+        {
+          "label": "Font 2",
+          "value": "font-2"
+        }
+      ]
+    },
+
+    "articleBodyFont": {
+      "cms.ui.note": "Choose the font for the Article and RTE Bodies",
+      "type": "text",
+      "cms.ui.cluster": "Fonts",
+      "cms.ui.dropDown": true,
+      "cms.ui.placeholder": "Default",
+      "values": [
+        {
+          "label": "Font 1 (default)",
+          "value": "font-1"
+        },
+        {
+          "label": "Font 2",
+          "value": "font-2"
+        }
+      ]
+    },
+
+    "primaryColor": {
+      "displayName": "Primary Color",
+      "type": "color",
+      "cms.ui.cluster": "Colors - Global",
+      "cms.ui.note": "Used as the default color unless overriden below"
+    },
+
+    "primaryTextColor": {
+      "displayName": "Primary Text Color",
+      "type": "color",
+      "cms.ui.cluster": "Colors - Global"
+    },
+    "secondaryTextColor": {
+      "displayName": "Secondary Text Color",
+      "cms.ui.note": "Description Text",
+      "type": "color",
+      "cms.ui.cluster": "Colors - Global"
+    },
+    "textColorInverse": {
+      "displayName": "Text Color Inverse",
+      "type": "color",
+      "cms.ui.cluster": "Colors - Global"
+    },
+    "siteBgColor": {
+      "displayName": "Site Background Color",
+      "type": "color",
+      "cms.ui.cluster": "Colors - Global"
+    },
+    "siteSecondaryBgColor": {
+      "displayName": "Site Secondary Background Color",
+      "type": "color",
+      "cms.ui.cluster": "Colors - Global"
+    },
+    "borderColor": {
+      "displayName": "Border Color",
+      "type": "color",
+      "cms.ui.cluster": "Colors - Global"
+    },
+    "headerBgColor": {
+      "displayName": "Header Background Color",
+      "type": "color",
+      "cms.ui.cluster": "Colors - Header"
+    },
+    "headerSecondaryBgColor": {
+      "displayName": "Header Secondary Background Color",
+      "type": "color",
+      "cms.ui.cluster": "Colors - Header",
+      "cms.ui.note": "Used in the Navigation & Search input backgrounds"
+    },
+    "headerBorderColor": {
+      "displayName": "Header Border Colors",
+      "type": "color",
+      "cms.ui.cluster": "Colors - Header"
+    },
+    "headerTextColor": {
+      "displayName": "Header Text Color",
+      "type": "color",
+      "cms.ui.cluster": "Colors - Header"
+    },
+
+
+    "hatBgColor": {
+      "displayName": "Hat Background Color",
+      "type": "color",
+      "cms.ui.cluster": "Colors - Hat"
+    },
+    "hatTextColor": {
+      "displayName": "Hat Text Color",
+      "type": "color",
+      "cms.ui.cluster": "Colors - Hat"
+    },
+
+
+    "bannerBgColor": {
+      "displayName": "Banner Background",
+      "type": "color",
+      "cms.ui.cluster": "Colors - Banner"
+    },
+    "bannerTextColor": {
+      "displayName": "Banner Text Color",
+      "type": "color",
+      "cms.ui.cluster": "Colors - Banner"
+    },
+
+
+    "footerBgColor": {
+      "displayName": "Footer Background Color",
+      "type": "color",
+      "cms.ui.cluster": "Colors - Footer"
+    },
+    "footerTextColor": {
+      "displayName": "Footer Text Color",
+      "type": "color",
+      "cms.ui.cluster": "Colors - Footer"
+    },
+
+
+    "linkTextColor": {
+      "displayName": "Link Color",
+      "type": "color",
+      "cms.ui.cluster": "Colors - Links"
+    },
+    "linkHoverColor": {
+      "displayName": "Link Hover Color",
+      "type": "color",
+      "cms.ui.cluster": "Colors - Links"
+    },
+
+
+    "buttonBgColor": {
+      "displayName": "Button Background Color",
+      "type": "color",
+      "cms.ui.cluster": "Colors - Buttons"
+    },
+    "buttonBorderColor": {
+      "displayName": "Button Border Color",
+      "type": "color",
+      "cms.ui.cluster": "Colors - Buttons"
+    },
+    "buttonTextColor": {
+      "displayName": "Button Text Color",
+      "type": "color",
+      "cms.ui.cluster": "Colors - Buttons"
+    },
+    "buttonHoverBgColor": {
+      "displayName": "Button Hover Background Color",
+      "type": "color",
+      "cms.ui.cluster": "Colors - Buttons"
+    },
+    "buttonHoverBorderColor": {
+      "displayName": "Button Hover Border Color",
+      "type": "color",
+      "cms.ui.cluster": "Colors - Buttons"
+    },
+    "buttonHoverTextColor": {
+      "displayName": "Button Hover Text Color",
+      "type": "color",
+      "cms.ui.cluster": "Colors - Buttons"
+    },
+
+
+    "listTitleColor": {
+      "displayName": "List Title Color",
+      "type": "color",
+      "cms.ui.cluster": "Colors - List/Promo"
+    },
+    "listBorderColor": {
+      "displayName": "List Border Color",
+      "type": "color",
+      "cms.ui.cluster": "Colors - List/Promo"
+    },
+    "categoryTextColor": {
+      "displayName": "Category/Eyebrow Text Color",
+      "type": "color",
+      "cms.ui.cluster": "Colors - List/Promo"
+    },
+
+
+    "sponsoredBannerBgColor": {
+      "displayName": "Sponsor Banner Background Color",
+      "type": "color",
+      "cms.ui.cluster": "Colors - Sponsored"
+    },
+    "sponsoredBannerTextColor": {
+      "displayName": "Sponsor Banner Text Color",
+      "type": "color",
+      "cms.ui.cluster": "Colors - Sponsored"
+    },
+    "defaultButtonStyle": {
+      "cms.ui.note": "Choose the default button style",
+      "type": "text",
+      "cms.ui.dropDown": true,
+      "cms.ui.placeholder": "Default",
+      "values": [
+        {
+          "label": "Square",
+          "value": "square"
+        },
+        {
+          "label": "Rounded",
+          "value": "rounded"
+        },
+        {
+          "label": "Pill",
+          "value": "pill"
+        }
+      ]
+    }
+  }
+}

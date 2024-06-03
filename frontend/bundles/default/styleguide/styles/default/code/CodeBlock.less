@@ -1,0 +1,109 @@
+@import './prism/line-highlight';
+@import './prism/line-numbers';
+@import './prism/prism';
+@import './prism/toolbar';
+
+.CodeBlock {
+  --backgroundColor: var(--color-site-secondary-bg);
+  --shadowColor: rgba(153, 153, 153, 0.2);
+  --shadowSize: 1.5em;
+  --transparent: rgba(250, 249, 249, 0);
+
+  display: block;
+
+  &-header {
+    padding: var(--spacing-sm) var(--spacing-sm);
+    background-color: var(--color-border);
+    display: grid;
+    column-gap: var(--spacing-sm);
+    row-gap: var(--spacing-sm);
+    grid-template-columns: 1fr max-content;
+  }
+
+  &-title {
+    .label-5;
+  }
+
+  &-toggle {
+    grid-column: 2;
+
+    .NotButton;
+    color: var(--color-secondary-text);
+
+    svg {
+      color: var(--color-primary-text);
+      width: 10px;
+      height: 10px;
+    }
+  }
+
+  [data-collapsed] & {
+    &-body {
+      display: none;
+    }
+
+    &-collapse {
+      display: none;
+    }
+  }
+
+  &:not([data-collapsed]) & {
+    &-expand {
+      display: none;
+    }
+  }
+
+  &-annotations {
+    list-style: none;
+    padding-left: var(--spacing-xxl);
+
+    &>li {
+      position: relative;
+      margin: var(--spacing-md) 0;
+
+      &:before {
+        position: absolute;
+        font-weight: bold;
+        top: -2px;
+        left: -40px;
+        display: grid;
+        place-content: center;
+        content: attr(value);
+        width: 30px;
+        height: 30px;
+        background-color: #c8d5dc;
+
+        [data-rounded-corners='true'] & {
+          border-radius: 4px;
+        }
+      }
+    }
+  }
+
+  /* horizontal scroll shadow*/
+  & pre>code[class*="language-"] {
+    overflow: auto;
+    background:
+      linear-gradient(to right, var(--backgroundColor), var(--backgroundColor), var(--transparent) calc(var(--shadowSize) * 2)),
+      linear-gradient(to right, var(--shadowColor), var(--transparent)),
+      linear-gradient(to left, var(--backgroundColor), var(--backgroundColor), var(--transparent) calc(var(--shadowSize) * 2)),
+      linear-gradient(to left, var(--shadowColor), var(--transparent)) 100%;
+    background-repeat: no-repeat;
+    background-attachment: local, scroll, local, scroll;
+    background-size: 100% 100%, var(--shadowSize) 100%, 100% 100%, var(--shadowSize) 100%;
+  }
+
+  /* vertical scroll shadow*/
+  & pre {
+    overflow: auto;
+    background:
+      linear-gradient(var(--backgroundColor), var(--backgroundColor), var(--transparent) calc(var(--shadowSize) * 2)),
+      radial-gradient(farthest-side at 50% 0, var(--shadowColor), var(--transparent)),
+      linear-gradient(to top, var(--backgroundColor), var(--backgroundColor), var(--transparent) calc(var(--shadowSize) * 2)),
+      radial-gradient(farthest-side at 50% 100%, var(--shadowColor), var(--transparent)) 0 100%;
+    background-color: var(--backgroundColor);
+    background-repeat: no-repeat;
+    background-attachment: local, scroll, local, scroll;
+    background-size: 100% 100%, 100% var(--shadowSize), 100% 100%, 100% var(--shadowSize);
+  }
+}

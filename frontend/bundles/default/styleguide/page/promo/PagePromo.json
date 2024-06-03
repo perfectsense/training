@@ -1,0 +1,20 @@
+{
+  "_template": "/page/promo/PagePromo.hbs",
+  "media": {
+    "_include": "/image/Image.json"
+  },
+  "authorName": "{{name}}",
+  "authorUrl": "#",
+  "authorImage": {
+    "_include": "/image/Image.json"
+  },
+  "publishDate": "{{date}}",
+  "url": "#",
+  "target": "_self",
+  "category": "{{words(2)}}",
+  "categoryUrl": "#",
+  "type": "Ipsum",
+  "title": "{{words([5,10])}}",
+  "readTime": 5,
+  "description": "{{words([15,25])}}"
+}

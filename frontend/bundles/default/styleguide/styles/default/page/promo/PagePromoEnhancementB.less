@@ -1,0 +1,38 @@
+.PagePromoEnhancementB {
+  &:extend(.PagePromoEnhancement all);
+
+  @container (@cq-up-to-sm) {
+    .PagePromo {
+      &-media {
+        float: right;
+        width: 90px;
+        margin-left: var(--spacing-md);
+      }
+    }
+  }
+
+  @container (@cq-sm) {
+    &:not([data-align-left], [data-align-right]) {
+      display: flex;
+      align-items: center;
+      gap: var(--spacing-md);
+
+      .PagePromoEnhancementB {
+        &-content {
+          flex: 1 1 auto;
+        }
+      }
+
+      .PagePromo {
+        &-media {
+          width: 253px;
+          flex-shrink: 0;
+        }
+
+        &-button {
+          margin-left: var(--spacing-xxl);
+        }
+      }
+    }
+  }
+}

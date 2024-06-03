@@ -1,0 +1,21 @@
+
+<div class="Enhancement" {{~#with enhancementAlignmentNoFullWidth}} data-{{this}}{{/with~}}>
+    <div class="AttachmentEnhancement">
+        {{#with title}}
+            <div class="AttachmentEnhancement-title">
+                {{this}}
+            </div>
+        {{/with}}
+        {{#with description}}
+            <div class="AttachmentEnhancement-description">
+                {{this}}
+            </div>
+        {{/with}}
+        {{#if url}}
+            <a class="AttachmentEnhancement-link" href="{{url}}" target="{{target}}">
+                {{include '/attachment/includes/AttachmentIcon.hbs' this}}
+                {{format "/attachment/AttachmentEnhancement" "linkBody" fileName=fileName fileSize=fileSize}}
+            </a>
+        {{/if}}
+    </div>
+</div>

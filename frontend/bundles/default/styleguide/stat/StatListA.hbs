@@ -1,0 +1,15 @@
+<bsp-stat-list class="StatListA" data-module {{include "/page/list/includes/PageList-attributes.hbs" this}}>
+    {{include "/global/ModuleHeader.hbs" this}}
+
+    {{#if items}}
+        <div class="StatList-items" data-column-count="{{items.length}}">
+            {{#each items}}
+                <div class="StatList-items-item">
+                    {{include "/stat/StatPromo.hbs" this}}
+                </div>
+            {{/each}}
+        </div>
+    {{/if}}
+
+    {{include "/page/list/includes/PageList-footer.hbs" this}}
+</bsp-stat-list>

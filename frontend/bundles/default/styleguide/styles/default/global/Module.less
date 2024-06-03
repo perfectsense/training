@@ -1,0 +1,102 @@
+[data-moduleroot] {
+  container-type: inline-size;
+  container-name: root;
+}
+
+.RichTextBody,
+[data-modulewell] {
+  container-type: inline-size;
+  container-name: contained;
+}
+
+// this set of rules just sets the margin variables, not the margin itself. That is done later down this file
+[data-module] {
+  // Defaults
+  --moduleMarginTop: var(--vertical-margin-md);
+  --moduleMarginBottom: var(--vertical-margin-md);
+
+  &:where([data-module-padding-top="none"]) {
+    --moduleMarginTop: 0;
+  }
+
+  &:where([data-module-padding-top="small"]) {
+    --moduleMarginTop: var(--vertical-margin-sm);
+  }
+
+  &:where([data-module-padding-top="medium"]) {
+    --moduleMarginTop: var(--vertical-margin-md);
+  }
+
+  &:where([data-module-padding-top="large"]) {
+    --moduleMarginTop: var(--vertical-margin-lg);
+  }
+
+  &:where([data-module-padding-bottom="none"]) {
+    --moduleMarginBottom: 0;
+  }
+
+  &:where([data-module-padding-bottom="small"]) {
+    --moduleMarginBottom: var(--vertical-margin-sm);
+  }
+
+  &:where([data-module-padding-bottom="medium"]) {
+    --moduleMarginBottom: var(--vertical-margin-md);
+  }
+
+  &:where([data-module-padding-bottom="large"]) {
+    --moduleMarginBottom: var(--vertical-margin-lg);
+  }
+}
+
+// just border and background rules for normal data-modules
+[data-module] {
+  &:where([data-has-background]) {
+    background-color: var(--color-module-background);
+  }
+
+  &:where([data-has-background-image]) {
+    background-image: var(--background-image);
+    background-size: cover;
+  }
+
+  &:where([data-has-border]) {
+    border-color: var(--color-module-border);
+  }
+}
+
+// this defines the standard left/right padding as wellas top and bottom margins rules for a normal data-module
+[data-module] {
+  .layoutWidth();
+
+  margin-top: var(--moduleMarginTop);
+  margin-bottom: var(--moduleMarginBottom);
+
+  // we have a possible width override that removes the left right padding. This can be used for full width modules
+  // but also used for one column containers where modules could live inside of them
+  &:where([data-full-width]) {
+    padding-inline: 0;
+  }
+
+  // When a module has a background, we get rid of the margin, and turn the same value
+  // into padding. This is so that the background color can extend to the edge of the page
+  &:where([data-has-background]) {
+    margin-block: 0;
+    padding-top: var(--moduleMarginTop);
+    padding-bottom: var(--moduleMarginBottom);
+  }
+}
+
+// this is done when a module is inside of another container, like a two column container. In this case, the container is
+// what is providing the left and right padding, so we remove it from the module
+@container contained (min-width: 0px) {
+  [data-module] {
+    padding-inline: 0; // to cancel layoutWidth
+    margin-block: 0; // resets root container margins
+    .verticalSpacing(var(--moduleMarginTop), var(--moduleMarginBottom));
+
+    &:where([data-has-background], [data-has-border]) {
+      padding-inline: var(--spacing-lg);
+      padding-block: var(--spacing-lg);
+    }
+  }
+}

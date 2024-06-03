@@ -1,0 +1,59 @@
+{
+  "_template": "/hotspot/HotspotModule.hbs",
+  "_styledTemplate": "/hotspot/HotspotModuleB.hbs",
+  "category": "{{words(1)}}",
+  "categoryUrl": "#",
+  "ctaButtonText": "{{words(2)}}",
+  "description": "{{words([10,15])}}",
+  "media": {
+    "_include": "/image/Image.json"
+  },
+  "modalId": "12345",
+  "combinedHotspotIcon": "tag",
+  "items": [
+    {
+      "_include": "HotspotModuleItem.json",
+      "xCoord": "40",
+      "yCoord": "20",
+      "icon": "plus"
+    },
+    {
+      "_include": "HotspotModuleItem.json",
+      "xCoord": "40",
+      "yCoord": "40",
+      "icon": "magnify"
+    },
+    {
+      "_include": "HotspotModuleItem.json",
+      "xCoord": "60",
+      "yCoord": "40",
+      "icon": "tag"
+    },
+    {
+      "_include": "HotspotModuleItem.json",
+      "xCoord": "60",
+      "yCoord": "60",
+      "icon": "flag"
+    },
+    {
+      "_include": "HotspotModuleItem.json",
+      "xCoord": "80",
+      "yCoord": "60",
+      "icon": "image"
+    },
+    {
+      "_include": "HotspotModuleItem.json",
+      "xCoord": "80",
+      "yCoord": "80",
+      "icon": "location"
+    },
+    {
+      "_include": "HotspotModuleItem.json",
+      "xCoord": "20",
+      "yCoord": "80",
+      "icon": "expand"
+    }
+  ],
+  "title": "{{words([5,10])}}",
+  "url": "#"
+}

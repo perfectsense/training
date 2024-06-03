@@ -1,0 +1,13 @@
+{{#each backgroundVideo}}
+<bsp-background-video class="BackgroundVideo">
+    <video playsinline autoplay muted loop
+        {{~#if poster}}{{#resize poster "large-16x9"}} poster="{{src}}" {{/resize}}{{/if~}}
+        >
+        {{#with sources}}
+        {{#each this}}
+        {{this}}
+        {{/each}}
+        {{/with}}
+    </video>
+</bsp-background-video>
+{{/each}}

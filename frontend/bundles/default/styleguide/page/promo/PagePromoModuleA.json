@@ -1,0 +1,25 @@
+{
+  "_template": "/page/promo/PagePromoModule.hbs",
+  "_styledTemplate": "/page/promo/PagePromoModuleA.hbs",
+  "media": {
+    "_template": "/image/Image.hbs",
+    "image": {
+      "_image": true
+    }
+  },
+  "url": "#",
+  "anchorId": "anchorTest1",
+  "target": "_self",
+  "ctaButtonText": "{{words([1,3])}}",
+  "authorName": "{{name}}",
+  "authorUrl": "#",
+  "authorImage": {
+    "_include": "/image/Image.json"
+  },
+  "publishDate": "{{date}}",
+  "category": "{{words([1,3])}}",
+  "categoryUrl": "#",
+  "title": "{{words([5,10])}}",
+  "description": "{{words([15,25])}}",
+  "type": "video"
+}

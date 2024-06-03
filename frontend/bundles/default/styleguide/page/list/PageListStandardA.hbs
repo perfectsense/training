@@ -1,0 +1,58 @@
+{{#if items}}
+<div class="PageListStandardA" data-module {{include "includes/PageList-attributes.hbs" this}}>
+    {{include "/global/ModuleHeader.hbs" this}}
+
+    <div class="PageList-items">
+        {{#with items.[0]}}
+        <div class="PageListStandardA-primaryItems">
+            <div class="PageList-items-item">
+                {{#eq this._template "/page/promo/PagePromo.hbs"}}
+                    {{#set imageSize=(fallback ../itemImageAspectRatio "large-16x9")}}
+                        {{#set sizes="(max-width: 1024px) 100vw, 1024px"}}
+                            {{include "/page/promo/PagePromo.hbs" this}}
+                        {{/set}}
+                    {{/set}}
+                {{else}}
+                    {{render this}}
+                {{/eq}}
+            </div>
+        </div>
+        {{/with}}
+        <div class="PageListStandardA-secondaryItems">
+            {{#each items}}
+                {{#and (gt @index 0) (lt @index 5)}}
+                    <div class="PageList-items-item">
+                        {{#eq this._template "/page/promo/PagePromo.hbs"}}
+                            {{include "/page/promo/PagePromo.hbs" this media=null description=null}}
+                        {{else}}
+                            {{render this}}
+                        {{/eq}}
+                    </div>
+                {{/and}}
+            {{/each}}
+        </div>
+
+        {{#if (gt items.length 5)}}
+            <div class="PageListStandardA-tertiaryItems">
+                {{#each items}}
+                    {{#and (gt @index 4) (lt @index 9)}}
+                        <div class="PageList-items-item">
+                            {{#eq _template "/page/promo/PagePromo.hbs"}}
+                                {{#set imageSize=(fallback ../itemImageAspectRatio "medium-4x3")}}
+                                    {{#set sizes="(max-width: 568px) 100px, 500px"}}
+                                        {{include "/page/promo/PagePromo.hbs" this mobileAltLayout="true"}}
+                                    {{/set}}
+                                {{/set}}
+                            {{else}}
+                                {{render this}}
+                            {{/eq}}
+                        </div>
+                    {{/and}}
+                {{/each}}
+            </div>
+        {{/if}}
+    </div>
+
+    {{include "includes/PageList-footer.hbs" this}}
+</div>
+{{/if}}

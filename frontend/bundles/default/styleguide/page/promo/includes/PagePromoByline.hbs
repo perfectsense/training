@@ -1,0 +1,21 @@
+{{#with sponsored}}
+    <div class="PagePromo-byline">
+        <div class="PagePromo-sponsoredBy">
+            {{this}}
+        </div>
+    </div>
+{{else}}
+    {{#or publishDate readTime authorName}}
+        <div class="PagePromo-byline">
+            {{~#if publishDate~}}
+                <div class="PagePromo-date">{{publishDate}}</div>
+            {{~/if~}}
+            {{~#if readTime~}}
+                <div class="PagePromo-readTime">{{~format "/page/Page" "readTime" minutes=readTime~}}</div>
+            {{~/if~}}
+            {{~#if authorName~}}
+                <div class="PagePromo-author">{{include "/link/Link.hbs" href=authorUrl body=authorName}}</div>
+            {{~/if~}}
+        </div>
+    {{/or}}
+{{/with}}

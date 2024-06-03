@@ -1,0 +1,10 @@
+{
+  "styles": {
+    "/attachment/AttachmentEnhancement.hbs": {
+        "inline": true,
+        "fields": [
+            "enhancementAlignmentNoFullWidth"
+        ]
+    }
+  }
+}

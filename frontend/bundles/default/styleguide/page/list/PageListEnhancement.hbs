@@ -1,0 +1,26 @@
+{{#each item}}
+    {{#if (and (not ../_styledTemplate) this._styledTemplate)}}
+    {{!-- Falls back to the Page List's defined style. In practice, this allows Shared Placements
+      to fall back to the Shared objects defined style. --}}
+        {{this}}
+    {{else}}
+        <div data-module class="PageListEnhancement" {{include "includes/PageList-attributes.hbs" ../this}}
+            {{~#with ../enhancementAlignmentNoFullWidth}} data-{{this}}{{/with~}}
+            {{~#with ../imagePositionHorizontal}} data-image-position="{{this}}"{{/with~}}
+            >
+            {{include "/global/ModuleHeader.hbs" this}}
+
+            {{#with items}}
+                <div class="PageList-items">
+                    {{#each this}}
+                        <div class="PageList-items-item">
+                            {{include "/page/promo/PagePromo.hbs" this}}
+                        </div>
+                    {{/each}}
+                </div>
+            {{/with}}
+
+            {{include "/page/list/includes/PageList-footer.hbs" this}}
+        </div>
+    {{/if}}
+{{/each}}

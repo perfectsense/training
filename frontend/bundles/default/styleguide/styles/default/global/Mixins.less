@@ -1,0 +1,119 @@
+.sr-only {
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+.undo-sr-only {
+  clip: inherit;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: relative;
+  width: auto;
+}
+
+.clearfix {
+  &:after {
+    content: ' ';
+    visibility: hidden;
+    display: block;
+    height: 0;
+    clear: both;
+  }
+}
+
+.loading-icon {
+  border-radius: 50%;
+  width: 1.5em;
+  height: 1.5em;
+  animation-fill-mode: both;
+  animation: load7 1.8s infinite ease-in-out;
+  color: #000;
+  font-size: 10px;
+  margin: 0 auto;
+  position: relative;
+  text-indent: -9999em;
+  transform: translateZ(0);
+  animation-delay: -0.16s;
+
+  &:after,
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    border-radius: 50%;
+    width: 1.5em;
+    height: 1.5em;
+    animation-fill-mode: both;
+    animation: load7 1.8s infinite ease-in-out;
+  }
+
+  &:before {
+    left: -3.5em;
+    animation-delay: -0.32s;
+  }
+
+  &:after {
+    left: 3.5em;
+  }
+
+  @keyframes load7 {
+
+    0%,
+    100%,
+    80% {
+      box-shadow: 0 1.5em 0 -1.3em;
+    }
+
+    40% {
+      box-shadow: 0 1.5em 0 0;
+    }
+  }
+}
+
+/**
+ * This is our main mixin for setting the width of the layout of a page.
+ *
+ * It creates horizontal margin to the left and right, which is the gutter of the page. Then once you get
+ * to a the 1440px breakpoint, it pads out that content to center it. We are specifically using this instead
+ * of a hardcoded width with auto margins, so that we can apply things like background colors to the entire
+ * browser window, and then the padding will center the actual content of that element
+ */
+.layoutWidth {
+  padding-inline: var(--horizontal-margin-outside);
+
+  // This is 1360px max content width + 40px of padding on the sides
+  @media @mq-xl {
+    padding-inline: calc((100% - 1360px) / 2);
+  }
+}
+
+/**
+ * Adds vertical spacing to elements.
+ *
+ * This mixin applies top and bottom margins to elements, excluding the first and last child elements.
+ * It helps maintain consistent vertical spacing between elements in a layout. It essentially lets
+ * elements claim their own space, rather than relying on the element above or below to provide spacing.
+ *
+ * Vertical margins collapse into one another: if two adjacent elements both have margins,
+ * the larger of the two margins will be used, while the smaller margin will collapse.
+ *
+ * @param {length} @top - The top margin value. Defaults to 0.
+ * @param {length} @bottom - The bottom margin value. Defaults to the top margin value.
+ * @usage .element { .verticalSpacing(10px, 20px); }
+ */
+.verticalSpacing(@top: 0, @bottom: @top) {
+  &:not(:first-child) {
+    margin-top: @top;
+  }
+
+  &:not(:last-child) {
+    margin-bottom: @bottom;
+  }
+}

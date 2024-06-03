@@ -1,0 +1,18 @@
+.HotspotModule {
+  &[data-module-style="B"] {
+    display: grid;
+
+
+    &[data-image-align-vertical="bottom"] {
+      .HotspotModule-media {
+        margin-bottom: 0;
+        margin-top: var(--spacing-md);
+        order: 2;
+      }
+    }
+  }
+
+  &[data-module-style="B"] &-content {
+    text-align: center;
+  }
+}

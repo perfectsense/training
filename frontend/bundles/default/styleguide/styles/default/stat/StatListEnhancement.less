@@ -1,0 +1,26 @@
+.StatListEnhancement {
+  .PageList {
+    &-header {
+      text-align: center;
+
+      &-title {
+        .headline-4;
+      }
+
+      &-description {
+        .subhead-2;
+      }
+    }
+  }
+
+  @container (@cq-sm) {
+    [data-align-left] &,
+    [data-align-right] & {
+      .StatList {
+        &-items {
+          grid-template-columns: 1fr;
+        }
+      }
+    }
+  }
+}

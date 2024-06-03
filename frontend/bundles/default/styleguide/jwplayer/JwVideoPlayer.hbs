@@ -1,0 +1,12 @@
+<bsp-jw-player data-video-player class="JWVideoPlayer"
+    data-player="{{playerId}}"
+    data-media-id="{{mediaId}}"
+    data-video-title="{{videoTitle}}"
+    data-video-uuid="{{videoUuid}}"
+    data-video-file-type="{{videoFileType}}"
+    {{#if poster}}{{#resize poster "large-2x1"}} poster="{{src}}" {{/resize}}{{/if}}
+    {{#if autoplay}}autoplay{{/if}}
+    {{#if muted}}muted{{/if}}>
+
+    <video class="jwvideoplayer" data-media-id="{{mediaId}}" data-player="{{playerId}}" data-embed="default" controls></video>
+</bsp-jw-player>

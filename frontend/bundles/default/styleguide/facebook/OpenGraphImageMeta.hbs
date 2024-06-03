@@ -1,0 +1,19 @@
+{{#if image}}
+    {{#resize image "xl-16x9"}}
+        <meta property="og:image" content="{{{src}}}">
+    {{!-- Optional Elements --}}
+        {{!-- triple handlebars temporary workaround for improper encoding--}}
+        <meta property="og:image:url" content="{{{src}}}">
+        {{#with srcsecure}}
+        <meta property="og:image:secure_url" content="{{{this}}}">
+        {{/with}}
+        <meta property="og:image:width" content="{{width}}">
+        <meta property="og:image:height" content="{{height}}">
+        {{~#with ../mimeType}}
+        <meta property="og:image:type" content="{{this}}">
+        {{/with}}
+        {{~#with ../alt}}
+        <meta property="og:image:alt" content="{{this}}">
+        {{/with}}
+    {{/resize}}
+{{/if}}

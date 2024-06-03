@@ -1,0 +1,18 @@
+{{!-- Required Elements --}}
+{{~#with type}}
+    <meta property="og:type" content="{{this}}">
+{{/with}}
+
+{{~#with url}}
+    <meta property="og:audio" content="{{this}}">
+{{/with~}}
+
+{{!-- Optional Elements --}}
+
+{{~#with secureUrl}}
+    <meta property="og:audio:secure_url" content="{{this}}">
+{{/with}}
+
+{{~#with mimeType}}
+    <meta property="og:audio:type" content="{{this}}">
+{{/with}}

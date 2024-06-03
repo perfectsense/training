@@ -1,0 +1,12 @@
+{{#each item}}
+    <div class="Enhancement" {{#if ../enhancementAlignmentNoFullWidth}} data-{{../enhancementAlignmentNoFullWidth}}{{else}}data-align-center{{/if}}>
+        <div class="Enhancement-item">
+            {{include '/code/CodeBlock.hbs' this
+                collapsibleState=../collapsibleState
+                hideLineNumbers=../hideLineNumbers
+                verticallyScrollable=../verticallyScrollable
+                verticallyScrollableLinesVisible=../verticallyScrollableLinesVisible
+            }}
+        </div>
+    </div>
+{{/each}}

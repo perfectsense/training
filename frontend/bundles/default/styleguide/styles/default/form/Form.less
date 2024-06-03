@@ -1,0 +1,106 @@
+.Form {
+  display: block;
+  --color-invalid: #d31141;
+  --color-placeholder: #bbbbbb;
+
+  .ModuleHeader,
+  &-wrapper {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 800px;
+  }
+
+  &-form {
+
+    [form-loading='loading'] &,
+    [form-status='success'] & {
+      display: none;
+    }
+  }
+
+  &-loading {
+    &-icon {
+      .loading-icon;
+      display: inline-block;
+    }
+
+    display: none;
+    margin-bottom: var(--vertical-margin-md);
+    text-align: center;
+
+    [form-loading='loading'] & {
+      display: block;
+    }
+  }
+
+  &-messages,
+  &-submissionSuccess {
+    &:extend(.RichTextElements all);
+  }
+
+  &-messages {
+    display: none;
+    margin-top: var(--vertical-spacing-md);
+
+    [form-status] & {
+      display: block
+    }
+
+    [form-status='error'] & &-error {
+      display: block;
+    }
+
+    [form-status='success'] & &-success {
+      display: block;
+    }
+
+    &-success,
+    &-error {
+      display: none;
+    }
+  }
+
+  &-items {
+    &-item {
+      color: var(--color-primary-text);
+      margin-bottom: var(--spacing-lg);
+
+      input {
+        font-size: var(--subhead-2);
+      }
+
+      .Select-label {
+        .Select-input {
+          color: var(--color-input-text);
+        }
+
+        svg {
+          fill: black;
+        }
+      }
+    }
+  }
+
+
+  &-wrapper {
+    background: var(--color-form-background);
+    color: var(--color-primary-text);
+
+    &[data-use-text-colors="inverse"] {
+      --color-input-text: #333;
+      --color-primary-text: var(--color-text-inverse);
+    }
+  }
+
+  @container (@cq-md) {
+    .Form-wrapper[data-has-bg-image] & {
+      padding: var(--spacing-xxl) var(--spacing-xxl);
+    }
+  }
+
+  @container (@cq-lg) {
+    &[data-module-header-position='side'] {
+      display: grid;
+    }
+  }
+}

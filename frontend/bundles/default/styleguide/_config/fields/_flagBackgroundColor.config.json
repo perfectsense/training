@@ -1,0 +1,7 @@
+{
+  "fields": {
+    "flagBackgroundColor": {
+      "type": "color"
+    }
+  }
+}

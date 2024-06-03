@@ -1,0 +1,22 @@
+{
+  "styles": {
+    "/faq/FaqModule.hbs": {
+      "fields": [
+        "backgroundColor",
+        "useTextColors",
+        "listHeaderPosition",
+        "headerTextAlign",
+        "modulePaddingTop",
+        "modulePaddingBottom"
+      ],
+      "templates": [
+        {
+          "displayName": "Accordion / FAQ Module",
+          "example": "/faq/FaqModule.json",
+          "height": 500,
+          "width": 800
+        }
+      ]
+    }
+  }
+}

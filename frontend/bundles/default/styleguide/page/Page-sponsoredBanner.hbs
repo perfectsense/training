@@ -1,0 +1,13 @@
+{{#each sponsored}}
+    <div class="Page-sponsoredBanner">
+        <div class="Page-sponsoredBanner-label">
+            {{format "/page/Page" "sponsorContentLabel"}}
+        </div>
+        <div class="Page-sponsoredBanner-meaning">
+            {{#if sponsorMeaningUrl}}
+                {{include "/link/Link.hbs" href=sponsorMeaningUrl target=sponsorMeaningTarget body=(format "/page/Page" "sponsorMeaningLabel")}}
+            {{/if}}
+        </div>
+    </div>
+{{/each}}
+

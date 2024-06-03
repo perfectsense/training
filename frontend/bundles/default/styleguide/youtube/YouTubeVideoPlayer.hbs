@@ -1,0 +1,13 @@
+<bsp-youtube-player data-video-player class="YouTubeVideoPlayer"
+    data-player-id="{{playerId}}"
+    data-video-id="{{videoId}}"
+    data-video-title="{{videoTitle}}"
+    {{~#if muted}} data-muted="true"{{/if~}}
+    {{~#if autoplay}} data-muted="true" data-autoplay="true"{{/if~}}>
+
+    <iframe id="YouTubeVideoPlayer-{{playerId}}" allow="autoplay; fullscreen" src="https://www.youtube.com/embed/
+            {{~videoId}}?enablejsapi=1
+            {{~#with autoplay}}&amp;autoplay=1&amp;mute=1{{/with~}}
+            {{~#with seekSeconds}}&amp;start={{this}}{{/with~}}
+        "></iframe>
+</bsp-youtube-player>

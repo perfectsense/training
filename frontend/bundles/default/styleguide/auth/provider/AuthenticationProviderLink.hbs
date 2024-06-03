@@ -1,0 +1,10 @@
+<a class="AuthenticationProviderLink"
+    {{~#with url}} href="{{this}}"{{/with~}}
+    >
+    {{include './includes/AuthenticationProviderIcon.hbs' this}}
+    {{~#with body~}}
+    <span class="AuthenticationProviderLink-body">
+        {{~this~}}
+    </span>
+    {{~/with~}}
+</a>

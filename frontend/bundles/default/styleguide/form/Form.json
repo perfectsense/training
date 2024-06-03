@@ -1,0 +1,32 @@
+{
+  "_template": "/form/Form.hbs",
+  "title": "{{words([5,15])}}",
+  "description": "{{words([15,25])}}",
+  "anchorId": "anchorTest",
+  "items": [
+    {
+      "_template": "/form/fieldset/Fieldset.hbs",
+      "fieldsetColumns": "50-50",
+      "items": [
+        {
+          "_template": "/form/input/TextInput.hbs",
+          "inputName": "test-text-field",
+          "label": "{{words([5,10])}}",
+          "placeholder": "Placeholder text",
+          "required": false
+        },
+        {
+          "_template": "/form/input/TextInput.hbs",
+          "inputName": "test-text-field",
+          "label": "{{words([5,10])}}",
+          "placeholder": "Placeholder text",
+          "required": false
+        }
+      ],
+      "legend": "50 / 50"
+    }
+  ],
+  "errorMessage": "This is the custom errorMessage",
+  "successMessage": "This is the custom successMessage",
+  "submissionSuccess": false
+}

@@ -1,0 +1,8 @@
+{
+  "fields": {
+    "headingTextColor": {
+      "displayName": "Heading Text Color",
+      "type": "color"
+    }
+  }
+}

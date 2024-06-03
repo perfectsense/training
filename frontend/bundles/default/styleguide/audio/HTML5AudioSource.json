@@ -1,0 +1,6 @@
+{
+  "_template": "HTML5AudioSource.hbs",
+
+  "src": "/styleguide/assets/audio/comfort-fit_sorry.mp3",
+  "type": "audio/mpeg"
+}

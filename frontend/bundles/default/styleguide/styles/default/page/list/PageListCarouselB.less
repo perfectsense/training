@@ -1,0 +1,109 @@
+.PageListCarouselB {
+  .ModuleHeader {
+    &:extend(.headline-3 all);
+  }
+
+  .PageList {
+    &-items {
+      &:after {
+        content: 'flickity';
+        display: none;
+      }
+
+      &-item {
+        margin-right: var(--spacing-lg);
+        max-width: 400px;
+        width: 80%;
+      }
+    }
+  }
+
+  .PagePromo {
+    display: flex;
+    gap: var(--spacing-md);
+
+    &-title {
+      &:extend(.headline-8 all);
+    }
+
+    &-media {
+      width: 90px;
+      align-self: flex-start;
+
+      .Link {
+        &-icon {
+          width: 20px;
+          height: 20px;
+          left: 5px;
+          bottom: 5px;
+        }
+      }
+    }
+
+    &-content {
+      flex-grow: 1;
+    }
+
+    // specificity to override default Promo styles
+    &[data-image-align-horizontal],
+    &[data-align-left] {
+      .PagePromo-media {
+        margin: 0;
+        width: 90px;
+      }
+    }
+  }
+
+  &[data-item-display-style="card"] {
+    .PageList {
+      &-items {
+        &-item {
+          min-height: 100%;
+          display: grid;
+        }
+      }
+    }
+
+    .PagePromo {
+      padding: var(--spacing-lg) var(--spacing-lg);
+    }
+  }
+
+  @container (@cq-md) {
+    .PageList-items {
+      width: calc(100% + var(--spacing-lg));
+
+      &-item {
+        margin-right: var(--spacing-lg);
+        max-width: none;
+        width: calc(50% - var(--spacing-lg));
+      }
+    }
+
+    .PagePromo {
+
+      &[data-image-align-horizontal],
+      &[data-align-left] {
+        .PagePromo-media {
+          width: 90px;
+        }
+      }
+    }
+  }
+
+  @container (@cq-lg) {
+    .PageList-items {
+      &-item {
+        width: calc(33.333% - var(--spacing-lg));
+      }
+    }
+  }
+
+  @container (@cq-hk) {
+    .PageList-items {
+      &-item {
+        width: calc(25% - var(--spacing-lg));
+      }
+    }
+  }
+}

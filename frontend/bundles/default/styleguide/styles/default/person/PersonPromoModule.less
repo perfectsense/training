@@ -1,0 +1,85 @@
+.PersonPromoModule {
+  display: grid;
+  grid-template-columns: 90px auto;
+  row-gap: var(--spacing-sm);
+  column-gap: var(--spacing-md);
+  align-items: center;
+
+  &-contentTop,
+  &-contentBottom {
+    width: 100%;
+  }
+
+  .PagePromo {
+    &-media {
+      margin-bottom: 0;
+      margin-right: 0;
+      align-self: flex-start;
+
+      img {
+        clip-path: circle();
+      }
+    }
+
+    &-title {
+      &:extend(.headline-7 all);
+      margin-bottom: var(--spacing-sm);
+    }
+
+    &-label {
+      &:extend(.subhead-3 all);
+      margin-top: -5px;
+
+      .Link {
+        color: var(--color-primary-text);
+      }
+    }
+
+    &-description {
+      &:extend(.subhead-2 all);
+      margin-top: var(--spacing-sm);
+    }
+  }
+
+  &[data-image-aspect-ratio]:not([data-image-aspect-ratio$="circle"]) {
+    .PagePromo {
+      &-media {
+        img {
+          clip-path: none;
+        }
+      }
+    }
+  }
+
+  .Link {
+    &-icon {
+      display: none;
+    }
+  }
+
+  @container (@cq-up-to-md) {
+    &-content {
+      display: contents;
+    }
+
+    &-contentBottom {
+      grid-column: span 2;
+    }
+  }
+
+  @container (@cq-md) {
+    grid-template-columns: 120px auto;
+
+    .PagePromo {
+      &-media {
+        img {
+          width: 120px;
+        }
+      }
+
+      &-description {
+        margin-top: var(--spacing-lg);
+      }
+    }
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "styles": {
+    "/product/list/ProductList.hbs": {
+      "fields": [
+        "listTitleSize",
+        "listDescriptionSize",
+        "listColumns234",
+        "backgroundColor",
+        "useTextColors",
+        "itemBackgroundColor",
+        "itemBorderColor",
+        "itemUseTextColors",
+        "itemDisplayStyle",
+        "itemBackgroundImage",
+        "itemTextColor",
+        "itemImageAspectRatio"
+      ],
+      "templates": [
+        {
+          "displayName": "Product List",
+          "example": "/product/list/ProductList.json"
+        },
+        {
+          "displayName": "Product List Carousel",
+          "example": "/product/list/ProductListCarousel.json"
+        }
+      ]
+    }
+  }
+}

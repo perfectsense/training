@@ -1,0 +1,13 @@
+{{~#each item~}}
+    <div class="Enhancement" {{#if ../enhancementAlignmentNoFullWidth}} data-{{../enhancementAlignmentNoFullWidth}}{{else}}data-align-center{{/if}}>
+        <div class="Enhancement-item">
+            <div class="QuoteListEnhancement">
+                {{include '/quote/QuoteListB.hbs' this
+                    itemBackgroundColor=../itemBackgroundColor
+                    itemBorderColor=../itemBorderColor
+                    itemUseTextColors=../itemUseTextColors
+                }}
+            </div>
+        </div>
+    </div>
+{{~/each~}}

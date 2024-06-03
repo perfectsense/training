@@ -1,0 +1,11 @@
+<div class="Sponsor">
+    {{#with sponsorDisplayText}}
+        <span class="Sponsor-text">{{this}}</span>
+    {{/with}}
+    {{#set imageSize="logo-small"}}
+        <span class="Sponsor-logo">
+            {{include "/link/Link.hbs" href=url target=target body=(fallback media sponsorName)}}
+        </span>
+    {{/set}}
+</div>
+

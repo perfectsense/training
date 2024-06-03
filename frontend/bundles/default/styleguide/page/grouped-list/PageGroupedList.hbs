@@ -1,0 +1,16 @@
+{{#if groups}}
+<div class="PageGroupedList" data-module {{include "/page/list/includes/PageList-attributes.hbs" this}}>
+    {{include "/global/ModuleHeader.hbs" this}}
+
+    <div class="PageGroupedList-groups">
+        {{~#if groups~}}
+            {{~#each groups~}}
+                <div class="PageGroupedList-group" data-modulewell>
+                    {{include (fallback _styledTemplate '/page/list/PageListStandardF.hbs') this moduleHeaderPosition=(fallback moduleHeaderPosition "side")}}
+                </div>
+            {{~/each~}}
+        {{~/if~}}
+    </div>
+    {{include "/page/list/includes/PageList-footer.hbs" this}}
+</div>
+{{/if}}

@@ -1,0 +1,38 @@
+.Carousel {
+  display: block;
+  height: auto;
+  position: relative;
+
+  &-slide {
+    display: none;
+    width: 100%;
+
+    &:first-of-type {
+      display: block;
+    }
+
+    .flickity-enabled & {
+      display: block;
+    }
+  }
+
+  @container (@cq-xl) {
+    .flickity-prev-next-button {
+      svg {
+        top: -1px;
+      }
+    }
+  }
+}
+
+[data-item-display-style="card"] {
+  .flickity-viewport {
+    overflow: visible;
+  }
+
+  @media @mq-md {
+    .flickity-viewport {
+      clip-path: inset(-20px 0px);
+    }
+  }
+}

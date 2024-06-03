@@ -1,0 +1,222 @@
+{
+  "_include": "/page/Page.json",
+  "_template": "/topic/TopicPage.hbs",
+  "datePublished": "{{date}}",
+  "dateModified": "Modified: {{date}}",
+  "headline": "{{words([5,15])}}",
+  "subHeadline": "{{words([5,15])}}",
+  "book": [
+    {
+      "_include": "/book/Book.json"
+    }
+  ],
+  "breadcrumbs": [
+    {
+      "_include": "/page/BreadcrumbLink.json",
+      "_repeat": 2
+    }
+  ],
+  "previousTopic": {
+    "_include": "/topic/TopicLink.json"
+  },
+  "nextTopic": {
+    "_include": "/topic/TopicLink.json"
+  },
+  "tags": [
+    {
+      "_include": "/tag/TagLink.json",
+      "_repeat": 2
+    }
+  ],
+  "readTime": 20,
+  "lead": {
+    "_include": "/figure/Figure.json"
+  },
+  "topicBody": [
+    {
+      "_template": "/text/RichTextModule.hbs",
+      "title": "{{words}}",
+      "anchorId": "baloobas",
+      "items": [
+        "{{paragraphs([2,3])}}",
+        {
+          "_template": "/text/RichTextModule.hbs",
+          "title": "{{words}}",
+          "anchorId": "baloobas",
+          "items": [
+            "{{paragraphs([2,3])}}",
+            {
+              "_template": "/text/RichTextModule.hbs",
+              "title": "{{words}}",
+              "anchorId": "baloobas",
+              "items": [
+                "{{paragraphs([2,3])}}",
+                {
+                  "_template": "/text/RichTextModule.hbs",
+                  "title": "{{words}}",
+                  "anchorId": "baloobas",
+                  "items": [
+                    "{{paragraphs([2,3])}}",
+                    {
+                      "_template": "/text/RichTextModule.hbs",
+                      "title": "{{words}}",
+                      "anchorId": "baloobas",
+                      "items": [
+                        "{{paragraphs([2,3])}}"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "{{paragraphs([1,2])}}",
+    {
+      "_include": "/stat/StatListEnhancement.json"
+    },
+    "{{paragraphs([2,3])}}",
+    {
+      "_include": "/stat/StatListEnhancement.json",
+      "enhancementAlignmentNoFullWidth": "align-left"
+    },
+    "{{paragraphs([2,3])}}",
+    {
+      "_include": "/stat/StatListEnhancement.json",
+      "enhancementAlignmentNoFullWidth": "align-right"
+    },
+    "{{paragraphs([2,3])}}",
+    {
+      "_template": "/image/ImageEnhancement.hbs",
+      "enhancementAlignmentImage": "align-left",
+      "item": {
+        "_include": "/figure/Figure.json"
+      }
+    },
+    "{{paragraphs([1,2])}}",
+    {
+      "_template": "/image/ImageEnhancement.hbs",
+      "enhancementAlignmentImage": "align-right",
+      "item": {
+        "_include": "/figure/Figure.json"
+      }
+    },
+    "{{paragraphs([1,2])}}",
+    {
+      "_template": "/image/ImageEnhancement.hbs",
+      "enhancementAlignmentImage": "align-full-width",
+      "item": {
+        "_include": "/figure/Figure.json"
+      }
+    },
+    "{{paragraphs([1,2])}}",
+    {
+      "_template": "/image/ImageEnhancement.hbs",
+      "enhancementAlignmentImage": "align-portrait-right",
+      "item": {
+        "_include": "/figure/Figure.json"
+      }
+    },
+    "{{paragraphs([1,2])}}",
+    {
+      "_template": "/image/ImageEnhancement.hbs",
+      "enhancementAlignmentImage": "align-portrait-left",
+      "item": {
+        "_include": "/figure/Figure.json"
+      }
+    },
+    "{{paragraphs([1,2])}}",
+    {
+      "_template": "/carousel/CarouselEnhancement.hbs",
+      "item": {
+        "_include": "/carousel/Carousel.json"
+      }
+    },
+    "{{paragraphs([1,2])}}",
+    {
+      "_template": "/carousel/CarouselEnhancement.hbs",
+      "enhancementAlignment": "align-full-width",
+      "item": {
+        "_include": "/carousel/Carousel.json"
+      }
+    },
+    "{{paragraphs([1,2])}}",
+    {
+      "_include": "/page/promo/PagePromoEnhancement.json"
+    },
+    "{{paragraphs([1,2])}}",
+    {
+      "_include": "/pullquote/PullQuote.json"
+    },
+    "{{paragraphs([1,2])}}",
+    {
+      "_include": "/attachment/AttachmentEnhancement.json"
+    },
+    "{{paragraphs([1,2])}}",
+    {
+      "_include": "/blockquote/BlockQuote.json"
+    },
+    "{{paragraphs([1,2])}}",
+    {
+      "_template": "/image/ImageEnhancement.hbs",
+      "item": {
+        "_include": "/figure/Figure.json"
+      }
+    },
+    "{{paragraphs([1,2])}}",
+    {
+      "_include": "/youtube/YouTubeVideoEnhancement.json"
+    },
+    "{{paragraphs([1,2])}}",
+    {
+      "_template": "/video/VideoEnhancement.hbs",
+      "player": [
+        {
+          "_include": "/video/HTML5VideoPlayer.json"
+        }
+      ],
+      "title": "{{words([2,3])}}"
+    },
+    "{{paragraphs([1,2])}}",
+    {
+      "_include": "/link/LinkEnhancementB.json"
+    },
+    "{{paragraphs([1,2])}}",
+    {
+      "_include": "/video/VideoPlaylistModule.json"
+    },
+    "{{html('<h2>Bulleted List</h2><br><ul><li>Bullet 1 </li><li>Bullet 2<br><ul><li>numeric list within bulleted<br><ul><li><i>Bullet 2a</i></li><li>Bullet 2b<br><ul><li><u>Bullet 2b(i)</u></li><li>Bullet 2b (ii)</li></ul></li><li>Bullet 2c</li></ul></li></ul></li><li>Bullet 3 with <a class=\"Link\" href=\"https://go.go-qa.k1.go.brightspot.cloud/about-us/style-3-article-overlay-lead-no-aside\" data-cms-ai=\"0\">link </a></li></ul>')}}",
+    "{{paragraphs([1,2])}}",
+    "{{html('<h2>Numeric List</h2><br><ol><li>Number 1</li><li>Number 2<br><ol><li>Number 2a</li><li>Number 2b<br><ol><li>Number 2b(i)</li><li>number 2b(ii) with a<a class=\"Link\" href=\"http://www.google.com\" target=\"_blank\" rel=\"noopener\" data-cms-ai=\"0\"> link</a></li></ol></li><li>number 2c</li></ol></li><li>Number 3<br><ol><li>item 1 adding a bulleted list within a numeric list</li><li>item 2</li></ol></li></ol>')}}",
+    "{{paragraphs([1,2])}}"
+  ],
+  "aside": [
+    {
+      "_include": "/page/list/PageListRightRailA.json"
+    },
+    {
+      "_template": "/dfp/GoogleDfpAdModule.hbs",
+      "adIndex": "1250",
+      "slot": "/13236445/responsive_banner",
+      "sizes": "[[300, 250]]",
+      "adSizeMaps": "[[[1024,768], [300,250]], [[300,250], [300,250]]]"
+    },
+    {
+      "_include": "/page/list/PageListRightRailA.json"
+    }
+  ],
+  "attachments": [
+    {
+      "_include": "/attachment/AttachmentEnhancement.json",
+      "_repeat": 2
+    }
+  ],
+  "copyright": "{{paragraphs(1)}}",
+  "relatedContent": [
+    {
+      "_include": "/page/grouped-list/PageGroupedList.json"
+    }
+  ]
+}

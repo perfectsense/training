@@ -1,0 +1,10 @@
+.ProductPromoMedia {
+  position: relative;
+
+  [data-item-image-aspect-ratio$="circle"] &,
+  [data-image-aspect-ratio$="circle"] & {
+    img {
+      clip-path: circle();
+    }
+  }
+}

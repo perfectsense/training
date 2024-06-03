@@ -1,0 +1,24 @@
+<div class="AuthorPromo" {{include "/page/promo/includes/PagePromoAttributes.hbs" this}}>
+    {{#set imageSize=(fallback (get "imageSize") "small-square")}}
+        {{#if media}}
+            <div class="PagePromo-media">
+                {{~#if url~}}
+                    <a class="Link" {{#with name}}aria-label="{{this}}"{{/with}} href="{{url}}">{{media}}</a>
+                {{~else~}}
+                    <span class="Link">{{media}}</span>
+                {{~/if~}}
+            </div>
+        {{/if}}
+    {{/set}}
+
+    <div class="AuthorPromo-content">
+        {{include "/page/promo/includes/PagePromoTitle.hbs" this title=name}}
+        {{include "/page/promo/includes/PagePromoDescription.hbs" this}}
+
+        {{#with jobTitle}}
+            <div class="AuthorPromo-jobTitle">
+                {{this}}
+            </div>
+        {{/with}}
+    </div>
+</div>

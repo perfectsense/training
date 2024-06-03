@@ -1,0 +1,12 @@
+<div class="SearchFilterMobile">
+    <div class="SearchFilterMobile-heading">{{heading}}</div>
+    <div class="SearchFilterMobile-content">
+        <ul class="SearchFilterMobile-items">
+            {{~#each items~}}
+                <li class="SearchFilterMobile-items-item">
+                    {{include "/search/SearchFilterInput.hbs" this passiveInput=true}}
+                </li>
+            {{~/each~}}
+        </ul>
+    </div>
+</div>

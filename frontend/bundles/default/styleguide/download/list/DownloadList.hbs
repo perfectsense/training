@@ -1,0 +1,17 @@
+{{#if items}}
+<div class="DownloadList" data-module{{include "/page/list/includes/PageList-attributes.hbs" this}}>
+    {{include "/global/ModuleHeader.hbs" this}}
+
+    <div class="DownloadList-items">
+        {{#set imageAspectRatio=itemImageAspectRatio}}
+            {{#each items}}
+                <div class="DownloadList-items-item">
+                    {{this}}
+                </div>
+            {{/each}}
+        {{/set}}
+    </div>
+
+    {{include "/page/list/includes/PageList-footer.hbs" this}}
+</div>
+{{/if}}

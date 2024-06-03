@@ -1,0 +1,12 @@
+.SearchResultsPage {
+  .SearchResultsModule {
+    &-topContainer {
+      margin-top: calc(var(--moduleMarginTop) * -1);
+      margin-inline: calc(var(--horizontal-margin-outside) * -1);
+
+      @media only screen and (min-width: 1440px) {
+        margin-inline: calc((100vw - 1360px) / 2 * -1);
+      }
+    }
+  }
+}

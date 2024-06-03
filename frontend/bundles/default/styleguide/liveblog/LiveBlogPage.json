@@ -1,0 +1,62 @@
+{
+  "_include": "/page/Page.json",
+  "_template": "/liveblog/LiveBlogPage.hbs",
+  "datePublished": "{{date}}",
+  "dateModified": "{{date}}",
+
+  "headline": "{{words([5,15])}}",
+  "subHeadline": "{{words([5,15])}}",
+
+  "authors": [
+    {
+      "_include": "/author/Author.json",
+      "_repeat": 3
+    }
+  ],
+
+  "blogLead": {
+    "_include": "/carousel/Carousel.json"
+  },
+  "blogBody": [
+    "{{paragraphs([2,3])}}"
+  ],
+  "pinnedPosts": [
+    {
+      "_include": "/liveblog/LiveBlogPost.json"
+    },
+    {
+      "_include": "/liveblog/LiveBlogPost.json"
+    }
+  ],
+  "currentPosts": [
+    {
+      "_include": "/liveblog/LiveBlogPost.json"
+    },
+    {
+      "_include": "/liveblog/LiveBlogPost.json"
+    },
+    {
+      "_include": "/liveblog/LiveBlogPost.json"
+    },
+    {
+      "_include": "/liveblog/LiveBlogPost.json"
+    },
+    {
+      "_include": "/liveblog/LiveBlogPost.json"
+    },
+    {
+      "_include": "/liveblog/LiveBlogPost.json"
+    },
+    {
+      "_include": "/liveblog/LiveBlogPost.json"
+    },
+    {
+      "_include": "/liveblog/LiveBlogPost.json"
+    }
+  ],
+  "postsEndpoint": "/liveblog/examples/fragment-update.html",
+  "liveEvent": true,
+  "whatYouNeedToKnow": [
+    "{{paragraphs(1)}}"
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "_include": "/page/Page.json",
+  "pageLead": {
+    "_include": "/page/PageHeadingVideo.json"
+  },
+  "above": null,
+  "main": [
+    {
+      "_include": "/page/promo/PagePromoModuleA.json",
+      "animateOnScroll": true
+    },
+    {
+      "_include": "/stat/StatListA.json",
+      "backgroundColor": "#eee"
+    },
+    {
+      "_include": "/page/promo/PagePromoModuleA.json",
+      "animateOnScroll": true
+    },
+    {
+      "_include": "/page/promo/PagePromoModuleB.json",
+      "animateOnScroll": true,
+      "textAlign": "center"
+    },
+    {
+      "_include": "/page/promo/PagePromoModuleC.json",
+      "animateOnScroll": true
+    },
+    {
+      "_include": "/page/promo/PagePromoModuleA.json",
+      "animateOnScroll": true,
+      "imagePositionVertical": "top"
+    },
+    {
+      "_include": "/page/list/PageListStandardB.json",
+      "animateOnScroll": true
+    }
+  ]
+}

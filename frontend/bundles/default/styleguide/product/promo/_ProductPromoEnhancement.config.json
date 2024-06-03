@@ -1,0 +1,39 @@
+{
+  "styles": {
+    "/product/promo/ProductPromoEnhancement.hbs": {
+      "inline": true,
+      "fields": [
+        "enhancementAlignmentNoFullWidth",
+        "backgroundColor",
+        "borderColor",
+        "useTextColors",
+        "flagBorder",
+        "flagPosition",
+        "flagTextColor",
+        "flagBackgroundColor",
+        "flagBorderColor",
+        "imageAspectRatio"
+      ],
+      "templates": [
+        {
+          "displayName": "Product Promo Enhancement 50/50",
+          "example": "/product/promo/ProductPromoEnhancement5050.json",
+          "height": 800,
+          "width": 1024
+        },
+        {
+          "displayName": "Product Promo Enhancement 30/70",
+          "example": "/product/promo/ProductPromoEnhancement3070.json",
+          "height": 800,
+          "width": 1024
+        },
+        {
+          "displayName": "Product Promo Enhancement 70/30",
+          "example": "/product/promo/ProductPromoEnhancement7030.json",
+          "height": 800,
+          "width": 1024
+        }
+      ]
+    }
+  }
+}

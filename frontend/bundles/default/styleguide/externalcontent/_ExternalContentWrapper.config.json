@@ -1,0 +1,7 @@
+{
+  "styles": {
+    "/externalcontent/ExternalContentWrapper.hbs": {
+      "fields": ["enhancementAlignment"]
+    }
+  }
+}

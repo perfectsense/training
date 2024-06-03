@@ -1,0 +1,19 @@
+{
+  "fields": {
+    "pageHeadingSize": {
+      "type": "text",
+      "cms.ui.dropDown": true,
+      "cms.ui.placeholder": "Default",
+      "values": [
+        {
+          "label": "Large",
+          "value": "1"
+        },
+        {
+          "label": "Small",
+          "value": "2"
+        }
+      ]
+    }
+  }
+}

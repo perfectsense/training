@@ -1,0 +1,3 @@
+{{~#if url~}}
+    <div class="IframeModule">{{include "/link/AnchorLink.hbs" this}}<iframe{{#with name}} name="{{this}}"{{/with}} src="{{url}}"{{#with height}} height="{{this}}"{{/with}}{{#with width}} width="{{this}}"{{/with}}{{#with sandbox}} sandbox="{{this}}"{{/with}}{{#with style}} style="{{this}}"{{/with}}></iframe></div>
+{{~/if~}}

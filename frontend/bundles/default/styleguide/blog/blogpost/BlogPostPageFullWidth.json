@@ -1,0 +1,4 @@
+{
+  "_include": "/article/BlogPostPage.json",
+  "_styledTemplate": "/blog/blogpost/BlogPostPageFullWidth.hbs"
+}

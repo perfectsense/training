@@ -1,0 +1,11 @@
+{
+  "_template": "AdRichTextElement.hbs",
+  "ad": [
+    {
+      "_include": "/adsense/GoogleAdsenseAdModule.json"
+    },
+    {
+      "_include": "/dfp/GoogleDfpAdModule.json"
+    }
+  ]
+}

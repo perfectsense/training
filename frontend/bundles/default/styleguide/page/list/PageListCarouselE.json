@@ -1,0 +1,10 @@
+{
+  "_include": "/page/list/PageList.json",
+  "_styledTemplate": "/page/list/PageListCarouselE.hbs",
+  "items": [
+    {
+      "_include": "/page/promo/PagePromo.json",
+      "_repeat": 4
+    }
+  ]
+}

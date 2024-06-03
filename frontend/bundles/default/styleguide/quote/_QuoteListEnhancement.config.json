@@ -1,0 +1,13 @@
+{
+  "styles": {
+    "/quote/QuoteListEnhancement.hbs": {
+      "inline": true,
+      "fields": [
+        "enhancementAlignmentNoFullWidth",
+        "itemBackgroundColor",
+        "itemBorderColor",
+        "itemUseTextColors"
+      ]
+    }
+  }
+}

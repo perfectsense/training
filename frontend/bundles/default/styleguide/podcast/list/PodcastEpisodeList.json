@@ -1,0 +1,28 @@
+{
+  "_template": "/podcast/list/PodcastEpisodeList.hbs",
+  "ctaButtonText": "{{words([5, 10])}}",
+  "ctaTarget": "_blank",
+  "ctaUrl": "#",
+  "title": "Podcast Episode List",
+  "description": "{{words([10,15])}}",
+  "anchorId": "anchorTest",
+  "items": [
+    {
+      "_include": "/podcast/promo/PodcastEpisodePromo.json",
+      "_repeat": 7
+    }
+  ],
+  "pagination": [
+    {
+      "_template": "/link/PaginationLink.hbs",
+      "body": "Previous Page",
+      "href": ""
+    },
+    {
+      "_template": "/link/PaginationLink.hbs",
+      "body": "Next Page",
+      "href": "#"
+    }
+  ]
+}
+

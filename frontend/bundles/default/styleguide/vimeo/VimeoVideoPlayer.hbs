@@ -1,0 +1,13 @@
+<bsp-vimeo-player data-video-player class="VimeoVideoPlayer"
+                  data-player-id="{{playerId}}"
+                  data-video-id="{{videoId}}"
+                  data-video-title="{{videoTitle}}"
+
+    {{~#if seekSeconds}} data-seek-seconds="{{seekSeconds}}" {{~/if~}}
+    {{~#if muted}}muted{{/if~}}
+    {{~#if autoplay}}autoplay{{/if~}}>
+
+<iframe id="VimeoVideoPlayer-{{playerId}}"
+        src="https://player.vimeo.com/video/{{videoId}}?transparent=0{{#with privacyHash}}&h={{this}}{{/with}}{{#if
+        muted}}&muted=true{{/if}}{{#if autoplay}}&autoplay=true{{/if}}" allowfullscreen></iframe>
+</bsp-vimeo-player>

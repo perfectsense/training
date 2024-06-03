@@ -1,0 +1,10 @@
+{
+  "_include": "/article/ArticlePage.json",
+  "articleBody": [
+    "{{paragraphs([1,2])}}",
+    {
+      "_include": "/table/Table.json"
+    },
+    "{{paragraphs([1,2])}}"
+  ]
+}

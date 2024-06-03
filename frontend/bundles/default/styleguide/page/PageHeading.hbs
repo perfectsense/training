@@ -1,0 +1,28 @@
+<div class="PageHeading" {{include '/page/PageHeadingAttributes.hbs' this}}>
+    {{include '/global/BackgroundVideo.hbs' this}}
+    <div class="PageHeading-wrapper">
+        <div class="PageHeading-content">
+            {{#with logo}}
+                {{#set imageSize="logo-page-heading"}}
+                    <div class="PageHeading-logo">
+                        {{this}}
+                    </div>
+                {{/set}}
+            {{/with}}
+            {{#if eyebrow}}
+                <div class="PageHeading-eyebrow">{{include "/link/Link.hbs" this body=eyebrow href=eyebrowUrl target=eyebrowTarget}}</div>
+            {{/if}}
+            {{#with pageHeading}}
+                <h1 class="PageHeading-title">{{this}}</h1>
+            {{/with}}
+            {{#with pageSubHeading}}
+                <h2 class="PageHeading-subHeading">{{this}}</h2>
+            {{/with}}
+            {{#if ctaUrl}}
+                <div class="PageHeading-ctaButton">
+                    <a class="Button" href="{{ctaUrl}}" {{#with ctaTarget}} target="{{this}}"{{/with}}>{{#if ctaButtonText}}{{ctaButtonText}}{{else}}{{format "/page/list/PageList" "ctaText"}}{{/if}}</a>
+                </div>
+            {{/if}}
+        </div>
+    </div>
+</div>

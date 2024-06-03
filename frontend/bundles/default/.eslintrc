@@ -1,0 +1,26 @@
+{
+    "plugins": [
+        "@typescript-eslint"
+    ],
+    "extends": [
+        "eslint:recommended",
+        "plugin:prettier/recommended",
+        "plugin:@typescript-eslint/recommended"
+    ],
+    "env": {
+        "browser": true,
+        "es6": true
+    },
+    "ignorePatterns": [
+        ".gradle",
+        "build",
+        "node_modules"
+    ],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "allowImportExportEverywhere": true
+    },
+    "rules": {
+        "@typescript-eslint/no-this-alias": "off"
+    }
+}

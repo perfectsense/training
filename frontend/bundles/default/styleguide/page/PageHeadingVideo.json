@@ -1,0 +1,6 @@
+{
+  "_include": "/page/PageHeading.json",
+  "backgroundVideo": {
+    "_include": "/video/HTML5VideoPlayer.json"
+  }
+}

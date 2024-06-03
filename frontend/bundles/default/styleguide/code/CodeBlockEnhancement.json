@@ -1,0 +1,6 @@
+{
+  "_template": "CodeBlockEnhancement.hbs",
+  "item": {
+    "_include": "/code/CodeBlock.json"
+  }
+}

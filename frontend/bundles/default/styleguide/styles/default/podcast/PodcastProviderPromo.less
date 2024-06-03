@@ -1,0 +1,18 @@
+.PodcastProviderPromo {
+  &:extend(.label-5 all);
+  display: inline-flex;
+  padding: 3px 10px;
+  border: 1px solid var(--color-border);
+  align-items: center;
+  background-color: #ffffff;
+
+  svg {
+    margin-right: 5px;
+    width: 20px;
+    height: 20px;
+
+    [data-social-service="tunein"]& {
+      width: 30px;
+    }
+  }
+}

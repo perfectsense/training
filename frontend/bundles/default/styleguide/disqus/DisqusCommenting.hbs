@@ -1,0 +1,18 @@
+<div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+    {{#with disqusUrl}}this.page.url = "{{this}}";{{/with}}
+    {{#with disqusContentId}}this.page.identifier = "{{this}}";{{/with}}
+    {{#with disqusTitle}}this.page.title = "{{this}}";{{/with}}
+    {{#with disqusCategory}}this.page.category_id = "{{this}}";{{/with}}
+    };
+
+    (function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = 'https://{{disqusSiteId}}.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>{{format "disqussNoScript"}}</noscript>
+<script id="dsq-count-scr" src="//{{disqusSiteId}}.disqus.com/count.js" async></script>

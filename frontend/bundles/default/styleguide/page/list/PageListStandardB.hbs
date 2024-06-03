@@ -1,0 +1,44 @@
+{{#if items}}
+<bsp-list-loadmore data-module class="PageListStandardB"{{include "includes/PageList-attributes.hbs" this}}>
+    {{include "/global/ModuleHeader.hbs" this}}
+
+    {{#with items}}
+        <div class="PageList-items" data-list-loadmore-items>
+            {{#each this}}
+                <div class="PageList-items-item">
+                    {{#eq ../../listColumns123456 "2"}}
+                        {{#eq this._template "/page/promo/PagePromo.hbs"}}
+                            {{#set imageSize=(fallback ../../itemImageAspectRatio "large-16x9")}}
+                                {{#set sizes="(max-width: 768px) 100vw, 50vw"}}
+                                    {{include "/page/promo/PagePromo.hbs" this imagePositionVertical="top" animateOnScroll=../../animateOnScroll animation="fromBottom"}}
+                                {{/set}}
+                            {{/set}}
+                        {{else}}
+                            {{render this}}
+                        {{/eq}}
+                    {{else}}
+                        {{#eq ../../listColumns123456 "4"}}
+                            {{#eq this._template "/page/promo/PagePromo.hbs"}}
+                                {{#set imageSize=(fallback ../../itemImageAspectRatio "medium-16x9") sizes="(max-width: 568px) 100px, 300px"}}
+                                    {{include "/page/promo/PagePromo.hbs" this mobileAltLayout="true" imagePositionVertical="top" animateOnScroll=../../animateOnScroll animation="fromBottom"}}
+                                {{/set}}
+                            {{else}}
+                                {{render this}}
+                            {{/eq}}
+                        {{else}}
+                            {{#eq this._template "/page/promo/PagePromo.hbs"}}
+                                {{#set imageSize=(fallback ../../itemImageAspectRatio "medium-16x9") sizes="(max-width: 568px) 100px, 400px"}}
+                                    {{include "/page/promo/PagePromo.hbs" this mobileAltLayout="true" imagePositionVertical="top" animateOnScroll=../../animateOnScroll animation="fromBottom"}}
+                                {{/set}}
+                            {{else}}
+                                {{render this}}
+                            {{/eq}}
+                        {{/eq}}
+                    {{/eq}}
+                </div>
+            {{/each}}
+        </div>
+    {{/with}}
+    {{include "includes/PageList-footer.hbs" this canPaginate=true}}
+</bsp-list-loadmore>
+{{/if}}

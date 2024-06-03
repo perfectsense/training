@@ -1,0 +1,11 @@
+{{#if media}}
+    <div class="ProductPromoMedia">
+        {{include "/product/promo/includes/ProductPromoFlag.hbs" this}}
+        {{~#unless media.[1]~}}
+            {{include '/product/promo/includes/ProductPromoImage.hbs' this}}
+        {{~/unless~}}
+        {{#if media.[1]}}
+            {{include '/product/promo/includes/ProductPromoGallery.hbs' this}}
+        {{/if}}
+    </div>
+{{/if}}

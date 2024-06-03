@@ -1,0 +1,44 @@
+.RichTextBody {
+  &:extend(.RichTextElements all);
+
+  h2 {
+    .headline-4;
+  }
+
+  h3 {
+    .headline-5;
+  }
+
+  h4 {
+    .headline-6;
+  }
+
+  h5 {
+    .headline-7;
+  }
+
+  // just in case we have giant enhancements aligned
+  &:after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+
+  // not setting this on the parent as it messes up some enhancements
+  >p,
+  >ul,
+  >ol,
+  p>ul,
+  p>ol {
+    .body-1;
+    color: var(--color-primary-text);
+
+    &:first-child {
+      margin-top: 0;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}

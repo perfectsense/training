@@ -1,0 +1,28 @@
+{
+  "fields": {
+    "enhancementAlignment": {
+      "displayName": "Choose enhancement alignment",
+      "type": "text",
+      "cms.ui.dropDown": true,
+      "cms.ui.placeholder": "Default",
+      "values": [
+        {
+          "label": "Center Alignment",
+          "value": "align-center"
+        },
+        {
+          "label": "Left Alignment",
+          "value": "align-left"
+        },
+        {
+          "label": "Right Alignment",
+          "value": "align-right"
+        },
+        {
+          "label": "Full Width",
+          "value": "align-full-width"
+        }
+      ]
+    }
+  }
+}

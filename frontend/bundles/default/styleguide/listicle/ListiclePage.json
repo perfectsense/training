@@ -1,0 +1,59 @@
+{
+  "_include": "/page/Page.json",
+  "_template": "/listicle/ListiclePage.hbs",
+  "datePublished": "{{date}}",
+  "dateModified": "Modified: {{date}}",
+  "headline": "{{words([5,15])}}",
+  "subHeadline": "{{words([5,15])}}",
+  "readTime": 5,
+  "authors": [
+    {
+      "_include": "/author/Author.json",
+      "_repeat": 3
+    }
+  ],
+  "breadcrumbs": [
+    {
+      "_include": "/page/BreadcrumbLink.json",
+      "_repeat": 2
+    }
+  ],
+  "tags": [
+    {
+      "_include": "/tag/TagLink.json",
+      "_repeat": 2
+    }
+  ],
+  "pageLead": {
+    "_include": "/figure/Figure.json"
+  },
+  "intro": "{{paragraphs([1,2])}}",
+  "items": [
+    {
+      "_include": "/listicle/ListicleItem.json"
+    },
+    {
+      "_template": "/dfp/GoogleDfpAdModule.hbs",
+      "sizes": "[[300, 250], [728, 90]]",
+      "slot": "13236445/responsive_banner"
+    },
+    {
+      "_include": "/listicle/ListicleItem.json"
+    },
+    {
+      "_include": "/listicle/ListicleItem.json"
+    }
+  ],
+  "aside": [
+    {
+      "_template": "/dfp/GoogleDfpAdModule.hbs",
+      "adIndex": "1250",
+      "slot": "/13236445/responsive_banner",
+      "sizes": "[[300, 250]]",
+      "adSizeMaps": "[[[1024,768], [300,250]], [[300,250], [300,250]]]"
+    },
+    {
+      "_include": "/page/list/PageListRightRailA.json"
+    }
+  ]
+}

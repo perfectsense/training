@@ -1,0 +1,7 @@
+{
+  "_include": "/page/list/PageList.json",
+  "_styledTemplate": "/page/list/PageListCarouselA.hbs",
+  "itemDisplayStyle": "card",
+  "backgroundColor": "black",
+  "useTextColors": "inverse"
+}

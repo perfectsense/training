@@ -1,0 +1,19 @@
+{
+  "styles": {
+    "/search/SearchResultsModule.hbs": {
+      "fields": [
+        "searchResultsLayout"
+      ],
+      "templates": [
+        {
+          "displayName": "Search Results Module A",
+          "example": "/search/SearchResultsModuleA.json"
+        },
+        {
+          "displayName": "Search Results Module B",
+          "example": "/search/SearchResultsModuleB.json"
+        }
+      ]
+    }
+  }
+}

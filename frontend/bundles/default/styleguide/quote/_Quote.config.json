@@ -1,0 +1,18 @@
+{
+  "styles": {
+    "/quote/Quote.hbs": {
+      "fields": [
+        "backgroundColor",
+        "useTextColors",
+        "modulePaddingTop",
+        "modulePaddingBottom"
+      ],
+      "templates": [
+        {
+          "displayName": "Quote",
+          "example": "/quote/Quote.json"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "fields": {
+    "backgroundImage": {
+      "displayName": "Choose a background image",
+      "type": "record",
+      "groups": "brightspot.image.WebImage"
+    }
+  }
+}

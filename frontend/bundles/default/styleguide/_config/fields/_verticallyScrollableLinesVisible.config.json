@@ -1,0 +1,9 @@
+{
+  "fields": {
+    "verticallyScrollableLinesVisible": {
+      "displayName": "Number of Lines Visible",
+      "type": "text",
+      "cms.ui.placeholder": "20"
+    }
+  }
+}

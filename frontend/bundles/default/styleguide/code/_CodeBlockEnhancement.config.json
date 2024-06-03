@@ -1,0 +1,15 @@
+{
+  "styles": {
+    "/code/CodeBlockEnhancement.hbs": {
+        "inline": true,
+        "fields": [
+            "enhancementAlignmentNoFullWidth",
+            "collapsibleState",
+            "hideLineNumbers",
+            "verticallyScrollable",
+            "verticallyScrollableLinesVisible"
+        ]
+    }
+  }
+}
+

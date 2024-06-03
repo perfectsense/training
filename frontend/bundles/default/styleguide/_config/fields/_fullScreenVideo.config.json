@@ -1,0 +1,8 @@
+{
+  "fields": {
+    "fullScreenVideo": {
+      "displayName": "Full screen video vs 16:9 ratio?",
+      "type": "boolean"
+    }
+  }
+}

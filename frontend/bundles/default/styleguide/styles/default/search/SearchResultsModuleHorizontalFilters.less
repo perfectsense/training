@@ -1,0 +1,43 @@
+.SearchResultsModuleHorizontalFilters {
+  display: flex;
+  column-gap: var(--spacing-md);
+  row-gap: var(--spacing-md);
+  align-items: flex-start;
+  flex-grow: 1;
+  border-bottom: solid 1px var(--color-border);
+  padding-bottom: var(--spacing-md);
+  margin-bottom: var(--spacing-md);
+
+  &-filters {
+    display: flex;
+    align-items: center;
+    column-gap: var(--spacing-sm);
+    row-gap: var(--spacing-sm);
+    flex-wrap: wrap;
+    flex-grow: 1;
+  }
+
+  &-clearFilters,
+  .SearchFilterDropdown {
+    flex-shrink: 0;
+  }
+
+  &-clearFilters {
+    margin-top: var(--spacing-sm);
+    &:extend(a all);
+    .subhead-3;
+    text-decoration: underline;
+    cursor: pointer;
+    background: none;
+    border: 0;
+    padding: 0;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  @container (@cq-up-to-md) {
+    display: none;
+  }
+}

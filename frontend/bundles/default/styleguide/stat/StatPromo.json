@@ -1,0 +1,7 @@
+{
+  "_template": "/stat/StatPromo.hbs",
+  "title": "{{words(2)}}",
+  "description": "{{words(6)}}",
+  "value": "{{number([5,90])}}",
+  "valueSuffix": "%"
+}

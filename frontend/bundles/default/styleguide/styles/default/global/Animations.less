@@ -1,0 +1,93 @@
+[data-animate-on-scroll][data-animate],
+[data-animate-on-scroll] [data-animate] {
+  animation-fill-mode: both;
+  animation-duration: 750ms;
+  animation-play-state: paused;
+  animation-timing-function: ease-out;
+}
+
+[data-animate-on-scroll][data-scrolled] [data-animate],
+[data-animate-on-scroll][data-scrolled] {
+  animation-play-state: running;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+[data-animate-on-scroll] [data-animate='fade'],
+[data-animate-on-scroll][data-animate='fade'] {
+  animation-name: fade;
+}
+
+@keyframes fromBottom {
+  from {
+    opacity: 0;
+    transform: none;
+  }
+  1% {
+    opacity: 0;
+    transform: translate(0, 400px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+[data-animate-on-scroll] [data-animate='fromBottom'],
+[data-animate-on-scroll][data-animate='fromBottom'] {
+  animation-name: fromBottom;
+}
+
+@keyframes fromLeft {
+  from {
+    opacity: 0;
+    transform: none;
+  }
+  1% {
+    opacity: 0;
+    transform: translate(-800px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+[data-animate-on-scroll] [data-animate='fromLeft'],
+[data-animate-on-scroll][data-animate='fromLeft'] {
+  animation-name: fromLeft;
+}
+
+@keyframes fromRight {
+  from {
+    opacity: 0;
+    transform: none;
+  }
+  1% {
+    opacity: 0;
+    transform: translate(800px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+[data-animate-on-scroll] [data-animate='fromRight'],
+[data-animate-on-scroll][data-animate='fromRight'] {
+  animation-name: fromRight;
+}
+
+@media (prefers-reduced-motion) {
+  [data-animate-on-scroll] [data-animate],
+  [data-animate-on-scroll][data-animate] {
+    animation-name: none;
+  }
+}

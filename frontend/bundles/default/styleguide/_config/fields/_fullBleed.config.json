@@ -1,0 +1,8 @@
+{
+  "fields": {
+    "fullBleed": {
+      "displayName": "Display this module full bleed (to the edge of the browser)?",
+      "type": "boolean"
+    }
+  }
+}

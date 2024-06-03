@@ -1,0 +1,807 @@
+{
+  "navigation": [
+    {
+      "displayName": "Globals",
+      "pages": [
+        {
+          "displayName": "Colors",
+          "page": "/_resource/ColorsPage.json"
+        },
+        {
+          "displayName": "Buttons and Interactions",
+          "page": "/_resource/ButtonsPage.json"
+        },
+        {
+          "displayName": "Typography",
+          "page": "/_resource/TypographyPage.json"
+        }
+      ]
+    },
+    {
+      "displayName": "Container",
+      "pages": [
+        {
+          "displayName": "One Column Container",
+          "page": "/container/OneColumnContainer.json"
+        },
+        {
+          "displayName": "Two Column Container 50/50",
+          "page": "/container/TwoColumnContainer5050.json"
+        },
+        {
+          "displayName": "Two Column Container 30/70",
+          "page": "/container/TwoColumnContainer3070.json"
+        },
+        {
+          "displayName": "Two Column Container 70/30",
+          "page": "/container/TwoColumnContainer7030.json"
+        },
+        {
+          "displayName": "Three Column Container",
+          "page": "/container/ThreeColumnContainer.json"
+        },
+        {
+          "displayName": "Three Column Container 25/50/25",
+          "page": "/container/ThreeColumnContainer255025.json"
+        },
+        {
+          "displayName": "Three Column Container 50/25/25",
+          "page": "/container/ThreeColumnContainer502525.json"
+        },
+        {
+          "displayName": "Four Column Container",
+          "page": "/container/FourColumnContainer.json"
+        }
+      ]
+    },
+    {
+      "displayName": "Audio Players",
+      "pages": [
+        {
+          "displayName": "HTML5 Audio Player A",
+          "page": "/audio/HTML5AudioPlayerA.json"
+        },
+        {
+          "displayName": "HTML5 Audio Player B",
+          "page": "/audio/HTML5AudioPlayerB.json"
+        }
+      ]
+    },
+    {
+      "displayName": "Banner",
+      "pages": [
+        {
+          "displayName": "Rich Text Breaking News Banner",
+          "page": "/banner/RichTextBreakingNewsBanner.json"
+        }
+      ]
+    },
+    {
+      "displayName": "Code",
+      "pages": [
+        {
+          "displayName": "Code Block",
+          "page": "/code/CodeBlock.json"
+        },
+        {
+          "displayName": "Code Inline",
+          "page": "/code/CodeInline.json"
+        }
+      ]
+    },
+    {
+      "displayName": "Enhancements",
+      "pages": [
+        {
+          "displayName": "Attachment Enhancement",
+          "page": "/attachment/AttachmentEnhancement.json"
+        },
+        {
+          "displayName": "Block Quote",
+          "page": "/blockquote/BlockQuote.json"
+        },
+        {
+          "displayName": "Callout Enhancement",
+          "page": "/callout/CalloutEnhancement.json"
+        },
+        {
+          "displayName": "Code Block Enhancement",
+          "page": "/code/CodeBlockEnhancement.json"
+        },
+        {
+          "displayName": "FAQ Enhancement",
+          "page": "/faq/FaqEnhancement.json"
+        },
+        {
+          "displayName": "Gallery Enhancement",
+          "page": "/carousel/CarouselEnhancement.json"
+        },
+        {
+          "displayName": "Page List Enhancement",
+          "page": "/page/list/PageListEnhancement.json"
+        },
+        {
+          "displayName": "Logo List Enhancement",
+          "page": "/logo/list/LogoListEnhancement.json"
+        },
+        {
+          "displayName": "Person List Enhancement",
+          "page": "/person/list/PersonListEnhancement.json"
+        },
+        {
+          "displayName": "Person Promo Enhancement",
+          "page": "/person/promo/PersonPromoEnhancement.json"
+        },
+        {
+          "displayName": "Page Promo Enhancement A",
+          "page": "/page/promo/PagePromoEnhancementA.json"
+        },
+        {
+          "displayName": "Page Promo Enhancement B",
+          "page": "/page/promo/PagePromoEnhancementB.json"
+        },
+        {
+          "displayName": "Page Promo Enhancement C",
+          "page": "/page/promo/PagePromoEnhancementC.json"
+        },
+        {
+          "displayName": "Podcast Episode List Enhancement",
+          "page": "/podcast/list/PodcastEpisodeListEnhancement.json"
+        },
+        {
+          "displayName": "Pull Quote",
+          "page": "/pullquote/PullQuote.json"
+        },
+        {
+          "displayName": "Quote List Enhancement",
+          "page": "/quote/QuoteListEnhancement.json"
+        },
+        {
+          "displayName": "Stat List Enhancement",
+          "page": "/stat/StatListEnhancement.json"
+        },
+        {
+          "displayName": "Tabs Enhancement",
+          "page": "/tab/TabsEnhancement.json"
+        },
+        {
+          "displayName": "Video Playlist Enhancement",
+          "page": "/video/VideoPlaylistEnhancement.json"
+        }
+      ]
+    },
+    {
+      "displayName": "Forms",
+      "pages": [
+        {
+          "displayName": "Form",
+          "page": "/form/Form.json"
+        }
+      ]
+    },
+    {
+      "displayName": "Hotspot Module",
+      "pages": [
+        {
+          "displayName": "Hotspot Module A",
+          "page": "/hotspot/HotspotModuleA.json"
+        },
+        {
+          "displayName": "Hotspot Module B",
+          "page": "/hotspot/HotspotModuleB.json"
+        }
+      ]
+    },
+    {
+      "displayName": "Accordion / FAQ",
+      "pages": [
+        {
+          "displayName": "Accordion / FAQ Module",
+          "page": "/faq/FaqModule.json"
+        }
+      ]
+    },
+    {
+      "displayName": "Lists - Accordion",
+      "pages": [
+        {
+          "displayName": "Accordion List A",
+          "page": "/page/list/PageListAccordionA.json"
+        }
+      ]
+    },
+    {
+      "displayName": "Lists - Download",
+      "pages": [
+        {
+          "displayName": "Download Promo List",
+          "page": "/download/list/DownloadList.json"
+        }
+      ]
+    },
+    {
+      "displayName": "Lists - Author",
+      "pages": [
+        {
+          "displayName": "Author List A",
+          "page": "/author/list/AuthorListA.json"
+        },
+        {
+          "displayName": "Author List B",
+          "page": "/author/list/AuthorListB.json"
+        },
+        {
+          "displayName": "Author List C",
+          "page": "/author/list/AuthorListC.json"
+        }
+      ]
+    },
+    {
+      "displayName": "Lists - Carousel",
+      "pages": [
+        {
+          "displayName": "Carousel List A",
+          "page": "/page/list/PageListCarouselA.json"
+        },
+        {
+          "displayName": "Carousel List B",
+          "page": "/page/list/PageListCarouselB.json"
+        },
+        {
+          "displayName": "Carousel List C",
+          "page": "/page/list/PageListCarouselC.json"
+        },
+        {
+          "displayName": "Carousel List D",
+          "page": "/page/list/PageListCarouselD.json"
+        },
+        {
+          "displayName": "Carousel List E",
+          "page": "/page/list/PageListCarouselE.json"
+        }
+      ]
+    },
+    {
+      "displayName": "Lists - Logo",
+      "pages": [
+        {
+          "displayName": "Logo List A",
+          "page": "/logo/list/LogoListA.json"
+        },
+        {
+          "displayName": "Logo List B",
+          "page": "/logo/list/LogoListB.json"
+        }
+      ]
+    },
+    {
+      "displayName": "Lists - Right Rail",
+      "pages": [
+        {
+          "displayName": "Right Rail List A",
+          "page": "/page/list/PageListRightRailA.json"
+        },
+        {
+          "displayName": "Right Rail List B",
+          "page": "/page/list/PageListRightRailB.json"
+        },
+        {
+          "displayName": "Right Rail List C",
+          "page": "/page/list/PageListRightRailC.json"
+        },
+        {
+          "displayName": "Right Rail List D",
+          "page": "/page/list/PageListRightRailD.json"
+        }
+      ]
+    },
+    {
+      "displayName": "Lists - Person",
+      "pages": [
+        {
+          "displayName": "Person List A",
+          "page": "/person/list/PersonListA.json"
+        },
+        {
+          "displayName": "Person List B",
+          "page": "/person/list/PersonListB.json"
+        },
+        {
+          "displayName": "Person List C",
+          "page": "/person/list/PersonListC.json"
+        }
+      ]
+    },
+    {
+      "displayName": "Lists - Podcast",
+      "pages": [
+        {
+          "displayName": "Podcast List A",
+          "page": "/podcast/list/PodcastListA.json"
+        },
+        {
+          "displayName": "Podcast List B",
+          "page": "/podcast/list/PodcastListB.json"
+        },
+        {
+          "displayName": "Podcast List C",
+          "page": "/podcast/list/PodcastListC.json"
+        }
+      ]
+    },
+    {
+      "displayName": "Lists - Podcast Episode",
+      "pages": [
+        {
+          "displayName": "Podcast Episode List",
+          "page": "/podcast/list/PodcastEpisodeList.json"
+        }
+      ]
+    },
+    {
+      "displayName": "Lists - Standard",
+      "pages": [
+        {
+          "displayName": "Standard List A",
+          "page": "/page/list/PageListStandardA.json"
+        },
+        {
+          "displayName": "Standard List B",
+          "page": "/page/list/PageListStandardB.json"
+        },
+        {
+          "displayName": "Standard List C",
+          "page": "/page/list/PageListStandardC.json"
+        },
+        {
+          "displayName": "Standard List D",
+          "page": "/page/list/PageListStandardD.json"
+        },
+        {
+          "displayName": "Standard List E",
+          "page": "/page/list/PageListStandardE.json"
+        },
+        {
+          "displayName": "Standard List F",
+          "page": "/page/list/PageListStandardF.json"
+        },
+        {
+          "displayName": "Standard List G",
+          "page": "/page/list/PageListStandardG.json"
+        },
+        {
+          "displayName": "Standard List H",
+          "page": "/page/list/PageListStandardH.json"
+        },
+        {
+          "displayName": "Standard List I",
+          "page": "/page/list/PageListStandardI.json"
+        },
+        {
+          "displayName": "Standard List J",
+          "page": "/page/list/PageListStandardJ.json"
+        },
+        {
+          "displayName": "Standard List K",
+          "page": "/page/list/PageListStandardK.json"
+        },
+        {
+          "displayName": "Standard List L",
+          "page": "/page/list/PageListStandardL.json"
+        },
+        {
+          "displayName": "Standard List M",
+          "page": "/page/list/PageListStandardM.json"
+        },
+        {
+          "displayName": "Standard List N",
+          "page": "/page/list/PageListStandardN.json"
+        },
+        {
+          "displayName": "Standard List O",
+          "page": "/page/list/PageListStandardO.json"
+        }
+      ]
+    },
+    {
+      "displayName": "Grouped List",
+      "pages": [
+        {
+          "displayName": "Page Grouped List",
+          "page": "/page/grouped-list/PageGroupedList.json"
+        }
+      ]
+    },
+    {
+      "displayName": "Lists - Quote",
+      "pages": [
+        {
+          "displayName": "Quote List A",
+          "page": "/quote/QuoteListA.json"
+        },
+        {
+          "displayName": "Quote List B",
+          "page": "/quote/QuoteListB.json"
+        }
+      ]
+    },
+    {
+      "displayName": "Lists - Stat",
+      "pages": [
+        {
+          "displayName": "Stat List A",
+          "page": "/stat/StatListA.json"
+        },
+        {
+          "displayName": "Stat List B",
+          "page": "/stat/StatListB.json"
+        }
+      ]
+    },
+    {
+      "displayName": "Promos - Download",
+      "pages": [
+        {
+          "displayName": "Download Promo",
+          "page": "/download/promo/DownloadPromo.json"
+        },
+        {
+          "displayName": "Download Promo Module",
+          "page": "/download/promo/DownloadPromoModule.json"
+        }
+      ]
+    },
+    {
+      "displayName": "Promos - Page",
+      "pages": [
+        {
+          "displayName": "Promo Module A",
+          "page": "/page/promo/PagePromoModuleA.json"
+        },
+        {
+          "displayName": "Promo Module B",
+          "page": "/page/promo/PagePromoModuleB.json"
+        },
+        {
+          "displayName": "Promo Module C",
+          "page": "/page/promo/PagePromoModuleC.json"
+        },
+        {
+          "displayName": "Promo Module Search Spotlight",
+          "page": "/page/promo/PagePromoModuleSearchSpotlight.json"
+        }
+      ]
+    },
+    {
+      "displayName": "Promos - Person",
+      "pages": [
+        {
+          "displayName": "Person Promo",
+          "page": "/person/promo/PersonPromo.json"
+        },
+        {
+          "displayName": "Person Promo Module",
+          "page": "/person/promo/PersonPromoModule.json"
+        }
+      ]
+    },
+    {
+      "displayName": "Promos - Podcast",
+      "pages": [
+        {
+          "displayName": "Podcast Promo A",
+          "page": "/podcast/promo/PodcastPromoA.json"
+        },
+        {
+          "displayName": "Podcast Promo B",
+          "page": "/podcast/promo/PodcastPromoB.json"
+        },
+        {
+          "displayName": "Podcast Promo C",
+          "page": "/podcast/promo/PodcastPromoC.json"
+        },
+        {
+          "displayName": "Podcast Promo D",
+          "page": "/podcast/promo/PodcastPromoD.json"
+        }
+      ]
+    },
+    {
+      "displayName": "Promos - Podcast Episode",
+      "pages": [
+        {
+          "displayName": "Podcast Episode",
+          "page": "/podcast/promo/PodcastEpisodePromo.json"
+        }
+      ]
+    },
+    {
+      "displayName": "Quote",
+      "pages": [
+        {
+          "displayName": "Quote",
+          "page": "/quote/Quote.json"
+        }
+      ]
+    },
+    {
+      "displayName": "Page Heading",
+      "pages": [
+        {
+          "displayName": "Page Heading",
+          "page": "/page/PageHeading.json"
+        },
+        {
+          "displayName": "Page Heading with Video background",
+          "page": "/page/PageHeadingVideo.json"
+        }
+      ]
+    },
+    {
+      "displayName": "Search",
+      "pages": [
+        {
+          "displayName": "Search Module",
+          "page": "/search/SearchModule.json"
+        },
+        {
+          "displayName": "Search Result Module A",
+          "page": "/search/SearchResultsModuleA.json"
+        },
+        {
+          "displayName": "Search Result Module B",
+          "page": "/search/SearchResultsModuleB.json"
+        }
+      ]
+    },
+    {
+      "displayName": "Snippet",
+      "pages": [
+        {
+          "displayName": "Text Snippet",
+          "page": "/snippet/SnippetTextOption.json"
+        }
+      ]
+    },
+    {
+      "displayName": "Topic",
+      "pages": [
+        {
+          "displayName": "Topic Page",
+          "page": "/topic/TopicPage.json"
+        }
+      ]
+    },
+    {
+      "displayName": "Auth",
+      "pages": [
+        {
+          "displayName": "Login Module",
+          "page": "/auth/login/module/LoginModule.json"
+        }
+      ]
+    },
+    {
+      "displayName": "Pages",
+      "pages": [
+        {
+          "displayName": "Article - Standard Lead",
+          "page": "/article/ArticlePageStandard.json"
+        },
+        {
+          "displayName": "Article - Large Lead",
+          "page": "/article/ArticlePageLarge.json"
+        },
+        {
+          "displayName": "Article - Overlay Lead",
+          "page": "/article/ArticlePageOverlay.json"
+        },
+        {
+          "displayName": "Article - Nested Lead",
+          "page": "/article/ArticlePageNested.json"
+        },
+        {
+          "displayName": "Article - Full Width Lead",
+          "page": "/article/ArticlePageFullWidth.json"
+        },
+        {
+          "displayName": "Article - Sponsored",
+          "page": "/article/ArticlePage-Sponsored.json"
+        },
+        {
+          "displayName": "Article - No Aside",
+          "page": "/article/ArticlePage-NoAside.json"
+        },
+        {
+          "displayName": "Article - Table RTE",
+          "page": "/article/ArticlePage-Table.json"
+        },
+        {
+          "displayName": "Article - With Coral Comments",
+          "page": "/article/ArticlePage-WithCoral.json"
+        },
+        {
+          "displayName": "Article - With Disqus Comments",
+          "page": "/article/ArticlePage-WithDisqus.json"
+        },
+        {
+          "displayName": "Author",
+          "page": "/author/AuthorPage.json"
+        },
+        {
+          "displayName": "Blog - Landing Page",
+          "page": "/blog/BlogPage.json"
+        },
+        {
+          "displayName": "Blog - Post Page",
+          "page": "/blog/blogpost/BlogPostPage.json"
+        },
+        {
+          "displayName": "Home Page",
+          "page": "/page/HomePage.json"
+        },
+        {
+          "displayName": "Home Page - Animated",
+          "page": "/page/HomePage-Animated.json"
+        },
+        {
+          "displayName": "Home Page - With Hat",
+          "page": "/page/HomePage-WithHat.json"
+        },
+        {
+          "displayName": "Gallery Page - Carousel",
+          "page": "/gallery/GalleryPage.json"
+        },
+        {
+          "displayName": "Gallery Page - Waterfall",
+          "page": "/gallery/GalleryPage-Waterfall.json"
+        },
+        {
+          "displayName": "Listicle Page",
+          "page": "/listicle/ListiclePage.json"
+        },
+        {
+          "displayName": "Live Blog",
+          "page": "/liveblog/LiveBlogPage.json"
+        },
+        {
+          "displayName": "Person Page",
+          "page": "/person/PersonPage.json"
+        },
+        {
+          "displayName": "Podcast Page",
+          "page": "/podcast/PodcastPage.json"
+        },
+        {
+          "displayName": "Podcast Episode Page",
+          "page": "/podcast/PodcastEpisodePage.json"
+        },
+        {
+          "displayName": "Press Release",
+          "page": "/pressrelease/PressReleasePage.json"
+        },
+        {
+          "displayName": "Search Results Page - No Results",
+          "page": "/search/SearchResultsPage-NoResults.json"
+        },
+        {
+          "displayName": "Search Results Page A",
+          "page": "/search/SearchResultsPageA.json"
+        },
+        {
+          "displayName": "Search Results Page B",
+          "page": "/search/SearchResultsPageB.json"
+        },
+        {
+          "displayName": "Section Page",
+          "page": "/section/SectionPage.json"
+        },
+        {
+          "displayName": "Section Page - No Nav",
+          "page": "/section/SectionPage-noNav.json"
+        },
+        {
+          "displayName": "Tag Page",
+          "page": "/tag/TagPage.json"
+        },
+        {
+          "displayName": "Video Test Page",
+          "page": "/page/VideoTestPage.json"
+        }
+      ]
+    },
+    {
+      "displayName": "Gallery",
+      "pages": [
+        {
+          "displayName": "Gallery Module",
+          "page": "/carousel/Carousel.json"
+        }
+      ]
+    },
+    {
+      "displayName": "Product",
+      "pages": [
+        {
+          "displayName": "Product List",
+          "page": "/product/list/ProductList.json"
+        },
+        {
+          "displayName": "Product List Carousel",
+          "page": "/product/list/ProductListCarousel.json"
+        },
+        {
+          "displayName": "Product List Enhancement",
+          "page": "/product/list/ProductListEnhancement.json"
+        },
+        {
+          "displayName": "Horizontal - Product Promo Module 50/50",
+          "page": "/product/promo/ProductPromoModule.json"
+        },
+        {
+          "displayName": "Horizontal - Product Promo Module 70/30",
+          "page": "/product/promo/ProductPromoModule7030.json"
+        },
+        {
+          "displayName": "Product Promo Enhancement 50/50",
+          "page": "/product/promo/ProductPromoEnhancement5050.json"
+        },
+        {
+          "displayName": "Product Promo Enhancement 30/70",
+          "page": "/product/promo/ProductPromoEnhancement3070.json"
+        },
+        {
+          "displayName": "Product Promo Enhancement 70/30",
+          "page": "/product/promo/ProductPromoEnhancement7030.json"
+        },
+        {
+          "displayName": "Product Search Results Page A",
+          "page": "/product/search/ProductSearchResultsPageA.json"
+        },
+        {
+          "displayName": "Product Search Results Page B",
+          "page": "/product/search/ProductSearchResultsPageB.json"
+        },
+        {
+          "displayName": "Product Search Results Module A",
+          "page": "/product/search/ProductSearchResultsModuleA.json"
+        },
+        {
+          "displayName": "Product Search Results Module B",
+          "page": "/product/search/ProductSearchResultsModuleB.json"
+        }
+      ]
+    },
+    {
+      "displayName": "Tabs",
+      "pages": [
+        {
+          "displayName": "Tabs Module",
+          "page": "/tab/Tabs.json"
+        }
+      ]
+    },
+    {
+      "displayName": "Newsletter",
+      "pages": [
+        {
+          "displayName": "Newsletter",
+          "page": "/newsletter/Newsletter.json"
+        }
+      ]
+    },
+    {
+      "displayName": "Video",
+      "pages": [
+        {
+          "displayName": "Video Module",
+          "page": "/video/VideoModule.json"
+        },
+        {
+          "displayName": "Video Playlist Module",
+          "page": "/video/VideoPlaylistModule.json"
+        }
+      ]
+    }
+  ]
+}

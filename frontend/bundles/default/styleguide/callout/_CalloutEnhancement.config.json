@@ -1,0 +1,11 @@
+{
+  "styles": {
+    "/callout/CalloutEnhancement.hbs": {
+      "inline": true,
+      "fields": [
+          "enhancementAlignmentNoFullWidth"
+      ]
+    }
+  }
+}
+

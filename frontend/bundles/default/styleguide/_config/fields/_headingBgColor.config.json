@@ -1,0 +1,8 @@
+{
+  "fields": {
+    "headingBgColor": {
+      "displayName": "Heading Background Color",
+      "type": "color"
+    }
+  }
+}

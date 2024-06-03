@@ -1,0 +1,12 @@
+<td
+    {{~#with colspan}} colspan="{{this}}"{{/with~}}
+    {{~#with rowspan}} rowspan="{{this}}"{{/with~}}
+    {{~#or horizontalAlign verticalAlign~}}
+                       style="
+                           {{~#with horizontalAlign}} text-align: {{this}};{{/with~}}
+                           {{~#with verticalAlign}} vertical-align: {{this}};{{/with~}}
+                           "
+    {{~/or~}}
+>
+    {{~body~}}
+</td>

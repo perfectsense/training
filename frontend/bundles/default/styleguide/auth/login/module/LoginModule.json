@@ -1,0 +1,23 @@
+{
+  "_template": "/auth/login/module/LoginModule.hbs",
+  "title": "{{words([2,4])}}",
+  "description": "{{words([4,10])}}",
+  "authenticationProviderLinks": [
+    {
+      "_include": "/auth/provider/AuthenticationProviderLink.json",
+      "providerIdentifier": "facebook"
+    },
+    {
+      "_include": "/auth/provider/AuthenticationProviderLink.json",
+      "providerIdentifier": "google"
+    },
+    {
+      "_include": "/auth/provider/AuthenticationProviderLink.json",
+      "providerIdentifier": "linkedin"
+    },
+    {
+      "_include": "/auth/provider/AuthenticationProviderLink.json",
+      "providerIdentifier": "twitter"
+    }
+  ]
+}

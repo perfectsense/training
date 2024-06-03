@@ -1,0 +1,8 @@
+{
+  "fields": {
+    "suppressPagination": {
+      "type": "boolean",
+      "displayName": "Prevent pagination controls from displaying on this list"
+    }
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "fields": {
+    "suppressCommenting": {
+      "type": "boolean",
+      "displayName": "Suppress commenting on this one page"
+    }
+  }
+}

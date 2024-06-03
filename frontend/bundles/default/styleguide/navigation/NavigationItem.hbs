@@ -1,0 +1,37 @@
+<div class="NavigationItem {{#if items}} has-menu{{/if}}">
+    <div class="NavigationItem-text">
+        {{#if href}}
+            <a {{#if showAsButton}}class="Button" data-style="pill"{{/if}} href="{{href}}"{{#with target}} target="{{this}}"{{/with}}>{{~text~}}</a>
+        {{else}}
+            <span>{{~text~}}</span>
+        {{/if}}
+        {{#if items}}
+            <div class="NavigationItem-more">
+                <button aria-label="{{format "/navigation/Navigation" "subNavText"}}">
+                    {{~include (iconPath 'caret-down')~}}
+                </button>
+            </div>
+        {{/if}}
+    </div>
+
+    {{#if (or items (and content (not navColumns) (not navColumnMosaic)))}}
+    <div class="NavigationItem-panel">
+        <ul class="NavigationItem-items"{{#with navColumnsMosaic}} data-mosaic="true"{{/with}}{{#with navColumns}} data-columns="{{this}}"{{/with}}>
+            {{#with items}}
+                {{#each this}}
+                    <li class="NavigationItem-items-item">{{~this~}}</li>
+                {{/each}}
+            {{/with}}
+        </ul>
+        {{#if (and (not navColumns) (not navColumnMosaic))}}
+            {{#with content}}
+            <div class="NavigationItem-content" data-modulewell>
+                {{#each this}}
+                    {{include (fallback _styledTemplate _template) this backgroundColor="green"}}
+                {{/each}}
+            </div>
+            {{/with}}
+        {{/if}}
+    </div>
+    {{/if}}
+</div>

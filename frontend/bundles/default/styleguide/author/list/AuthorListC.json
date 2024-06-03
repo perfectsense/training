@@ -1,0 +1,13 @@
+{
+  "_template": "/author/list/AuthorList.hbs",
+  "_styledTemplate": "/author/list/AuthorListC.hbs",
+  "title": "Author List C",
+  "description": "{{words([15,10])}}",
+  "anchorId": "anchorTest",
+  "items": [
+    {
+      "_include": "/author/promo/AuthorPromo.json",
+      "_repeat": 10
+    }
+  ]
+}

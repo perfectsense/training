@@ -1,0 +1,14 @@
+<bsp-audio-player class="HTML5AudioPlayerB"
+    {{~#with (format '/audio/HTML5AudioPlayer' 'hoursAbbreviation')}} data-hours-abbreviation="{{this}}"{{/with~}}
+    {{~#with (format '/audio/HTML5AudioPlayer' 'minutesAbbreviation')}} data-minutes-abbreviation="{{this}}"{{/with~}}
+    >
+    <audio>
+        {{~#each sources}}{{this}}{{/each~}}
+    </audio>
+    <button data-click="playPause" class="HTML5AudioPlayerB-playPauseButton">
+
+        <div data-not-playing>{{include (iconPath 'play-circle' 'fill')}}{{format '/audio/HTML5AudioPlayer' 'playText'}} </div>
+        <div data-if-playing>{{include (iconPath 'pause-circle' 'fill')}}</svg> {{format '/audio/HTML5AudioPlayer' 'pauseText'}} </div>
+    </button>
+    <div class="HTML5AudioPlayerB-duration" data-duration></div>
+</bsp-audio-player>

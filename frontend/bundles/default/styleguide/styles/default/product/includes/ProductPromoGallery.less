@@ -1,0 +1,50 @@
+.ProductPromoGallery {
+  display: grid;
+  place-items: center;
+
+  &-slides,
+  &-controls {
+    grid-row: 1;
+    grid-column: 1;
+  }
+
+  &-slides {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+
+      .Link {
+        scroll-snap-stop: always;
+        scroll-snap-align: start;
+        flex: 0 0 100%;
+      }
+
+      .Image {
+        width: 100%;
+      }
+  }
+
+  &-controls {
+    padding: 8px;
+    display: flex;
+    justify-self: stretch;
+    justify-content: space-between;
+    pointer-events: none;
+  }
+
+  button {
+    pointer-events: auto;
+
+    &[data-size="small"] {
+      justify-content: center;
+      width: 32px;
+      height: 32px;
+      padding: 0;
+    }
+
+    svg {
+      width: 24px;
+      height: 24px;
+    }
+  }
+}

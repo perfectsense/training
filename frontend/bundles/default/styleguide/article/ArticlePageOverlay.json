@@ -1,0 +1,4 @@
+{
+  "_include": "/article/ArticlePage.json",
+  "_styledTemplate": "/article/ArticlePageOverlay.hbs"
+}

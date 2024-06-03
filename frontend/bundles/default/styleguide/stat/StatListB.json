@@ -1,0 +1,11 @@
+{
+  "_include": "/stat/StatList.json",
+  "_styledTemplate": "/stat/StatListB.hbs",
+  "title": "Stat List B",
+  "items": [
+    {
+      "_include": "/stat/StatPromo.json",
+      "_repeat": 3
+    }
+  ]
+}

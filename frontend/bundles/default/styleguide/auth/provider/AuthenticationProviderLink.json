@@ -1,0 +1,6 @@
+{
+  "_template": "AuthenticationProviderLink.hbs",
+  "providerIdentifier": "facebook",
+  "body": "Login with Provider",
+  "url": "#"
+}

@@ -1,0 +1,40 @@
+.PageListStandardD {
+  &[data-item-display-style="card"] {
+    .PagePromo {
+      padding: var(--spacing-lg) var(--spacing-md);
+    }
+  }
+
+  .PageList {
+    &-items {
+      &-item {
+        border-top: 1px solid var(--color-list-border);
+        padding-block: var(--spacing-lg);
+
+        &:last-child {
+          border-bottom: 1px solid var(--color-list-border);
+        }
+      }
+    }
+  }
+
+  .PagePromo {
+    &[data-align-left] .PagePromo-media,
+
+    &-media {
+      margin-right: 0;
+    }
+
+    &-content {
+      flex-grow: 1;
+    }
+
+    &-description {
+      &:extend(.subhead-2 all);
+    }
+
+    &-title {
+      &:extend(.headline-5 all);
+    }
+  }
+}

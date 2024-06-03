@@ -1,0 +1,7 @@
+{
+  "_template": "/video/VideoModule.hbs",
+  "title": "",
+  "player": {
+    "_template": "/jwplayer/JwVideoPlayer.hbs"
+  }
+}

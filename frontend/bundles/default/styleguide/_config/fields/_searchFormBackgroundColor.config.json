@@ -1,0 +1,9 @@
+{
+  "fields": {
+    "searchFormBackgroundColor": {
+      "displayName": "Search Form Background Color",
+      "type": "color",
+      "cms.ui.note": "Configure the background color behind main search field and search filters"
+    }
+  }
+}

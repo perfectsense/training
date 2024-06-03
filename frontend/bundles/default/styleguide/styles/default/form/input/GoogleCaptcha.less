@@ -1,0 +1,11 @@
+.GoogleCaptcha {
+  &:not([data-size="invisible"]) {
+    display: inline-block;
+  }
+
+  &[data-size="invisible"] {
+    position: absolute;
+    width: 0;
+    height: 0;
+  }
+}

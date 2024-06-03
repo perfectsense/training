@@ -1,0 +1,13 @@
+{{#if actions}}
+    <div class="Page-actions">
+        {{actions}}
+
+        {{#unless suppressCommenting}}
+            {{#each commenting}}
+                {{#eq this._template "/disqus/DisqusCommenting.hbs"}}
+                    {{include "/disqus/DisqusCommentCount.hbs" this}}
+                {{/eq}}
+            {{/each}}
+        {{/unless}}
+    </div>
+{{/if}}

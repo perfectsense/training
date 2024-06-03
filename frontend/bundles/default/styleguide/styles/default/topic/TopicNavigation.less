@@ -1,0 +1,28 @@
+.TopicNavigation {
+  margin: 20px 0;
+  padding: 40px 0;
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+  display: flex;
+
+  &-previousTopic,
+  &-nextTopic {
+    display: block;
+    color: inherit;
+
+    &-label {
+      .label-1;
+      color: var(--color-secondary-text);
+    }
+  }
+
+  &-previousTopic {
+    margin-right: auto;
+  }
+
+  &-nextTopic {
+    text-align: right;
+    margin-left: auto;
+  }
+}
+

@@ -1,0 +1,6 @@
+{
+  "_include": "/podcast/list/PodcastList.json",
+  "_styledTemplate": "/podcast/list/PodcastListB.hbs",
+  "title": "Podcast List B"
+}
+

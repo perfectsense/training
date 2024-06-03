@@ -1,0 +1,53 @@
+.PageListStandardG {
+  display: block;
+
+  .PageList {
+    &-items {
+      display: grid;
+      row-gap: var(--spacing-lg);
+      column-gap: var(--spacing-lg);
+
+      &-item {
+        border-bottom: 1px solid var(--color-list-border);
+        padding-bottom: var(--spacing-md);
+        row-gap: var(--spacing-lg);
+      }
+
+      .PagePromo {
+        display: flex;
+        column-gap: var(--spacing-md);
+
+        &-content {
+          flex-grow: 1;
+        }
+
+        &-media {
+          img {
+            max-width: 100px;
+          }
+        }
+
+        &-title {
+          &:extend(.headline-8 all);
+        }
+      }
+    }
+  }
+
+  &[data-item-display-style="card"] {
+    .PagePromo {
+      padding: var(--spacing-lg) var(--spacing-md);
+    }
+  }
+
+  @container (@cq-md) {
+    .PageList-items {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+
+      &-item {
+        margin-top: 0;
+      }
+    }
+  }
+}

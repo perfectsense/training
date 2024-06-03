@@ -1,0 +1,9 @@
+{
+  "styles": {
+    "/person/PersonPage.hbs": {
+        "fields": [
+            "suppressCommenting"
+        ]
+    }
+  }
+}

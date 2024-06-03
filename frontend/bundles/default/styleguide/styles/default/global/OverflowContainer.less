@@ -1,0 +1,34 @@
+bsp-overflow-container {
+  transition: box-shadow 0.15s ease;
+
+  --inactive-shadow: 6px -6px rgba(0, 0, 0, 0);
+  --active-shadow: 6px -6px rgba(0, 0, 0, 0.2);
+
+  --top-shadow: inset 0px 8px var(--inactive-shadow);
+  --bottom-shadow: inset 0px -8px var(--inactive-shadow);
+  --left-shadow: inset 8px 0px var(--inactive-shadow);
+  --right-shadow: inset -8px 0px var(--inactive-shadow);
+
+  box-shadow:
+    var(--top-shadow),
+    var(--bottom-shadow),
+    var(--left-shadow),
+    var(--right-shadow)
+    ;
+
+  &[data-overflow-left] {
+    --left-shadow: inset 8px 0px var(--active-shadow);
+  }
+
+  &[data-overflow-right] {
+    --right-shadow: inset -8px 0px var(--active-shadow);
+  }
+
+  &[data-overflow-top] {
+    --top-shadow: inset 0px 8px var(--active-shadow);
+  }
+
+  &[data-overflow-bottom] {
+    --bottom-shadow: inset 0px -8px var(--active-shadow);
+  }
+}

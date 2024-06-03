@@ -1,0 +1,8 @@
+{
+  "fields": {
+    "showContainerTitle": {
+      "type": "boolean",
+      "displayName": "Check to have this container show the title"
+    }
+  }
+}

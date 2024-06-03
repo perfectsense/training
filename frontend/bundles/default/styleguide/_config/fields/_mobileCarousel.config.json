@@ -1,0 +1,8 @@
+{
+  "fields": {
+    "mobileCarousel": {
+      "type": "boolean",
+      "displayName": "Should this list carousel on mobile screen sizes?"
+    }
+  }
+}

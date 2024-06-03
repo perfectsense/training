@@ -1,0 +1,33 @@
+.PageListRightRailD {
+  .ModuleHeader {
+    &-description {
+      &:extend(.headline-3 all);
+    }
+
+    &-description {
+      &:extend(.subhead-2 all);
+    }
+  }
+
+  .PageList {
+    &-items {
+      display: grid;
+      row-gap: var(--spacing-lg);
+      column-gap: var(--spacing-lg);
+    }
+
+    &-cta {
+      .Button {
+        margin-left: 0;
+      }
+    }
+  }
+
+  @container (@cq-sm) {
+    .PageList {
+      &-items {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  }
+}

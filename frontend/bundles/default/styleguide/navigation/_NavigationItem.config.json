@@ -1,0 +1,11 @@
+{
+  "styles": {
+    "/navigation/NavigationItem.hbs": {
+      "fields": [
+        "navColumns",
+        "navColumnsMosaic",
+        "showAsButton"
+      ]
+    }
+  }
+}

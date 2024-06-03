@@ -1,0 +1,5 @@
+{
+  "_template": "PullQuote.hbs",
+  "quote": "{{words([15,25])}}",
+  "attribution": "{{words([5,15])}}"
+}

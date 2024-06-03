@@ -1,0 +1,15 @@
+{{#if flagText}}
+<span class="ProductPromoFlag"
+    {{~#if flagBorder}} data-flag-border{{/if}}
+    {{~#and flagText url}} data-has-flag-text{{/and~}}
+    {{~#with flagPosition}} data-flag-position="{{this}}"{{/with~}}
+    {{~#or backgroundColor borderColor flagBackgroundColor flagBorderColor flagTextColor}} style="
+        {{~#with backgroundColor}}--color-module-background:{{this}};{{/with~}}
+        {{~#with borderColor}}--color-module-border:{{this}};{{/with~}}
+        {{~#with flagBackgroundColor}}--color-flag-background:{{this}};{{/with~}}
+        {{~#with flagBorderColor}} --color-flag-border:{{this}};{{/with}}
+        {{~#with flagTextColor}} --color-flag-text:{{this}};{{/with}}
+    "{{/or~}}>
+    <span class="ProductPromoFlag-flagText">{{flagText}}</span>
+</span>
+{{/if}}

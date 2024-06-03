@@ -1,0 +1,8 @@
+{
+  "fields": {
+    "opacityOverlay": {
+      "displayName": "Set the opacity value for the overlay, number from 0 to 100",
+      "type": "text"
+    }
+  }
+}

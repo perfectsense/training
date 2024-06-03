@@ -1,0 +1,31 @@
+<div class="Author">
+    {{#if image}}
+    <div class="Author-image">
+        {{#if url}}<a href="{{url}}">{{/if}}
+            {{#each image}}
+                {{#set imageSize="small-square"}}
+                    {{include "/image/Image.hbs" this alt=../name}}
+                {{/set}}
+            {{/each}}
+        {{#if url}}</a>{{/if}}
+    </div>
+    {{/if}}
+
+    <div class="Author-content">
+        {{#if name}}
+            <div class="Author-name">
+                {{#if url}}<a href="{{url}}">{{/if}}{{#each image}}
+                {{#set imageSize="small-square"}}
+                    {{include "/image/Image.hbs" this alt=../name}}
+                {{/set}}
+            {{/each}}<span>{{name}}</span>{{#if url}}</a>{{/if}}
+            </div>
+        {{/if}}
+
+        {{#with biography}}
+            <div class="Author-bio RichTextBody">
+                {{this}}
+            </div>
+        {{/with}}
+    </div>
+</div>

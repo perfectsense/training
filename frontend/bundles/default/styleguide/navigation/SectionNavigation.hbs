@@ -1,0 +1,30 @@
+<bsp-section-nav class="SectionNavigation">
+    <div class="SectionNavigation-wrapper">
+        <bsp-tabs-horizontal-navigation class="TabsHorizontalNavigation">
+            <button class="Button" type="button" data-click="previous" aria-label="Previous">
+                {{include (iconPath 'caret-left')}}
+            </button>
+            <button class="Button" type="button" data-click="next" aria-label="Next">
+                {{include (iconPath 'caret-right')}}
+            </button>
+            <div class="TabsHorizontalNavigation-content">
+                <div class="SectionNavigation-navWrapper">
+                    <nav>
+                        {{#with items}}
+                            <ul class="SectionNavigation-items">
+                                {{#each this}}
+                                    {{!-- suppresses social items, as they do not need to show up in the section nav --}}
+                                    {{#if this.text}}
+                                        <li class="SectionNavigation-items-item" {{#if this.isCurrent}}data-current-nav-item{{/if}}>
+                                            {{include "/navigation/SectionNavigationItem.hbs" this}}
+                                        </li>
+                                    {{/if}}
+                                {{/each}}
+                            </ul>
+                        {{/with}}
+                    </nav>
+                </div>
+            </div>
+        </bsp-tabs-horizontal-navigation>
+    </div>
+</bsp-section-nav>

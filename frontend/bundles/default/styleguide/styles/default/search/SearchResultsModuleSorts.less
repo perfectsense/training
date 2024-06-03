@@ -1,0 +1,66 @@
+.SearchResultsModuleSorts {
+  font-size: 11px;
+  font-weight: 600;
+  margin-left: auto;
+  flex-shrink: 0;
+
+  &-controlContainer {
+    position: relative;
+  }
+
+  label {
+    &:extend(.label-5 all);
+    color: var(--color-primary-text);
+    display: flex;
+    column-gap: var(--spacing-sm);
+    align-items: center;
+  }
+
+  &-control {
+    &:extend(.label-5 all);
+    color: inherit;
+    white-space: nowrap;
+    gap: var(--spacing-sm);
+    align-items: center;
+    display: inline-flex;
+    background: var(--color-site-bg);
+    border: 1px solid var(--color-primary-text);
+    border-radius: 20px;
+    cursor: pointer;
+    height: 32px;
+    padding: 7px 10px;
+    min-width: 120px;
+  }
+
+  &-controlText {
+    flex-grow: 1;
+    text-align: left;
+  }
+
+  svg {
+    color: var(--color-primary-text);
+    height: 16px;
+    width: 16px;
+  }
+
+  dialog {
+    max-height: 480px;
+    width: 100%;
+    overflow: auto;
+    top: 100%;
+    z-index: 1;
+    padding: 0;
+    border-radius: 2px;
+    margin: 5px 0 0;
+    box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.1);
+    border: solid 1px var(--color-border);
+    background-color: var(--color-site-bg);
+  }
+
+  &[data-open] {
+    svg {
+      transform-origin: 0%;
+      transform: scaleY(-1);
+    }
+  }
+}

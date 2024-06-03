@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html class="PodcastPage" {{~include "/page/Page-htmlAttributes.hbs" this}}>
+{{include "/page/Page-head.hbs" this}}
+
+<body class="Page-body">
+    {{include "/page/Page-bodyStart.hbs" this}}
+    {{include "/page/Page-header.hbs" this}}
+    <div data-moduleroot>
+        {{include "/page/Page-above.hbs" this}}
+
+        <div class="PodcastPage-intro">
+            {{#with image}}
+                {{#set imageSize="medium-square"}}
+                    <div class="PodcastEpisodePage-image">{{this}}</div>
+                {{/set}}
+            {{/with}}
+
+            <div class="PodcastPage-introTopRow">
+                {{include "/page/Page-breadcrumbs.hbs" this}}
+                {{include "/page/Page-headline.hbs" this}}
+            </div>
+
+            <div class="PodcastPage-introBottomRow">
+                {{include "/page/Page-subHeadline.hbs" this}}
+
+                {{#with providers}}{{this}}{{/with}}
+            </div>
+        </div>
+
+        <div class="PodcastPage-columns">
+            <div class="PodcastPage-column">
+                <main class="Page-main">
+                    {{#with body}}
+                        <div class="Page-articleBody">
+                            {{#set imageSize="medium-4x3"}}
+                                <div class="RichTextBody">{{this}}</div>
+                            {{/set}}
+                        </div>
+                    {{/with}}
+
+                    {{#with main}}
+                        <div class="PodcastPage-related-content">
+                            {{#each this}}
+                                {{this}}
+                            {{/each}}
+                        </div>
+                    {{/with}}
+                </main>
+            </div>
+            {{#if aside}}
+                <div class="PodcastPage-column">
+                    {{include '/page/Page-aside.hbs' this}}
+                </div>
+            {{/if}}
+        </div>
+
+        {{include "/page/Page-below.hbs" this}}
+    </div>
+    {{include "/page/Page-footer.hbs" this}}
+    {{include "/page/Page-extraBodyItems.hbs" this}}
+</body>
+</html>

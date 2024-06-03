@@ -1,0 +1,14 @@
+<a class="SocialLink" rel="noreferrer" href="{{href}}" target="_blank" data-social-service="{{socialService}}">
+    {{#eq socialService 'facebook'}}{{include (iconPath 'facebook-logo')}}{{/eq}}
+    {{#eq socialService 'twitter'}}{{include (iconPath 'x-logo')}}{{/eq}}
+    {{#eq socialService 'linkedin'}}{{include (iconPath 'linkedin-logo')}}{{/eq}}
+    {{#eq socialService 'instagram'}}{{include (iconPath 'instagram-logo')}}{{/eq}}
+    {{#eq socialService 'tiktok'}}{{include (iconPath 'tiktok-logo')}}{{/eq}}
+    {{#eq socialService 'pinterest'}}{{include (iconPath 'pinterest-logo')}}{{/eq}}
+    {{#eq socialService 'tumblr'}}{{include (iconPath 'tumblr-logo')}}{{/eq}}
+    {{#eq socialService 'youtube'}}{{include (iconPath 'youtube-logo')}}{{/eq}}
+    {{#eq socialService 'mailto'}}{{include (iconPath 'envelope-simple')}}{{/eq}}
+    <span class="sr-only">
+        {{socialService}}
+    </span>
+</a>

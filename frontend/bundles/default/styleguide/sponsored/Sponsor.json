@@ -1,0 +1,13 @@
+{
+  "_template": "/sponsored/Sponsor.hbs",
+  "media": {
+    "_include": "/image/Image.json"
+  },
+  "url": "",
+  "target": "",
+  "sponsorName": "{{words([1,3])}}",
+  "sponsorMeaningUrl": "#",
+  "sponsorMeaningTarget": "_self",
+  "sponsorDisplayText": "{{words([1,3])}}",
+  "_hidden": true
+}

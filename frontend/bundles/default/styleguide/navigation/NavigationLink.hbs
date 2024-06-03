@@ -1,0 +1,7 @@
+{{#if href}}
+    <a class="NavigationLink" href="{{href}}"{{#with target}} target="{{this}}"{{/with}}{{extraAttributes}}><span
+            class="NavigationLink-text">{{~text~}}</span>{{#with description}}
+        <span class="NavigationLink-description">{{~this~}}</span>{{/with}}</a>
+{{else}}
+    <div class="NavigationLink"><span class="NavigationLink-text">{{~text~}}</span></div>
+{{/if}}

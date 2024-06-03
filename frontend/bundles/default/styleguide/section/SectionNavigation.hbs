@@ -1,0 +1,8 @@
+{{#each sectionNavigation}}
+    <div class="SectionPage-sectionNavigation" data-align-{{#with ../sectionNavAlign}}{{this}}{{else}}center{{/with}} {{#if ../sectionNavInsidePageHeading}}data-inside-heading{{/if}} style="
+     {{#with ../sectionNavBgColor}}--color-section-nav-background:{{this}}{{/with}};
+     {{#with ../sectionNavTextColor}}--color-section-nav-text:{{this}}{{/with}};
+     {{#with ../sectionNavTextHoverColor}}--color-section-nav-text-hover: {{this}}{{/with}};">
+        {{include "/navigation/SectionNavigation.hbs" this}}
+    </div>
+{{/each}}

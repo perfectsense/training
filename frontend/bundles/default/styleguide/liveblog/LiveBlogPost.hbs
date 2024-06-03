@@ -1,0 +1,42 @@
+<bsp-liveblog-post class="LiveBlogPost"
+    {{~#with postId}} id="{{this}}"{{/with~}}
+    {{~#with postedDateTimestamp}} data-posted-date-timestamp="{{this}}"{{/with~}}
+    {{~#with updateDateTimestamp}} data-updated-date-timestamp="{{this}}"{{/with~}}
+    {{~#with (format 'secondsDelta')}} data-seconds-delta-text="{{this}}"{{/with~}}
+    {{~#with (format 'minutesDelta')}} data-minutes-delta-text="{{this}}"{{/with~}}
+    {{~#with (format 'hoursDelta')}} data-hours-delta-text="{{this}}"{{/with~}}
+    >
+
+    {{#with postedDateTimestamp}}
+        <div class="LiveBlogPost-header">
+            <span class="LiveBlogPost-time">{{format 'time' timestamp=this}}</span>
+            <span class="LiveBlogPost-date">{{format 'date' timestamp=this}}</span>
+        </div>
+    {{/with}}
+
+    {{#with headline}}
+        <div class="LiveBlogPost-headline">
+            {{this}}
+        </div>
+    {{/with}}
+
+    {{#or authors actions}}
+        <div class="LiveBlogPost-info">
+            {{#with authors}}
+                <div class="LiveBlogPost-byline">
+                {{~format 'authorBy'}}&#32;{{#each this}}{{include "/link/Link.hbs" href=url body=name}}{{#unless @last}},&#32;{{/unless}}{{/each~}}
+                </div>
+            {{/with}}
+
+            {{#set deepLinkUrl=postUrl}}
+                {{#with actions}}{{this}}{{/with}}
+            {{/set}}
+        </div>
+    {{/or}}
+
+    {{#with body}}
+        <div class="LiveBlogPost-body RichTextBody">
+            {{this}}
+        </div>
+    {{/with}}
+</bsp-liveblog-post>

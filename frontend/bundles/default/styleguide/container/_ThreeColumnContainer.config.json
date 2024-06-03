@@ -1,0 +1,33 @@
+{
+  "styles": {
+    "/container/ThreeColumnContainer.hbs": {
+      "fields": [
+        "headerTextAlign",
+        "backgroundColor",
+        "useTextColors",
+        "modulePaddingTop",
+        "modulePaddingBottom"
+      ],
+      "templates": [
+        {
+          "displayName": "Three Column Container",
+          "example": "/container/ThreeColumnContainer.json",
+          "height": 768,
+          "width": 1024
+        },
+        {
+          "displayName": "Three Column Container 25/50/25",
+          "example": "/container/ThreeColumnContainer255025.json",
+          "height": 768,
+          "width": 1024
+        },
+        {
+          "displayName": "Three Column Container 50/25/25",
+          "example": "/container/ThreeColumnContainer502525.json",
+          "height": 768,
+          "width": 1024
+        }
+      ]
+    }
+  }
+}

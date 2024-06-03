@@ -1,0 +1,7 @@
+{{#with breadcrumbs}}
+    <div class="Page-breadcrumbs">
+        {{~#each this~}}
+            {{~this~}}{{~#unless @last~}}&nbsp;{{include (iconPath 'caret-right')}}&nbsp;{{~/unless~}}
+        {{~/each~}}
+    </div>
+{{/with}}

@@ -1,0 +1,136 @@
+{
+  "_include": "/page/Page.json",
+  "_template": "/pressrelease/PressReleasePage.hbs",
+  "datePublished": "December 11, 2016",
+  "dateModified": "Modified: December 12, 2016",
+  "headline": "Bacon ipsum burgdoggen sausage boudin, chuck kielbasa picanha cow tenderloin",
+  "subHeadline": "Picanha flank pastrami kielbasa prosciutto frankfurter",
+  "readTime": 5,
+  "breadcrumbs": [
+    {
+      "_include": "/page/BreadcrumbLink.json"
+    },
+    {
+      "_include": "/page/BreadcrumbLink.json"
+    },
+    {
+      "_include": "/page/BreadcrumbLink.json"
+    }
+  ],
+  "tags": [
+    {
+      "_include": "/tag/TagLink.json"
+    },
+    {
+      "_include": "/tag/TagLink.json"
+    },
+    {
+      "_include": "/tag/TagLink.json"
+    }
+  ],
+  "lead": {
+    "_include": "/figure/Figure.json"
+  },
+  "articleBody": [
+    "{{html('<p>Hor bodwo lub onumiskav noflur oghuje niteg wis kawocdo eheodi omlogga loso piiwe zoc. Dabfuwoz muc gis jarej etgi busdalwuj basvaztos Emily Hall taclimoco riwe mes Steve Bailey. Pitaw nu boniz lifbip Billy Brown vinecwah idocovwo Tom Walsh sures Sallie Dennis ri urusotul umce vowo fefehfe. Zurien ej aweraz ubsah re tanisi cadtosu ben fim cainimo Roger Huff nar ocaurha.</p><p>Fiduh lor vaasu ok odaaturag Scott White Ida Simmons burho tep nibi dawirvun meteuja rudin miw nevop sihubib olkunve arkon. Tu gup tago cefa necba hapapju surbor zi mobol fuf izamad begom. Wujiv zalka radsoves selpepij iwoda va sujihojuv im enu Floyd Blair Teresa Jones povro iz ba. Zajus uvpeiga siwtob fuh puc wupnuj rul Darrell Wright wili vinuacu jawib miozan. Iva Harrington cawug Travis Mason putejon bamon itis lace ibenic vaklicpaz Vincent Bell ib lokzof ugubi. Aztak ujebuv unoohecev carku legwaevo iwhese ki ga cekse hufbijme tewu majzorwal vev. Arpaguk wiku jamohkis fupuk ofgu ci zimdor Mason Wheeler altele kuidu egohu ec.</p>')}}",
+    {
+      "_template": "/image/ImageEnhancement.hbs",
+      "enhancementAlignmentImage": "align-left",
+      "item": {
+        "_include": "/figure/Figure.json"
+      }
+    },
+    "{{html('<p>Pimis gul ufdip par metfafihe ceb lakuf urucoror repkabo wuvpifhu Nathaniel Alexander rotvebsiv rerbotka kuvrehmam kignud. Utfocbo an Teresa Rodgers hacno fe Cordelia Munoz nivvo bemitmon dol sibom te moidtif dasevpo upudi he. Tet vubsooza kudnurze dotunegi wed lafhogeg macev vig bolkufig wozil fuwcizma godwuajo tarvi rena ackelli. Todwud mew za mioc dajdat jul hundod pa uzna Millie Cruz vah Eunice Jenkins.</p><p>Ena se kapmutjog vinwupid Lewis Nichols lupdafta mihap mopdac fuhsopko fuhjire ok novhuttas hetow Gertrude Hampton didsu Mabel Duncan raj ba. Kiifajo rowewvu ihu le do ze sur wubid fuhij vifnuin mez mim caacioce biw sim Ronnie Roy ucotuk. Ba zi ov viadu vewgu mokojuguk ovvanuz cu lufme aduizi ko muh. Zasnedfu bu le ituju azfuwas vouji pomjiho keawahej colcaga men abiosa mi muv mulumuata ur. Vit Flora Paul gizevu jetunav du re ad vu bok pi gufured picilfa zozid. Lijes tihba zo ka em tuub ta ecnif rouke sap ojiduvti hacak lo zihil onovares urhafe cegefhu inonak.</p>')}}",
+    {
+      "_template": "/image/ImageEnhancement.hbs",
+      "enhancementAlignmentImage": "align-right",
+      "item": {
+        "_include": "/figure/Figure.json"
+      }
+    },
+    "{{html('<p>Pimis gul ufdip par metfafihe ceb lakuf urucoror repkabo wuvpifhu Nathaniel Alexander rotvebsiv rerbotka kuvrehmam kignud. Utfocbo an Teresa Rodgers hacno fe Cordelia Munoz nivvo bemitmon dol sibom te moidtif dasevpo upudi he. Tet vubsooza kudnurze dotunegi wed lafhogeg macev vig bolkufig wozil fuwcizma godwuajo tarvi rena ackelli. Todwud mew za mioc dajdat jul hundod pa uzna Millie Cruz vah Eunice Jenkins.</p><p>Ena se kapmutjog vinwupid Lewis Nichols lupdafta mihap mopdac fuhsopko fuhjire ok novhuttas hetow Gertrude Hampton didsu Mabel Duncan raj ba. Kiifajo rowewvu ihu le do ze sur wubid fuhij vifnuin mez mim caacioce biw sim Ronnie Roy ucotuk. Ba zi ov viadu vewgu mokojuguk ovvanuz cu lufme aduizi ko muh. Zasnedfu bu le ituju azfuwas vouji pomjiho keawahej colcaga men abiosa mi muv mulumuata ur. Vit Flora Paul gizevu jetunav du re ad vu bok pi gufured picilfa zozid. Lijes tihba zo ka em tuub ta ecnif rouke sap ojiduvti hacak lo zihil onovares urhafe cegefhu inonak.</p>')}}",
+    {
+      "_template": "/image/ImageEnhancement.hbs",
+      "enhancementAlignmentImage": "align-full-width",
+      "item": {
+        "_include": "/figure/Figure.json"
+      }
+    },
+    "{{html('<p>Pimis gul ufdip par metfafihe ceb lakuf urucoror repkabo wuvpifhu Nathaniel Alexander rotvebsiv rerbotka kuvrehmam kignud. Utfocbo an Teresa Rodgers hacno fe Cordelia Munoz nivvo bemitmon dol sibom te moidtif dasevpo upudi he. Tet vubsooza kudnurze dotunegi wed lafhogeg macev vig bolkufig wozil fuwcizma godwuajo tarvi rena ackelli. Todwud mew za mioc dajdat jul hundod pa uzna Millie Cruz vah Eunice Jenkins.</p><p>Ena se kapmutjog vinwupid Lewis Nichols lupdafta mihap mopdac fuhsopko fuhjire ok novhuttas hetow Gertrude Hampton didsu Mabel Duncan raj ba. Kiifajo rowewvu ihu le do ze sur wubid fuhij vifnuin mez mim caacioce biw sim Ronnie Roy ucotuk. Ba zi ov viadu vewgu mokojuguk ovvanuz cu lufme aduizi ko muh. Zasnedfu bu le ituju azfuwas vouji pomjiho keawahej colcaga men abiosa mi muv mulumuata ur. Vit Flora Paul gizevu jetunav du re ad vu bok pi gufured picilfa zozid. Lijes tihba zo ka em tuub ta ecnif rouke sap ojiduvti hacak lo zihil onovares urhafe cegefhu inonak.</p>')}}",
+    {
+      "_template": "/image/ImageEnhancement.hbs",
+      "enhancementAlignmentImage": "align-portrait-right",
+      "item": {
+        "_include": "/figure/Figure.json"
+      }
+    },
+    "{{html('<p>Pimis gul ufdip par metfafihe ceb lakuf urucoror repkabo wuvpifhu Nathaniel Alexander rotvebsiv rerbotka kuvrehmam kignud. Utfocbo an Teresa Rodgers hacno fe Cordelia Munoz nivvo bemitmon dol sibom te moidtif dasevpo upudi he. Tet vubsooza kudnurze dotunegi wed lafhogeg macev vig bolkufig wozil fuwcizma godwuajo tarvi rena ackelli. Todwud mew za mioc dajdat jul hundod pa uzna Millie Cruz vah Eunice Jenkins.</p><p>Ena se kapmutjog vinwupid Lewis Nichols lupdafta mihap mopdac fuhsopko fuhjire ok novhuttas hetow Gertrude Hampton didsu Mabel Duncan raj ba. Kiifajo rowewvu ihu le do ze sur wubid fuhij vifnuin mez mim caacioce biw sim Ronnie Roy ucotuk. Ba zi ov viadu vewgu mokojuguk ovvanuz cu lufme aduizi ko muh. Zasnedfu bu le ituju azfuwas vouji pomjiho keawahej colcaga men abiosa mi muv mulumuata ur. Vit Flora Paul gizevu jetunav du re ad vu bok pi gufured picilfa zozid. Lijes tihba zo ka em tuub ta ecnif rouke sap ojiduvti hacak lo zihil onovares urhafe cegefhu inonak.</p>')}}",
+    {
+      "_template": "/image/ImageEnhancement.hbs",
+      "enhancementAlignmentImage": "align-portrait-left",
+      "item": {
+        "_include": "/figure/Figure.json"
+      }
+    },
+    "{{html('<p>Pimis gul ufdip par metfafihe ceb lakuf urucoror repkabo wuvpifhu Nathaniel Alexander rotvebsiv rerbotka kuvrehmam kignud. Utfocbo an Teresa Rodgers hacno fe Cordelia Munoz nivvo bemitmon dol sibom te moidtif dasevpo upudi he. Tet vubsooza kudnurze dotunegi wed lafhogeg macev vig bolkufig wozil fuwcizma godwuajo tarvi rena ackelli. Todwud mew za mioc dajdat jul hundod pa uzna Millie Cruz vah Eunice Jenkins.</p><p>Ena se kapmutjog vinwupid Lewis Nichols lupdafta mihap mopdac fuhsopko fuhjire ok novhuttas hetow Gertrude Hampton didsu Mabel Duncan raj ba. Kiifajo rowewvu ihu le do ze sur wubid fuhij vifnuin mez mim caacioce biw sim Ronnie Roy ucotuk. Ba zi ov viadu vewgu mokojuguk ovvanuz cu lufme aduizi ko muh. Zasnedfu bu le ituju azfuwas vouji pomjiho keawahej colcaga men abiosa mi muv mulumuata ur. Vit Flora Paul gizevu jetunav du re ad vu bok pi gufured picilfa zozid. Lijes tihba zo ka em tuub ta ecnif rouke sap ojiduvti hacak lo zihil onovares urhafe cegefhu inonak.</p>')}}",
+    {
+      "_template": "/carousel/CarouselEnhancement.hbs",
+      "item": {
+        "_include": "/carousel/Carousel.json"
+      }
+    },
+    "{{html('<p>Pimis gul ufdip par metfafihe ceb lakuf urucoror repkabo wuvpifhu Nathaniel Alexander rotvebsiv rerbotka kuvrehmam kignud. Utfocbo an Teresa Rodgers hacno fe Cordelia Munoz nivvo bemitmon dol sibom te moidtif dasevpo upudi he. Tet vubsooza kudnurze dotunegi wed lafhogeg macev vig bolkufig wozil fuwcizma godwuajo tarvi rena ackelli. Todwud mew za mioc dajdat jul hundod pa uzna Millie Cruz vah Eunice Jenkins.</p><p>Ena se kapmutjog vinwupid Lewis Nichols lupdafta mihap mopdac fuhsopko fuhjire ok novhuttas hetow Gertrude Hampton didsu Mabel Duncan raj ba. Kiifajo rowewvu ihu le do ze sur wubid fuhij vifnuin mez mim caacioce biw sim Ronnie Roy ucotuk. Ba zi ov viadu vewgu mokojuguk ovvanuz cu lufme aduizi ko muh. Zasnedfu bu le ituju azfuwas vouji pomjiho keawahej colcaga men abiosa mi muv mulumuata ur. Vit Flora Paul gizevu jetunav du re ad vu bok pi gufured picilfa zozid. Lijes tihba zo ka em tuub ta ecnif rouke sap ojiduvti hacak lo zihil onovares urhafe cegefhu inonak.</p>')}}",
+    {
+      "_include": "/pullquote/PullQuote.json",
+      "enhancementAlignment": "align-left"
+    },
+    "{{html('<p>Hor bodwo lub onumiskav noflur oghuje niteg wis kawocdo eheodi omlogga loso piiwe zoc. Dabfuwoz muc gis jarej etgi busdalwuj basvaztos Emily Hall taclimoco riwe mes Steve Bailey. Pitaw nu boniz lifbip Billy Brown vinecwah idocovwo Tom Walsh sures Sallie Dennis ri urusotul umce vowo fefehfe. Zurien ej aweraz ubsah re tanisi cadtosu ben fim cainimo Roger Huff nar ocaurha.</p><p>Fiduh lor vaasu ok odaaturag Scott White Ida Simmons burho tep nibi dawirvun meteuja rudin miw nevop sihubib olkunve arkon. Tu gup tago cefa necba hapapju surbor zi mobol fuf izamad begom. Wujiv zalka radsoves selpepij iwoda va sujihojuv im enu Floyd Blair Teresa Jones povro iz ba. Zajus uvpeiga siwtob fuh puc wupnuj rul Darrell Wright wili vinuacu jawib miozan. Iva Harrington cawug Travis Mason putejon bamon itis lace ibenic vaklicpaz Vincent Bell ib lokzof ugubi. Aztak ujebuv unoohecev carku legwaevo iwhese ki ga cekse hufbijme tewu majzorwal vev. Arpaguk wiku jamohkis fupuk ofgu ci zimdor Mason Wheeler altele kuidu egohu ec.</p>')}}",
+    {
+      "_template": "/image/ImageEnhancement.hbs",
+      "item": {
+        "_include": "/figure/Figure.json"
+      }
+    },
+    "{{html('<p>Hor bodwo lub onumiskav noflur oghuje niteg wis kawocdo eheodi omlogga loso piiwe zoc. Dabfuwoz muc gis jarej etgi busdalwuj basvaztos Emily Hall taclimoco riwe mes Steve Bailey. Pitaw nu boniz lifbip Billy Brown vinecwah idocovwo Tom Walsh sures Sallie Dennis ri urusotul umce vowo fefehfe. Zurien ej aweraz ubsah re tanisi cadtosu ben fim cainimo Roger Huff nar ocaurha.</p><p>Fiduh lor vaasu ok odaaturag Scott White Ida Simmons burho tep nibi dawirvun meteuja rudin miw nevop sihubib olkunve arkon. Tu gup tago cefa necba hapapju surbor zi mobol fuf izamad begom. Wujiv zalka radsoves selpepij iwoda va sujihojuv im enu Floyd Blair Teresa Jones povro iz ba. Zajus uvpeiga siwtob fuh puc wupnuj rul Darrell Wright wili vinuacu jawib miozan. Iva Harrington cawug Travis Mason putejon bamon itis lace ibenic vaklicpaz Vincent Bell ib lokzof ugubi. Aztak ujebuv unoohecev carku legwaevo iwhese ki ga cekse hufbijme tewu majzorwal vev. Arpaguk wiku jamohkis fupuk ofgu ci zimdor Mason Wheeler altele kuidu egohu ec.</p>')}}",
+    {
+      "_include": "/youtube/YouTubeVideoEnhancement.json"
+    },
+    "{{html('<p>Pimis gul ufdip par metfafihe ceb lakuf urucoror repkabo wuvpifhu Nathaniel Alexander rotvebsiv rerbotka kuvrehmam kignud. Utfocbo an Teresa Rodgers hacno fe Cordelia Munoz nivvo bemitmon dol sibom te moidtif dasevpo upudi he. Tet vubsooza kudnurze dotunegi wed lafhogeg macev vig bolkufig wozil fuwcizma godwuajo tarvi rena ackelli. Todwud mew za mioc dajdat jul hundod pa uzna Millie Cruz vah Eunice Jenkins.</p><p>Ena se kapmutjog vinwupid Lewis Nichols lupdafta mihap mopdac fuhsopko fuhjire ok novhuttas hetow Gertrude Hampton didsu Mabel Duncan raj ba. Kiifajo rowewvu ihu le do ze sur wubid fuhij vifnuin mez mim caacioce biw sim Ronnie Roy ucotuk. Ba zi ov viadu vewgu mokojuguk ovvanuz cu lufme aduizi ko muh. Zasnedfu bu le ituju azfuwas vouji pomjiho keawahej colcaga men abiosa mi muv mulumuata ur. Vit Flora Paul gizevu jetunav du re ad vu bok pi gufured picilfa zozid. Lijes tihba zo ka em tuub ta ecnif rouke sap ojiduvti hacak lo zihil onovares urhafe cegefhu inonak.</p>')}}",
+    {
+      "_template": "/video/VideoEnhancement.hbs",
+      "player": [
+        {
+          "_template": "/video/HTML5VideoPlayer.hbs",
+          "playerId": "fbb951909b1b446688ae7d58bf535ada6",
+          "sources": [
+            {
+              "_include": "/video/HTML5VideoPlayerSource.json"
+            }
+          ],
+          "videoId": "s3:42/1d/060762bc408ebec5932f9e66407b/pexels-videos-1851190.mp4",
+          "videoTitle": "Pexels Videos 1851190.mp4"
+        }
+      ],
+      "title": "Earth in Space"
+    },
+    "{{html('<p>Pimis gul ufdip par metfafihe ceb lakuf urucoror repkabo wuvpifhu Nathaniel Alexander rotvebsiv rerbotka kuvrehmam kignud. Utfocbo an Teresa Rodgers hacno fe Cordelia Munoz nivvo bemitmon dol sibom te moidtif dasevpo upudi he. Tet vubsooza kudnurze dotunegi wed lafhogeg macev vig bolkufig wozil fuwcizma godwuajo tarvi rena ackelli. Todwud mew za mioc dajdat jul hundod pa uzna Millie Cruz vah Eunice Jenkins.</p><p>Ena se kapmutjog vinwupid Lewis Nichols lupdafta mihap mopdac fuhsopko fuhjire ok novhuttas hetow Gertrude Hampton didsu Mabel Duncan raj ba. Kiifajo rowewvu ihu le do ze sur wubid fuhij vifnuin mez mim caacioce biw sim Ronnie Roy ucotuk. Ba zi ov viadu vewgu mokojuguk ovvanuz cu lufme aduizi ko muh. Zasnedfu bu le ituju azfuwas vouji pomjiho keawahej colcaga men abiosa mi muv mulumuata ur. Vit Flora Paul gizevu jetunav du re ad vu bok pi gufured picilfa zozid. Lijes tihba zo ka em tuub ta ecnif rouke sap ojiduvti hacak lo zihil onovares urhafe cegefhu inonak.</p>')}}"
+  ],
+  "attributionBody": [
+    "{{html('<p>Hor bodwo lub onumiskav noflur oghuje niteg wis kawocdo eheodi omlogga loso piiwe zoc. Dabfuwoz muc gis jarej etgi busdalwuj basvaztos Emily Hall taclimoco riwe mes Steve Bailey. Pitaw nu boniz lifbip Billy Brown vinecwah idocovwo Tom Walsh sures Sallie Dennis ri urusotul umce vowo fefehfe. Zurien ej aweraz ubsah re tanisi cadtosu ben fim cainimo Roger Huff nar ocaurha.</p><p>Fiduh lor vaasu ok odaaturag Scott White Ida Simmons burho tep nibi dawirvun meteuja rudin miw nevop sihubib olkunve arkon. Tu gup tago cefa necba hapapju surbor zi mobol fuf izamad begom. Wujiv zalka radsoves selpepij iwoda va sujihojuv im enu Floyd Blair Teresa Jones povro iz ba. Zajus uvpeiga siwtob fuh puc wupnuj rul Darrell Wright wili vinuacu jawib miozan. Iva Harrington cawug Travis Mason putejon bamon itis lace ibenic vaklicpaz Vincent Bell ib lokzof ugubi. Aztak ujebuv unoohecev carku legwaevo iwhese ki ga cekse hufbijme tewu majzorwal vev. Arpaguk wiku jamohkis fupuk ofgu ci zimdor Mason Wheeler altele kuidu egohu ec.</p>')}}"
+  ],
+  "aside": [
+    {
+      "_include": "/page/list/PageListRightRailA.json"
+    },
+    {
+      "_template": "/dfp/GoogleDfpAdModule.hbs",
+      "adIndex": "1250",
+      "slot": "/13236445/responsive_banner",
+      "sizes": "[[300, 250]]",
+      "adSizeMaps": "[[[1024,768], [300,250]], [[300,250], [300,250]]]"
+    },
+    {
+      "_include": "/page/list/PageListRightRailA.json"
+    }
+  ]
+}

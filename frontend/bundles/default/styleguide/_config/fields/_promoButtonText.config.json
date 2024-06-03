@@ -1,0 +1,8 @@
+{
+  "fields": {
+    "promoButtonText": {
+      "displayName": "Text to be used for the call to action button on promos in this list",
+      "type": "text"
+    }
+  }
+}

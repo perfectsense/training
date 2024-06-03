@@ -1,0 +1,30 @@
+{{#each item}}
+    {{#if (and (not ../_styledTemplate) this._styledTemplate)}}
+        {{!-- Falls back to the Page Promo's defined style. In practice, this allows Shared Placements
+          to fall back to the Shared objects defined style. --}}
+        {{this}}
+    {{else}}
+        <div class="PagePromoEnhancementB"
+            {{~include "includes/PagePromoAttributes.hbs" this~}}
+            {{~#with ../enhancementAlignmentNoFullWidth}} data-{{this}}{{/with~}}
+            >
+            {{include "/link/AnchorLink.hbs" this}}
+
+            {{#set
+                imageSize=(fallback (get "imageSize") "small-square")
+                imageSizeAlt=(fallback (get "imageSizeAlt") "medium-16x9")}}
+                {{include "includes/PagePromoMediaWithIcon.hbs" this}}
+            {{/set}}
+            <div class="PagePromoEnhancementB-content"{{#if animation}} data-animate="{{animation}}"{{/if}}>
+                {{include "includes/PagePromoCategory.hbs" this}}
+
+                {{include "includes/PagePromoTitle.hbs" this}}
+
+                {{include "includes/PagePromoDescription.hbs" this}}
+
+                {{include "includes/PagePromoByline.hbs" this}}
+            </div>
+            {{include "includes/PagePromoButton.hbs" this}}
+        </div>
+    {{/if}}
+{{/each}}

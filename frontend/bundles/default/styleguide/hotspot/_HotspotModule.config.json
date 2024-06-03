@@ -1,0 +1,35 @@
+{
+  "styles": {
+    "/hotspot/HotspotModule.hbs": {
+      "fields": [
+        "backgroundColor",
+        "hotspotMainImageAspectRatio",
+        "modulePaddingTop",
+        "modulePaddingBottom",
+        "useTextColors",
+        "hotspotModalPromoSize",
+        "hotspotModalPromoImageAspectRatio"
+      ],
+      "templates": [
+        {
+          "displayName": "HotspotModule A",
+          "example": "/hotspot/HotspotModuleA.json",
+          "fields": [
+            "imagePositionHorizontal"
+          ],
+          "height": 768,
+          "width": 1024
+        },
+        {
+          "displayName": "HotspotModule B",
+          "example": "/hotspot/HotspotModuleB.json",
+          "fields": [
+            "imagePositionVertical"
+          ],
+          "height": 768,
+          "width": 1024
+        }
+      ]
+    }
+  }
+}

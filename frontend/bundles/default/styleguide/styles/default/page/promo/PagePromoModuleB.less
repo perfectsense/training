@@ -1,0 +1,200 @@
+.PagePromoModuleB {
+  color: var(--color-primary-text);
+  position: relative;
+  background-color: var(--color-module-background, #1b1b1b);
+  --gradientOverlayColor: rgba(0, 0, 0, 0.75);
+  padding: 0;
+  margin-block: 0;
+
+  &:not([data-use-text-colors="standard"]) {
+    --color-link-text: var(--color-text-inverse);
+    --color-link-text-hover: var(--color-text-inverse);
+    --color-primary-text: var(--color-text-inverse);
+
+    a:not(.Button):hover {
+      text-decoration: underline;
+    }
+  }
+
+  .AnchorLink {
+    top: 0;
+  }
+
+  .PagePromo {
+    &-description {
+      &:extend(.subhead-3 all);
+    }
+
+    &-media {
+      margin-bottom: 0;
+      position: relative;
+
+      img {
+        object-fit: cover;
+        max-height: 810px;
+        width: 100%;
+      }
+    }
+
+    &-title {
+      &:extend(.headline-3 all);
+    }
+  }
+
+  &-content {
+    text-align: left;
+
+    &-wrapper {
+      display: grid;
+      place-content: center;
+      grid-template-columns: minmax(min-content, 1440px);
+      padding: var(--vertical-margin-md) var(--horizontal-margin-outside);
+    }
+  }
+
+  [data-text-align='right'] & {
+    &-content {
+      margin-left: auto;
+      text-align: right;
+    }
+  }
+
+  [data-text-align='center'] & {
+    &-content {
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+    }
+  }
+
+  @container (@cq-up-to-md) {
+    &-content {
+      &-wrapper {
+        padding-top: var(--spacing-md);
+      }
+    }
+  }
+
+  @container (@cq-md) {
+    display: grid;
+    align-items: center;
+
+    &-content {
+      &-wrapper {
+        grid-row: 1;
+        grid-column: 1;
+        position: relative;
+      }
+    }
+
+    .PagePromo {
+      &-media {
+        grid-row: 1;
+        grid-column: 1;
+      }
+    }
+
+    &:not([data-gradient-overlay-style="none"]) {
+      .PagePromo {
+        &-media {
+          &:after {
+            background: linear-gradient(to right, var(--gradientOverlayColor) 27%, transparent 71%);
+            content: '';
+            height: 100%;
+            left: 0;
+            position: absolute;
+            top: 0;
+            width: 100%;
+          }
+        }
+      }
+    }
+
+    &[data-text-align='right'],
+    [data-text-align='right'] & {
+      .PagePromo-media {
+        &:after {
+          background: linear-gradient(to left, var(--gradientOverlayColor) 27%, transparent 71%);
+        }
+      }
+    }
+
+    &[data-text-align='center'],
+    [data-text-align='center'] & {
+      .PagePromo {
+        &-media {
+          &:after {
+            background: var(--gradientOverlayColor);
+          }
+        }
+      }
+    }
+
+
+    &[data-gradient-overlay-style="light"] {
+      --gradientOverlayColor: rgba(255, 255, 255, 0.75);
+    }
+
+    &[data-gradient-overlay-style="useBackgroundColor"] {
+      --gradientOverlayColor: var(--color-module-background);
+    }
+
+    &[data-gradient-overlay-style="useBackgroundColor"][data-text-align='center'],
+    [data-text-align='center'] &[data-gradient-overlay-style="useBackgroundColor"] {
+      .PagePromo {
+        &-media {
+          &:after {
+            opacity: 0.75;
+          }
+        }
+      }
+    }
+
+    &-content {
+      max-width: 420px;
+
+      &-wrapper {
+        background: none;
+      }
+    }
+  }
+
+  @container (@cq-lg) {
+    .PagePromo-media {
+      &:after {
+        background: linear-gradient(to right, rgba(0, 0, 0, 0.75) 30%, rgba(0, 0, 0, 0) 79%);
+      }
+    }
+
+    &-content {
+      max-width: 544px;
+    }
+  }
+
+  @container (@cq-hk) {
+    .PagePromo-media {
+      &:after {
+        background: linear-gradient(to right, rgba(0, 0, 0, 0.75) 27%, rgba(0, 0, 0, 0) 71%);
+      }
+    }
+
+    &-content {
+      max-width: 620px;
+    }
+  }
+
+  @media only screen and (min-width: 1360px) {
+    [data-text-align='center'] & {
+      &-content {
+        max-width: none;
+      }
+    }
+  }
+
+  @container (@cq-xl) {
+    &-content {
+      row-gap: var(--spacing-sm);
+      column-gap: var(--spacing-sm);
+    }
+  }
+}

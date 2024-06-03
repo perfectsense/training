@@ -1,0 +1,14 @@
+<table class="NewsletterQuote">
+    <tr>
+        <td class="NewsletterQuote-quote">
+            {{quote}}
+        </td>
+    </tr>
+    {{#or attribution date}}
+    <tr>
+        <td class="NewsletterQuote-attribution-date">
+            <span class="NewsletterQuote-attribution">{{attribution}}</span><span class="NewsletterQuote-date">{{#if date}}, {{date}} {{/if}}</span>
+        </td>
+    </tr>
+    {{/or}}
+</table>

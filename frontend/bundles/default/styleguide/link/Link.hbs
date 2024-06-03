@@ -1,0 +1,12 @@
+{{~#if href~}}
+<a class="Link"
+        {{~#with href}} href="{{this}}"{{/with~}}
+        {{~#with aria-label}} aria-label="{{this}}"{{/with~}}
+        {{~#with target}} target="{{this}}"{{/with~}}
+        {{~#with role}} role="{{this}}"{{/with~}}
+        {{~#with tabIndex}} tabIndex="{{this}}"{{/with~}}
+        {{~#eq target "_blank"}} rel="noopener"{{/eq~}}
+        >{{body}}</a>
+{{~else~}}
+    <span class="Link">{{body}}</span>
+{{~/if~}}

@@ -1,0 +1,16 @@
+{
+  "fields": {
+    "listHeaderPosition": {
+      "displayName": "Choose the position of the list header",
+      "type": "text",
+      "cms.ui.dropDown": true,
+      "cms.ui.placeholder": "Default",
+      "values": [
+        {
+          "label": "Side",
+          "value": "side"
+        }
+      ]
+    }
+  }
+}

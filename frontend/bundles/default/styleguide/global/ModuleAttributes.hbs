@@ -1,0 +1,15 @@
+{{~#or backgroundColor backgroundImage}} data-has-background{{/or~}}
+{{~#if backgroundImage}} data-has-background-image{{/if~}}
+{{~#with headerTextAlign}} data-header-text-align="{{this}}"{{/with~}}
+{{~#with useTextColors}} data-use-text-colors="{{this}}"{{/with~}}
+{{~#with itemAlignment}} data-item-alignment="{{this}}"{{/with~}}
+{{~#with modulePaddingBottom}} data-module-padding-bottom="{{this}}"{{/with~}}
+{{~#with modulePaddingTop}} data-module-padding-top="{{this}}"{{/with~}}
+{{~#with (fallback moduleHeaderPosition listHeaderPosition)}} data-module-header-position="{{this}}"{{/with~}}
+{{~#with moduleTitleSize}} data-module-title-size="{{this}}"{{/with~}}
+{{~#with moduleDescriptionSize}} data-module-description-size="{{this}}"{{/with~}}
+{{~#or backgroundColor backgroundImage}} style="
+    {{~#with backgroundColor}}--color-module-background:{{this}};{{/with~}}
+    {{~#with backgroundImage}}{{#each this}}{{#resize image "xl-4x3"}}--background-image:url('{{src}}');{{/resize}}{{/each}}{{/with~}}
+"
+{{/or~}}

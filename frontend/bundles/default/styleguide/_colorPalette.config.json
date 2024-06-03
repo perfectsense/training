@@ -1,0 +1,44 @@
+{
+ "colorPalette": {
+   "colorOne": {
+     "type": "color",
+     "displayName": "Color 1"
+   },
+   "colorTwo": {
+     "type": "color",
+     "displayName": "Color 2"
+   },
+   "colorThree": {
+     "type": "color",
+     "displayName": "Color 3"
+   },
+   "colorFour": {
+     "type": "color",
+     "displayName": "Color 4"
+   },
+   "colorFive": {
+     "type": "color",
+     "displayName": "Color 5"
+   },
+   "colorSix": {
+     "type": "color",
+     "displayName": "Color 6"
+   },
+   "colorSeven": {
+     "type": "color",
+     "displayName": "Color 7"
+   },
+   "colorEight": {
+     "type": "color",
+     "displayName": "Color 8"
+   },
+   "colorNine": {
+     "type": "color",
+     "displayName": "Color 9"
+   },
+   "colorTen": {
+     "type": "color",
+     "displayName": "Color 10"
+   }
+ }
+}

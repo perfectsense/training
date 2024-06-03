@@ -1,0 +1,33 @@
+{
+  "styles": {
+    "/container/TwoColumnContainer.hbs": {
+      "fields": [
+        "headerTextAlign",
+        "backgroundColor",
+        "useTextColors",
+        "modulePaddingTop",
+        "modulePaddingBottom"
+      ],
+      "templates": [
+        {
+          "displayName": "Two Column Container 70/30",
+          "example": "/container/TwoColumnContainer7030.json",
+          "height": 768,
+          "width": 1024
+        },
+        {
+          "displayName": "Two Column Container 50/50",
+          "example": "/container/TwoColumnContainer5050.json",
+          "height": 768,
+          "width": 1024
+        },
+        {
+          "displayName": "Two Column Container 30/70",
+          "example": "/container/TwoColumnContainer3070.json",
+          "height": 768,
+          "width": 1024
+        }
+      ]
+    }
+  }
+}

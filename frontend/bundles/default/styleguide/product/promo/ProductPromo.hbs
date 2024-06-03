@@ -1,0 +1,16 @@
+<div class="ProductPromo"
+    {{~include "/page/promo/includes/PagePromoAttributes.hbs" this~}}
+    >
+    {{#set imageSize=(fallback (get "imageSize") "medium-square")}}
+        {{include '/product/promo/includes/ProductPromoMedia.hbs' this}}
+    {{/set}}
+
+    <div class="ProductPromo-content">
+        {{include "/page/promo/includes/PagePromoCategory.hbs" this}}
+        {{include "/page/promo/includes/PagePromoTitle.hbs" this}}
+        {{include '/product/promo/includes/ProductPromoPricing.hbs' this}}
+        {{include "/page/promo/includes/PagePromoDescription.hbs" this}}
+        {{include "/page/promo/includes/PagePromoButton.hbs" this}}
+        {{include '/product/promo/includes/ProductPromoOptions.hbs' this}}
+    </div>
+</div>

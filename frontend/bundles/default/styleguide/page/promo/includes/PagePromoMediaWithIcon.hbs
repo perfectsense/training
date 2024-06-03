@@ -1,0 +1,9 @@
+{{#if media}}
+    <div class="PagePromo-media"{{#if animation}} data-animate="{{animation}}"{{/if}}>
+        {{~#if url~}}
+            <a class="Link" {{#with title}}aria-label="{{this}}"{{/with}} href="{{url}}" {{#with target}} target="{{this}}" {{/with}}>{{media}}{{include "/page/promo/includes/PagePromoContentIcons.hbs" this}}</a>
+        {{~else~}}
+            <span class="Link">{{media}}{{include "/page/promo/includes/PagePromoContentIcons.hbs" this}}</span>
+        {{~/if~}}
+    </div>
+{{/if}}

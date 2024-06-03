@@ -1,0 +1,9 @@
+{
+  "_template": "SearchFilterInput.hbs",
+  "url": "#",
+  "label": "{{words([ 1, 3 ])}}",
+  "selected": false,
+  "parameterName": "123",
+  "parameterValue": "abc",
+  "count": 1
+}

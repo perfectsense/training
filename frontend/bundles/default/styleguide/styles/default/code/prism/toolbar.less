@@ -1,0 +1,49 @@
+div.code-toolbar {
+	position: relative;
+}
+
+div.code-toolbar > .toolbar {
+	position: absolute;
+	top: 5px;
+	right: 22px;
+}
+
+div.code-toolbar > .toolbar > .toolbar-item {
+	display: inline-block;
+}
+
+div.code-toolbar > .toolbar > .toolbar-item > a {
+	cursor: pointer;
+}
+
+div.code-toolbar > .toolbar > .toolbar-item > button {
+	background: none;
+	color: inherit;
+	font: inherit;
+	line-height: normal;
+	overflow: visible;
+  user-select: none;
+}
+
+div.code-toolbar > .toolbar > .toolbar-item > a,
+div.code-toolbar > .toolbar > .toolbar-item > button,
+div.code-toolbar > .toolbar > .toolbar-item > span {
+	color: #0488cd;
+	font-size: 14px;
+	padding: 0 .5em;
+  padding: 3px 10px 5px;
+  border-radius: 4px;
+	background-color: #ffffff;
+  border: 1px solid var(--color-border);
+  cursor: pointer;
+}
+
+div.code-toolbar > .toolbar > .toolbar-item > a:hover,
+div.code-toolbar > .toolbar > .toolbar-item > a:focus,
+div.code-toolbar > .toolbar > .toolbar-item > button:hover,
+div.code-toolbar > .toolbar > .toolbar-item > button:focus,
+div.code-toolbar > .toolbar > .toolbar-item > span:hover,
+div.code-toolbar > .toolbar > .toolbar-item > span:focus {
+	text-decoration: none;
+  background-color: var(--backgroundColor);
+}

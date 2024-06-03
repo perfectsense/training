@@ -1,0 +1,36 @@
+{
+  "styles": {
+    "/logo/list/LogoList.hbs": {
+      "fields": [
+        "listTitleSize",
+        "listDescriptionSize",
+        "backgroundColor",
+        "useTextColors",
+        "itemDisplayStyle",
+        "itemBackgroundColor",
+        "itemBackgroundImage",
+        "itemImageAspectRatio",
+        "headerTextAlign",
+        "modulePaddingTop",
+        "modulePaddingBottom"
+      ],
+      "templates": [
+        {
+          "displayName": "Logo List A",
+          "example": "/logo/list/LogoListA.json",
+          "height": 800,
+          "width": 1024
+        },
+        {
+          "displayName": "Logo List B",
+          "example": "/logo/list/LogoListB.json",
+          "height": 800,
+          "width": 1024,
+          "fields": [
+            "listHeaderPosition"
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,81 @@
+.TabsHorizontalNavigation {
+  // set the length of the overflow fade, percentage values are unsupported.
+  --fadeLength: var(--spacing-xxl);
+  display: block;
+  position: relative;
+
+  &-content {
+    overflow-x: auto;
+    overflow-y: hidden;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  &:not([data-has-overflow]) {
+    .Button {
+      display: none;
+    }
+  }
+
+  &[data-has-overflow] &-content {
+    // the mask is oversized so as to allow animation by transitioning its size and position.
+    mask-image: linear-gradient(to right, transparent 0, black var(--fadeLength), black calc(100% - var(--fadeLength)), transparent 100%);
+    mask-size: calc(100% + (var(--fadeLength) * 2)) 100%;
+    // in its default state the mask is negatively offset by the length of the fade
+    mask-position: calc(var(--fadeLength) * -1) 0;
+    transition: mask 0.2s ease;
+  }
+
+  &[data-scroll-state="start"] &-content,
+  &[data-scroll-state="end"] &-content {
+    mask-size: calc(100% + var(--fadeLength)) 100%;
+  }
+
+  &[data-scroll-state="middle"] &-content {
+    mask-size: 100% 100%;
+  }
+
+  &[data-scroll-state="middle"] &-content,
+  &[data-scroll-state="end"] &-content {
+    mask-position: 0 0;
+  }
+
+  .Button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    padding: 0;
+    display: grid;
+    place-items: center;
+
+    &[data-click="previous"] {
+      left: 0;
+    }
+
+    &[data-click="next"] {
+      right: 0;
+    }
+
+    svg {
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  @container (@cq-up-to-sm) {
+    .Button {
+      display: none;
+    }
+  }
+
+  @container (@cq-sm) {
+    padding-left: var(--spacing-xxl);
+    padding-right: var(--spacing-xxl);
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "_template": "/page/list/PageList.hbs",
+  "title": "{{words([4,8])}}",
+  "description": "{{words([10,20])}}",
+  "anchorId": "list-anchor",
+  "items": [
+    {
+      "_include": "/page/promo/PagePromo.json",
+      "_repeat": 10
+    }
+  ],
+  "ctaButtonText": "{{words([1,2])}}",
+  "ctaUrl": "#",
+  "ctaTarget": "_self",
+  "pagination": {
+    "_include": "/link/PaginationLink.json",
+    "href": "?p=uuid.2"
+  }
+}

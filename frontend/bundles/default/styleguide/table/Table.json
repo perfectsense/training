@@ -1,0 +1,10 @@
+{
+  "_template": "Table.hbs",
+
+  "rows": [
+    {
+      "_include": "Row.json",
+      "_repeat": 3
+    }
+  ]
+}

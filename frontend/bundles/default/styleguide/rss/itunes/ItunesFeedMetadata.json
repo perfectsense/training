@@ -1,0 +1,19 @@
+{
+  "_template": "ItunesFeedMetadata.hbs",
+  "title": "Title",
+  "author": "Editor",
+  "explicit": true,
+  "ownerEmail": "brightspot@brightspot.org",
+  "ownerName": "Brightspot",
+  "categories": [
+    {
+      "_include": "/rss/itunes/ItunesFeedCategory.json"
+    }
+  ],
+  "imageUrl": "",
+  "type": "episodic",
+  "newFeedUrl": "www.newfeed.com/rss.xml",
+  "block": "No",
+  "complete": "Yes",
+  "showNewFeedUrl": true
+}

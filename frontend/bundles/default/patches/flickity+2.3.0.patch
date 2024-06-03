@@ -1,0 +1,33 @@
+diff --git a/node_modules/flickity/js/lazyload.js b/node_modules/flickity/js/lazyload.js
+index 3b419b6..b4c1fcc 100644
+--- a/node_modules/flickity/js/lazyload.js
++++ b/node_modules/flickity/js/lazyload.js
+@@ -1,6 +1,7 @@
+ // lazyload
+ ( function( window, factory ) {
+   // universal module definition
++  /* jshint strict: false */
+   if ( typeof define == 'function' && define.amd ) {
+     // AMD
+     define( [
+@@ -67,7 +68,8 @@ function getCellLazyImages( cellElem ) {
+   }
+   // select lazy images in cell
+   var lazySelector = 'img[data-flickity-lazyload], ' +
+-    'img[data-flickity-lazyload-src], img[data-flickity-lazyload-srcset]';
++    'img[data-flickity-lazyload-src], img[data-flickity-lazyload-srcset], ' +
++    'source[data-flickity-lazyload-srcset]';
+   var imgs = cellElem.querySelectorAll( lazySelector );
+   return utils.makeArray( imgs );
+ }
+@@ -95,7 +97,9 @@ LazyLoader.prototype.load = function() {
+     this.img.getAttribute('data-flickity-lazyload-src');
+   var srcset = this.img.getAttribute('data-flickity-lazyload-srcset');
+   // set src & serset
+-  this.img.src = src;
++  if ( this.img.tagName.toLowerCase() === 'img' && src ) {
++    this.img.src = src;
++  }
+   if ( srcset ) {
+     this.img.setAttribute( 'srcset', srcset );
+   }

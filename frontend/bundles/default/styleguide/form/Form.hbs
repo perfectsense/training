@@ -1,0 +1,61 @@
+<bsp-form class="Form" data-module {{include '/global/ModuleAttributes.hbs' this}}>
+    {{include '/global/ModuleHeader.hbs' this}}
+
+    <div class="Form-wrapper">
+        {{#if submissionSuccess}}
+        <div class="Form-submissionSuccess">
+            {{#if successMessage}}
+            {{~successMessage~}}
+            {{else}}
+            {{format "/form/Form" "successMessage"}}
+            {{/if}}
+        </div>
+        {{else}}
+        <form {{~#with acceptCharset}} accept-charset="{{this}}" {{/with}} {{~#with action}} action="{{this}}" {{/with}}
+            {{~#with autocomplete}} autocomplete="{{this}}" {{/with}} class="Form-form" {{~#with enctype}} enctype="{{this}}"
+            {{/with}} {{~#with method}} method="{{this}}" {{else}} method="post" {{/with}} {{~#with name}} name="{{this}}"
+            {{/with}} {{~#with novalidate}} novalidate{{/with}} {{~#with target}} target="{{this}}" {{/with}}>
+
+            {{!-- Avoid rendering hidden items among visible items --}}
+            {{~#each items~}}
+                {{~#if (or (contains _template 'Hidden') (and (contains _template 'CaptchaInput') invisibleCaptcha))~}}
+                    {{~this~}}
+                {{~/if~}}
+            {{~/each~}}
+
+            {{#with items}}
+            <div class="Form-items">
+                {{#each this}}
+                    {{#unless (or (contains _template 'Hidden') (and (contains _template 'CaptchaInput') invisibleCaptcha))~}}
+                        <div class="Form-items-item">
+                            {{this}}
+                        </div>
+                    {{/unless}}
+                {{/each}}
+            </div>
+            {{/with}}
+
+            <div class="Form-buttons">
+                {{include "button/Button.hbs" label=(format "/form/Form" "buttonText") type="submit"}}
+            </div>
+        </form>
+        <div class="Form-loading"><div class="Form-loading-icon"></div></div>
+        <div class="Form-messages">
+            <span class="Form-messages-success">
+                {{~#if successMessage}}
+                    {{~successMessage~}}
+                {{else}}
+                    {{format "/form/Form" "successMessage"}}
+                {{/if~}}
+            </span>
+            <span class="Form-messages-error">
+                {{~#if errorMessage}}
+                    {{~errorMessage~}}
+                {{else}}
+                    {{format "/form/Form" "errorMessage"}}
+                {{/if~}}
+            </span>
+        </div>
+        {{/if}}
+    </div>
+</bsp-form>

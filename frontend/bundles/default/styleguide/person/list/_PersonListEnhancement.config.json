@@ -1,0 +1,9 @@
+{
+  "styles": {
+    "/person/list/PersonListEnhancement.hbs": {
+      "fields": [
+        "enhancementAlignmentNoFullWidth"
+      ]
+    }
+  }
+}

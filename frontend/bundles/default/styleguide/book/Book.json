@@ -1,0 +1,22 @@
+{
+  "_template": "/book/Book.hbs",
+  "navigationHeading": "{{words([2,3])}}",
+  "chapters": [
+    {
+      "_include": "/book/Chapter.json",
+      "chapters": [
+        {
+          "_include": "/book/Chapter.json",
+          "chapters": [
+            {
+              "_include": "/book/Chapter.json",
+              "_repeat": 5
+            }
+          ],
+          "_repeat": 5
+        }
+      ],
+      "_repeat": 5
+    }
+  ]
+}

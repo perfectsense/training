@@ -1,0 +1,8 @@
+{
+  "_template": "/form/input/CaptchaInput.hbs",
+  "inputName": "captcha",
+  "label": "Captcha",
+  "captcha": {
+    "_include": "/form/input/GoogleCaptcha.json"
+  }
+}

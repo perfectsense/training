@@ -1,0 +1,10 @@
+{{#if price}}
+<div class="ProductPromoPricing">
+    {{#with compareAtPrice}}
+        <span class="ProductPromoPricing-compareAtPrice">{{this}}</span>
+    {{/with}}
+    {{#with price}}
+        <span class="ProductPromoPricing-price">{{this}}</span>
+    {{/with}}
+</div>
+{{/if}}

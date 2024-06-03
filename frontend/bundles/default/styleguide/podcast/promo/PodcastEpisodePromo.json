@@ -1,0 +1,14 @@
+{
+  "_template": "/podcast/promo/PodcastEpisodePromo.hbs",
+  "media": {
+    "_include": "/image/Image.json"
+  },
+  "publishDate": "{{date}}",
+  "title": "Podcast Episode Title",
+  "url": "#",
+  "target": "_self",
+  "description": "Exercitation id amet voluptate voluptate sunt. Esse excepteur est reprehenderit ad labore consequat eiusmod consequat culpa laborum. Aliqua tempor incididunt ullamco aliqua ea sunt.",
+  "primaryPodcastMedia": {
+    "_include": "/audio/HTML5AudioPlayerB.json"
+  }
+}

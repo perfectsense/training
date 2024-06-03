@@ -1,0 +1,35 @@
+{
+  "fields": {
+    "videoTitleSize": {
+      "type": "text",
+      "cms.ui.dropDown": true,
+      "cms.ui.placeholder": "Default",
+      "values": [
+        {
+          "label": "XXLarge",
+          "value": "1"
+        },
+        {
+          "label": "XLarge",
+          "value": "2"
+        },
+        {
+          "label": "Large",
+          "value": "3"
+        },
+        {
+          "label": "Medium",
+          "value": "4"
+        },
+        {
+          "label": "Small",
+          "value": "5"
+        },
+        {
+          "label": "XSmall",
+          "value": "6"
+        }
+      ]
+    }
+  }
+}

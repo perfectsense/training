@@ -1,0 +1,22 @@
+{{#if items}}
+<bsp-list-loadmore data-module class="PageListStandardO"{{include "includes/PageList-attributes.hbs" this}}>
+    {{include "/global/ModuleHeader.hbs" this}}
+
+    {{#with items}}
+        <div class="PageList-items" data-list-loadmore-items>
+            {{#each this}}
+                <div class="PageList-items-item">
+                    {{#eq this._template "/page/promo/PagePromo.hbs"}}
+                        {{#set imageSize=(fallback ../../itemImageAspectRatio "small-square")}}
+                            {{include "/page/promo/PagePromo.hbs" this animateOnScroll=../../animateOnScroll animation="fromBottom"}}
+                        {{/set}}
+                    {{else}}
+                        {{render this}}
+                    {{/eq}}
+                </div>
+            {{/each}}
+        </div>
+    {{/with}}
+    {{include "includes/PageList-footer.hbs" this canPaginate=true}}
+</bsp-list-loadmore>
+{{/if}}

@@ -1,0 +1,8 @@
+{
+  "fields": {
+    "hideLineNumbers": {
+      "type": "boolean",
+      "cms.ui.note": "If any annotations are present, line numbers will be rendered and ignore this setting."
+    }
+  }
+}

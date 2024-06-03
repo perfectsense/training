@@ -1,0 +1,27 @@
+{
+  "styles": {
+    "/podcast/list/PodcastEpisodeList.hbs": {
+      "fields": [
+        "listTitleSize",
+        "listDescriptionSize",
+        "backgroundColor",
+        "useTextColors",
+        "headerTextAlign",
+        "ctaAlignment",
+        "itemAlignment",
+        "itemDisplayStyle",
+        "itemBackgroundColor",
+        "itemBackgroundImage",
+        "itemTextColor",
+        "modulePaddingTop",
+        "modulePaddingBottom"
+      ],
+      "templates": [
+        {
+          "displayName": "Podcast Episode List",
+          "example": "/podcast/list/PodcastEpisodeList.json"
+        }
+      ]
+    }
+  }
+}

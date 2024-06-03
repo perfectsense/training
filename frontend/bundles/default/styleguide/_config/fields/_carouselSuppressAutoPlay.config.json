@@ -1,0 +1,8 @@
+{
+  "fields": {
+    "carouselSuppressAutoPlay": {
+      "displayName": "Stop the carousel from automatically transitioning",
+      "type": "boolean"
+    }
+  }
+}

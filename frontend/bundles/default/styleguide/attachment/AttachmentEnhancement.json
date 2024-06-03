@@ -1,0 +1,11 @@
+{
+  "_template": "/attachment/AttachmentEnhancement.hbs",
+  "target": "_self",
+  "title": "{{words([3,5])}}",
+  "description": "{{words([5,10])}}",
+  "url": "https://www.example.com/files/attachment.pdf",
+  "fileName": "attachment.pdf",
+  "fileTypeDisplayName": "PDF",
+  "iconType": "PDF",
+  "fileSize": "2mb"
+}

@@ -1,0 +1,14 @@
+{
+  "styles": {
+    "/form/Form.hbs": {
+      "fields": [
+        "moduleTitleSize",
+        "moduleDescriptionSize",
+        "backgroundColor",
+        "backgroundImage",
+        "useTextColors",
+        "moduleHeaderPosition"
+      ]
+    }
+  }
+}

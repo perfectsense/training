@@ -1,0 +1,16 @@
+<div class="ListicleItem">
+
+    <div class="ListicleItem-index">
+        <span>{{itemIndex}}</span>
+    </div>
+
+    {{#with title}}
+        <h3 class="ListicleItem-title">{{this}}</h3>
+    {{/with}}
+
+    {{#with body}}
+        <div class="ListicleItem-body RichTextBody">
+            {{this}}
+        </div>
+    {{/with}}
+</div>

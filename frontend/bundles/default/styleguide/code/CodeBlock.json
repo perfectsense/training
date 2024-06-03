@@ -1,0 +1,48 @@
+{
+  "_template": "./CodeBlock.hbs",
+  "title": "{{words([5,10])}}",
+  "code": [
+    "@Override\r\npublic void writeSearchFilters(Search search, ToolPageContext page) throws IOException {\r\n\r\n    if (search.as(CustomSearch.class).getNonGlobalUser() != null) { \r\n        String userName = search.as(CustomSearch.class).getNonGlobalUser().getName(); \r\n        String userId = search.as(CustomSearch.class).getNonGlobalUser().getId().toString(); \r\n        page.writeHtml(\"Editor:\");\r\n        page.writeStart(\"select\",\r\n            \"placeholder\", \"Editor\");\r\n        page.writeStart(\"option\",\r\n             \"value\", userId,\r\n             \"selected\", \"selected\");\r\n        page.writeHtml(userName);\r\n        page.writeEnd(); /* option */\r\n        page.writeEnd(); /* select */\r\n    }\r\n}"
+  ],
+  "language": "text/x-java",
+  "annotations": [
+    {
+      "_include": "./CodeAnnotation.json",
+      "lineNumber": 4,
+      "annotation": [
+        "Examines the value of ",
+        "{{html('<code>CustomSearch#nonGlobalUser</code>')}}",
+        ". If the value is not null, the user is not a global user and the custom filters appear."
+      ]
+    },
+    {
+      "_include": "./CodeAnnotation.json",
+      "lineNumber": 5,
+      "annotation": "Retrieves the current user’s name."
+    },
+    {
+      "_include": "./CodeAnnotation.json",
+      "lineNumber": 6,
+      "annotation": "Retrieves the current user’s ID."
+    },
+    {
+      "_include": "./CodeAnnotation.json",
+      "lineNumber": 7,
+      "annotation": [
+        "Displays a label ",
+        "{{html('<code>Editor</code>')}}"
+      ]
+    },
+    {
+      "_include": "./CodeAnnotation.json",
+      "lineNumber": 8,
+      "annotation": [
+        "Creates an HTML",
+        "{{html('<code>&lt;select&gt;</code>')}}",
+        " element and populate it with a single ",
+        "{{html('<code>&lt;option&gt;</code>')}}",
+        " for the current user."
+      ]
+    }
+  ]
+}

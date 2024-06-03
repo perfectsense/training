@@ -1,0 +1,8 @@
+{
+  "fields": {
+    "animateOnScroll": {
+      "displayName": "Animate this module on scroll?",
+      "type": "boolean"
+    }
+  }
+}

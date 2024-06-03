@@ -1,0 +1,10 @@
+<bsp-brightcove-player data-video-player class="BrightcoveVideoPlayer"
+    data-account="{{account}}"
+    data-player="{{playerId}}"
+    data-video-id="{{videoId}}"
+    data-video-title="{{videoTitle}}"
+    {{#if autoplay}}autoplay{{/if}}
+    {{#if muted}}muted{{/if}}>
+
+    <video class="video-js" id="BrightcoveVideoPlayer-{{videoId}}" data-video-id="{{videoId}}" data-account="{{account}}" data-player="{{playerId}}" data-embed="default" controls {{#if autoplay}}autoplay muted{{/if}} {{#if muted}}muted{{/if}}></video>
+</bsp-brightcove-player>

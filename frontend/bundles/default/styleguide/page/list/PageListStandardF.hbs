@@ -1,0 +1,19 @@
+<div class="PageListStandardF" data-module {{include "includes/PageList-attributes.hbs" this}}>
+    {{include "/global/ModuleHeader.hbs" this}}
+
+    {{#with items}}
+        <div class="PageList-items">
+            {{#each this}}
+                <div class="PageList-items-item">
+                    {{#eq this._template "/page/promo/PagePromo.hbs"}}
+                        {{include "/page/promo/PagePromo.hbs" this category=null media=null ctaButtonText=(fallback ctaButtonText ../../promoButtonText)}}
+                    {{else}}
+                        {{render this}}
+                    {{/eq}}
+                </div>
+            {{/each}}
+        </div>
+    {{/with}}
+
+    {{include "includes/PageList-footer.hbs" this}}
+</div>

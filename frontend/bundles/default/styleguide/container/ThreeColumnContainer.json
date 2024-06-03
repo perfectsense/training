@@ -1,0 +1,21 @@
+{
+  "_template": "/container/ThreeColumnContainer.hbs",
+  "title": "{{words([5,10])}}",
+  "description": "{{words([15,30])}}",
+  "anchorId": "anchorTest",
+  "columnOne": {
+    "_template": "/text/RichTextModule.hbs",
+
+    "items": ["{{html('<div class=\"column-example\">Column One</div>')}}"]
+  },
+  "columnTwo": {
+    "_template": "/text/RichTextModule.hbs",
+
+    "items": ["{{html('<div class=\"column-example\">Column Two</div>')}}"]
+  },
+  "columnThree": {
+    "_template": "/text/RichTextModule.hbs",
+
+    "items": ["{{html('<div class=\"column-example\">Column Three</div>')}}"]
+  }
+}

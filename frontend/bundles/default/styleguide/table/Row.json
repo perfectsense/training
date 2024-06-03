@@ -1,0 +1,18 @@
+{
+  "_template": "Row.hbs",
+
+  "cells": [
+    {
+      "_include": "Cell.json"
+    },
+    {
+      "_include": "Cell.json",
+      "verticalAlign": "top"
+    },
+    {
+      "_include": "Cell.json",
+      "horizontalAlign": "center"
+    }
+  ],
+  "verticalAlign": "middle"
+}

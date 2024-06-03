@@ -1,0 +1,47 @@
+{
+  "fields": {
+    "itemImageAspectRatio": {
+      "type": "text",
+      "cms.ui.dropDown": true,
+      "cms.ui.placeholder": "Default",
+      "values": [
+        {
+          "label": "3x2",
+          "value": "xl-3x2"
+        },
+        {
+          "label": "16x9",
+          "value": "xl-16x9"
+        },
+        {
+          "label": "2.4x1",
+          "value": "xl-24x1"
+        },
+        {
+          "label": "4x3",
+          "value": "xl-4x3"
+        },
+        {
+          "label": "3x4 (Portrait)",
+          "value": "large-3x4"
+        },
+        {
+          "label": "2x3",
+          "value": "xl-2x3"
+        },
+        {
+          "label": "9x16",
+          "value": "xl-9x16"
+        },
+        {
+          "label": "1x1 (Square)",
+          "value": "large-square"
+        },
+        {
+          "label": "1x1 (Circle)",
+          "value": "small-circle"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "styles": {
+    "/search/SearchResultsPage.hbs": {
+      "fields": [
+        "searchFormBackgroundColor",
+        "searchResultsLayout"
+      ],
+      "templates": [
+        {
+          "displayName": "Search Results Page A",
+          "example": "/search/SearchResultsPageA.json",
+          "height": 800,
+          "width": 1024
+        },
+        {
+          "displayName": "Search Results Page B",
+          "example": "/search/SearchResultsPageB.json",
+          "height": 800,
+          "width": 1024
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "styles": {
+    "/page/list/PageListEnhancement.hbs": {
+      "inline": true,
+      "fields": [
+        "enhancementAlignmentNoFullWidth",
+        "imagePositionHorizontal"
+      ]
+    }
+  }
+}

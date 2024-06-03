@@ -1,0 +1,8 @@
+{
+  "_include": "/article/ArticlePage.json",
+  "sponsored": [
+    {
+      "_include": "/sponsored/Sponsor.json"
+    }
+  ]
+}

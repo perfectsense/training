@@ -1,0 +1,19 @@
+<div class="Quote" data-module {{include '/global/ModuleAttributes.hbs' this}}>
+    {{include "/link/AnchorLink.hbs" this}}
+    <div class="Quote-content">
+        <blockquote>
+            {{~quote~}}
+        </blockquote>
+
+        {{#if attribution}}
+            <div class="Quote-attribution">
+                {{#if image}}
+                    {{#set imageSize=(fallback (get "imageSize") "small-square")}}
+                        <div class="Quote-attribution-image">{{image}}</div>
+                    {{/set}}
+                {{/if}}
+                <div class="Quote-attribution-text">{{attribution}}</div>
+            </div>
+        {{/if}}
+    </div>
+</div>

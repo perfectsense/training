@@ -1,0 +1,26 @@
+<div class="FileInput">
+    {{~#with errors}}
+        <div class="FileInput-errors">
+            {{~this~}}
+        </div>
+    {{/with~}}
+
+    <label class="FileInput-label">
+        <span>
+            {{label}}
+        </span>
+
+        <input class="FileInput-input" type="file"
+            {{~#with inputName}} name="{{this}}" {{else}} name="fileinput"{{/with}}
+            {{~#with accept}} accept="{{this}}" {{/with}}
+            {{~#with disabled}} disabled{{/with}}
+            {{~#with multiple}} multiple{{/with}}
+            {{~#with required}} required{{/with}}>
+
+        {{~#with description}}
+            <div class="FileInput-description">
+                {{~this~}}
+            </div>
+        {{/with~}}
+    </label>
+</div>

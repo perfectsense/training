@@ -1,0 +1,72 @@
+.FaqQuestion {
+  display: block;
+
+  &[data-expanded] {
+    padding-bottom: 20px;
+  }
+
+  &-answer {
+    cursor: default;
+    height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+    transition-property: height, opacity;
+
+    [data-expanded] & {
+      height: auto;
+      opacity: 1;
+      overflow: visible;
+    }
+
+    .RichTextBody {
+
+      // Repeating RichTextBody selectors so-as to override typography style
+      >p,
+      >ul,
+      >ol,
+      p>ul,
+      p>ol {
+        .subhead-2;
+      }
+    }
+  }
+
+  &-answerWrapper {
+    padding-bottom: var(--spacing-md);
+  }
+
+  &-header {
+    cursor: pointer;
+    padding-block: var(--spacing-md);
+
+    a {
+      color: inherit;
+    }
+  }
+
+  &-title {
+    &:extend(.headline-6 all);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    column-gap: var(--spacing-sm);
+
+    // since this is an RTE, it gets P tags sometimes
+    p {
+      margin: 0;
+    }
+  }
+
+  &:not([data-expanded]) {
+    .iconMinus {
+      display: none;
+    }
+  }
+
+  &[data-expanded] {
+    .iconPlus {
+      display: none;
+    }
+  }
+}

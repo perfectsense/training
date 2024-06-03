@@ -1,0 +1,112 @@
+.PageListCarouselC {
+  padding: 0;
+
+  .flickity-prev-next-button {
+    display: block;
+  }
+
+  .PageList-items {
+    &-item {
+      width: 100%;
+    }
+  }
+
+  @container (@cq-only-sm) {
+    .flickity-prev-next-button {
+      &.previous {
+        left: 18px;
+      }
+
+      &.next {
+        left: 60px;
+        right: 0;
+      }
+    }
+  }
+
+  @container (@cq-up-to-md) {
+    .PagePromoModuleB {
+      &-content {
+        &-wrapper {
+          padding-top: 70px;
+        }
+      }
+    }
+
+    .flickity-prev-next-button {
+      top: calc(var(--media-height) + 20px);
+      transform: none;
+    }
+
+    &:where([data-text-align="center"]) {
+      .flickity-prev-next-button.previous {
+        left: auto;
+        right: calc(50% + 10px);
+      }
+
+      .flickity-prev-next-button.next {
+        left: calc(50% + 10px);
+      }
+    }
+  }
+
+  @container (@cq-md) {
+    .flickity-prev-next-button {
+      &.next {
+        right: 15px;
+      }
+
+      &.previous {
+        left: 15px;
+      }
+    }
+
+    .PagePromoModuleB {
+      &-content {
+        &-wrapper {
+          padding: 50px 65px;
+        }
+      }
+    }
+  }
+
+  @container (@cq-lg) {
+    .PagePromoModuleB {
+      &-content {
+        &-wrapper {
+          padding: 65px 60px;
+        }
+      }
+    }
+  }
+
+  @container (@cq-hk) {
+    .PagePromoModuleB {
+      &-content {
+        &-wrapper {
+          padding: 65px 75px;
+        }
+      }
+    }
+  }
+
+  @container (@cq-xl) {
+    .flickity-prev-next-button {
+      &.next {
+        right: 40px;
+      }
+
+      &.previous {
+        left: 40px;
+      }
+    }
+
+    .PagePromoModuleB {
+      &-content {
+        &-wrapper {
+          padding: 65px 100px;
+        }
+      }
+    }
+  }
+}

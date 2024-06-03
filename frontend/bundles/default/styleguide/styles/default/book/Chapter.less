@@ -1,0 +1,155 @@
+.Chapter {
+  --chapterIconSize: 25px;
+  display: block;
+  .label-4;
+
+  &-icon {
+    width: var(--chapterIconSize);
+    height: var(--chapterIconSize);
+    border-radius: 50%;
+    display: grid;
+    position: absolute;
+    cursor: pointer;
+    place-content: center;
+    left: -25px;
+    top: -0.2em;
+    border: none;
+    background: none;
+  }
+
+  .Chapter {
+    .label-4;
+  }
+
+  &-header:hover &-icon {
+    background-color: var(--color-site-secondary-bg);
+  }
+
+  &[data-is-anchor] & {
+    &-header {
+      &:before {
+        content: "\0023";
+        position: absolute;
+        left: -15px;
+        top: 0;
+        font-weight: bold;
+        color: var(--color-border);
+      }
+    }
+  }
+
+  &:not([data-has-chapters]) > &-header &,
+  &[data-expanded] > &-header & {
+    &-iconCollapsed {
+      display: none;
+    }
+    &-iconExpanded {
+      background-color: var(--color-site-secondary-bg);
+    }
+  }
+
+  &:not([data-has-chapters]) > &-header &,
+  &:not([data-expanded]) > &-header & {
+    &-iconExpanded {
+      display: none;
+    }
+
+    &-chapters {
+      display: none;
+    }
+  }
+
+  &:not([data-expanded]) & {
+    &-chapters {
+      display: none;
+    }
+  }
+
+  &-header {
+    display: inline-flex;
+    position: relative;
+    gap: 5px;
+    align-items: flex-start;
+
+    svg {
+      border-radius: 50%;
+      width: 16px;
+      height: 16px;
+      position: relative;
+      top: 0px;
+    }
+  }
+
+  &-label {
+    font-size: 8px;
+    text-transform: uppercase;
+    font-weight: bold;
+    white-space: nowrap;
+    background-color: var(--color-site-secondary-bg);
+    border-radius: 8px;
+    height: 16px;
+    padding: 0 7px;
+    display: inline-flex;
+    align-items: center;
+    position: relative;
+    top: -3px;
+
+    &[data-label="new"] {
+      background-color: #2C786D;
+      color: #ffffff;
+    }
+
+    &[data-label="update"] {
+      background-color: #813C68;
+      color: #ffffff;
+    }
+  }
+
+  &-chapters {
+    margin-left: 18px;
+    position: relative;
+
+    &:before {
+      position: absolute;
+      display: block;
+      content: '';
+      width: 2px;
+      top: 0;
+      bottom: 0;
+      background-color: var(--color-site-secondary-bg);
+      border-radius: 2px;
+      left: -32px;
+    }
+
+    li {
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+  }
+
+  &-title {
+    margin-left: 8px;
+  }
+
+  &[data-current] > &-header &-title {
+    font-weight: bold;
+  }
+
+  &[data-current] > &-header::before {
+    color: var(--color-primary-text);
+  }
+
+  .Link {
+    color: currentColor;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  a.Link {
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

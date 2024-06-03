@@ -1,0 +1,73 @@
+{
+  "_template": "/newsletter/Newsletter.hbs",
+  "_wrapper": false,
+  "above": [
+    {
+      "_template": "/newsletter/NewsletterHtmlModule.hbs",
+      "rawHtml": "<div style=\"border: 1px solid red\">This is an embed Ad</div>"
+    }
+  ],
+  "banner": [
+    {
+      "_template": "/newsletter/NewsletterPromoBanner.hbs",
+      "description": ["{{paragraphs(1)}}"],
+      "isNotUTMCapable": "false",
+      "title": "{{words([5,10])}}"
+    }
+  ],
+  "footer": [
+    {
+      "_template": "/newsletter/NewsletterFooter.hbs",
+      "body": ["{{paragraphs(1)}}"],
+      "isNotUTMCapable": "false",
+      "links": [
+        {
+          "_include": "/newsletter/NewsletterNavigationLink.json",
+          "_repeat": 4
+        }
+      ],
+      "social": {
+        "_include": "/social/SocialBar.json"
+      }
+    }
+  ],
+  "header": [
+    {
+      "_template": "/newsletter/NewsletterHeader.hbs",
+      "description": [],
+      "isNotUTMCapable": "false",
+      "media": [
+        {
+          "_template": "/image/Image.hbs",
+          "alt": "Brightspot logo.png",
+          "image": {
+            "_image": true,
+            "src": "https://free-trials-brightspot.s3.amazonaws.com/starter-kit/basic/ee/f6/705de4b1452c86ddab2a2f8b22c7/brightspot-logo.png"
+          },
+          "narrowImage": {
+            "_image": true,
+            "src": "https://free-trials-brightspot.s3.amazonaws.com/starter-kit/basic/ee/f6/705de4b1452c86ddab2a2f8b22c7/brightspot-logo.png"
+          }
+        }
+      ],
+      "publishDate": "May 06, 2021 11:44 AM",
+      "title": "{{words([5,10])}}"
+    }
+  ],
+  "language": "en",
+  "main": [
+    {
+      "_include": "/newsletter/NewsletterPromo.json"
+    },
+    {
+      "_include": "/newsletter/NewsletterQuote.json"
+    },
+    {
+      "_include": "/newsletter/NewsletterRichTextModule.json"
+    },
+    {
+      "_include": "/newsletter/NewsletterList.json"
+    }
+  ],
+  "_env": "styleguide"
+}

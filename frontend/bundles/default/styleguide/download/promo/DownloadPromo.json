@@ -1,0 +1,12 @@
+{
+  "_template": "/download/promo/DownloadPromo.hbs",
+  "media": {
+    "_include": "/image/Image.json"
+  },
+  "title": "{{words([5,10])}}",
+  "description": "{{words([15,25])}}",
+  "fileTypeDisplayName": "PDF",
+  "iconType": "PDF",
+  "ctaText": "Call to Action",
+  "url": "#"
+}

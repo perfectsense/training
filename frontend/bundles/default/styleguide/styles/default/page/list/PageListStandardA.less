@@ -1,0 +1,96 @@
+.PageListStandardA {
+  .PageList {
+    &-items {
+      display: grid;
+      column-gap: var(--spacing-lg);
+      row-gap: var(--spacing-lg);
+
+      &-item {
+        border-bottom: 1px solid var(--color-list-border);
+        padding-bottom: var(--spacing-lg);
+      }
+    }
+  }
+
+  .PagePromo {
+    &-title {
+      .headline-8;
+    }
+  }
+
+  &-primaryItems {
+    .PagePromo {
+      &-title {
+        .headline-5;
+      }
+
+      &-description {
+        .subhead-3;
+      }
+    }
+  }
+
+  &-secondaryItems,
+  &-tertiaryItems {
+    display: grid;
+    align-content: flex-start;
+    grid-column-gap: inherit;
+    grid-row-gap: inherit;
+  }
+
+  &-secondaryItems {
+    display: grid;
+    align-content: flex-start;
+  }
+
+  // custom container query here, as this acts like the tablet breakpoint and
+  //  also allows this module to show up at a tablet breakpoint
+  // at 1440px when placed in a 50/50 container
+  @container (min-width: 660px) {
+    &-tertiaryItems {
+      grid-template-columns: repeat(2, 1fr);
+
+      .PagePromo {
+        &-title {
+          .headline-6;
+        }
+      }
+
+      .PageList {
+        &-items {
+          &-item {
+            border-bottom: none;
+            padding-bottom: 0;
+          }
+        }
+      }
+    }
+  }
+
+  // custom container query here, as this acts like the desktop breakpoint and
+  //  also allows this module to show up at a tablet breakpoint
+  // at 1440px when placed in a 70/30 container
+  @container (min-width: 1000px) {
+    .PageList {
+      &-items {
+        grid-template-columns: 1.7fr 1fr;
+      }
+    }
+
+    &-primaryItems {
+      .PageList {
+        &-items {
+          &-item {
+            border-bottom: none;
+            padding-bottom: 0;
+          }
+        }
+      }
+    }
+
+    &-tertiaryItems {
+      grid-template-columns: repeat(4, 1fr);
+      grid-column: span 2;
+    }
+  }
+}

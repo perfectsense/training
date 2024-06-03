@@ -1,0 +1,53 @@
+.SearchResultsModuleActiveFilters {
+  display: block;
+  background-color: var(--color-site-secondary-bg);
+  padding: var(--spacing-md) var(--spacing-md);
+
+  &-header {
+    display: flex;
+    column-gap: var(--spacing-md);
+    row-gap: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+  }
+
+  &-title {
+    .label-5;
+  }
+
+  &-clearFilters {
+    margin-left: auto;
+    &:extend(a all);
+    .label-1;
+    cursor: pointer;
+    background: none;
+    border: 0;
+    padding: 0;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &-items {
+    display: grid;
+    column-gap: var(--spacing-md);
+    row-gap: var(--spacing-md);
+  }
+
+  &-item {
+    .subhead-3;
+    display: flex;
+    column-gap: var(--spacing-sm);
+    row-gap: var(--spacing-sm);
+
+    button {
+      .NotButton;
+      margin-left: auto;
+
+      svg {
+        width: 16px;
+        height: 16px;
+      }
+    }
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "fields": {
+    "showAsButton": {
+      "type": "boolean",
+      "displayName": "Should this nav item show up as a button?"
+    }
+  }
+}

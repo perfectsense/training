@@ -1,0 +1,71 @@
+.PageListRightRailA {
+  .ModuleHeader {
+    &-title {
+      &:extend(.headline-3 all);
+    }
+
+    &-description {
+      &:extend(.subhead-2 all);
+    }
+  }
+
+  .PageList {
+    &-items {
+      counter-reset: number;
+      display: grid;
+      row-gap: var(--spacing-md);
+
+      &[data-no-numbers] {
+        .PageList-items {
+          &-item {
+            grid-template-columns: auto;
+
+            &:before {
+              display: none;
+            }
+          }
+        }
+      }
+
+      &-item {
+        align-items: center;
+        border-bottom: 1px solid var(--color-list-border);
+        display: grid;
+        grid-template-columns: 20px auto;
+        column-gap: var(--spacing-md);
+        padding-bottom: var(--spacing-md);
+
+        &:before {
+          white-space: nowrap;
+          content: counter(number)'\a0';
+          counter-increment: number;
+          font-weight: 300;
+        }
+
+        &:first-of-type {
+          margin-top: var(--spacing-md);
+        }
+
+        .PagePromo {
+
+          &-description,
+          &-media,
+          &-category,
+          &-byline {
+            display: none;
+          }
+
+          &-title {
+            &:extend(.headline-8 all);
+          }
+        }
+      }
+    }
+
+    &-cta {
+      .Button {
+        margin-left: 0;
+      }
+    }
+  }
+}

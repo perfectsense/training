@@ -1,0 +1,62 @@
+.ActionLink {
+  align-items: center;
+  border: 1px solid currentColor;
+  border-radius: 50%;
+  display: grid;
+  height: 32px;
+  place-content: center;
+  position: relative;
+  width: 32px;
+
+  svg {
+    height: 16px;
+    width: 16px;
+  }
+
+  &-message {
+    &:extend(.label-1 all);
+
+    background-color: var(--color-site-bg);
+    border: 1px solid var(--color-border);
+    left: 50%;
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
+    padding: 5px;
+    top: -10px;
+    transform: translate(-50%, -100%);
+    transition: all 0.2s ease;
+    white-space: nowrap;
+
+    [data-success='true'] & {
+      opacity: 1;
+    }
+  }
+
+  span {
+    .sr-only;
+  }
+
+  &:hover {
+    cursor: pointer;
+
+    &:after {
+      background-color: #000;
+      border-radius: 50%;
+      bottom: 0;
+      content: '';
+      left: 0;
+      opacity: .2;
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+  }
+
+  &[data-social-service='mailto'],
+  &[data-social-service='print'],
+  &[data-social-service='copylink'],
+  &[data-social-service='download'] {
+    background-color: white;
+  }
+}

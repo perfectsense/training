@@ -1,0 +1,73 @@
+{
+  "_template": "SearchResultsModule.hbs",
+  "title": "{{words}}",
+  "description": "{{words}}",
+  "anchorId": "anchorTest",
+  "query": "{{words}}",
+  "searchInputPlaceholder": "{{words}}",
+  "filters": [
+    {
+      "_template": "SearchFilter.hbs",
+      "heading": "Type",
+      "items": [
+        { "_include": "SearchFilterInput.json", "label": "All", "selected": true },
+        { "_include": "SearchFilterInput.json", "label": "Articles", "count": 1234 },
+        { "_include": "SearchFilterInput.json", "label": "Photos", "count": 567 },
+        { "_include": "SearchFilterInput.json", "label": "Videos", "count": 89 }
+      ]
+    },
+    {
+      "_template": "SearchFilter.hbs",
+      "heading": "Date",
+      "items": [
+        { "_include": "SearchFilterInput.json", "label": "Any Time", "selected": true },
+        { "_include": "SearchFilterInput.json", "label": "Past Hour", "count": 12 },
+        { "_include": "SearchFilterInput.json", "label": "Past Day", "count": 34 },
+        { "_include": "SearchFilterInput.json", "label": "Past Month", "count": 56 },
+        { "_include": "SearchFilterInput.json", "label": "Past Year", "count": 789 }
+      ]
+    }
+  ],
+  "count": 123456,
+
+  "sorts": [
+    { "_template": "SearchSortInput.hbs", "url": "#", "label": "Relevant", "selected": true, "parameterValue": "relevant" },
+    { "_template": "SearchSortInput.hbs", "url": "#", "label": "Newest", "parameterValue": "newest" },
+    { "_template": "SearchSortInput.hbs", "url": "#", "label": "Oldest", "parameterValue": "oldest" }
+  ],
+  "spotlights": [
+    {
+      "_include": "/page/promo/PagePromoModule.json",
+      "_repeat": 3
+    }
+  ],
+  "items": [
+    {
+      "_include": "/page/promo/PagePromo.json",
+     "media": null
+    },
+    {
+      "_include": "/page/promo/PagePromo.json",
+      "_repeat": 12
+    },
+    {
+      "_template": "/page/promo/PagePromo.hbs",
+      "url": "#",
+      "target": "_self",
+      "category": "{{words([ 1, 3 ])}}",
+      "categoryUrl": "#",
+      "type": "{{words([ 1, 3 ])}}",
+      "title": "{{words}}",
+      "description": "{{words}}"
+    },
+    {
+      "_include": "/page/promo/PagePromo.json",
+      "_repeat": 4
+    }
+  ],
+  "previousPage" : "/search/SearchResultsModule.html",
+  "pageNumber": 1,
+  "pageCount": 123,
+  "nextPage" : "/search/SearchResultsModule.html",
+  "searchResultsModuleId": "1234"
+}

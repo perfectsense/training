@@ -1,0 +1,27 @@
+.HotspotModule {
+  &[data-module-style="A"] {
+    align-items: center;
+
+    @container (@cq-lg) {
+      &-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: left;
+        width: 100%;
+      }
+
+      grid-template-columns: .75fr .25fr;
+      column-gap: var(--spacing-lg);
+      row-gap: var(--spacing-lg);
+
+      &[data-image-align-horizontal="right"] {
+        grid-template-columns: .25fr .75fr;
+
+        .HotspotModule-media {
+          order: 2;
+        }
+      }
+    }
+  }
+}

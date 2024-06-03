@@ -1,0 +1,35 @@
+.FooterNavigationItem {
+  display: grid;
+  row-gap: var(--spacing-md);
+
+  a,
+  span {
+    &:extend(.label-2);
+
+    display: block;
+    word-break: keep-all;
+  }
+
+  .NavigationLink {
+    &-description {
+      &:extend(.subhead-3);
+    }
+
+    &-text {
+      &:extend(.subhead-2);
+
+      margin-bottom: 0px;
+    }
+  }
+
+  &-items {
+    display: grid;
+    row-gap: var(--spacing-md);
+
+    &-item {
+      .SocialLink {
+        display: flex;
+      }
+    }
+  }
+}

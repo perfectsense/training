@@ -1,0 +1,4 @@
+{
+    "_template": "/snippet/SnippetTextOption.hbs",
+    "text": "{{words(1)}}"
+}

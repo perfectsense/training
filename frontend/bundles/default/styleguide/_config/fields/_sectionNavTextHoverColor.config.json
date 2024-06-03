@@ -1,0 +1,8 @@
+{
+  "fields": {
+    "sectionNavTextHoverColor": {
+      "displayName": "Section Nav Text Hover Color",
+      "type": "color"
+    }
+  }
+}

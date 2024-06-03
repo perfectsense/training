@@ -1,0 +1,18 @@
+{
+  "styles": {
+    "/product/list/ProductListEnhancement.hbs": {
+      "inline": true,
+      "fields": [
+        "itemImageAspectRatio"
+      ],
+      "templates": [
+        {
+          "displayName": "Product List Enhancement",
+          "example": "/product/list/ProductListEnhancement.json",
+          "height": 800,
+          "width": 1024
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{{#if ctaButtonText}}
+    {{#if url}}
+        <div class="PagePromo-ctaLink">
+            <a href="{{url}}"{{#with target}} target="{{this}}"{{/with}}>
+                {{ctaButtonText}}
+                <span class="ctaArrow">
+                    {{include (iconPath 'arrow-right')}}
+                </span>
+            </a>
+        </div>
+    {{/if}}
+{{/if}}

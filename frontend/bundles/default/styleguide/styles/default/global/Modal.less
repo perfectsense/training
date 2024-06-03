@@ -1,0 +1,32 @@
+[data-bsp-modal] {
+  &::backdrop {
+    background-color: rgba(0, 0, 0, 0.9);
+  }
+
+  background-color: transparent;
+  position: fixed;
+  inset: 0;
+  border: 0;
+  margin: 0;
+  padding: 0;
+  max-width: 100vw;
+  max-height: 100vh;
+  width: 100vw;
+  height: 100vh;
+  z-index: @z-index-modal;
+
+  [data-bsp-modal-close] {
+    color: var(--color-text-inverse);
+    position: absolute;
+    top: var(--spacing-md);
+    right: var(--spacing-md);
+    cursor: pointer;
+    z-index: @z-index-modal + 1;
+
+    svg {
+      height: 20px;
+      fill: var(--color-text-inverse);
+      width: 20px;
+    }
+  }
+}

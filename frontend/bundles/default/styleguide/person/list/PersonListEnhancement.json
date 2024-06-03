@@ -1,0 +1,15 @@
+{
+  "_template": "/person/list/PersonListEnhancement.hbs",
+  "item": {
+    "_template": "/person/list/PersonList.hbs",
+    "title": "Person List Enhancement",
+    "description": "{{words([15,10])}}",
+    "anchorId": "anchorTest",
+    "items": [
+      {
+        "_include": "/person/promo/PersonPromo.json",
+        "_repeat": 10
+      }
+    ]
+  }
+}

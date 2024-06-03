@@ -1,0 +1,9 @@
+{
+  "styles": {
+    "/form/input/CaptchaInput.hbs": {
+      "fields": [
+        "invisibleCaptcha"
+      ]
+    }
+  }
+}

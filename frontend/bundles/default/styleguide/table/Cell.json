@@ -1,0 +1,9 @@
+{
+  "_template": "Cell.hbs",
+
+  "body": "{{html('<p>Table cell text</p>')}}",
+  "horizontalAlign": "left",
+  "verticalAlign": "middle",
+  "colspan": 0,
+  "rowspan": 0
+}

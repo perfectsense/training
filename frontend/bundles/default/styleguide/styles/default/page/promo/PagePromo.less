@@ -1,0 +1,374 @@
+.PagePromo {
+  color: var(--color-primary-text);
+
+  &[data-image-align-vertical="bottom"] {
+    display: flex;
+    flex-direction: column;
+
+    .PagePromo-media {
+      margin: 20px 0 0;
+      order: 2;
+    }
+  }
+
+  &[data-image-align-horizontal="left"] {
+    display: flex;
+
+    .PagePromo-media {
+      flex-shrink: 0;
+      margin: 0 var(--spacing-md) 0 0;
+      width: 90px;
+    }
+  }
+
+  &[data-image-align-horizontal="right"] {
+    display: flex;
+    justify-content: space-between;
+
+    .PagePromo-content {
+      order: 1;
+    }
+
+    .PagePromo-media {
+      flex-shrink: 0;
+      margin: 0 0 0 var(--spacing-md);
+      order: 2;
+      width: 90px;
+    }
+  }
+
+  &-author {
+    --color-link-text: var(--color-primary-text);
+    --color-link-text-hover: var(--color-primary-text);
+
+    a {
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &-button {
+    .verticalSpacing(var(--spacing-lg))
+  }
+
+  &-byline {
+    &:extend(.byline-1 all);
+    .verticalSpacing(var(--spacing-sm));
+  }
+
+  &-category {
+    &:extend(.label-1 all);
+    .verticalSpacing(var(--spacing-sm));
+    color: var(--color-link-text);
+
+    a.Link[href]:not([href=""]):hover {
+      text-decoration: underline;
+    }
+  }
+
+  &-ctaLink {
+    .verticalSpacing(var(--spacing-sm));
+
+    .ctaArrow {
+      display: inline-block;
+      transition: transform 0.3s ease;
+    }
+
+    a {
+      &:extend(.label-3 all);
+
+      &:hover {
+        .ctaArrow {
+          transform: translateX(5px);
+        }
+      }
+    }
+
+    svg {
+      height: 9.5px;
+      margin-left: var(--spacing-xs);
+      margin-bottom: 2px;
+      width: 16px;
+    }
+  }
+
+  &-description {
+    &:extend(.subhead-3 all);
+    &:extend(.RichTextElements all);
+    .verticalSpacing(var(--spacing-sm));
+    color: var(--color-primary-text);
+
+    a {
+      text-decoration: underline;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+
+    >ul,
+    p>ul {
+      list-style: disc;
+      margin: var(--spacing-sm) var(--spacing-sm);
+
+      li>ul {
+        list-style: circle;
+        margin: var(--spacing-sm) calc(var(--spacing-md) * -1) var(--spacing-md) 0;
+
+        li>ul {
+          list-style: square;
+          margin: var(--spacing-sm) calc(var(--spacing-md) * -1) var(--spacing-md) 0;
+        }
+      }
+
+      li>ol {
+        list-style: decimal;
+        margin: var(--spacing-sm) calc(var(--spacing-md) * -1) var(--spacing-md) 0;
+      }
+    }
+
+    >ol,
+    p>ol {
+      list-style: decimal;
+      margin: var(--spacing-sm) var(--spacing-sm);
+
+      li>ol {
+        list-style: lower-alpha;
+        margin: var(--spacing-sm) calc(var(--spacing-md) * -1) var(--spacing-md) 0;
+
+        li>ol {
+          list-style: lower-roman;
+          margin: var(--spacing-sm) calc(var(--spacing-md) * -1) var(--spacing-md) 0;
+        }
+      }
+
+      li>ul {
+        list-style: disc;
+        margin: var(--spacing-sm) calc(var(--spacing-md) * -1) var(--spacing-md) 0;
+      }
+    }
+  }
+
+  &-flag {
+    &:extend(.label-1 all);
+    .verticalSpacing(var(--spacing-sm));
+    background-color: var(--color-flag-background);
+    color: var(--color-flag-text);
+    text-transform: uppercase;
+    display: inline-block;
+    padding: var(--spacing-xs) var(--spacing-md);
+  }
+
+  &-media {
+    margin-bottom: var(--spacing-md);
+    position: relative;
+
+    .Link {
+      display: block;
+
+      &-icon {
+        bottom: 10px;
+        height: 30px;
+        left: 10px;
+        position: absolute;
+        width: 30px;
+        background-color: var(--color-primary);
+        clip-path: circle();
+        color: var(--color-text-inverse);
+        display: grid;
+        place-content: center;
+
+        svg {
+          width: 24px;
+          height: 24px;
+        }
+      }
+    }
+  }
+
+  &-title {
+    &:extend(.headline-5 all);
+    .verticalSpacing(var(--spacing-sm));
+    color: var(--color-primary-text);
+    --color-link-text: var(--color-primary-text);
+  }
+
+  [data-use-text-colors="inverse"] &-title {
+    a.Link[href]:not([href=""]):hover {
+      text-decoration: underline;
+    }
+  }
+
+  // Duplication of attribute selector to increase specificity
+  [data-promo-title-size][data-promo-title-size="1"] & {
+    &-title {
+      &:extend(.headline-3 all);
+    }
+  }
+
+  // Duplication of attribute selector to increase specificity
+  [data-promo-title-size][data-promo-title-size="2"] & {
+    &-title {
+      &:extend(.headline-4 all);
+    }
+  }
+
+  // Duplication of attribute selector to increase specificity
+  [data-promo-title-size][data-promo-title-size="3"] & {
+    &-title {
+      &:extend(.headline-5 all);
+    }
+  }
+
+  // Duplication of attribute selector to increase specificity
+  [data-promo-title-size][data-promo-title-size="4"] & {
+    &-title {
+      &:extend(.headline-6 all);
+    }
+  }
+
+  // Duplication of attribute selector to increase specificity
+  [data-promo-title-size][data-promo-title-size="5"] & {
+    &-title {
+      &:extend(.headline-7 all);
+    }
+  }
+
+  // Duplication of attribute selector to increase specificity
+  [data-promo-title-size][data-promo-title-size="6"] & {
+    &-title {
+      &:extend(.headline-8 all);
+    }
+  }
+
+  // Duplication of attribute selector to increase specificity
+  [data-promo-description-size][data-promo-description-size="1"] & {
+    &-description {
+      &:extend(.subhead-1 all);
+    }
+  }
+
+  // Duplication of attribute selector to increase specificity
+  [data-promo-description-size][data-promo-description-size="2"] & {
+    &-description {
+      &:extend(.subhead-2 all);
+    }
+  }
+
+  // Duplication of attribute selector to increase specificity
+  [data-promo-description-size][data-promo-description-size="3"] & {
+    &-description {
+      &:extend(.subhead-3 all);
+    }
+  }
+
+  [data-item-image-aspect-ratio$="circle"] &,
+  [data-image-aspect-ratio$="circle"] & {
+    &-media {
+      img {
+        clip-path: circle();
+      }
+    }
+  }
+
+  [data-item-display-style="card"] & {
+    --color-primary-text: initial;
+    --color-link-text: var(--color-primary);
+    --color-link-text-hover: var(--color-primary);
+
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: var(--color-site-bg);
+    box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.1);
+  }
+
+  [data-item-has-background-color] & {
+    background-color: var(--color-item-background);
+  }
+
+  [data-item-has-accent-color] & {
+    border-top-style: solid;
+    border-top-width: 10px;
+    border-top-color: var(--color-item-accent);
+  }
+
+  [data-item-has-background-image] & {
+    background-image: var(--item-background-image);
+    background-size: cover;
+  }
+
+  [data-item-has-text-color] & {
+    --color-primary-text: var(--color-item-text);
+    --color-link-text: var(--color-item-text);
+    --color-link-text-hover: var(--color-item-text);
+  }
+
+  @container (@cq-md) {
+    &[data-image-align-horizontal] {
+      .PagePromo-media {
+        width: 250px;
+      }
+    }
+  }
+
+  @container (@cq-lg) {
+    &-media {
+      .Link {
+        &-icon {
+          bottom: 20px;
+          height: 50px;
+          left: 20px;
+          width: 50px;
+        }
+      }
+    }
+  }
+
+  @container (@cq-hk) {
+    &[data-image-align-horizontal] {
+      .PagePromo-media {
+        width: 340px;
+      }
+    }
+  }
+
+  @container (@cq-xl) {
+    &[data-image-align-horizontal] {
+      .PagePromo-media {
+        width: 400px;
+      }
+    }
+  }
+
+  @container (@cq-up-to-md) {
+
+    // TODO: See if there is a cleaner method for this, rather than repeating styles
+    &[data-mobile-alt-layout="true"] {
+      display: block;
+
+      .PagePromo-media {
+        display: block;
+        float: right;
+        margin-left: var(--spacing-md);
+        margin-bottom: var(--spacing-md);
+        max-width: 90px;
+        order: initial;
+
+        img {
+          aspect-ratio: 1;
+          object-fit: cover;
+        }
+
+        .Link {
+          &-icon {
+            bottom: 5px;
+            height: 18px;
+            left: 5px;
+            width: 18px;
+          }
+        }
+      }
+    }
+  }
+}

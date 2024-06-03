@@ -1,0 +1,38 @@
+:root {
+  --hatHeight: 0px;
+
+  &[data-header-hat=true] {
+    --hatHeight: 40px;
+  }
+}
+
+.Hat {
+  background-color: var(--color-hat-bg);
+  color: var(--color-hat-text);
+  --color-link-text: var(--color-hat-text);
+  --color-link-text-hover: var(--color-hat-text);
+  --color-primary-text: var(--color-hat-text);
+  display: flex;
+  align-items: center;
+  height: var(--hatHeight);
+  padding: 0 var(--horizontal-margin-outside);
+  width: 100%;
+
+  &-content {
+    width: 100%;
+  }
+
+  // overrides to default
+  .RichTextBody {
+
+    >p,
+    p {
+      .headline-8;
+    }
+
+    h2,
+    h3 {
+      .headline-7;
+    }
+  }
+}

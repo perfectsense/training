@@ -1,0 +1,11 @@
+{
+  "styles": {
+    "/tab/TabsEnhancement.hbs": {
+        "inline": true,
+        "fields": [
+            "backgroundColor",
+            "useTextColors"
+        ]
+    }
+  }
+}

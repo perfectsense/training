@@ -1,0 +1,20 @@
+{
+  "fields": {
+    "playlistPlayerLayout": {
+      "type": "text",
+      "displayName": "Player Layout",
+      "cms.ui.dropDown": true,
+      "cms.ui.placeholder": "Default",
+      "values": [
+        {
+          "label": "Bottom",
+          "value": "bottom"
+        },
+        {
+          "label": "Side",
+          "value": "side"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html class="TopicPage" {{~include "/page/Page-htmlAttributes.hbs" this}}>
+    {{include "/page/Page-head.hbs" this}}
+
+    <body class="Page-body">
+        {{include "/page/Page-bodyStart.hbs" this}}
+        {{include "/page/Page-header.hbs" this}}
+        <div data-moduleroot>
+            {{include "/page/Page-above.hbs" this}}
+
+            <div class="Page-bookContainer" {{#unless book}}data-no-book{{/unless}}>
+                {{#with book}}
+                <div class="Page-bookChaptersContainer">{{this}}</div>
+                {{/with}}
+                <div class="Page-bookContentContainer" data-companion-content>
+                    <main>
+                        {{include "/page/Page-breadcrumbs.hbs" this}}
+                        {{include "/page/Page-headline.hbs" this}}
+                        {{include "/page/Page-subHeadline.hbs" this}}
+
+                        <div class="TopicPage-actions-wrapper">
+                            {{include "/page/Page-byline.hbs" this}}
+
+                            {{include "/page/Page-sponsoredBy.hbs" this}}
+
+                            {{include "/page/Page-actions.hbs" this}}
+                        </div>
+
+                        {{#with lead}}
+                            {{#set lazyLoadImage=false}}
+                                <div class="Page-lead">{{~this~}}</div>
+                            {{/set}}
+                        {{/with}}
+
+                        {{#with topicBody}}
+                            <div class="RichTextBody">
+                                {{#each this}}
+                                    {{this}}
+                                {{/each}}
+                            </div>
+                        {{/with}}
+
+                        {{include "/global/Copyright.hbs" this}}
+
+                        {{attachments}}
+
+                        {{include "/topic/includes/TopicNavigation.hbs" this}}
+
+                        {{include "/page/Page-tags.hbs" this}}
+                    </main>
+                </div>
+            </div>
+
+            {{#if relatedContent}}
+                <div data-supplementary-content>
+                    {{relatedContent}}
+                </div>
+            {{/if}}
+
+            {{include "/page/Page-below.hbs" this}}
+        </div>
+        {{include "/page/Page-footer.hbs" this}}
+        {{include "/page/Page-extraBodyItems.hbs" this}}
+    </body>
+</html>

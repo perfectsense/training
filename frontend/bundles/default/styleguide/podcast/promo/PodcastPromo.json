@@ -1,0 +1,15 @@
+{
+  "_template": "/podcast/promo/PodcastPromo.hbs",
+  "category": "Ipsum",
+  "categoryUrl": "#",
+  "media": {
+    "_include": "/image/Image.json"
+  },
+  "title": "Podcast Title",
+  "url": "#",
+  "target": "_self",
+  "description": "Exercitation id amet voluptate voluptate sunt. Esse excepteur est reprehenderit ad labore consequat eiusmod consequat culpa laborum. Aliqua tempor incididunt ullamco aliqua ea sunt.",
+  "providers": {
+    "_include": "/podcast/list/PodcastProviderList.json"
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "styles": {
+    "/product/promo/ProductPromoModule.hbs": {
+      "fields": [
+        "promoTitleSize",
+        "promoDescriptionSize",
+        "textAlign",
+        "imagePositionHorizontal",
+        "backgroundColor",
+        "borderColor",
+        "useTextColors",
+        "animateOnScroll",
+        "imageAspectRatio",
+        "flagBorder",
+        "flagPosition",
+        "flagTextColor",
+        "flagBackgroundColor",
+        "flagBorderColor"
+      ],
+      "templates": [
+        {
+          "displayName": "Horizontal - Product Promo Module 50/50",
+          "example": "/product/promo/ProductPromoModule5050.json",
+          "height": 800,
+          "width": 1024
+        },
+        {
+          "displayName": "Horizontal - Product Promo Module 70/30",
+          "example": "/product/promo/ProductPromoModule7030.json",
+          "height": 800,
+          "width": 1024
+        }
+      ]
+    }
+  }
+}

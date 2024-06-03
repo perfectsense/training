@@ -1,0 +1,8 @@
+{
+  "fields": {
+    "sectionNavInsidePageHeading": {
+      "type": "boolean",
+      "displayName": "Position Section Navigation inside the Page Heading?"
+    }
+  }
+}

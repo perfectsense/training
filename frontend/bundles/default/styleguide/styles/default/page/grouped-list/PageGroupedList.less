@@ -1,0 +1,31 @@
+.PageGroupedList {
+  display: block;
+
+  &-group {
+    .ModuleHeader {
+      &-title {
+        .headline-3;
+      }
+    }
+
+    &:not(:first-child) {
+      margin-top: 40px;
+    }
+
+    &:before {
+      display: block;
+      content: '';
+      border-bottom: 1px solid var(--color-border);
+      margin: 20px 0;
+    }
+
+    [data-module][data-has-background] {
+      padding: 20px;
+    }
+  }
+
+  .PageList-items-item:first-child {
+    border-top: unset;
+    padding-top: unset;
+  }
+}

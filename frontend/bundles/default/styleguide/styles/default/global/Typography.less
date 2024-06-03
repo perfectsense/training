@@ -1,0 +1,313 @@
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  .body-1;
+}
+
+.typography-default() {
+  --headline-1: 32px;
+  --headline-2: 24px;
+  --headline-3: 24px;
+  --headline-4: 24px;
+  --headline-5: 18px;
+  --headline-6: 18px;
+  --headline-7: 16px;
+  --headline-8: 14px;
+
+  --subhead-1: 16px;
+  --subhead-2: 14px;
+  --subhead-3: 14px;
+  --subhead-4: 12px;
+
+  --body-1: 16px;
+
+  --label-1: 12px;
+  --label-2: 14px;
+  --label-3: 16px;
+  --label-4: 16px;
+  --label-5: 14px;
+  --label-6: 12px;
+
+  --byline-1: 12px;
+  --byline-2: 14px;
+
+  --quote-1: 18px;
+  --quote-2: 18px;
+
+  --block-quote-1: 16px;
+
+  --stat-1: 40px;
+  --stat-2: 24px;
+}
+
+// Mixin for overriding typography variables for specific breakpoints
+.typography-overrides-md() {
+  --headline-1: 48px;
+  --headline-2: 32px;
+  --headline-3: 32px;
+
+  --subhead-1: 20px;
+
+  --quote-1: 24px;
+
+  --stat-1: 64px;
+  --stat-2: 32px;
+}
+
+.typography-overrides-hk() {
+  --headline-1: 64px;
+  --headline-2: 48px;
+  --headline-3: 40px;
+  --headline-4: 32px;
+  --headline-5: 24px;
+
+  --subhead-1: 24px;
+  --subhead-2: 16px;
+
+  --body-1: 18px;
+
+  --byline-2: 16px;
+
+  --quote-1: 32px;
+
+  --block-quote-1: 18px;
+
+  --stat-1: 80px;
+  --stat-2: 48px;
+}
+
+
+/*
+  There are double queries here. There are media query based mixins for root, and then there
+  are container query based mixins for the data-module attribute. This is because we want
+  data-modules to respond to container queries. With only the root media queries, only the media queries
+  would be in play, so therefore something like a headline-2 inside of a module when placed into
+  an aside that is 300px wide, would take the media query rule of 1280px instead of the
+  container rule of 300px.
+*/
+:root,
+[data-module] {
+  .typography-default()
+}
+
+@media @mq-md {
+  :root {
+    .typography-overrides-md()
+  }
+}
+
+/*
+  This is a custom media query for the medium typography mainly because of the article body
+  width, which is 720px. This lets us get slightly larger font sizes a bit earlier, before
+  we switch the layout at 768px. This makes enhancements look better in the article body
+  and actually makes the site look better on a larger phone
+*/
+@container (min-width: 720px) {
+  [data-module] {
+    .typography-overrides-md();
+  }
+}
+
+@media @mq-hk {
+  :root {
+    .typography-overrides-hk();
+  }
+}
+
+@container (@cq-hk) {
+  [data-module] {
+    .typography-overrides-hk();
+  }
+}
+
+.headline-1 {
+  font-size: var(--headline-1);
+  font-family: var(--font-page-titles);
+  font-weight: bold;
+  line-height: 1.2;
+  letter-spacing: -0.5px;
+}
+
+.headline-2 {
+  font-size: var(--headline-2);
+  font-family: var(--font-page-titles);
+  font-weight: bold;
+  line-height: 1.2;
+  letter-spacing: -0.5px;
+}
+
+.headline-3 {
+  font-size: var(--headline-3);
+  font-family: var(--font-page-titles);
+  font-weight: bold;
+  line-height: 1.2;
+  letter-spacing: -0.5px;
+}
+
+.headline-4 {
+  font-size: var(--headline-4);
+  font-family: var(--font-page-titles);
+  font-weight: bold;
+  line-height: 1.2;
+  letter-spacing: -0.5px;
+}
+
+.headline-5 {
+  font-size: var(--headline-5);
+  font-family: var(--font-page-titles);
+  font-weight: bold;
+  line-height: 1.2;
+  letter-spacing: -0.5px;
+}
+
+.headline-6 {
+  font-size: var(--headline-6);
+  font-family: var(--font-page-titles);
+  font-weight: bold;
+  line-height: 1.2;
+  letter-spacing: -0.5px;
+}
+
+.headline-7 {
+  font-size: var(--headline-7);
+  font-family: var(--font-page-titles);
+  font-weight: bold;
+  line-height: 1.2;
+  letter-spacing: -0.5px;
+}
+
+.headline-8 {
+  font-size: var(--headline-8);
+  font-family: var(--font-page-titles);
+  font-weight: bold;
+  line-height: 1.2;
+  letter-spacing: -0.5px;
+}
+
+.subhead-1 {
+  font-family: var(--font-1);
+  font-size: var(--subhead-1);
+  font-weight: normal;
+  line-height: 1.4;
+}
+
+.subhead-2 {
+  font-family: var(--font-1);
+  font-size: var(--subhead-2);
+  font-weight: normal;
+  line-height: 1.2;
+}
+
+.subhead-3 {
+  font-family: var(--font-1);
+  font-size: var(--subhead-3);
+  font-weight: normal;
+  line-height: 1.2;
+}
+
+.subhead-4 {
+  font-family: var(--font-1);
+  font-size: var(--subhead-4);
+  font-weight: normal;
+  line-height: 1.2;
+}
+
+.body-1 {
+  font-family: var(--font-rte-body);
+  font-size: var(--body-1);
+  font-weight: normal;
+  line-height: 1.8;
+}
+
+.label-1 {
+  font-family: var(--font-1);
+  font-size: var(--label-1);
+  font-weight: bold;
+  line-height: 1.2;
+}
+
+.label-2 {
+  font-family: var(--font-1);
+  font-size: var(--label-2);
+  font-weight: bold;
+  line-height: 1.2;
+}
+
+.label-3 {
+  font-family: var(--font-1);
+  font-size: var(--label-3);
+  font-weight: bold;
+  line-height: 1.2;
+}
+
+.label-4 {
+  font-family: var(--font-1);
+  font-size: var(--label-4);
+  font-weight: normal;
+  line-height: 1.2;
+}
+
+.label-5 {
+  font-family: var(--font-1);
+  font-size: var(--label-5);
+  font-weight: bold;
+  line-height: 1.2;
+}
+
+.label-6 {
+  font-family: var(--font-1);
+  font-size: var(--label-6);
+  font-weight: bold;
+  line-height: 1.2;
+}
+
+.byline-1 {
+  font-family: var(--font-1);
+  font-size: var(--byline-1);
+  font-weight: normal;
+  line-height: 1.2;
+}
+
+.byline-2 {
+  font-family: var(--font-1);
+  font-size: var(--byline-2);
+  font-weight: normal;
+  line-height: 1.2;
+}
+
+.quote-1 {
+  font-family: var(--font-quote);
+  font-size: var(--quote-1);
+  font-weight: normal;
+  line-height: 1.4;
+}
+
+.quote-2 {
+  font-family: var(--font-quote);
+  font-size: var(--quote-2);
+  font-weight: normal;
+  line-height: 1.4;
+}
+
+.block-quote-1 {
+  font-family: var(--font-1);
+  font-size: var(--block-quote-1);
+  font-weight: normal;
+  line-height: 1.4;
+}
+
+.stat-1 {
+  font-family: var(--font-1);
+  font-size: var(--stat-1);
+  font-weight: bold;
+  letter-spacing: -0.5px;
+  line-height: 1.2;
+}
+
+.stat-2 {
+  font-family: var(--font-1);
+  font-size: var(--stat-2);
+  font-weight: bold;
+  letter-spacing: -0.5px;
+  line-height: 1.2;
+}

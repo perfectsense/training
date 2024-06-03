@@ -1,0 +1,7 @@
+{
+  "fields": {
+    "hideDescriptions": {
+      "type": "boolean"
+    }
+  }
+}

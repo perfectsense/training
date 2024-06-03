@@ -1,0 +1,15 @@
+{{#if items}}
+<div class="PageListRightRailC" data-module{{include "includes/PageList-attributes.hbs" this}}>
+    {{include "/global/ModuleHeader.hbs" this}}
+
+    <div class="PageList-items">
+        {{#each items}}
+            <div class="PageList-items-item">
+                {{this}}
+            </div>
+        {{/each}}
+    </div>
+
+    {{include "includes/PageList-footer.hbs" this}}
+</div>
+{{/if}}

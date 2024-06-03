@@ -1,0 +1,48 @@
+{
+  "styles": {
+    "/podcast/list/PodcastList.hbs": {
+      "fields": [
+        "listTitleSize",
+        "listDescriptionSize",
+        "backgroundColor",
+        "useTextColors",
+        "headerTextAlign",
+        "ctaAlignment",
+        "itemAlignment",
+        "itemImageAspectRatio",
+        "itemDisplayStyle",
+        "itemBackgroundColor",
+        "itemBackgroundImage",
+        "itemTextColor",
+        "modulePaddingTop",
+        "modulePaddingBottom"
+      ],
+      "templates": [
+        {
+          "displayName": "Podcast List A",
+          "example": "/podcast/list/PodcastListA.json",
+          "height": 800,
+          "width": 1024
+        },
+        {
+          "displayName": "Podcast List B",
+          "example": "/podcast/list/PodcastListB.json",
+          "height": 800,
+          "width": 1024,
+          "fields": [
+            "itemAlignment"
+          ]
+        },
+        {
+          "displayName": "Podcast List C (Right Rail)",
+          "example": "/podcast/list/PodcastListC.json",
+          "height": 800,
+          "width": 1024,
+          "fields": [
+            "itemAlignment"
+          ]
+        }
+      ]
+    }
+  }
+}

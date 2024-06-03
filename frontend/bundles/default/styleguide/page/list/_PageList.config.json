@@ -1,0 +1,344 @@
+{
+  "styles": {
+    "/page/list/PageList.hbs": {
+      "fields": [
+        "listTitleSize",
+        "listDescriptionSize",
+        "backgroundColor",
+        "useTextColors",
+        "modulePaddingTop",
+        "modulePaddingBottom"
+      ],
+      "templates": [
+        {
+          "displayName": "Standard - List A",
+          "example": "/page/list/PageListStandardA.json",
+          "height": 800,
+          "width": 1024,
+          "fields": [
+            "itemImageAspectRatio",
+            "itemAlignment"
+          ]
+        },
+        {
+          "displayName": "Standard - List B",
+          "example": "/page/list/PageListStandardB.json",
+          "height": 800,
+          "width": 1024,
+          "fields": [
+            "itemAlignment",
+            "itemDisplayStyle",
+            "itemBackgroundColor",
+            "itemBackgroundImage",
+            "itemTextColor",
+            "itemImageAspectRatio",
+            "listColumns123456",
+            "suppressPagination",
+            "animateOnScroll",
+            "listHeaderPosition"
+          ]
+        },
+        {
+          "displayName": "Standard - List C",
+          "example": "/page/list/PageListStandardC.json",
+          "height": 800,
+          "width": 1024,
+          "fields": [
+            "itemAlignment",
+            "itemImageAspectRatio"
+          ]
+        },
+        {
+          "displayName": "Standard - List D",
+          "example": "/page/list/PageListStandardD.json",
+          "height": 800,
+          "width": 1024,
+          "fields": [
+            "itemAlignment",
+            "itemImageAlignment",
+            "itemBackgroundColor",
+            "itemBackgroundImage",
+            "itemDisplayStyle",
+            "itemTextColor",
+            "itemImageAspectRatio",
+            "suppressPagination"
+          ]
+        },
+        {
+          "displayName": "Standard - List E",
+          "example": "/page/list/PageListStandardE.json",
+          "height": 800,
+          "width": 1024,
+          "fields": [
+            "subTitle",
+            "itemAlignment"
+          ]
+        },
+        {
+          "displayName": "Standard - List F",
+          "example": "/page/list/PageListStandardF.json",
+          "height": 800,
+          "width": 1024,
+          "fields": [
+            "itemAlignment",
+            "itemBackgroundColor",
+            "itemBackgroundImage",
+            "itemDisplayStyle",
+            "itemTextColor",
+            "listHeaderPosition",
+            "listColumns23456",
+            "promoButtonText"
+          ]
+        },
+        {
+          "displayName": "Standard - List G",
+          "example": "/page/list/PageListStandardG.json",
+          "height": 800,
+          "width": 1024,
+          "fields": [
+            "itemAlignment",
+            "itemImageAlignment",
+            "itemBackgroundColor",
+            "itemBackgroundImage",
+            "itemDisplayStyle",
+            "itemTextColor",
+            "itemImageAspectRatio"
+          ]
+        },
+        {
+          "displayName": "Standard - List H",
+          "example": "/page/list/PageListStandardH.json",
+          "height": 800,
+          "width": 1024,
+          "fields": [
+            "itemAlignment",
+            "itemImageAspectRatio",
+            "itemDisplayStyle",
+            "itemTextColor",
+            "itemBackgroundColor",
+            "itemBackgroundImage"
+          ]
+        },
+        {
+          "displayName": "Standard - List I",
+          "example": "/page/list/PageListStandardI.json",
+          "height": 800,
+          "width": 1024,
+          "fields": [
+            "headerTextAlign",
+            "listColumns234",
+            "suppressPagination",
+            "animateOnScroll",
+            "itemAlignment",
+            "itemImageAspectRatio"
+          ]
+        },
+        {
+          "displayName": "Standard - List J",
+          "example": "/page/list/PageListStandardJ.json",
+          "height": 800,
+          "width": 1024,
+          "fields": [
+            "headerTextAlign",
+            "itemAlignment"
+          ]
+        },
+        {
+          "displayName": "Standard - List K",
+          "example": "/page/list/PageListStandardK.json",
+          "height": 800,
+          "width": 1024,
+          "fields": [
+            "itemAlignment",
+            "itemImageAspectRatio"
+          ]
+        },
+        {
+          "displayName": "Standard - List L",
+          "example": "/page/list/PageListStandardL.json",
+          "height": 800,
+          "width": 1024,
+          "fields": [
+            "listColumns234",
+            "imagePositionHorizontal",
+            "itemAlignment",
+            "itemImageAspectRatio"
+          ]
+        },
+        {
+          "displayName": "Standard - List M",
+          "example": "/page/list/PageListStandardM.json",
+          "height": 800,
+          "width": 1024,
+          "fields": [
+            "headerTextAlign",
+            "itemAlignment",
+            "itemDisplayStyle",
+            "itemImageAspectRatio",
+            "itemTextColor",
+            "itemBackgroundColor",
+            "itemBackgroundImage",
+            "listColumns23456",
+            "suppressPagination",
+            "animateOnScroll",
+            "listHeaderPosition"
+          ]
+        },
+        {
+          "displayName": "Standard - List N",
+          "example": "/page/list/PageListStandardN.json",
+          "height": 800,
+          "width": 1024,
+          "fields": [
+            "headerTextAlign",
+            "itemAlignment",
+            "itemImageAspectRatio",
+            "itemDisplayStyle",
+            "itemTextColor",
+            "itemBackgroundColor",
+            "itemBackgroundImage",
+            "listColumns23456",
+            "suppressPagination",
+            "animateOnScroll",
+            "listHeaderPosition"
+          ]
+        },
+        {
+          "displayName": "Standard - List O",
+          "example": "/page/list/PageListStandardO.json",
+          "height": 800,
+          "width": 1024,
+          "fields": [
+            "headerTextAlign",
+            "itemAlignment",
+            "itemImageAspectRatio",
+            "itemBackgroundColor",
+            "itemBackgroundImage",
+            "itemDisplayStyle",
+            "itemTextColor",
+            "listColumns23456",
+            "suppressPagination",
+            "animateOnScroll",
+            "listHeaderPosition"
+          ]
+        },
+        {
+          "displayName": "Accordion - List A",
+          "example": "/page/list/PageListAccordionA.json",
+          "height": 800,
+          "width": 1024,
+          "fields": [
+            "listHeaderPosition"
+          ]
+        },
+        {
+          "displayName": "Carousel - List A",
+          "example": "/page/list/PageListCarouselA.json",
+          "height": 800,
+          "width": 1024,
+          "fields": [
+            "itemDisplayStyle",
+            "itemBackgroundColor",
+            "itemBackgroundImage",
+            "itemTextColor",
+            "listColumns23456",
+            "itemAlignment",
+            "itemImageAspectRatio"
+          ]
+        },
+        {
+          "displayName": "Carousel - List B",
+          "example": "/page/list/PageListCarouselB.json",
+          "height": 800,
+          "width": 1024,
+          "fields": [
+            "itemAlignment",
+            "itemImageAlignment",
+            "itemDisplayStyle",
+            "itemBackgroundColor",
+            "itemBackgroundImage",
+            "itemTextColor",
+            "itemImageAspectRatio"
+          ]
+        },
+        {
+          "displayName": "Carousel - List C",
+          "example": "/page/list/PageListCarouselC.json",
+          "height": 800,
+          "width": 1024,
+          "fields": [
+            "textAlign",
+            "itemAlignment"
+          ]
+        },
+        {
+          "displayName": "Carousel - List D",
+          "example": "/page/list/PageListCarouselD.json",
+          "height": 500,
+          "width": 400,
+          "fields": [
+            "itemAlignment",
+            "itemDisplayStyle",
+            "itemBackgroundColor",
+            "itemBackgroundImage",
+            "itemTextColor",
+            "listColumns56",
+            "itemImageAspectRatio"
+          ]
+        },
+        {
+          "displayName": "Carousel - List E",
+          "example": "/page/list/PageListCarouselE.json",
+          "height": 800,
+          "width": 1024,
+          "fields": [
+            "carouselSuppressAutoPlay",
+            "carouselSpeed",
+            "imagePositionHorizontal",
+            "itemAlignment"
+          ]
+        },
+        {
+          "displayName": "Right Rail - List A",
+          "example": "/page/list/PageListRightRailA.json",
+          "height": 500,
+          "width": 400,
+          "fields": [
+            "hideListNumbers",
+            "itemAlignment"
+          ]
+        },
+        {
+          "displayName": "Right Rail - List B",
+          "example": "/page/list/PageListRightRailB.json",
+          "height": 500,
+          "width": 400,
+          "fields": [
+            "showListNumbers",
+            "itemAlignment",
+            "itemImageAlignment"
+          ]
+        },
+        {
+          "displayName": "Right Rail - List C",
+          "example": "/page/list/PageListRightRailC.json",
+          "height": 500,
+          "width": 400,
+          "fields": [
+            "itemAlignment"
+          ]
+        },
+        {
+          "displayName": "Right Rail - List D",
+          "example": "/page/list/PageListRightRailD.json",
+          "height": 500,
+          "width": 400,
+          "fields": [
+            "itemAlignment",
+            "itemImageAspectRatio"
+          ]
+        }
+      ]
+    }
+  }
+}

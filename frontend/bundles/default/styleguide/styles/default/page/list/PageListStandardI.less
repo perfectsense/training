@@ -1,0 +1,140 @@
+.PageListStandardI {
+  .PageList {
+    &-items {
+      display: grid;
+      grid-auto-columns: 1fr;
+      row-gap: var(--spacing-lg);
+      column-gap: var(--spacing-lg);
+
+      &-item {
+        border-bottom: 1px solid var(--color-border);
+        padding-bottom: var(--spacing-lg);
+
+        &:first-of-type {
+          border-bottom: none;
+          padding-bottom: 0;
+
+          .PagePromoModuleA {
+            margin: 0;
+            padding: 0;
+
+            .PagePromo {
+              &-content {
+                text-align: center;
+              }
+
+              &-description {
+                &:extend(.subhead-3 all);
+              }
+
+              &-title {
+                &:extend(.headline-5 all);
+              }
+            }
+
+            [data-column-count="5"]&,
+            [data-column-count="6"]& {
+              .PagePromo {
+                &-title {
+                  &:extend(.headline-7 all);
+                }
+              }
+            }
+          }
+        }
+
+        &:not(:nth-of-type(1)) {
+          .PagePromo {
+            &-description {
+              &:extend(.subhead-2 all);
+              display: none;
+            }
+
+            &-title {
+              &:extend(.headline-6 all);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @container (@cq-only-md) {
+    .PageList {
+      &-items {
+        &:not(:nth-of-type(1)) {
+          .PagePromo {
+            &-description {
+              display: revert;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @container (@cq-md) {
+    .PageList-items {
+      &-item {
+        border-bottom: none;
+        padding-bottom: 0;
+
+        &:first-of-type {
+          grid-column: span 12;
+
+          .PagePromoModuleA {
+            &[data-align-top] {
+              padding-bottom: 0;
+            }
+          }
+        }
+
+        &:not(:nth-of-type(1)) {
+          grid-column: span 6;
+        }
+      }
+
+      [data-column-count="2"]& {
+        &-item {
+          &:not(:nth-of-type(1)) {
+            grid-column: span 6;
+          }
+
+          &:not(:nth-of-type(1)) {
+            .PagePromo {
+              &-description {
+                display: revert;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @container (@cq-lg) {
+    .PageList-items {
+      [data-column-count="2"]& {
+        &-item {
+          &:not(:nth-of-type(1)) {
+            grid-column: span 6;
+          }
+        }
+      }
+
+      &-item {
+        &:not(:nth-of-type(1)) {
+          grid-column: span 3;
+        }
+
+        &:first-of-type {
+          .PagePromoModuleA {
+            &[data-align-top] {
+              padding-bottom: var(--spacing-md);
+            }
+          }
+        }
+      }
+    }
+  }
+}

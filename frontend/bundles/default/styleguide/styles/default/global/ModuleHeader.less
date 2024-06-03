@@ -1,0 +1,158 @@
+.ModuleHeader {
+  margin-bottom: var(--spacing-xl);
+  flex-grow: 1;
+
+  .PageList-cta {
+    .verticalSpacing(var(--spacing-xl));
+    justify-content: flex-start;
+
+    .Button {
+      margin-left: auto;
+      margin-right: auto;
+
+      [data-header-text-align='right'] & {
+        margin-right: 0;
+      }
+
+      [data-header-text-align='left'] & {
+        margin-left: 0;
+      }
+    }
+  }
+
+  &-description {
+    &:extend(.subhead-1 all);
+    &:extend(.RichTextElements all);
+    .verticalSpacing(var(--spacing-md));
+    color: var(--color-primary-text);
+    margin-bottom: 0 !important;
+
+    .Enhancement & {
+      &:extend(.subhead-2 all);
+    }
+  }
+
+  &-title {
+    &:extend(.headline-2 all);
+    .verticalSpacing(var(--spacing-md));
+    color: var(--color-primary-text);
+
+    .Enhancement & {
+      &:extend(.headline-5 all);
+    }
+  }
+}
+
+@container (@cq-up-to-lg) {
+  [data-module-header-position='side'] {
+    .ModuleHeader .PageList-cta {
+      display: none;
+    }
+  }
+}
+
+@container (@cq-lg) {
+  [data-module-header-position='side'] {
+    display: grid;
+    column-gap: var(--horizontal-margin-inside);
+    grid-template-columns: 300px 1fr;
+
+    .PageList-footer {
+      display: none;
+    }
+  }
+}
+
+@container (@cq-xl) {
+  [data-module-header-position='side'] {
+    grid-template-columns: 320px 1fr;
+  }
+}
+
+// Duplication of attribute selector to increase specificity
+[data-module-title-size][data-module-title-size="1"] {
+  .ModuleHeader {
+    &-title {
+      &:extend(.headline-2 all);
+    }
+  }
+}
+
+// Duplication of attribute selector to increase specificity
+[data-module-title-size][data-module-title-size="2"] {
+  .ModuleHeader {
+    &-title {
+      &:extend(.headline-4 all);
+    }
+  }
+}
+
+// Duplication of attribute selector to increase specificity
+[data-module-title-size][data-module-title-size="3"] {
+  .ModuleHeader {
+    &-title {
+      &:extend(.headline-5 all);
+    }
+  }
+}
+
+// Duplication of attribute selector to increase specificity
+[data-module-description-size][data-module-description-size="1"] {
+  .ModuleHeader {
+    &-description {
+      &:extend(.subhead-1 all);
+    }
+  }
+}
+
+// Duplication of attribute selector to increase specificity
+[data-module-description-size][data-module-description-size="2"] {
+  .ModuleHeader {
+    &-description {
+      &:extend(.subhead-2 all);
+    }
+  }
+}
+
+// Duplication of attribute selector to increase specificity
+[data-module-description-size][data-module-description-size="3"] {
+  .ModuleHeader {
+    &-description {
+      &:extend(.subhead-3 all);
+    }
+  }
+}
+
+// Duplication of attribute selector to increase specificity
+[data-header-text-align][data-header-text-align="left"] {
+  .ModuleHeader {
+    text-align: left;
+  }
+}
+
+// Duplication of attribute selector to increase specificity
+[data-header-text-align][data-header-text-align="center"] {
+  .ModuleHeader {
+    text-align: center;
+
+    &-container {
+      max-width: 1000px;
+      margin-inline: auto;
+    }
+
+    &-description {
+      margin-inline: auto;
+    }
+  }
+}
+
+// Duplication of attribute selector to increase specificity
+[data-header-text-align][data-header-text-align="right"] {
+  .ModuleHeader {
+    text-align: right;
+
+    &-description {
+      margin-left: auto;
+    }
+  }
+}

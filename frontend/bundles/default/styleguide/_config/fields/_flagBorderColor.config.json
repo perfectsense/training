@@ -1,0 +1,7 @@
+{
+  "fields": {
+    "flagBorderColor": {
+      "type": "color"
+    }
+  }
+}

@@ -1,0 +1,29 @@
+<div class="StatPromo">
+    <div class="StatPromo-valueWrapper">
+        {{~#with valuePrefix~}}
+            <span class="StatPromo-valuePrefix">
+                {{~this~}}
+            </span>
+        {{~/with~}}
+        {{~#with value~}}
+            <span class="StatPromo-value">
+                <span aria-hidden="true" data-counter data-target="{{this}}">0</span><span data-value-placeholder>{{this}}</span>
+            </span>
+        {{~/with~}}
+        {{~#with valueSuffix~}}
+            <span class="StatPromo-valueSuffix">
+                {{~this~}}
+            </span>
+        {{~/with~}}
+    </div>
+    {{#with title}}
+        <div class="StatPromo-title">
+            {{this}}
+        </div>
+    {{/with}}
+    {{#with description}}
+        <div class="StatPromo-description">
+            {{this}}
+        </div>
+    {{/with}}
+</div>

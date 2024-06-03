@@ -1,0 +1,15 @@
+{
+    "_template": "Carousel.hbs",
+    "title": "{{words([5, 10])}}",
+    "description": "{{words([5, 10])}}",
+    "anchorId": "anchorTest",
+    "slides": [
+        {
+            "_include": "/gallery/GallerySlide.json",
+            "_repeat": 9
+        }
+    ],
+    "ctaButtonText": "{{words([2,3])}}",
+    "ctaUrl": "#",
+    "ctaTarget": ""
+}

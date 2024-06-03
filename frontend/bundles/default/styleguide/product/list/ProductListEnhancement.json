@@ -1,0 +1,6 @@
+{
+  "_template": "/product/list/ProductListEnhancement.hbs",
+  "item": {
+    "_include": "ProductList.json"
+  }
+}

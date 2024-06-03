@@ -1,0 +1,291 @@
+.Page {
+  &-actions {
+    display: flex;
+    margin-left: auto;
+    margin-bottom: var(--spacing-xxl);
+
+    &-commentCount {
+      &:extend(.label-1);
+
+      line-height: 30px;
+      margin-left: 10px;
+    }
+
+    &-bottom & {
+      margin-block: 0;
+      margin-bottom: var(--spacing-lg);
+    }
+  }
+
+  &-authors {
+    display: inline-block;
+
+    &-image {
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+
+  &-authorInfo {
+    display: grid;
+    column-gap: var(--spacing-lg);
+    row-gap: var(--spacing-lg);
+  }
+
+  &-body {
+    padding-top: var(--headerHeight);
+
+    :root[data-header-hat='true'] & {
+      padding-top: calc(~'var(--headerHeight) + var(--hatHeight)');
+
+      .Page {
+        &-header {
+          top: var(--hatHeight);
+
+          &-hat {
+            position: fixed;
+            height: var(--hatHeight);
+            width: 100%;
+            top: 0px;
+            z-index: @z-index-header;
+          }
+        }
+      }
+    }
+
+    &[data-toggle-header='hamburger-menu'] {
+      overflow-y: hidden;
+    }
+
+    &[data-toggle-header='hamburger-menu']&:after {
+      content: '';
+      background: rgba(0, 0, 0, 0.5);
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 25;
+    }
+  }
+
+  &-breadcrumbs {
+    &:extend(.label-1 all);
+    margin-bottom: var(--spacing-md);
+
+    a {
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    svg {
+      fill: var(--color-primary-text);
+      height: 8px;
+      margin: 0 2px 0 6px;
+      position: relative;
+      top: -1px;
+      width: 8px;
+    }
+  }
+
+  &-byline {
+    &:extend(.byline-2 all);
+
+    a {
+      --color-link-text: currentColor;
+      --color-link-text-hover: currentColor;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    img {
+      border-radius: 100%;
+      display: inline-block;
+      height: 30px;
+      margin-right: var(--spacing-xs);
+      width: 30px;
+    }
+  }
+
+  &-headline {
+    &:extend(.headline-1 all);
+    margin-bottom: var(--spacing-md);
+  }
+
+  &-main {
+    min-height: 300px;
+  }
+
+  &-sponsoredBanner {
+    .layoutWidth();
+    &:extend(.label-2 all);
+
+    background: var(--color-sponsored-banner-bg);
+    color: var(--color-sponsored-banner-text);
+    --color-link-text: var(--color-sponsored-banner-text);
+    --color-link-text-hover: var(--color-sponsored-banner-text);
+    display: flex;
+    justify-content: space-between;
+    padding: var(--spacing-md) var(--horizontal-margin-outside);
+  }
+
+  &-subHeadline {
+    &:extend(.subhead-1 all);
+    .verticalSpacing(var(--spacing-xl));
+  }
+
+  &-tags {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-lg);
+    row-gap: var(--vartical-spacing-sm);
+
+    // overwriting button styles here, as we like the normal no wrap
+    // button normally, but not in this case
+    a.Button {
+      height: auto;
+      line-height: 1.2;
+      margin-bottom: var(--spacing-sm);
+      padding-bottom: 6px;
+      padding-top: 6px;
+      text-align: left;
+      white-space: normal;
+    }
+  }
+
+  &-twoColumn {
+    .layoutWidth();
+
+    .Page-aside {
+      margin-top: var(--spacing-xl);
+    }
+  }
+
+  &-bookContentContainer {
+    margin: var(--spacing-xxl) 0;
+    padding: 0 var(--spacing-xxl);
+
+    hr {
+      margin: var(--spacing-xxl) 0;
+      overflow: hidden;
+      border: none;
+      border-bottom: 4px solid var(--color-border);
+    }
+  }
+
+  &-articleBelow {
+    margin-top: var(--spacing-xxl);
+  }
+
+  @media @mq-md {
+    &-headline {
+      .verticalSpacing(var(--spacing-xl));
+    }
+
+    &-subHeadline {
+      .verticalSpacing(var(--spacing-xl));
+    }
+  }
+
+  @media @mq-up-to-lg {
+    &-bookChaptersContainer {
+      position: sticky;
+      top: var(--headerHeight);
+      z-index: @z-index-overlays;
+    }
+  }
+
+  @media @mq-lg {
+    &-actions {
+      margin-bottom: var(--spacing-xxl);
+    }
+
+    &-body {
+      &[data-toggle-header='hamburger-menu']&:after {
+        display: none;
+      }
+    }
+
+    &-breadcrumbs {
+      .verticalSpacing(var(--spacing-xl));
+    }
+
+    &-sponsoredBy {
+      .verticalSpacing(var(--spacing-xl));
+    }
+
+    &-headline {
+      .verticalSpacing(var(--spacing-xl));
+    }
+
+    &-subHeadline {
+      .verticalSpacing(var(--spacing-xl));
+    }
+
+    &-twoColumn {
+      display: grid;
+      column-gap: var(--spacing-xxl);
+      row-gap: var(--spacing-xxl);
+      grid-template-columns: minmax(0, 1000px) 320px;
+
+      .Page-aside {
+        margin-top: 0;
+      }
+    }
+
+    &-bookContainer {
+      margin: var(--vertical-margin-md) 0 var(--vertical-margin-lg);
+      display: grid;
+      justify-content: center;
+      grid-template-columns: 300px minmax(0, 1fr);
+      grid-column-gap: var(--spacing-xxl);
+      padding: 0 var(--horizontal-margin-outside);
+    }
+
+    &-bookChaptersContainer {
+      align-self: flex-start;
+      position: sticky;
+      overflow-y: auto;
+      top: calc(var(--headerHeight) + var(--spacing-md));
+      height: calc(100vh - var(--headerHeight) - var(--spacing-xxl));
+      z-index: @z-index-overlays;
+
+      // Allow slight for icon hover state
+      margin-left: -27px;
+      padding-left: 27px;
+    }
+
+    &-bookContentContainer {
+      padding: 0;
+      margin: 0;
+    }
+
+    &-bookContainer[data-no-book] {
+      display: block;
+    }
+  }
+
+  @media @mq-hk {
+    &-twoColumn {
+      column-gap: var(--horizontal-margin-inside);
+    }
+  }
+
+  @media @mq-xl {
+    &-bookContentContainer {
+      display: grid;
+      justify-content: center;
+      grid-template-columns: minmax(0, 800px) 300px;
+      grid-column-gap: var(--spacing-md);
+    }
+
+    &-bookContainer[data-no-book]>&-bookContentContainer {
+      grid-template-columns: minmax(0, 800px);
+    }
+  }
+}

@@ -1,0 +1,4 @@
+{{~include "/page/Page-htmlAttributes.hbs" this}}
+{{~#unless aside}} data-no-aside{{/unless~}}
+{{~#unless lead}} data-no-lead{{/unless~}}
+{{~#with leadStyle}} data-lead="{{this}}"{{/with~}}

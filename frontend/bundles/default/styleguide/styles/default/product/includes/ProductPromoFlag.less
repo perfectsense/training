@@ -1,0 +1,40 @@
+.ProductPromoFlag {
+  position: absolute;
+  display: inline-flex;
+  padding: 2px;
+  background-color: var(--color-flag-background);
+  color: var(--color-flag-text);
+  height: 24px;
+  padding-inline: 8px;
+  align-items: center;
+  border-radius: 12px;
+
+  &-flagText {
+    .label-6;
+  }
+
+  &:not([data-flag-position]),
+  &[data-flag-position="top-left"] {
+    top: 8px;
+    left: 8px;
+  }
+
+  &[data-flag-position="top-right"] {
+    top: 8px;
+    right: 8px;
+  }
+
+  &[data-flag-position="bottom-left"] {
+    bottom: 8px;
+    left: 8px;
+  }
+
+  &[data-flag-position="bottom-right"] {
+    bottom: 8px;
+    right: 8px;
+  }
+
+  &[data-flag-border] {
+    border: 1px solid var(--color-flag-border, currentColor);
+  }
+}

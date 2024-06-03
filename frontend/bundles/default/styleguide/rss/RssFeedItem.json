@@ -1,0 +1,17 @@
+{
+  "_template": "RssFeedItem.hbs",
+
+  "link": "www.brightspot.org/post/episode-1",
+  "title": "Episode 1",
+  "description": "This is description.",
+  "authorEmail": "johnsmith@gmail.com",
+  "enclosureUrl": "www.brightspot.org/test.mp3",
+  "enclosureLength": "550",
+  "enclosureType": "audio/mpeg",
+  "pubDate": "Mon, 01 Jan 2020 00:00:00 -0500",
+  "guid": "1234",
+  "guidIsPermalink": false,
+  "metadata": {
+    "_include": "/rss/_group/RssFeedItemMetadata.json"
+  }
+}

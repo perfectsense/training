@@ -1,0 +1,4 @@
+{
+  "_include": "/quote/QuoteList.json",
+  "_styledTemplate": "/quote/QuoteListA.hbs"
+}

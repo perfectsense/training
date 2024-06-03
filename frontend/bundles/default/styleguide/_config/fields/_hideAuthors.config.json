@@ -1,0 +1,7 @@
+{
+  "fields": {
+    "hideAuthors": {
+      "type": "boolean"
+    }
+  }
+}

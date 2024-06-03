@@ -1,0 +1,96 @@
+.ArticlePageOverlayLead {
+  &-hero {
+    display: grid;
+    position: relative;
+    height: 480px;
+    background-color: var(--color-primary-text);
+
+    > * {
+      grid-column: 1;
+      grid-row: 1;
+    }
+  }
+
+  &-media {
+    place-self: stretch;
+    display: flex;
+    place-items: stretch;
+    min-height: 0;
+
+    &:before {
+      background: rgba(0, 0, 0, 0.4);
+      content: '';
+      inset: 0;
+      position: absolute;
+    }
+
+    .Figure {
+      display: contents;
+
+      &-content {
+        display: none;
+      }
+    }
+
+    picture {
+      display: contents;
+    }
+
+    img,
+    video {
+      width: 100%;
+      object-fit: cover;
+    }
+
+    video {
+      height: auto;
+    }
+  }
+
+  &-content {
+    .layoutWidth();
+    position: relative;
+    place-self: center;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+
+    .ArticlePage:not([data-no-aside]) &:has(.AssetTitle:where([data-text-align="left"])) {
+      justify-content: flex-start;
+    }
+  }
+
+  .ArticlePage:where([data-no-aside]) & {
+    .AssetTitle:not([data-text-align="center"]) {
+      .AssetTitle {
+        &-header {
+          max-width: 720px;
+        }
+      }
+    }
+  }
+
+  .Figure {
+    &-content {
+      padding-inline: var(--horizontal-margin-outside);
+    }
+  }
+
+  @media @mq-md {
+    &-hero {
+      height: 432px;
+    }
+  }
+
+  @media @mq-xl {
+    &-hero {
+      height: 600px;
+    }
+
+    .ArticlePage:not([data-no-aside]) & {
+      .AssetTitle:not([data-text-align="center"]) {
+        padding-left: 140px;
+      }
+    }
+  }
+}

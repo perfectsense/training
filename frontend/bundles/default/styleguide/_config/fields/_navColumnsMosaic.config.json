@@ -1,0 +1,9 @@
+{
+  "fields": {
+    "navColumnsMosaic": {
+      "displayName": "Check to choose a mosaic style layout for the navigation group",
+      "cms.ui.note": "The mosaic style cascades creates vertical columns vs running the navigation left to right in columns. Because of this, it is not as flexible, so you have to match the amount of nav columns to the amount of items you have to display this style correctly. It will also matter how long each item is, so some experimentation is needed",
+      "type": "boolean"
+    }
+  }
+}

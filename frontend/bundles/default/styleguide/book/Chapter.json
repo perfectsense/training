@@ -1,0 +1,13 @@
+{
+  "_template": "Chapter.hbs",
+  "isCurrent": false,
+  "isExternal": false,
+  "isAnchor": false,
+  "title": {
+    "_include": "/book/ChapterLink.json",
+    "body": "{{words([1,6])}}",
+    "href": "/topic/TopicPage.html"
+  },
+  "label": null,
+  "chapters": []
+}

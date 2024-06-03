@@ -1,0 +1,44 @@
+{
+  "styles": {
+    "/author/list/AuthorList.hbs": {
+      "fields": [
+        "listTitleSize",
+        "listDescriptionSize",
+        "headerTextAlign",
+        "backgroundColor",
+        "useTextColors",
+        "listColumns23456",
+        "itemDisplayStyle",
+        "itemBackgroundColor",
+        "itemTextColor",
+        "itemImageAspectRatio",
+        "modulePaddingTop",
+        "modulePaddingBottom"
+      ],
+      "templates": [
+        {
+          "displayName": "Author List A",
+          "example": "/author/list/AuthorListA.json",
+          "height": 500,
+          "width": 400,
+          "fields": [
+            "itemAlignment",
+            "itemImageAlignment"
+          ]
+        },
+        {
+          "displayName": "Author List B",
+          "example": "/author/list/AuthorListB.json",
+          "height": 800,
+          "width": 1024
+        },
+        {
+          "displayName": "Author List C",
+          "example": "/author/list/AuthorListC.json",
+          "height": 500,
+          "width": 400
+        }
+      ]
+    }
+  }
+}

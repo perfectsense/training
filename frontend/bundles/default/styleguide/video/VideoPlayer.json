@@ -1,0 +1,16 @@
+{
+  "_template": "VideoPlayer.hbs",
+  "playerId": "1",
+  "videoTitle": "Pork belly bresaola kevin pancetta.",
+  "videoId": "XXXXXX",
+  "autoplay": false,
+  "muted": true,
+  "seekSeconds": 0,
+  "liveVideo": false,
+  "extraAttributes": [
+    {
+      "_include": "/dfp/GoogleDfpVideoAttribute.json"
+    }
+  ],
+  "_hidden": true
+}

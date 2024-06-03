@@ -1,0 +1,81 @@
+.PageListStandardO {
+  display: grid;
+
+  .PageList {
+    &-items {
+      display: grid;
+      row-gap: var(--spacing-lg);
+      column-gap: var(--spacing-lg);
+    }
+  }
+
+  .PagePromo {
+    min-height: 100%;
+    display: flex;
+    justify-content: stretch;
+    gap: var(--spacing-md);
+
+    &-media {
+      margin-bottom: 0;
+      flex: 0 0 48px;
+
+      .Link {
+        &-icon {
+          display: none;
+        }
+      }
+    }
+
+    &-description {
+      &:extend(.subhead-3 all);
+    }
+
+    &-title {
+      &:extend(.headline-8 all);
+    }
+  }
+
+  &[data-column-count='2'] {
+    .PageList {
+      &-items {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+  }
+
+  @container (@cq-md) {
+    .PageList-items {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+
+      [data-column-count='2']& {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      [data-column-count='4']& {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      [data-column-count='5']&,
+      [data-column-count='6']& {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+      }
+    }
+  }
+
+  @container (@cq-lg) {
+    .PageList-items {
+      [data-column-count='4']& {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+      }
+
+      [data-column-count='5']& {
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+      }
+
+      [data-column-count='6']& {
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+      }
+    }
+  }
+}

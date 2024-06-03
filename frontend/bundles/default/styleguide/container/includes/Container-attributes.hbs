@@ -1,0 +1,9 @@
+{{~#with backgroundColor}} data-has-background{{/with~}}
+{{~#with headerTextAlign}} data-header-text-align="{{this}}"{{/with~}}
+{{~#with useTextColors}} data-use-text-colors="{{this}}"{{/with~}}
+{{~#with modulePaddingBottom}} data-module-padding-bottom="{{this}}"{{/with~}}
+{{~#with modulePaddingTop}} data-module-padding-top="{{this}}"{{/with~}}
+{{~#or backgroundColor}} style="
+    {{~#with backgroundColor}}--color-module-background:{{this}};"{{/with~}}
+"
+{{/or~}}

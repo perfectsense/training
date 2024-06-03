@@ -1,0 +1,43 @@
+{
+  "_include": "/page/Page.json",
+  "_template": "/author/AuthorPage.hbs",
+  "name": "{{name}}",
+  "firstName": "{{words(1)}}",
+  "lastName": "{{words(1)}}",
+  "jobTitle": "{{words([2,5])}}",
+  "email": "VP@acme.com",
+  "affiliation": "{{words([2,5])}}",
+  "image": {
+    "_include": "/image/Image.json"
+  },
+  "shortBiography": "{{paragraphs([2,3])}}",
+  "fullBiography": "{{paragraphs([5,6])}}",
+  "authorSocialLinks": {
+    "_include": "/social/SocialBar.json"
+  },
+  "aside": [
+    {
+      "_include": "/page/list/PageListRightRailA.json"
+    }
+  ],
+  "main": [
+    {
+      "_include": "/page/list/PageListStandardD.json"
+    }
+  ],
+  "below": [
+    {
+      "_include": "/page/list/PageListStandardB.json",
+      "listColumns234": "4",
+      "items": [
+        {
+          "_include": "/page/promo/PagePromo.json",
+          "_repeat": 4
+        }
+      ]
+    }
+  ],
+  "commenting": {
+    "_include": "/disqus/DisqusCommenting.json"
+  }
+}

@@ -1,0 +1,94 @@
+.Tabs {
+  display: block;
+
+  .ModuleHeader {
+    .layoutWidth();
+  }
+
+  // we have to re-space any modules inside this tab container. The tab container has the left and right padding pulled off it
+  // in order for the container size to be correct. Normally, modules inside containers have their left and right
+  // padding unset, but in this case, we need to reset it
+  [data-module] {
+    .layoutWidth();
+  }
+
+  // and just in case someone nests a tab module inside of a container, this will undo that module
+  // padding, as the padding is on the container itself
+  [data-modulewell] & {
+    [data-module] {
+      padding-inline: 0;
+    }
+  }
+
+  &-content {
+    width: 100%;
+  }
+
+  &-panel {
+    display: none;
+
+    &[data-visible] {
+      display: block;
+
+      .flickity-slider>div {
+        height: auto;
+      }
+    }
+  }
+
+  &:after {
+    z-index: -1;
+  }
+
+  &-header {
+    margin-bottom: var(--spacing-md);
+  }
+
+  &-tab {
+    &:extend(.subhead-3 all);
+
+    color: var(--color-header-text);
+    font-weight: bold;
+  }
+
+  &-tabsRow {
+    text-align: center;
+  }
+
+  &-tabs {
+    display: inline-grid;
+    max-width: 100%;
+    grid-auto-flow: column;
+    column-gap: var(--spacing-lg);
+    row-gap: var(--spacing-lg);
+
+    >li {
+      white-space: nowrap;
+    }
+  }
+
+  &-tab {
+    &:after {
+      background-color: var(--color-header-text);
+      border-radius: 2px;
+      content: '';
+      display: block;
+      height: 4px;
+      margin-top: 5px;
+    }
+
+    &:hover,
+    &[data-active] {
+      &:after {
+        background-color: var(--color-link-text-hover);
+      }
+    }
+  }
+
+  .TabItem {
+    &-content {
+      padding-top: var(--spacing-xxl);
+      padding-bottom: var(--spacing-md);
+    }
+  }
+}

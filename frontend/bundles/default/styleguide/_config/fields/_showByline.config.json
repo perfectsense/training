@@ -1,0 +1,8 @@
+{
+  "fields": {
+    "showByline": {
+      "type": "boolean",
+      "displayName": "Should this module show the byline?"
+    }
+  }
+}

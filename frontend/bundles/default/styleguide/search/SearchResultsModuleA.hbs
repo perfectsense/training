@@ -1,0 +1,110 @@
+<bsp-search-results-module class="SearchResultsModule"
+    data-module
+    {{~#with searchResultsModuleId}} data-id="{{this}}"{{/with~}}
+    {{~#with searchResultsLayout}} data-search-results-layout="{{this}}"{{/with~}}
+    {{~#if useHorizontalFilters}} data-horizontal-filters{{/if~}}
+    >
+    {{include "/link/AnchorLink.hbs" this}}
+    <form class="SearchResultsModule-form">
+        <div class="SearchResultsModule-topContainer">
+            <h1 class="SearchResultsModule-pageHeading">{{#if title}}{{title}}{{else}}{{format "/search/SearchResultsModule" "searchPageTitle"}}{{/if}}</h1>
+            {{#with description}}
+                <div class="SearchResultsModule-description">{{this}}</div>
+            {{/with}}
+            <div class="SearchResultsModule-query">
+                {{#if query}}
+                    <input type="text" class="SearchResultsModule-formInput" name="q" value="{{query}}" aria-label="search" />
+                {{else}}
+                    <input type="text" class="SearchResultsModule-formInput" name="q" aria-label="search" placeholder={{#if searchInputPlaceholder}}"{{searchInputPlaceholder}}"{{else}}"{{format "/search/SearchResultsModule" 'noQueryText'}}"{{/if}} />
+                {{/if}}
+                <button type="submit" class="SearchResultsModule-formButton">
+                    {{~include (iconPath 'magnifying-glass')~}}
+                    <span class="sr-only">{{format "/search/SearchResultsModule" "submitLabel"}}</span>
+                </button>
+            </div>
+        </div>
+
+        <div class="SearchResultsModule-ajax">
+            <div class="SearchResultsModule-ajaxContent">
+                <div class="SearchResultsModule-filters">
+                    {{include './includes/SearchResultsModuleMobileFilters.hbs' this}}
+
+                    <div class="SearchResultsModule-wrapper" {{#or aside (and filters (not useHorizontalFilters))}}data-has-aside{{/or}}>
+                        <!-- ASIDE -->
+                        {{#or aside (and filters (not useHorizontalFilters))}}
+                            <aside class="SearchResultsModule-aside">
+                                {{#and filters (not useHorizontalFilters)}}
+                                    {{include './includes/SearchResultsModuleVerticalFilters.hbs' this}}
+                                {{/and}}
+                                {{include "/page/Page-aside.hbs" this}}
+                            </aside>
+                        {{/or}}
+
+                        <!-- MAIN -->
+                        <div class="SearchResultsModule-main">
+                            <div class="SearchResultsModule-results-header">
+                                <div class="SearchResultsModule-results-header-row">
+                                    <div class="SearchResultsModule-message">
+                                        {{#if query}}
+                                            {{#or items spotlights}}
+                                                {{format "/search/SearchResultsModule" "foundCountText" resultsCount=count searchQuery=query}}
+                                            {{else}}
+                                                {{format "/search/SearchResultsModule" "noResultsText" searchQuery=query}}
+                                            {{/or}}
+                                        {{else}}
+                                            {{format "/search/SearchResultsModule" "noQueryFoundCountText" resultsCount=count}}
+                                        {{/if}}
+                                    </div>
+                                    {{#if filters}}
+                                        <button class="SearchResultsModule-filters-open" aria-label="{{format "/search/SearchResultsModule" "filtersOpen"}}">
+                                            {{format "/search/SearchResultsModule" "filterTitle"}}
+                                            {{#with (countSelected this)}}
+                                                {{~#gt this 0}}
+                                                    {{include '/global/Badge.hbs' content=this}}
+                                                {{/gt}}
+                                            {{/with}}
+                                            {{include (iconPath 'caret-down')}}
+                                        </button>
+                                    {{/if}}
+                                    {{#if sorts}}
+                                        <!-- Sorts -->
+                                        {{include './includes/SearchResultsModuleSorts.hbs' this}}
+                                    {{/if}}
+                                </div>
+                                {{!-- Horizontal Filters --}}
+                                {{#and filters useHorizontalFilters}}
+                                    {{include './includes/SearchResultsModuleHorizontalFilters.hbs' this}}
+                                {{/and}}
+                            </div>
+                            {{#with spotlights}}
+                                <ul class="SearchResultsModule-spotlights">
+                                    {{#each this}}
+                                        <li class="SearchResultsModule-spotlights-item" data-modulewell>
+                                            {{render this [/page/promo/PagePromoModule.hbs]="/page/promo/PagePromoModuleSearchSpotlight.hbs"}}
+                                        </li>
+                                    {{/each}}
+                                </ul>
+                            {{/with}}
+
+                            {{#with items}}
+                                <ul class="SearchResultsModule-results">
+                                    {{#each this}}
+                                    <li class="SearchResultsModule-results-item" data-modulewell>
+                                        {{this}}
+                                    </li>
+                                    {{/each}}
+                                </ul>
+                            {{/with}}
+
+                            {{#if paginate}}
+                                {{include '/global/Pagination.hbs' this}}
+                            {{else}}
+                                {{include '/global/LoadMore.hbs' this}}
+                            {{/if}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</bsp-search-results-module>

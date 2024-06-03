@@ -1,0 +1,9 @@
+<nav class="Navigation" {{~#with navAlignment}} data-nav-align="{{this}}"{{/with}} aria-label="Main">
+    {{#with items}}
+        <ul class="Navigation-items">
+            {{#each this}}
+                <li class="Navigation-items-item"{{#if this.isCurrent}} data-current-nav-item{{/if}}{{#if this.socialService}} data-social-nav-item{{/if}}>{{this}}</li>
+            {{/each}}
+        </ul>
+    {{/with}}
+</nav>

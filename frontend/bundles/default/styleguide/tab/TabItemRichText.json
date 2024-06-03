@@ -1,0 +1,12 @@
+{
+  "_template": "TabItemRichText.hbs",
+  "title": "{{words([2,3])}}",
+  "id": "{{number([1,10])}}",
+  "content": [
+    {
+      "_include": "/image/ImageEnhancement.json",
+      "enhancementAlignmentImage": "align-right"
+    },
+    "{{paragraphs([3,4])}}"
+  ]
+}

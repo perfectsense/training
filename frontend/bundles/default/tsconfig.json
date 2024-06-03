@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    "allowImportingTsExtensions": true,
+    "allowJs": true,
+    "baseUrl": "./styleguide",
+    "module": "nodenext",
+    "noEmit": true,
+    "moduleResolution": "nodenext",
+    "paths": {
+      "~/*": [
+        "./*"
+      ],
+    },
+    "resolveJsonModule": false,
+    "strict": true,
+    "target": "es6"
+  },
+  "exclude": [
+    "node_modules",
+    "**/node_modules/*",
+    "./styleguide/_*.js"
+  ],
+  "include": [
+    "styleguide/**/*"
+  ]
+}

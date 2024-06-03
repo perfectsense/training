@@ -1,0 +1,23 @@
+{
+  "styles": {
+    "/product/search/ProductSearchResultsPage.hbs": {
+      "fields": [
+        "searchFormBackgroundColor"
+      ],
+      "templates": [
+        {
+          "displayName": "Product Search Results Page A",
+          "example": "/product/search/ProductSearchResultsPageA.json",
+          "height": 800,
+          "width": 1024
+        },
+        {
+          "displayName": "Product Search Results Page B",
+          "example": "/product/search/ProductSearchResultsPageB.json",
+          "height": 800,
+          "width": 1024
+        }
+      ]
+    }
+  }
+}

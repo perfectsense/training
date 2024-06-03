@@ -1,0 +1,5 @@
+{{~#if url~}}
+    <a class="Link" {{#with name}}aria-label="{{this}}"{{/with}} href="{{url}}"{{#with target}} target="{{this}}" {{/with}}>{{media}}</a>
+{{~else~}}
+    <span class="Link">{{media}}</span>
+{{~/if~}}

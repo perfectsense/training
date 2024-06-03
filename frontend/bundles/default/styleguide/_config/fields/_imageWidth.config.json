@@ -1,0 +1,19 @@
+{
+  "fields": {
+    "imageWidth": {
+      "type": "text",
+      "cms.ui.dropDown": true,
+      "cms.ui.placeholder": "Default",
+      "values": [
+        {
+          "label": "66%",
+          "value": "66"
+        },
+        {
+          "label": "50%",
+          "value": "50"
+        }
+      ]
+    }
+  }
+}

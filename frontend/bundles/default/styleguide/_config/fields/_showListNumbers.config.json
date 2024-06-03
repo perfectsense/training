@@ -1,0 +1,8 @@
+{
+  "fields": {
+    "showListNumbers": {
+      "type": "boolean",
+      "displayName": "Should this list show list numbers?"
+    }
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "styles": {
+    "/person/list/PersonList.hbs": {
+      "fields": [
+        "listTitleSize",
+        "listDescriptionSize",
+        "headerTextAlign",
+        "backgroundColor",
+        "useTextColors",
+        "listColumns23456",
+        "itemDisplayStyle",
+        "itemBackgroundColor",
+        "itemTextColor",
+        "itemImageAspectRatio",
+        "modulePaddingTop",
+        "modulePaddingBottom"
+      ],
+      "templates": [
+        {
+          "displayName": "Person List A",
+          "example": "/person/list/PersonListA.json",
+          "height": 500,
+          "width": 400,
+          "fields": [
+            "itemAlignment",
+            "itemImageAlignment"
+          ]
+        },
+        {
+          "displayName": "Person List B",
+          "example": "/person/list/PersonListB.json",
+          "height": 800,
+          "width": 1024
+        },
+        {
+          "displayName": "Person List C",
+          "example": "/person/list/PersonListC.json",
+          "height": 500,
+          "width": 400
+        }
+      ]
+    }
+  }
+}

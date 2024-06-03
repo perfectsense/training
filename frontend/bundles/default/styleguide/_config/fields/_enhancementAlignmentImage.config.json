@@ -1,0 +1,40 @@
+{
+  "fields": {
+    "enhancementAlignmentImage": {
+      "displayName": "Choose enhancement alignment",
+      "type": "text",
+      "cms.ui.dropDown": true,
+      "cms.ui.placeholder": "Default",
+      "values": [
+        {
+          "label": "Landscape Image - Center Alignment",
+          "value": "align-center"
+        },
+        {
+          "label": "Landscape Image - Left Alignment",
+          "value": "align-left"
+        },
+        {
+          "label": "Landscape Image - Right Alignment",
+          "value": "align-right"
+        },
+        {
+          "label": "Landscape Image - Full Width",
+          "value": "align-full-width"
+        },
+        {
+          "label": "Portrait Image - Center Alignment",
+          "value": "align-portrait-center"
+        },
+        {
+          "label": "Portrait Image - Left Alignment",
+          "value": "align-portrait-left"
+        },
+        {
+          "label": "Portrait Image - Right Alignment",
+          "value": "align-portrait-right"
+        }
+      ]
+    }
+  }
+}

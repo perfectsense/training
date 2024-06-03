@@ -1,0 +1,74 @@
+{
+  "_template": "/video/VideoPlaylistModule.hbs",
+  "title": "Video Playlist Module",
+  "anchorId": "anchorTest",
+  "description": "{{words(20)}}",
+  "playlist": [
+    {
+      "_include": "/video/VideoPlaylistItem.json"
+    },
+    {
+      "_include": "/video/VideoPlaylistItem.json",
+      "player": {
+        "_include": "/video/HTML5VideoPlayer.json",
+        "sources": [
+          {
+              "_include": "/video/HTML5VideoPlayerSource.json"
+          }
+      ]
+      },
+      "duration": "5 min",
+      "title": "{{words(10)}}",
+      "description": "{{words(20)}}"
+    },
+    {
+      "_include": "/video/VideoPlaylistItem.json",
+      "player": {
+        "_include": "/brightcove/BrightcoveVideoPlayer.json"
+      },
+      "title": "Brightcove Player"
+    },
+    {
+      "_include": "/video/VideoPlaylistItem.json",
+      "player": {
+        "_include": "/jwplayer/JwVideoPlayer.json",
+        "videoUuid": "34892"
+      },
+      "title": "JW Player"
+    },
+    {
+      "_include": "/video/VideoPlaylistItem.json",
+      "player": {
+        "_include": "/youtube/YouTubeVideoPlayer.json"
+      }
+    },
+    {
+      "_include": "/video/VideoPlaylistItem.json"
+    },
+    {
+      "_include": "/video/VideoPlaylistItem.json",
+      "player": {
+        "_include": "/youtube/YouTubeVideoPlayer.json"
+      }
+    },
+    {
+      "_include": "/video/VideoPlaylistItem.json",
+      "player": {
+        "_include": "/vimeo/VimeoVideoPlayer.json"
+      }
+    },
+    {
+      "_include": "/video/VideoPlaylistItem.json"
+    },
+    {
+      "_include": "/video/VideoPlaylistItem.json",
+      "player": {
+        "_include": "/vimeo/VimeoVideoPlayer.json"
+      }
+    }
+  ],
+  "ctaButtonText": "{{words([5, 10])}}",
+  "ctaUrl": "#",
+  "ctaTarget": "_self",
+  "_hidden": true
+}

@@ -1,0 +1,37 @@
+.ThreeColumnContainer502525 {
+  .ModuleHeader {
+    .layoutWidth();
+  }
+
+  &-container {
+    display: grid;
+    column-gap: var(--horizontal-margin-inside);
+    row-gap: var(--vertical-margin-md);
+  }
+
+  @container (@cq-md) {
+    &-container {
+      grid-template-columns: repeat(12, 1fr);
+    }
+
+    &-column {
+      grid-column: span 12;
+    }
+
+    &-column:nth-child(2),
+    &-column:nth-child(3) {
+      grid-column: span 6;
+    }
+  }
+
+  @container (@cq-hk) {
+    &-column:nth-child(1) {
+      grid-column: span 6;
+    }
+
+    &-column:nth-child(2),
+    &-column:nth-child(3) {
+      grid-column: span 3;
+    }
+  }
+}

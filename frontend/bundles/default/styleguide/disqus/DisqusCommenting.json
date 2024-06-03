@@ -1,0 +1,8 @@
+{
+  "_template": "/disqus/DisqusCommenting.hbs",
+  "disqusSiteId": "brightspot-test",
+  "disqusContentId": "{{number([1,10000])}}",
+  "disqusUrl": "https://www.brightspot.com",
+  "disqusTitle": "Page Title from Disqus",
+  "disqusCategory": "12345"
+}

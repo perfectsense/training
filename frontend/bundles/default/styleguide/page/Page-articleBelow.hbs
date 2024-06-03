@@ -1,0 +1,15 @@
+{{#or actions authors tags (and commenting (not suppressCommenting))}}
+    <div class="Page-articleBelow">
+        {{#if actions}}
+            <div class="Page-actions-bottom">
+                {{include "/page/Page-actions.hbs" this}}
+            </div>
+        {{/if}}
+
+        {{include "/page/Page-tags.hbs" this}}
+
+        {{include "/page/Page-authorInfo.hbs" this}}
+
+        {{include "/page/Page-commenting.hbs" this}}
+    </div>
+{{/or}}

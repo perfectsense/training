@@ -1,0 +1,20 @@
+{{#resize image (fallback (get "imageSize") "large-16x9")}}
+    <img class="Image"
+        {{~#with ../alt}} alt="{{this}}"{{/with~}}
+        {{~#eq (get "lazyLoad") "flickity"}}
+            {{~#with srcset}} data-flickity-lazyload-srcset="{{this}}"{{/with~}}
+        {{else~}}
+            {{~#with srcset}} srcset="{{this}}"{{/with~}}
+        {{/eq~}}
+        {{~#if (get "sizes")}} sizes="{{get "sizes"}}"{{/if~}}
+        {{~#with width}} width="{{this}}"{{/with~}}
+        {{~#with height}} height="{{this}}"{{/with~}}
+        {{~#if (get "rolePresentation")}} role="presentation"{{/if~}}
+        {{~#eq (get "lazyLoad") "flickity"}}
+            {{~#with src}} data-flickity-lazyload="{{this}}" src="{{svgPlaceholder ../width ../height}}"{{/with~}}
+        {{else~}}
+            {{~#with src}} src="{{this}}"{{/with~}}
+            {{~#ne (get "lazyLoad") false}} loading="lazy"{{/ne~}}
+        {{/eq}}
+    >
+{{/resize}}

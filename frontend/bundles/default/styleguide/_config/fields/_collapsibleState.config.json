@@ -1,0 +1,19 @@
+{
+  "fields": {
+    "collapsibleState": {
+      "type": "text",
+      "cms.ui.dropDown": true,
+      "cms.ui.placeholder": "Expanded",
+      "values": [
+        {
+          "label": "Collapsed",
+          "value": "collapsed"
+        },
+        {
+          "label": "Disabled",
+          "value": "disabled"
+        }
+      ]
+    }
+  }
+}

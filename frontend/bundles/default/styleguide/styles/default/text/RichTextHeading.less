@@ -1,0 +1,18 @@
+.RichTextHeading {
+  & &-anchorLink {
+    text-decoration: none;
+    color: inherit;
+    scroll-margin-top: calc((var(--headerHeight) + var(--hatHeight)) + var(--bookHeight) + 20px);
+
+    &:before {
+      content: "\0023";
+      margin-right: 0.5ch;
+      color: var(--color-secondary-text);
+    }
+
+    &:hover:before,
+    &:focus:before {
+      color: var(--color-link-text-hover);
+    }
+  }
+}

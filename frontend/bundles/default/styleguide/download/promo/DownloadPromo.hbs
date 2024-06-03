@@ -1,0 +1,22 @@
+<div class="DownloadPromo">
+    {{#set imageSize=(fallback imageAspectRatio (get "imageAspectRatio") "medium-4x3")}}
+        {{include "/page/promo/includes/PagePromoMediaWithIcon.hbs" this}}
+    {{/set}}
+
+    <div class="DownloadPromo-content">
+        {{include "/page/promo/includes/PagePromoTitle.hbs" this}}
+
+        {{include "/page/promo/includes/PagePromoDescription.hbs" this}}
+
+        {{#if url}}
+            <div class="DownloadPromo-cta">
+                <a class="DownloadPromo-link" href="{{url}}">
+                    {{include '/attachment/includes/AttachmentIcon.hbs' this}}
+                    {{#if ctaText}}
+                        <span class="DownloadPromo-link-text">{{ctaText}} {{#if fileTypeDisplayName}}{{fileTypeDisplayName}} {{/if}} {{#if fileSize}}({{fileSize}}){{/if}}</span>
+                    {{/if}}
+                </a>
+            </div>
+        {{/if}}
+    </div>
+</div>

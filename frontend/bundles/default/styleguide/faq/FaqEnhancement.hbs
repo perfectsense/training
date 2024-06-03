@@ -1,0 +1,9 @@
+{{#each item}}
+    <div class="Enhancement">
+        <div class="Enhancement-item">
+            {{include './FaqModule.hbs' this
+                backgroundColor=../backgroundColor
+                useTextColors=../useTextColors}}
+        </div>
+    </div>
+{{/each}}

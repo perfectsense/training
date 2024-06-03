@@ -1,0 +1,88 @@
+.AuthorPage {
+  &-biography {
+    border-bottom: 1px solid var(--color-border);
+    display: block;
+    margin: var(--spacing-xl) 0;
+    padding-bottom: var(--spacing-xl);
+  }
+
+  &-image {
+    .Image {
+      clip-path: circle();
+      height: 150px;
+      margin: 0 auto;
+      max-width: none;
+      width: 150px;
+    }
+  }
+
+  &-info {
+    display: flex;
+    flex-direction: column;
+    row-gap: var(--spacing-md);
+    justify-content: center;
+    text-align: center;
+  }
+
+  &-intro {
+    display: flex;
+    flex-direction: column;
+    row-gap: var(--spacing-lg);
+    column-gap: var(--spacing-lg);
+    margin-top: var(--spacing-xl);
+  }
+
+  &-jobTitle {
+    &:extend(.subhead-1 all);
+  }
+
+  &-name {
+    &:extend(.headline-2 all);
+  }
+
+  .SocialBar {
+    &-items {
+      justify-content: center;
+    }
+  }
+
+  @media @mq-md {
+    &-biography {
+      margin: var(--spacing-xl) 0 var(--spacing-xxl);
+      padding-bottom: var(--spacing-xxl);
+    }
+
+    &-image {
+      .Image {
+        height: 150px;
+        width: 150px;
+      }
+    }
+
+    &-info {
+      text-align: left;
+    }
+
+    &-intro {
+      flex-direction: row;
+    }
+
+    .SocialBar {
+      &-items {
+        justify-content: flex-start;
+      }
+    }
+  }
+
+  @media @mq-lg {
+    .Page {
+      &-twoColumn {
+        .Page {
+          &-aside {
+            margin-top: var(--spacing-xl);
+          }
+        }
+      }
+    }
+  }
+}

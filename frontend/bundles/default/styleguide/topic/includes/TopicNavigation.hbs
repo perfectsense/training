@@ -1,0 +1,30 @@
+{{#or previousTopic nextTopic}}
+    <div class="TopicNavigation">
+        {{#each previousTopic}}
+            <a class="TopicNavigation-previousTopic"
+                {{~#with href}} href="{{this}}"{{/with~}}
+                {{~#with target}} target="{{this}}"{{/with~}}
+                >
+                <div class="TopicNavigation-previousTopic-label">
+                    {{format 'previousTopic'}}
+                </div>
+                <div class="TopicNavigation-previousTopic-title">
+                    {{body}}
+                </div>
+            </a>
+        {{/each}}
+        {{#each nextTopic}}
+            <a class="TopicNavigation-nextTopic"
+                {{~#with href}} href="{{this}}"{{/with~}}
+                {{~#with target}} target="{{this}}"{{/with~}}
+                >
+                <div class="TopicNavigation-nextTopic-label">
+                    {{format 'nextTopic'}}
+                </div>
+                <div class="TopicNavigation-nextTopic-title">
+                    {{body}}
+                </div>
+            </a>
+        {{/each}}
+    </div>
+{{/or}}

@@ -1,0 +1,68 @@
+.StatListB {
+  display: block;
+
+  .StatList {
+    &-items {
+      display: grid;
+      column-gap: var(--spacing-lg);
+      row-gap: var(--spacing-lg);
+      grid-template-columns: auto;
+    }
+  }
+
+  &[data-module-header-position="side"] {
+    .StatPromo {
+      text-align: left;
+    }
+  }
+
+  &[data-text-align='left'] {
+    .StatPromo {
+      text-align: left;
+    }
+  }
+
+  &[data-text-align='right'] {
+    .StatPromo {
+      text-align: right;
+    }
+  }
+
+  .ModuleHeader {
+    text-align: center;
+  }
+
+  @container (@cq-md) {
+    .StatList {
+      &-items {
+        grid-template-columns: 1fr 1fr 1fr;
+      }
+    }
+
+    &[data-module-header-position='side'] {
+      .StatList {
+        &-items {
+          grid-template-columns: auto;
+        }
+      }
+    }
+  }
+
+  @container (@cq-lg) {
+    &[data-module-header-position="side"] {
+      display: grid;
+      column-gap: var(--spacing-xxl);
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  @container (@cq-hk) {
+    &[data-module-header-position="side"] {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .ModuleHeader {
+      margin-bottom: var(--spacing-xxl);
+    }
+  }
+}

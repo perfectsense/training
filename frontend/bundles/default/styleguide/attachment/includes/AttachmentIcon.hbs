@@ -1,0 +1,5 @@
+{{#and iconType (inArray iconType '["Audio", "CSV", "DOC", "EPS", "Image", "JPG", "KEY", "MOV", "MP3", "MP4", "Music", "PDF", "PNG", "PPT", "Text", "TXT", "Video", "XLS", "ZIP"]')}}
+    {{include (concat '/attachment/includes/svg/' iconType '.hbs')}}
+{{else}}
+    {{include '/attachment/includes/svg/Download.hbs'}}
+{{/and}}

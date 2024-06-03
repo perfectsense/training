@@ -1,0 +1,52 @@
+.HTML5AudioPlayerB {
+  color: var(--color-primary-text);
+  display: flex;
+  align-items: center;
+
+  &-playPauseButton {
+    &:extend(.label-3 all);
+    background-color: var(--color-primary);
+    color: var(--color-text-inverse);
+    width: 106px;
+    height: 40px;
+    cursor: pointer;
+    border: none;
+    border-radius: 20px;
+
+    &:hover {
+      background: var(--color-button-hover-bg);
+      border: 1px solid var(--color-button-hover-border);
+      color: var(--color-button-hover-text);
+    }
+
+    div {
+      display: grid;
+      column-gap: var(--spacing-sm);
+      align-items: center;
+      justify-content: flex-start;
+      grid-template-columns: 30px auto;
+    }
+
+    svg {
+      width: 30px;
+      height: 30px;
+    }
+  }
+
+  &[playing] {
+    [data-not-playing] {
+      display: none;
+    }
+  }
+
+  &:not([playing]) {
+    [data-if-playing] {
+      display: none;
+    }
+  }
+
+  &-duration {
+    &:extend(.label-3 all);
+    margin-left: var(--spacing-sm);
+  }
+}

@@ -1,0 +1,60 @@
+/*
+  Margin variables used around page level modules and for entire page layouts
+
+  These are listed in here twice, as root and [data-module] because of the way container
+  queries work. If we only had the media query rules, then if you had a module inside of a
+  smaller container on a bigger breakpoint, it would get the big spacing. But it actually
+  needs the small spacing. So its sort of an override
+*/
+
+:root {
+  /*
+    Vertical Margin
+
+    This is the margin between two modules on a page or like the entire content well and the header
+  */
+  --vertical-margin-sm: 24px;
+  --vertical-margin-md: 40px;
+  --vertical-margin-lg: 80px;
+
+  @media @mq-lg {
+    --vertical-margin-sm: 32px;
+    --vertical-margin-md: 64px;
+    --vertical-margin-lg: 128px;
+  }
+
+  /*
+    Horizontal Margin
+
+    The outside number is the horizontal margins between the edge of the page and the content well
+    The inside number is the horizontal margin between two containers or sections. For example, the two
+    columns in a two column layout, or all the columns in containers
+  */
+  --horizontal-margin-outside: 16px;
+  --horizontal-margin-inside: 40px;
+
+  @media @mq-md {
+    --horizontal-margin-outside: 40px;
+  }
+}
+
+[data-module] {
+  /* Vertical Margin */
+  --vertical-margin-sm: 24px;
+  --vertical-margin-md: 40px;
+  --vertical-margin-lg: 80px;
+
+  @container (@cq-lg) {
+    --vertical-margin-sm: 32px;
+    --vertical-margin-md: 64px;
+    --vertical-margin-lg: 128px;
+  }
+
+  /* Horizontal Margin */
+  --horizontal-margin-outside: 16px;
+  --horizontal-margin-inside: 40px;
+
+  @container (@cq-md) {
+    --horizontal-margin-outside: 40px;
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "fields": {
+    "sectionNavAlign": {
+      "displayName": "Choose Section Nav Alignment",
+      "type": "text",
+      "cms.ui.dropDown": true,
+      "cms.ui.placeholder": "Default",
+      "values": [
+        {
+          "label": "Center",
+          "value": "center"
+        },
+        {
+          "label": "Left",
+          "value": "left"
+        },
+        {
+          "label": "Right",
+          "value": "right"
+        }
+      ]
+    }
+  }
+}

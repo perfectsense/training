@@ -1,0 +1,52 @@
+.PagePromoEnhancement {
+  margin: var(--spacing-xl) 0;
+
+  .PagePromo {
+    &-category {
+      margin-bottom: var(--spacing-sm);
+    }
+
+    &-title {
+      .headline-8;
+    }
+
+    &-media {
+      img {
+        width: auto;
+      }
+    }
+  }
+
+  @container (@cq-sm) {
+    margin: var(--spacing-xxl) 0;
+
+    &:not([data-align-right], [data-align-left]) {
+      .PagePromo {
+        &-title {
+          .headline-7;
+        }
+
+        &-description {
+          .subhead-2;
+        }
+      }
+    }
+
+    &[data-align-left],
+    &[data-align-right] {
+      margin: var(--spacing-sm) 0;
+      max-width: 360px;
+      width: 50%;
+    }
+
+    &[data-align-left] {
+      float: left;
+      margin-right: var(--spacing-xxl);
+    }
+
+    &[data-align-right] {
+      float: right;
+      margin-left: var(--spacing-xxl);
+    }
+  }
+}

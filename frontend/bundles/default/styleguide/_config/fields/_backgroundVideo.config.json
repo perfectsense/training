@@ -1,0 +1,10 @@
+{
+  "fields": {
+    "backgroundVideo": {
+      "displayName": "Choose a background video",
+      "type": "record",
+      "cms.ui.note": "Set the Background Video",
+      "groups": "brightspot.video.file.VideoFile"
+    }
+  }
+}

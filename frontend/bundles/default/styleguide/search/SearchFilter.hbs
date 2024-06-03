@@ -1,0 +1,25 @@
+<bsp-search-filter class="SearchFilter"
+    {{~#with heading}} data-heading="{{this}}"{{/with~}}
+    {{~#or (gt (countSelected this) 0) (ne searchFilterDefaultState "collapsed")}} data-expanded{{/or~}}
+    {{~#gt items.length (fallback searchFilterDefaultVisible 5)}} data-clipped{{/gt~}}
+    >
+    <div class="SearchFilter-heading">
+        {{~heading~}}
+        {{~include (iconPath 'caret-down')~}}
+    </div>
+    <div class="SearchFilter-content">
+        <ul class="SearchFilter-items">
+            {{~#each items~}}
+                <li class="SearchFilter-items-item" {{#ge @index (fallback ../searchFilterDefaultVisible 5)}}data-is-clippable{{/ge}}>
+                    {{include "/search/SearchFilterInput.hbs" this}}
+                </li>
+            {{~/each~}}
+        </ul>
+        {{#gt items.length (fallback searchFilterDefaultVisible 5)}}
+            <button class="SearchFilter-seeAll-button" type="button" data-toggle-clipped>
+                <span class="seeAllText">{{format "seeAll"}}</span>
+                <span class="seeLessText">{{format "seeLess"}}</span>
+            </button>
+        {{/gt}}
+    </div>
+</bsp-search-filter>

@@ -1,0 +1,11 @@
+<nav class="FooterNavigation"{{extraAttributes}}>
+    {{#with items}}
+        <ul class="FooterNavigation-items" data-column-count="{{this.length}}">
+            {{#each this}}
+                <li class="FooterNavigation-items-item">
+                    {{include "/navigation/FooterNavigationItem.hbs" this}}
+                </li>
+            {{/each}}
+        </ul>
+    {{/with}}
+</nav>

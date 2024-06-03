@@ -1,0 +1,55 @@
+.HTML5VideoPlayer {
+  display: block;
+  height: 0;
+  margin: 0 auto;
+  padding-bottom: 56.25%;
+  /* 16:9 */
+  position: relative;
+
+  video {
+    border: 0;
+    cursor: pointer;
+    height: 100%;
+    left: 0;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+
+  &-content {
+    &:extend(.headline-6 all);
+
+    margin-top: var(--spacing-sm);
+  }
+
+  &-playIcon {
+    bottom: var(--spacing-md);
+    cursor: pointer;
+    height: 40px;
+    left: var(--spacing-sm);
+    position: absolute;
+    width: 40px;
+    clip-path: circle();
+    display: grid;
+    place-content: center;
+    color: var(--color-text-inverse);
+    background-color: var(--color-primary);
+
+    svg {
+      height: 24px;
+      width: 24px;
+    }
+  }
+
+  @container (@cq-lg) {
+    padding-bottom: 52.25%;
+
+    &-playIcon {
+      bottom: var(--spacing-md);
+      height: 50px;
+      left: var(--spacing-md);
+      width: 50px;
+    }
+  }
+}

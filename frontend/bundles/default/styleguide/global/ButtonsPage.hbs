@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html class="ButtonsPage" itemscope
+    itemtype="http://schema.org/WebPage">
+{{include "/page/Page-head.hbs" this}}
+
+<body class="Page-body">
+    {{include "/page/Page-bodyStart.hbs" this}}
+    <style type="text/css">
+        .Page-body {
+            padding-top: 0;
+        }
+
+        h2 {
+            border-bottom: 1px solid gray;
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+        }
+
+        .ButtonsWrapper {
+            max-width: 1000px;
+            padding: 40px;
+        }
+
+        .ButtonsPage {
+            display: block;
+            margin: 0 0 20px;
+            padding: 10px;
+        }
+
+        .ButtonsPage-block {
+            padding: 20px 20px 20px 0;
+            display: block;
+            border-radius: 5px;
+        }
+
+        .ButtonsPage-block button {
+            margin-bottom: 20px;
+            margin-right: 20px;
+        }
+
+        .ButtonsPage-block-subTitle {
+            margin-bottom: 10px;
+        }
+
+        .ButtonsPage-arrows-wrapper {
+            position: relative;
+            min-height: 87px;
+            max-width: 114px;
+        }
+
+        .ButtonsPage-arrows-wrapper .flickity-prev-next-button {
+            top: 50%;
+        }
+
+        .ButtonsPage .ButtonsPage-container .flickity-prev-next-button.previous {
+            left: 10px;
+        }
+
+        .ButtonsPage .ButtonsPage-container .flickity-prev-next-button.next {
+            right: 10px;
+        }
+    </style>
+
+    <div class="Page-content">
+        <div class="ButtonsWrapper">
+            <h2 class="page-title-2">Go Buttons & Links</h2>
+            <div class="ButtonsPage-container">
+                <div class="ButtonsPage-section">
+                    <div class="ButtonsPage-block">
+                        <h3 class="ButtonsPage-block-subTitle title-6">Buttons</h3>
+                        <div>
+                            <button class="Button" style="--button-border-radius: 0px">Button Square</button>
+                            <button class="Button" style="--button-border-radius: 5px">Button Rounded</button>
+                            <button class="Button">Button Pill</button>
+                        </div>
+                        <div>
+                            <button class="Button" disabled style="--button-border-radius: 0px">Button Square Disabled</button>
+                            <button class="Button" style="--button-border-radius: 5px" disabled>Button Rounded Disabled</button>
+                            <button class="Button" disabled>Button Pill Disabled</button>
+                        </div>
+                    </div>
+                    <div class="ButtonsPage-block">
+                        <h3 class="ButtonsPage-block-subTitle title-6">Buttons - small</h3>
+                        <div>
+                            <button class="Button" data-size="small" style="--button-border-radius: 0px">Button Small Square</button>
+                            <button class="Button" data-size="small" style="--button-border-radius: 5px">Button Small Rounded</button>
+                            <button class="Button" data-size="small" >Button Small Pill</button>
+                        </div>
+                        <div>
+                            <button class="Button" data-size="small" style="--button-border-radius: 0px" disabled>Button Small Square Disabled</button>
+                            <button class="Button" data-size="small" style="--button-border-radius: 5px" disabled>Button Small Rounded Disabled</button>
+                            <button class="Button" data-size="small" disabled>Button Small Pill Disabled</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ButtonsPage-section">
+                    <div class="ButtonsPage-block">
+                        <h3 class="ButtonsPage-block-subTitle title-6">Standard Body and Links</h3>
+                        <div class="RichTextBody">
+                            <p>Lorem ipsum dolor sit amet, <a class="Link" href="#">consectetur adipiscing elit.</a> Donec gravida
+                            lacinia odio at ultricies. <b>Nulla <a class="Link" href="#">facilisi</a></b>. Quisque eleifend.</p>
+                        </div>
+                    </div>
+
+                    <div class="ButtonsPage-block" data-pagelead>
+                        <h3 class="ButtonsPage-block-subTitle title-6">Arrows</h3>
+                        <div class="bg-img">
+                            <div class="ButtonsPage-arrows-wrapper">
+                                <button class="flickity-button flickity-prev-next-button previous" type="button"
+                                    aria-label="Previous"><svg class="flickity-button-icon" viewBox="0 0 100 100">
+                                        <path d="M 10,50 L 60,100 L 70,90 L 30,50  L 70,10 L 60,0 Z" class="arrow">
+                                        </path>
+                                    </svg></button>
+                                <button class="flickity-button flickity-prev-next-button next" type="button"
+                                    aria-label="Next"><svg class="flickity-button-icon"
+                                        viewBox="0 0 100 100">
+                                        <path d="M 10,50 L 60,100 L 70,90 L 30,50  L 70,10 L 60,0 Z" class="arrow"
+                                            transform="translate(100, 100) rotate(180) "></path>
+                                    </svg></button>
+                            </div>
+
+                            <div class="ButtonsPage-arrows-wrapper">
+                                <button class="flickity-button flickity-prev-next-button previous" type="button"
+                                    aria-label="Previous" disabled><svg class="flickity-button-icon" viewBox="0 0 100 100">
+                                        <path d="M 10,50 L 60,100 L 70,90 L 30,50  L 70,10 L 60,0 Z" class="arrow">
+                                        </path>
+                                    </svg></button>
+                                <button class="flickity-button flickity-prev-next-button next" type="button"
+                                    aria-label="Next" disabled><svg class="flickity-button-icon"
+                                        viewBox="0 0 100 100">
+                                        <path d="M 10,50 L 60,100 L 70,90 L 30,50  L 70,10 L 60,0 Z" class="arrow"
+                                            transform="translate(100, 100) rotate(180) "></path>
+                                    </svg></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,27 @@
+{
+  "fields": {
+    "flagPosition": {
+      "type": "text",
+      "cms.ui.dropDown": true,
+      "cms.ui.placeholder": "Default",
+      "values": [
+        {
+          "label": "Top Left",
+          "value": "top-left"
+        },
+        {
+          "label": "Top Right",
+          "value": "top-right"
+        },
+        {
+          "label": "Bottom Left",
+          "value": "bottom-left"
+        },
+        {
+          "label": "Bottom Right",
+          "value": "bottom-right"
+        }
+      ]
+    }
+  }
+}

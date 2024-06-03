@@ -1,0 +1,49 @@
+.PageListRightRailC {
+  .ModuleHeader {
+    &-title {
+      &:extend(.headline-3 all);
+    }
+
+    &-description {
+      &:extend(.subhead-2 all);
+    }
+  }
+
+  .PageList {
+    &-items {
+      display: grid;
+      row-gap: var(--spacing-md);
+
+      &-item {
+        border-bottom: 1px solid var(--color-list-border);
+        padding-bottom: var(--spacing-md);
+
+        .PagePromo {
+
+          &-description,
+          &-media,
+          &-category,
+          &-byline {
+            display: none;
+          }
+
+          &-title {
+            &:extend(.headline-8 all);
+          }
+        }
+      }
+    }
+
+    &-cta {
+      .Button {
+        margin-left: 0;
+      }
+    }
+
+    &-cta {
+      .Button {
+        margin-left: 0;
+      }
+    }
+  }
+}

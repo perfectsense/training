@@ -1,0 +1,14 @@
+<div class="SearchResultsModuleHorizontalFilters">
+    <div class="SearchResultsModuleHorizontalFilters-filters">
+        {{#each filters}}
+            {{include '/search/SearchFilterDropdown.hbs' this}}
+        {{/each}}
+    </div>
+    {{#with filters}}
+        {{#gt (countSelected this) 0}}
+        <button class="SearchResultsModuleHorizontalFilters-clearFilters" data-clear type="submit">
+            {{format "/search/SearchResultsModule" "filtersClearAll"}}
+        </button>
+        {{/gt}}
+    {{/with}}
+</div>

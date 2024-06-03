@@ -1,0 +1,6 @@
+{
+  "_template": "/quote/QuoteListEnhancement.hbs",
+  "item": {
+    "_include": "/quote/QuoteList.json"
+  }
+}

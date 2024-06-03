@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html class="ArticlePage" {{~include "/article/includes/ArticlePageAttributes.hbs" this leadStyle="nested"}}>
+    {{include "/page/Page-head.hbs" this}}
+
+    <body class="Page-body">
+        {{include "/page/Page-bodyStart.hbs" this}}
+        {{include "/page/Page-header.hbs" this}}
+        <div data-moduleroot>
+            {{include "/page/Page-above.hbs" this}}
+            {{include "/page/Page-sponsoredBanner.hbs" this}}
+
+            <main class="Page-content">
+                {{#if aside}}<div class="Page-twoColumn">{{else}}<div class="Page-oneColumn" data-modulewell>{{/if}}
+                    <div class="Page-main">
+                        <div class="ArticlePage-lede">
+                            <div class="ArticlePage-lede-content">
+                                {{include '/global/AssetTitle.hbs' this}}
+                            </div>
+                        </div>
+
+                        {{#set
+                            imageSize="large-16x9"
+                            sizes="(max-width: 800px) 100vw, 800px"
+                            lazyLoad=false
+                        }}
+                            {{include "/page/Page-lead.hbs" this}}
+                        {{/set}}
+
+                        {{include "/article/includes/ArticlePageBody.hbs" this}}
+                    </div>
+
+                    {{include '/page/Page-aside.hbs' this}}
+                </div>
+            </main>
+
+            {{include "/page/Page-below.hbs" this}}
+        </div>
+        {{include "/page/Page-footer.hbs" this}}
+        {{include "/page/Page-extraBodyItems.hbs" this}}
+    </body>
+</html>

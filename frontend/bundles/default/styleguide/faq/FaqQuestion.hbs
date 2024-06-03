@@ -1,0 +1,24 @@
+<bsp-accordion class="FaqQuestion"
+    {{~include "/global/ModuleAttributes.hbs" this~}}
+    {{~#if expandItem}} data-expanded{{/if~}}>
+    <div class="FaqQuestion-header" data-accordion-header aria-role="button" role="button">
+        {{~#with question}}
+        <div class="FaqQuestion-title">
+            {{include "/link/Link.hbs" href="#" body=this}}
+            <span class="iconPlus">
+                {{include (iconPath 'plus')}}
+            </span>
+            <span class="iconMinus">
+                {{include (iconPath 'minus')}}
+            </span>
+        </div>
+        {{~/with~}}
+    </div>
+    <div class="FaqQuestion-answer" data-accordion-body>
+        <div class="FaqQuestion-answerWrapper">
+            <div class="RichTextBody">
+                {{~answer~}}
+            </div>
+        </div>
+    </div>
+</bsp-accordion>

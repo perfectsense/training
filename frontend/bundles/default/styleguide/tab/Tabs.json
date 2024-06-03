@@ -1,0 +1,46 @@
+{
+  "_template": "Tabs.hbs",
+  "title": "{{words([5,10])}}",
+  "description": "{{words([15,30])}}",
+  "tabs": [
+    {
+      "_include": "TabItem.json",
+      "id": "TabOne",
+      "content": {
+        "_include": "/page/promo/PagePromoModuleA.json"
+      }
+    },
+    {
+      "_include": "TabItem.json",
+      "id": "TabTwo",
+      "content": {
+        "_include": "/page/list/PageListCarouselA.json"
+      }
+    },
+    {
+      "_include": "TabItem.json",
+      "id": "TabThree",
+      "content": {
+        "_include": "/stat/StatListA.json"
+      }
+    },
+    {
+      "_include": "TabItem.json",
+      "id": "TabFour",
+      "content": {
+        "_include": "/quote/QuoteListA.json"
+      }
+    },
+    {
+      "_include": "TabItem.json",
+      "id": "TabFive",
+      "content": {
+        "_include": "/logo/list/LogoListA.json"
+      }
+    }
+  ],
+  "ctaButtonText": "{{words([1, 2])}}",
+  "ctaTarget": "_blank",
+  "ctaUrl": "#",
+  "_hidden": true
+}

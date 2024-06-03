@@ -1,0 +1,26 @@
+{{#if items}}
+<div class="PageListRightRailA" data-module{{include "includes/PageList-attributes.hbs" this}}>
+    {{include "/global/ModuleHeader.hbs" this}}
+
+    {{#with items.[0].media}}
+        <div class="PageList-items-first">
+            {{#eq this._template "/page/promo/PagePromo.hbs"}}
+                {{include "/link/Link.hbs" this href=url body=media}}
+            {{else}}
+                {{render this}}
+            {{/eq}}
+        </div>
+    {{/with}}
+
+    {{#with items}}
+        <ol class="PageList-items" {{#if ../hideListNumbers}}data-no-numbers{{/if}}>
+            {{#each this}}
+                <li class="PageList-items-item">
+                    {{this}}
+                </li>
+            {{/each}}
+        </ol>
+    {{/with}}
+    {{include "includes/PageList-footer.hbs" this}}
+</div>
+{{/if}}

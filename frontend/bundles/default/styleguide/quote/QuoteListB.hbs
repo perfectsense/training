@@ -1,0 +1,14 @@
+<div class="QuoteListB" data-module{{include "/page/list/includes/PageList-attributes.hbs" this}}>
+    {{include "/global/ModuleHeader.hbs" this}}
+
+    {{#with items}}
+        <ul class="QuoteListB-items">
+            {{#each this}}
+                <li class="QuoteListB-items-item">
+                    {{include "/quote/Quote.hbs" this}}
+                </li>
+            {{/each}}
+        </ul>
+    {{/with}}
+    {{include "/page/list/includes/PageList-footer.hbs" this}}
+</div>

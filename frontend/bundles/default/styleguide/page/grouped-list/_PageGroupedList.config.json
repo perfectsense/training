@@ -1,0 +1,15 @@
+{
+  "styles": {
+    "/page/grouped-list/PageGroupedList.hbs": {
+      "fields": [
+        "listTitleSize",
+        "listDescriptionSize",
+        "backgroundColor",
+        "useTextColors",
+        "modulePaddingTop",
+        "modulePaddingBottom",
+        "itemAlignment"
+      ]
+    }
+  }
+}

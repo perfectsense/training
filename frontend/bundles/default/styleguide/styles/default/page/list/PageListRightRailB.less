@@ -1,0 +1,80 @@
+.PageListRightRailB {
+  .ModuleHeader {
+    &-title {
+      &:extend(.headline-3 all);
+    }
+
+    &-description {
+      &:extend(.subhead-2 all);
+    }
+  }
+
+  .PageList {
+    &-items {
+      counter-reset: number;
+      display: grid;
+      row-gap: var(--spacing-md);
+
+      &-item {
+        border-bottom: 1px solid var(--color-list-border);
+        display: grid;
+        padding-bottom: var(--spacing-md);
+      }
+
+      .PagePromo-title {
+        &:extend(.headline-8 all);
+      }
+
+      &[data-with-numbers] {
+        .PageList-items-item {
+          grid-template-columns: 20px auto;
+          column-gap: var(--spacing-md);
+
+          &:before {
+            white-space: nowrap;
+            color: var(--color-primary-text);
+            counter-increment: number;
+            content: counter(number)'\a0';
+            font-weight: 300;
+            position: relative;
+            top: -2px;
+          }
+        }
+      }
+    }
+
+    &-cta {
+      .Button {
+        margin-left: 0;
+      }
+    }
+  }
+
+  .PagePromo {
+    display: flex;
+
+    &[data-image-align-horizontal] {
+      .PagePromo-media {
+        width: 90px;
+      }
+    }
+
+    &-media {
+      align-self: flex-start;
+      margin-bottom: 0;
+
+      .Link {
+        &-icon {
+          width: 20px;
+          height: 20px;
+          left: 5px;
+          bottom: 5px;
+        }
+      }
+    }
+
+    &-content {
+      flex-grow: 1;
+    }
+  }
+}

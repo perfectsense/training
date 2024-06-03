@@ -1,0 +1,11 @@
+{
+  "_template": "/container/OneColumnContainer.hbs",
+  "title": "{{words([5,10])}}",
+  "description": "{{words([15,30])}}",
+  "anchorId": "anchorTest",
+  "columnOne": {
+    "_template": "/text/RichTextModule.hbs",
+
+    "items": ["{{html('<div class=\"column-example\">Column One</div>')}}"]
+  }
+}

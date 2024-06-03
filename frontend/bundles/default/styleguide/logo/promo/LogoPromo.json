@@ -1,0 +1,11 @@
+{
+  "_template": "/logo/promo/LogoPromo.hbs",
+  "media": {
+    "_template": "/image/Image.hbs",
+    "image": {
+      "_image": true
+    }
+  },
+  "url": "#",
+  "target": "_self"
+}

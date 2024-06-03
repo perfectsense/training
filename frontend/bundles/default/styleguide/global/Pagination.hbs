@@ -1,0 +1,29 @@
+{{#or previousPage nextPage}}
+<div class="Pagination">
+<!-- Previous -->
+    <div class="Pagination-previousPage" {{#unless previousPage}} data-inactive{{/unless}}>
+    {{#with previousPage}}
+        <a href="{{this}}" rel="nofollow">
+            {{include (iconPath 'caret-left')}}
+            <span class="sr-only">{{format "previousText"}}</span>
+        </a>
+        {{else}}
+        {{include (iconPath 'caret-left')}}
+    {{/with}}
+    </div>
+
+    <div class="Pagination-pageCounts">{{format "pageCounts" number=pageNumber count=pageCount}}</div>
+
+    <!-- Next -->
+    <div class="Pagination-nextPage" {{#unless nextPage}} data-inactive{{/unless}}>
+    {{#with nextPage}}
+    <a href="{{this}}" rel="nofollow">
+        {{include (iconPath 'caret-right')}}
+        <span class="sr-only">{{format "nextText"}}</span>
+    </a>
+    {{else}}
+        {{include (iconPath 'caret-right')}}
+    {{/with}}
+    </div>
+</div>
+{{/or}}

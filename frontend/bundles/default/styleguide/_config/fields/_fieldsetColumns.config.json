@@ -1,0 +1,37 @@
+{
+  "fields": {
+    "fieldsetColumns": {
+      "displayName": "Number of columns for this field set",
+      "type": "text",
+      "cms.ui.text": true,
+      "cms.ui.dropDown": true,
+      "cms.ui.placeholder": "Default",
+      "values": [
+        {
+          "label": "Full Width",
+          "value": "1"
+        },
+        {
+          "label": "50 / 50",
+          "value": "50-50"
+        },
+        {
+          "label": "33 / 33 / 33",
+          "value": "33-33-33"
+        },
+        {
+          "label": "50 / 25 / 25",
+          "value": "50-25-25"
+        },
+        {
+          "label": "25 / 25 / 50",
+          "value": "25-25-50"
+        },
+        {
+          "label": "25 / 25 / 25 / 25",
+          "value": "25-25-25-25"
+        }
+      ]
+    }
+  }
+}

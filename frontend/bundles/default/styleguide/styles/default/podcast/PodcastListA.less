@@ -1,0 +1,29 @@
+.PodcastListA {
+  display: block;
+
+  &-items {
+    display: grid;
+    column-gap: var(--spacing-lg);
+    row-gap: var(--spacing-lg);
+    grid-template-columns: 1fr;
+    margin: 0;
+  }
+
+  @container (@cq-sm) {
+    &-items {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @container (@cq-md) {
+    &-items {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  @container (@cq-lg) {
+    &-items {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+}

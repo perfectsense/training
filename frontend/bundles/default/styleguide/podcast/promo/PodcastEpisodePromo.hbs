@@ -1,0 +1,15 @@
+<div class="PodcastEpisodePromo">
+    {{include "/page/promo/includes/PagePromoByline.hbs" this}}
+    {{include "/page/promo/includes/PagePromoTitle.hbs" this}}
+    {{include "/page/promo/includes/PagePromoDescription.hbs" this}}
+
+    {{#each primaryPodcastMedia}}
+    <div class="PodcastEpisodePromo-player">
+        {{#eq this._template "/audio/HTML5AudioPlayer.hbs"}}
+            {{include "/audio/HTML5AudioPlayerB.hbs" this}}
+        {{else}}
+            {{render this}}
+        {{/eq}}
+    </div>
+    {{/each}}
+</div>

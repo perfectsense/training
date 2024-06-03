@@ -1,0 +1,7 @@
+{
+  "fields": {
+    "hideTitles": {
+      "type": "boolean"
+    }
+  }
+}

@@ -1,0 +1,36 @@
+<bsp-tabs class="Tabs" data-widget="Tabs" data-module data-full-width {{include "/page/list/includes/PageList-attributes.hbs" this}}>
+    {{include "/global/ModuleHeader.hbs" this}}
+    <div class="Tabs-container">
+        {{#with tabs}}
+            <bsp-tabs-horizontal-navigation class="TabsHorizontalNavigation">
+                <button class="Button" type="button" data-click="previous" aria-label="Previous">
+                    {{include (iconPath 'caret-left')}}
+                </button>
+                <button class="Button" type="button" data-click="next" aria-label="Next">
+                    {{include (iconPath 'caret-right')}}
+                </button>
+                <div class="TabsHorizontalNavigation-content">
+                    <div class="Tabs-tabsRow">
+                        <ul class="Tabs-tabs">
+                            {{#each this}}
+                                <li>
+                                    <a class="Tabs-tab" href="#{{id}}" data-tab {{~#eq @index 0}} data-visible{{/eq~}}>
+                                        {{~title~}}
+                                    </a>
+                                </li>
+                            {{/each}}
+                        </ul>
+                    </div>
+                </div>
+            </bsp-tabs-horizontal-navigation>
+        {{/with}}
+        <div class="Tabs-content">
+            {{#each tabs}}
+                <div class="Tabs-panel" id="{{id}}" data-tab-panel {{~#eq @index 0}} data-visible{{/eq~}}>
+                    {{~this~}}
+                </div>
+            {{/each}}
+        </div>
+        {{include "/page/list/includes/PageList-footer.hbs" this}}
+    </div>
+</bsp-tabs>

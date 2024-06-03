@@ -1,0 +1,26 @@
+<table class="NewsletterList-header">
+    {{#with title}}
+        <tr>
+            <td class="NewsletterList-title">{{this}}</td>
+        </tr>
+    {{/with}}
+    {{#with description}}
+    <tr>
+        <td class="NewsletterList-description">
+            {{this}}
+        </td>
+    </tr>
+    {{/with}}
+</table>
+{{#each items}}{{this}}{{/each}}
+{{#if ctaUrl}}
+<table class="NewsletterList-cta">
+    <tr>
+        <td class="NewsletterPromo-media">
+            <a class="Link" href="{{ctaUrl}}" target="{{ctaTarget}}">
+                {{ctaTitle}}
+            </a>
+        </td>
+    </tr>
+</table>
+{{/if}}

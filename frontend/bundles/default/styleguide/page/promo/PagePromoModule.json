@@ -1,0 +1,21 @@
+{
+  "_template": "/page/promo/PagePromoModule.hbs",
+  "media": {
+    "_include": "/image/Image.json"
+  },
+  "authorName": "{{name}}",
+  "authorUrl": "#",
+  "authorImage": {
+    "_include": "/image/Image.json"
+  },
+  "publishDate": "{{date}}",
+  "url": "#",
+  "target": "_self",
+  "category": "{{words([1,3])}}",
+  "categoryUrl": "#",
+  "type": "{{words(1)}}",
+  "title": "{{words([5,10])}}",
+  "readTime": 5,
+  "description": "{{words([15,25])}}",
+  "ctaButtonText": "{{words([1,3])}}"
+}

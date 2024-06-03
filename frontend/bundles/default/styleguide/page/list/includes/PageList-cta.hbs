@@ -1,0 +1,5 @@
+{{#if ctaUrl}}
+    <div class="PageList-cta">
+        <a class="Button" data-style="pill" href="{{ctaUrl}}" {{#with ctaTarget}} target="{{this}}" {{/with}}>{{#if ctaButtonText}}{{ctaButtonText}}{{else}}{{format "/page/list/PageList" "ctaText"}}{{/if}}</a>
+    </div>
+{{/if}}

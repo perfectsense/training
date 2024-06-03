@@ -1,0 +1,14 @@
+.PreviewPage .Page-body {
+  padding-top: 0;
+}
+
+.column-example {
+  background: lightgray;
+  padding: 40px;
+}
+
+.PagePromoEnhancementA,
+.PagePromoEnhancementB,
+.PagePromoEnhancementC {
+  padding: 0 40px;
+}

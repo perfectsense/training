@@ -1,0 +1,19 @@
+{{~#each item~}}
+    {{#if (and (not ../_styledTemplate) this._styledTemplate)}}
+        {{!-- Falls back to the Product List's defined style. In practice, this allows Shared Placements
+          to fall back to the Shared objects defined style. --}}
+        {{this}}
+    {{else}}
+        <div class="Enhancement" {{#if ../enhancementAlignmentNoFullWidth}} data-{{../enhancementAlignmentNoFullWidth}}{{else}}data-align-center{{/if}}>
+            <div class="Enhancement-item">
+                <div class="ProductListEnhancement">
+                    {{~include
+                        (fallback _styledTemplate _template)
+                        this
+                        itemImageAspectRatio=../itemImageAspectRatio
+                    ~}}
+                </div>
+            </div>
+        </div>
+    {{/if}}
+{{~/each~}}

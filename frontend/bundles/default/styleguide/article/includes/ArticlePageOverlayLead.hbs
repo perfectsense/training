@@ -1,0 +1,49 @@
+{{#if (contains lead.[0]._template "/page/PageHeading.hbs")}}
+    {{lead}}
+{{else}}
+<div class="ArticlePageOverlayLead">
+    <div class="ArticlePageOverlayLead-hero">
+        {{#set
+            imageSize="medium-square"
+            imageSizeAlt="xl-24x1"
+            lazyLoad=false
+        }}
+            {{#each lead}}
+                <div class="ArticlePageOverlayLead-media" aria-hidden="true">
+                    {{#if (contains _template "/figure/Figure.hbs")}}
+                        {{this}}
+                    {{/if}}
+                    {{#if (contains _template "/carousel/Carousel.hbs")}}
+                        {{slides.[0].media}}
+                    {{/if}}
+                    {{#if (and
+                        (contains _template "/video/VideoLead.hbs")
+                        (contains player.[0]._template "/video/HTML5VideoPlayer.hbs")
+                        )}}
+                        {{#each player}}
+                            <video poster="{{poster}}" muted autoplay loop>
+                                {{sources}}
+                            </video>
+                        {{/each}}
+                    {{/if}}
+                </div>
+            {{/each}}
+            <div class="ArticlePageOverlayLead-content">
+                {{include '/global/AssetTitle.hbs' this useTextColors="inverse" assetTitleTextAlign=(fallback assetTitleTextAlign "center") authors=null readTime=null datePublished=null actions=null sponsored=null}}
+            </div>
+        {{/set}}
+    </div>
+    {{#each lead}}
+        {{#if (contains _template "/figure/Figure.hbs")}}
+            {{#if (or caption credit)}}
+                {{include '/figure/includes/FigureContent.hbs' this}}
+            {{/if}}
+        {{/if}}
+        {{#if (contains _template "/carousel/Carousel.hbs")}}
+            {{#with slides.[0]}}
+                {{include '/figure/includes/FigureContent.hbs' this}}
+            {{/with}}
+        {{/if}}
+    {{/each}}
+</div>
+{{/if}}

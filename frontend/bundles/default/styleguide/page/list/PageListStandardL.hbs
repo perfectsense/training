@@ -1,0 +1,37 @@
+{{#if items}}
+<div class="PageListStandardL" data-module{{include "includes/PageList-attributes.hbs" this}}
+    {{~#with imagePositionHorizontal}} data-image-position="{{this}}"{{/with~}}>
+    {{include "/global/ModuleHeader.hbs" this}}
+
+    <div class="PageList-items">
+        <div class="PageList-items-item">
+            {{#with items.[0]}}
+                {{#eq this._template "/page/promo/PagePromo.hbs"}}
+                    {{#set imageSize=(fallback ../itemImageAspectRatio "large-16x9")}}
+                        {{#set sizes="(max-width: 1024px) 100vw, 1024px"}}
+                            {{include "/page/promo/PagePromo.hbs" this}}
+                        {{/set}}
+                    {{/set}}
+                {{else}}
+                    {{render this}}
+                {{/eq}}
+            {{/with}}
+        </div>
+        {{#each items}}
+            {{#if (gt @index 0)}}
+                {{#if (lt @index 5)}}
+                    <div class="PageList-items-item">
+                        {{#eq this._template "/page/promo/PagePromo.hbs"}}
+                            {{include "/page/promo/PagePromo.hbs" this media=null description=null}}
+                        {{else}}
+                            {{render this}}
+                        {{/eq}}
+                    </div>
+                {{/if}}
+            {{/if}}
+        {{/each}}
+    </div>
+
+    {{include "includes/PageList-footer.hbs" this}}
+</div>
+{{/if}}

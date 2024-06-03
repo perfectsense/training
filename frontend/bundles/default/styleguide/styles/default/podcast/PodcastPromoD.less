@@ -1,0 +1,51 @@
+.PodcastPromoD {
+  padding: var(--spacing-lg) var(--spacing-md);
+  background-color: #f9f9f9;
+  display: grid;
+  column-gap: var(--spacing-md);
+  row-gap: var(--spacing-md);
+  grid-template-columns: 80px 1fr;
+  align-items: center;
+
+  .PagePromo {
+    &-title {
+      &:extend(.headline-5);
+    }
+
+    &-description {
+      &:extend(.subhead-2);
+    }
+
+    &-ctaLink {
+      margin-top: var(--spacing-md);
+    }
+  }
+
+  &-topRow {
+    grid-column-start: 2;
+  }
+
+  &-bottomRow {
+    grid-column-start: 1;
+    grid-column-end: 3;
+  }
+
+  .PodcastProviderList {
+    margin-top: var(--spacing-md);
+  }
+
+  @container (@cq-md) {
+    align-items: start;
+    row-gap: var(--spacing-sm);
+
+    &-bottomRow {
+      grid-column-start: 2;
+    }
+
+    .PagePromo {
+      &-media {
+        grid-row: span 2;
+      }
+    }
+  }
+}

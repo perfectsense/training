@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html class="Page" {{~include "/page/Page-htmlAttributes.hbs" this}}>
+{{include "/page/Page-head.hbs" this}}
+
+<body class="Page-body">
+    {{include "/page/Page-bodyStart.hbs" this}}
+    {{include "/page/Page-header.hbs" this}}
+    <div data-moduleroot>
+        {{include "/page/Page-above.hbs" this}}
+
+        <main class="Page-content">
+            {{#if aside}}
+                <div class="Page-twoColumn">
+                    <div class="Page-main" data-modulewell>
+                    {{#with innerHtml}}
+                        {{this}}
+                    {{/with}}
+                    </div>
+                    <aside class="Page-aside">
+                        {{aside}}
+                    </aside>
+                </div>
+            {{else}}
+                <main class="Page-oneColumn">
+                    {{#with innerHtml}}
+                        {{this}}
+                    {{/with}}
+                </main>
+            {{/if}}
+        </main>
+
+        {{include "/page/Page-below.hbs" this}}
+    </div>
+    {{include "/page/Page-footer.hbs" this}}
+    {{include "/page/Page-extraBodyItems.hbs" this}}
+</body>
+</html>

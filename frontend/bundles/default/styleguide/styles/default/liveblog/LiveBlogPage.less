@@ -1,0 +1,142 @@
+.LiveBlogPage {
+  .Page {
+    &-content {
+      display: grid;
+      justify-content: center;
+      margin-top: var(--spacing-md);
+      margin-bottom: var(--spacing-md);
+    }
+
+    &-headline {
+      &:extend(.headline-2 all);
+    }
+
+    &-lead {
+      margin-bottom: var(--spacing-md);
+    }
+
+    &-oneColumn {
+      &:extend(.layoutWidth all);
+    }
+  }
+
+  &-dates {
+    &:extend(.byline-2 all);
+
+    .Page-dateModified {
+      margin-bottom: var(--spacing-xs);
+    }
+
+    margin: var(--spacing-md) 0;
+  }
+
+  &-lede {
+    position: relative;
+
+    &-content {
+      &:extend(.layoutWidth all);
+    }
+  }
+
+  &-pinnedPosts,
+  &-currentPosts {
+    .LiveBlogPost {
+      &:before {
+        border-bottom: 1px solid var(--color-gray);
+        content: '';
+        display: block;
+        margin: var(--spacing-md) calc(var(--spacing-md) * -1);
+      }
+    }
+  }
+
+  &-liveStatus {
+    &:extend(.label-1 all);
+
+    background-color: var(--color-primary);
+    color: var(--color-text-inverse);
+    border-radius: 22px;
+    display: inline-block;
+    margin-bottom: var(--spacing-md);
+    padding: var(--spacing-xs) var(--spacing-md);
+    text-transform: uppercase;
+  }
+
+  &-whatYouNeedToKnow {
+    background-color: #f0f0f0;
+    margin: var(--spacing-lg) 0;
+    padding: var(--spacing-md) var(--spacing-md);
+
+    &-heading {
+      &:extend(.headline-5 all);
+      margin-bottom: var(--spacing-md);
+    }
+  }
+
+  @media @mq-up-to-lg {
+    &-sideRail {
+      display: none;
+    }
+  }
+
+  @media @mq-md {
+    &-actions {
+      &-wrapper {
+        display: grid;
+        grid-template-columns: 50% 50%;
+      }
+    }
+
+    &-dates {
+      margin: 0;
+    }
+
+    &-pinnedPosts,
+    &-currentPosts {
+      .LiveBlogPost {
+        &:before {
+          margin: var(--spacing-xxl) 0;
+        }
+      }
+    }
+
+    &-whatYouNeedToKnow {
+      margin: var(--spacing-xxl) 0;
+    }
+
+    .Page-content {
+      margin-bottom: var(--spacing-xxl);
+      margin-top: var(--spacing-xxl);
+    }
+  }
+
+  @media @mq-lg {
+    &-layoutWrapper {
+      display: grid;
+      align-items: flex-start;
+      grid-template-columns: auto 300px;
+    }
+
+    &-lede,
+    .Page-oneColumn {
+      width: 800px;
+      max-width: 100%;
+    }
+
+    &-sideRail {
+      border-left: 1px solid var(--color-border);
+    }
+
+    .Page {
+      &-lead {
+        margin-bottom: var(--spacing-xxl);
+      }
+    }
+  }
+
+  @media @mq-xl {
+    &-layoutWrapper {
+      grid-template-columns: auto 360px;
+    }
+  }
+}

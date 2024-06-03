@@ -1,0 +1,9 @@
+{
+  "_template": "/quote/Quote.hbs",
+  "anchorId": "anchorTest",
+  "quote": "{{words([15,25])}}",
+  "attribution": "{{words([5,15])}}",
+  "image": {
+      "_include": "/image/Image.json"
+  }
+}

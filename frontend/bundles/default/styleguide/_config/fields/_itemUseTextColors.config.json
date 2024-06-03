@@ -1,0 +1,19 @@
+{
+  "fields": {
+    "itemUseTextColors": {
+      "type": "text",
+      "cms.ui.dropDown": true,
+      "cms.ui.placeholder": "Default",
+      "values": [
+        {
+          "label": "Standard",
+          "value": "standard"
+        },
+        {
+          "label": "Inverse",
+          "value": "inverse"
+        }
+      ]
+    }
+  }
+}

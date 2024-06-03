@@ -1,0 +1,10 @@
+{{#or caption credit}}
+    <div class="Figure-content">
+        {{~#with caption~}}
+            <figcaption class="Figure-caption">{{~this~}}</figcaption>
+        {{~/with~}}
+        {{~#with credit~}}
+            <div class="Figure-credit">{{~this~}}</div>
+        {{~/with~}}
+    </div>
+{{/or}}

@@ -1,0 +1,9 @@
+<div class="VideoModule" data-module {{include '/global/ModuleAttributes.hbs' this}}>
+    {{include "/global/ModuleHeader.hbs" this}}
+
+    {{#with player}}
+        <div class="VideoModule-player">{{this}}</div>
+    {{/with}}
+
+    {{include "/page/list/includes/PageList-footer.hbs" this}}
+</div>

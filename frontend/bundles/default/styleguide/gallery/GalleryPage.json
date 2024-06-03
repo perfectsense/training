@@ -1,0 +1,48 @@
+{
+  "_include": "/page/Page.json",
+  "_template": "/gallery/GalleryPage.hbs",
+  "datePublished": "{{date}}",
+  "dateModified": "Modified: {{date}}",
+  "headline": "{{words([5,15])}}",
+  "subHeadline": "{{words([5,15])}}",
+  "authors": [
+    {
+      "_include": "/author/Author.json",
+      "_repeat": 3
+    }
+  ],
+  "breadcrumbs": [
+    {
+      "_include": "/page/BreadcrumbLink.json",
+      "_repeat": 2
+    }
+  ],
+  "tags": [
+    {
+      "_include": "/tag/TagLink.json",
+      "_repeat": 2
+    }
+  ],
+  "slides": [
+    {
+      "_include": "/gallery/GallerySlide.json",
+      "_repeat": 6
+    }
+  ],
+  "galleryBody": "{{paragraphs([2,3])}}",
+  "aside": [
+
+  ],
+  "below": [
+    {
+      "_include": "/page/list/PageListStandardB.json",
+      "listColumns234": "4",
+      "items": [
+        {
+          "_include": "/page/promo/PagePromo.json",
+          "_repeat": 4
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+.DownloadPromo {
+  display: inline-block;
+
+  .PagePromo {
+    &-description {
+      margin-top: 0px;
+      padding-bottom: var(--spacing-sm);
+    }
+
+    &-media {
+      margin-bottom: var(--spacing-md);
+    }
+
+    &-title {
+      &:extend(.headline-6 all);
+
+      padding-bottom: var(--spacing-sm);
+    }
+  }
+
+  &-link {
+    &:extend(.headline-8 all);
+
+    svg {
+      height: 25px;
+      width: 30px;
+    }
+
+    &-text {
+      margin-top: 3px;
+    }
+  }
+
+  [data-item-display-style="card"] & {
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: var(--color-site-bg);
+    box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.1);
+    min-height: 100%;
+
+    &-content {
+      padding: 20px;
+    }
+
+    .PagePromo-media {
+      margin-bottom: 0;
+    }
+  }
+
+  [data-item-has-background-color] & {
+    background-color: var(--color-item-background);
+  }
+
+  [data-item-has-background-image] & {
+    background-image: var(--item-background-image);
+    background-size: cover;
+  }
+
+  [data-item-has-text-color] & {
+    --color-primary-text: var(--color-item-text);
+    --color-link-text: var(--color-item-text);
+    --color-link-text-hover: var(--color-item-text);
+  }
+}

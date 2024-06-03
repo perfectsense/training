@@ -1,0 +1,16 @@
+<div
+    class="VideoPlayer"
+    data-video-player
+    data-video-id="{{videoId}}"
+    data-video-title="{{videoTitle}}"
+    data-player-id="{{playerId}}"
+    {{~#if seekSeconds}} data-seek-seconds="{{seekSeconds}}"{{~/if~}}
+    {{~#if muted}} data-muted{{/if~}}
+    {{~#if autoplay}} data-autoplay{{/if~}}
+    {{~#if liveVideo}} data-live-video{{~/if~}}
+    {{~#each extraAttributes}} {{this}}{{~/each~}}
+>
+    <div class="VideoPlayer-screen">
+        <div id="VideoPlayer-{{playerId}}"></div>
+    </div>
+</div>

@@ -1,0 +1,8 @@
+{{~#with providerIdentifier~}}
+<span class="AuthenticationProviderIcon">
+    {{~#eq this "facebook"}}{{include (iconPath 'facebook-logo')}}{{/eq~}}
+    {{~#eq this "google"}}{{include (iconPath 'google-logo')}}{{/eq~}}
+    {{~#eq this "twitter"}}{{include (iconPath 'x-logo')}}{{/eq~}}
+    {{~#eq this "linkedin"}}{{include (iconPath 'linkedin-logo')}}{{/eq~}}
+</span>
+{{~/with~}}

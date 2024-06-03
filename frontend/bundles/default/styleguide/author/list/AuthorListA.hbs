@@ -1,0 +1,18 @@
+{{!-- This list is the same as Person List A. That list hbs just includes this one --}}
+<div class="AuthorListA" data-module{{include "/page/list/includes/PageList-attributes.hbs" this}}>
+    {{include "/global/ModuleHeader.hbs" this}}
+
+    {{#with items}}
+        <ul class="AuthorListA-items">
+            {{#each this}}
+                <li class="AuthorListA-items-item">
+                    {{#set imageSize=../../itemImageAspectRatio}}
+                        {{include "/author/promo/AuthorPromo.hbs" this}}
+                    {{/set}}
+                </li>
+            {{/each}}
+        </ul>
+    {{/with}}
+
+    {{include "/page/list/includes/PageList-footer.hbs" this}}
+</div>

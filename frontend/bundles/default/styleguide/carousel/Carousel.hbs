@@ -1,0 +1,14 @@
+<bsp-carousel class="Carousel" data-module {{include '/global/ModuleAttributes.hbs' this}}>
+    {{include "/global/ModuleHeader.hbs" this}}
+    <div class="Carousel-slides">
+        {{#set imageSize=(fallback (get "imageSize") "xl-16x9") lazyLoad="flickity"}}
+            {{#each slides}}
+                <div class="Carousel-slide">
+                    {{include (fallback _styledTemplate _template) this slideIndex=@index slideTotal=../slides.length}}
+                </div>
+            {{/each}}
+        {{/set}}
+    </div>
+    {{include "/page/list/includes/PageList-footer.hbs" this}}
+    {{include "/gallery/GalleryFullscreen.hbs" this headline=(fallback headline title)}}
+</bsp-carousel>

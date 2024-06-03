@@ -1,0 +1,7 @@
+{
+  "_template": "TaboolaRecommendationModule.hbs",
+  "slot": "taboola-below-home-thumbnails",
+  "mode": "thumbnails-b",
+  "placement": "Below Home Thumbnails",
+  "targetType": "mix"
+}

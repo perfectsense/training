@@ -1,0 +1,24 @@
+.PodcastListB {
+  display: block;
+
+  &-items {
+    display: grid;
+    column-gap: var(--spacing-md);
+    row-gap: var(--spacing-xxl);
+    grid-template-columns: 1fr;
+    margin: 0;
+  }
+
+
+  @container (@cq-sm) {
+    &[data-item-alignment="right"] .PodcastPromoB {
+      grid-template-columns: 1fr 150px;
+    }
+  }
+
+  @container (@cq-md) {
+    &[data-item-alignment="right"] .PodcastPromoB {
+      grid-template-columns: 1fr 300px;
+    }
+  }
+}

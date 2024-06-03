@@ -1,0 +1,8 @@
+{
+  "fields": {
+    "verticallyScrollable": {
+      "type": "boolean",
+      "cms.ui.note": "If enabled, will make the code block vertically scrollable after the specified number of lines."
+    }
+  }
+}

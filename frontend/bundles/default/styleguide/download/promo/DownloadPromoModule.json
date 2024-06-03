@@ -1,0 +1,13 @@
+{
+  "_template": "/download/promo/DownloadPromoModule.hbs",
+  "media": {
+    "_include": "/image/Image.json"
+  },
+  "title": "{{words([5,10])}}",
+  "description": "{{words([15,25])}}",
+  "fileTypeDisplayName": "PDF",
+  "iconType": "CSV",
+  "fileSize": "2MB",
+  "ctaText": "Call to Action",
+  "url": "#"
+}

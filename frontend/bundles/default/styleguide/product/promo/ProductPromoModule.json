@@ -1,0 +1,17 @@
+{
+  "_template": "/product/promo/ProductPromoModule.hbs",
+  "title": "{{words}}",
+  "description": "{{words}}",
+  "price": "$249.00",
+  "compareAtPrice": "$300.00",
+  "media": {
+    "_include": "/image/Image.json"
+  },
+  "category": "{{words([1,2])}}",
+  "categoryUrl": "#",
+  "flagText": "{{words([1,2])}}",
+  "ctaButtonText": "Buy Now",
+  "target": "_self",
+  "url": "#",
+  "options": "{{words}}"
+}

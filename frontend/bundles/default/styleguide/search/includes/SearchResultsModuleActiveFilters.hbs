@@ -1,0 +1,30 @@
+{{#gt (countSelected filters) 0}}
+<bsp-search-active-filters class="SearchResultsModuleActiveFilters">
+    <div class="SearchResultsModuleActiveFilters-header">
+        <div class="SearchResultsModuleActiveFilters-title">
+            {{format '/search/includes/SearchResultsModuleActiveFilters' 'title'}}
+        </div>
+        <button class="SearchResultsModuleActiveFilters-clearFilters" type="submit" data-clear>
+            {{format '/search/includes/SearchResultsModuleActiveFilters' 'clear'}}
+        </button>
+    </div>
+    <div class="SearchResultsModuleActiveFilters-items">
+        {{#each filters}}
+            {{#each items}}
+                {{#if selected}}
+                    <div class="SearchResultsModuleActiveFilters-item">
+                        {{label}}
+                        <button type="submit"
+                            data-clear
+                            {{~#with parameterName}} data-parameter-name="{{this}}"{{/with~}}
+                            {{~#with parameterValue}} data-parameter-value="{{this}}"{{/with~}}
+                        >
+                            {{include (iconPath 'x')}}
+                        </button>
+                    </div>
+                {{/if}}
+            {{/each}}
+        {{/each}}
+    </div>
+</bsp-search-active-filters>
+{{/gt}}

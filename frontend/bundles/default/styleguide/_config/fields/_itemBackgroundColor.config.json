@@ -1,0 +1,8 @@
+{
+  "fields": {
+    "itemBackgroundColor": {
+      "displayName": "Choose an item background color",
+      "type": "color"
+    }
+  }
+}

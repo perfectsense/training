@@ -1,0 +1,9 @@
+<div class="LogoPromo">
+    {{#set imageSize=(fallback (get "imageSize") "logo-freeform")}}
+        {{#if media}}
+            <div class="PagePromo-media">
+                {{include '/link/Link.hbs' this href=url body=media aria-label=name}}
+            </div>
+        {{/if}}
+    {{/set}}
+</div>

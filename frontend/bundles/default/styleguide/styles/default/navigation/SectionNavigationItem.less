@@ -1,0 +1,24 @@
+.SectionNavigationItem {
+  &-text {
+    &:extend(.label-2 all);
+
+    display: block;
+    justify-content: space-between;
+    width: 100%;
+
+    .Link {
+      border-bottom: 5px solid var(--color-section-nav-text, var(--color-secondary-text));
+      color: var(--color-section-nav-text, var(--color-primary-text));
+      display: block;
+      padding: var(--spacing-sm) var(--spacing-md);
+
+      [data-current-nav-item] & {
+        border-bottom: 5px solid var(--color-section-nav-text-hover, var(--color-primary));
+      }
+
+      &:hover {
+        border-bottom: 5px solid var(--color-section-nav-text-hover, var(--color-primary));
+      }
+    }
+  }
+}

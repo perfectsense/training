@@ -1,0 +1,7 @@
+{
+  "fields": {
+    "hideListNumbers": {
+      "type": "boolean"
+    }
+  }
+}

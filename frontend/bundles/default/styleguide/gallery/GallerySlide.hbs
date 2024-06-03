@@ -1,0 +1,29 @@
+<bsp-gallery-slide class="GallerySlide" data-slide-index="{{slideIndex}}">
+    <button type="button" class="GallerySlide-fullscreenButton">
+        {{include (iconPath 'arrows-out')}}
+    </button>
+    <div class="GallerySlide-media">
+        {{#with media}}
+            {{#set imageSize=(fallback (get "imageSize") "xl-16x9")}}
+                {{this}}
+            {{/set}}
+        {{/with}}
+    </div>
+    <div class="GallerySlide-info">
+        <div class="GallerySlide-title">
+            {{~format '/gallery/GallerySlide' 'slideCount' current=(add slideIndex 1) total=slideTotal~}}
+            {{~#with title}}: {{this}}{{/with~}}
+        </div>
+
+        {{#with caption}}
+            <div class="GallerySlide-caption">
+                {{this}}
+            </div>
+        {{/with}}
+        {{#with credit}}
+            <div class="GallerySlide-credit">
+                {{this}}
+            </div>
+        {{~/with~}}
+    </div>
+</bsp-gallery-slide>

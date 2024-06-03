@@ -1,0 +1,8 @@
+{
+  "_template": "/page/list/PageListEnhancement.hbs",
+  "item": [
+    {
+      "_include": "/page/list/PageList.json"
+    }
+  ]
+}

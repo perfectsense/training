@@ -1,0 +1,24 @@
+{
+  "fields": {
+    "navAlignment": {
+      "displayName": "Choose how to align the navigation within the header",
+      "type": "text",
+      "cms.ui.dropDown": true,
+      "cms.ui.placeholder": "Default",
+      "values": [
+        {
+          "label": "Right",
+          "value": "right"
+        },
+        {
+          "label": "Center",
+          "value": "center"
+        },
+        {
+          "label": "Left",
+          "value": "left"
+        }
+      ]
+    }
+  }
+}

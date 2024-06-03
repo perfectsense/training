@@ -1,0 +1,19 @@
+<div class="CheckboxInput">
+    {{~#with errors}}
+        <div class="CheckboxInput-errors">
+            {{~this~}}
+        </div>
+    {{/with~}}
+
+    <label class="CheckboxInput-label">
+        <input type="checkbox"
+            {{~#with checked}} checked{{/with}}
+            {{~#with disabled}} disabled{{/with}}
+            {{~#with inputName}} name="{{this}}"{{/with}}
+            {{~#with inputValue}} value="{{this}}" {{/with}}>
+
+        <span>
+            {{label}}
+        </span>
+    </label>
+</div>

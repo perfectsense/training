@@ -1,0 +1,26 @@
+.VideoModule {
+  color: var(--color-primary-text);
+
+  [data-use-text-colors="inverse"] & {
+    color: var(--color-text-inverse);
+    --color-link-text: var(--color-text-inverse);
+    --color-link-text-hover: var(--color-text-inverse);
+  }
+
+  .PageList {
+    &-header {
+      &-header {
+        text-align: center;
+      }
+
+      &-title {
+        &:extend(.headline-3 all);
+        margin-bottom: var(--spacing-md);
+      }
+
+      &-description {
+        margin: calc(var(--spacing-sm) * -1) 0 var(--spacing-md) 0;
+      }
+    }
+  }
+}

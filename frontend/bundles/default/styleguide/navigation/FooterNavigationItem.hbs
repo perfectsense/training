@@ -1,0 +1,19 @@
+<div class="FooterNavigationItem">
+    <div class="FooterNavigationItem-text">
+        {{#if href}}
+            <a href="{{href}}"{{#with target}} target="{{this}}"{{/with}}{{extraAttributes}}>{{~text~}}</a>
+        {{else}}
+            <span>{{~text~}}</span>
+        {{/if}}
+    </div>
+
+    {{#if items}}
+        <ul class="FooterNavigationItem-items">
+            {{#with items}}
+                {{#each this}}
+                    <li class="FooterNavigationItem-items-item">{{~this~}}</li>
+                {{/each}}
+            {{/with}}
+        </ul>
+    {{/if}}
+</div>
