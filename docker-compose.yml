@@ -1,0 +1,51 @@
+version: '3'
+services:
+  tomcat:
+    image: brightspot/tomcat:9.0-jdk11
+    hostname: training.brightspot
+    ports:
+      - 5005:5005
+    volumes:
+      - .:/code:cached
+      - storage-data:/servers/tomcat/storage
+    environment:
+      - ROOT_WAR=/code/web/build/libs/web.war
+      - CONTEXT_PROPERTIES=/code/docker-context.properties
+      - LOGGING_PROPERTIES=/code/docker-logging.properties
+      - SOLR_URL=http://solr:8080/solr/collection1
+  solr:
+    image: brightspot/solr:8.11
+    environment:
+      -  SOLR_CONFIG=dari-solr-11
+    ports:
+      - 8081:8080
+    volumes:
+      - solr-data:/var/solr/data/collection1/data
+  apache:
+    image: brightspot/apache:2.4-dims3.3
+    ports:
+      - 80:80
+      - 443:443
+    volumes:
+      - storage-data:/var/www/localhost/htdocs/storage
+  mysql:
+    image: brightspot/mysql:mysql5.6
+    ports:
+      - 3306:3306
+    volumes:
+      - mysql-data:/var/lib/mysql
+      - mysql-logs:/var/log/mysql
+  greenmail:
+    image: greenmail/standalone:1.5.14
+    ports:
+      - 3025:3025
+      - 3110:3110
+      - 3143:3143
+      - 3465:3465
+      - 3993:3993
+      - 3995:3995
+volumes:
+  mysql-data:
+  mysql-logs:
+  solr-data:
+  storage-data:
