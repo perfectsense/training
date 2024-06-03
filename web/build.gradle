@@ -1,0 +1,17 @@
+plugins {
+    id 'com.brightspot.war'
+}
+
+description = 'Brightspot Training: WAR File'
+
+dependencies {
+    implementation project(':bundle-default')
+    implementation project(':core')
+
+    // for expansion into the war
+    compileOnly 'com.psddev:cms-tool-ui'
+
+    // Tests
+    sharedTest 'com.brightspot.go:lib-util-gradle-dynamic-test'
+    sharedTest 'com.brightspot.shared-tests:pack-standard-backend-integration-tests'
+}

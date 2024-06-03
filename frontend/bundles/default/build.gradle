@@ -1,0 +1,35 @@
+import com.github.gradle.node.yarn.task.YarnInstallTask
+
+plugins {
+    id 'com.brightspot.bundle'
+}
+
+description = 'Brightspot Training: Default Frontend Bundle'
+
+bundle {
+    yarnBuildCommand = 'build'
+    styleguideOutputDir = 'styleguide'
+    zipOutputPath = 'theme.zip'
+
+    // for CdnCssTest
+    cdnCssFiles = [
+        'styles/default/All.min.css'
+    ]
+}
+
+node {
+    version = '18.17.1'
+    yarnVersion = '1.22.19'
+    download = true
+}
+
+dependencies {
+    sharedTest 'com.brightspot.shared-tests:pack-standard-frontend-unit-tests'
+}
+
+tasks.named(YarnInstallTask.NAME).configure(task -> {
+    task.inputs.file('phosphor-icons/icons.yml')
+    task.outputs.dir('styleguide/_icons')
+})
+
+tasks.named('yarnBuild').configure(task -> task.inputs.dir('styleguide/_icons'))
