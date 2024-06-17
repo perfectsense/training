@@ -5,6 +5,9 @@ plugins {
 description = 'Brightspot Training: Java Classes'
 
 dependencies {
+
+    api project(':frontend')
+
     // Brightspot
     api 'com.psddev:cms-db'
     api 'com.psddev:cms-hunspell'
@@ -21,6 +24,12 @@ dependencies {
     api 'com.psddev:terms'
     api 'com.psddev:theme'
     api 'com.psddev:timeseries-mysql'
+
+    // Brightspot Go
+    api('com.brightspot.go:pack-go-basic') {
+        // using frontend from the project
+        exclude group: 'com.brightspot.go', module: 'frontend'
+    }
 
     // Test
     sharedTest 'com.brightspot.shared-tests:pack-standard-backend-unit-tests'
