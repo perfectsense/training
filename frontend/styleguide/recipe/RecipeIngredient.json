@@ -1,0 +1,8 @@
+{
+  "_template": "RecipeIngredient.hbs",
+
+  "ingredient": {
+    "_include": "/_group/RichTextElementsTiny.json",
+    "_key": 0
+  }
+}

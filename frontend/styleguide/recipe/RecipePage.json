@@ -1,0 +1,26 @@
+{
+  "_include": "/page/Page.json",
+  "_template": "RecipePage.hbs",
+
+  "image": {
+    "_template": "/image/Image.hbs"
+  },
+  "difficulty": "",
+  "prepTime": "",
+  "inactivePrepTime": "",
+  "cookTime": "",
+  "totalTime": "",
+  "description": {
+    "_include": "/_group/RichTextElementsSmall.json",
+    "_key": 0
+  },
+  "ingredients": {
+    "_template": "RecipeIngredient.hbs"
+  },
+  "steps": {
+    "_template": "RecipeStep.hbs"
+  },
+  "similarRecipes": {
+    "_template": "RecipeCard.hbs"
+  }
+}

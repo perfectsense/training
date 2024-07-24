@@ -1,0 +1,15 @@
+{
+  "_template": "RecipeStep.hbs",
+
+  "heading": {
+    "_include": "/_group/RichTextElementsTiny.json",
+    "_key": 0
+  },
+  "directions": {
+    "_include": "/_group/RichTextElementsSmall.json",
+    "_key": 0
+  },
+  "image": {
+    "_template": "/image/Image.hbs"
+  }
+}
