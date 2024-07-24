@@ -33,6 +33,7 @@ dependencies {
 
     // Third party
     implementation 'org.apache.commons:commons-math3:3.6.1'
+    implementation 'org.threeten:threeten-extra:1.7.0'
 
     // Test
     sharedTest 'com.brightspot.shared-tests:pack-standard-backend-unit-tests'
