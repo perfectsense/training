@@ -1,0 +1,19 @@
+{
+  "_include": "/page/Page.json",
+  "_template": "MealPage.hbs",
+
+  "description": {
+    "_include": "/_group/RichTextElementsSmall.json",
+    "_key": 0
+  },
+  "difficulty": "",
+  "image": {
+    "_template": "/image/Image.hbs"
+  },
+  "courses": {
+    "_template": "MealCourse.hbs"
+  },
+  "similarMeals": {
+    "_template": "MealCard.hbs"
+  }
+}
