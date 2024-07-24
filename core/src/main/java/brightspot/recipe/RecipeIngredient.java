@@ -5,7 +5,9 @@ import java.util.Optional;
 import brightspot.ingredient.Ingredient;
 import brightspot.ingredient.IngredientUnit;
 import brightspot.rte.SmallRichTextToolbar;
+import brightspot.util.RichTextUtils;
 import com.psddev.cms.db.ToolUi;
+import com.psddev.cms.ui.form.Placeholder;
 import com.psddev.dari.db.Record;
 import com.psddev.dari.db.Recordable;
 import org.apache.commons.lang3.StringUtils;
@@ -13,12 +15,15 @@ import org.apache.commons.math3.exception.MathParseException;
 import org.apache.commons.math3.fraction.FractionFormat;
 import org.apache.commons.text.StringEscapeUtils;
 
+@Recordable.DisplayName("Ingredient")
 @Recordable.Embedded
 public class RecipeIngredient extends Record {
 
+    @DisplayName("Quantity")
     @Required
     private String quantityString;
 
+    @Placeholder("(None)")
     private IngredientUnit unit;
 
     @Required
@@ -115,5 +120,12 @@ public class RecipeIngredient extends Record {
                 return null;
             }
         }
+    }
+
+    // --- Recordable support ---
+
+    @Override
+    public String getLabel() {
+        return RichTextUtils.richTextToPlainText(toDescription());
     }
 }

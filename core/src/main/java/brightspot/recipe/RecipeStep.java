@@ -1,12 +1,17 @@
 package brightspot.recipe;
 
+import java.util.Optional;
+
 import brightspot.image.WebImage;
 import brightspot.rte.SmallRichTextToolbar;
 import brightspot.rte.TinyRichTextToolbar;
+import brightspot.util.RichTextUtils;
 import com.psddev.cms.db.ToolUi;
 import com.psddev.dari.db.Record;
 import com.psddev.dari.db.Recordable;
+import org.apache.commons.lang3.StringUtils;
 
+@Recordable.DisplayName("Step")
 @Recordable.Embedded
 public class RecipeStep extends Record {
 
@@ -47,5 +52,15 @@ public class RecipeStep extends Record {
 
     public void setImage(WebImage image) {
         this.image = image;
+    }
+
+    // --- Recordable support ---
+
+    @Override
+    public String getLabel() {
+        return Optional.ofNullable(getHeading())
+            .map(RichTextUtils::richTextToPlainText)
+            .filter(StringUtils::isNotBlank)
+            .orElse("Untitled");
     }
 }

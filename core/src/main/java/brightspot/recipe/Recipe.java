@@ -9,15 +9,22 @@ import java.util.stream.Stream;
 import brightspot.image.WebImage;
 import brightspot.rte.SmallRichTextToolbar;
 import brightspot.rte.TinyRichTextToolbar;
+import brightspot.util.MoreStringUtils;
+import brightspot.util.RichTextUtils;
 import com.psddev.cms.db.Content;
 import com.psddev.cms.db.ToolUi;
+import com.psddev.cms.ui.form.DynamicPlaceholderMethod;
+import com.psddev.cms.ui.form.Note;
 
 public class Recipe extends Content {
+
+    private static final String TIMING_CLUSTER = "Timing";
 
     @Required
     @ToolUi.RichText(toolbar = TinyRichTextToolbar.class)
     private String title;
 
+    @DynamicPlaceholderMethod("getInternalNameFallback")
     private String internalName;
 
     @ToolUi.RichText(inline = false, toolbar = SmallRichTextToolbar.class)
@@ -25,18 +32,32 @@ public class Recipe extends Content {
 
     private WebImage image;
 
+    @DisplayName("Ingredients")
     @Required
     private List<RecipeIngredient> recipeIngredients;
 
     @Required
     private List<RecipeStep> steps;
 
+    @Note("Value is in minutes")
+    @ToolUi.Cluster(TIMING_CLUSTER)
+    @ToolUi.CssClass("is-third")
     private Integer prepTime;
 
+    @Note("Value is in minutes")
+    @ToolUi.Cluster(TIMING_CLUSTER)
+    @ToolUi.CssClass("is-third")
     private Integer inactivePrepTime;
 
+    @Note("Value is in minutes")
+    @ToolUi.Cluster(TIMING_CLUSTER)
+    @ToolUi.CssClass("is-third")
     private Integer cookTime;
 
+    @DisplayName("Total Time")
+    @DynamicPlaceholderMethod("getTotalTimeFallback")
+    @Note("Value is in minutes")
+    @ToolUi.Cluster(TIMING_CLUSTER)
     private Integer totalTimeOverride;
 
     // --- Getters/setters ---
@@ -142,6 +163,10 @@ public class Recipe extends Content {
 
     // --- Fallbacks ---
 
+    private String getInternalNameFallback() {
+        return getTitlePlainText();
+    }
+
     private Integer getTotalTimeFallback() {
         return Stream.of(
                 getPrepTime(),
@@ -150,5 +175,18 @@ public class Recipe extends Content {
             .filter(Objects::nonNull)
             .mapToInt(Integer::intValue)
             .reduce(0, Integer::sum);
+    }
+
+    // --- Utility ---
+
+    public String getTitlePlainText() {
+        return RichTextUtils.richTextToPlainText(getTitle());
+    }
+
+    // --- Recordable support ---
+
+    @Override
+    public String getLabel() {
+        return MoreStringUtils.firstNonBlank(getInternalName(), this::getInternalNameFallback);
     }
 }
