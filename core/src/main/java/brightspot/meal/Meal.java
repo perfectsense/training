@@ -14,6 +14,8 @@ import com.psddev.cms.ui.form.DynamicPlaceholderMethod;
 
 public class Meal extends Content {
 
+    public static final String TITLE_PLAIN_TEXT_FIELD = "getTitlePlainText";
+
     @Required
     @ToolUi.RichText(toolbar = TinyRichTextToolbar.class)
     private String title;
@@ -80,16 +82,18 @@ public class Meal extends Content {
         this.courses = courses;
     }
 
+    // --- Indexes ---
+
+    @Indexed
+    @ToolUi.Hidden
+    public String getTitlePlainText() {
+        return RichTextUtils.richTextToPlainText(getTitle());
+    }
+
     // --- Fallbacks ---
 
     private String getInternalNameFallback() {
         return getTitlePlainText();
-    }
-
-    // --- Utility ---
-
-    public String getTitlePlainText() {
-        return RichTextUtils.richTextToPlainText(getTitle());
     }
 
     // --- Recordable support ---
