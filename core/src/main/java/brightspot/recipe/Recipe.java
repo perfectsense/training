@@ -18,6 +18,13 @@ import com.psddev.cms.ui.form.Note;
 
 public class Recipe extends Content {
 
+
+    public static final String COOK_TIME_FIELD = "cookTime";
+    public static final String INACTIVE_PREP_TIME_FIELD = "inactivePrepTime";
+    public static final String PREP_TIME_FIELD = "prepTime";
+    public static final String TITLE_PLAIN_TEXT_FIELD = "getTitlePlainText";
+    public static final String TOTAL_TIME_FIELD = "getTotalTime";
+
     private static final String TIMING_CLUSTER = "Timing";
 
     @Required
@@ -39,16 +46,19 @@ public class Recipe extends Content {
     @Required
     private List<RecipeStep> steps;
 
+    @Indexed
     @Note("Value is in minutes")
     @ToolUi.Cluster(TIMING_CLUSTER)
     @ToolUi.CssClass("is-third")
     private Integer prepTime;
 
+    @Indexed
     @Note("Value is in minutes")
     @ToolUi.Cluster(TIMING_CLUSTER)
     @ToolUi.CssClass("is-third")
     private Integer inactivePrepTime;
 
+    @Indexed
     @Note("Value is in minutes")
     @ToolUi.Cluster(TIMING_CLUSTER)
     @ToolUi.CssClass("is-third")
@@ -156,9 +166,19 @@ public class Recipe extends Content {
 
     // --- API methods ---
 
+    @Indexed
+    @ToolUi.Hidden
     public Integer getTotalTime() {
         return Optional.ofNullable(getTotalTimeOverride())
             .orElseGet(this::getTotalTimeFallback);
+    }
+
+    // --- Indexes ---
+
+    @Indexed
+    @ToolUi.Hidden
+    public String getTitlePlainText() {
+        return RichTextUtils.richTextToPlainText(getTitle());
     }
 
     // --- Fallbacks ---
@@ -175,12 +195,6 @@ public class Recipe extends Content {
             .filter(Objects::nonNull)
             .mapToInt(Integer::intValue)
             .reduce(0, Integer::sum);
-    }
-
-    // --- Utility ---
-
-    public String getTitlePlainText() {
-        return RichTextUtils.richTextToPlainText(getTitle());
     }
 
     // --- Recordable support ---

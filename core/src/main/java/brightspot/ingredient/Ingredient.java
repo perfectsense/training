@@ -9,6 +9,8 @@ import com.psddev.cms.db.ToolUi;
 public class Ingredient extends Content implements
     NoUrlsWidget {
 
+    public static final String NAME_PLAIN_TEXT_FIELD = "getNamePlainText";
+
     @ToolUi.RichText(toolbar = TinyRichTextToolbar.class)
     private String name;
 
@@ -25,8 +27,10 @@ public class Ingredient extends Content implements
         this.name = name;
     }
 
-    // --- Utility ---
+    // --- Indexes ---
 
+    @Indexed
+    @ToolUi.Hidden
     public String getNamePlainText() {
         return RichTextUtils.richTextToPlainText(getName());
     }
