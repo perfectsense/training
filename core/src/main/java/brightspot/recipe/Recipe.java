@@ -4,9 +4,12 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 import brightspot.image.WebImage;
+import brightspot.ingredient.HasIngredients;
+import brightspot.ingredient.Ingredient;
 import brightspot.rte.SmallRichTextToolbar;
 import brightspot.rte.TinyRichTextToolbar;
 import brightspot.util.MoreStringUtils;
@@ -16,8 +19,8 @@ import com.psddev.cms.db.ToolUi;
 import com.psddev.cms.ui.form.DynamicPlaceholderMethod;
 import com.psddev.cms.ui.form.Note;
 
-public class Recipe extends Content {
-
+public class Recipe extends Content implements
+    HasIngredients {
 
     public static final String COOK_TIME_FIELD = "cookTime";
     public static final String INACTIVE_PREP_TIME_FIELD = "inactivePrepTime";
@@ -195,6 +198,17 @@ public class Recipe extends Content {
             .filter(Objects::nonNull)
             .mapToInt(Integer::intValue)
             .reduce(0, Integer::sum);
+    }
+
+    // --- HasIngredients support ---
+
+    @Override
+    public List<Ingredient> getIngredients() {
+        return getRecipeIngredients()
+            .stream()
+            .map(RecipeIngredient::getIngredient)
+            .filter(Objects::nonNull)
+            .collect(Collectors.toList());
     }
 
     // --- Recordable support ---
