@@ -2,8 +2,12 @@ package brightspot.meal;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import brightspot.image.WebImage;
+import brightspot.ingredient.HasIngredients;
+import brightspot.ingredient.Ingredient;
+import brightspot.recipe.Recipe;
 import brightspot.rte.SmallRichTextToolbar;
 import brightspot.rte.TinyRichTextToolbar;
 import brightspot.util.MoreStringUtils;
@@ -12,7 +16,8 @@ import com.psddev.cms.db.Content;
 import com.psddev.cms.db.ToolUi;
 import com.psddev.cms.ui.form.DynamicPlaceholderMethod;
 
-public class Meal extends Content {
+public class Meal extends Content implements
+    HasIngredients {
 
     public static final String TITLE_PLAIN_TEXT_FIELD = "getTitlePlainText";
 
@@ -94,6 +99,28 @@ public class Meal extends Content {
 
     private String getInternalNameFallback() {
         return getTitlePlainText();
+    }
+
+    // --- Utility ---
+
+    private List<Recipe> getRecipes() {
+        return getCourses()
+            .stream()
+            .map(MealCourse::getRecipes)
+            .flatMap(List::stream)
+            .distinct()
+            .collect(Collectors.toList());
+    }
+
+    // --- HasIngredients support ---
+
+    @Override
+    public List<Ingredient> getIngredients() {
+        return getRecipes()
+            .stream()
+            .flatMap(r -> r.getIngredients().stream())
+            .distinct()
+            .collect(Collectors.toList());
     }
 
     // --- Recordable support ---
