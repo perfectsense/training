@@ -31,9 +31,13 @@ import brightspot.util.MoreStringUtils;
 import brightspot.util.RichTextUtils;
 import com.psddev.cms.db.Content;
 import com.psddev.cms.db.Site;
+import com.psddev.cms.db.SiteSettings;
 import com.psddev.cms.db.ToolUi;
+import com.psddev.cms.ui.ContentLifecycle;
+import com.psddev.cms.ui.ToolRequest;
 import com.psddev.cms.ui.form.DynamicPlaceholderMethod;
 import com.psddev.cms.ui.form.Note;
+import com.psddev.dari.web.WebRequest;
 
 @ToolUi.FieldDisplayOrder({
     "title",
@@ -43,6 +47,7 @@ import com.psddev.cms.ui.form.Note;
 })
 public class Recipe extends Content implements
     CascadingPageElements,
+    ContentLifecycle,
     DefaultSiteMapItem,
     HasDifficultyWithField,
     HasIngredients,
@@ -231,6 +236,17 @@ public class Recipe extends Content implements
             .filter(Objects::nonNull)
             .mapToInt(Integer::intValue)
             .reduce(0, Integer::sum);
+    }
+
+    // --- ContentLifecycle support ---
+
+    @Override
+    public void onNew() {
+        if (WebRequest.isAvailable()) {
+            asHasSectionWithFieldData().setSection(SiteSettings.get(
+                WebRequest.getCurrent().as(ToolRequest.class).getCurrentSite(),
+                s -> s.as(RecipeSiteSettings.class).getDefaultRecipeSection()));
+        }
     }
 
     // --- Directory.Item support ---
