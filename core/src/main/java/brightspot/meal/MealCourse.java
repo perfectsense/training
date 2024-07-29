@@ -6,10 +6,12 @@ import java.util.List;
 import brightspot.recipe.Recipe;
 import brightspot.rte.SmallRichTextToolbar;
 import brightspot.rte.TinyRichTextToolbar;
+import brightspot.util.RichTextUtils;
 import com.psddev.cms.db.ToolUi;
 import com.psddev.dari.db.Record;
 import com.psddev.dari.db.Recordable;
 
+@Recordable.DisplayName("Course")
 @Recordable.Embedded
 public class MealCourse extends Record {
 
@@ -56,5 +58,12 @@ public class MealCourse extends Record {
 
     public void setRecipes(List<Recipe> recipes) {
         this.recipes = recipes;
+    }
+
+    // --- Recordable support ---
+
+    @Override
+    public String getLabel() {
+        return RichTextUtils.richTextToPlainText(getName());
     }
 }

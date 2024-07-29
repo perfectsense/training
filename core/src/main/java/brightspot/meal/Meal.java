@@ -6,8 +6,11 @@ import java.util.List;
 import brightspot.image.WebImage;
 import brightspot.rte.SmallRichTextToolbar;
 import brightspot.rte.TinyRichTextToolbar;
+import brightspot.util.MoreStringUtils;
+import brightspot.util.RichTextUtils;
 import com.psddev.cms.db.Content;
 import com.psddev.cms.db.ToolUi;
+import com.psddev.cms.ui.form.DynamicPlaceholderMethod;
 
 public class Meal extends Content {
 
@@ -15,6 +18,7 @@ public class Meal extends Content {
     @ToolUi.RichText(toolbar = TinyRichTextToolbar.class)
     private String title;
 
+    @DynamicPlaceholderMethod("getInternalNameFallback")
     private String internalName;
 
     @ToolUi.RichText(inline = false, toolbar = SmallRichTextToolbar.class)
@@ -74,5 +78,24 @@ public class Meal extends Content {
 
     public void setCourses(List<MealCourse> courses) {
         this.courses = courses;
+    }
+
+    // --- Fallbacks ---
+
+    private String getInternalNameFallback() {
+        return getTitlePlainText();
+    }
+
+    // --- Utility ---
+
+    public String getTitlePlainText() {
+        return RichTextUtils.richTextToPlainText(getTitle());
+    }
+
+    // --- Recordable support ---
+
+    @Override
+    public String getLabel() {
+        return MoreStringUtils.firstNonBlank(getInternalName(), this::getInternalNameFallback);
     }
 }
