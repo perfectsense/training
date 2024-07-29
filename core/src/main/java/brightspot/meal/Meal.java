@@ -5,19 +5,33 @@ import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
 
+import brightspot.cascading.CascadingPageElements;
 import brightspot.difficulty.Difficulty;
 import brightspot.difficulty.HasDifficultyWithField;
 import brightspot.difficulty.HasDifficultyWithFieldData;
 import brightspot.image.WebImage;
+import brightspot.image.WebImageAsset;
 import brightspot.ingredient.HasIngredients;
 import brightspot.ingredient.Ingredient;
+import brightspot.page.Page;
+import brightspot.permalink.AbstractPermalinkRule;
+import brightspot.promo.page.PagePromotableWithOverrides;
 import brightspot.recipe.HasRecipes;
 import brightspot.recipe.Recipe;
 import brightspot.rte.SmallRichTextToolbar;
 import brightspot.rte.TinyRichTextToolbar;
+import brightspot.search.SiteSearchResult;
+import brightspot.search.boost.HasSiteSearchBoostIndexes;
+import brightspot.search.modifier.exclusion.SearchExcludable;
+import brightspot.section.HasSectionWithField;
+import brightspot.section.SectionPrefixPermalinkRule;
+import brightspot.seo.SeoWithFields;
+import brightspot.share.Shareable;
+import brightspot.site.DefaultSiteMapItem;
 import brightspot.util.MoreStringUtils;
 import brightspot.util.RichTextUtils;
 import com.psddev.cms.db.Content;
+import com.psddev.cms.db.Site;
 import com.psddev.cms.db.ToolUi;
 import com.psddev.cms.ui.form.DynamicPlaceholderMethod;
 
@@ -28,9 +42,19 @@ import com.psddev.cms.ui.form.DynamicPlaceholderMethod;
     HasDifficultyWithFieldData.DIFFICULTY_FIELD
 })
 public class Meal extends Content implements
+    CascadingPageElements,
+    DefaultSiteMapItem,
     HasDifficultyWithField,
     HasIngredients,
-    HasRecipes {
+    HasRecipes,
+    HasSectionWithField,
+    HasSiteSearchBoostIndexes,
+    Page,
+    PagePromotableWithOverrides,
+    SearchExcludable,
+    SeoWithFields,
+    Shareable,
+    SiteSearchResult {
 
     public static final String TITLE_PLAIN_TEXT_FIELD = "getTitlePlainText";
 
@@ -114,6 +138,13 @@ public class Meal extends Content implements
         return getTitlePlainText();
     }
 
+    // --- Directory.Item support ---
+
+    @Override
+    public String createPermalink(Site site) {
+        return AbstractPermalinkRule.create(site, this, SectionPrefixPermalinkRule.class);
+    }
+
     // --- HasDifficultyWithField support ---
 
     @Override
@@ -151,10 +182,75 @@ public class Meal extends Content implements
             .collect(Collectors.toList());
     }
 
+    // --- HasSiteSearchBoostIndexes ---
+
+    @Override
+    public String getSiteSearchBoostTitle() {
+        return getTitle();
+    }
+
+    @Override
+    public String getSiteSearchBoostDescription() {
+        return getPagePromotableDescription();
+    }
+
+    // --- Linkable support ---
+
+    @Override
+    public String getLinkableText() {
+        return getTitle();
+    }
+
+    // --- PagePromotableWithOverrides support ---
+
+    @Override
+    public String getPagePromotableTitleFallback() {
+        return getTitle();
+    }
+
+    @Override
+    public String getPagePromotableDescriptionFallback() {
+        return getDescription();
+    }
+
+    @Override
+    public WebImageAsset getPagePromotableImageFallback() {
+        return getImage();
+    }
+
     // --- Recordable support ---
 
     @Override
     public String getLabel() {
         return MoreStringUtils.firstNonBlank(getInternalName(), this::getInternalNameFallback);
+    }
+
+    // --- SeoWithFields support ---
+
+    @Override
+    public String getSeoTitleFallback() {
+        return getTitlePlainText();
+    }
+
+    @Override
+    public String getSeoDescriptionFallback() {
+        return RichTextUtils.richTextToPlainText(getPagePromotableDescription());
+    }
+
+    // --- Shareable support ---
+
+    @Override
+    public String getShareableTitleFallback() {
+        return getTitlePlainText();
+    }
+
+    @Override
+    public String getShareableDescriptionFallback() {
+        return RichTextUtils.richTextToPlainText(getPagePromotableDescription());
+    }
+
+    @Override
+    public WebImageAsset getShareableImageFallback() {
+        return getPagePromotableImage();
     }
 }
