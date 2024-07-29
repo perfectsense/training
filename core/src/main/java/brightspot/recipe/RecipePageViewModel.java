@@ -6,10 +6,12 @@ import java.util.Locale;
 import java.util.Optional;
 
 import brightspot.difficulty.Difficulty;
+import brightspot.ingredient.HasIngredientsData;
 import brightspot.l10n.CurrentLocale;
 import brightspot.page.AbstractPageViewModel;
 import brightspot.util.RichTextUtils;
 import com.psddev.cms.view.PageEntryView;
+import com.psddev.dari.db.Query;
 import com.psddev.styleguide.page.PageViewMainField;
 import com.psddev.styleguide.page.PageViewPageHeadingField;
 import com.psddev.styleguide.page.PageViewPageLeadField;
@@ -71,8 +73,13 @@ public class RecipePageViewModel extends AbstractPageViewModel<Recipe> implement
 
     @Override
     public Iterable<? extends RecipePageViewSimilarRecipesField> getSimilarRecipes() {
-        // TODO: we will add this in lesson 5
-        return null;
+        return createViews(
+            RecipePageViewSimilarRecipesField.class,
+            Query.from(Recipe.class)
+                .where(HasIngredientsData.INGREDIENTS_FIELD + " = ?", model.getIngredients())
+                .and("_id != ?", model)
+                .select(0, 3)
+                .getItems());
     }
 
     @Override
