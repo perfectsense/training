@@ -7,6 +7,8 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
+import brightspot.difficulty.HasDifficultyWithField;
+import brightspot.difficulty.HasDifficultyWithFieldData;
 import brightspot.image.WebImage;
 import brightspot.ingredient.HasIngredients;
 import brightspot.ingredient.Ingredient;
@@ -19,7 +21,14 @@ import com.psddev.cms.db.ToolUi;
 import com.psddev.cms.ui.form.DynamicPlaceholderMethod;
 import com.psddev.cms.ui.form.Note;
 
+@ToolUi.FieldDisplayOrder({
+    "title",
+    "internalName",
+    "description",
+    HasDifficultyWithFieldData.DIFFICULTY_FIELD
+})
 public class Recipe extends Content implements
+    HasDifficultyWithField,
     HasIngredients {
 
     public static final String COOK_TIME_FIELD = "cookTime";

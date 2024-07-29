@@ -3,7 +3,9 @@ package brightspot.recipe;
 import java.time.Duration;
 import java.time.temporal.ChronoUnit;
 import java.util.Locale;
+import java.util.Optional;
 
+import brightspot.difficulty.Difficulty;
 import brightspot.l10n.CurrentLocale;
 import brightspot.page.AbstractPageViewModel;
 import brightspot.util.RichTextUtils;
@@ -42,8 +44,9 @@ public class RecipePageViewModel extends AbstractPageViewModel<Recipe> implement
 
     @Override
     public CharSequence getDifficulty() {
-        // TODO: we will add this in lesson 5
-        return null;
+        return Optional.ofNullable(model.getDifficulty())
+            .map(Difficulty::toString)
+            .orElse(null);
     }
 
     @Override
