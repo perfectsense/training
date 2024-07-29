@@ -10,6 +10,8 @@ import com.psddev.cms.db.ToolUi;
 import com.psddev.cms.ui.form.Placeholder;
 import com.psddev.dari.db.Record;
 import com.psddev.dari.db.Recordable;
+import com.psddev.dari.db.State;
+import com.psddev.dari.db.StringException;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.math3.exception.MathParseException;
 import org.apache.commons.math3.fraction.FractionFormat;
@@ -67,6 +69,31 @@ public class RecipeIngredient extends Record {
 
     public void setInstruction(String instruction) {
         this.instruction = instruction;
+    }
+
+    // --- Record support ---
+
+    @Override
+    protected void onValidate() {
+        // same logic as in getQuantity()
+        String q = getQuantityString();
+        if (StringUtils.isBlank(q)) {
+            return;
+        }
+
+        try {
+            Double.parseDouble(q);
+
+        } catch (NumberFormatException e) {
+            try {
+                new FractionFormat().parse(q);
+            } catch (MathParseException | NumberFormatException e2) {
+                State state = getState();
+                state.addError(
+                    state.getField("quantityString"),
+                    new StringException("Invalid format: must be a number or a fraction"));
+            }
+        }
     }
 
     // --- API ---
