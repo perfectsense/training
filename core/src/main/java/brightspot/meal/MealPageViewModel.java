@@ -1,5 +1,8 @@
 package brightspot.meal;
 
+import java.util.Optional;
+
+import brightspot.difficulty.Difficulty;
 import brightspot.page.AbstractPageViewModel;
 import brightspot.util.RichTextUtils;
 import com.psddev.cms.view.PageEntryView;
@@ -32,8 +35,9 @@ public class MealPageViewModel extends AbstractPageViewModel<Meal> implements
 
     @Override
     public CharSequence getDifficulty() {
-        // TODO: we will add this in lesson 5
-        return null;
+        return Optional.ofNullable(model.getDifficulty())
+            .map(Difficulty::toString)
+            .orElse(null);
     }
 
     @Override

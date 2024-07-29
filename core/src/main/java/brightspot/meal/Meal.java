@@ -2,8 +2,12 @@ package brightspot.meal;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.stream.Collectors;
 
+import brightspot.difficulty.Difficulty;
+import brightspot.difficulty.HasDifficultyWithField;
+import brightspot.difficulty.HasDifficultyWithFieldData;
 import brightspot.image.WebImage;
 import brightspot.ingredient.HasIngredients;
 import brightspot.ingredient.Ingredient;
@@ -16,7 +20,14 @@ import com.psddev.cms.db.Content;
 import com.psddev.cms.db.ToolUi;
 import com.psddev.cms.ui.form.DynamicPlaceholderMethod;
 
+@ToolUi.FieldDisplayOrder({
+    "title",
+    "internalName",
+    "description",
+    HasDifficultyWithFieldData.DIFFICULTY_FIELD
+})
 public class Meal extends Content implements
+    HasDifficultyWithField,
     HasIngredients {
 
     public static final String TITLE_PLAIN_TEXT_FIELD = "getTitlePlainText";
@@ -110,6 +121,20 @@ public class Meal extends Content implements
             .flatMap(List::stream)
             .distinct()
             .collect(Collectors.toList());
+    }
+
+    // --- HasDifficultyWithField support ---
+
+    @Override
+    public Difficulty getDifficultyFallback() {
+        return getCourses()
+            .stream()
+            .map(MealCourse::getRecipes)
+            .flatMap(List::stream)
+            .map(Recipe::getDifficulty)
+            .filter(Objects::nonNull)
+            .reduce((lhs, rhs) -> lhs.getLevel() > rhs.getLevel() ? lhs : rhs)
+            .orElse(null);
     }
 
     // --- HasIngredients support ---
