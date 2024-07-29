@@ -32,8 +32,12 @@ import brightspot.util.MoreStringUtils;
 import brightspot.util.RichTextUtils;
 import com.psddev.cms.db.Content;
 import com.psddev.cms.db.Site;
+import com.psddev.cms.db.SiteSettings;
 import com.psddev.cms.db.ToolUi;
+import com.psddev.cms.ui.ContentLifecycle;
+import com.psddev.cms.ui.ToolRequest;
 import com.psddev.cms.ui.form.DynamicPlaceholderMethod;
+import com.psddev.dari.web.WebRequest;
 
 @ToolUi.FieldDisplayOrder({
     "title",
@@ -43,6 +47,7 @@ import com.psddev.cms.ui.form.DynamicPlaceholderMethod;
 })
 public class Meal extends Content implements
     CascadingPageElements,
+    ContentLifecycle,
     DefaultSiteMapItem,
     HasDifficultyWithField,
     HasIngredients,
@@ -136,6 +141,17 @@ public class Meal extends Content implements
 
     private String getInternalNameFallback() {
         return getTitlePlainText();
+    }
+
+    // --- ContentLifecycle support ---
+
+    @Override
+    public void onNew() {
+        if (WebRequest.isAvailable()) {
+            asHasSectionWithFieldData().setSection(SiteSettings.get(
+                WebRequest.getCurrent().as(ToolRequest.class).getCurrentSite(),
+                s -> s.as(MealSiteSettings.class).getDefaultMealSection()));
+        }
     }
 
     // --- Directory.Item support ---
