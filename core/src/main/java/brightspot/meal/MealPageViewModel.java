@@ -4,8 +4,10 @@ import java.util.Optional;
 
 import brightspot.difficulty.Difficulty;
 import brightspot.page.AbstractPageViewModel;
+import brightspot.recipe.HasRecipesData;
 import brightspot.util.RichTextUtils;
 import com.psddev.cms.view.PageEntryView;
+import com.psddev.dari.db.Query;
 import com.psddev.styleguide.meal.MealPageView;
 import com.psddev.styleguide.meal.MealPageViewCoursesField;
 import com.psddev.styleguide.meal.MealPageViewDescriptionField;
@@ -47,8 +49,13 @@ public class MealPageViewModel extends AbstractPageViewModel<Meal> implements
 
     @Override
     public Iterable<? extends MealPageViewSimilarMealsField> getSimilarMeals() {
-        // TODO: we will add this in lesson 5
-        return null;
+        return createViews(
+            MealPageViewSimilarMealsField.class,
+            Query.from(Meal.class)
+                .where(HasRecipesData.RECIPES_FIELD + " = ?", model.getRecipes())
+                .and("_id != ?", model)
+                .select(0, 3)
+                .getItems());
     }
 
     // --- PageView support ---
