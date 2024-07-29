@@ -17,6 +17,7 @@ import brightspot.ingredient.Ingredient;
 import brightspot.page.Page;
 import brightspot.permalink.AbstractPermalinkRule;
 import brightspot.promo.page.PagePromotableWithOverrides;
+import brightspot.recalculate.MethodRecalculation;
 import brightspot.rte.SmallRichTextToolbar;
 import brightspot.rte.TinyRichTextToolbar;
 import brightspot.search.SiteSearchResult;
@@ -37,6 +38,7 @@ import com.psddev.cms.ui.ContentLifecycle;
 import com.psddev.cms.ui.ToolRequest;
 import com.psddev.cms.ui.form.DynamicPlaceholderMethod;
 import com.psddev.cms.ui.form.Note;
+import com.psddev.dari.db.Query;
 import com.psddev.dari.web.WebRequest;
 
 @ToolUi.FieldDisplayOrder({
@@ -66,6 +68,7 @@ public class Recipe extends Content implements
     public static final String TITLE_PLAIN_TEXT_FIELD = "getTitlePlainText";
     public static final String TOTAL_TIME_FIELD = "getTotalTime";
 
+    private static final String NAME_MODIFIED_EXTRA = Recipe.class.getName() + ".nameModified";
     private static final String TIMING_CLUSTER = "Timing";
 
     @Required
@@ -301,6 +304,45 @@ public class Recipe extends Content implements
     @Override
     public WebImageAsset getPagePromotableImageFallback() {
         return getImage();
+    }
+
+    // --- Record support ---
+
+    @Override
+    protected void beforeCommit() {
+        Object previousVersion = Query.fromAll()
+            .where("_id = ?", this)
+            .noCache()
+            .first();
+        if (!(previousVersion instanceof Recipe)) {
+            return;
+        }
+
+        Recipe previousRecipe = (Recipe) previousVersion;
+
+        if (!Objects.equals(previousRecipe.getTitlePlainText(), this.getTitlePlainText())
+            || !Objects.equals(previousRecipe.getState().isVisible(), this.getState().isVisible())) {
+
+            getState().getExtras().put(NAME_MODIFIED_EXTRA, true);
+        }
+    }
+
+    @Override
+    protected void afterSave() {
+        if (Boolean.TRUE.equals(getState().getExtra(NAME_MODIFIED_EXTRA))) {
+            MethodRecalculation.recalculateMethodByQuery(
+                Query.fromAll()
+                    .where(HasRecipesData.class.getName() + "/" + HasRecipesData.RECIPES_FIELD + " = ?", this),
+                HasRecipesData.RECIPE_TITLES_FIELD);
+        }
+    }
+
+    @Override
+    protected void afterDelete() {
+        MethodRecalculation.recalculateMethodByQuery(
+            Query.fromAll()
+                .where(HasRecipesData.class.getName() + "/" + HasRecipesData.RECIPES_FIELD + " = ?", this),
+            HasRecipesData.RECIPE_TITLES_FIELD);
     }
 
     // --- Recordable support ---
