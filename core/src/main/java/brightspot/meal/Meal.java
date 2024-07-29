@@ -11,6 +11,7 @@ import brightspot.difficulty.HasDifficultyWithFieldData;
 import brightspot.image.WebImage;
 import brightspot.ingredient.HasIngredients;
 import brightspot.ingredient.Ingredient;
+import brightspot.recipe.HasRecipes;
 import brightspot.recipe.Recipe;
 import brightspot.rte.SmallRichTextToolbar;
 import brightspot.rte.TinyRichTextToolbar;
@@ -28,7 +29,8 @@ import com.psddev.cms.ui.form.DynamicPlaceholderMethod;
 })
 public class Meal extends Content implements
     HasDifficultyWithField,
-    HasIngredients {
+    HasIngredients,
+    HasRecipes {
 
     public static final String TITLE_PLAIN_TEXT_FIELD = "getTitlePlainText";
 
@@ -112,17 +114,6 @@ public class Meal extends Content implements
         return getTitlePlainText();
     }
 
-    // --- Utility ---
-
-    private List<Recipe> getRecipes() {
-        return getCourses()
-            .stream()
-            .map(MealCourse::getRecipes)
-            .flatMap(List::stream)
-            .distinct()
-            .collect(Collectors.toList());
-    }
-
     // --- HasDifficultyWithField support ---
 
     @Override
@@ -144,6 +135,18 @@ public class Meal extends Content implements
         return getRecipes()
             .stream()
             .flatMap(r -> r.getIngredients().stream())
+            .distinct()
+            .collect(Collectors.toList());
+    }
+
+    // --- HasRecipes support ---
+
+    @Override
+    public List<Recipe> getRecipes() {
+        return getCourses()
+            .stream()
+            .map(MealCourse::getRecipes)
+            .flatMap(List::stream)
             .distinct()
             .collect(Collectors.toList());
     }
