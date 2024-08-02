@@ -1,5 +1,8 @@
 package brightspot.meal;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import brightspot.image.WebImage;
 import brightspot.rte.SmallRichTextToolbar;
 import brightspot.rte.TinyRichTextToolbar;
@@ -18,6 +21,9 @@ public class Meal extends Content {
     private String description;
 
     private WebImage image;
+
+    @Required
+    private List<MealCourse> courses;
 
     // --- Getters/setters ---
 
@@ -57,5 +63,16 @@ public class Meal extends Content {
 
     public void setImage(WebImage image) {
         this.image = image;
+    }
+
+    public List<MealCourse> getCourses() {
+        if (courses == null) {
+            courses = new ArrayList<>();
+        }
+        return courses;
+    }
+
+    public void setCourses(List<MealCourse> courses) {
+        this.courses = courses;
     }
 }
