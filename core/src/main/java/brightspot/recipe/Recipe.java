@@ -1,5 +1,7 @@
 package brightspot.recipe;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 import java.util.stream.Stream;
@@ -22,6 +24,12 @@ public class Recipe extends Content {
     private String description;
 
     private WebImage image;
+
+    @Required
+    private List<RecipeIngredient> recipeIngredients;
+
+    @Required
+    private List<RecipeStep> steps;
 
     private Integer prepTime;
 
@@ -69,6 +77,28 @@ public class Recipe extends Content {
 
     public void setImage(WebImage image) {
         this.image = image;
+    }
+
+    public List<RecipeIngredient> getRecipeIngredients() {
+        if (recipeIngredients == null) {
+            recipeIngredients = new ArrayList<>();
+        }
+        return recipeIngredients;
+    }
+
+    public void setRecipeIngredients(List<RecipeIngredient> recipeIngredients) {
+        this.recipeIngredients = recipeIngredients;
+    }
+
+    public List<RecipeStep> getSteps() {
+        if (steps == null) {
+            steps = new ArrayList<>();
+        }
+        return steps;
+    }
+
+    public void setSteps(List<RecipeStep> steps) {
+        this.steps = steps;
     }
 
     public Integer getPrepTime() {

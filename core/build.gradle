@@ -31,6 +31,9 @@ dependencies {
         exclude group: 'com.brightspot.go', module: 'frontend'
     }
 
+    // Third party
+    implementation 'org.apache.commons:commons-math3:3.6.1'
+
     // Test
     sharedTest 'com.brightspot.shared-tests:pack-standard-backend-unit-tests'
     testImplementation 'org.junit.jupiter:junit-jupiter-api'
