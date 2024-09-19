@@ -35,6 +35,8 @@ brightspot {
         'com.fasterxml.jackson.core:jackson-core': '2.11.0',
         'com.google.api-client:google-api-client': '1.33.4',
         'com.squareup.retrofit2:converter-jackson': '2.9.0',
+
+        'net.java.dev.jna:jna': '5.12.1', // fix Hunspell
     ]
 
     dependencySubstitutions = [
