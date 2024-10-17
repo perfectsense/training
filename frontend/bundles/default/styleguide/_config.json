@@ -4,5 +4,6 @@
   "styles": {},
   "includes": [
     "**/*.config.json"
-  ]
+  ],
+  "imageProvider": "offline"
 }

@@ -9,16 +9,6 @@
         {{include "/page/Page-above.hbs" this}}
 
         <main class="Page-content">
-            {{!-- Per the excercise's ask we are to 
-            reuse the PageHeading, with some specific data 
-            configuring its render exactly as suggested. 
-
-            -That is that the eyebrow will now display the difficulty.
-            -That is that the features for the 'pageSubHeading' and
-            'logo', will not receive data thus not printing those two items
-
-            
-            --}}
             <div class="Page-pageLead" data-pagelead>
                 {{include "/page/PageHeading.hbs" this 
                     eyebrow=(concat "Difficulty: " difficulty) 
@@ -28,19 +18,62 @@
                     useTextColors="inverse"}}
             </div>
 
-            {{#with main}}
-                <div class="Page-oneColumn">
-                    {{#each this}}
-                        {{#eq @index 0}}
-                            {{#set lazyLoad=false}}
-                                {{this}}
-                            {{/set}}
-                        {{else}}
+
+            {{!--
+            -This is a two column layout whenever there are `similarRecipes`.
+            -Lets reference a page template that can show as two columns, if we find one. 
+            -- If we look in styleguide we can see the `Article Page` does this, therefore 
+            we can use that as a reference
+
+            IMPORTANT: This can be different on each project, but the lesson here is to reuse concepts 
+            when applicable        
+
+            Per spec, left column will be main column with most of the content, 
+            and right narrow column will be the similar recipes  
+            --}}
+            
+
+            {{#if similarRecipes}}<div class="Page-twoColumn">{{else}}<div class="Page-oneColumn">{{/if}}
+                <div class="Page-main">
+                    {{#with image}}
+                        <div class="RecipePage-image">
                             {{this}}
-                        {{/eq}}
-                    {{/each}}
+                        </div>
+                    {{/with}}
+
+                    {{#with prepTime}}<div class="RecipePage-prepTime"><span>{{!TODO translatable text}}PREP TIME TITLE</span>&nbsp;{{this}}</div>{{/with}}
+                    {{#with inactivePrepTime}}<div class="RecipePage-prepTime"><span>{{!TODO translatable text}}INACTIVE PREP TIME TITLE</span>&nbsp;{{this}} </div>{{/with}}
+                    {{#with cookTime}}<div class="RecipePage-cookTime"><span>{{!TODO translatable text}}COOK TIME TITLE</span>&nbsp;{{this}} </div>{{/with}}
+                    {{#with totalTime}}<div class="RecipePage-totalTime"><span>{{!TODO translatable text}}TOTAL TIME TITLE</span>&nbsp;{{this}} </div>{{/with}}
+
+                    {{#if ingredients}}
+                        <div class="RecipePage-ingredients">
+                            <h3 class="RecipePage-ingredients-title">{{!TODO translatable text}}Ingredients TITLE will go here</h3>
+                            <ul class="RecipePage-ingredients-items">
+                            {{ingredients}}
+                            </ul>
+                        </div>
+                    {{/if}}
+
+                    {{#if steps}}
+                        <div class="RecipePage-steps">
+                            <h3 class="RecipePage-steps-title">{{!TODO translatable text}}Steps TITLE will go here</h3>
+                            <ol class="RecipePage-steps-items">
+                           {{steps}}
+                            </ol>
+                        </div>
+                    {{/if}}
                 </div>
-            {{/with}}
+               
+                {{#if similarRecipes}}
+                    <aside class="Page-aside">
+                        <div class="Page-aside-content" data-modulewell>
+                            {{!TODO}} - RENDERING LIST OF SIMILAR recipes
+                            {{similarRecipes}}
+                        </div>
+                    </aside>
+                {{/if}}
+            </div>
         </main>
 
         {{include "/page/Page-below.hbs" this}}
