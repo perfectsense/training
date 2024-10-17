@@ -1,11 +1,42 @@
-{{#with pageHeading}}pageHeading:{{this}} <br />{{/with}}
-{{#with description}}description:{{this}} <br />{{/with}}
-{{#with image}}image:{{this}} <br />{{/with}}
-{{#with difficulty}}difficulty:{{this}} <br />{{/with}}
-{{#with prepTime}}prepTime:{{this}} <br />{{/with}}
-{{#with inactivePrepTime}}inactivePrepTime:{{this}} <br />{{/with}}
-{{#with cookTime}}cookTime:{{this}} <br />{{/with}}
-{{#with totalTime}}totalTime:{{this}} <br />{{/with}}
-{{#with ingredients}}ingredients:{{this}} <br />{{/with}}
-{{#with steps}}steps:{{this}} <br />{{/with}}
-{{#with similarRecipes}}similarRecipes:{{this}} <br />{{/with}}
+<!DOCTYPE html>
+<html class="Page" {{~include "/page/Page-htmlAttributes.hbs" this}}>
+{{include "/page/Page-head.hbs" this}}
+
+<body class="Page-body">
+    {{include "/page/Page-bodyStart.hbs" this}}
+    {{include "/page/Page-header.hbs" this}}
+    <div data-moduleroot>
+        {{include "/page/Page-above.hbs" this}}
+
+        <main class="Page-content">
+            {{!-- Our markup right now is an exact copy of the Page 
+            markup.
+            Per the ask of the excercise, however, we will reuse the 
+            PageHeading template and force that as the lead.
+            - We will cover that next step
+            --}}
+            {{#with pageLead}} 
+                <div class="Page-pageLead" data-pagelead>{{this}}</div>
+            {{/with}}
+
+            {{#with main}}
+                <div class="Page-oneColumn">
+                    {{#each this}}
+                        {{#eq @index 0}}
+                            {{#set lazyLoad=false}}
+                                {{this}}
+                            {{/set}}
+                        {{else}}
+                            {{this}}
+                        {{/eq}}
+                    {{/each}}
+                </div>
+            {{/with}}
+        </main>
+
+        {{include "/page/Page-below.hbs" this}}
+    </div>
+    {{include "/page/Page-footer.hbs" this}}
+    {{include "/page/Page-extraBodyItems.hbs" this}}
+</body>
+</html>
