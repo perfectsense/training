@@ -9,15 +9,24 @@
         {{include "/page/Page-above.hbs" this}}
 
         <main class="Page-content">
-            {{!-- Our markup right now is an exact copy of the Page 
-            markup.
-            Per the ask of the excercise, however, we will reuse the 
-            PageHeading template and force that as the lead.
-            - We will cover that next step
+            {{!-- Per the excercise's ask we are to 
+            reuse the PageHeading, with some specific data 
+            configuring its render exactly as suggested. 
+
+            -That is that the eyebrow will now display the difficulty.
+            -That is that the features for the 'pageSubHeading' and
+            'logo', will not receive data thus not printing those two items
+
+            
             --}}
-            {{#with pageLead}} 
-                <div class="Page-pageLead" data-pagelead>{{this}}</div>
-            {{/with}}
+            <div class="Page-pageLead" data-pagelead>
+                {{include "/page/PageHeading.hbs" this 
+                    eyebrow=(concat "Difficulty: " difficulty) 
+                    pageSubHeading=description
+                    logo=null
+                    headingBgColor="#EE0120"
+                    useTextColors="inverse"}}
+            </div>
 
             {{#with main}}
                 <div class="Page-oneColumn">
