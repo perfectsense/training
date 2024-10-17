@@ -1,3 +1,7 @@
-{{#with title}}title:{{this}} <br />{{/with}}
-{{#with media}}media:{{this}} <br />{{/with}}
-{{#with url}}url:{{this}} <br />{{/with}}
+<div class="RecipeCard">
+    {{include "/page/promo/includes/PagePromoMediaWithIcon.hbs" this}}
+
+    <div class="PagePromo-content">
+        {{include "/page/promo/includes/PagePromoTitle.hbs" this}}
+    </div>
+</div>

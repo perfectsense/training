@@ -1,3 +1,9 @@
-{{#with heading}}heading:{{this}} <br />{{/with}}
-{{#with directions}}directions:{{this}} <br />{{/with}}
-{{#with image}}image:{{this}} <br />{{/with}}
+<div class="RecipeStep">
+    {{#with heading}}<div class="RecipeStep-title">{{this}}</div>{{/with}}
+    {{#with image}}
+        <div class="RecipeStep-image">
+            {{this}}
+        </div>
+    {{/with}}
+    {{#with directions}}<div class="RecipeStep-directions">{{this}}</div>{{/with}}
+</div>

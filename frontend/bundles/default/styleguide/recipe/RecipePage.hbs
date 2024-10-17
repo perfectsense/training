@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="Page" {{~include "/page/Page-htmlAttributes.hbs" this}}>
+<html class="RecipePage" {{~include "/page/Page-htmlAttributes.hbs" this}}>
 {{include "/page/Page-head.hbs" this}}
 
 <body class="Page-body">
@@ -17,21 +17,6 @@
                     headingBgColor="#EE0120"
                     useTextColors="inverse"}}
             </div>
-
-
-            {{!--
-            -This is a two column layout whenever there are `similarRecipes`.
-            -Lets reference a page template that can show as two columns, if we find one. 
-            -- If we look in styleguide we can see the `Article Page` does this, therefore 
-            we can use that as a reference
-
-            IMPORTANT: This can be different on each project, but the lesson here is to reuse concepts 
-            when applicable        
-
-            Per spec, left column will be main column with most of the content, 
-            and right narrow column will be the similar recipes  
-            --}}
-            
 
             {{#if similarRecipes}}<div class="Page-twoColumn">{{else}}<div class="Page-oneColumn">{{/if}}
                 <div class="Page-main">
