@@ -1,5 +1,7 @@
 <div class="RecipeCard">
-    {{include "/page/promo/includes/PagePromoMediaWithIcon.hbs" this}}
+    {{#set imageSize=(fallback (get "imageSize") "medium-3x2")}}
+        {{include "/page/promo/includes/PagePromoMediaWithIcon.hbs" this}}
+    {{/set}}
 
     <div class="PagePromo-content">
         {{include "/page/promo/includes/PagePromoTitle.hbs" this}}

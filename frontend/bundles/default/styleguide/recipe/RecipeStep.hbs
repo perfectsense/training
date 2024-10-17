@@ -2,7 +2,9 @@
     {{#with heading}}<div class="RecipeStep-title">{{this}}</div>{{/with}}
     {{#with image}}
         <div class="RecipeStep-image">
-            {{this}}
+            {{#set imageSize="large-16x9"}}
+                {{this}}
+            {{/set}}
         </div>
     {{/with}}
     {{#with directions}}<div class="RecipeStep-directions">{{this}}</div>{{/with}}

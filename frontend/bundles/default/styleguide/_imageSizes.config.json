@@ -28,6 +28,19 @@
       ],
       "format": "webp"
     },
+    "medium-3x2": {
+      "width": 500,
+      "height": 333,
+      "srcsetDescriptors": [
+        "568w",
+        "768w",
+        "1024w",
+        "1440w"
+      ],
+      "alternateFormats": [
+        "webp"
+      ]
+    },
     "medium-3x4": {
       "width": 375,
       "height": 500,
@@ -260,9 +273,9 @@
     },
     "logo": {
       "maximumWidth": 250,
-      "previewWidth": 250,
+      "previewWidth": 200,
       "maximumHeight": 100,
-      "previewHeight": 100,
+      "previewHeight": 54,
       "alternateFormats": [
         "webp"
       ],
