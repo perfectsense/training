@@ -1,0 +1,32 @@
+{
+  "_include": "/page/Page.json",
+  "_template": "/recipe/RecipePage.hbs",
+  "pageHeading": "Neapolitan Pizza Dough",
+  "description": "The original Italian Pizza from Naples",
+  "image": {
+    "_include": "/image/Image.json"
+  },
+  "difficulty": "Easy",
+  "prepTime": "15 minutes",
+  "inactivePrepTime": "30 minutes",
+  "cookTime": "45 minutes",
+  "totalTime": "60 minutes",
+  "ingredients": [
+    {
+      "_include": "/recipe/RecipeIngredient.json",
+      "_repeat": 8
+    }
+  ],
+  "steps": [
+    {
+      "_include": "/recipe/RecipeStep.json",
+      "_repeat": 3
+    }
+  ],
+  "similarRecipes": [
+    {
+      "_include": "/recipe/RecipeCard.json",
+      "_repeat": 3
+    }
+  ]
+}

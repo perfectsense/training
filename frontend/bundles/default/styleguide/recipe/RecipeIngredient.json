@@ -1,0 +1,4 @@
+{
+  "_template": "RecipeIngredient.hbs",
+  "ingredient": "{{words([2,4])}}"
+}

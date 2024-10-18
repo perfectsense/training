@@ -538,6 +538,15 @@
       ]
     },
     {
+      "displayName": "Recipes and Meals",
+      "pages": [
+        {
+          "displayName": "Recipe Page",
+          "page": "/recipe/RecipePage.json"
+        }
+      ]
+    },
+    {
       "displayName": "Search",
       "pages": [
         {

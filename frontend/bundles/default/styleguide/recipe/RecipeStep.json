@@ -1,0 +1,8 @@
+{
+  "_template": "RecipeStep.hbs",
+  "heading": "{{words([5,10])}}",
+  "directions": "{{paragraphs(2)}}",
+  "image": {
+    "_include": "/image/Image.json"
+  }
+}
