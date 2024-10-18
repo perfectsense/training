@@ -1,3 +1,104 @@
+/**
+    Given the focus of the training isn't so much about styling, you can copy and paste this file 
+    into your project.
+
+    Some concepts youll see here that often show up in brightspot projects, 
+    but are project specific are the use of the 
+    - layoutWidth() mixin which keeps module widths consistent
+    - use of css variables to manipulate margins|paddings and gutters. The mocksup often are using 
+    the same variables to help keep things consistent and dev friendly
+    - use of css variables for colors. These are used because themes can be set to have configurable
+    colors.   
+*/
 .RecipePage {
-    
-}
+    // most of the time oneColumn lets modules inside of itself determine the width of themselves, but Meal Page
+    // does not have modules, but is instead content, so we have to deal with the centering and width ourselves
+    .Page-oneColumn {
+      .layoutWidth();
+    }
+  
+    .Page-twoColumn,
+    .Page-oneColumn {
+      margin-bottom: var(--vertical-margin-md);
+      margin-top: var(--vertical-margin-md);
+    }
+  
+    &-main {
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 880px; // to match page heading above and better readability
+    }
+  
+    &-image {
+      margin-bottom: var(--spacing-md);
+    }
+  
+    &-ingredients {
+      border: 1px solid var(--color-border);
+      padding: var(--spacing-lg);
+      margin-bottom: var(--spacing-md);
+      background-color: var(--color-site-secondary-bg);
+  
+      &-items {
+        list-style: disc;
+        padding-left: var(--spacing-lg);
+      }
+  
+      &-title {
+        &:extend(.headline-5);
+        margin-bottom: var(--spacing-md);
+      }
+    }
+  
+    &-meta {
+      margin-bottom: var(--spacing-md);
+      display: flex;
+      grid-gap: var(--spacing-lg);
+      flex-wrap: wrap;
+  
+      span {
+        font-weight: bold;
+      }
+    }
+  
+    &-steps {
+      &-items {
+        list-style: decimal;
+        padding-left: var(--spacing-lg);
+      }
+  
+      &-item {
+        &::marker {
+          font-size: 2em;
+          .headline-1;
+          font-weight: 900;
+          color: var(--color-primary);
+        }
+      }
+    }
+  
+    &-prepTime, 
+    &-cookTime,
+    &-totalTime {
+      flex: 1;
+  
+      & > span {
+        white-space: nowrap;
+        display: block;
+      }
+      svg {
+        width: 16px;
+        height: 16px;
+      }
+    }
+  
+    @media @mq-lg {
+      &-main {
+  
+        // if we are in a two column layout, let the layout determine our width at this point
+        .Page-twoColumn & {
+          max-width: none;
+        }
+      }
+    }
+  }

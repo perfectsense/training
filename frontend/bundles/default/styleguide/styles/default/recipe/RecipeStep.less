@@ -1,3 +1,21 @@
+/**
+    Given the focus of the training isn't so much about styling, you can copy and paste this file 
+    into your project.
+
+    KEY CONCEPT HERE: 
+    The key concept represented here is we aim to be consistent in how we name .hbs templates, .less 
+    stylesheets as well as the css class names that represent them. For example here RecipeStep is the
+    name of our .hbs component, and thus we use that for its css ClassName and therefore less as well. 
+
+    Also you can see a correction in RecipeStep.hbs which changes RecipeStep-title, to RecipeStep-heading.
+    This is to highlight our typical naming convention for markup related to fields of the component. Exceptions
+    to this convention of course are the case where you are reusing another component as an .hbs include for example.  
+
+*/
 .RecipeStep {
-    
-}
+    &-heading {
+      &:extend(.headline-6);
+  
+      margin-bottom: var(--spacing-md);
+    }
+  }

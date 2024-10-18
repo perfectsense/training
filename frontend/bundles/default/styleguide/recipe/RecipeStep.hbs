@@ -1,5 +1,7 @@
 <div class="RecipeStep">
-    {{#with heading}}<div class="RecipeStep-title">{{this}}</div>{{/with}}
+    {{!-- correction below aims to highlight our convention of dash naming things based on the data property
+        In this case the property in the JSON is 'heading' not 'title' thus this correction --}}
+    {{#with heading}}<div class="RecipeStep-heading">{{this}}</div>{{/with}}
     {{#with image}}
         <div class="RecipeStep-image">
             {{#set imageSize="large-16x9"}}

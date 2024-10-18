@@ -1,0 +1,86 @@
+/**
+    Given the focus of the training isn't so much about styling, you can copy and paste this file 
+    into your project.
+*/
+.RecipeCard {
+    @bookWidth: 300px;
+    @bookHeight: 200px;
+    .PagePromo {
+        &-media {
+            display: flex;
+            position: absolute;
+            align-items: center;
+            justify-content: center;
+            perspective: 500px;
+            transform: scale(0.8) translateX(-23px);
+
+            a {
+                width: @bookWidth;
+                height: @bookHeight;
+                position: relative;
+                transform-style: preserve-3d;
+                transform: rotateY(-26deg);
+                transition: 1s ease;
+                animation: 1s ease 0s 1 initAnimation;
+            
+                &:hover {
+                    transform: rotateY(-4deg);
+                }
+                & > :first-child {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    background-color: red;
+                    width: @bookWidth;
+                    height: @bookHeight;
+                    transform: translateZ(65px);
+                    background-color: #011131;
+                    border-radius: 0 5px 5px 0;
+                    box-shadow: 5px 5px 20px #666;
+                }
+                &::before {
+                    position: absolute;
+                    content: ' ';
+                    background-color: blue;
+                    left: 0;
+                    top: 4px;
+                    width: 106px;
+                    height: 194px;
+                    transform: translateX(235px) rotateY(90deg);
+                    background: linear-gradient(90deg, #fff 0%,#f9f9f9 5%,#fff 10%,#f9f9f9 15%,#fff 20%,#f9f9f9 25%,#fff 30%,#f9f9f9 35%,#fff 40%,#f9f9f9 45%,#fff 50%,#f9f9f9 55%,#fff 60%,#f9f9f9 65%,#fff 70%,#f9f9f9 75%,#fff 80%,#f9f9f9 85%,#fff 90%,#f9f9f9 95%,#fff 100%);
+                }
+                &::after {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    content: ' ';
+                    width: @bookWidth;
+                    height: @bookHeight;
+                    transform: translateZ(-25px);
+                    background-color: #011131;
+                    border-radius: 0 2px 2px 0;
+                    box-shadow: -10px 0 50px 10px #666;
+                }
+            }
+        }
+
+        &-content {
+            padding-bottom: var(--spacing-xl);
+        }
+    }
+
+    .PagePromo-media ~ .PagePromo-content {
+        padding-top: @bookHeight + 30px;
+    }
+}
+
+// IN A REAL PROJECT WE WOULD WANT TO ORGANIZE THESE IN ANOTHER FILE. 
+// SOME PROJECTS MAY HAVE A FILE FOR ANIMATION TWEENING
+@keyframes initAnimation {
+    0% {
+      transform: rotateY(-4deg);
+    }
+    100% {
+      transform: rotateY(-30deg);
+    }
+}
