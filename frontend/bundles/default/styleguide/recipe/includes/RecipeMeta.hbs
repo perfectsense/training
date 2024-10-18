@@ -1,9 +1,3 @@
-{{!--
-Observe we not only moved the markup herein via include, 
-but also  the text now is using a '{{format' handlebars tag.
-
-Additionally here we have a new project specific handlebar tag 'iconPath', which appends SVG icons.
--- If curious about that you can see how a custom tag was created in the file `helpers.js`... But lets stay on topic   --}}
 <div class="RecipePage-meta">
     {{#with prepTime}}<div class="RecipePage-prepTime"><span>{{!format}}{{format "/recipe/RecipePage" "prepTimeText"}}</span>&nbsp;{{this}} {{!interesting project specific 'iconPath' helper}}{{include (iconPath 'timer' 'bold')}}</div>{{/with}}
     {{#with inactivePrepTime}}<div class="RecipePage-prepTime"><span>{{format "/recipe/RecipePage" "inactivePrepTimeText"}}</span>&nbsp;{{this}}  {{include (iconPath 'timer' 'bold')}}</div>{{/with}}

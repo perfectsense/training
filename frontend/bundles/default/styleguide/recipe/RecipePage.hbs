@@ -10,7 +10,6 @@
 
         <main class="Page-content">
             <div class="Page-pageLead" data-pagelead>
-                {{!include - lets recap about how this can be used to force data thru a template}}
                 {{include "/page/PageHeading.hbs" this 
                     eyebrow=(concat "Difficulty: " difficulty) 
                     pageSubHeading=description
@@ -19,13 +18,10 @@
                     useTextColors="inverse"}}
             </div>
 
-            {{!if vs with - if checks if variable exists and is truthy}}
             {{#if similarRecipes}}<div class="Page-twoColumn">{{else}}<div class="Page-oneColumn">{{/if}}
                 <div class="Page-main">
-                    {{!with vs if - with goes inside the context of the variable and executes the markup inside. }}
                     {{#with image}}
                         <div class="RecipePage-image">
-                            {{! set and get}}
                             {{#set imageSize="large-16x9"}}
                                 {{this}}
                             {{/set}}
@@ -36,9 +32,8 @@
 
                     {{#if ingredients}}
                         <div class="RecipePage-ingredients">
-                            <h3 class="RecipePage-ingredients-title">{{!format}}{{format "/recipe/RecipePage" "ingredientsText"}}</h3>
+                            <h3 class="RecipePage-ingredients-title">{{format "/recipe/RecipePage" "ingredientsText"}}</h3>
                             <ul class="RecipePage-ingredients-items">
-                            {{!each}}
                             {{#each ingredients}}
                                 <li class="RecipePage-ingredients-item">{{this}}</li>
                             {{/each}}
@@ -48,9 +43,8 @@
 
                     {{#if steps}}
                         <div class="RecipePage-steps">
-                            <h3 class="RecipePage-steps-title">{{!format}}{{format "/recipe/RecipePage" "stepsText"}}</h3>
+                            <h3 class="RecipePage-steps-title">{{format "/recipe/RecipePage" "stepsText"}}</h3>
                             <ol class="RecipePage-steps-items">
-                            {{!each}}
                             {{#each steps}}
                                 <li class="RecipePage-steps-item">{{this}}</li>
                             {{/each}}
@@ -62,8 +56,6 @@
                 {{#if similarRecipes}}
                     <aside class="Page-aside">
                         <div class="Page-aside-content" data-modulewell>
-                            {{!include - Complex usage of include, which reuses 
-                            another already existing component|template for rendering}}
                             {{include "/page/list/PageListRightRailB.hbs" this title=(format "/recipe/RecipePage" "SimilarRecipesText") items=similarRecipes}}
                         </div>
                     </aside>
