@@ -1,0 +1,7 @@
+{
+    "env": {
+        "debugUsername": "DEBUG",
+        "debugPassword": "DEBUG_PASSWORD",
+        "host": "https://cms.qa.brightspot.psdops.com"
+    }
+}
