@@ -1,0 +1,68 @@
+.MealCourse {
+    &[data-grid='true'] {
+        .MealCourse {
+            &-recipes {
+                &-items {
+                    display: grid;
+                    gap: var(--spacing-sm);
+                    grid-template-columns: 1fr 1fr;
+                    list-style: none;
+                    padding: 0;
+                }
+            }
+        }
+    
+        .PagePromo {
+            &-title {
+                &:extend(.subhead-2);
+        
+                a {
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+  
+    .PagePromo {
+        &-media {
+            margin-bottom: var(--spacing-sm);
+        }
+    
+        &-title {
+            &:extend(.body-1);
+    
+            a {
+                text-decoration: underline;
+            }
+        }
+    }
+  
+    &-recipes {
+        &-items {
+            list-style: disc;
+            padding-left: var(--spacing-lg);
+        }
+    
+        &-title {
+            &:extend(.headline-6);
+            margin-bottom: var(--spacing-sm);
+        }
+    }
+  
+    &-name {
+        &:extend(.headline-5);
+    }
+  
+    @media @mq-md {
+        &[data-grid='true'] {
+            .MealCourse {
+                &-recipes {
+                    &-items {
+                        gap: var(--spacing-md);
+                        grid-template-columns: 1fr 1fr 1fr;
+                    }
+                }
+            }
+        }
+    }
+  }

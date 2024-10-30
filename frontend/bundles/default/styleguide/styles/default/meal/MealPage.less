@@ -1,0 +1,66 @@
+.MealPage {
+    // most of the time oneColumn lets modules inside of itself determine the width of themselves, but Meal Page
+    // does not have modules, but is instead content, so we have to deal with the centering and width ourselves
+    .Page-oneColumn {
+        .layoutWidth();
+    }
+  
+    .Page-twoColumn,
+    .Page-oneColumn {
+        margin-bottom: var(--vertical-margin-md);
+        margin-top: var(--vertical-margin-md);
+    }
+  
+    &-content {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 880px; // to match page heading above and better readability
+    }
+  
+    &-courses {
+        &-items {
+            list-style: decimal;
+            padding-left: var(--spacing-lg);
+        }
+  
+        &-item {
+            margin-bottom: var(--spacing-lg);
+    
+            &::marker {
+                font-size: 2em;
+                .headline-1;
+                font-weight: 900;
+                color: var(--color-primary);
+            }
+        }
+  
+        &-title {
+            &:extend(.headline-4);
+            margin-bottom: var(--spacing-md);
+        }
+    }
+  
+    &-image {
+        margin-bottom: var(--spacing-lg);
+    }
+  
+    .Page-aside {
+        // In order to maintain example simple we are overriding the CSS for an existing list
+        // A more correct approach however could be to make a new list style of the list, a concept we havent covered yet.
+        .PageListRightRailB .PagePromo { 
+            flex-direction: column;
+        }
+        .PagePromo-content {
+            padding-top: 10px;
+        }
+    }
+    @media @mq-lg {
+        &-content {
+    
+            // if we are in a two column layout, let the layout determine our width at this point
+            .Page-twoColumn & {
+                max-width: none;
+            }
+        }
+    }
+}

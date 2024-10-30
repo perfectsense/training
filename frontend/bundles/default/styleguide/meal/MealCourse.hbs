@@ -1,0 +1,20 @@
+<div class="MealCourse" {{#if (get "showRecipesAsGrid")}}data-grid="true"{{/if}}>
+    {{#with name}}<div class="MealCourse-name">{{this}}</div>{{/with}}
+    {{#with summary}}<div class="MealCourse-summary">{{this}}</div>{{/with}}
+    {{#if recipes}}
+    <div class="MealCourse-recipes">
+        <div class="MealCourse-recipes-title">{{format "/meal/MealCourse" "recipesText"}}</div>
+        <ul class="MealCourse-recipes-items">
+            {{#if (get "showRecipesAsGrid")}}
+                {{#each recipes}}
+                    <li class="MealCourse-recipes-item">{{include "/recipe/RecipeCard.hbs" this}}</li>
+                {{/each}}
+            {{else}}
+                {{#each recipes}}
+                    <li class="MealCourse-recipes-item">{{include "/recipe/RecipeCard.hbs" this media=null}}</li>
+                {{/each}}
+            {{/if}}
+        </ul>
+    </div>
+    {{/if}}
+</div>

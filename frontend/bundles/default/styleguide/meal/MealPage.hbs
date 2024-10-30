@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html class="MealPage" {{~include "/page/Page-htmlAttributes.hbs" this}}>
+{{include "/page/Page-head.hbs" this}}
+
+<body class="Page-body">
+    {{include "/page/Page-bodyStart.hbs" this}}
+    {{include "/page/Page-header.hbs" this}}
+    <div data-moduleroot>
+        {{include "/page/Page-above.hbs" this}}
+
+        <main class="Page-content">
+            <div class="Page-pageLead" data-pagelead>
+                {{include "/page/PageHeading.hbs" this 
+                    eyebrow=(concat "Difficulty: " difficulty) 
+                    pageSubHeading=description 
+                    logo=null
+                    headingBgColor="#EE0120"
+                    useTextColors="inverse"}}
+            </div>
+
+            {{#if similarMeals}}
+            <div class="Page-twoColumn">
+                <div class="Page-main">
+            {{else}}
+            <div class="Page-oneColumn">
+            {{/if}}
+                <div class="MealPage-content">
+                    {{#with image}}
+                        <div class="MealPage-image">
+                            {{#set imageSize="large-16x9"}}
+                                {{this}}
+                            {{/set}}
+                        </div>
+                    {{/with}}
+                    {{#if courses}}
+                        {{#set showRecipesAsGrid=showRecipesAsGrid}}
+                        <div class="MealPage-courses">
+                            <h3 class="MealPage-courses-title"></h3>
+                            <ol class="MealPage-courses-items">
+                                {{#each courses}}
+                                    <li class="MealPage-courses-item">{{this}}</li>
+                                {{/each}}
+                            </ol>
+                        </div>
+                        {{/set}}
+                    {{/if}}
+                </div>
+                {{#if similarMeals}}
+                </div>
+                {{/if}}
+                {{#if similarMeals}}
+                    <aside class="Page-aside">
+                        <div class="Page-aside-content" data-modulewell>
+                            {{include "/page/list/PageListRightRailB.hbs" this title=(format "/meal/MealPage" "SimilarMealsText") items=similarMeals}}
+                        </div>
+                    </aside>
+                {{/if}}
+            </div>
+        </main>
+
+        {{include "/page/Page-below.hbs" this}}
+    </div>
+    {{include "/page/Page-footer.hbs" this}}
+    {{include "/page/Page-extraBodyItems.hbs" this}}
+</body>
+</html>
