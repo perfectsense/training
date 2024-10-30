@@ -541,6 +541,10 @@
       "displayName": "Recipes and Meals",
       "pages": [
         {
+          "displayName": "Meal Page",
+          "page": "/meal/MealPage.json"
+        },
+        {
           "displayName": "Recipe Page",
           "page": "/recipe/RecipePage.json"
         }
