@@ -1,12 +1,8 @@
 {
   "_template": "MealCard.hbs",
-
-  "title": {
-    "_include": "/_group/RichTextElementsTiny.json",
-    "_key": 0
-  },
+  "title": "{{words([5, 10])}}",
   "media": {
-    "_template": "/image/Image.hbs"
+    "_include": "/image/Image.json"
   },
-  "url": ""
+  "url": "#"
 }

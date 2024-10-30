@@ -1,15 +1,9 @@
 {
   "_template": "MealCourse.hbs",
-
-  "name": {
-    "_include": "/_group/RichTextElementsTiny.json",
-    "_key": 0
-  },
-  "summary": {
-    "_include": "/_group/RichTextElementsSmall.json",
-    "_key": 0
-  },
+  "name": "{{words([5,10])}}",
+  "summary": "{{paragraphs(1)}}",
   "recipes": {
-    "_template": "/recipe/RecipeCard.hbs"
+    "_include": "/recipe/RecipeCard.json",
+    "_repeat": 3
   }
 }

@@ -1,19 +1,83 @@
 {
   "_include": "/page/Page.json",
-  "_template": "MealPage.hbs",
-
-  "description": {
-    "_include": "/_group/RichTextElementsSmall.json",
-    "_key": 0
-  },
-  "difficulty": "",
+  "_template": "/meal/MealPage.hbs",
+  "pageHeading": "Pizza dough many ways. From breadsticks to dessert",
+  "description": [
+    "{{html('<p>Pizza, breadsticks, garlic knots, and many other items that can make a great meal for a party share the same dough, in combination with other items. This is a perfect party 3 course meal including appetizers, various forms of pizza, and finally some delicious desert, but you will get to make the dough once, and reuse it.</p>')}}"
+  ],
+  "difficulty": "Somewhat Easy",
   "image": {
-    "_template": "/image/Image.hbs"
+    "_include": "/image/Image.json"
   },
-  "courses": {
-    "_template": "MealCourse.hbs"
-  },
-  "similarMeals": {
-    "_template": "MealCard.hbs"
-  }
+  "courses": [
+    {
+      "_include": "/meal/MealCourse.json",
+      "name": "Breadsticks and Garlic Knots as Appetizers",
+      "summary": [
+        "{{html('<p>What better way to start things that with simple to grab snacks. Breadsticks and Garlic knots are simple once you have the dough made</p>')}}"
+      ],
+      "recipes": [{
+        "_include": "/recipe/RecipeCard.json",
+        "title": "Breadsticks"
+      },
+      {
+        "_include": "/recipe/RecipeCard.json",
+        "title": "Garlic Knots"
+      },
+      {
+        "_include": "/recipe/RecipeCard.json",
+        "title": "Pepperoni Wheels"
+      }]
+    },
+    {
+      "_include": "/meal/MealCourse.json",
+      "name": "Pizza",
+      "summary": [
+        "{{html('<p>We suggest you take this opportunity to also try some unique toppings, however below are classics that should be made</p>')}}"
+      ],
+      "recipes": [{
+        "_include": "/recipe/RecipeCard.json",
+        "title": "Neapolitan Style Pizza"
+      },
+      {
+        "_include": "/recipe/RecipeCard.json",
+        "title": "Neapolitan Pizza Diabola"
+      },
+      {
+        "_include": "/recipe/RecipeCard.json",
+        "title": "Neapolitan Pizza Marguerita"
+      }]
+    },
+    {
+      "_include": "/meal/MealCourse.json",
+      "name": "Pizza",
+      "summary": [
+        "{{paragraphs(1)}}"
+      ],
+      "recipes": [{
+        "_include": "/recipe/RecipeCard.json",
+        "title": "Nutella Pizza"
+      },
+      {
+        "_include": "/recipe/RecipeCard.json",
+        "title": "Zeppole"
+      }]
+    }
+  ],
+  "similarMeals": [
+    {
+      "_include": "/meal/MealCard.json",
+      "title": "Pizza Sampler",
+      "media": {
+        "_include": "/image/Image.json"
+      }
+    },
+    {
+      "_include": "/meal/MealCard.json",
+      "title": "Party fried chicken meal ",
+      "media": {
+        "_include": "/image/Image.json"
+      }
+    }
+  ]
 }
