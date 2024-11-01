@@ -13,22 +13,39 @@ pluginManagement {
 }
 
 plugins {
-    id "com.gradle.enterprise" version "3.15.1"
-    id 'com.brightspot.gradle' version '1.1.1'
+    id 'com.gradle.enterprise' version '3.15.1'
+    id 'com.brightspot.gradle' version '3.1.0-rc3'
 }
 
 rootProject.name = 'brightspot-training'
 
+dependencyResolutionManagement {
+    versionCatalogs {
+        brightspotLibs {
+            library('brightspot', 'com.psddev:brightspot-bom:4.7.11.1')
+            library('brightspotDependencies', 'com.psddev:brightspot-dependencies:4.7.11.1')
+
+            library('brightspotSharedTests' , 'com.brightspot.shared-tests:bom:0.7.1')
+
+            library('brightspotGo', 'com.brightspot.go:bom:1.5.3')
+            library('brightspotGoDependencies', 'com.brightspot.go:go-dependencies:1.5.3')
+
+            library('componentLib', 'com.psddev.component-lib:bom:4.5.24')
+            library('componentLibDependencies', 'com.psddev.component-lib:cl-dependencies:4.5.24')
+        }
+    }
+}
+
 brightspot {
     projectGroup = 'com.brightspot-training'
 
-    versions {
-        brightspot = '4.7.11.1'
-        brightspotGo = '1.5.3'
-        sharedTests = '0.7.1'
-        componentLib = '4.5.24'
-        java = 11
-    }
+    // versions {
+    //     brightspot = '4.7.11.1'
+    //     brightspotGo = '1.5.3'
+    //     sharedTests = '0.7.1'
+    //     componentLib = '4.5.24'
+    //     java = 11
+    // }
 
     dependencyConstraints = [
         // dependency conflicts across Gradle configurations

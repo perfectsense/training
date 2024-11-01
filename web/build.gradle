@@ -17,4 +17,11 @@ dependencies {
     sharedTest 'com.brightspot.shared-tests:pack-standard-backend-integration-tests'
 
     testImplementation('com.brightspot.go:lib-util-auto-dependency-test')
+
+    /**
+    Export Object Type Data (e2e)
+    Run via: ./gradlew web:exportObjectTypes
+    Object type data will be in /web/build/objectTypes.json
+    */
+    objectTypeExport 'com.brightspot.gradle:object-type-export:3.1.0-rc3'
 }
