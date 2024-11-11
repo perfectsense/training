@@ -16,7 +16,9 @@ Table Of Contents
   - [Development](#development)
     - [Helpful Cypress Starter Kit](#helpful-cypress-starter-kit)
     - [Cypress-Brightspot](#cypress-brightspot)
+    - [Edit Page Builder](#edit-page-builder)
 
+<!-- /TOC -->
 <!-- /TOC -->
 
 Local Setup
@@ -94,6 +96,20 @@ If you're interested in just updating field selectors without overriding existin
   });
 ```
 
+### Edit Page Builder
+To generate Page Object classes for Cypress from your JSON configuration, follow these steps:
 
+1. Run the following command to generate the JSON file containing the object type definitions:
+    ```
+    ./gradlew web:exportObjectTypes
+    ```
 
+2. Once `objectTypes.json` is available, you can run the `editPageBuilder.js` script to generate Page Object files:
 
+    ```
+    node ./node_modules/@cypress-brightspot/cypress-brightspot/examples/editPageBuilder.js "../web/build/objectTypes.json" "./cypress/support/pages"
+    ```
+    The first argument (`../web/build/objectTypes.json`) specifies the path to the generated `objectTypes.json`.
+    The second argument (`./support/pages`) specifies the directory where the generated Page Object files will be created.
+  
+3. After running the script, you should see the generated Page Object classes in the specified directory. Each class file corresponds to an object type and follows the Cypress Page Object Model structure, ready for use in your tests.

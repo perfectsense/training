@@ -11,3 +11,4 @@ docker-compose.override.yml
 docker-sync.yml
 node
 node_modules
+e2e/cypress/support/pages
