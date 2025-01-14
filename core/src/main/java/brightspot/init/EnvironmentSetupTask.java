@@ -4,19 +4,24 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.UncheckedIOException;
 import java.nio.charset.StandardCharsets;
+import java.util.List;
 import java.util.Locale;
 import java.util.Objects;
+import java.util.Set;
 import java.util.UUID;
 
 import brightspot.cascading.CascadingStrategyModification;
 import brightspot.cascading.DefaultCascadingStrategy;
 import brightspot.cascading.module.CascadingModuleListAfter;
 import brightspot.cascading.navigation.CascadingNavigationOverride;
+import brightspot.difficulty.Difficulty;
 import brightspot.footer.CascadingFooterOverride;
 import brightspot.footer.PageFooter;
 import brightspot.genericpage.GenericPage;
 import brightspot.homepage.Homepage;
 import brightspot.image.WebImage;
+import brightspot.ingredient.Ingredient;
+import brightspot.ingredient.IngredientUnit;
 import brightspot.l10n.LocaleSettings;
 import brightspot.l10n.SiteLocaleProvider;
 import brightspot.landing.LandingCascadingData;
@@ -36,6 +41,10 @@ import brightspot.page.CascadingPageData;
 import brightspot.page.ContentErrorHandler;
 import brightspot.page.ErrorHandlerSettings;
 import brightspot.page.FaviconSettings;
+import brightspot.recipe.Recipe;
+import brightspot.recipe.RecipeIngredient;
+import brightspot.recipe.RecipeSiteSettings;
+import brightspot.recipe.RecipeStep;
 import brightspot.search.NavigationSearchSettings;
 import brightspot.search.SiteSearchPage;
 import brightspot.search.TypeFilter;
@@ -46,10 +55,12 @@ import brightspot.section.CurrentSectionOptionYes;
 import brightspot.section.Section;
 import brightspot.section.SectionPage;
 import brightspot.sort.publishdate.NewestPublishDate;
+import com.google.common.collect.ImmutableSet;
 import com.psddev.cms.db.Content;
 import com.psddev.cms.db.Directory;
 import com.psddev.cms.db.Site;
 import com.psddev.cms.db.SiteCopierGlobalSettings;
+import com.psddev.cms.db.SiteSettings;
 import com.psddev.cms.db.ToolUser;
 import com.psddev.cms.tool.CmsTool;
 import com.psddev.cms.tool.TrailingSlashConfiguration;
@@ -135,6 +146,9 @@ public class EnvironmentSetupTask extends RepeatingTask {
 
         Homepage homepage = setUpHomepage(site);
         Content.Static.publish(homepage, site, importUser);
+
+        createIngredients(site, importUser);
+        createRecipes(site, importUser);
     }
 
     static class ToolUserInitModification extends Modification<ToolUser> {
@@ -266,6 +280,8 @@ public class EnvironmentSetupTask extends RepeatingTask {
             Content.Static.publish(section, site, importUser);
         });
 
+        site.as(RecipeSiteSettings.class).setDefaultRecipeSection(recipeSection);
+
         site.as(CascadingPageData.class).setNavigation(build(new CascadingNavigationOverride(), cascadingNav -> {
             cascadingNav.setNavigation(build(new PageNavigation(), nav -> {
                 nav.setInternalName("Brightspot Bistro Site Navigation");
@@ -312,6 +328,168 @@ public class EnvironmentSetupTask extends RepeatingTask {
             Directory.PathType.PERMALINK);
 
         return homepage;
+    }
+
+    private static void createIngredients(Site owner, ToolUser importUser) {
+        Set<String> ingredients = ImmutableSet.of(
+            "00 flour",
+            "active yeast",
+            "fresh basil",
+            "fresh mozzarella cheese",
+            "granulated sugar",
+            "ground cinnamon",
+            "honey",
+            "neutral oil",
+            "Nutella",
+            "powdered sugar",
+            "San Marzano tomatoes",
+            "sea salt",
+            "strawberries",
+            "warm water"
+        );
+
+        for (String ingredientName : ingredients) {
+            Ingredient ingredient = new Ingredient();
+            ingredient.setName(ingredientName);
+
+            ingredient.as(LocalizationData.class).setLocale(Locale.US);
+
+            Content.Static.publish(ingredient, owner, importUser);
+        }
+    }
+
+    public static void createRecipes(Site owner, ToolUser importUser) {
+        Recipe recipe = new Recipe();
+        recipe.asHasSectionWithFieldData().setSection(SiteSettings.get(
+            owner, s -> s.as(RecipeSiteSettings.class).getDefaultRecipeSection()));
+
+        recipe.setTitle("Neapolitan Pizza");
+        recipe.setDescription("A simple but classic variety from Naples. A brief bake in a <i>very</i> hot oven gives the crust its amazing texture.");
+
+        recipe.setImage(build(new WebImage(), image -> {
+            image.setFile(makeStorageItem("neapolitan-pizza-iStock-1278998606.jpg", "image/jpeg"));
+            image.as(LocalizationData.class).setLocale(Locale.US);
+            Content.Static.publish(image, owner, importUser);
+        }));
+
+        List<RecipeIngredient> ingredients = recipe.getRecipeIngredients();
+        ingredients.add(build(new RecipeIngredient(), ri -> {
+            ri.setQuantityString("1250");
+            ri.setUnit(IngredientUnit.GRAM);
+            ri.setIngredient(lookupIngredient("00 flour"));
+        }));
+        ingredients.add(build(new RecipeIngredient(), ri -> {
+            ri.setQuantityString("5");
+            ri.setUnit(IngredientUnit.GRAM);
+            ri.setIngredient(lookupIngredient("active yeast"));
+        }));
+        ingredients.add(build(new RecipeIngredient(), ri -> {
+            ri.setQuantityString("3");
+            ri.setUnit(IngredientUnit.CUP);
+            ri.setIngredient(lookupIngredient("warm water"));
+        }));
+        ingredients.add(build(new RecipeIngredient(), ri -> {
+            ri.setQuantityString("40");
+            ri.setUnit(IngredientUnit.GRAM);
+            ri.setIngredient(lookupIngredient("sea salt"));
+        }));
+        ingredients.add(build(new RecipeIngredient(), ri -> {
+            ri.setQuantityString("1");
+            ri.setUnit(IngredientUnit.TEASPOON);
+            ri.setIngredient(lookupIngredient("honey"));
+        }));
+        ingredients.add(build(new RecipeIngredient(), ri -> {
+            ri.setQuantityString("1");
+            ri.setUnit(IngredientUnit.CAN);
+            ri.setIngredient(lookupIngredient("San Marzano tomatoes"));
+            ri.setInstruction("crushed");
+        }));
+        ingredients.add(build(new RecipeIngredient(), ri -> {
+            ri.setQuantityString("1");
+            ri.setUnit(IngredientUnit.PACKAGE);
+            ri.setIngredient(lookupIngredient("fresh mozzarella cheese"));
+            ri.setInstruction("sliced");
+        }));
+        ingredients.add(build(new RecipeIngredient(), ri -> {
+            ri.setQuantityString("1");
+            ri.setUnit(IngredientUnit.BUNCH);
+            ri.setIngredient(lookupIngredient("fresh basil"));
+            ri.setInstruction("chopped");
+        }));
+
+        List<RecipeStep> steps = recipe.getSteps();
+        steps.add(build(new RecipeStep(), rs -> {
+            rs.setHeading("Gathering Ingredients");
+            rs.setDirections("Before we can start the process, let’s gather the ingredients for the dough and toppings.");
+        }));
+        steps.add(build(new RecipeStep(), rs -> {
+            rs.setHeading("Preparing the Dough");
+            rs.setDirections("<ol class=\\\"rte2-style-ol\\\" style=\\\"margin-top:0;margin-bottom:0;padding-inline-start:48px;\\\" id=\\\"docs-internal-guid-edace94d-7fff-6d00-a279-911f8224e0e4\\\" start=\\\"1\\\"><li>Neapolitan Pizza is all about perfectly fermented dough and overall balance.&nbsp; Mix the flour, yeast, and warm water together in a large bowl just until the water is fully incorporated.</li><li>Cover the bowl with a slightly damp cloth and place in a warm spot to rise for 2-3 hours or until doubled in size.&nbsp; If preparing the night before, you can also slow-rise the dough in the refrigerator overnight and bring it to room temperature on the counter for a few hours before using.</li></ol>");
+            rs.setImage(build(new WebImage(), image -> {
+                image.setFile(makeStorageItem("1-dough-mixing-iStock-2028559648.jpg", "image/jpeg"));
+                image.as(LocalizationData.class).setLocale(Locale.US);
+                Content.Static.publish(image, owner, importUser);
+            }));
+        }));
+        steps.add(build(new RecipeStep(), rs -> {
+            rs.setHeading("Kneading &amp; Rising");
+            rs.setDirections("When the dough has doubled in size, gently knock the air out of it and place it on a well floured surface. Knead the dough by hand for 7-9 minutes adding small amounts of flour as needed to keep the dough from sticking. Once the dough is shiny and smooth, it’s ready for a second rise. Leave on the counter covered for an additional 1-2 hours or until it is puffy, nearly doubled.");
+            rs.setImage(build(new WebImage(), image -> {
+                image.setFile(makeStorageItem("2-dough-kneading-iStock-627030228.jpg", "image/jpeg"));
+                image.as(LocalizationData.class).setLocale(Locale.US);
+                Content.Static.publish(image, owner, importUser);
+            }));
+        }));
+        steps.add(build(new RecipeStep(), rs -> {
+            rs.setHeading("Shaping the Dough");
+            rs.setDirections("Once the dough has proofed for a second time, gently set it on a floured surface and split it in two portions. Using your fingertips, stretch each dough ball out into a 10 inch circle, gently stretching outward from the center in a circular motion.");
+            rs.setImage(build(new WebImage(), image -> {
+                image.setFile(makeStorageItem("3-dough-stretching-iStock-1213777298.jpg", "image/jpeg"));
+                image.as(LocalizationData.class).setLocale(Locale.US);
+                Content.Static.publish(image, owner, importUser);
+            }));
+        }));
+        steps.add(build(new RecipeStep(), rs -> {
+            rs.setHeading("Add the toppings &amp; cook");
+            rs.setDirections("With the dough prepared, add a few spoonfuls of crushed tomatoes and any desired toppings like fresh mozzarella cheese or torn basil leaves. Cook the pizza in a 700º oven for 2-3 minutes or until the crust is bubbly and the bottom is golden brown. Enjoy!");
+        }));
+
+        recipe.setPrepTime(20);
+        recipe.setInactivePrepTime(360);
+        recipe.setCookTime(2);
+
+        recipe.asHasDifficultyWithFieldData().setDifficulty(Difficulty.INTERMEDIATE);
+
+        recipe.as(LocalizationData.class).setLocale(Locale.US);
+
+        recipe.as(Directory.ObjectModification.class).addSitePath(
+            owner,
+            recipe.createPermalink(owner),
+            Directory.PathType.PERMALINK);
+
+        Content.Static.publish(recipe, owner, importUser);
+
+        // images for recipes published by students
+
+        build(new WebImage(), image -> {
+            image.setFile(makeStorageItem("nutella-pizza-iStock-1152834509.jpg", "image/jpeg"));
+            image.as(LocalizationData.class).setLocale(Locale.US);
+            Content.Static.publish(image, owner, importUser);
+        });
+
+        build(new WebImage(), image -> {
+            image.setFile(makeStorageItem("zeppole-iStock-701211902.jpg", "image/jpeg"));
+            image.as(LocalizationData.class).setLocale(Locale.US);
+            Content.Static.publish(image, owner, importUser);
+        });
+    }
+
+    private static Ingredient lookupIngredient(String name) {
+        return Query.from(Ingredient.class)
+            .where("getNamePlainText = ?", Objects.requireNonNull(name))
+            .noCache()
+            .findFirst()
+            .orElseThrow(() -> new IllegalArgumentException(name + " Ingredient not found"));
     }
 
     private static String buildThemeKey(String template, Theme theme) {
